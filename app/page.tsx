@@ -18,7 +18,7 @@ export default function Home() {
                 Make an account
               </button>
               <p className="text-sm txt-muted-foreground">
-                Watch your progress skyrocket!
+                Watch your progress skyrocket! hello
               </p>
             </div>
           </div>
