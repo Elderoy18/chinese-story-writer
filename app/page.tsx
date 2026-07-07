@@ -2,6 +2,7 @@ import ImageTabs from "@/components/image-tabs";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -17,9 +18,12 @@ export default function Home() {
               Watch Traditional Stories, Interact With Characters, Write Your Own
             </p>
             <div className="flex flex-col items-center gap-4">
+              <Link href="/sign-up">
                 <Button size="lg" className="h-12px-8 text-lg font-medium">
                   Get Started <ArrowRight className="ml-2"/>
                 </Button>
+              </Link>
+                
               <p className="text-sm text-muted-foreground">
                 Watch your progress skyrocket!
               </p>
