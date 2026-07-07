@@ -1,0 +1,21 @@
+import dns from "dns";
+
+if (process.env.NODE_ENV !== "production") {
+  dns.setServers(["1.1.1.1", "8.8.8.8"]);
+}
+
+import { betterAuth } from "better-auth";
+import { mongodbAdapter } from "better-auth/adapters/mongodb";
+import { MongoClient } from "mongodb";
+
+const client = new MongoClient(process.env.MONGODB_URI!);
+const db = client.db();
+
+export const auth = betterAuth({
+    database: mongodbAdapter(db, {
+        client,
+    }),
+    emailAndPassword: {
+        enabled: true
+    },
+});
