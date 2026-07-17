@@ -13,10 +13,17 @@ export default function Navbar(){
     return(
         <nav className="border-b border-gray-200 bg-white">
             <div className="container mx-auto flex h-16 items-centerpx-4 justify-between">
-                <Link href="/" className="flex items-center gap-2 text-xl font-semibold text-primary">
-                    <NotebookPen />
-                    Chinese Storyteller
-                </Link>
+                {session?.user ? (
+                    <Link href="/dashboard" className="flex items-center gap-2 text-xl font-semibold text-primary">
+                        <NotebookPen />
+                        Chinese Storywriter
+                    </Link>
+                ) : (
+                    <Link href="/" className="flex items-center gap-2 text-xl font-semibold text-primary">
+                        <NotebookPen />
+                        Chinese Storywriter
+                    </Link>
+                )}
                 <div className="flex items-center gap-4">
                     
                     {session?.user ? (
@@ -31,16 +38,11 @@ export default function Navbar(){
                             </Link>
                             <DropdownMenu>
                                 <DropdownMenuTrigger>
-                                    <Button 
-                                    variant="ghost"
-                                    className="relative h-8 w-8 rounded-full"
-                                    >
                                         <Avatar className="h-8 w-8">
                                             <AvatarFallback className="bg-primary">
                                                 {session.user.name[0].toUpperCase()}
                                             </AvatarFallback>
                                         </Avatar>
-                                    </Button>
                                 </DropdownMenuTrigger>
 
                                 <DropdownMenuContent className="w-47" align="end">
