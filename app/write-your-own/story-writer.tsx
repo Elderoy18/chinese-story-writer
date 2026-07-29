@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Loader2 } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 interface Scaffolding {
     characters: string;
@@ -19,6 +20,7 @@ interface Scene {
     sentence: string;
     status: "draft" | "complete";
     regenerateUsed: boolean;
+    feedback: string;
 }
 
 interface Story {
@@ -49,16 +51,21 @@ export default function StoryWriter({ initialStory }: Props) {
     );
     const [isSaving, setIsSaving] = useState(false);
     const [storyTitle, setStoryTitle] = useState("");
-    // start a new story
+    const [feedback, setFeedback] = useState("");
+    const [isLoadingFeedback, setIsLoadingFeedback] = useState(false);
+
+    // derived state
+    const currentScene = story ? story.scenes[story.currentSceneIndex] : null;
+    const canEndStory = story ? story.scenes.filter(s => s.status === "complete").length >= 2 : false;
+    const canRegenerate = currentScene ? !currentScene.regenerateUsed : false;
+
     async function handleStartStory() {
         const res = await fetch("/api/story", { method: "POST" });
         const data = await res.json();
-        setStory(data.story);
+        setStory(JSON.parse(JSON.stringify(data.story)));
         setView("scaffolding");
     }
-    const canEndStory = story ? story.scenes.filter(s => s.status === "complete").length >= 2 : false;
-    
-    // save scaffolding to DB
+
     async function handleSave() {
         setIsSaving(true);
         await fetch("/api/story", {
@@ -69,27 +76,54 @@ export default function StoryWriter({ initialStory }: Props) {
         setIsSaving(false);
     }
 
-    async function handleNextScene() {
-        const res = await fetch("/api/story", { method: "PUT" });
-        const data = await res.json();
-        setStory(data.story);
-        // reset the form fields for the new scene
-        setScaffolding({ characters: "", objects: "", actions: "", descriptions: "" });
-        setSentence("");
-        setView("scaffolding");
-    }
-
-    // end scene - save and move to feedback view
     async function handleEndScene() {
-        console.log("handleEndScene called");
         if (!sentence.trim()) {
             alert("Please fill in the 'In Your Own Words' box before ending the scene.");
             return;
         }
-        console.log("sentence is filled, saving...");
         await handleSave();
-        console.log("saved, switching to feedback view");
+
+        // fetch AI feedback
+        setIsLoadingFeedback(true);
         setView("feedback");
+        const res = await fetch("/api/story/feedback", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ scaffolding, sentence }),
+        });
+        const data = await res.json();
+        setFeedback(data.feedback || "No feedback available.");
+        setIsLoadingFeedback(false);
+    }
+
+    async function handleRegenerate() {
+        await fetch("/api/story", {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ scaffolding, sentence, regenerateUsed: true }),
+        });
+
+        if (story) {
+            const updatedScenes = [...story.scenes];
+            updatedScenes[story.currentSceneIndex] = {
+                ...updatedScenes[story.currentSceneIndex],
+                regenerateUsed: true,
+            };
+            setStory({ ...story, scenes: updatedScenes });
+        }
+
+        setFeedback("");
+        setView("scaffolding");
+    }
+
+    async function handleNextScene() {
+        const res = await fetch("/api/story", { method: "PUT" });
+        const data = await res.json();
+        setStory(JSON.parse(JSON.stringify(data.story)));
+        setScaffolding({ characters: "", objects: "", actions: "", descriptions: "" });
+        setSentence("");
+        setFeedback("");
+        setView("scaffolding");
     }
 
     async function handleEndStory() {
@@ -97,37 +131,58 @@ export default function StoryWriter({ initialStory }: Props) {
             method: "PATCH",
         });
         const data = await res.json();
-        setStory(data.story); // add this line
+        setStory(JSON.parse(JSON.stringify(data.story)));
         setView("title");
     }
 
-    async function handleDownloadPDF() {
-        const { jsPDF } = await import("jspdf");
-        const doc = new jsPDF();
-
+    function handleDownloadPDF() {
         const title = storyTitle || "My Chinese Story";
         const scenes = story?.scenes.filter(s => s.status === "complete") || [];
 
-        // title
-        doc.setFontSize(22);
-        doc.text(title, 105, 20, { align: "center" });
+        const printWindow = window.open("", "_blank");
+        if (!printWindow) return;
 
-        // scenes as plain paragraphs
-        doc.setFontSize(12);
-        doc.setFont("helvetica", "normal");
-        let y = 40;
-        scenes.forEach((scene) => {
-            const lines = doc.splitTextToSize(scene.sentence, 170);
-            doc.text(lines, 20, y);
-            y += lines.length * 7 + 10;
-
-            if (y > 270) {
-                doc.addPage();
-                y = 20;
-            }
-        });
-
-        doc.save(`${title}.pdf`);
+        printWindow.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>${title}</title>
+                <style>
+                    body {
+                        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+                        max-width: 600px;
+                        margin: 60px auto;
+                        padding: 0 40px;
+                        color: #000;
+                        line-height: 1.8;
+                    }
+                    h1 {
+                        text-align: center;
+                        font-size: 28px;
+                        margin-bottom: 40px;
+                    }
+                    p {
+                        font-size: 16px;
+                        margin-bottom: 20px;
+                    }
+                    @media print {
+                        body { margin: 40px auto; }
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>${title}</h1>
+                ${scenes.map(scene => `<p>${scene.sentence}</p>`).join("")}
+            </body>
+            </html>
+        `);
+        printWindow.document.close();
+        printWindow.focus();
+        setTimeout(() => {
+            printWindow.print();
+            printWindow.close();
+        }, 500);
     }
 
     // --- VIEWS ---
@@ -234,25 +289,82 @@ export default function StoryWriter({ initialStory }: Props) {
 
     if (view === "feedback") {
         return (
-            <div className="flex min-h-screen flex-col items-center justify-center gap-6">
-                <h1 className="text-3xl font-bold text-black">Scene Feedback</h1>
-                <p className="text-muted-foreground">AI feedback and video will appear here.</p>
-                <div className="flex gap-4">
-                    <Button variant="outline" onClick={() => setView("scaffolding")}>
-                        REGENERATE
-                    </Button>
-                    <Button onClick={handleNextScene}>
-                        NEXT SCENE →
-                    </Button>
-                    <Button 
-                        variant="outline" 
-                        onClick={handleEndStory}
-                        disabled={!canEndStory}
-                        title={!canEndStory ? "Complete at least 3 scenes to end your story" : ""}
-                    >
-                        END STORY
-                    </Button>
+            <div className="container mx-auto max-w-2xl px-4 py-12">
+                <div className="mb-8">
+                    <p className="text-sm text-muted-foreground mb-1">
+                        Scene {story ? story.currentSceneIndex + 1 : 1}
+                    </p>
+                    <h1 className="text-3xl font-bold text-black">Scene Feedback</h1>
                 </div>
+
+                {/* student's sentence */}
+                <div className="mb-6 rounded-lg border border-gray-200 p-4 bg-gray-50">
+                    <p className="text-sm font-medium text-muted-foreground mb-1">Your sentence</p>
+                    <p className="text-black">{sentence}</p>
+                </div>
+
+                {/* AI feedback */}
+                <div className="mb-8 rounded-lg border border-primary/20 p-6 bg-primary/5">
+                    <p className="text-sm font-medium text-primary mb-3">AI Feedback</p>
+                    {isLoadingFeedback ? (
+                        <div className="flex items-center gap-2 text-muted-foreground">
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                            Generating feedback...
+                        </div>
+                    ) : (
+                        <div className="text-black prose prose-sm max-w-none">
+                            <ReactMarkdown
+                                components={{
+                                    p: ({ children }) => <p className="mb-3">{children}</p>,
+                                    strong: ({ children }) => <strong className="font-semibold text-black">{children}</strong>,
+                                    ul: ({ children }) => <ul className="list-disc pl-5 mb-3 space-y-1">{children}</ul>,
+                                    li: ({ children }) => <li className="text-black">{children}</li>,
+                                }}
+                            >
+                                {feedback}
+                            </ReactMarkdown>
+                        </div>
+                    )}
+                </div>
+
+                {/* action buttons */}
+                <div className="flex gap-4 justify-between">
+                    <div className="flex gap-2">
+                        {canRegenerate ? (
+                            <Button variant="outline" onClick={handleRegenerate} disabled={isLoadingFeedback}>
+                                REGENERATE
+                            </Button>
+                        ) : (
+                            <Button variant="outline" disabled>
+                                REGENERATE
+                            </Button>
+                        )}
+                    </div>
+                    <div className="flex gap-2">
+                        <Button onClick={handleNextScene} disabled={isLoadingFeedback}>
+                            NEXT SCENE →
+                        </Button>
+                        <Button
+                            variant="outline"
+                            onClick={handleEndStory}
+                            disabled={!canEndStory || isLoadingFeedback}
+                            title={!canEndStory ? "Complete at least 3 scenes to end your story" : ""}
+                        >
+                            END STORY
+                        </Button>
+                    </div>
+                </div>
+
+                {!canRegenerate && (
+                    <p className="text-sm text-muted-foreground mt-4">
+                        You have used your regeneration for this scene.
+                    </p>
+                )}
+                {!canEndStory && (
+                    <p className="text-sm text-muted-foreground mt-2">
+                        Complete at least 3 scenes before ending your story.
+                    </p>
+                )}
             </div>
         );
     }
@@ -268,7 +380,7 @@ export default function StoryWriter({ initialStory }: Props) {
                     value={storyTitle}
                     onChange={(e) => setStoryTitle(e.target.value)}
                 />
-                <Button 
+                <Button
                     size="lg"
                     onClick={() => setView("complete")}
                     disabled={!storyTitle.trim()}
@@ -288,7 +400,6 @@ export default function StoryWriter({ initialStory }: Props) {
                 <p className="text-muted-foreground">
                     Your story is ready to download!
                 </p>
-                {/* preview the sentences */}
                 <div className="max-w-xl w-full flex flex-col gap-4">
                     {story?.scenes
                         .filter(s => s.status === "complete")

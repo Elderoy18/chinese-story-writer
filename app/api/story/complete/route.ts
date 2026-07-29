@@ -21,7 +21,7 @@ export async function PATCH() {
             return NextResponse.json({ error: "No story in progress" }, { status: 404 });
         }
 
-        // mark the last scene complete too
+        // mark the last scene complete
         const sceneIndex = story.currentSceneIndex;
         story.scenes[sceneIndex].status = "complete";
         story.status = "complete";

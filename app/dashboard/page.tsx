@@ -1,7 +1,8 @@
 import { getSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import { BookOpen, MessageCircle, PenLine } from "lucide-react";
+import connectDB from "@/lib/db";
+import Story from "@/lib/story";
 import Link from "next/link";
 
 export default async function Dashboard() {
@@ -10,6 +11,15 @@ export default async function Dashboard() {
     if (!session?.user) {
         redirect("/sign-in");
     }
+
+    await connectDB();
+
+    const story = await Story.findOne({
+        userId: session.user.id,
+        status: "in_progress"
+    }).lean();
+
+    const hasStoryInProgress = !!story;
 
     return (
         <div className="container mx-auto px-4 py-16">
@@ -49,8 +59,17 @@ export default async function Dashboard() {
                                 Write Your Own
                             </h2>
                             <p className="text-muted-foreground text-sm">
-                                Write your own Chinese story scene by scene with AI feedback and video generation.
+                                {hasStoryInProgress
+                                    ? "You have a story in progress. Pick up where you left off!"
+                                    : "Write your own Chinese story scene by scene with AI feedback and video generation."
+                                }
                             </p>
+                            {hasStoryInProgress && (
+                                <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-primary">
+                                    <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                                    In Progress — Scene {(story as any).currentSceneIndex + 1}
+                                </span>
+                            )}
                         </div>
                     </Link>
 
