@@ -21,10 +21,18 @@ export async function PATCH() {
             return NextResponse.json({ error: "No story in progress" }, { status: 404 });
         }
 
-        // mark the last scene complete
         const sceneIndex = story.currentSceneIndex;
         story.scenes[sceneIndex].status = "complete";
+        story.scenes[sceneIndex].originalSentence = story.scenes[sceneIndex].sentence;
+        story.scenes[sceneIndex].sceneCompletedAt = new Date();
         story.status = "complete";
+        story.storyCompletedAt = new Date();
+
+        // calculate total character count (Chinese doesn't use spaces)
+        const totalChars = story.scenes.reduce((sum: number, scene: any) => {
+            return sum + (scene.sentence?.length || 0);
+        }, 0);
+        story.totalWordCount = totalChars;
 
         await story.save();
 

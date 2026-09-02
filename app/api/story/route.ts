@@ -61,7 +61,11 @@ export async function POST() {
                         descriptions: "",
                     },
                     sentence: "",
+                    originalSentence: "",
+                    regeneratedSentence: "",
+                    finalSentence: "",
                     status: "draft",
+                    sceneStartedAt: new Date(),
                 }
             ]
         });
@@ -73,7 +77,7 @@ export async function POST() {
     }
 }
 
-// PATCH - save scaffolding for current scene
+// PATCH - save scaffolding, sentence, originalSentence, or regeneratedSentence
 export async function PATCH(request: Request) {
     try {
         const session = await getSession();
@@ -82,7 +86,7 @@ export async function PATCH(request: Request) {
         }
 
         const body = await request.json();
-        const { scaffolding, sentence } = body;
+        const { scaffolding, sentence, regenerateUsed, saveOriginal, saveRegenerated } = body;
 
         await connectDB();
 
@@ -96,9 +100,27 @@ export async function PATCH(request: Request) {
         }
 
         const sceneIndex = story.currentSceneIndex;
+        console.log("saveOriginal:", saveOriginal);
+        console.log("regenerateUsed on scene:", story.scenes[sceneIndex].regenerateUsed);
+        console.log("originalSentence already set:", !!story.scenes[sceneIndex].originalSentence);
 
         story.scenes[sceneIndex].scaffolding = scaffolding;
         story.scenes[sceneIndex].sentence = sentence;
+
+        if (regenerateUsed !== undefined) {
+            story.scenes[sceneIndex].regenerateUsed = regenerateUsed;
+        }
+        // freeze originalSentence when END SCENE is clicked
+        // freeze originalSentence ONLY if it hasn't been set yet
+        if (saveOriginal && !story.scenes[sceneIndex].originalSentence) {
+            story.scenes[sceneIndex].originalSentence = sentence;
+            story.scenes[sceneIndex].sceneCompletedAt = new Date();
+        }
+
+        // save regeneratedSentence when REGENERATE is clicked
+        if (saveOriginal && story.scenes[sceneIndex].regenerateUsed) {
+            story.scenes[sceneIndex].regeneratedSentence = sentence;
+        }
 
         await story.save();
 
@@ -130,10 +152,8 @@ export async function PUT() {
 
         const sceneIndex = story.currentSceneIndex;
 
-        // mark current scene as complete
         story.scenes[sceneIndex].status = "complete";
 
-        // add a new blank scene
         story.scenes.push({
             sceneNumber: sceneIndex + 2,
             scaffolding: {
@@ -143,13 +163,16 @@ export async function PUT() {
                 descriptions: "",
             },
             sentence: "",
+            originalSentence: "",
+            regeneratedSentence: "",
+            finalSentence: "",
             feedback: "",
             videoUrl: "",
             regenerateUsed: false,
             status: "draft",
+            sceneStartedAt: new Date(),
         });
 
-        // advance the index
         story.currentSceneIndex = sceneIndex + 1;
 
         await story.save();
