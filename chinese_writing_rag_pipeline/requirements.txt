@@ -1,0 +1,18 @@
+python-docx>=1.0.0
+
+# App production track: OpenAI embeddings + MongoDB Atlas vector store.
+# The primary path is the Node script (scripts/embed-to-mongo.mjs) -- no Python
+# needed. These two are only for the optional Python equivalent
+# scripts/embed_to_mongo.py. Both read MONGODB_URI / OPENAI_API_KEY from
+# repo-root .env.local and produce the same `rag_chunks` collection.
+openai>=1.40.0
+pymongo>=4.6.0
+
+# Alternative local track (sentence-transformers + local Chroma), see
+# embed_and_index.py. Not used by the app; needs huggingface.co access.
+sentence-transformers>=3.0.0
+chromadb>=0.5.0
+
+# Local, dependency-light verification demo (no model download required)
+scikit-learn>=1.3.0
+jieba>=0.42.1

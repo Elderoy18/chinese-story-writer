@@ -18,16 +18,20 @@ export interface IScene {
     sceneStartedAt: Date;
     sceneCompletedAt: Date;
     feedback: string;
+    feedbackChunkIds: string[];       // RAG chunk_ids retrieved for this scene's feedback
     regenerateUsed: boolean;
     status: "draft" | "complete";
     wasEdited: boolean;
     videoUrl: string;
+    imageUrl: string;                 // data: URI of the generated scene illustration
+    imagePrompt: string;              // the English prompt that produced it (debugging/reference)
 }
 
 
 export interface IStory extends Document {
     userId: string;
     status: "in_progress" | "complete";
+    storyId: string;                 // corpus story_id for a retelling; "" for free-write
     currentSceneIndex: number;
     scenes: IScene[];
     endStoryEditUsed: boolean;        // lowercase boolean
@@ -59,6 +63,9 @@ const SceneSchema = new Schema<IScene>({
     finalSentence: { type: String, default: "" },
 
     feedback: { type: String, default: "" },
+    feedbackChunkIds: { type: [String], default: [] },
+    imageUrl: { type: String, default: "" },
+    imagePrompt: { type: String, default: "" },
     regenerateUsed: { type: Boolean, default: false },
     status: { type: String, enum: ["draft", "complete"], default: "draft" },
 
@@ -71,11 +78,12 @@ const SceneSchema = new Schema<IScene>({
 const StorySchema = new Schema<IStory>(
     {
         userId: { type: String, required: true },
-        status: { 
-            type: String, 
-            enum: ["in_progress", "complete"], 
-            default: "in_progress" 
+        status: {
+            type: String,
+            enum: ["in_progress", "complete"],
+            default: "in_progress"
         },
+        storyId: { type: String, default: "" },   // "" = free-write; else a retelling corpus story_id
         currentSceneIndex: { type: Number, default: 0 },
         scenes: { type: [SceneSchema], default: [] },
         

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { X, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -15,48 +16,93 @@ interface Story {
     title: string;
     description: string;
     videoId: string;
+    retellId?: string;   // corpus story_id — set only if this story supports "retell in your own words"
     questions: Question[];
 }
 
 const stories: Story[] = [
     {
         id: 1,
-        title: "《后羿射日》",
-        description: "《后羿射日》是中国古代神话，没有明确的作者，故事记载在西汉时期刘安和他的门客编写的《淮南子》中，讲的是后羿射下九个太阳、救了百姓。",
-        videoId: "rW0zZZt-dk8",
+        title: "《神农尝草》",
+        description: "“Shennong Tastes the Hundred Herbs” is an ancient Chinese myth with no known author. One of its earlier records appears in the Huainanzi (《淮南子》), compiled by Liu An (刘安) and others during the Western Han dynasty (西汉).",
+        videoId: "_f4RiobBY0Q",
+        retellId: "shennong_chang_baicao",
         questions: [
             {
-                question: "What did the main character do first?",
-                options: ["Option A", "Option B", "Option C", "Option D"],
+                question: "Which plant is poisonous?",
+                options: ["夹竹桃 (jiāzhútáo) Oleander", "灵芝 (língzhī) Linzhi mushroom", "茶 tea leaf"],
                 correctIndex: 0,
             },
             {
-                question: "Where did the story take place?",
-                options: ["Option A", "Option B", "Option C", "Option D"],
-                correctIndex: 1,
+                question: "2 Why did 神农 feel better later?",
+                options: ["He ate the 夹竹桃(jiāzhútáo) Oleander", "He lied down for a while ", "He ate the 灵芝 (língzhī) Linzhi mushroom"],
+                correctIndex: 2,
             },
+        ],
+    },
+    {
+        id: 2,
+        title: "《孟母三迁》",
+        description: "“Mencius’s Mother Moves Three Times” is a famous ancient Chinese story about education. It was recorded relatively early in Biographies of Exemplary Women (Lienü Zhuan, 《列女传》), compiled by Liu Xiang (刘向) during the Western Han dynasty (西汉).",
+        videoId: "_f4RiobBY0Q",
+        questions: [
             {
-                question: "Why did the character leave?",
-                options: ["Option A", "Option B", "Option C", "Option D"],
+                question: "孟子的妈妈/孟母为什么要离开墓地？ Why did Mencius’ mother move away from the graveyard?",
+                options: ["they cannot afford it", "Mencius’s mother cannot find a job", "Mencius’s imitation of making sacrificial offerings caused troubles"],
                 correctIndex: 2,
             },
             {
-                question: "Who helped the main character?",
+                question: "孟母为什么要离开城市中心? Why did Mencius’ mother move away from the city center? ",
+                options: ["they cannot afford it", "Mencius’s mother cannot find a job", "Mencius’s imitation of buying and selling goods affected his study"],
+                correctIndex: 2,
+            },
+            {
+                question: "搬到学校旁边对孟子有什么影响？ What influence was “moving to a place near school” on Mencius? ",
+                options: ["he found a job ", "he started to read and study", "he became good at doing business"],
+                correctIndex: 2,
+            },
+        ],
+    },
+    {
+        id: 3,
+        title: "《张骞出使西域》",
+        description: "“Zhang Qian’s Mission to the Western Regions” is a famous historical story from ancient China. It is recorded mainly in the Records of the Grand Historian (Shiji, 《史记》), written by Sima Qian (司马迁) during the Western Han dynasty (西汉).",
+        videoId: "_f4RiobBY0Q",
+        retellId: "shennong_chang_baicao",
+        questions: [
+            {
+                question: "张骞为什么要去大月氏？Why did Zhang Qian go to Great Yuezhi?",
+                options: ["Han government wanted to have trade with Great Yuezhi", "Han government wanted to attack Great Yuezhi", "Han government wanted to attack Xiongnu with Great Yuezhi"],
+                correctIndex: 2,
+            },
+            {
+                question: "为什么甘父是使团的向导？ Why was Ganfu the guide of the diplomatic corps?",
+                options: ["he used to be the slave of Han and spoke Chinese well", "he used to be the slave of Xiongnu and knew the terrain well", "he used to be the slave of Great Yuezhi and knew the terrain well"],
+                correctIndex: 1,
+            },
+            {
+                question: "张骞为什么放了十年羊? Why had Zhang Qian herded sheep for ten years?",
+                options: ["he was taken to prisoner by Xiongnu", "he found this job in Xiongnu", "he was taken prisoner by Dayuan"],
+                correctIndex: 2,
+            },
+            {
+                question: "Question 4?",
                 options: ["Option A", "Option B", "Option C", "Option D"],
                 correctIndex: 0,
             },
             {
-                question: "What was the lesson of the story?",
+                question: "Question 5?",
                 options: ["Option A", "Option B", "Option C", "Option D"],
                 correctIndex: 3,
             },
         ],
     },
     {
-        id: 2,
-        title: "《神农尝草》",
-        description: "《神农尝百草》是中国古代神话，没有明确的作者，较早记载在西汉刘安等人编写的《淮南子》中，讲的是神农尝各种植物，帮助人们找到药物。",
+        id: 4,
+        title: "《嫦娥奔月》",
+        description: "“Chang’e Flies to the Moon” is an ancient Chinese myth with no known author. One of its earlier records appears in the Huainanzi (《淮南子》), compiled by Liu An (刘安) and others during the Western Han dynasty (西汉)",
         videoId: "_f4RiobBY0Q",
+        retellId: "shennong_chang_baicao",
         questions: [
             {
                 question: "Question 1?",
@@ -90,6 +136,7 @@ const stories: Story[] = [
 type View = "grid" | "video" | "quiz" | "results";
 
 export default function TraditionalStories() {
+    const router = useRouter();
     const [view, setView] = useState<View>("grid");
     const [selectedStory, setSelectedStory] = useState<Story | null>(null);
     const [answers, setAnswers] = useState<(number | null)[]>([]);
@@ -425,9 +472,25 @@ export default function TraditionalStories() {
                         })}
                     </div>
 
-                    {/* student name + download */}
-                    <div className="rounded-xl border border-gray-200 p-6">
-                        <Button size="lg" className="w-full" onClick={handleDownloadResults}>
+                    {/* next steps */}
+                    <div className="flex flex-col gap-3 rounded-xl border border-gray-200 p-6">
+                        {selectedStory.retellId && (
+                            <Button
+                                size="lg"
+                                className="w-full"
+                                onClick={() =>
+                                    router.push(`/write-your-own?retell=${selectedStory.retellId}`)
+                                }
+                            >
+                                Tell the Story in Your Own Words →
+                            </Button>
+                        )}
+                        <Button
+                            size="lg"
+                            variant={selectedStory.retellId ? "outline" : "default"}
+                            className="w-full"
+                            onClick={handleDownloadResults}
+                        >
                             Download Results as PDF
                         </Button>
                     </div>

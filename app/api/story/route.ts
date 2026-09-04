@@ -1,6 +1,7 @@
 import { getSession } from "@/lib/auth";
 import connectDB from "@/lib/db";
 import Story from "@/lib/story";
+import { getRetelling } from "@/lib/retellings";
 import { NextResponse } from "next/server";
 
 // GET - fetch the user's current story
@@ -26,11 +27,22 @@ export async function GET() {
 }
 
 // POST - create a new story
-export async function POST() {
+export async function POST(request: Request) {
     try {
         const session = await getSession();
         if (!session?.user) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        }
+
+        // optional: { storyId } to start a retelling instead of a free-write
+        let storyId = "";
+        try {
+            const body = await request.json();
+            if (body?.storyId && getRetelling(body.storyId)) {
+                storyId = body.storyId;
+            }
+        } catch {
+            // no body — free-write
         }
 
         await connectDB();
@@ -42,7 +54,7 @@ export async function POST() {
 
         if (existing) {
             return NextResponse.json(
-                { error: "You already have a story in progress" }, 
+                { error: "You already have a story in progress" },
                 { status: 400 }
             );
         }
@@ -50,6 +62,7 @@ export async function POST() {
         const story = await Story.create({
             userId: session.user.id,
             status: "in_progress",
+            storyId,
             currentSceneIndex: 0,
             scenes: [
                 {

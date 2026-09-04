@@ -1,0 +1,66 @@
+Loading model from cache /tmp/jieba.cache
+Indexed 1239 chunks -> chunks/tfidf_index.pkl
+
+==========================================================================================
+DEMO 1: a NEW student sentence with a directional-complement error
+        (should surface the directional_complement rule_card + similar
+        correction_item exemplars)
+==========================================================================================
+query: '他走去学校，没有停下来。'
+
+-- rule_card / correction_item hits --
+  [0.447] (correction_item) correction_item:mengmu_samples#36::c4
+      孟子跟他的妈妈搬家，去一个最好的学校：去了，了completed
+  [0.438] (correction_item) correction_item:student_examples_corrections#3::c11
+      帮他后，他们走去：帮了他以后，了completed; 他们走了/走过去了，usually we do not say “走去”.
+  [0.369] (correction_item) correction_item:mengmu_samples#21::c11
+      他成长在学校的旁边：add原来，他在学校旁边长大
+  [0.326] (correction_item) correction_item:mengmu_samples#11::c13
+      他住在学校的旁边影响了他：delete the first他
+  [0.324] (correction_item) correction_item:student_examples_corrections#1::c14
+      孩子一直走去张先生的树，吃梨子：走到张先生的树下，走到place来/去，cannot say “走去/来Place”；吃着梨子，着 durative
+
+==========================================================================================
+DEMO 2: meta-query for AI-feedback calibration -- 'AI says no correction
+        needed but the phrasing is misleading' (should surface
+        ai_error_card:misleading_no_error_framing / false_positive_*)
+==========================================================================================
+query: 'AI feedback says no correction needed but explanation is misleading, over-correction of something already correct'
+
+  [0.447] (ai_error_card) ai_error_card:misleading_no_error_framing
+      AI-feedback calibration pattern: misleading_no_error_framing | AI says 'no correction needed' but still narrates a 'rule violated', which is self-contradictory and misleading (issue 
+  [0.247] (ai_error_card) ai_error_card:correct_fix_wrong_or_missing_explanation
+      AI-feedback calibration pattern: correct_fix_wrong_or_missing_explanation | AI's corrected text happens to be right, but the grammatical explanation is wrong or absent (issue #2b). | E
+  [0.231] (ai_error_card) ai_error_card:false_positive_unneeded_correction
+      AI-feedback calibration pattern: false_positive_unneeded_correction | AI flagged/changed something that was already correct and needed no revision (issue #1/#3, over-correction). | Exa
+  [0.210] (ai_error_card) ai_error_card:missed_error
+      AI-feedback calibration pattern: missed_error | AI failed to catch an error the teacher flagged (issue #1: AI often misses needed corrections). | Examples (AI said / teacher's verdict)
+  [0.204] (ai_error_card) ai_error_card:validated_correct
+      AI-feedback calibration pattern: validated_correct | Teacher confirms this AI feedback item is fully correct (both fix and explanation) -- a positive calibration example. | Examples (A
+
+==========================================================================================
+DEMO 3: story-scoped content-coverage lookup for 孟母三迁
+        (retrieves the story_prompt anchor card with the auto-derived
+        canonical scene checklist)
+==========================================================================================
+query: '孟母三迁 故事 缺少情节 环节'
+
+  [0.064] (story_prompt) story_prompt:mengmu_san_qian
+      Story prompt: mengmu_san_qian | Model exemplar title: 孟母三迁 | Reviewed student samples: 51 | Canonical required plot beats (derived from teacher 'missing scene' annotations): |   - 孟母moved 
+
+==========================================================================================
+DEMO 4: small-to-big expansion -- an atomic correction_item hit expanded
+        back up to its parent sample (full student story) for context
+==========================================================================================
+query: '把梨放进筐里'
+
+  [0.342] (correction_item) correction_item:student_examples_corrections#3::c2
+      就筐里放着差不多十个梨：delete “就”, add “看到”
+      -> parent [sample] sample:student_examples_corrections#3: 现在早得很，天亮起来。一个戴围巾的男人站着在树顶的梯子上拿一些梨。他爬下梯子后，就筐里放着差不多十个梨。他用他的围巾擦，把梨干净。他爬上梯子的时候，就一个男人遛一只驴走过去。这个戴围巾的男人拿多梨。他拿梨的时候，一个戴帽子的男孩子骑自行车过
+  [0.280] (correction_item) correction_item:student_examples_corrections#3::c8
+      他把梨从筐里倒出去：梨从筐里撒出去；“把“ is used for initiated actions (“disposal”), here it is not he who threw those pears, but the pears fell themselves. 倒 means “pour” if it is an initiated actio
+      -> parent [sample] sample:student_examples_corrections#3: 现在早得很，天亮起来。一个戴围巾的男人站着在树顶的梯子上拿一些梨。他爬下梯子后，就筐里放着差不多十个梨。他用他的围巾擦，把梨干净。他爬上梯子的时候，就一个男人遛一只驴走过去。这个戴围巾的男人拿多梨。他拿梨的时候，一个戴帽子的男孩子骑自行车过
+  [0.261] (correction_item) correction_item:student_examples_corrections#2::c7
+      被筐里的梨子坐在地上了：筐里的梨子撒在地上了，被 means passive voice “be done”, 坐”sit” is used for animate Obj.
+      -> parent [sample] sample:student_examples_corrections#2: 一个农人爬着一个树，他把树上的梨子摘下来，从梯子上下来以后，他用围巾擦梨子了。一个男生和一只驴从农人经过了。男生要回家，而驴要吃农人摘的梨子。然后，戴着一顶帽子的男孩骑自行车来看农人的梨子。农人登梯子上的时候，男孩一看哪一筐有更多梨子就往自
+
