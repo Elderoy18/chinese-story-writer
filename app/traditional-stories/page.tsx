@@ -25,7 +25,7 @@ const stories: Story[] = [
         id: 1,
         title: "《神农尝草》",
         description: "“Shennong Tastes the Hundred Herbs” is an ancient Chinese myth with no known author. One of its earlier records appears in the Huainanzi (《淮南子》), compiled by Liu An (刘安) and others during the Western Han dynasty (西汉).",
-        videoId: "_f4RiobBY0Q",
+        videoId: "LMGF2iZtvm0",
         retellId: "shennong_chang_baicao",
         questions: [
             {
