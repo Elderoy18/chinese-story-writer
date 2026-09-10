@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Loader2, ArrowLeft, Send } from "lucide-react";
+import { Loader2, ArrowLeft, Send, Download } from "lucide-react";
 import { CHARACTERS, type CharacterProfile } from "@/lib/characters";
 
 interface ChatMessage {
@@ -103,6 +103,66 @@ export default function CharacterInterviews() {
         }
     }
 
+    // Downloads the conversation only -- character + student turns, no student ID.
+    // Same print-window approach as the story / feedback PDF exports.
+    function handleDownloadConversation() {
+        if (!character) return;
+        const transcript = messages.filter((m) => m.content.trim());
+        if (transcript.length === 0) return;
+
+        const esc = (s: string) =>
+            s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        const title = `${character.name}（${character.englishName}）— Interview`;
+
+        const printWindow = window.open("", "_blank");
+        if (!printWindow) return;
+
+        printWindow.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>${esc(title)}</title>
+                <style>
+                    body {
+                        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+                        max-width: 600px;
+                        margin: 60px auto;
+                        padding: 0 40px;
+                        color: #000;
+                        line-height: 1.7;
+                    }
+                    h1 { font-size: 22px; margin-bottom: 4px; }
+                    h2 { font-size: 15px; font-weight: normal; color: #555; margin: 0 0 28px; }
+                    .turn { margin-bottom: 18px; }
+                    .speaker { font-weight: bold; margin-bottom: 4px; }
+                    .text { white-space: pre-wrap; }
+                    @media print { body { margin: 40px auto; } }
+                </style>
+            </head>
+            <body>
+                <h1>${esc(character.name)}（${esc(character.englishName)}）— Interview</h1>
+                <h2>${esc(character.storyTitle)}</h2>
+                ${transcript
+                    .map(
+                        (m) => `
+                    <div class="turn">
+                        <div class="speaker">${m.role === "user" ? "学生" : esc(character.name)}</div>
+                        <div class="text">${esc(m.content.trim())}</div>
+                    </div>`
+                    )
+                    .join("")}
+            </body>
+            </html>
+        `);
+        printWindow.document.close();
+        printWindow.focus();
+        setTimeout(() => {
+            printWindow.print();
+            printWindow.close();
+        }, 500);
+    }
+
     if (view === "grid") {
         return (
             <div className="container mx-auto px-4 py-16">
@@ -157,6 +217,16 @@ export default function CharacterInterviews() {
                     </h1>
                     <p className="text-xs text-muted-foreground">{character?.storyTitle}</p>
                 </div>
+                <Button
+                    variant="outline"
+                    size="sm"
+                    className="ml-auto"
+                    onClick={handleDownloadConversation}
+                    disabled={isLoadingHistory || messages.filter((m) => m.content.trim()).length === 0}
+                >
+                    <Download className="h-4 w-4" />
+                    Download
+                </Button>
             </div>
 
             <div className="h-[65vh] overflow-y-auto rounded-lg border border-gray-200 bg-gray-50 p-4 mb-4 flex flex-col gap-3">
