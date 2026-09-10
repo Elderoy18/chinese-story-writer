@@ -468,18 +468,32 @@ export default function StoryWriter({ initialStory, retelling }: Props) {
         return (
             <div className="container mx-auto max-w-2xl px-4 py-12">
                 {retelling && (
-                    <div className="mb-6 flex items-center justify-between gap-4 rounded-lg border border-primary/20 bg-primary/5 p-4">
-                        <p className="text-sm text-black">
-                            You&apos;re retelling <span className="font-semibold">{retelling.title}</span>.
-                        </p>
-                        <a
-                            href={`https://www.youtube.com/watch?v=${retelling.videoId}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="whitespace-nowrap text-sm font-medium text-primary hover:underline"
-                        >
-                            ▶ Rewatch the video
-                        </a>
+                    <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 p-4">
+                        <div className="flex items-center justify-between gap-4">
+                            <p className="text-sm text-black">
+                                You&apos;re retelling <span className="font-semibold">{retelling.title}</span>.
+                            </p>
+                            <a
+                                href={`https://www.youtube.com/watch?v=${retelling.videoId}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="whitespace-nowrap text-sm font-medium text-primary hover:underline"
+                            >
+                                ▶ Rewatch the video
+                            </a>
+                        </div>
+                        {retelling.words.length > 0 && (
+                            <div className="mt-3 border-t border-primary/20 pt-3">
+                                <p className="text-sm font-medium text-black mb-1.5">Words for your reference:</p>
+                                <ul className="text-sm text-black space-y-0.5">
+                                    {retelling.words.map((w) => (
+                                        <li key={w.en}>
+                                            <span className="text-muted-foreground">{w.en}:</span> {w.zh}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
                     </div>
                 )}
                 <div className="mb-8">

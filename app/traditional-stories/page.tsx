@@ -25,7 +25,7 @@ const stories: Story[] = [
         id: 1,
         title: "《神农尝草》",
         description: "“Shennong Tastes the Hundred Herbs” is an ancient Chinese myth with no known author. One of its earlier records appears in the Huainanzi (《淮南子》), compiled by Liu An (刘安) and others during the Western Han dynasty (西汉).",
-        videoId: "LMGF2iZtvm0",
+        videoId: "0R55VdnZ-Ec",
         retellId: "shennong_chang_baicao",
         questions: [
             {
@@ -34,9 +34,24 @@ const stories: Story[] = [
                 correctIndex: 0,
             },
             {
-                question: "2 Why did 神农 feel better later?",
+                question: "Why did 神农 feel better later?",
                 options: ["He ate the 夹竹桃(jiāzhútáo) Oleander", "He lied down for a while ", "He ate the 灵芝 (língzhī) Linzhi mushroom"],
                 correctIndex: 2,
+            },
+            {
+                question: "What time period did 神农 live in?",
+                options: ["近代 Modern Times", "改革开放的时候 During China's Opening and Reform", "古代 Ancient Times"],
+                correctIndex: 0,
+            },
+            {
+                question: "Where did 神农 live?",
+                options: ["In a city with many skyscrapers", "In the mountains", "In the desert"],
+                correctIndex: 2,
+            },
+            {
+                question: "Why did 神农 eat plants?",
+                options: ["To help people understand what can and cannot be eaten", "Because he wanted salad", "Because he was starving"],
+                correctIndex: 0,
             },
         ],
     },
