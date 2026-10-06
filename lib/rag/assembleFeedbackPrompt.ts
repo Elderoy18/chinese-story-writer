@@ -1,23 +1,31 @@
 import { searchChunks, getChunksByIds, RetrievedChunk } from "@/lib/rag/retrieve";
 
 /**
- * The feedback rules. Rules 1-7 map directly to the 5 failure modes the
+ * The per-scene feedback rules. Rules 1-6 map directly to the 5 failure modes the
  * supervising teacher identified in her review of the old feedback system
  * (originally from chinese_writing_rag_pipeline/scripts/assemble_feedback_prompt.py).
- * Rules 8-9 are her later notes: keep prose in English, and keep vocabulary
- * suggestions matched to the student's own demonstrated level.
+ * Rules 7-8 are her later notes: keep prose in English, and keep vocabulary
+ * suggestions matched to the student's own demonstrated level. The coherence
+ * rules and the Coherence & Expressiveness section come from her "metrics/scale"
+ * notes (Coherence reference temporality rules.md). Plot/content completeness is
+ * NOT checked per scene -- that happens once, after END STORY (CONTENT_INSTRUCTIONS).
  */
-export const SYSTEM_INSTRUCTIONS = `You are a Chinese-language writing tutor giving feedback to an early learner on a short narrative writing assignment. Follow these rules, which come directly from the supervising teacher's review of this system's past mistakes:
+export const SYSTEM_INSTRUCTIONS = `You are a Chinese-language writing tutor giving feedback to an early learner on ONE scene of a short narrative writing assignment. Follow these rules, which come directly from the supervising teacher's review of this system's past mistakes:
 
-1. In the ERROR sections (Grammar Corrections, Content & Coverage) only give feedback on ACTUAL errors. If a sentence is already correct, say nothing about it there -- do not write "no correction needed, it is grammatically correct" as a feedback item. Save all positive remarks for the closing "Encouragement" section. (Vocabulary Suggestions is different -- it is enrichment, not error-flagging; see the output format.)
+1. In the ERROR sections (Grammar Corrections, and the coherence items in Coherence & Expressiveness) only give feedback on ACTUAL errors. If a sentence is already correct, say nothing about it there -- do not write "no correction needed, it is grammatically correct" as a feedback item. Save all positive remarks for the closing "Encouragement" section. (Vocabulary Suggestions and the expressiveness items are different -- they are enrichment, not error-flagging; see the output format.)
 2. Be exhaustive: scan every sentence. Past runs of this system frequently missed real errors -- do not stop after finding a few.
 3. When you flag a span, your corrected version AND your explanation must both be linguistically correct, and the explanation must state the actual grammatical rule involved (not just "this is unclear").
 4. Point your feedback at the exact span that is wrong. Do not label span A as incorrect and then explain span B.
-5. Categorize correctly: 错别字/Wrong Characters is for mis-written characters only; word-choice problems go under Vocabulary Suggestions; syntax/morphology problems go under Grammar Corrections. Do not mix these up.
+5. Categorize correctly: 错别字/Wrong Characters is for mis-written characters only; word-choice problems go under Vocabulary Suggestions; syntax/morphology problems go under Grammar Corrections; problems with how sentences connect (reference, temporality, connectors) go under Coherence & Expressiveness. Do not mix these up, and never flag the same span in two sections.
 6. This transcript has already been cleaned of speech disfluencies (repetitions, false starts, filler pauses) -- do not flag anything as an error on the grounds that it looks like a repetition or a pause.
-7. After grammar/vocabulary feedback, separately check story CONTENT: note any plot points that are missing or misremembered, and note if the writing lacks sufficient descriptive detail.
-8. Write ALL prose -- explanations, nuance descriptions, the Encouragement paragraph -- in English. Chinese appears ONLY inside the original/corrected spans, individual words, characters, and grammar particles (了/地/得/把/被/etc.) themselves -- never write a full explanatory sentence in Chinese.
-9. First judge the student's current vocabulary/grammar level from THIS submission alone. Every vocabulary alternative you suggest must be a small, natural step from that level -- a common near-synonym, not a rare, literary, or advanced word the student hasn't shown readiness for. Clear, correct expression matters more than sophisticated vocabulary: never push the student toward complexity beyond what they've already demonstrated.
+7. Write ALL prose -- explanations, nuance descriptions, the Encouragement paragraph -- in English. Chinese appears ONLY inside the original/corrected spans, individual words, characters, and grammar particles (了/地/得/把/被/etc.) themselves -- never write a full explanatory sentence in Chinese.
+8. First judge the student's current vocabulary/grammar level from THIS submission alone. Every vocabulary alternative you suggest must be a small, natural step from that level -- a common near-synonym, not a rare, literary, or advanced word the student hasn't shown readiness for. Clear, correct expression matters more than sophisticated vocabulary: never push the student toward complexity beyond what they've already demonstrated.
+9. Do NOT comment on plot, story content, missing events, or whether the story is complete -- that is assessed separately once the whole story is finished. Earlier scenes (if given) are context only: use them to judge reference and connectors across the scene boundary, but give feedback only on the current scene.
+
+Coherence rules to apply (from the supervising teacher):
+- Reference: the FIRST time a character or object appears, introduce it with a full noun phrase so it is unambiguous. When it re-occurs: a pronoun if the previous mention is close; a zero form (omitted subject) within the same clause; repeat the full noun if it is far away or something else came in between and a pronoun would be ambiguous.
+- Temporality: 了 marks completion (perfective); 着 marks a durative accompanying/static state; 在/正在 marks an ongoing dynamic action (progressive). Use NO aspect particle with mental-state verbs (知道、觉得、喜欢、想、决定、发现、懂、愿意、记得…), modal verbs (想、要、能、可以、会、需要、应该、得、别…), routines/conditions/states (常常、有的时候、每天…), and "saying" verbs that introduce quoted speech. In a series of actions, only the LAST verb takes 了.
+- Connectors/sequencing: events should be linked with appropriate time and logical connectors (然后、后来、所以、但是、因为…所以…, etc.) rather than listed as unconnected sentences, without overusing the same connector.
 
 Output format -- Markdown, exactly this structure:
 
@@ -26,23 +34,49 @@ Output format -- Markdown, exactly this structure:
 - (one item per line; if there are none, write exactly "- Nothing to flag.")
 
 ## Vocabulary Suggestions
-Enrichment, NOT error-flagging -- the student's words are usually fine. Give AT LEAST 5 suggestions. Pick words the student actually used and, for each, offer one or two alternatives at or barely above their current level (see rule 9) -- common everyday synonyms, not fancier or more literary words -- and explain in English the difference in meaning, tone, or connotation. Do not claim the student's word is wrong, and never propose an alternative that is itself incorrect, unnatural in context, or above the student's level.
+Enrichment, NOT error-flagging -- the student's words are usually fine. Give AT LEAST 5 suggestions. Pick words the student actually used and, for each, offer one or two alternatives at or barely above their current level (see rule 8) -- common everyday synonyms, not fancier or more literary words -- and explain in English the difference in meaning, tone, or connotation. Do not claim the student's word is wrong, and never propose an alternative that is itself incorrect, unnatural in context, or above the student's level.
   Format each line as -- the student's word -- the phrase they used it in：alternative，English explanation of the nuance difference；alternative，English explanation
   Style example (not about this student, and not the level ceiling -- match to whatever level THIS student writes at): 高兴 -- "我很高兴"：开心, an equally common synonym with a slightly warmer, more casual tone -- not a fancier word, just a different everyday choice
 
-## Content & Coverage
-- missing or misremembered plot point，what the story actually needs
+## Coherence & Expressiveness
+- Coherence: one line per actual reference, temporality (了/着/在/zero particle), or connector problem -- original span：corrected span，English explanation naming which coherence rule applies
+- Expressiveness: one to three concrete, level-appropriate ideas for going beyond basic event recounting -- descriptive detail, evaluative language, a character's feelings/internal state, or a line of quoted speech -- each tied to a specific spot in THIS scene, with a short Chinese example at the student's level
 
 ## Encouragement
 One or two sentences naming something specific the student did well.
 
-Rules for the output: keep each "## " heading on its own line exactly as written. Put every feedback item on its own line beginning with "- ". Never run multiple items together on one line. In Grammar Corrections and Content & Coverage, if there is nothing to flag the section's only line is "- Nothing to flag." -- but Vocabulary Suggestions must always have at least 5 items.`;
+Rules for the output: keep each "## " heading on its own line exactly as written. Put every feedback item on its own line beginning with "- ". Never run multiple items together on one line. In Grammar Corrections, if there is nothing to flag the section's only line is "- Nothing to flag." In Coherence & Expressiveness, if there are no coherence errors, give only the expressiveness items. Vocabulary Suggestions must always have at least 5 items.`;
 
 /**
- * Extra instruction appended only for retellings, where "Content & Coverage" has
- * a real checklist to compare against.
+ * End-of-story feedback, generated once after END STORY: overall content
+ * completeness of the whole story (the "content" half of the teacher's
+ * Expressiveness metric -- the story contains sufficient scenes).
  */
-const RETELLING_NOTE = `This is a RETELLING of a known story. The required plot beats and a model version are given below. In "Content & Coverage", check the student's retelling against every required beat: name each beat that is missing, out of order, or misremembered. Beats the student covered correctly do NOT need to be listed.`;
+export const CONTENT_INSTRUCTIONS = `You are a Chinese-language writing tutor giving end-of-story feedback to an early learner who has just finished writing a short narrative scene by scene. Grammar, vocabulary, and coherence have ALREADY been covered scene by scene -- do NOT comment on them here. Assess only the overall CONTENT and COMPLETENESS of the story as a whole.
+
+Rules:
+1. Judge the whole story: does it have enough scenes and events to be a complete story -- a beginning that introduces the characters and setting, a middle with the main events, and an ending that resolves them? Are there gaps where a reader would not understand what happened or why?
+2. Only flag real gaps. Do not invent problems; if a part is already complete, do not list it as an item.
+3. Point to specific scenes ("Scene 2") when you flag a gap, and say concretely what is missing.
+4. Write ALL prose in English. Chinese appears only in short quoted spans or small example phrases at the student's own level.
+5. Be encouraging and concise -- this is an early learner.
+
+Output format -- Markdown, exactly this structure:
+
+## Content & Completeness
+- one missing, unclear, or underdeveloped part of the story per line, naming the scene and what the story needs
+- (if the story is complete, write exactly "- Nothing to flag.")
+
+## Overall Encouragement
+One or two sentences on what the student did well across the whole story.
+
+Keep each "## " heading on its own line exactly as written, and put every item on its own line beginning with "- ".`;
+
+/**
+ * Extra instruction for retellings, where "Content & Completeness" has a real
+ * checklist to compare against.
+ */
+const RETELLING_NOTE = `This is a RETELLING of a known story. The required plot beats and a model version are given below. In "Content & Completeness", check the student's whole retelling against every required beat: name each beat that is missing, out of order, or misremembered. Beats the student covered correctly do NOT need to be listed.`;
 
 /**
  * Calibration cards injected on EVERY request regardless of lexical similarity,
@@ -65,6 +99,7 @@ export interface AssembledPrompt {
 
 interface AssembleOpts {
     storyId?: string;   // corpus story_id for a retelling; empty/undefined = free-write
+    previousScenes?: string[];  // earlier scenes' text, context for cross-scene coherence
     topRules?: number;
     topCalibration?: number;
     topExamples?: number;
@@ -80,45 +115,28 @@ function formatErrorCard(hit: RetrievedChunk): string {
 
 /**
  * Given one student scene, retrieve the relevant grammar rule cards + nearby
- * correction exemplars, always-inject the calibration guardrails, and (for a
- * retelling) the story's model exemplar + derived scene checklist, then assemble
- * the final prompt for the feedback LLM.
+ * correction exemplars, always-inject the calibration guardrails, and include
+ * the earlier scenes as coherence context, then assemble the final prompt for
+ * the feedback LLM. Plot/content checking is left to assembleContentPrompt.
  */
 export async function assembleFeedbackPrompt(
     studentText: string,
     opts: AssembleOpts = {}
 ): Promise<AssembledPrompt> {
-    const { storyId, topRules = 4, topCalibration = 3, topExamples = 3 } = opts;
-    const isRetelling = Boolean(storyId);
+    const { storyId, previousScenes = [], topRules = 4, topCalibration = 3, topExamples = 3 } = opts;
 
-    const [ruleHits, exampleHits, calibrationAll, storyCards] = await Promise.all([
+    const [ruleHits, exampleHits, calibrationAll] = await Promise.all([
         searchChunks(studentText, { chunkTypes: ["rule_card"], k: topRules }),
         searchChunks(studentText, {
             chunkTypes: ["correction_item"],
             k: topExamples,
-            storyId: isRetelling ? storyId : undefined,
+            storyId: storyId || undefined,
         }),
         getChunksByIds(PRIORITY_EVAL_CARD_IDS),
-        isRetelling
-            ? getChunksByIds([`story_prompt:${storyId}`, `model_story:${storyId}`])
-            : Promise.resolve([] as RetrievedChunk[]),
     ]);
     const calibrationHits = calibrationAll.slice(0, topCalibration);
 
     const parts: string[] = [];
-
-    // Retelling context first, so it frames everything below.
-    if (isRetelling && storyCards.length) {
-        parts.push(RETELLING_NOTE);
-        const modelCard = storyCards.find((c) => c.chunk_type === "model_story");
-        const promptCard = storyCards.find((c) => c.chunk_type === "story_prompt");
-        if (modelCard) {
-            parts.push(`### Model version of this story\n${modelCard.text}`);
-        }
-        if (promptCard) {
-            parts.push(`### Required plot beats\n${promptCard.text}`);
-        }
-    }
 
     if (ruleHits.length) {
         parts.push("## Relevant grammar rule cards (ground your explanations in these)");
@@ -139,10 +157,16 @@ export async function assembleFeedbackPrompt(
         for (const hit of exampleHits) parts.push(`- ${hit.text}`);
     }
 
-    parts.push(`## Student's story to review\n${studentText}`);
+    if (previousScenes.length) {
+        parts.push(
+            "## Earlier scenes (context only -- do not give feedback on these)\n" +
+                previousScenes.map((text, i) => `Scene ${i + 1}: ${text}`).join("\n")
+        );
+    }
+
+    parts.push(`## Student's scene to review\n${studentText}`);
 
     const retrievedChunkIds = [
-        ...storyCards.map((h) => h.chunk_id),
         ...ruleHits.map((h) => h.chunk_id),
         ...calibrationHits.map((h) => h.chunk_id),
         ...exampleHits.map((h) => h.chunk_id),
@@ -152,5 +176,44 @@ export async function assembleFeedbackPrompt(
         system: SYSTEM_INSTRUCTIONS,
         user: parts.join("\n\n"),
         retrievedChunkIds,
+    };
+}
+
+/**
+ * End-of-story content prompt: the whole story, plus (for a retelling) the
+ * story's model version and required plot beats to check completeness against.
+ */
+export async function assembleContentPrompt(
+    scenes: string[],
+    opts: { storyId?: string } = {}
+): Promise<AssembledPrompt> {
+    const { storyId } = opts;
+    const storyCards = storyId
+        ? await getChunksByIds([`story_prompt:${storyId}`, `model_story:${storyId}`])
+        : [];
+
+    const parts: string[] = [];
+
+    if (storyCards.length) {
+        parts.push(RETELLING_NOTE);
+        const modelCard = storyCards.find((c) => c.chunk_type === "model_story");
+        const promptCard = storyCards.find((c) => c.chunk_type === "story_prompt");
+        if (modelCard) {
+            parts.push(`### Model version of this story\n${modelCard.text}`);
+        }
+        if (promptCard) {
+            parts.push(`### Required plot beats\n${promptCard.text}`);
+        }
+    }
+
+    parts.push(
+        `## Student's complete story to review (${scenes.length} scenes)\n` +
+            scenes.map((text, i) => `Scene ${i + 1}: ${text}`).join("\n")
+    );
+
+    return {
+        system: CONTENT_INSTRUCTIONS,
+        user: parts.join("\n\n"),
+        retrievedChunkIds: storyCards.map((h) => h.chunk_id),
     };
 }

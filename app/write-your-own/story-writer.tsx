@@ -62,6 +62,21 @@ function feedbackToHtml(md: string): string {
     return html;
 }
 
+// Read a streamed text response, calling onText with the accumulated text as
+// each chunk arrives. Returns the full text.
+async function readTextStream(res: Response, onText: (text: string) => void): Promise<string> {
+    const reader = res.body!.getReader();
+    const decoder = new TextDecoder();
+    let acc = "";
+    while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        acc += decoder.decode(value, { stream: true });
+        onText(acc);
+    }
+    return acc;
+}
+
 interface Scaffolding {
     characters: string;
     objects: string;
@@ -90,6 +105,7 @@ interface Story {
     currentSceneIndex: number;
     scenes: Scene[];
     endStoryEditUsed: boolean;
+    contentFeedback: string;
 }
 
 // Grid of scene illustrations, 3 per row, used on the review and complete
@@ -140,6 +156,8 @@ export default function StoryWriter({ initialStory, retelling }: Props) {
     const [storyTitle, setStoryTitle] = useState("");
     const [feedback, setFeedback] = useState("");
     const [isLoadingFeedback, setIsLoadingFeedback] = useState(false);
+    const [contentFeedback, setContentFeedback] = useState("");
+    const [isLoadingContentFeedback, setIsLoadingContentFeedback] = useState(false);
     const [isGeneratingImage, setIsGeneratingImage] = useState(false);
     const [editedSentences, setEditedSentences] = useState<string[]>([]);
     const [isConfirmingEdits, setIsConfirmingEdits] = useState(false);
@@ -240,20 +258,10 @@ export default function StoryWriter({ initialStory, retelling }: Props) {
             return;
         }
 
-        const reader = res.body.getReader();
-        const decoder = new TextDecoder();
-        let acc = "";
-        let gotFirstChunk = false;
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            if (!gotFirstChunk) {
-                gotFirstChunk = true;
-                setIsLoadingFeedback(false);
-            }
-            acc += decoder.decode(value, { stream: true });
-            setFeedback(acc);
-        }
+        const acc = await readTextStream(res, (text) => {
+            setIsLoadingFeedback(false);
+            setFeedback(text);
+        });
         setIsLoadingFeedback(false);
         if (!acc) setFeedback("No feedback available.");
     }
@@ -298,6 +306,30 @@ export default function StoryWriter({ initialStory, retelling }: Props) {
         const completed = serialized.scenes.filter((s: Scene) => s.status === "complete");
         setEditedSentences(completed.map((s: Scene) => s.sentence));
         setView("review");
+
+        // Overall content-completeness feedback, streamed in on the review screen.
+        setContentFeedback("");
+        setIsLoadingContentFeedback(true);
+        try {
+            const fbRes = await fetch("/api/story/content-feedback", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id: serialized._id }),
+            });
+            if (!fbRes.ok || !fbRes.body) {
+                setContentFeedback("Sorry — overall feedback could not be generated.");
+                return;
+            }
+            const acc = await readTextStream(fbRes, (text) => {
+                setIsLoadingContentFeedback(false);
+                setContentFeedback(text);
+            });
+            if (!acc) setContentFeedback("No feedback available.");
+        } catch {
+            setContentFeedback("Sorry — overall feedback could not be generated.");
+        } finally {
+            setIsLoadingContentFeedback(false);
+        }
     }
 
     async function handleConfirmEdits() {
@@ -415,6 +447,10 @@ export default function StoryWriter({ initialStory, retelling }: Props) {
                     <div class="sentence">${scene.sentence}</div>
                     <div class="feedback">${scene.feedback ? feedbackToHtml(scene.feedback) : "No feedback recorded."}</div>
                 `).join("")}
+                ${contentFeedback ? `
+                    <h2>Overall Story Feedback</h2>
+                    <div class="feedback">${feedbackToHtml(contentFeedback)}</div>
+                ` : ""}
             </body>
             </html>
         `);
@@ -704,6 +740,25 @@ export default function StoryWriter({ initialStory, retelling }: Props) {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+
+                {/* end-of-story content & completeness feedback */}
+                <div className="mb-8">
+                    <h2 className="text-lg font-semibold text-black mb-4">Overall Story Feedback</h2>
+                    <div className="rounded-lg border border-primary/20 p-5 bg-primary/5">
+                        {isLoadingContentFeedback ? (
+                            <div className="flex items-center gap-2 text-muted-foreground">
+                                <Loader2 className="h-4 w-4 animate-spin" />
+                                Reviewing your whole story...
+                            </div>
+                        ) : (
+                            <div className="text-black prose prose-sm max-w-none">
+                                <ReactMarkdown components={feedbackMarkdownComponents}>
+                                    {contentFeedback || "No feedback recorded."}
+                                </ReactMarkdown>
+                            </div>
+                        )}
                     </div>
                 </div>
 

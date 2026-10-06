@@ -42,6 +42,8 @@ export interface IStory extends Document {
     }[];
     totalWordCount: number;           // lowercase number
     storyCompletedAt: Date;
+    contentFeedback: string;         // end-of-story content & completeness feedback
+    contentFeedbackChunkIds: string[];
 }
 
 // Mongoose schemas
@@ -100,6 +102,10 @@ const StorySchema = new Schema<IStory>(
         // story metrics
         totalWordCount: { type: Number, default: 0 },   // calculated on complete
         storyCompletedAt: { type: Date },
+
+        // end-of-story feedback on overall content completeness (generated after END STORY)
+        contentFeedback: { type: String, default: "" },
+        contentFeedbackChunkIds: { type: [String], default: [] },
     },
     { timestamps: true }
 );

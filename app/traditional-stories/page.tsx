@@ -59,7 +59,7 @@ const stories: Story[] = [
         id: 2,
         title: "《孟母三迁》",
         description: "“Mencius’s Mother Moves Three Times” is a famous ancient Chinese story about education. It was recorded relatively early in Biographies of Exemplary Women (Lienü Zhuan, 《列女传》), compiled by Liu Xiang (刘向) during the Western Han dynasty (西汉).",
-        videoId: "_f4RiobBY0Q",
+        videoId: "0R55VdnZ-Ec",
         questions: [
             {
                 question: "孟子的妈妈/孟母为什么要离开墓地？ Why did Mencius’ mother move away from the graveyard?",
@@ -82,7 +82,7 @@ const stories: Story[] = [
         id: 3,
         title: "《张骞出使西域》",
         description: "“Zhang Qian’s Mission to the Western Regions” is a famous historical story from ancient China. It is recorded mainly in the Records of the Grand Historian (Shiji, 《史记》), written by Sima Qian (司马迁) during the Western Han dynasty (西汉).",
-        videoId: "_f4RiobBY0Q",
+        videoId: "0R55VdnZ-Ec",
         retellId: "shennong_chang_baicao",
         questions: [
             {
@@ -116,7 +116,7 @@ const stories: Story[] = [
         id: 4,
         title: "《嫦娥奔月》",
         description: "“Chang’e Flies to the Moon” is an ancient Chinese myth with no known author. One of its earlier records appears in the Huainanzi (《淮南子》), compiled by Liu An (刘安) and others during the Western Han dynasty (西汉)",
-        videoId: "_f4RiobBY0Q",
+        videoId: "0R55VdnZ-Ec",
         retellId: "shennong_chang_baicao",
         questions: [
             {
