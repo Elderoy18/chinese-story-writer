@@ -41,12 +41,12 @@ const stories: Story[] = [
             {
                 question: "What time period did 神农 live in?",
                 options: ["近代 Modern Times", "改革开放的时候 During China's Opening and Reform", "古代 Ancient Times"],
-                correctIndex: 0,
+                correctIndex: 2,
             },
             {
                 question: "Where did 神农 live?",
                 options: ["In a city with many skyscrapers", "In the mountains", "In the desert"],
-                correctIndex: 2,
+                correctIndex: 1,
             },
             {
                 question: "Why did 神农 eat plants?",
