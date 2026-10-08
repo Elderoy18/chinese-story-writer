@@ -8,6 +8,8 @@
 // Run from anywhere:
 //   node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs
 //   node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs --dry-run
+//   node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs --types vocab_error
+//     (only embed + upsert chunks of the given comma-separated chunk types)
 //
 // Uses the `openai` + `mongodb` packages already in the app's node_modules and
 // reads MONGODB_URI / OPENAI_API_KEY from the repo-root .env.local.
@@ -38,6 +40,8 @@ const REPO_ROOT = path.resolve(HERE, "..", "..");
 const CHUNKS_PATH = path.join(PIPELINE_ROOT, "chunks", "chunks.jsonl");
 
 const dryRun = process.argv.includes("--dry-run");
+const typesIdx = process.argv.indexOf("--types");
+const onlyTypes = typesIdx > -1 ? new Set(process.argv[typesIdx + 1].split(",")) : null;
 
 /** Minimal .env.local loader (no dotenv dependency). */
 function loadEnvLocal() {
@@ -99,8 +103,16 @@ async function main() {
         .readFileSync(CHUNKS_PATH, "utf8")
         .split(/\r?\n/)
         .filter((l) => l.trim())
-        .map((l) => JSON.parse(l));
-    console.log(`Loaded ${chunks.length} chunks from ${CHUNKS_PATH}`);
+        .map((l) => JSON.parse(l))
+        .filter((c) => !onlyTypes || onlyTypes.has(c.chunk_type));
+    console.log(
+        `Loaded ${chunks.length} chunks from ${CHUNKS_PATH}` +
+            (onlyTypes ? ` (types: ${[...onlyTypes].join(", ")})` : "")
+    );
+    if (chunks.length === 0) {
+        console.error("No chunks to embed");
+        process.exit(1);
+    }
 
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 

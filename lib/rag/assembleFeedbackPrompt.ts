@@ -1,4 +1,4 @@
-import { searchChunks, getChunksByIds, RetrievedChunk } from "@/lib/rag/retrieve";
+import { searchChunks, getChunksByIds, getChunksByType, RetrievedChunk } from "@/lib/rag/retrieve";
 
 /**
  * The per-scene feedback rules. Rules 1-6 map directly to the 5 failure modes the
@@ -16,45 +16,13 @@ export const SYSTEM_INSTRUCTIONS = `You are a Chinese-language writing tutor giv
 2. Be exhaustive: scan every sentence. Past runs of this system frequently missed real errors -- do not stop after finding a few.
 3. When you flag a span, your corrected version AND your explanation must both be linguistically correct, and the explanation must state the actual grammatical rule involved (not just "this is unclear").
 4. Point your feedback at the exact span that is wrong. Do not label span A as incorrect and then explain span B.
-5. Categorize correctly: 错别字/Wrong Characters is for mis-written characters only; a WRONG word (用错的词 -- a word that makes the sentence incorrect or unnatural, see the vocabulary error list below) is an ERROR and goes under Grammar Corrections, as do syntax/morphology problems; Vocabulary Suggestions is ONLY for words that are already correct and could be enriched; problems with how sentences connect (reference, temporality/aspect markers, conjunctions) go under Coherence & Expressiveness. Do not mix these up, and never flag the same span in two sections.
+5. Categorize correctly: 错别字/Wrong Characters is for mis-written characters only; a WRONG word (用错的词 -- a word that makes the sentence incorrect or unnatural, see the teacher's vocabulary error entries) is an ERROR and goes under Grammar Corrections, as do syntax/morphology problems; Vocabulary Suggestions is ONLY for words that are already correct and could be enriched; problems with how sentences connect (reference, temporality/aspect markers, conjunctions) go under Coherence & Expressiveness. Do not mix these up, and never flag the same span in two sections.
 6. This transcript has already been cleaned of speech disfluencies (repetitions, false starts, filler pauses) -- do not flag anything as an error on the grounds that it looks like a repetition or a pause.
 7. Write ALL prose -- explanations, nuance descriptions, the Encouragement paragraph -- in English. Chinese appears ONLY inside the original/corrected spans, individual words, characters, and grammar particles (了/地/得/把/被/etc.) themselves -- never write a full explanatory sentence in Chinese.
 8. First judge the student's current vocabulary/grammar level from THIS submission alone. Every vocabulary alternative you suggest must be a small, natural step from that level -- a common near-synonym, not a rare, literary, or advanced word the student hasn't shown readiness for. Clear, correct expression matters more than sophisticated vocabulary: never push the student toward complexity beyond what they've already demonstrated.
 9. Do NOT comment on plot, story content, missing events, or whether the story is complete -- that is assessed separately once the whole story is finished. Earlier scenes (if given) are context only: use them to judge reference and connectors across the scene boundary, but give feedback only on the current scene.
 
-Vocabulary error list (用错的词, from the supervising teacher). These are word-choice ERRORS students commonly make -- whenever the student writes one of these (or the same mistake with different words), flag it under Grammar Corrections, NOT Vocabulary Suggestions, and explain in English why the student's word is wrong. They are grouped by the story they were collected from, but apply them in any story. (V. = verb, N. = noun; "*" marks the incorrect form.)
-General / 神农:
-- *古代的时候 → 在古代 / 古代
-- *什么植物可能吃 → 什么植物能吃 (可能 = "possibly"; 能 = "able to / can be")
-- *毒的植物 / *很毒的植物 → 有毒的植物
-- *麻烦的植物 → 危险的 / 有毒的植物
-- *是毒 → 有毒
-- *找了（植物/茶） → 找到了 -- 找 = "look for", 找到 = "find"; if 找 is used to mean "find", it is incorrect and must be 找到
-- *好处的 / *身体好处的 / *对身体好处的 → 对身体有好处的
-- *写/记植物 → 写下/记下植物
-- *一些的 → 一些
-- *些 + N. → 一些 + N.
-- *走了 + place → 走到了 + place
-- *哪儿 V.着 + N. → 那儿 V.着 + N.
-- *我能/要死吗 → 我会死吗
-- *快地 V. → 赶快 V. / 很快地 V. / 马上 V.
-- *拿上 / *拿下 → 拿起
-- *谢谢了那个人 → 谢了那个人
-- *看了 N. → 看到了 -- 看 = "look", 看到 = "see"; if 看 is used to mean "see", it is incorrect and must be 看到
-- *是药，可能吃 → 是药，可以吃
-- *有毒，不会吃 / *不可能吃 → 有毒，不能吃
-- *吃了可以死 / *能死 / *可以会死 → 吃了可能会死
-- *还知道/认识神农 → 还记得神农
-孟母三迁:
-- *跟孟子搬家 → 带着孟子搬家
-- *从城市中心很近 → 离城市中心很近
-- *很合适孩子 → 很适合孩子
-- *以后，…… (starting a sentence to mean "afterwards") → 后来，……
-- *得又搬一次 → 得再搬一次 (再 for a repeat that hasn't happened yet)
-- *再搬了一次 → 又搬了一次 (又 for a repeat that already happened)
-- *老是看书学习 → 一直看书学习
-- *变了/变得哲学家 → 成为了哲学家
-- *哲学人 → 哲学家
+Vocabulary errors (用错的词, from the supervising teacher's list). The user message includes the entries of the teacher's vocabulary error list that are relevant to this scene. These are word-choice ERRORS, not enrichment: whenever the student writes one of them (or the same mistake with different words), flag it under Grammar Corrections, NOT Vocabulary Suggestions, and explain in English why the student's word is wrong. An entry being listed does not mean the error is present -- check the student's actual wording, and flag nothing if the word is used correctly. (V. = verb, N. = noun; "*" marks the incorrect form.)
 
 Coherence rules to apply (from the supervising teacher). Coherence is how the narrator connects sentences and organizes the story. There are THREE types -- check every sentence against all three:
 
@@ -132,20 +100,51 @@ Keep each "## " heading on its own line exactly as written, and put every item o
  * Extra instruction for retellings, where "Content & Completeness" has a real
  * checklist to compare against.
  */
-const RETELLING_NOTE = `This is a RETELLING of a known story. The required plot beats and a model version are given below. In "Content & Completeness", check the student's whole retelling against every required beat: name each beat that is missing, out of order, or misremembered. Beats the student covered correctly do NOT need to be listed.`;
+const RETELLING_NOTE = `This is a RETELLING of a known story. The supervising teacher's list of required scenes (in story order) and a model version are given below. In "Content & Completeness", check the student's whole retelling against every required scene: name each scene that is missing, out of order, or misremembered, and say which scene number it is. Scenes the student covered correctly do NOT need to be listed. A required scene may be spread over several of the student's scenes, or several required scenes may be combined into one -- judge the story as a whole.`;
 
 /**
  * Calibration cards injected on EVERY request regardless of lexical similarity,
- * because they are process guardrails, not content matches. Same set and order
- * as assemble_feedback_prompt.py `priority_eval_tags`.
+ * because they are process guardrails, not content matches. All of them are
+ * sent (no cap). Grouped by the critique theme each one addresses:
+ *   accuracy of flagged items -- false positives (incl. invented rules), wrong
+ *     corrections, right fix with no/wrong explanation, "no error" framing,
+ *     feedback on the wrong span
+ *   missed errors
+ *   vocabulary/category -- miscategorized error type
+ * (disfluency_false_positive is no longer sent: students type in the app, and
+ * rule 6 still covers it.)
  */
 const PRIORITY_EVAL_CARD_IDS = [
     "ai_error_card:false_positive_unneeded_correction",
+    "ai_error_card:disputed_rule_claim",
+    "ai_error_card:incorrect_correction",
+    "ai_error_card:correct_fix_wrong_or_missing_explanation",
     "ai_error_card:misleading_no_error_framing",
     "ai_error_card:misdirected_feedback",
+    "ai_error_card:missed_error",
     "ai_error_card:miscategorized_error_type",
-    "ai_error_card:disfluency_false_positive",
 ];
+
+/**
+ * Vocabulary error entries (teacher's list, chunk_type "vocab_error") are
+ * retrieved two ways and merged: every entry whose trigger regex matches the
+ * scene text (lexical), plus the top-k by embedding similarity (catches the
+ * "same mistake with different words" the triggers miss).
+ */
+const VOCAB_SEMANTIC_K = 3;
+
+/**
+ * Rule cards injected on EVERY request, ahead of the similarity-retrieved ones:
+ * the teacher's own reference and temporality corrections, aggregated. They
+ * back the coherence rules in the system prompt with real examples, which
+ * similarity search alone surfaced only when a scene happened to look like them.
+ */
+const PRIORITY_RULE_CARD_IDS = [
+    "rule_card:character_introduction_first_mention",
+    "rule_card:ambiguous_reference",
+    "rule_card:aspect_le_completed",
+];
+const VOCAB_LEXICAL_MAX = 12;
 
 export interface AssembledPrompt {
     system: string;
@@ -157,7 +156,6 @@ interface AssembleOpts {
     storyId?: string;   // corpus story_id for a retelling; empty/undefined = free-write
     previousScenes?: string[];  // earlier scenes' text, context for cross-scene coherence
     topRules?: number;
-    topCalibration?: number;
     topExamples?: number;
 }
 
@@ -169,33 +167,73 @@ function formatErrorCard(hit: RetrievedChunk): string {
     return `### AI failure mode to avoid: ${hit.eval_tag ?? hit.chunk_id}\n${hit.text}`;
 }
 
+/** Vocab entries whose trigger regexes match the scene, this story's entries first. */
+function matchVocabTriggers(
+    studentText: string,
+    entries: RetrievedChunk[],
+    storyId?: string
+): RetrievedChunk[] {
+    const matched = entries.filter((e) =>
+        (e.triggers ?? []).some((t) => new RegExp(t, "u").test(studentText))
+    );
+    if (storyId) {
+        const inStory = (e: RetrievedChunk) => Number(Boolean(e.story_ids?.includes(storyId)));
+        matched.sort((a, b) => inStory(b) - inStory(a));
+    }
+    return matched.slice(0, VOCAB_LEXICAL_MAX);
+}
+
 /**
- * Given one student scene, retrieve the relevant grammar rule cards + nearby
+ * Given one student scene, always-inject the reference/temporality rule cards,
+ * retrieve the relevant grammar rule cards + nearby
  * correction exemplars, always-inject the calibration guardrails, and include
- * the earlier scenes as coherence context, then assemble the final prompt for
+ * the earlier scenes as coherence context, add the teacher's vocabulary error
+ * entries that match the scene, then assemble the final prompt for
  * the feedback LLM. Plot/content checking is left to assembleContentPrompt.
  */
 export async function assembleFeedbackPrompt(
     studentText: string,
     opts: AssembleOpts = {}
 ): Promise<AssembledPrompt> {
-    const { storyId, previousScenes = [], topRules = 4, topCalibration = 3, topExamples = 3 } = opts;
+    const { storyId, previousScenes = [], topRules = 4, topExamples = 3 } = opts;
 
-    const [ruleHits, exampleHits, calibrationAll] = await Promise.all([
-        searchChunks(studentText, { chunkTypes: ["rule_card"], k: topRules }),
-        searchChunks(studentText, {
-            chunkTypes: ["correction_item"],
-            k: topExamples,
-            storyId: storyId || undefined,
-        }),
-        getChunksByIds(PRIORITY_EVAL_CARD_IDS),
-    ]);
-    const calibrationHits = calibrationAll.slice(0, topCalibration);
+    const [pinnedRules, similarRules, storyExamples, calibrationHits, vocabSemantic, vocabAll] =
+        await Promise.all([
+            getChunksByIds(PRIORITY_RULE_CARD_IDS),
+            searchChunks(studentText, { chunkTypes: ["rule_card"], k: topRules }),
+            searchChunks(studentText, {
+                chunkTypes: ["correction_item"],
+                k: topExamples,
+                storyId: storyId || undefined,
+            }),
+            getChunksByIds(PRIORITY_EVAL_CARD_IDS),
+            searchChunks(studentText, { chunkTypes: ["vocab_error"], k: VOCAB_SEMANTIC_K }),
+            getChunksByType("vocab_error"),
+        ]);
+
+    const ruleHits = [
+        ...pinnedRules,
+        ...similarRules.filter((h) => !PRIORITY_RULE_CARD_IDS.includes(h.chunk_id)),
+    ];
+
+    // Retellings of stories with no graded samples (嫦娥奔月, 张骞出使西域) have no
+    // story-scoped corrections, so fall back to the whole corpus.
+    const exampleHits =
+        storyExamples.length || !storyId
+            ? storyExamples
+            : await searchChunks(studentText, { chunkTypes: ["correction_item"], k: topExamples });
+
+    const vocabHits = matchVocabTriggers(studentText, vocabAll, storyId || undefined);
+    for (const hit of vocabSemantic) {
+        if (!vocabHits.some((h) => h.chunk_id === hit.chunk_id)) vocabHits.push(hit);
+    }
 
     const parts: string[] = [];
 
     if (ruleHits.length) {
-        parts.push("## Relevant grammar rule cards (ground your explanations in these)");
+        parts.push(
+            "## Relevant grammar rule cards (ground your explanations in these; the first are the teacher's reference and 了 corrections, always included)"
+        );
         for (const hit of ruleHits) parts.push(formatRuleCard(hit));
     }
 
@@ -204,6 +242,13 @@ export async function assembleFeedbackPrompt(
             "## AI-feedback calibration guardrails (avoid repeating these documented failure modes)"
         );
         for (const hit of calibrationHits) parts.push(formatErrorCard(hit));
+    }
+
+    if (vocabHits.length) {
+        parts.push(
+            "## Teacher's vocabulary error list -- entries relevant to this scene (if the student made one of these errors, flag it under Grammar Corrections)"
+        );
+        for (const hit of vocabHits) parts.push(`- ${hit.text}`);
     }
 
     if (exampleHits.length) {
@@ -225,6 +270,7 @@ export async function assembleFeedbackPrompt(
     const retrievedChunkIds = [
         ...ruleHits.map((h) => h.chunk_id),
         ...calibrationHits.map((h) => h.chunk_id),
+        ...vocabHits.map((h) => h.chunk_id),
         ...exampleHits.map((h) => h.chunk_id),
     ];
 
@@ -237,7 +283,7 @@ export async function assembleFeedbackPrompt(
 
 /**
  * End-of-story content prompt: the whole story, plus (for a retelling) the
- * story's model version and required plot beats to check completeness against.
+ * story's model version and the teacher's required scenes to check completeness against.
  */
 export async function assembleContentPrompt(
     scenes: string[],
@@ -258,7 +304,7 @@ export async function assembleContentPrompt(
             parts.push(`### Model version of this story\n${modelCard.text}`);
         }
         if (promptCard) {
-            parts.push(`### Required plot beats\n${promptCard.text}`);
+            parts.push(`### Required scenes\n${promptCard.text}`);
         }
     }
 

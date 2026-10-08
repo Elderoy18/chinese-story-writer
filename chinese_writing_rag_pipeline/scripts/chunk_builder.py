@@ -4,8 +4,8 @@
 Build the hierarchical RAG chunk set from extracted/corpus.json.
 
 Chunk types (see docs/design.md for full rationale):
-  story_prompt   -- one per writing-prompt/story (top anchor: model text + canonical
-                     scene checklist + aggregate stats)
+  story_prompt   -- one per writing-prompt/story (top anchor: model text + the
+                     teacher's required-scene list + aggregate stats)
   model_story    -- the near-perfect exemplar text for a story prompt
   sample         -- one full student story instance (parent for everything below)
   correction_item-- one atomic teacher gold correction (original -> corrected, why)
@@ -13,6 +13,7 @@ Chunk types (see docs/design.md for full rationale):
   content_flag   -- one structured content-coverage/coherence/factual flag
   rule_card      -- aggregated exemplars of one grammar/linguistic point across the corpus
   ai_error_card  -- aggregated exemplars of one AI-feedback-failure-mode across the corpus
+  vocab_error    -- one entry of the teacher's word-choice error list (raw/vocab_errors.json)
 
 Every chunk is a flat dict: {chunk_id, chunk_type, text, metadata{...}}
 so a single vector collection can hold everything and be filtered by chunk_type /
@@ -65,6 +66,51 @@ def build_scene_checklists(corpus):
     return checklists
 
 
+NUMBER_WORDS = {w: i for i, w in enumerate(
+    "zero one two three four five six seven eight nine ten eleven twelve thirteen "
+    "fourteen fifteen sixteen seventeen eighteen nineteen twenty".split())}
+
+
+def parse_story_scenes(path, title_to_story_id):
+    """Read the teacher's required-scene list (raw/story_scenes.md):
+
+        **Story 1: <title>**
+        Seven scenes: <scene>; <scene>；<scene> ...
+
+    Returns {story_id: [scene, ...]} in story order. The stated scene count is
+    checked against the split so a stray or missing separator fails loudly."""
+    text = open(path, encoding="utf-8").read()
+    scenes_by_story = {}
+    for m in re.finditer(r"\*\*Story \d+:\s*(.+?)\*\*\s*\n+\s*(\w+) scenes:\s*(.+)", text):
+        title, count_word, body = m.group(1).strip(), m.group(2).lower(), m.group(3)
+        story_id = title_to_story_id[title]
+        scenes = [sc.strip() for sc in re.split(r"[;；]", body) if sc.strip()]
+        if len(scenes) != NUMBER_WORDS[count_word]:
+            raise ValueError(f"{title}: says {count_word} scenes, parsed {len(scenes)}")
+        scenes_by_story[story_id] = scenes
+    return scenes_by_story
+
+
+def build_required_scenes(corpus, story_scenes_path):
+    """Required-scene checklist per story = the teacher's own scene list, in
+    story order. Each scene also carries how often the teacher flagged that exact
+    beat as missing in the graded samples (None if no annotation matches it word
+    for word) -- kept as metadata for analysis, not shown to the feedback model."""
+    title_to_story_id = {m["title"]: m["story_id"] for m in corpus["model_stories"]}
+    authored = parse_story_scenes(story_scenes_path, title_to_story_id)
+    derived = build_scene_checklists(corpus)
+    checklists = {}
+    for story_id, scenes in authored.items():
+        counts = {dedup_key(c["scene_description"]): c["times_flagged_missing"]
+                  for c in derived.get(story_id, [])}
+        checklists[story_id] = [
+            {"scene_number": i, "scene_description": sc,
+             "times_flagged_missing": counts.get(dedup_key(sc))}
+            for i, sc in enumerate(scenes, 1)
+        ]
+    return checklists
+
+
 def make_chunk(chunk_id, chunk_type, text, **meta):
     return {"chunk_id": chunk_id, "chunk_type": chunk_type, "text": text, "metadata": meta}
 
@@ -73,7 +119,7 @@ def build_chunks(corpus):
     chunks = []
 
     model_by_story = {m["story_id"]: m for m in corpus["model_stories"]}
-    scene_checklists = build_scene_checklists(corpus)
+    scene_checklists = build_required_scenes(corpus, "raw/story_scenes.md")
 
     # ---- model_story chunks -------------------------------------------------
     for m in corpus["model_stories"]:
@@ -143,9 +189,9 @@ def build_chunks(corpus):
             lines.append(f"Model exemplar title: {model['title']}")
         lines.append(f"Reviewed student samples: {stats['n_samples']}")
         if checklist:
-            lines.append("Canonical required plot beats (derived from teacher 'missing scene' annotations):")
+            lines.append(f"Required scenes, in story order ({len(checklist)}, from the teacher's scene list):")
             for c in checklist:
-                lines.append(f"  - {c['scene_description']} (flagged missing in {c['times_flagged_missing']} samples)")
+                lines.append(f"  {c['scene_number']}. {c['scene_description']}")
         if stats["grammar_tags"]:
             top = ", ".join(f"{t}×{n}" for t, n in stats["grammar_tags"].most_common(10))
             lines.append(f"Most common grammar issues in this batch: {top}")
@@ -207,6 +253,24 @@ def build_chunks(corpus):
             f"ai_error_card:{tag}", "ai_error_card", text,
             eval_tag=tag, description=desc, n_examples_total=len(examples),
             example_sample_ids=[e["metadata"]["sample_id"] for e in picked],
+        ))
+
+    # ---- vocab_error chunks (teacher's word-choice error list) --------------
+    # Hand-transcribed from vocabulary_list_errors_correct.md, one chunk per
+    # entry. `triggers` are regexes the app matches against the student's text
+    # (lexical retrieval); the chunk text is embedded for semantic retrieval.
+    vocab = json.load(open("raw/vocab_errors.json", encoding="utf-8"))
+    story_titles = {m["story_id"]: m["title"] for m in corpus["model_stories"]}
+    for e in vocab["entries"]:
+        titles = " / ".join(story_titles.get(s, s) for s in e["story_ids"])
+        text = f"Vocabulary error (用错的词, from the teacher's list; collected from {titles}): *{e['wrong']} -> {e['correct']}"
+        if e["note"]:
+            text += f" -- {e['note']}"
+        chunks.append(make_chunk(
+            f"vocab_error:{e['id']}", "vocab_error", text,
+            story_ids=e["story_ids"], wrong=e["wrong"], correct=e["correct"],
+            note=e["note"], triggers=e["triggers"],
+            source="vocabulary_list_errors_correct.md",
         ))
 
     return chunks, scene_checklists

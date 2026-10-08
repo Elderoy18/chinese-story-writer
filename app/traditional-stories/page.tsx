@@ -16,7 +16,7 @@ interface Story {
     title: string;
     description: string;
     videoId: string;
-    retellId?: string;   // corpus story_id — set only if this story supports "retell in your own words"
+    retellId?: string;   // corpus story_id (key in lib/retellings.ts) — set only if this story supports "retell in your own words"
     questions: Question[];
 }
 
@@ -60,6 +60,7 @@ const stories: Story[] = [
         title: "《孟母三迁》",
         description: "“Mencius’s Mother Moves Three Times” is a famous ancient Chinese story about education. It was recorded relatively early in Biographies of Exemplary Women (Lienü Zhuan, 《列女传》), compiled by Liu Xiang (刘向) during the Western Han dynasty (西汉).",
         videoId: "0R55VdnZ-Ec",
+        retellId: "mengmu_san_qian",
         questions: [
             {
                 question: "孟子的妈妈/孟母为什么要离开墓地？ Why did Mencius’ mother move away from the graveyard?",
@@ -74,7 +75,17 @@ const stories: Story[] = [
             {
                 question: "搬到学校旁边对孟子有什么影响？ What influence was “moving to a place near school” on Mencius? ",
                 options: ["he found a job ", "he started to read and study", "he became good at doing business"],
-                correctIndex: 2,
+                correctIndex: 1,
+            },
+            {
+                question: "住在墓地旁边的时候，孟子每天模仿什么？ What did Mencius imitate every day when they lived near the graveyard?",
+                options: ["buying and selling goods", "making sacrificial offerings", "reading and studying"],
+                correctIndex: 1,
+            },
+            {
+                question: "孟子长大以后成为了什么？ What did Mencius become when he grew up?",
+                options: ["a famous philosopher", "a successful businessman", "a teacher at the school near his home"],
+                correctIndex: 0,
             },
         ],
     },
@@ -83,7 +94,7 @@ const stories: Story[] = [
         title: "《张骞出使西域》",
         description: "“Zhang Qian’s Mission to the Western Regions” is a famous historical story from ancient China. It is recorded mainly in the Records of the Grand Historian (Shiji, 《史记》), written by Sima Qian (司马迁) during the Western Han dynasty (西汉).",
         videoId: "0R55VdnZ-Ec",
-        retellId: "shennong_chang_baicao",
+        retellId: "zhang_qian_chu_shi_xi_yu",
         questions: [
             {
                 question: "张骞为什么要去大月氏？Why did Zhang Qian go to Great Yuezhi?",
@@ -98,17 +109,17 @@ const stories: Story[] = [
             {
                 question: "张骞为什么放了十年羊? Why had Zhang Qian herded sheep for ten years?",
                 options: ["he was taken to prisoner by Xiongnu", "he found this job in Xiongnu", "he was taken prisoner by Dayuan"],
-                correctIndex: 2,
-            },
-            {
-                question: "Question 4?",
-                options: ["Option A", "Option B", "Option C", "Option D"],
                 correctIndex: 0,
             },
             {
-                question: "Question 5?",
-                options: ["Option A", "Option B", "Option C", "Option D"],
-                correctIndex: 3,
+                question: "张骞是怎么离开匈奴的？How did Zhang Qian leave Xiongnu?",
+                options: ["Xiongnu released him", "Ganfu took him to escape", "Dayuan rescued him"],
+                correctIndex: 1,
+            },
+            {
+                question: "张骞离开匈奴以后先做了什么？What did Zhang Qian do first after leaving Xiongnu?",
+                options: ["continue to go west and arrive at Dayuan", "directly go back to Han", "directly go to Great Yuezhi"],
+                correctIndex: 0,
             },
         ],
     },
@@ -117,32 +128,32 @@ const stories: Story[] = [
         title: "《嫦娥奔月》",
         description: "“Chang’e Flies to the Moon” is an ancient Chinese myth with no known author. One of its earlier records appears in the Huainanzi (《淮南子》), compiled by Liu An (刘安) and others during the Western Han dynasty (西汉)",
         videoId: "0R55VdnZ-Ec",
-        retellId: "shennong_chang_baicao",
+        retellId: "chang_e_ben_yue",
         questions: [
             {
-                question: "Question 1?",
-                options: ["Option A", "Option B", "Option C", "Option D"],
-                correctIndex: 0,
-            },
-            {
-                question: "Question 2?",
-                options: ["Option A", "Option B", "Option C", "Option D"],
+                question: "后羿为什么要射下九个太阳？ Why did Houyi shoot nine suns down?",
+                options: ["he wanted to show his arrow-shooting skill", "people cannot bear the hotness of 10 suns", "Chang’e wanted him to shoot suns"],
                 correctIndex: 1,
             },
             {
-                question: "Question 3?",
-                options: ["Option A", "Option B", "Option C", "Option D"],
-                correctIndex: 2,
-            },
-            {
-                question: "Question 4?",
-                options: ["Option A", "Option B", "Option C", "Option D"],
+                question: "后羿和嫦娥为什么不能飞了? Why were Houyi and Chang’e unable to fly?",
+                options: ["the sun god took their supernatural power", "王母 the queen of heaven took their supernatural power", "they wanted to be normal people and stay in the human world"],
                 correctIndex: 0,
             },
             {
-                question: "Question 5?",
-                options: ["Option A", "Option B", "Option C", "Option D"],
-                correctIndex: 3,
+                question: "王母给了后羿几片药？How many pills did the queen of heaven give Houyi?",
+                options: ["one", "two", "three"],
+                correctIndex: 1,
+            },
+            {
+                question: "嫦娥吃了几片药？How many pills did Chang’e eat?",
+                options: ["one", "two", "three"],
+                correctIndex: 1,
+            },
+            {
+                question: "嫦娥飞到月亮上以后，和谁在一起？ Who stays with Chang’e after she flies to the moon?",
+                options: ["Houyi", "王母 the queen of heaven", "a rabbit"],
+                correctIndex: 2,
             },
         ],
     },
@@ -382,7 +393,7 @@ export default function TraditionalStories() {
                         </p>
                         <h1 className="text-3xl font-bold text-black">Story Quiz</h1>
                         <p className="text-muted-foreground mt-2">
-                            Answer all 5 questions about the story.
+                            Answer all {selectedStory.questions.length} questions about the story.
                         </p>
                     </div>
 

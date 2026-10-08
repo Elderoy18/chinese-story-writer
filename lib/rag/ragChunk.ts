@@ -8,7 +8,7 @@ import mongoose, { Schema, Document } from "mongoose";
  *
  * Chunk types (see chinese_writing_rag_pipeline/docs/design.md):
  *   model_story | sample | correction_item | ai_feedback_item |
- *   content_flag | story_prompt | rule_card | ai_error_card
+ *   content_flag | story_prompt | rule_card | ai_error_card | vocab_error
  */
 export interface IRagChunk extends Document<string> {
     _id: string;
@@ -27,6 +27,8 @@ export interface IRagChunk extends Document<string> {
     explanation?: string | null;
     title?: string;
     description?: string;
+    story_ids?: string[];
+    triggers?: string[];  // vocab_error: regexes matched against the student's text
 }
 
 const RagChunkSchema = new Schema<IRagChunk>(
@@ -46,6 +48,8 @@ const RagChunkSchema = new Schema<IRagChunk>(
         explanation: { type: String },
         title: { type: String },
         description: { type: String },
+        story_ids: { type: [String] },
+        triggers: { type: [String] },
         // `embedding` is stored but never selected into the app — large and unused at read time.
     },
     { collection: "rag_chunks", strict: false }

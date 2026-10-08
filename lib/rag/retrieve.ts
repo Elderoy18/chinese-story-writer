@@ -19,6 +19,8 @@ export interface RetrievedChunk {
     corrected_span?: string | null;
     explanation?: string | null;
     title?: string;
+    story_ids?: string[];
+    triggers?: string[];
 }
 
 interface SearchOpts {
@@ -105,4 +107,20 @@ export async function getChunksByIds(ids: string[]): Promise<RetrievedChunk[]> {
         .map((id) => byId.get(id))
         .filter((d): d is RetrievedChunk => Boolean(d))
         .map((d) => ({ ...d, score: 1 }));
+}
+
+/**
+ * Fetch every chunk of one type (e.g. all vocab_error entries, so the caller
+ * can match their trigger regexes against the student's text). Only for small
+ * chunk types -- this is a plain find, not a vector search.
+ */
+export async function getChunksByType(chunkType: string): Promise<RetrievedChunk[]> {
+    await connectDB();
+    const docs = await RagChunk.find(
+        { chunk_type: chunkType },
+        { _id: 0, chunk_id: 1, chunk_type: 1, text: 1, story_ids: 1, triggers: 1 }
+    )
+        .sort({ chunk_id: 1 })
+        .lean<RetrievedChunk[]>();
+    return docs.map((d) => ({ ...d, score: 1 }));
 }
