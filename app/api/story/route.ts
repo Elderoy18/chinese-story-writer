@@ -34,13 +34,16 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
-        // optional: { storyId } to start a retelling instead of a free-write
+        // optional: { storyId } to start a retelling instead of a free-write;
+        // { replaceExisting: true } to set aside the story in progress first
         let storyId = "";
+        let replaceExisting = false;
         try {
             const body = await request.json();
             if (body?.storyId && getRetelling(body.storyId)) {
                 storyId = body.storyId;
             }
+            replaceExisting = body?.replaceExisting === true;
         } catch {
             // no body — free-write
         }
@@ -52,7 +55,11 @@ export async function POST(request: Request) {
             status: "in_progress"
         });
 
-        if (existing) {
+        if (existing && replaceExisting) {
+            // keep it for research, but it can no longer be resumed
+            existing.status = "abandoned";
+            await existing.save();
+        } else if (existing) {
             return NextResponse.json(
                 { error: "You already have a story in progress" },
                 { status: 400 }

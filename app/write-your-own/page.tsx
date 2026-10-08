@@ -33,5 +33,17 @@ export default async function WriteYourOwnPage({
         ? getRetelling(serialized.storyId)
         : getRetelling(retell);
 
-    return <StoryWriter initialStory={serialized} retelling={retelling} />;
+    // Asked to retell a different story while one is in progress: let the
+    // student choose between continuing and replacing it.
+    const requested = getRetelling(retell);
+    const pendingRetelling =
+        serialized && requested && requested.storyId !== serialized.storyId ? requested : null;
+
+    return (
+        <StoryWriter
+            initialStory={serialized}
+            retelling={retelling}
+            pendingRetelling={pendingRetelling}
+        />
+    );
 }

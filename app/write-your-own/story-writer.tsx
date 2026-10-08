@@ -137,11 +137,16 @@ type View = "hub" | "scaffolding" | "feedback" | "review" | "edit" | "title" | "
 interface Props {
     initialStory: Story | null;
     retelling: Retelling | null;
+    // set when the student asked to retell a different story while one is in progress
+    pendingRetelling: Retelling | null;
 }
 
-export default function StoryWriter({ initialStory, retelling }: Props) {
+export default function StoryWriter({ initialStory, retelling: initialRetelling, pendingRetelling }: Props) {
     const [view, setView] = useState<View>(initialStory ? "scaffolding" : "hub");
     const [story, setStory] = useState<Story | null>(initialStory);
+    const [retelling, setRetelling] = useState<Retelling | null>(initialRetelling);
+    const [pending, setPending] = useState<Retelling | null>(pendingRetelling);
+    const [isReplacing, setIsReplacing] = useState(false);
     const [scaffolding, setScaffolding] = useState<Scaffolding>(
         initialStory
             ? initialStory.scenes[initialStory.currentSceneIndex].scaffolding
@@ -182,6 +187,44 @@ export default function StoryWriter({ initialStory, retelling }: Props) {
         const data = await res.json();
         setStory(JSON.parse(JSON.stringify(data.story)));
         setView("scaffolding");
+    }
+
+    // Drop ?retell= so a refresh doesn't ask again.
+    function clearRetellParam() {
+        window.history.replaceState(null, "", "/write-your-own");
+    }
+
+    function handleContinueCurrent() {
+        setPending(null);
+        clearRetellParam();
+    }
+
+    async function handleReplaceWithPending() {
+        if (!pending) return;
+        setIsReplacing(true);
+        const res = await fetch("/api/story", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ storyId: pending.storyId, replaceExisting: true }),
+        });
+        setIsReplacing(false);
+        if (!res.ok) {
+            const data = await res.json().catch(() => ({}));
+            alert(data.error || "Could not start the new story.");
+            return;
+        }
+        const data = await res.json();
+        setStory(JSON.parse(JSON.stringify(data.story)));
+        setRetelling(pending);
+        setPending(null);
+        setScaffolding({ characters: "", objects: "", actions: "", descriptions: "" });
+        setSentence("");
+        setFeedback("");
+        setContentFeedback("");
+        setEditedSentences([]);
+        setStoryTitle("");
+        setView("scaffolding");
+        clearRetellParam();
     }
 
     async function handleSave() {
@@ -460,6 +503,44 @@ export default function StoryWriter({ initialStory, retelling }: Props) {
     }
 
     // --- VIEWS ---
+
+    if (pending && story) {
+        const finished = story.scenes.filter((s) => s.status === "complete").length;
+        const currentLabel = retelling ? `your retelling of ${retelling.title}` : "your own story";
+        return (
+            <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-4">
+                <div className="w-full max-w-md rounded-xl border border-gray-200 p-6 shadow-sm">
+                    <h1 className="text-2xl font-bold text-black mb-2">You already have a story in progress</h1>
+                    <p className="text-muted-foreground mb-6">
+                        You&apos;re partway through {currentLabel} ({finished}{" "}
+                        {finished === 1 ? "scene" : "scenes"} finished). You can work on one story at a
+                        time — what would you like to do?
+                    </p>
+                    <div className="flex flex-col gap-3">
+                        <Button size="lg" onClick={handleContinueCurrent} disabled={isReplacing}>
+                            Continue my current story
+                        </Button>
+                        <Button
+                            size="lg"
+                            variant="outline"
+                            onClick={handleReplaceWithPending}
+                            disabled={isReplacing}
+                        >
+                            {isReplacing ? (
+                                <Loader2 className="h-4 w-4 animate-spin" />
+                            ) : (
+                                `Start retelling ${pending.title} instead`
+                            )}
+                        </Button>
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-3">
+                        If you start the new story, your current story will be closed and you won&apos;t be
+                        able to go back to it.
+                    </p>
+                </div>
+            </div>
+        );
+    }
 
     if (view === "hub") {
         if (retelling) {

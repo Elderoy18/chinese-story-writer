@@ -30,7 +30,7 @@ export interface IScene {
 
 export interface IStory extends Document {
     userId: string;
-    status: "in_progress" | "complete";
+    status: "in_progress" | "complete" | "abandoned";
     storyId: string;                 // corpus story_id for a retelling; "" for free-write
     currentSceneIndex: number;
     scenes: IScene[];
@@ -82,7 +82,8 @@ const StorySchema = new Schema<IStory>(
         userId: { type: String, required: true },
         status: {
             type: String,
-            enum: ["in_progress", "complete"],
+            // "abandoned" = replaced by a new story before it was finished; kept for research, never resumed
+            enum: ["in_progress", "complete", "abandoned"],
             default: "in_progress"
         },
         storyId: { type: String, default: "" },   // "" = free-write; else a retelling corpus story_id

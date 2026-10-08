@@ -97,8 +97,8 @@ const stories: Story[] = [
         retellId: "zhang_qian_chu_shi_xi_yu",
         questions: [
             {
-                question: "张骞为什么要去大月氏？Why did Zhang Qian go to Great Yuezhi?",
-                options: ["Han government wanted to have trade with Great Yuezhi", "Han government wanted to attack Great Yuezhi", "Han government wanted to attack Xiongnu with Great Yuezhi"],
+                question: "张骞为什么要去大月氏？Why did Zhang Qian go to Great Rouzhi?",
+                options: ["Han government wanted to have trade with Great Rouzhi", "Han government wanted to attack Great Rouzhi", "Han government wanted to attack Xiongnu with Great Yuezhi"],
                 correctIndex: 2,
             },
             {
