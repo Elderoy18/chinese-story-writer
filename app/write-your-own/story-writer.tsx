@@ -761,7 +761,7 @@ export default function StoryWriter({ initialStory, retelling: initialRetelling,
 
                 {isGeneratingImage && (
                     <p className="text-sm text-muted-foreground mt-4">
-                        Finishing your scene's illustration before you continue...
+                        Finishing your scene&apos;s illustration before you continue...
                     </p>
                 )}
                 {!canRegenerate && (

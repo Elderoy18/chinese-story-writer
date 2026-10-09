@@ -98,12 +98,12 @@ const stories: Story[] = [
         questions: [
             {
                 question: "张骞为什么要去大月氏？Why did Zhang Qian go to Great Rouzhi?",
-                options: ["Han government wanted to have trade with Great Rouzhi", "Han government wanted to attack Great Rouzhi", "Han government wanted to attack Xiongnu with Great Yuezhi"],
+                options: ["Han government wanted to have trade with Great Rouzhi", "Han government wanted to attack Great Rouzhi", "Han government wanted to attack Xiongnu with Great Rouzhi"],
                 correctIndex: 2,
             },
             {
                 question: "为什么甘父是使团的向导？ Why was Ganfu the guide of the diplomatic corps?",
-                options: ["he used to be the slave of Han and spoke Chinese well", "he used to be the slave of Xiongnu and knew the terrain well", "he used to be the slave of Great Yuezhi and knew the terrain well"],
+                options: ["he used to be the slave of Han and spoke Chinese well", "he used to be the slave of Xiongnu and knew the terrain well", "he used to be the slave of Great Rouzhi and knew the terrain well"],
                 correctIndex: 1,
             },
             {
@@ -118,7 +118,7 @@ const stories: Story[] = [
             },
             {
                 question: "张骞离开匈奴以后先做了什么？What did Zhang Qian do first after leaving Xiongnu?",
-                options: ["continue to go west and arrive at Dayuan", "directly go back to Han", "directly go to Great Yuezhi"],
+                options: ["continue to go west and arrive at Dayuan", "directly go back to Han", "directly go to Great Rouzhi"],
                 correctIndex: 0,
             },
         ],

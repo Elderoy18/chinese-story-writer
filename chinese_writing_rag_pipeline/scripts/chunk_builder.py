@@ -43,7 +43,14 @@ def dedup_key(t):
 
 def build_scene_checklists(corpus):
     """Derive a canonical 'required plot beats' checklist per story from the
-    union of every 'Miss scene' annotation the teacher wrote for that story."""
+    union of every 'Miss scene' annotation the teacher wrote for that story.
+    (1) expert documents: the raw/ folder;
+    (2) build pipeline: chunk_builder.py and embed-to-mongo.mjs;
+    (3) reference library: the rag_chunks collection;
+    (4) request assembler: assembleFeedbackPrompt.ts;
+    (5) LLM: gpt-5.6-terra;
+    (6) feedback log: the stored feedback and feedbackChunkIds. If you release code, Appendix C could list this mapping.
+    """
     per_story_counts = defaultdict(Counter)
     per_story_display = defaultdict(dict)
     for s in corpus["samples"]:

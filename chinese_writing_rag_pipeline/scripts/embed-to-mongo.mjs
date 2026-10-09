@@ -10,6 +10,9 @@
 //   node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs --dry-run
 //   node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs --types vocab_error
 //     (only embed + upsert chunks of the given comma-separated chunk types)
+//   node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs --prune
+//     (also delete docs whose chunk_id is no longer in chunks.jsonl; with
+//      --types, only within those types)
 //
 // Uses the `openai` + `mongodb` packages already in the app's node_modules and
 // reads MONGODB_URI / OPENAI_API_KEY from the repo-root .env.local.
@@ -40,6 +43,7 @@ const REPO_ROOT = path.resolve(HERE, "..", "..");
 const CHUNKS_PATH = path.join(PIPELINE_ROOT, "chunks", "chunks.jsonl");
 
 const dryRun = process.argv.includes("--dry-run");
+const prune = process.argv.includes("--prune");
 const typesIdx = process.argv.indexOf("--types");
 const onlyTypes = typesIdx > -1 ? new Set(process.argv[typesIdx + 1].split(",")) : null;
 
@@ -149,11 +153,19 @@ async function main() {
             };
         });
         const res = await coll.bulkWrite(ops, { ordered: false });
-        const total = await coll.countDocuments({});
         console.log(
             `Upserted into ${DB_NAME}.${COLLECTION}: ${res.upsertedCount} inserted, ` +
-                `${res.modifiedCount} updated, ${total} total docs`
+                `${res.modifiedCount} updated`
         );
+        if (prune) {
+            // Delete chunks that are no longer in chunks.jsonl (e.g. a renamed
+            // story or a removed correction), so retrieval can't return them.
+            const keep = chunks.map((c) => c.chunk_id);
+            const scope = onlyTypes ? { chunk_type: { $in: [...onlyTypes] } } : {};
+            const del = await coll.deleteMany({ ...scope, _id: { $nin: keep } });
+            console.log(`Pruned ${del.deletedCount} stale docs`);
+        }
+        console.log(`${await coll.countDocuments({})} total docs`);
         console.log("\nNext: create the Atlas Vector Search index -> chinese_writing_rag_pipeline/docs/atlas_setup.md");
     } finally {
         await mongo.close();

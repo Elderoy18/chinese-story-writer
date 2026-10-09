@@ -1,266 +1,293 @@
 #!/usr/bin/env python3
 """
-Parse the 5 extracted paragraph-JSON files into a unified, structured corpus.json.
+Parse the paragraph-JSON files written by extract_json.py into one structured
+extracted/corpus.json. No file names are hard-coded: every document is
+recognized by its own headers.
 
-Doc types produced:
-  - "model"        : the 4 near-perfect model stories (no feedback)
-  - "teacher_only" : mengmu / shennong batches -- story + teacher correction items
-                      + content-coverage flags (Miss scene / Wrong information / Coherence)
-  - "ai_reviewed"  : the two docs where a student story received both "Teacher feedback"
-                      (gold) and "AI feedback" (machine), with the teacher's own
-                      "My comment" critique of each AI feedback item.
+Basic data (extracted/basic/*.json):
+  - model stories doc : "Story N: <title>" followed by the story text.
+  - samples doc       : "Student N" followed by the student's story, then
+                        "Teacher feedback:" and one correction per paragraph,
+                        then content flags ("Miss ...", "Wrong information ...",
+                        "Coherence problem ..."). Which story the doc belongs to
+                        comes from its file name (the "match" words in
+                        raw/stories.json).
+
+Iteration data (extracted/iteration/*.json), only docs containing "AI feedback":
+  - AI review doc     : the same "Student N" layout, plus "AI feedback:" with
+                        错别字 / Grammar Corrections / Vocabulary Suggestions items,
+                        each optionally followed by the teacher's "My comment".
+                        The AI items are attached to the matching basic-data
+                        sample (same story, same student number); its teacher
+                        feedback is NOT re-read -- the basic doc is the source
+                        for that.
+
+Every story must be registered in raw/stories.json; an unknown title or file
+name stops the run with a message saying what to add.
+
+Doc types in the output:
+  "model"        : model stories (no feedback)
+  "teacher_only" : a student sample with teacher feedback
+  "ai_reviewed"  : a teacher_only sample that also has AI feedback + My comments
 """
 import json
 import re
+import sys
+from collections import Counter
+from pathlib import Path
 
-def norm_marker(s):
-    return s.strip().rstrip(':：').strip()
+REGISTRY_PATH = "raw/stories.json"
+BASIC_DIR = Path("extracted/basic")
+ITERATION_DIR = Path("extracted/iteration")
+OUT_PATH = "extracted/corpus.json"
 
-def is_sample_number_alone(p):
-    return re.fullmatch(r'\d+', p) is not None
+MODEL_HEADER = re.compile(r"^Story\s*#?\s*(\d+)\s*[:：]\s*(.+)$", re.I)
+STUDENT_HEADER = re.compile(r"^Student\s*#?\s*(\d+)\s*[:：]?\s*(.*)$", re.I)
+TEACHER_MARKER = re.compile(r"^Teacher feedback\s*[:：]?$", re.I)
+AI_MARKER = re.compile(r"^AI feedback\s*[:：]?$", re.I)
+GRAMMAR_HEADER = re.compile(r"^Grammar Corrections?\s*[:：]?$", re.I)
+VOCAB_HEADER = re.compile(r"^Vocabulary Suggestions?\s*[:：]?$", re.I)
+FLAG_PREFIXES = ("Miss", "Wrong information", "Coherence problem")
+CLOSING_NOTE = "Try to include more details and descriptions"
 
-def is_sample_number_glued(p):
-    m = re.match(r'^(\d+)([一-鿿].*)$', p)
-    return m
+
+class FormatError(Exception):
+    pass
+
+
+def load_registry():
+    stories = json.load(open(REGISTRY_PATH, encoding="utf-8"))["stories"]
+    ids = [s["story_id"] for s in stories]
+    dupes = [i for i, n in Counter(ids).items() if n > 1]
+    if dupes:
+        raise FormatError(f"{REGISTRY_PATH}: duplicate story_id {dupes}")
+    return stories
+
+
+def story_by_title(registry, title, where):
+    for s in registry:
+        if s["title"] == title:
+            return s
+    raise FormatError(
+        f'{where}: story "{title}" has no corpus ID. Add an entry to {REGISTRY_PATH}, e.g.\n'
+        f'  {{"story_id": "<pinyin_id>", "title": "{title}", "match": ["<word in its samples file name>"]}}'
+    )
+
+
+def story_by_filename(registry, stem, where):
+    hits = [s for s in registry if any(m in stem for m in s["match"])]
+    if len(hits) == 1:
+        return hits[0]
+    if not hits:
+        raise FormatError(
+            f'{where}: no story in {REGISTRY_PATH} matches the file name "{stem}". '
+            f'Add the story (or a word from this file name to its "match" list).'
+        )
+    raise FormatError(
+        f'{where}: file name "{stem}" matches several stories '
+        f'({", ".join(s["story_id"] for s in hits)}); make the "match" words more specific.'
+    )
+
+
+def split_blocks(paras, header, where):
+    """[(header_match, [body paragraphs...]), ...]; text before the first header
+    is an error, so a typo in a header can't silently merge two samples."""
+    blocks = []
+    for p in paras:
+        m = header.match(p)
+        if m:
+            blocks.append((m, []))
+        elif blocks:
+            blocks[-1][1].append(p)
+        else:
+            raise FormatError(f'{where}: text before the first header: "{p[:60]}"')
+    nums = Counter(m.group(1) for m, _ in blocks)
+    dupes = [n for n, c in nums.items() if c > 1]
+    if dupes:
+        raise FormatError(f"{where}: header number(s) used twice: {dupes}")
+    return blocks
+
+
+def take_until(body, marker):
+    """Split body at the first paragraph matching marker -> (before, after) or None."""
+    for i, p in enumerate(body):
+        if marker.match(p):
+            return body[:i], body[i + 1:]
+    return None
+
 
 # ---------------------------------------------------------------------------
-# Model stories
+# Basic data
 # ---------------------------------------------------------------------------
-STORY_TITLE_TO_ID = {
-    "神农尝百草": "shennong_chang_baicao",
-    "孟母三迁": "mengmu_san_qian",
-    "嫦娥奔月": "chang_e_ben_yue",
-    "张骞出使西域": "zhang_qian_chu_shi_xi_yu",
-}
-
-def parse_model_stories():
-    paras = json.load(open("extracted/model_stories.json", encoding="utf-8"))
+def parse_model_doc(paras, registry, where):
     out = []
-    i = 0
-    while i < len(paras):
-        header = paras[i]
-        m = re.match(r'^Story \d+:\s*(.+)$', header)
-        if not m:
-            i += 1
-            continue
-        title = m.group(1).strip()
-        text = paras[i + 1]
-        story_id = STORY_TITLE_TO_ID.get(title, re.sub(r'\W+', '_', title))
-        out.append({
-            "story_id": story_id,
-            "title": title,
-            "text": text,
-        })
-        i += 2
+    for m, body in split_blocks(paras, MODEL_HEADER, where):
+        title = m.group(2).strip()
+        story = story_by_title(registry, title, where)
+        if not body:
+            raise FormatError(f'{where}: "Story {m.group(1)}: {title}" has no story text')
+        out.append({"story_id": story["story_id"], "title": title, "text": "\n".join(body)})
     return out
 
-# ---------------------------------------------------------------------------
-# Teacher-only docs (mengmu, shennong)
-# ---------------------------------------------------------------------------
-def parse_teacher_only(path, source_doc, story_id):
-    paras = json.load(open(path, encoding="utf-8"))
+
+def sample_id(story, num):
+    return f"{story.get('sample_id_prefix', story['story_id'])}#{num}"
+
+
+def parse_samples_doc(paras, story, source_doc, where):
     samples = []
-    i = 0
-    n = len(paras)
-    while i < n:
-        p = paras[i]
-        if is_sample_number_alone(p):
-            sample_num = p
-            i += 1
-            story_text = paras[i]
-            i += 1
-        else:
-            m = is_sample_number_glued(p)
-            if not m:
-                i += 1
-                continue
-            sample_num = m.group(1)
-            story_text = m.group(2)
-            i += 1
+    for m, body in split_blocks(paras, STUDENT_HEADER, where):
+        num = m.group(1)
+        glued = [m.group(2)] if m.group(2) else []
+        split = take_until(body, TEACHER_MARKER)
+        if split is None:
+            raise FormatError(f'{where}: Student {num} has no "Teacher feedback:" line')
+        story_paras, feedback = split
+        story_text = "\n".join(glued + story_paras)
+        if not story_text:
+            raise FormatError(f"{where}: Student {num} has no story text")
 
-        if i < n and norm_marker(paras[i]) == "Teacher feedback":
-            i += 1
-
-        teacher_items = []
-        content_flags = []
-        closing_note = None
-        while i < n:
-            p2 = paras[i]
-            if is_sample_number_alone(p2) or is_sample_number_glued(p2):
-                break
-            if p2.strip() == "Try to include more details and descriptions":
-                closing_note = p2
-                i += 1
-                continue
-            if p2.startswith("Miss") or p2.startswith("Wrong information") or p2.startswith("Coherence problem"):
-                content_flags.append(p2)
-                i += 1
-                continue
-            teacher_items.append(p2)
-            i += 1
+        items, flags, closing_note = [], [], None
+        for p in feedback:
+            if p == CLOSING_NOTE:
+                closing_note = p
+            elif p.startswith(FLAG_PREFIXES):
+                flags.append(p)
+            else:
+                items.append(p)
 
         samples.append({
-            "sample_id": f"{source_doc}#{sample_num}",
+            "sample_id": sample_id(story, num),
             "source_doc": source_doc,
             "doc_type": "teacher_only",
-            "story_id": story_id,
-            "sample_num": sample_num,
+            "story_id": story["story_id"],
+            "sample_num": num,
             "raw_text": story_text,
-            "teacher_correction_items": teacher_items,
-            "content_flags": content_flags,
+            "teacher_correction_items": items,
+            "content_flags": flags,
             "ai_feedback_items": [],
             "closing_note": closing_note,
         })
     return samples
 
+
 # ---------------------------------------------------------------------------
-# AI-reviewed docs
+# Iteration data: AI review overlay
 # ---------------------------------------------------------------------------
-def _consume_ai_list(paras, i, n, category, stop_fn):
-    """Consume numbered AI-feedback items (+ optional My comment) until stop_fn(paras[i]) is True."""
-    items = []
-    while i < n and not stop_fn(paras[i]):
-        item_text = paras[i]
-        i += 1
-        comment = None
-        if i < n and paras[i].startswith("My comment"):
-            comment = paras[i]
-            i += 1
-        items.append({"category": category, "raw_text": item_text, "my_comment": comment})
-    return items, i
-
-def parse_ai_reviewed_numbered(path, source_doc, story_id):
-    """student_examples_corrections.docx: samples headed by a bare integer paragraph."""
-    paras = json.load(open(path, encoding="utf-8"))
-    samples = []
-    i = 0
-    n = len(paras)
-    while i < n:
-        p = paras[i]
-        if not is_sample_number_alone(p):
-            i += 1
-            continue
-        sample_num = p
-        i += 1
-        story_text = paras[i]
-        i += 1
-        samples.append(_parse_one_ai_reviewed_unit(paras, i, n, source_doc, story_id, sample_num))
-        i = samples[-1].pop("_next_i")
-        samples[-1]["raw_text"] = story_text
-    return samples
-
-def parse_ai_reviewed_scenes(path, source_doc, story_id):
-    """Pear_Story_Corrections.docx: samples headed by 'Scene N:' + text on the next paragraph."""
-    paras = json.load(open(path, encoding="utf-8"))
-    samples = []
-    i = 0
-    n = len(paras)
-    while i < n:
-        p = paras[i]
-        m = re.match(r'^Scene (\d+):\s*$', p) or re.match(r'^Scene (\d+):(.*)$', p)
-        if not m or not p.startswith("Scene"):
-            i += 1
-            continue
-        scene_num = m.group(1)
-        i += 1
-        story_text = paras[i]
-        i += 1
-        rec = _parse_one_ai_reviewed_unit(paras, i, n, source_doc, story_id, scene_num, is_scene=True)
-        i = rec.pop("_next_i")
-        rec["raw_text"] = story_text
-        samples.append(rec)
-    return samples
-
-def _parse_one_ai_reviewed_unit(paras, i, n, source_doc, story_id, unit_num, is_scene=False):
-    assert norm_marker(paras[i]) == "Teacher feedback", f"expected Teacher feedback at {i}: {paras[i]}"
-    i += 1
-    teacher_items = []
-    closing_note = None
-    while i < n and norm_marker(paras[i]) != "AI feedback":
-        if paras[i].strip() == "Try to include more details and descriptions":
-            closing_note = paras[i]
+def parse_ai_items(body, where):
+    """Items after "AI feedback:". Section headers set the category; the
+    错别字 line is a header and its own item; "My comment" attaches to the
+    item before it."""
+    items, category = [], None
+    for p in body:
+        if GRAMMAR_HEADER.match(p):
+            category = "grammar"
+        elif VOCAB_HEADER.match(p):
+            category = "vocabulary"
+        elif p.startswith("My comment"):
+            if not items or items[-1]["my_comment"] is not None:
+                raise FormatError(f'{where}: "My comment" with no AI item before it: "{p[:60]}"')
+            items[-1]["my_comment"] = p
+        elif p.startswith("错别字"):
+            items.append({"category": "wrong_characters", "raw_text": p, "my_comment": None})
         else:
-            teacher_items.append(paras[i])
-        i += 1
-    # consume 'AI feedback:' marker
-    i += 1
+            if category is None:
+                raise FormatError(f'{where}: AI item before any section header: "{p[:60]}"')
+            items.append({"category": category, "raw_text": p, "my_comment": None})
+    return items
 
-    ai_items = []
-    # optional leading Wrong-characters line
-    if i < n and paras[i].startswith("错别字"):
-        wc_line = paras[i]
-        i += 1
-        comment = None
-        if i < n and paras[i].startswith("My comment"):
-            comment = paras[i]
-            i += 1
-        ai_items.append({"category": "wrong_characters", "raw_text": wc_line, "my_comment": comment})
 
-    # Grammar Corrections header
-    if i < n and "Grammar Correction" in paras[i]:
-        i += 1
-        items, i = _consume_ai_list(
-            paras, i, n, "grammar",
-            stop_fn=lambda x: "Vocabulary Suggestion" in x
-        )
-        ai_items.extend(items)
+def apply_ai_review_doc(paras, story, source_doc, samples_by_id, where):
+    n_items = 0
+    for m, body in split_blocks(paras, STUDENT_HEADER, where):
+        num = m.group(1)
+        sample = samples_by_id.get(sample_id(story, num))
+        if sample is None:
+            raise FormatError(
+                f"{where}: Student {num} has AI feedback but no matching sample in the "
+                f"basic data for {story['story_id']}"
+            )
+        split = take_until(body, AI_MARKER)
+        if split is None:
+            continue  # this student was not AI-reviewed
+        before_ai, ai_body = split
+        before_teacher = take_until(before_ai, TEACHER_MARKER)
+        story_text = "\n".join(([m.group(2)] if m.group(2) else []) +
+                               (before_teacher[0] if before_teacher else before_ai))
+        if story_text != sample["raw_text"]:
+            print(f"  WARNING {where}: Student {num}'s story text differs from the basic data copy")
+        items = parse_ai_items(ai_body, f"{where} Student {num}")
+        sample["ai_feedback_items"].extend(items)
+        sample["doc_type"] = "ai_reviewed"
+        sample["ai_review_doc"] = source_doc
+        n_items += len(items)
+    return n_items
 
-    # Vocabulary Suggestions header
-    if i < n and "Vocabulary Suggestion" in paras[i]:
-        i += 1
-        def stop(x):
-            return (is_sample_number_alone(x) or is_sample_number_glued(x) is not None
-                    or x.startswith("Scene "))
-        items, i = _consume_ai_list(paras, i, n, "vocabulary", stop_fn=stop)
-        ai_items.extend(items)
-
-    key = "scene_num" if is_scene else "sample_num"
-    sample_id = f"{source_doc}#scene{unit_num}" if is_scene else f"{source_doc}#{unit_num}"
-    return {
-        "sample_id": sample_id,
-        "source_doc": source_doc,
-        "doc_type": "ai_reviewed",
-        "story_id": story_id,
-        key: unit_num,
-        "teacher_correction_items": teacher_items,
-        "content_flags": [],
-        "ai_feedback_items": ai_items,
-        "closing_note": closing_note,
-        "_next_i": i,
-    }
 
 # ---------------------------------------------------------------------------
+def load_paras(path):
+    return json.load(open(path, encoding="utf-8"))
+
+
 def main():
+    registry = load_registry()
     corpus = {"model_stories": [], "samples": []}
-    corpus["model_stories"] = parse_model_stories()
 
-    corpus["samples"].extend(parse_teacher_only(
-        "extracted/mengmu_samples.json", "mengmu_samples", "mengmu_san_qian"))
-    corpus["samples"].extend(parse_teacher_only(
-        "extracted/shennong_samples.json", "shennong_samples", "shennong_chang_baicao"))
-    corpus["samples"].extend(parse_ai_reviewed_numbered(
-        "extracted/student_examples_corrections.json", "student_examples_corrections", "pear_story_narrative"))
-    corpus["samples"].extend(parse_ai_reviewed_scenes(
-        "extracted/pear_story_corrections.json", "pear_story_corrections", "pear_story_creative"))
+    basic = sorted(BASIC_DIR.glob("*.json"))
+    if not basic:
+        sys.exit(f"No files in {BASIC_DIR} -- run extract_json.py first")
+    for path in basic:
+        paras, where = load_paras(path), str(path)
+        if any(STUDENT_HEADER.match(p) for p in paras):
+            story = story_by_filename(registry, path.stem, where)
+            samples = parse_samples_doc(paras, story, path.stem, where)
+            corpus["samples"].extend(samples)
+            print(f"{path.stem}: {len(samples)} samples -> {story['story_id']}")
+        elif any(MODEL_HEADER.match(p) for p in paras):
+            models = parse_model_doc(paras, registry, where)
+            corpus["model_stories"].extend(models)
+            print(f"{path.stem}: {len(models)} model stories")
+        else:
+            raise FormatError(f'{where}: no "Student N" or "Story N: <title>" headers found')
 
-    with open("extracted/corpus.json", "w", encoding="utf-8") as f:
+    dupes = [i for i, n in Counter(s["sample_id"] for s in corpus["samples"]).items() if n > 1]
+    if dupes:
+        raise FormatError(f"two samples docs share a story and student numbers: {dupes[:5]}")
+    dupes = [i for i, n in Counter(m["story_id"] for m in corpus["model_stories"]).items() if n > 1]
+    if dupes:
+        raise FormatError(f"more than one model story for {dupes}")
+
+    # Registry order, not file-name order: rule_card / ai_error_card show the
+    # first N examples in corpus order, so this decides which examples they get.
+    rank = {s["story_id"]: i for i, s in enumerate(registry)}
+    corpus["samples"].sort(key=lambda s: rank[s["story_id"]])  # stable within a doc
+
+    samples_by_id = {s["sample_id"]: s for s in corpus["samples"]}
+    for path in sorted(ITERATION_DIR.glob("*.json")):
+        paras = load_paras(path)
+        if not any(AI_MARKER.match(p) for p in paras):
+            continue  # vocab list, scene list, rules: not handled here
+        story = story_by_filename(registry, path.stem, str(path))
+        n = apply_ai_review_doc(paras, story, path.stem, samples_by_id, str(path))
+        print(f"{path.stem}: {n} AI feedback items -> {story['story_id']}")
+
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(corpus, f, ensure_ascii=False, indent=1)
 
     # ---- sanity report ----
+    samples = corpus["samples"]
+    n_ai = sum(len(s["ai_feedback_items"]) for s in samples)
+    n_comment = sum(1 for s in samples for it in s["ai_feedback_items"] if it["my_comment"])
+    print(f"\nWrote {OUT_PATH}")
     print("Model stories:", len(corpus["model_stories"]))
-    from collections import Counter
-    by_doc = Counter(s["source_doc"] for s in corpus["samples"])
-    print("Samples by source doc:", dict(by_doc))
-    n_teacher_items = sum(len(s["teacher_correction_items"]) for s in corpus["samples"])
-    n_ai_items = sum(len(s["ai_feedback_items"]) for s in corpus["samples"])
-    n_flags = sum(len(s["content_flags"]) for s in corpus["samples"])
-    print("Total teacher correction items:", n_teacher_items)
-    print("Total AI feedback items:", n_ai_items)
-    print("Total content-coverage flags:", n_flags)
-    n_ai_with_comment = sum(
-        1 for s in corpus["samples"] for it in s["ai_feedback_items"] if it.get("my_comment")
-    )
-    print("AI items with a teacher 'My comment':", n_ai_with_comment, "/", n_ai_items)
+    print("Samples by story:", dict(Counter(s["story_id"] for s in samples)))
+    print("Teacher correction items:", sum(len(s["teacher_correction_items"]) for s in samples))
+    print("Content-coverage flags:", sum(len(s["content_flags"]) for s in samples))
+    print(f"AI feedback items: {n_ai} ({n_comment} with a teacher 'My comment')")
+
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except FormatError as e:
+        sys.exit(f"FORMAT ERROR: {e}")

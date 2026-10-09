@@ -95,6 +95,9 @@ This sandbox has **no outbound network access to huggingface.co** (confirmed: Py
 
 ## 7. Running it
 
+(Original prototype commands. The current build is the single `run_pipeline.py`
+command in §10.)
+
 ```bash
 pip install -r requirements.txt
 
@@ -138,15 +141,18 @@ The Chroma/sentence-transformers "production track" in §6 is one valid deployme
 Build / deploy sequence:
 
 ```bash
-# offline, one-time (and whenever the corpus changes):
-python scripts/extract_json.py && python scripts/parse_corpus.py
-python scripts/chunk_builder.py                      # -> chunks/chunks.jsonl
+# whenever the source documents change -- one command, standard library only:
+python chinese_writing_rag_pipeline/scripts/run_pipeline.py
+#   raw/basic data/* + raw/iteration data/*  -> extracted/basic|iteration/*.json   (extract_json.py)
+#   + raw/stories.json (corpus IDs)           -> extracted/corpus.json              (parse_corpus.py)
+#   + raw/story_scenes.md, raw/vocab_errors.json -> chunks/chunks.jsonl             (chunk_builder.py)
+# How to add documents: see the docstring at the top of run_pipeline.py.
 
-# embed + load into Atlas (reads repo-root .env.local). Node port -- no Python:
-node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs
-#   (scripts/embed_to_mongo.py is the equivalent Python version; use whichever
-#    runtime has working network access. chunks.jsonl is already built, so the
-#    parse/chunk steps above only need re-running when the corpus changes.)
+# embed + load into Atlas (reads repo-root .env.local), deleting chunks that are
+# no longer in chunks.jsonl:
+python chinese_writing_rag_pipeline/scripts/run_pipeline.py --embed
+#   (= node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs --prune;
+#    scripts/embed_to_mongo.py is an older Python equivalent without --prune.)
 
 # then create the Atlas index once: docs/atlas_setup.md
 ```

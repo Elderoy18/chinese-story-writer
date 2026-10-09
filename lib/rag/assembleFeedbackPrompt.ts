@@ -64,7 +64,7 @@ Enrichment, NOT error-flagging -- the student's words are usually fine. Give AT 
 - Coherence (Temporality): original span：corrected span，English explanation naming the aspect rule (了 / 着 / 在正在 / zero particle / series of actions)
 - Coherence (Conjunction): original span：corrected span，English explanation naming the connector and the relation it expresses (cause, contrast, sequence, interruption)
 - (one line per actual coherence problem, each starting with "Coherence (<type>):"; group them in the order Reference, Temporality, Conjunction)
-- Expressiveness: one to three concrete, level-appropriate ideas for going beyond basic event recounting -- descriptive detail, evaluative language, a character's feelings/internal state, or a line of quoted speech -- each tied to a specific spot in THIS scene, with a short Chinese example at the student's level
+- Expressiveness: one to three concrete, level-appropriate ideas for going beyond basic event recounting -- descriptive detail, evaluative language, a character's feelings/internal state, or a line of quoted speech -- each tied to a specific spot in THIS scene, with a short Chinese example at the student's level. If a model version of the story is given, draw these ideas from the details it gives for this part of the story (what characters look like, feel, or say), rewritten at the student's level
 
 ## Encouragement
 One or two sentences naming something specific the student did well.
@@ -100,7 +100,7 @@ Keep each "## " heading on its own line exactly as written, and put every item o
  * Extra instruction for retellings, where "Content & Completeness" has a real
  * checklist to compare against.
  */
-const RETELLING_NOTE = `This is a RETELLING of a known story. The supervising teacher's list of required scenes (in story order) and a model version are given below. In "Content & Completeness", check the student's whole retelling against every required scene: name each scene that is missing, out of order, or misremembered, and say which scene number it is. Scenes the student covered correctly do NOT need to be listed. A required scene may be spread over several of the student's scenes, or several required scenes may be combined into one -- judge the story as a whole.`;
+const RETELLING_NOTE = `This is a RETELLING of a known story. The supervising teacher's list of required scenes (in story order) is given below. In "Content & Completeness", check the student's whole retelling against every required scene: name each scene that is missing, out of order, or misremembered, and say which scene number it is. Scenes the student covered correctly do NOT need to be listed. A required scene may be spread over several of the student's scenes, or several required scenes may be combined into one -- judge the story as a whole.`;
 
 /**
  * Calibration cards injected on EVERY request regardless of lexical similarity,
@@ -197,7 +197,7 @@ export async function assembleFeedbackPrompt(
 ): Promise<AssembledPrompt> {
     const { storyId, previousScenes = [], topRules = 4, topExamples = 3 } = opts;
 
-    const [pinnedRules, similarRules, storyExamples, calibrationHits, vocabSemantic, vocabAll] =
+    const [pinnedRules, similarRules, storyExamples, calibrationHits, vocabSemantic, vocabAll, modelStory] =
         await Promise.all([
             getChunksByIds(PRIORITY_RULE_CARD_IDS),
             searchChunks(studentText, { chunkTypes: ["rule_card"], k: topRules }),
@@ -209,6 +209,10 @@ export async function assembleFeedbackPrompt(
             getChunksByIds(PRIORITY_EVAL_CARD_IDS),
             searchChunks(studentText, { chunkTypes: ["vocab_error"], k: VOCAB_SEMANTIC_K }),
             getChunksByType("vocab_error"),
+            // Retellings: the model story is the reference for expressiveness ideas
+            // (details to add within a scene). Completeness is judged at the end of
+            // the story against the required-scene list, not here.
+            storyId ? getChunksByIds([`model_story:${storyId}`]) : Promise.resolve([]),
         ]);
 
     const ruleHits = [
@@ -258,6 +262,13 @@ export async function assembleFeedbackPrompt(
         for (const hit of exampleHits) parts.push(`- ${hit.text}`);
     }
 
+    if (modelStory.length) {
+        parts.push(
+            "## Model version of this story (reference for Expressiveness ideas only -- do NOT use it to judge plot, content, or missing scenes, and do not ask the student to copy its sentences)\n" +
+                modelStory[0].text
+        );
+    }
+
     if (previousScenes.length) {
         parts.push(
             "## Earlier scenes (context only -- do not give feedback on these)\n" +
@@ -272,6 +283,7 @@ export async function assembleFeedbackPrompt(
         ...calibrationHits.map((h) => h.chunk_id),
         ...vocabHits.map((h) => h.chunk_id),
         ...exampleHits.map((h) => h.chunk_id),
+        ...modelStory.map((h) => h.chunk_id),
     ];
 
     return {
@@ -283,29 +295,21 @@ export async function assembleFeedbackPrompt(
 
 /**
  * End-of-story content prompt: the whole story, plus (for a retelling) the
- * story's model version and the teacher's required scenes to check completeness against.
+ * teacher's required scenes to check completeness against. The model story is
+ * not used here -- it is the per-scene reference for expressiveness.
  */
 export async function assembleContentPrompt(
     scenes: string[],
     opts: { storyId?: string } = {}
 ): Promise<AssembledPrompt> {
     const { storyId } = opts;
-    const storyCards = storyId
-        ? await getChunksByIds([`story_prompt:${storyId}`, `model_story:${storyId}`])
-        : [];
+    const storyCards = storyId ? await getChunksByIds([`story_prompt:${storyId}`]) : [];
 
     const parts: string[] = [];
 
     if (storyCards.length) {
         parts.push(RETELLING_NOTE);
-        const modelCard = storyCards.find((c) => c.chunk_type === "model_story");
-        const promptCard = storyCards.find((c) => c.chunk_type === "story_prompt");
-        if (modelCard) {
-            parts.push(`### Model version of this story\n${modelCard.text}`);
-        }
-        if (promptCard) {
-            parts.push(`### Required scenes\n${promptCard.text}`);
-        }
+        parts.push(`### Required scenes\n${storyCards[0].text}`);
     }
 
     parts.push(

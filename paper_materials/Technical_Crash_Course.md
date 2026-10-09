@@ -53,10 +53,16 @@ An embedding model (`text-embedding-3-small`) turns any text into a vector of 1,
 - "他走去学校" and the teacher's correction "孩子一直走去张先生的树" get similar vectors because both involve 走去 + place.
 
 ### 1.6 Vector search
-- All 1,239 library pieces were embedded **once, offline** (`scripts/embed-to-mongo.mjs`) and stored in MongoDB Atlas.
+- All 1,269 library pieces were embedded **once, offline** (`scripts/embed-to-mongo.mjs`) and stored in MongoDB Atlas. When one part of the library changes, only that type is re-embedded (`--types vocab_error`, `--types story_prompt`).
 - At request time, the student's scene is embedded and Atlas `$vectorSearch` returns the *k* nearest pieces.
 - A **filter** restricts the search to a category (`chunk_type: rule_card`) or a story (`story_id: shennong_chang_baicao`).
-- This is **approximate nearest-neighbour search**. `numCandidates` controls how thoroughly it searches; yours uses 100 or more candidates.
+- This is **approximate nearest-neighbour search**. `numCandidates` controls how thoroughly it searches; yours uses max(100, 15 × k) candidates.
+
+### 1.6b Lexical (keyword) retrieval
+- Vector search finds text with similar *meaning*. It is weak at finding a specific short word form inside a long scene.
+- The teacher's vocabulary error list is therefore also retrieved **lexically**: each entry carries one or more **trigger patterns** (regular expressions such as `找(?!到)`, i.e. 找 not followed by 到). Every entry whose pattern appears in the scene is included, up to 12.
+- The 3 entries nearest in meaning are added as well, to catch the same error in other words. Combining the two is called **hybrid retrieval**.
+- Tested on the 103 graded retellings: on average about 3 entries are triggered per text, at most 6.
 
 ### 1.7 Retrieval-augmented generation (RAG)
 ```
@@ -65,6 +71,7 @@ student text ─► embed ─► search library ─► paste top results into pr
 The LLM is unchanged. RAG gives it *relevant, expert-authored reference material* at the moment it writes.
 - **Benefits:** grounding in the teacher's actual rule explanations, consistency, and an audit trail of what the model saw.
 - **Limit:** retrieval is by *similarity*, not by *error detection*. It retrieves rules related to what the student wrote, which is not necessarily the rule the student violated. A student who omits 了 may not trigger the 了 card if nothing else in the text resembles 了 examples.
+- **How the current system works around this:** the cards for the most frequent problems (了, character introduction, ambiguous reference) are **always included** rather than retrieved, and the vocabulary list uses **lexical** retrieval (1.6b). Similarity search is left for knowledge that genuinely depends on the text.
 
 ### 1.8 Chunking, and why yours is hierarchical
 "Chunking" means cutting source documents into retrievable pieces. You cut along the documents' natural structure, and added two summary layers across it:
@@ -72,6 +79,10 @@ The LLM is unchanged. RAG gives it *relevant, expert-authored reference material
 - **Cross-cutting layers:**
   - `rule_card` (31): all corrections sharing a grammar tag, as one card
   - `ai_error_card` (12): all AI mistakes of one type, as one card
+- **Teacher-authored lists:**
+  - `vocab_error` (30): one entry per line of the teacher's vocabulary error list, each with trigger patterns (1.6b)
+  - each `story_prompt` now carries the teacher's **required-scene list** (1.10)
+- Total: 1,269 pieces.
 
 The atomic unit is one teacher correction: *original → corrected, because rule*. That unit is exactly what you want to retrieve. `parent_id` links each correction back to its full sample, which is known as "small-to-big" retrieval.
 
@@ -85,44 +96,68 @@ These are **not machine learning**: they are transparent, auditable and reproduc
 - **In the paper:** call them "rule-based keyword coding" and report these coverage numbers.
 - **If you have time:** the teacher checks a sample of tags, and you report agreement.
 
-### 1.10 Derived content checklist
-The plot-beat checklists come from counting how often the teacher wrote "Miss N scene(s): X" across the 51 and 52 samples.
-- This is a **data-derived content specification**: the construct definition for "content coverage" comes from the teacher's own grading behaviour.
-- That is a nice point for a *construct specification* paper.
+### 1.10 Required-scene lists (replaced the derived checklist)
+**Earlier version:** the plot-beat checklists were derived by counting how often the teacher wrote "Miss N scene(s): X" across the 51 and 52 samples. Different wordings of the same beat became separate items, so the 神农 list had 10 items for 5 real beats.
+
+**Current version:** the teacher wrote a required-scene list for all four stories (`raw/story_scenes.md`): 神农 7, 孟母 5, 嫦娥 9, 张骞 13 scenes. This list is now the content reference.
+- The old "flagged missing" counts are kept as metadata where a scene matches word for word. All five original 神农 beats match, with counts 40, 34, 29, 19 and 14.
+- The counts are **not** shown to the model.
+- For the paper: the content construct is now **specified directly by the teacher**, and the frequency counts show how her specification relates to her earlier grading.
+
+### 1.10b Model stories (now per scene, for expressiveness)
+- The model story for a retelling is sent with **every scene**, labelled as a source of expressiveness ideas only.
+- It is **not** used for content completeness, which is judged once at the end of the story against the required-scene list.
+- Rule 9 forbids per-scene feedback from commenting on plot or missing events. This prevents the earlier problem where each scene was told it lacked scenes that belonged elsewhere.
 
 ### 1.11 The app stack, in one paragraph for a methods section
 The platform is a Next.js web application hosted on Vercel. User accounts are handled by Better Auth; data lives in MongoDB Atlas. For each scene a student writes, the server:
 1. embeds the text
-2. retrieves reference chunks with Atlas Vector Search
+2. retrieves reference chunks with Atlas Vector Search, and vocabulary entries by trigger pattern
 3. assembles a two-part prompt
 4. calls the OpenAI API
 5. streams the Markdown response to the browser
 6. stores the response with the IDs of the retrieved chunks
 
+When the story is finished, a second, separate request gives feedback on the content of the whole story.
+
 ---
 
-## Part 2 — What exactly happens on one request (Round 3)
+## Part 2 — What exactly happens on one request (current version)
 
-Following [route.ts](../app/api/story/feedback/route.ts) and [assembleFeedbackPrompt.ts](../lib/rag/assembleFeedbackPrompt.ts):
+### 2a. Per-scene feedback
+Following [feedback/route.ts](../app/api/story/feedback/route.ts) and [assembleFeedbackPrompt.ts](../lib/rag/assembleFeedbackPrompt.ts):
 
-1. The student clicks **End Scene**. The browser sends `{ sentence }`, the scene text only.
-2. The server checks login and finds the student's in-progress story. If the story has a `storyId`, it is a retelling.
-3. Four lookups run in parallel:
-   - 4 nearest `rule_card`s
-   - 3 nearest `correction_item`s, only from the same story if it is a retelling
-   - 3 fixed `ai_error_card`s by ID
-   - for a retelling, the `model_story` and `story_prompt` (checklist) cards
+1. The student clicks **End Scene**. The browser sends `{ sentence }`, the scene text only. The planning boxes are not sent to the model.
+2. The server checks login and finds the student's in-progress story. If the story has a `storyId`, it is a retelling. The text of the earlier completed scenes is collected as context.
+3. Seven lookups run in parallel:
+   - 3 **always-included** `rule_card`s by ID: character introduction, ambiguous reference, 了
+   - 4 nearest `rule_card`s by similarity (duplicates of the 3 above are dropped)
+   - 3 nearest `correction_item`s, from the same story if it is a retelling. If that story has no graded samples (嫦娥, 张骞), the whole library is searched instead
+   - 8 **always-included** `ai_error_card`s by ID (accuracy of flagged items, missed errors, miscategorisation)
+   - 3 nearest `vocab_error` entries by similarity
+   - all 30 `vocab_error` entries, matched against the scene by trigger pattern (up to 12 kept, same-story entries first)
+   - for a retelling, the `model_story`
 4. The user message is built in this order:
-   1. retelling note, model story, plot beats
-   2. rule cards
-   3. calibration cards
-   4. correction exemplars
-   5. the student's text
-5. The system message holds the 9 rules and the output format.
+   1. rule cards
+   2. past-error (calibration) cards
+   3. vocabulary error entries
+   4. teacher correction examples
+   5. model story (retellings; "for Expressiveness ideas only")
+   6. earlier scenes (context only)
+   7. the student's scene
+5. The system message holds 9 rules, the rule for vocabulary errors, the coherence rules (reference, temporality, conjunctions) and the output format: Grammar Corrections · Vocabulary Suggestions · Coherence & Expressiveness · Encouragement.
 6. `gpt-5.6-terra` is called with reasoning effort `low`, streaming.
-7. When the response ends, `feedback` and `feedbackChunkIds` are saved on the scene.
+7. When the response ends, `feedback` and `feedbackChunkIds` (the IDs of every retrieved piece) are saved on the scene.
 
-**Retrieval is keyed on the whole scene.** One vector represents the entire scene, so a scene with five different errors gets one blended search. Retrieving per sentence, or per detected error, would be more precise. Present this as a design choice or future work.
+### 2b. End-of-story content feedback
+Following [content-feedback/route.ts](../app/api/story/content-feedback/route.ts):
+
+1. After **End Story**, the text of all completed scenes is sent as one story.
+2. For a retelling, the user message contains the retelling instruction and the `story_prompt` card with the teacher's required scenes. For a free story it contains only the story.
+3. The system message asks for Content & Completeness and Overall Encouragement only. Grammar, vocabulary and coherence are excluded because they were covered per scene.
+4. The response is saved as `contentFeedback`, with `contentFeedbackChunkIds`.
+
+**Retrieval is keyed on the whole scene.** One vector represents the entire scene, so a scene with five different errors gets one blended search. Retrieving per sentence, or per detected error, would be more precise. Present this as a design choice or future work. The always-included cards and lexical vocabulary matching (1.6b) reduce, but do not remove, this limitation.
 
 ---
 
@@ -141,10 +176,11 @@ Your strongest angle is **a documented, human-in-the-loop development method for
 
 | CFP theme | Your evidence |
 |---|---|
-| Prompt and model-version documentation | Three rounds with exact prompts (git history), models, providers and dates; Appendix A of the answers document |
+| Prompt and model-version documentation | Every version with exact prompts (git history), models, providers and dates; Appendix A of the answers document |
 | Human-in-the-loop workflow | Teacher reviews every AI item ("My comment"), and those critiques are turned into rules, calibration cards and checklists |
 | Transparency and auditability | Every Round 3 feedback is stored with the IDs of the retrieved evidence, so the exact prompt can be rebuilt |
-| Construct specification | The feedback categories evolved: 错别字 added, then dropped; vocabulary *suggestion* vs *correction*; content coverage added. The checklist is derived from teacher annotations |
+| Construct specification | The feedback categories evolved: 错别字 added, then dropped; vocabulary *suggestion* vs *correction*; content coverage added; Coherence & Expressiveness added. Content is specified by the teacher's required-scene lists |
+| Teacher-maintained knowledge | The teacher's critiques produced documents she wrote (vocabulary error list, coherence rules, required-scene lists) that enter the system without developer paraphrase and can be updated without retraining |
 | Quality assurance / "distortion" | A taxonomy of 11 AI feedback failure types coded from 67 teacher critiques. Plus the finding that **hand-encoding the teacher's rules into the prompt introduced new errors**: the simplified 爬上梯子 rule and the invented "missing subject" rule were reproduced by the model. A clear, publishable "GenAI can distort" example |
 
 ### What is missing for a validation paper
@@ -153,7 +189,7 @@ You currently have *qualitative, per-round teacher critique*. Reviewers will wan
 1. **Held-out test set.** Take 10–20 learner texts that are **not in the RAG library**. New 神农 retellings are ideal.
    - If you must reuse the pear stories, rebuild the library without them first. Otherwise the calibration cards contain the answers verbatim; this is known as **data leakage**.
 2. **Gold standard.** The teacher annotates each text: every error, its category and its correction.
-3. **Run each round's system on each text.** Rounds 1 and 2 are still in git and can be re-run if the Groq model is still available.
+3. **Run three conditions on each text, all on the same model:** (1) the Round 1 baseline prompt; (2) the final rules without retrieval; (3) the full system. Comparing 1 and 2 shows what the expert-informed rules did; comparing 2 and 3 shows what retrieval added. (Optional: also replay the Round 2 and Round 3 prompts, which are still in git.)
 4. **Score each AI item against the gold standard:**
    - **Precision:** the share of AI-flagged errors that are real errors (measures false positives)
    - **Recall:** the share of real errors the AI found (measures missed errors)
@@ -173,19 +209,20 @@ Even a small, well-documented study (for example 15 texts × 3 rounds × 3 runs)
 
 1. **"Training."** No model was trained. Use "prompt refinement" and "RAG".
 2. **Model drift and aliases.** Report the dates; log the exact model version in any new run.
-3. **Only 3 of 5 "always-on" guardrail cards are actually sent** (`topCalibration = 3` slices the list). The design document says 5, and says the "missed error" card is always included, which it is not. Either fix the code before collecting data, or describe what actually runs.
+3. ~~Only 3 of 5 "always-on" guardrail cards are actually sent.~~ **Fixed (8 Oct):** the cap is removed and 8 cards are sent, including "missed error". The design document (`docs/design.md`) still describes the old behaviour and needs updating.
 4. **The design document's model name is out of date** (`gpt-4.1` vs `gpt-5.6-terra`). Confirm which model produced any outputs you quote.
 5. **Round 2 was evaluated partly on the sample its rules came from.** Say so.
 6. **Round 3 library contains the evaluation samples.** Leakage risk for any before/after comparison (see Part 3).
-7. **Category inconsistencies in the current prompt:**
-   - Rule 5 mentions 错别字, but there is no 错别字 section.
-   - Rule 5 sends word-choice *problems* to Vocabulary Suggestions, while the format says Vocabulary is enrichment and must not call words wrong.
-   - Resolve this with the teacher, since it defines the construct.
-8. **Per-scene isolation.** The AI never sees the whole story or the planning boxes.
+7. **Category inconsistencies in the prompt:**
+   - ~~Rule 5 sends word-choice problems to Vocabulary Suggestions.~~ **Fixed (6 Oct):** wrong words (用错的词) go under Grammar Corrections; Vocabulary Suggestions is enrichment only, never for the same span.
+   - **Still open:** rule 5 mentions 错别字 (wrong characters), but there is no 错别字 section. Wrong characters presumably end up under Grammar Corrections. Decide with the teacher, since it defines the construct.
+8. **Per-scene isolation.** Partly fixed: each scene now receives the earlier scenes as context, and content is judged once on the whole story. The planning boxes are still never sent to the model (by design: scaffolding without AI).
 9. **Heuristic tags.** Keyword rules with partial coverage; report coverage and ideally spot-check them.
-10. **Similarity is not diagnosis.** Retrieval finds related rules, not necessarily the violated one.
+10. **Similarity is not diagnosis.** Retrieval finds related rules, not necessarily the violated one. Reduced by the always-included cards and lexical vocabulary matching; still a limitation to state.
 11. **Sample sizes.** 67 critiqued AI items over 2 rounds; 12 failure-mode cards, one of which (misdirected feedback) has a single example.
-12. **Ethics.** The live database holds real student writing (21 stories from 4 accounts at last count). Confirm consent and ethics status before quoting any of it.
+12. **Ethics.** The live database holds real student writing (26 stories at last count, 8 Oct). Confirm consent and ethics status before quoting any of it.
+13. **Model version not yet logged.** The exact version returned by each API call is not stored yet. Add this before any evaluation runs.
+14. **Prompt length.** The per-scene prompt is now long (8 past-error cards, 7 rule cards, vocabulary entries, the model story and earlier scenes). This is fine for the model, but report it and keep it in mind if output quality drops.
 
 ---
 
