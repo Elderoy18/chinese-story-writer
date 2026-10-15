@@ -1,0 +1,586 @@
+{
+ "_about": "Held-out test samples for the stage evaluation (see eval/README.md). Excluded from every retrieval snapshot; gold = the teacher's own corrections and content flags for each sample.",
+ "samples": [
+  {
+   "sample_id": "mengmu_samples#10",
+   "story_id": "mengmu_san_qian",
+   "raw_text": "孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。子思认为，对孩子来说，读书最重要，特别是学哲学。孟子不是练习写文章，就是看哲学书。孟子从五岁一直学哲学。他才五岁就学哲学，难怪他成为很有名的哲学家。",
+   "scenes": [
+    "孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。",
+    "妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。",
+    "子思认为，对孩子来说，读书最重要，特别是学哲学。孟子不是练习写文章，就是看哲学书。孟子从五岁一直学哲学。他才五岁就学哲学，难怪他成为很有名的哲学家。"
+   ],
+   "gold": {
+    "corrections": [
+     {
+      "text": "孟子小的时候：better to briefly introduce “孟子” when this character first appears",
+      "original_span": "孟子小的时候",
+      "corrected_span": "better to briefly introduce “孟子” when this character first appears",
+      "explanation": "",
+      "rules": [
+       "character_introduction_first_mention"
+      ]
+     },
+     {
+      "text": "孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子",
+      "original_span": "孟子和他的朋友喜欢玩在墓地里，装祭拜",
+      "corrected_span": "在墓地玩",
+      "explanation": "在Place V.; 装着祭拜的样子",
+      "rules": [
+       "location_zai_place",
+       "aspect_zhe_durative"
+      ]
+     },
+     {
+      "text": "住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.",
+      "original_span": "住离墓地太近，害得孟子的心气",
+      "corrected_span": "住在离墓地太近的地方，会害得孟子受到不好的影响",
+      "explanation": "害得Sb. + V.",
+      "rules": [
+       "location_zai_place",
+       "haide_harmful_result",
+       "attributive_modifier_de"
+      ]
+     },
+     {
+      "text": "因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书",
+      "original_span": "因为孟子现在没有朋友，他老是读书",
+      "corrected_span": "孟子现在没有朋友，因为他老是读书",
+      "explanation": "",
+      "rules": [
+       "coherence_connectives"
+      ]
+     },
+     {
+      "text": "孟子从五岁一直学哲学：从五岁开始",
+      "original_span": "孟子从五岁一直学哲学",
+      "corrected_span": "从五岁开始",
+      "explanation": "",
+      "rules": [
+       "word_choice"
+      ]
+     }
+    ],
+    "content_flags": [
+     "Miss one scene: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day"
+    ]
+   }
+  },
+  {
+   "sample_id": "mengmu_samples#32",
+   "story_id": "mengmu_san_qian",
+   "raw_text": "有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。你不是当数学家，而是当哲学家，不能当卖东西的人。所以他们又搬家。在他们第三个家，孟子学了怎么祭拜。妈妈感觉这个地方适合他们，告诉了孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。",
+   "scenes": [
+    "有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+    "他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。",
+    "你不是当数学家，而是当哲学家，不能当卖东西的人。所以他们又搬家。在他们第三个家，孟子学了怎么祭拜。妈妈感觉这个地方适合他们，告诉了孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。"
+   ],
+   "gold": {
+    "corrections": [
+     {
+      "text": "有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears",
+      "original_span": "有一天孟子去了墓地玩儿",
+      "corrected_span": "better to briefly introduce “孟子” when this character first appears",
+      "explanation": "",
+      "rules": [
+       "character_introduction_first_mention"
+      ]
+     },
+     {
+      "text": "但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方",
+      "original_span": "但是他妈妈觉得这是不合适的地方让孩子玩",
+      "corrected_span": "这不是适合孩子玩的地方",
+      "explanation": "",
+      "rules": [
+       "attributive_modifier_de"
+      ]
+     },
+     {
+      "text": "所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方",
+      "original_span": "所以她决定了他们会搬家找更好的地方",
+      "corrected_span": "决定is a mental state verb, no了；delete他们会；搬家到更好的地方",
+      "explanation": "",
+      "rules": [
+       "aspect_le_completed",
+       "redundancy_delete",
+       "preposition_dao_place"
+      ]
+     },
+     {
+      "text": "她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我",
+      "original_span": "她恐怕儿子的童年不会幸福",
+      "corrected_span": "怕/担心",
+      "explanation": "恐怕usually does not take Subj. except 我",
+      "rules": [
+       "word_choice"
+      ]
+     },
+     {
+      "text": "所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育",
+      "original_span": "所以她会一直搬家才能找到质量好的教育",
+      "corrected_span": "delete会，会will; delete才能，想要让孟子受到良好的教育",
+      "explanation": "",
+      "rules": [
+       "redundancy_delete",
+       "word_choice",
+       "verb_object_collocation"
+      ]
+     },
+     {
+      "text": "他们住才一月就又搬家：才住了一个月，了completed",
+      "original_span": "他们住才一月就又搬家",
+      "corrected_span": "才住了一个月",
+      "explanation": "了completed",
+      "rules": [
+       "aspect_le_completed",
+       "cai_jiu_construction",
+       "measure_word"
+      ]
+     },
+     {
+      "text": "古代的时候：那时候",
+      "original_span": "古代的时候",
+      "corrected_span": "那时候",
+      "explanation": "",
+      "rules": [
+       "time_expression"
+      ]
+     },
+     {
+      "text": "但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是",
+      "original_span": "但是孟子老是跟这些卖东西的人常常玩儿",
+      "corrected_span": "delete常常，redundant with老是",
+      "explanation": "",
+      "rules": [
+       "redundancy_delete"
+      ]
+     },
+     {
+      "text": "因为她恐怕儿子会成为跟他们很像：怕/担心，恐怕usually does not take Subj. except 我；跟他们一样/很像的人，成为+ noun",
+      "original_span": "因为她恐怕儿子会成为跟他们很像",
+      "corrected_span": "怕/担心",
+      "explanation": "恐怕usually does not take Subj. except 我；跟他们一样/很像的人，成为+ noun",
+      "rules": [
+       "word_choice",
+       "verb_object_collocation"
+      ]
+     },
+     {
+      "text": "她告诉了孟子：告诉，no了for speaking word",
+      "original_span": "她告诉了孟子",
+      "corrected_span": "告诉",
+      "explanation": "no了for speaking word",
+      "rules": [
+       "aspect_le_completed"
+      ]
+     },
+     {
+      "text": "你不是当数学家，而是当哲学家，不能当卖东西的人：不是要当商人，而是要当哲学家，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+      "original_span": "你不是当数学家，而是当哲学家，不能当卖东西的人",
+      "corrected_span": "不是要当商人，而是要当哲学家",
+      "explanation": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+      "rules": [
+       "bushi_ershi_construction"
+      ]
+     },
+     {
+      "text": "所以他们又搬家：又搬家了，了completed",
+      "original_span": "所以他们又搬家",
+      "corrected_span": "又搬家了",
+      "explanation": "了completed",
+      "rules": [
+       "aspect_le_completed"
+      ]
+     },
+     {
+      "text": "在他们第三个家，孟子学了怎么祭拜：在他们的第三个家，学会了/学习了，wrong information, it’s not about learning to offer sacrifices",
+      "original_span": "在他们第三个家，孟子学了怎么祭拜",
+      "corrected_span": "在他们的第三个家，学会了/学习了",
+      "explanation": "wrong information, it’s not about learning to offer sacrifices",
+      "rules": [
+       "wrong_information_content",
+       "resultative_complement"
+      ]
+     },
+     {
+      "text": "告诉了孟子：告诉，no了for speaking word",
+      "original_span": "告诉了孟子",
+      "corrected_span": "告诉",
+      "explanation": "no了for speaking word",
+      "rules": [
+       "aspect_le_completed"
+      ]
+     },
+     {
+      "text": "他难怪成为有名的哲学家：难怪后来他成为……",
+      "original_span": "他难怪成为有名的哲学家",
+      "corrected_span": "难怪后来他成为……",
+      "explanation": "",
+      "rules": [
+       "adverbial_word_order"
+      ]
+     }
+    ],
+    "content_flags": [
+     "Miss two scenes: 孟母 decided to move away from the neighborhood near the graveyard because 孟子 imitated how to offer sacrifices every day; 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day"
+    ]
+   }
+  },
+  {
+   "sample_id": "mengmu_samples#45",
+   "story_id": "mengmu_san_qian",
+   "raw_text": "古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。",
+   "scenes": [
+    "古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。",
+    "他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。",
+    "他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。"
+   ],
+   "gold": {
+    "corrections": [
+     {
+      "text": "古代的时候：在古代",
+      "original_span": "古代的时候",
+      "corrected_span": "在古代",
+      "explanation": "",
+      "rules": [
+       "time_expression"
+      ]
+     },
+     {
+      "text": "但是城市有才两个学校：这个城市，只有",
+      "original_span": "但是城市有才两个学校",
+      "corrected_span": "这个城市，只有",
+      "explanation": "",
+      "rules": [
+       "word_choice"
+      ]
+     },
+     {
+      "text": "他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.",
+      "original_span": "他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育",
+      "corrected_span": "delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.",
+      "explanation": "",
+      "rules": [
+       "bushi_ershi_construction",
+       "verb_object_collocation"
+      ]
+     },
+     {
+      "text": "他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨",
+      "original_span": "他们从早到晚走路，孟子一直抱怨",
+      "corrected_span": "delete他们，因为从早到晚走路，所以孟子一直抱怨",
+      "explanation": "",
+      "rules": [
+       "redundancy_delete",
+       "coherence_connectives"
+      ]
+     },
+     {
+      "text": "他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市",
+      "original_span": "他难怪抱怨，他想他的朋友，因为他不要离开他的城市",
+      "corrected_span": "难怪他抱怨",
+      "explanation": "难怪 + sentence; 原来他想他的朋友，不想离开他的城市",
+      "rules": [
+       "adverbial_word_order",
+       "coherence_connectives"
+      ]
+     },
+     {
+      "text": "他的妈妈找到孟子一个老师：给孟子找到……",
+      "original_span": "他的妈妈找到孟子一个老师",
+      "corrected_span": "给孟子找到……",
+      "explanation": "",
+      "rules": [
+       "verb_object_collocation"
+      ]
+     },
+     {
+      "text": "跟老师孟子学最重要的文学：孟子跟老师学习文学",
+      "original_span": "跟老师孟子学最重要的文学",
+      "corrected_span": "孟子跟老师学习文学",
+      "explanation": "",
+      "rules": [
+       "adverbial_word_order"
+      ]
+     }
+    ],
+    "content_flags": [
+     "Miss one scene: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day"
+    ]
+   }
+  },
+  {
+   "sample_id": "shennong_samples#8",
+   "story_id": "shennong_chang_baicao",
+   "raw_text": "古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。",
+   "scenes": [
+    "古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。",
+    "然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。",
+    "一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。"
+   ],
+   "gold": {
+    "corrections": [
+     {
+      "text": "一看很多人正在吃一些植物：看到，一……就",
+      "original_span": "一看很多人正在吃一些植物",
+      "corrected_span": "看到，一……就",
+      "explanation": "",
+      "rules": [
+       "resultative_complement",
+       "word_choice"
+      ]
+     },
+     {
+      "text": "神农想帮别人：帮他们，“别(的)” is for “a different type”, and “all else except the spoken one”",
+      "original_span": "神农想帮别人",
+      "corrected_span": "帮他们",
+      "explanation": "“别(的)” is for “a different type”, and “all else except the spoken one”",
+      "rules": [
+       "word_choice"
+      ]
+     },
+     {
+      "text": "一些植物吃真好：真好吃",
+      "original_span": "一些植物吃真好",
+      "corrected_span": "真好吃",
+      "explanation": "",
+      "rules": [
+       "word_choice"
+      ]
+     },
+     {
+      "text": "一些植物毒得很：毒性强得很",
+      "original_span": "一些植物毒得很",
+      "corrected_span": "毒性强得很",
+      "explanation": "",
+      "rules": [
+       "word_choice"
+      ]
+     },
+     {
+      "text": "麻烦我们可以吃什么植物：麻烦告诉我们……",
+      "original_span": "麻烦我们可以吃什么植物",
+      "corrected_span": "麻烦告诉我们……",
+      "explanation": "",
+      "rules": [
+       "word_choice"
+      ]
+     },
+     {
+      "text": "以后，神农告诉别人一些植物能吃，一些植物不能吃：后来，Time+以后；告诉人们，“别(的)” is for “a different type”, and “all else except the spoken one”；哪些，哪些",
+      "original_span": "以后，神农告诉别人一些植物能吃，一些植物不能吃",
+      "corrected_span": "后来",
+      "explanation": "Time+以后；告诉人们，“别(的)” is for “a different type”, and “all else except the spoken one”；哪些，哪些",
+      "rules": [
+       "time_expression",
+       "word_choice"
+      ]
+     }
+    ],
+    "content_flags": [
+     "Miss five scenes: 神农found茶and took a record；神农tried 夹竹桃 and fainted；a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝；another person in brown came by and had a conversation with 神农；神农takes record of灵芝and夹竹桃"
+    ]
+   }
+  },
+  {
+   "sample_id": "shennong_samples#19",
+   "story_id": "shennong_chang_baicao",
+   "raw_text": "古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。",
+   "scenes": [
+    "古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。",
+    "凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。",
+    "糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。"
+   ],
+   "gold": {
+    "corrections": [
+     {
+      "text": "他找很多植物：找到，找look for vs.找到find",
+      "original_span": "他找很多植物",
+      "corrected_span": "找到",
+      "explanation": "找look for vs.找到find",
+      "rules": [
+       "resultative_complement"
+      ]
+     },
+     {
+      "text": "凉山很大的山，这也找植物：很大，在这儿也能找到植物",
+      "original_span": "凉山很大的山，这也找植物",
+      "corrected_span": "很大，在这儿也能找到植物",
+      "explanation": "",
+      "rules": [
+       "adjective_predicate",
+       "resultative_complement"
+      ]
+     },
+     {
+      "text": "他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague",
+      "original_span": "他找到黄色的花",
+      "corrected_span": "一种黄色的花",
+      "explanation": "“黄色的花“too general and too vague",
+      "rules": [
+       "ambiguous_reference",
+       "measure_word"
+      ]
+     },
+     {
+      "text": "他听说你跟黄色的花做茶很有用：delete你，用……",
+      "original_span": "他听说你跟黄色的花做茶很有用",
+      "corrected_span": "delete你，用……",
+      "explanation": "",
+      "rules": [
+       "reference_form",
+       "word_choice"
+      ]
+     },
+     {
+      "text": "你的头发疼死，这冰茶是药：头很疼，这种冰茶",
+      "original_span": "你的头发疼死，这冰茶是药",
+      "corrected_span": "头很疼，这种冰茶",
+      "explanation": "",
+      "rules": [
+       "word_choice",
+       "measure_word"
+      ]
+     },
+     {
+      "text": "特别是毒：有毒，特别是+N，+ Clause",
+      "original_span": "特别是毒",
+      "corrected_span": "有毒",
+      "explanation": "特别是+N，+ Clause",
+      "rules": [
+       "word_class_misuse",
+       "example_marker_tebie_bifang"
+      ]
+     },
+     {
+      "text": "灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了",
+      "original_span": "灵芝药的夹竹桃他吃完了",
+      "corrected_span": "可以做夹竹桃解药的灵芝他吃了",
+      "explanation": "",
+      "rules": [
+       "attributive_modifier_de",
+       "sentence_restructure"
+      ]
+     },
+     {
+      "text": "也写一个课文的植物：写下一篇有关植物的文章",
+      "original_span": "也写一个课文的植物",
+      "corrected_span": "写下一篇有关植物的文章",
+      "explanation": "",
+      "rules": [
+       "resultative_complement",
+       "word_choice",
+       "measure_word"
+      ]
+     }
+    ],
+    "content_flags": [
+     "Miss three scenes: 神农found茶and took a record；a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝；another person in brown came by and had a conversation with 神农"
+    ]
+   }
+  },
+  {
+   "sample_id": "shennong_samples#33",
+   "story_id": "shennong_chang_baicao",
+   "raw_text": "古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。",
+   "scenes": [
+    "古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。",
+    "发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。",
+    "他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。"
+   ],
+   "gold": {
+    "corrections": [
+     {
+      "text": "古代时候，人不知道他们能吃什么植物：古代的时候，人们",
+      "original_span": "古代时候，人不知道他们能吃什么植物",
+      "corrected_span": "古代的时候，人们",
+      "explanation": "",
+      "rules": [
+       "time_expression",
+       "word_choice"
+      ]
+     },
+     {
+      "text": "所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears",
+      "original_span": "所以有一天，神农出去试一试很多种植物",
+      "corrected_span": "better to briefly introduce “神农” when this character first appears",
+      "explanation": "",
+      "rules": [
+       "character_introduction_first_mention"
+      ]
+     },
+     {
+      "text": "告诉人什么植物是安全什么是危险：是安全的，是危险的",
+      "original_span": "告诉人什么植物是安全什么是危险",
+      "corrected_span": "是安全的，是危险的",
+      "explanation": "",
+      "rules": [
+       "adjective_predicate"
+      ]
+     },
+     {
+      "text": "发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服",
+      "original_span": "发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚",
+      "corrected_span": "add他in the beginning; delete 感觉，又暖和又舒服",
+      "explanation": "",
+      "rules": [
+       "missing_subject",
+       "word_choice"
+      ]
+     },
+     {
+      "text": "这就要看你的口味：这就要看……了",
+      "original_span": "这就要看你的口味",
+      "corrected_span": "这就要看……了",
+      "explanation": "",
+      "rules": [
+       "zhe_jiu_yao_kan"
+      ]
+     },
+     {
+      "text": "什么都花想吃：什么花都想吃",
+      "original_span": "什么都花想吃",
+      "corrected_span": "什么花都想吃",
+      "explanation": "",
+      "rules": [
+       "adverbial_word_order"
+      ]
+     },
+     {
+      "text": "他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花",
+      "original_span": "他发现这个口味，一百岁时候，不小心吃了毒的花",
+      "corrected_span": "delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花",
+      "explanation": "",
+      "rules": [
+       "coherence_connectives",
+       "time_expression",
+       "word_class_misuse"
+      ]
+     },
+     {
+      "text": "一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”",
+      "original_span": "一吃就开始死",
+      "corrected_span": "开始不舒服",
+      "explanation": "“死“ is instant, so cannot be with “开始”",
+      "rules": [
+       "word_choice"
+      ]
+     },
+     {
+      "text": "但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒",
+      "original_span": "但是生病时候告诉人什么植物是药，什么植物是毒",
+      "corrected_span": "但是即使他生病了，也告诉……，有毒",
+      "explanation": "",
+      "rules": [
+       "coherence_connectives",
+       "word_class_misuse"
+      ]
+     }
+    ],
+    "content_flags": [
+     "Miss three scenes: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝；another person in brown came by and had a conversation with 神农；神农takes record of灵芝and夹竹桃"
+    ]
+   }
+  }
+ ]
+}

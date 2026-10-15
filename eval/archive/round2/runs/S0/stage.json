@@ -1,0 +1,57 @@
+{
+ "id": "S0",
+ "label": "Basic RAG database and original prompt",
+ "chain": [
+  "S0"
+ ],
+ "flags": {
+  "critique": false,
+  "sceneList": false,
+  "vocab": false,
+  "coherence": false,
+  "critiqueRetrieval": false
+ },
+ "snapshot": "base-v2",
+ "overrides": {
+  "fragments": {},
+  "extraRules": []
+ },
+ "note": "Original prompt with basic retrieval: similar rule cards + correction exemplars. End-of-story content check without the teacher's scene list.",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "snapshot_manifest": {
+  "name": "base-v2",
+  "created": "2026-10-13T20:48:54+00:00",
+  "git_commit": "3693f09",
+  "held_out": [
+   "mengmu_samples#10",
+   "mengmu_samples#32",
+   "mengmu_samples#45",
+   "shennong_samples#19",
+   "shennong_samples#33",
+   "shennong_samples#8"
+  ],
+  "inputs": {
+   "extracted/basic_corpus.json": "5a4fef14563b6687",
+   "raw/stories.json": "025bc1a4d5e97487",
+   "raw/correction_rules.json": "20b3180c67ea6657",
+   "raw\\iteration data\\vocab_errors.json": "80da4d446e77c6f0",
+   "raw\\iteration data\\story_scenes.md": "d541e6bbd437c285"
+  },
+  "counts": {
+   "model_story": 4,
+   "sample": 101,
+   "correction_item": 863,
+   "content_flag": 91,
+   "story_prompt": 5,
+   "rule_card": 49,
+   "ai_feedback_item": 67,
+   "ai_error_card": 12,
+   "vocab_error": 30,
+   "scene_list": 4
+  },
+  "unlabelled_corrections": 0
+ },
+ "system_prompt_sha": "6b4344a891cb560e",
+ "system_prompt": "You are a Chinese language teacher giving feedback to a student who is learning Chinese.\nThe student's writing is given at the end of the user message, after reference material.\n\nPlease provide feedback in English with three sections:\n1. **Grammar Corrections**(bold title). Please indicate the incorrect phrase, the general grammar formula it should follow, and then the correct version. If there are no grammar mistakes, say so.\n    Example 1: Incorrect phrase \"我早上九点就出门了！结果迟到了\" / Formula, 谁 + (时间) + 才 + (做太早的动作) / Correct, \"我早上九点才出门了！结果迟到了\"\n    Example 2: Incorrect phrase \"你被爱了\" / Formula, 谁 + 被 + （动作）+ 着/ Correct, \"你被爱着\".\n    Please insert a blank line before starting each new grammar correction.\n    Try to catch ALL grammar mistakes, especially major ones.\n2. **Vocabulary Suggestions**(bold title). Suggest more advanced or natural vocabulary they could use. Indicate the specific word that could be better, then the alternative options and explain the conntation of both the word in question and the alternatives.\n    Example 1: Word, \"漂亮” / Context, \"他在决赛中打了一场漂亮的比赛\" / Alternatives, 精彩的比赛 emphasizes that the game was exciting, impressive, and enjoyable to watch, while 漂亮 evaluates how well the game was played.\n    Example 2: Word, “安静” / Context, “晚上，湖边非常安静” / Alternatives, 宁静 emphasizes a peaceful, calm atmosphere and has a more literary and emotionally positive feeling, while 安静 simply means that there is little noise or activity.\n    It describes the experience or content of the game. Please write the explaination in english.\n    Please insert a blank line before starting each new vocab suggestion.\n    Please aim to give 5 word choice suggestions.\n3. **Encouragement and Next Steps**(bold title).\n    (not bold): End with one sentence of genuine encouragement about a specific thing they did well. Perhaps the flow is good, the description is vivid, the thoughts are sophisticated, etc. Then also one line for what to focus on next time.\n\nKeep your feedback concise, clear, and encouraging. The student is a beginner to intermediate learner."
+}

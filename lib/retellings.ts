@@ -3,13 +3,13 @@
  * watching the video + taking the quiz on the Traditional Stories page.
  *
  * The key is the corpus `story_id` used by the RAG pipeline — it must match a
- * `story_prompt:<id>` / `model_story:<id>` chunk in `rag_chunks` (see
- * chinese_writing_rag_pipeline/chunks/chunks.jsonl), and the `retellId` on the
+ * `model_story:<id>` / `scene_list:<id>` chunk in `rag_chunks` (see
+ * chinese_writing_rag_pipeline/chunks/), and the `retellId` on the
  * story in app/traditional-stories/page.tsx. The required scenes come from the
- * teacher's scene list (chinese_writing_rag_pipeline/raw/story_scenes.md).
+ * teacher's scene list (chinese_writing_rag_pipeline/raw/iteration data/story_scenes.md).
  *
- * To add one: add the story to raw/story_scenes.md (and a model story) and
- * re-run the pipeline, give the story a `retellId` in
+ * To add one: add the story to raw/stories.json, raw/iteration data/story_scenes.md
+ * (and a model story) and re-run the pipeline, give the story a `retellId` in
  * app/traditional-stories/page.tsx, then add an entry here.
  */
 export interface ReferenceWord {

@@ -1,7 +1,7 @@
 # Atlas Vector Search setup for `rag_chunks`
 
 One-time setup. After running the embed script — `node scripts/embed-to-mongo.mjs`
-(or the Python equivalent `scripts/embed_to_mongo.py`), which populates the
+(or `python scripts/run_pipeline.py --embed`), which populates the
 `rag_chunks` collection in the `chinese-writer-data` database — create a Vector
 Search index so `lib/rag/retrieve.ts` can run `$vectorSearch`.
 
@@ -29,7 +29,7 @@ Search index so `lib/rag/retrieve.ts` can run `$vectorSearch`.
 ```
 
 `numDimensions: 1536` matches `text-embedding-3-small`. If you switch embedding
-models, update this number, `EMBED_MODEL` in `embed_to_mongo.py`, and
+models, update this number, `EMBED_MODEL` in `scripts/embed-to-mongo.mjs`, and
 `EMBED_MODEL` in `lib/rag/embed.ts`, then re-embed.
 
 ## Option A - Atlas UI

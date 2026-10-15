@@ -95,8 +95,11 @@ This sandbox has **no outbound network access to huggingface.co** (confirmed: Py
 
 ## 7. Running it
 
-(Original prototype commands. The current build is the single `run_pipeline.py`
-command in §10.)
+(Original prototype commands, kept for the record. The prototype scripts --
+local_demo.py, embed_and_index.py, retrieve.py, assemble_feedback_prompt.py,
+embed_to_mongo.py -- and requirements.txt have since been removed; the pipeline
+now needs only the Python standard library. The current build is the single
+`run_pipeline.py` command in §10.)
 
 ```bash
 pip install -r requirements.txt
@@ -134,7 +137,7 @@ This corpus itself needs no anonymization — samples are already just numbers (
 
 The Chroma/sentence-transformers "production track" in §6 is one valid deployment. The deployed Next.js app uses a different stack it already has:
 
-- **Embeddings:** OpenAI `text-embedding-3-small` (1536-dim), for both the corpus and the query. Set once in `scripts/embed_to_mongo.py` and `lib/rag/embed.ts` — change one, change both, re-embed.
+- **Embeddings:** OpenAI `text-embedding-3-small` (1536-dim), for both the corpus and the query. Set once in `scripts/embed-to-mongo.mjs` and `lib/rag/embed.ts` — change one, change both, re-embed.
 - **Vector store:** the app's existing MongoDB Atlas database (`chinese-writer-data`), collection `rag_chunks`, one Atlas Vector Search index `rag_vec` (`docs/atlas_setup.md`). No new infrastructure, no Python at request time.
 - **Feedback LLM:** OpenAI `gpt-4.1` (replaces the old Groq `llama-3.3-70b` single static prompt).
 
@@ -143,16 +146,17 @@ Build / deploy sequence:
 ```bash
 # whenever the source documents change -- one command, standard library only:
 python chinese_writing_rag_pipeline/scripts/run_pipeline.py
-#   raw/basic data/* + raw/iteration data/*  -> extracted/basic|iteration/*.json   (extract_json.py)
-#   + raw/stories.json (corpus IDs)           -> extracted/corpus.json              (parse_corpus.py)
-#   + raw/story_scenes.md, raw/vocab_errors.json -> chunks/chunks.jsonl             (chunk_builder.py)
+#   basic data (raw/basic data/ + raw/stories.json):
+#     extract_json.py -> parse_corpus.py -> extracted/basic_corpus.json
+#     chunk_builder.py                   -> chunks/basic_chunks.jsonl
+#   human-in-the-loop data (raw/iteration data/: AI critiques, vocab_errors.json, story_scenes.md):
+#     build_iteration_chunks.py          -> chunks/iteration_chunks.jsonl
 # How to add documents: see the docstring at the top of run_pipeline.py.
 
 # embed + load into Atlas (reads repo-root .env.local), deleting chunks that are
-# no longer in chunks.jsonl:
+# in neither chunk file:
 python chinese_writing_rag_pipeline/scripts/run_pipeline.py --embed
-#   (= node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs --prune;
-#    scripts/embed_to_mongo.py is an older Python equivalent without --prune.)
+#   (= node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs --prune)
 
 # then create the Atlas index once: docs/atlas_setup.md
 ```

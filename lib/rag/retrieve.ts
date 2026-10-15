@@ -15,6 +15,7 @@ export interface RetrievedChunk {
     parent_id?: string;
     grammar_tag?: string;
     eval_tag?: string;
+    eval_tags?: string[];
     original_span?: string | null;
     corrected_span?: string | null;
     explanation?: string | null;
@@ -38,6 +39,7 @@ const PROJECTION = {
     parent_id: 1,
     grammar_tag: 1,
     eval_tag: 1,
+    eval_tags: 1,
     original_span: 1,
     corrected_span: 1,
     explanation: 1,
@@ -47,8 +49,7 @@ const PROJECTION = {
 
 /**
  * Semantic search over the RAG corpus with a hard chunk_type filter (and an
- * optional story_id filter). Direct port of local_demo.py `search` /
- * retrieve.py `search`, backed by Atlas $vectorSearch instead of TF-IDF/Chroma.
+ * optional story_id filter), backed by Atlas $vectorSearch.
  */
 export async function searchChunks(
     queryText: string,
@@ -81,7 +82,7 @@ export async function searchChunks(
 
 /**
  * Fetch specific chunks by id (e.g. the always-injected ai_error_card:* and,
- * later, story_prompt:* / model_story:* cards). Returns them in the requested
+ * scene_list:* / model_story:* cards). Returns them in the requested
  * order, silently skipping any that are missing from the corpus.
  */
 export async function getChunksByIds(ids: string[]): Promise<RetrievedChunk[]> {
@@ -98,6 +99,7 @@ export async function getChunksByIds(ids: string[]): Promise<RetrievedChunk[]> {
             parent_id: 1,
             grammar_tag: 1,
             eval_tag: 1,
+            eval_tags: 1,
             title: 1,
         }
     ).lean<RetrievedChunk[]>();

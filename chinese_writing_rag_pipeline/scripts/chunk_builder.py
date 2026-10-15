@@ -1,37 +1,81 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Build the hierarchical RAG chunk set from extracted/corpus.json.
+Build the basic-data RAG chunk set from extracted/basic_corpus.json
+-> chunks/basic_chunks.jsonl. Basic data only: graded samples and model
+stories. Human-in-the-loop chunks (AI critiques, vocab list, scene lists) are
+built separately by build_iteration_chunks.py.
 
 Chunk types (see docs/design.md for full rationale):
-  story_prompt   -- one per writing-prompt/story (top anchor: model text + the
-                     teacher's required-scene list + aggregate stats)
+  story_prompt   -- one per story (top anchor: model title + sample stats + the
+                     scenes students most often left out)
   model_story    -- the near-perfect exemplar text for a story prompt
   sample         -- one full student story instance (parent for everything below)
   correction_item-- one atomic teacher gold correction (original -> corrected, why)
-  ai_feedback_item-- one atomic AI feedback item + teacher's critique of it
   content_flag   -- one structured content-coverage/coherence/factual flag
   rule_card      -- aggregated exemplars of one grammar/linguistic point across the corpus
-  ai_error_card  -- aggregated exemplars of one AI-feedback-failure-mode across the corpus
-  vocab_error    -- one entry of the teacher's word-choice error list (raw/vocab_errors.json)
+
+Grammar rules per correction come from raw/correction_rules.json (labels keyed by
+the correction's text). A correction with no label there falls back to the
+regex tagger (tagging.py) and is listed in extracted/unlabelled_corrections.json
+so it can be labelled.
 
 Every chunk is a flat dict: {chunk_id, chunk_type, text, metadata{...}}
 so a single vector collection can hold everything and be filtered by chunk_type /
-story_id / grammar_tags / eval_tags / doc_type at query time (metadata filtering),
+story_id / grammar_tags / doc_type at query time (metadata filtering),
 while parent_id links let a retriever "expand" an atomic hit back up to its
 sample or story_prompt context (small-to-big / parent-document retrieval).
 """
 import json
+import os
 import re
 import sys
 from collections import defaultdict, Counter
 
 sys.path.insert(0, "scripts")
-from tagging import tag_grammar_text, tag_ai_eval_text, parse_content_flag, split_correction
-from rule_descriptions import GRAMMAR_RULE_DESC, AI_EVAL_DESC
+from tagging import tag_grammar_text, parse_content_flag, split_correction
+from rule_descriptions import GRAMMAR_RULE_DESC, NO_RULE_CARD
 
+CORPUS_PATH = "extracted/basic_corpus.json"
+RULE_LABELS_PATH = "raw/correction_rules.json"
+UNLABELLED_PATH = "extracted/unlabelled_corrections.json"
+OUT_PATH = "chunks/basic_chunks.jsonl"
 MAX_RULE_CARD_EXAMPLES = 8
-MAX_AI_ERROR_CARD_EXAMPLES = 6
+
+
+def load_rule_labels():
+    labels = json.load(open(RULE_LABELS_PATH, encoding="utf-8"))["rules"]
+    unknown = sorted({r for rules in labels.values() for r in rules} - set(GRAMMAR_RULE_DESC))
+    if unknown:
+        sys.exit(f"{RULE_LABELS_PATH}: rules with no description in rule_descriptions.py: {unknown}")
+    return labels
+
+
+def pick_examples(tag, examples, n):
+    """Choose a rule card's examples: first corrections whose explanation names
+    this rule in the teacher's own shorthand (the regex tagger finds exactly
+    those), then ones with any explanation, then the rest; spread round-robin
+    across stories (in corpus order), with no repeated original span -- so the
+    card shows the rule's range, not just the first story's first few hits."""
+    ranked = sorted(examples, key=lambda e: (tag not in tag_grammar_text(e["text"]),
+                                             not e["metadata"]["explanation"]))
+    by_story = defaultdict(list)
+    for ex in ranked:
+        by_story[ex["metadata"]["story_id"]].append(ex)
+    queues = [by_story[sid] for sid in dict.fromkeys(e["metadata"]["story_id"] for e in examples)]
+    picked, seen = [], set()
+    while len(picked) < n and any(queues):
+        for q in queues:
+            while q:
+                ex = q.pop(0)
+                key = ex["metadata"]["original_span"] or ex["text"]
+                if key not in seen:
+                    seen.add(key)
+                    picked.append(ex)
+                    break
+            if len(picked) == n:
+                break
+    return picked
 
 
 def dedup_key(t):
@@ -73,60 +117,16 @@ def build_scene_checklists(corpus):
     return checklists
 
 
-NUMBER_WORDS = {w: i for i, w in enumerate(
-    "zero one two three four five six seven eight nine ten eleven twelve thirteen "
-    "fourteen fifteen sixteen seventeen eighteen nineteen twenty".split())}
-
-
-def parse_story_scenes(path, title_to_story_id):
-    """Read the teacher's required-scene list (raw/story_scenes.md):
-
-        **Story 1: <title>**
-        Seven scenes: <scene>; <scene>；<scene> ...
-
-    Returns {story_id: [scene, ...]} in story order. The stated scene count is
-    checked against the split so a stray or missing separator fails loudly."""
-    text = open(path, encoding="utf-8").read()
-    scenes_by_story = {}
-    for m in re.finditer(r"\*\*Story \d+:\s*(.+?)\*\*\s*\n+\s*(\w+) scenes:\s*(.+)", text):
-        title, count_word, body = m.group(1).strip(), m.group(2).lower(), m.group(3)
-        story_id = title_to_story_id[title]
-        scenes = [sc.strip() for sc in re.split(r"[;；]", body) if sc.strip()]
-        if len(scenes) != NUMBER_WORDS[count_word]:
-            raise ValueError(f"{title}: says {count_word} scenes, parsed {len(scenes)}")
-        scenes_by_story[story_id] = scenes
-    return scenes_by_story
-
-
-def build_required_scenes(corpus, story_scenes_path):
-    """Required-scene checklist per story = the teacher's own scene list, in
-    story order. Each scene also carries how often the teacher flagged that exact
-    beat as missing in the graded samples (None if no annotation matches it word
-    for word) -- kept as metadata for analysis, not shown to the feedback model."""
-    title_to_story_id = {m["title"]: m["story_id"] for m in corpus["model_stories"]}
-    authored = parse_story_scenes(story_scenes_path, title_to_story_id)
-    derived = build_scene_checklists(corpus)
-    checklists = {}
-    for story_id, scenes in authored.items():
-        counts = {dedup_key(c["scene_description"]): c["times_flagged_missing"]
-                  for c in derived.get(story_id, [])}
-        checklists[story_id] = [
-            {"scene_number": i, "scene_description": sc,
-             "times_flagged_missing": counts.get(dedup_key(sc))}
-            for i, sc in enumerate(scenes, 1)
-        ]
-    return checklists
-
-
 def make_chunk(chunk_id, chunk_type, text, **meta):
     return {"chunk_id": chunk_id, "chunk_type": chunk_type, "text": text, "metadata": meta}
 
 
-def build_chunks(corpus):
+def build_chunks(corpus, rule_labels):
     chunks = []
+    unlabelled = []
 
     model_by_story = {m["story_id"]: m for m in corpus["model_stories"]}
-    scene_checklists = build_required_scenes(corpus, "raw/story_scenes.md")
+    missed_scenes = build_scene_checklists(corpus)
 
     # ---- model_story chunks -------------------------------------------------
     for m in corpus["model_stories"]:
@@ -137,7 +137,7 @@ def build_chunks(corpus):
         ))
 
     # ---- per-sample chunk tree ----------------------------------------------
-    story_stats = defaultdict(lambda: {"n_samples": 0, "grammar_tags": Counter(), "ai_eval_tags": Counter()})
+    story_stats = defaultdict(lambda: {"n_samples": 0, "grammar_tags": Counter()})
 
     for s in corpus["samples"]:
         sid = s["sample_id"]
@@ -147,33 +147,23 @@ def build_chunks(corpus):
             f"sample:{sid}", "sample", s["raw_text"],
             source_doc=s["source_doc"], doc_type=s["doc_type"], story_id=s["story_id"],
             sample_id=sid, n_teacher_items=len(s["teacher_correction_items"]),
-            n_ai_items=len(s["ai_feedback_items"]), n_content_flags=len(s["content_flags"]),
+            n_content_flags=len(s["content_flags"]),
         ))
 
         for idx, raw in enumerate(s["teacher_correction_items"]):
             split = split_correction(raw)
-            gtags = tag_grammar_text(raw)
+            if raw in rule_labels:
+                gtags, tag_source = rule_labels[raw], "label"
+            else:
+                gtags, tag_source = tag_grammar_text(raw), "regex_fallback"
+                unlabelled.append({"sample_id": sid, "text": raw, "regex_tags": gtags})
             story_stats[s["story_id"]]["grammar_tags"].update(gtags)
             chunks.append(make_chunk(
                 f"correction_item:{sid}::c{idx}", "correction_item", raw,
                 source_doc=s["source_doc"], doc_type=s["doc_type"], story_id=s["story_id"],
                 sample_id=sid, parent_id=f"sample:{sid}",
                 original_span=split["original_span"], corrected_span=split["corrected_span"],
-                explanation=split["explanation"], grammar_tags=gtags,
-            ))
-
-        for idx, item in enumerate(s["ai_feedback_items"]):
-            comment = item.get("my_comment") or ""
-            etags = tag_ai_eval_text(comment) if comment else []
-            story_stats[s["story_id"]]["ai_eval_tags"].update(etags)
-            gtags_ai = tag_grammar_text(item["raw_text"])
-            text = item["raw_text"] + ("\n" + comment if comment else "")
-            chunks.append(make_chunk(
-                f"ai_feedback_item:{sid}::a{idx}", "ai_feedback_item", text,
-                source_doc=s["source_doc"], doc_type=s["doc_type"], story_id=s["story_id"],
-                sample_id=sid, parent_id=f"sample:{sid}",
-                ai_category=item["category"], ai_raw_text=item["raw_text"],
-                teacher_comment=comment, eval_tags=etags, grammar_tags=gtags_ai,
+                explanation=split["explanation"], grammar_tags=gtags, tag_source=tag_source,
             ))
 
         for idx, raw in enumerate(s["content_flags"]):
@@ -185,32 +175,28 @@ def build_chunks(corpus):
             ))
 
     # ---- story_prompt anchor chunks -----------------------------------------
-    all_story_ids = set(story_stats.keys()) | set(model_by_story.keys())
-    empty_stats = {"n_samples": 0, "grammar_tags": Counter(), "ai_eval_tags": Counter()}
-    for story_id in all_story_ids:
+    empty_stats = {"n_samples": 0, "grammar_tags": Counter()}
+    for story_id in sorted(set(story_stats) | set(model_by_story)):
         stats = story_stats.get(story_id, empty_stats)
         model = model_by_story.get(story_id)
-        checklist = scene_checklists.get(story_id, [])
+        missed = missed_scenes.get(story_id, [])
         lines = [f"Story prompt: {story_id}"]
         if model:
             lines.append(f"Model exemplar title: {model['title']}")
         lines.append(f"Reviewed student samples: {stats['n_samples']}")
-        if checklist:
-            lines.append(f"Required scenes, in story order ({len(checklist)}, from the teacher's scene list):")
-            for c in checklist:
-                lines.append(f"  {c['scene_number']}. {c['scene_description']}")
+        if missed:
+            lines.append("Scenes students most often left out (from the teacher's 'Miss scene' notes):")
+            for c in missed:
+                lines.append(f"  - {c['scene_description']} "
+                             f"(missing in {c['times_flagged_missing']}/{stats['n_samples']} samples)")
         if stats["grammar_tags"]:
             top = ", ".join(f"{t}×{n}" for t, n in stats["grammar_tags"].most_common(10))
             lines.append(f"Most common grammar issues in this batch: {top}")
-        if stats["ai_eval_tags"]:
-            top = ", ".join(f"{t}×{n}" for t, n in stats["ai_eval_tags"].most_common(10))
-            lines.append(f"AI-feedback quality issues observed: {top}")
-        text = "\n".join(lines)
         chunks.append(make_chunk(
-            f"story_prompt:{story_id}", "story_prompt", text,
+            f"story_prompt:{story_id}", "story_prompt", "\n".join(lines),
             story_id=story_id, doc_type="story_prompt",
             has_model_story=bool(model), n_samples=stats["n_samples"],
-            n_scene_checklist_items=len(checklist),
+            n_missed_scene_items=len(missed),
         ))
 
     # ---- rule_card chunks (aggregate grammar tags across whole corpus) -----
@@ -221,8 +207,10 @@ def build_chunks(corpus):
                 grammar_examples[tag].append(ch)
 
     for tag, examples in grammar_examples.items():
+        if tag in NO_RULE_CARD:
+            continue
         desc = GRAMMAR_RULE_DESC.get(tag, "")
-        picked = examples[:MAX_RULE_CARD_EXAMPLES]
+        picked = pick_examples(tag, examples, MAX_RULE_CARD_EXAMPLES)
         lines = [f"Grammar/linguistic point: {tag}", desc, "Examples (original -> corrected, why):"]
         story_ids = set()
         for ex in picked:
@@ -240,64 +228,33 @@ def build_chunks(corpus):
             story_ids=sorted(story_ids),
         ))
 
-    # ---- ai_error_card chunks (aggregate AI-feedback failure modes) --------
-    ai_examples = defaultdict(list)
-    for ch in chunks:
-        if ch["chunk_type"] == "ai_feedback_item":
-            for tag in ch["metadata"]["eval_tags"]:
-                ai_examples[tag].append(ch)
-
-    for tag, examples in ai_examples.items():
-        desc = AI_EVAL_DESC.get(tag, "")
-        picked = examples[:MAX_AI_ERROR_CARD_EXAMPLES]
-        lines = [f"AI-feedback calibration pattern: {tag}", desc, "Examples (AI said / teacher's verdict):"]
-        for ex in picked:
-            md = ex["metadata"]
-            lines.append(f"  - AI: {md['ai_raw_text']}")
-            lines.append(f"    Teacher: {md['teacher_comment']}")
-        text = "\n".join(lines)
-        chunks.append(make_chunk(
-            f"ai_error_card:{tag}", "ai_error_card", text,
-            eval_tag=tag, description=desc, n_examples_total=len(examples),
-            example_sample_ids=[e["metadata"]["sample_id"] for e in picked],
-        ))
-
-    # ---- vocab_error chunks (teacher's word-choice error list) --------------
-    # Hand-transcribed from vocabulary_list_errors_correct.md, one chunk per
-    # entry. `triggers` are regexes the app matches against the student's text
-    # (lexical retrieval); the chunk text is embedded for semantic retrieval.
-    vocab = json.load(open("raw/vocab_errors.json", encoding="utf-8"))
-    story_titles = {m["story_id"]: m["title"] for m in corpus["model_stories"]}
-    for e in vocab["entries"]:
-        titles = " / ".join(story_titles.get(s, s) for s in e["story_ids"])
-        text = f"Vocabulary error (用错的词, from the teacher's list; collected from {titles}): *{e['wrong']} -> {e['correct']}"
-        if e["note"]:
-            text += f" -- {e['note']}"
-        chunks.append(make_chunk(
-            f"vocab_error:{e['id']}", "vocab_error", text,
-            story_ids=e["story_ids"], wrong=e["wrong"], correct=e["correct"],
-            note=e["note"], triggers=e["triggers"],
-            source="vocabulary_list_errors_correct.md",
-        ))
-
-    return chunks, scene_checklists
+    return chunks, unlabelled
 
 
 def main():
-    corpus = json.load(open("extracted/corpus.json", encoding="utf-8"))
-    chunks, scene_checklists = build_chunks(corpus)
+    corpus = json.load(open(CORPUS_PATH, encoding="utf-8"))
+    chunks, unlabelled = build_chunks(corpus, load_rule_labels())
 
-    with open("chunks/chunks.jsonl", "w", encoding="utf-8") as f:
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
         for ch in chunks:
             f.write(json.dumps(ch, ensure_ascii=False) + "\n")
 
-    with open("chunks/scene_checklists.json", "w", encoding="utf-8") as f:
-        json.dump(scene_checklists, f, ensure_ascii=False, indent=1)
-
     by_type = Counter(ch["chunk_type"] for ch in chunks)
-    print("Total chunks:", len(chunks))
+    print(f"Wrote {OUT_PATH}: {len(chunks)} basic chunks")
     for t, n in by_type.most_common():
         print(f"  {t:20s} {n}")
+
+    n_items = by_type["correction_item"]
+    if unlabelled:
+        with open(UNLABELLED_PATH, "w", encoding="utf-8") as f:
+            json.dump(unlabelled, f, ensure_ascii=False, indent=1)
+        print(f"\n{len(unlabelled)}/{n_items} corrections have no rule label in {RULE_LABELS_PATH} "
+              f"(regex tags used instead) -> listed in {UNLABELLED_PATH}")
+    else:
+        if os.path.exists(UNLABELLED_PATH):
+            os.remove(UNLABELLED_PATH)
+        print(f"\nAll {n_items} corrections have rule labels.")
+
 
 if __name__ == "__main__":
     main()

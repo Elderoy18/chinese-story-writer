@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Convert every source document into an ordered list of non-empty paragraph
-texts (JSON), the one input format parse_corpus.py reads.
+"""Convert every basic-data document into an ordered list of non-empty
+paragraph texts (JSON), the one input format parse_corpus.py reads.
 
-    raw/basic data/<name>.docx      -> extracted/basic/<name>.json
-    raw/iteration data/<name>.docx  -> extracted/iteration/<name>.json
+    raw/basic data/<name>.docx  -> extracted/basic/<name>.json
+
+(build_iteration_chunks.py reuses extract() to read the human-in-the-loop docs
+directly; they are not written to extracted/.)
 
 Supported: .docx (paragraphs and table cells, in document order), .txt / .md
 (one paragraph per blank-line-separated block). Anything else is skipped with a
@@ -20,7 +22,6 @@ W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
 SOURCES = {
     "raw/basic data": "extracted/basic",
-    "raw/iteration data": "extracted/iteration",
 }
 
 # Text copied out of PDFs often carries look-alike radical code points

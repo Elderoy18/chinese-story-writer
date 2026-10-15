@@ -1,0 +1,86 @@
+{
+ "_about": "Stage definitions for the evaluation (see eval/README.md). Stages are cumulative: each extends the one before and switches on one human-in-the-loop iteration. To try a teacher-requested refinement, add a new stage that extends the one being refined (e.g. \"S3-v2\": {\"extends\": \"S3\", ...}) and change fragments, extraRules, flags or snapshot; then run it and compare. Later stages can be re-pointed at an accepted refinement by changing their \"extends\".",
+ "stages": {
+  "S0": {
+   "label": "Basic RAG database and original prompt",
+   "flags": {
+    "critique": false,
+    "sceneList": false,
+    "vocab": false,
+    "coherence": false
+   },
+   "note": "Original prompt with basic retrieval: similar rule cards + correction exemplars. End-of-story content check without the teacher's scene list.",
+   "snapshot": "base-v2"
+  },
+  "S1": {
+   "label": "+ Critique of AI feedback",
+   "extends": "S0",
+   "flags": {
+    "critique": true
+   },
+   "note": "Teacher's 'My comment' critiques: rules 1-8, pinned ai_error_cards, structured output format."
+  },
+  "S2": {
+   "label": "+ Required-scene list",
+   "extends": "S1",
+   "flags": {
+    "sceneList": true
+   },
+   "note": "End-of-story content check against the teacher's scene_list; per-scene rule 9 (no plot comments per scene)."
+  },
+  "S3": {
+   "label": "+ Vocabulary error list",
+   "extends": "S2",
+   "flags": {
+    "vocab": true
+   },
+   "note": "Wrong words (用错的词) are errors under Grammar Corrections; vocab_error entries retrieved by regex triggers + similarity."
+  },
+  "S4": {
+   "label": "+ Coherence rules",
+   "extends": "S3",
+   "flags": {
+    "coherence": true
+   },
+   "note": "Coherence rules A-C, Coherence & Expressiveness section, pinned reference/了 rule cards, earlier scenes and model story as context. = production."
+  },
+  "S1-v2": {
+   "label": "+ Critique of AI feedback (relabelled)",
+   "extends": "S1",
+   "snapshot": "base-v2",
+   "note": "Same as S1, but the AI-mistake cards are rebuilt from the new labels for all 67 critiqued AI items (no 'unclassified'), with examples chosen so more different critiques appear."
+  },
+  "S1-v3": {
+   "label": "+ Critique of AI feedback (relabelled, similar critiques retrieved)",
+   "extends": "S1-v2",
+   "flags": {
+    "critiqueRetrieval": true
+   },
+   "note": "S1-v2 plus, for each scene, the 3 critiqued AI items most similar to the scene (by embedding similarity), each with the teacher's verdict."
+  },
+  "S5": {
+   "label": "+ Vocabulary suggestion revision",
+   "extends": "S4",
+   "fragments": {
+    "rule8": "overrides/S5/rule8.txt",
+    "vocabOutput": "overrides/S5/vocabOutput.txt",
+    "outputRules": "overrides/S5/outputRules.txt",
+    "grammarHeading": "Grammar & Vocabulary Corrections"
+   },
+   "note": "Teacher's comments on the S4 feedback: vocabulary suggestions only when clearly more appropriate in context (at most 3, none for acceptable words, never changing the meaning); the error section renamed Grammar & Vocabulary Corrections."
+  },
+  "S5-v2": {
+   "label": "+ Vocabulary suggestions guided by the teacher's examples",
+   "extends": "S5",
+   "snapshot": "base-v3",
+   "flags": {
+    "vocabExamples": true
+   },
+   "fragments": {
+    "rule8": "overrides/S5-v2/rule8.txt",
+    "vocabOutput": "overrides/S5-v2/vocabOutput.txt"
+   },
+   "note": "S5 with the teacher's official list of good vocabulary suggestions shown as models, and positive guidance: 1-3 suggestions per scene for correct but plain/general words, each checked in the student's sentence (same meaning, strength, collocation, tone)."
+  }
+ }
+}

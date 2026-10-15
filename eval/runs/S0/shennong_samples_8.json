@@ -1,0 +1,142 @@
+{
+ "stage": "S0",
+ "sample_id": "shennong_samples#8",
+ "story_id": "shennong_chang_baicao",
+ "created": "2026-10-13T22:16:43.859Z",
+ "git_commit": "3693f09+uncommitted",
+ "snapshot": "base-v2",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "scenes": [
+  {
+   "scene": 1,
+   "text": "古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...'): needs an uncertain condition before it (e.g. 会不会生病？) and an A-not-A / open question after 看.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 孩子才五岁就每天在墓地祭拜了 -> 孟子  [孩子is vague and unclear]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 古代的时候，孟子和孟母住了在靠墓地的家 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在靠近墓地的地方/墓地附近，delete了，在+Place]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代，孟子跟孟母住在墓地的旁边 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 孟子长大，他开始能解决问题 -> 长大以后  [delete他，redundant]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 神农先看到很多病人，他们吃很多植物对药：better to briefly introduce “神农” when this character first appears；吃了很多植物，了completed\n\n- 神农看到很多人随便吃各种植物：better to briefly introduce “神农” when this character first appears\n\n- 神农和他的城市不知道什么植物他们可以吃：人们不知道什么植物可以吃，delete他们；better to briefly introduce “神农” when this character first appears\n\n## Student's scene to review\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。"
+   },
+   "retrieved": [
+    "rule_card:zhe_jiu_yao_kan",
+    "rule_card:ambiguous_reference",
+    "rule_card:character_introduction_first_mention",
+    "rule_card:redundancy_delete",
+    "correction_item:shennong_samples#35::c1",
+    "correction_item:shennong_samples#6::c0",
+    "correction_item:shennong_samples#11::c0"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “古代的时候” / Formula: 在 + historical time period / Correct: “在古代”  \n“古代的时候” is understandable, but “在古代” is more concise and natural in narration.\n\nIncorrect phrase: “有一个人叫神农” / Formula: 有一个 + 叫 + name + 的 + person / Correct: “在古代，有一个叫神农的人。”  \nThis introduces the main character more naturally when he first appears.\n\nIncorrect phrase: “神农正在路上走” / Formula: Subject + 在 + place + verb / Correct: “神农正在路上走。” → “神农正在路上走” is understandable, but “神农正在路上走” should preferably be “神农正在路上走着” or, more naturally, “神农正在路上走。”  \nFor a location, use “在路上”; your sentence already has this structure, so it is basically correct. “走着” can make the ongoing action more vivid.\n\nIncorrect phrase: “一看很多人正在吃一些植物” / Formula: Subject + 看到 + object / Correct: “他看到很多人正在吃一些植物。”  \n“一看” usually means “as soon as one looks” and needs a clearer structure. Here, 神农 simply *saw* something, so “看到” is better.\n\nIncorrect phrase: “神农想帮别人。所以想知道……” / Formula: Subject + 想 + verb；所以 + result / Correct: “神农想帮助人们，所以他想知道哪些植物可以吃，哪些植物不能吃。”  \nDo not separate “所以” from the result in this way. Adding “他” also makes the subject clear.\n\n**Vocabulary Suggestions**\n\nWord: “人” / Context: “有一个人叫神农” / Alternatives: “男子,” “药师,” or “传说中的人物”  \n“人” is simple and correct, but very general. “传说中的人物” is especially suitable if you are telling the traditional story of Shennong, because it gives the story a more historical and legendary tone.\n\nWord: “一看” / Context: “一看很多人正在吃一些植物” / Alternatives: “看到,” “发现,” or “注意到”  \n“看到” is neutral: he simply saw the people. “发现” means he noticed something important or unexpected, so it fits well because Shennong realizes that people do not know which plants are safe. “注意到” emphasizes that he paid attention to the situation.\n\nWord: “一些植物” / Context: “正在吃一些植物” / Alternatives: “各种植物,” “野生植物,” or “不知名的植物”  \n“一些植物” only means “some plants” and is not very specific. “各种植物” means many different kinds of plants; “野生植物” means wild plants; “不知名的植物” emphasizes that people do not know what the plants are, which fits the danger in your story.\n\nWord: “生病了” / Context: “一些人一吃植物就生病了” / Alternatives: “中毒了,” “病倒了,” or “身体不舒服”  \n“生病了” is broad and neutral. “中毒了” is stronger and more precise if the plants are poisonous. “病倒了” suggests that they became seriously ill and could not continue normal activities. “身体不舒服” is softer and can describe milder symptoms.\n\nWord: “帮别人” / Context: “神农想帮别人” / Alternatives: “帮助人们,” “救治病人,” or “保护大家”  \n“帮别人” is common in speech, but “帮助人们” sounds more natural in a story. “救治病人” is more specific: Shennong wants to treat sick people. “保护大家” emphasizes preventing people from being harmed by poisonous plants.\n\n**Encouragement and Next Steps**\n\nYou clearly set up the problem of the story—people eat unknown plants and become sick—and this gives Shennong a strong reason to act.  \nNext time, focus on linking your sentences with connectors such as “于是,” “所以,” and “因为……所以……,” while keeping the subject clear.",
+   "usage": {
+    "prompt_tokens": 2196,
+    "completion_tokens": 1390,
+    "total_tokens": 3586,
+    "prompt_tokens_details": {
+     "cached_tokens": 2193,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 488,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 15939
+  },
+  {
+   "scene": 2,
+   "text": "然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: verb_object_collocation\nGrammar/linguistic point: verb_object_collocation\nCollocation/valence errors: the verb cannot take that object or complement (想 + V. not N., 想让 Sb. V., 成为 + N.), an adjective does not go with that noun (良好 + 生活), or a verb conflicts with an adjacent verb.\nExamples (original -> corrected, why):\n  - 我现在有良好的教育和生活 -> 幸福的生活  [良好 is usually not with生活]\n  - 但是我觉得他们的吃的植物，让他们病人 -> 他们吃的植物让他们生病  [让Sb. + V./Adj.]\n  - 所以他偷走一筐的梨，骑自行车走去 -> 一筐梨  [num. + MW. + noun, no的；骑自行车离开，“骑自行车“ conflicts with ”走“]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 这个问题神农觉得很糟糕，所以神农去了吃每种植物 -> 很严重better，usually糟糕for情况situations; 去吃了\n  - 看到我们糟糕的状态，用心得来帮忙整理梨子，拿起骑车 -> 他们过来用心地帮忙整理梨子，扶起自行车  [since the preceding phrase has “我们”, the Subj. 他们 should be stated, adv.地V，“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.]\n  - 他成为有名的 -> 有名的哲学家  [成为+N]\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...'): needs an uncertain condition before it (e.g. 会不会生病？) and an A-not-A / open question after 看.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 孩子才五岁就每天在墓地祭拜了 -> 孟子  [孩子is vague and unclear]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: resultative_complement\nGrammar/linguistic point: resultative_complement\nResultative complement (V. + result, e.g. 擦干净, 写下, 吃到): the action verb alone vs. action + result -- 看 look vs. 看到 see, 找 look for vs. 找到 find, 听 vs. 听到, 注意 vs. 注意到.\nExamples (original -> corrected, why):\n  - 孟母终于在一位很有名的文学家找工作了 -> 作家的家里找到工作了  [找look for vs. 找到find]\n  - 一个人正好找了神农 -> 找到了  [找look for vs.找到find]\n  - 他用他的围巾擦，把梨干净 -> 他用他的围巾把梨擦干净  [把Obj. V. Resultative complement]\n  - 他妈妈看他跟别的孩子在墓地里祭拜 -> 看到  [看look vs.看到see]\n  - 就写了这个植物对你有没有好处 -> 写下了  [delete“对你”]\n  - 他怎么能随便马虎得掉我家庭呢 -> 马虎地V., use the wrong character；摘掉我的家人：掉itself cannot be followed by an Obj., Subj. 掉 + directional + place, but掉can be resultative complement following another main action verb\n  - 她一看这，就自己觉得我不想我的儿子在这个地方长大 -> 一看到这样  [看look vs.看到see；delete自己；delete我，我的；就觉得儿子不应该在这个地方长大]\n  - 有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物 -> 吃到了  [V + resultative]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 神农看到很多人吃了麻烦的植物：better to briefly introduce “神农” when this character first appears; 有害的植物\n\n- 神农先看到很多病人，他们吃很多植物对药：better to briefly introduce “神农” when this character first appears；吃了很多植物，了completed\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n## Student's scene to review\n然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。"
+   },
+   "retrieved": [
+    "rule_card:verb_object_collocation",
+    "rule_card:zhe_jiu_yao_kan",
+    "rule_card:ambiguous_reference",
+    "rule_card:resultative_complement",
+    "correction_item:shennong_samples#1::c1",
+    "correction_item:shennong_samples#35::c1",
+    "correction_item:shennong_samples#24::c6"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “神农开始尝很多植物” / Formula: 开始 + Verb Phrase; for tasting food/plants, use 尝试/品尝 + Object / Correct: “神农开始尝试很多植物” or “神农开始品尝很多植物。”\n\nIncorrect phrase: “一些植物吃真好” / Formula: Subject + 吃起来 + Adjective; or Subject + 很 + Adjective / Correct: “一些植物吃起来真好吃” or “一些植物很好吃。”\n\nIncorrect phrase: “一些植物毒得很” / Formula: Subject + 很 + Adjective; “毒” is usually modified as 有毒 / Correct: “一些植物很有毒” or “一些植物有毒得很。”\n\n**Vocabulary Suggestions**\n\nWord: “尝” / Context: “神农开始尝很多植物” / Alternatives: “尝试” is more natural for trying different plants, especially when the purpose is to discover whether they are edible or medicinal. “品尝” emphasizes carefully tasting food for its flavor, so it is less suitable if some plants may be poisonous.\n\nWord: “比方说” / Context: “比方说他吃过生姜、芥兰和菠菜” / Alternatives: “例如” is a concise, neutral written expression for giving examples. “比如” is natural in both speaking and writing. “比方说” is conversational and often introduces a longer illustrative situation.\n\nWord: “真好” / Context: “一些植物吃真好” / Alternatives: “美味” means delicious and is more literary. “可口” means tasty and pleasant to eat. “清爽” is especially suitable for foods such as cucumber because it emphasizes a fresh, light taste.\n\nWord: “毒得很” / Context: “一些植物毒得很” / Alternatives: “有毒” is the standard neutral term meaning “poisonous.” “剧毒” means highly poisonous and is much stronger, so it fits oleander well. “有害” means harmful, but it does not necessarily mean poisonous.\n\nWord: “特别是” / Context: “特别是黄瓜 / 特别是夹竹桃” / Alternatives: “其中” means “among them” and creates a smoother connection: “其中，黄瓜很好吃。” “尤其是” means “especially” and gives stronger emphasis than “特别是.”\n\n**Encouragement and Next Steps**\n\nYou did well by creating a clear contrast between tasty plants and poisonous plants, and your examples make the scene easy to understand.  \nNext time, focus on using natural adjective patterns such as “很好吃” and “很有毒.”",
+   "usage": {
+    "prompt_tokens": 2277,
+    "completion_tokens": 553,
+    "total_tokens": 2830,
+    "prompt_tokens_details": {
+     "cached_tokens": 2274,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 6244
+  },
+  {
+   "scene": 3,
+   "text": "一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...'): needs an uncertain condition before it (e.g. 会不会生病？) and an A-not-A / open question after 看.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: a_not_a_question\nGrammar/linguistic point: a_not_a_question\nEmbedded yes/no questions use A-not-A (有没有毒, 能不能吃, 知不知道) or 是……还是……; 'whether/if' in 'know if' is not 如果.\nExamples (original -> corrected, why):\n  - 不知道如果有毒 -> 有没有毒  [the “if” in “not know if + clause” is not 如果]\n  - 他不知道如果这把花对你的身体好 -> 不知道这种花对身体好不好  [the “if” in “not know if + clause” is not 如果]\n  - 神农加下去很多的植物，看看如果毒还是药 -> 吃下去很多植物；看看是毒还是药  [the “if” in “see if + clause” is not 如果]\n  - 我们也不在乎植物是毒 -> 有没有毒\n  - 我想知道灵芝会帮他 -> 灵芝有没有用/能不能帮他\n  - 但是如果他想知道这些植物有毒或有药性 -> 有毒还是有药性\n  - 这就要看你知道该吃哪一个了 -> 知不知道\n  - 这就要看你相信中药对身体有好处 -> 相信不相信中药对身体有好处了\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 孩子才五岁就每天在墓地祭拜了 -> 孟子  [孩子is vague and unclear]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: verb_object_collocation\nGrammar/linguistic point: verb_object_collocation\nCollocation/valence errors: the verb cannot take that object or complement (想 + V. not N., 想让 Sb. V., 成为 + N.), an adjective does not go with that noun (良好 + 生活), or a verb conflicts with an adjacent verb.\nExamples (original -> corrected, why):\n  - 我现在有良好的教育和生活 -> 幸福的生活  [良好 is usually not with生活]\n  - 但是我觉得他们的吃的植物，让他们病人 -> 他们吃的植物让他们生病  [让Sb. + V./Adj.]\n  - 所以他偷走一筐的梨，骑自行车走去 -> 一筐梨  [num. + MW. + noun, no的；骑自行车离开，“骑自行车“ conflicts with ”走“]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 这个问题神农觉得很糟糕，所以神农去了吃每种植物 -> 很严重better，usually糟糕for情况situations; 去吃了\n  - 看到我们糟糕的状态，用心得来帮忙整理梨子，拿起骑车 -> 他们过来用心地帮忙整理梨子，扶起自行车  [since the preceding phrase has “我们”, the Subj. 他们 should be stated, adv.地V，“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.]\n  - 他成为有名的 -> 有名的哲学家  [成为+N]\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 神农看到很多人吃了麻烦的植物：better to briefly introduce “神农” when this character first appears; 有害的植物\n\n- 所以神农去找一些植物，对身体有好处：找一些对身体有好处的植物\n\n- 神农先看到很多病人，他们吃很多植物对药：better to briefly introduce “神农” when this character first appears；吃了很多植物，了completed\n\n## Student's scene to review\n一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。"
+   },
+   "retrieved": [
+    "rule_card:zhe_jiu_yao_kan",
+    "rule_card:a_not_a_question",
+    "rule_card:ambiguous_reference",
+    "rule_card:verb_object_collocation",
+    "correction_item:shennong_samples#1::c1",
+    "correction_item:shennong_samples#15::c0",
+    "correction_item:shennong_samples#35::c1"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “一个人对神农说” / Formula: When introducing an unspecified person in a story, use a more specific noun phrase, e.g. 一个人/有人 + 问/对……说 + quotation / Correct: “有人问神农：‘我们可以吃什么植物？’”  \n“一个人” is understandable, but “有人” is more natural here because the person is not important or identified.\n\nIncorrect phrase: “麻烦我们可以吃什么植物？” / Formula: 问问题时，(请问/麻烦问一下) + 谁 + 能不能/可不可以 + V + 什么 / Correct: “请问，我们可以吃什么植物？” or “请问，什么植物可以吃？”  \n“麻烦” cannot directly introduce a question in this way. Use “请问” to politely ask a question.\n\nIncorrect phrase: “这就要看你想不想生病了” / Formula: 不确定的结果/问题 + 这就要看 + A-not-A question + 了 / Correct: “什么植物能不能吃，这就要看这种植物有没有毒了。”  \n“这就要看……” must answer an uncertain question or condition. “你想不想生病” does not logically explain which plants are edible.\n\nIncorrect phrase: “一些植物能吃” / Formula: 一些 + noun + 能 + V；some plants can be eaten / Correct: “有些植物可以吃，有些植物不能吃。”  \n“有些……有些……” is a more natural paired structure for contrasting two groups.\n\n**Vocabulary Suggestions**\n\nWord: “一个人” / Context: “一个人对神农说” / Alternatives: “有人” is more natural when an unidentified person briefly appears in a story. “一个人” emphasizes that there was one person, while “有人” simply means “someone” and keeps the narrative smooth.\n\nWord: “麻烦” / Context: “麻烦我们可以吃什么植物？” / Alternatives: “请问” is the standard polite expression for beginning a question. “麻烦” usually means “trouble” or is used in requests such as “麻烦你帮我一下” (“Could I trouble you to help me?”).\n\nWord: “能吃” / Context: “一些植物能吃” / Alternatives: “可以食用” is more formal and precise, especially when discussing plants or food safety. “能吃” is common and conversational; “可以食用” sounds more like scientific or educational writing.\n\nWord: “不能吃” / Context: “一些植物不能吃” / Alternatives: “有毒” means poisonous, while “不宜食用” means “not suitable for eating” and is softer or more formal. A plant may be “不宜食用” for reasons other than being poisonous.\n\nWord: “告诉别人” / Context: “神农告诉别人一些植物能吃” / Alternatives: “告诉大家” sounds more natural if Shen Nong is sharing knowledge with many people. “教大家辨认” is even more vivid: it means “teach everyone to identify” edible and poisonous plants.\n\n**Encouragement and Next Steps**\n\nYou clearly expressed the important idea that Shen Nong taught people which plants were safe to eat and which were not.  \nNext time, focus on using “这就要看……” only after an uncertain question and making sure it gives a logical answer to that question.",
+   "usage": {
+    "prompt_tokens": 2178,
+    "completion_tokens": 717,
+    "total_tokens": 2895,
+    "prompt_tokens_details": {
+     "cached_tokens": 2175,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 7885
+  }
+ ],
+ "content": {
+  "prompt": {
+   "system": "You are a Chinese-language writing tutor giving end-of-story feedback to an early learner who has just finished writing a short narrative scene by scene. Grammar, vocabulary, and coherence have ALREADY been covered scene by scene -- do NOT comment on them here. Assess only the overall CONTENT and COMPLETENESS of the story as a whole.\n\nRules:\n1. Judge the whole story: does it have enough scenes and events to be a complete story -- a beginning that introduces the characters and setting, a middle with the main events, and an ending that resolves them? Are there gaps where a reader would not understand what happened or why?\n2. Only flag real gaps. Do not invent problems; if a part is already complete, do not list it as an item.\n3. Point to specific scenes (\"Scene 2\") when you flag a gap, and say concretely what is missing.\n4. Write ALL prose in English. Chinese appears only in short quoted spans or small example phrases at the student's own level.\n5. Be encouraging and concise -- this is an early learner.\n\nOutput format -- Markdown, exactly this structure:\n\n## Content & Completeness\n- one missing, unclear, or underdeveloped part of the story per line, naming the scene and what the story needs\n- (if the story is complete, write exactly \"- Nothing to flag.\")\n\n## Overall Encouragement\nOne or two sentences on what the student did well across the whole story.\n\nKeep each \"## \" heading on its own line exactly as written, and put every item on its own line beginning with \"- \".",
+   "user": "## Student's complete story to review (3 scenes)\nScene 1: 古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\nScene 2: 然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。\nScene 3: 一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。"
+  },
+  "retrieved": [],
+  "feedback": "## Content & Completeness\n- Scene 2 needs to explain what happened when Shennong tried the poisonous plants, or how he learned they were dangerous, so readers understand why he can tell people not to eat them.\n- Scene 3 needs a clearer ending showing how the people used Shennong’s advice or how his help solved the problem of people getting sick.\n\n## Overall Encouragement\nYou have a clear beginning, middle, and ending: Shennong sees a problem, investigates plants, and helps others. The story also includes good examples of safe and dangerous plants.",
+  "usage": {
+   "prompt_tokens": 500,
+   "completion_tokens": 120,
+   "total_tokens": 620,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 2139
+ }
+}

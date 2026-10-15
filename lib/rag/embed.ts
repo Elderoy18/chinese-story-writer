@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 
-// MUST match EMBED_MODEL in chinese_writing_rag_pipeline/scripts/embed_to_mongo.py
+// MUST match EMBED_MODEL in chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs
 // and numDimensions in chinese_writing_rag_pipeline/docs/atlas_setup.md.
 // If you change this, re-embed the corpus and rebuild the Atlas index.
 export const EMBED_MODEL = "text-embedding-3-small";

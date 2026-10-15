@@ -1,6 +1,6 @@
-// Node port of embed_to_mongo.py -- no Python / conda required.
+// Embed the chunk files and load them into Atlas -- no Python / conda required.
 //
-// Reads chunks/chunks.jsonl, embeds each chunk's text with OpenAI
+// Reads chunks/basic_chunks.jsonl + chunks/iteration_chunks.jsonl, embeds each chunk's text with OpenAI
 // text-embedding-3-small (1536-dim), and upserts one doc per chunk (keyed on
 // chunk_id) into `chinese-writer-data.rag_chunks` -- the collection the Next
 // app's lib/rag/retrieve.ts runs $vectorSearch against.
@@ -11,7 +11,7 @@
 //   node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs --types vocab_error
 //     (only embed + upsert chunks of the given comma-separated chunk types)
 //   node chinese_writing_rag_pipeline/scripts/embed-to-mongo.mjs --prune
-//     (also delete docs whose chunk_id is no longer in chunks.jsonl; with
+//     (also delete docs whose chunk_id is no longer in either chunk file; with
 //      --types, only within those types)
 //
 // Uses the `openai` + `mongodb` packages already in the app's node_modules and
@@ -40,7 +40,9 @@ const BATCH_SIZE = 128;
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PIPELINE_ROOT = path.resolve(HERE, "..");
 const REPO_ROOT = path.resolve(HERE, "..", "..");
-const CHUNKS_PATH = path.join(PIPELINE_ROOT, "chunks", "chunks.jsonl");
+const CHUNK_FILES = ["basic_chunks.jsonl", "iteration_chunks.jsonl"].map((f) =>
+    path.join(PIPELINE_ROOT, "chunks", f)
+);
 
 const dryRun = process.argv.includes("--dry-run");
 const prune = process.argv.includes("--prune");
@@ -103,14 +105,21 @@ async function main() {
         process.exit(1);
     }
 
-    const chunks = fs
-        .readFileSync(CHUNKS_PATH, "utf8")
-        .split(/\r?\n/)
-        .filter((l) => l.trim())
-        .map((l) => JSON.parse(l))
-        .filter((c) => !onlyTypes || onlyTypes.has(c.chunk_type));
+    const allChunks = CHUNK_FILES.flatMap((file) =>
+        fs
+            .readFileSync(file, "utf8")
+            .split(/\r?\n/)
+            .filter((l) => l.trim())
+            .map((l) => JSON.parse(l))
+    );
+    const ids = new Set();
+    for (const c of allChunks) {
+        if (ids.has(c.chunk_id)) throw new Error(`duplicate chunk_id across chunk files: ${c.chunk_id}`);
+        ids.add(c.chunk_id);
+    }
+    const chunks = allChunks.filter((c) => !onlyTypes || onlyTypes.has(c.chunk_type));
     console.log(
-        `Loaded ${chunks.length} chunks from ${CHUNKS_PATH}` +
+        `Loaded ${chunks.length} chunks from ${CHUNK_FILES.map((f) => path.basename(f)).join(" + ")}` +
             (onlyTypes ? ` (types: ${[...onlyTypes].join(", ")})` : "")
     );
     if (chunks.length === 0) {
@@ -158,7 +167,7 @@ async function main() {
                 `${res.modifiedCount} updated`
         );
         if (prune) {
-            // Delete chunks that are no longer in chunks.jsonl (e.g. a renamed
+            // Delete chunks that are in neither chunk file (e.g. a renamed
             // story or a removed correction), so retrieval can't return them.
             const keep = chunks.map((c) => c.chunk_id);
             const scope = onlyTypes ? { chunk_type: { $in: [...onlyTypes] } } : {};
