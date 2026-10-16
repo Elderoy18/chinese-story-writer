@@ -1,0 +1,75 @@
+{
+ "input": "CURRENT SCENE:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nITEMS:\n\n[I123] 孟子在那个商店也【找了】到工作   correction: 找了 → 找到了   strength: error\n  checker's note: her pattern: 找了 -> 找到了 (corrected 3/5 in train)\n  rule card (search_find, Vocabulary): 找 means “look for.” Use 找到 when the person successfully finds something.  Pattern: <wrong> → <correct>: the person successfully finds <object>, so use 找到, not 找.  Her terms: 找look for vs.找到find\n  her past correction: 孟子不是[-在]看商店的员工 — her note: here is not emphasizing “ongoing”\n  her past correction: 孟母找到一个[打工→打工的工作]\n  her past correction: 孟母找到了[良好的→好]工作 — her note: 良好is not with工作\n\n[I124] 可是不是做衣服的工作【，而是喜欢的工作】   correction: ，而是喜欢的工作 → (delete)   strength: error\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 就是做冬天[+的]衣服\n  her past correction: 她[穿→穿着]很漂亮的衣服 — her note: 着durative\n  her past correction: 穿上一件蓝色[-的]衣服的人\n\n[I125] 孟子【^】学习馆学了十五年   correction: ∅ → 在   strength: error\n  checker's note: location needs 在 before it\n  rule card (laoshi_negative_repetition, Vocabulary): 老是 means “always” and is used for something negative or to complain; for a neutral or positive repeated action, use 一直 or 常常 instead.  Pattern: <老是 + action> → <一直/常常 + action>: the action is neutral or positive, not something negative to complain about, so do not use 老是.  Her terms: 老是\n  her past correction: 孟子[一直学了→一直在学习]很多东西 — her note: 一直在+V., emphasizing always ongoing\n  her past correction: 所以孟子[老是→一直]在学习 — her note: “老是“ for something negative, used to complain\n  her past correction: 孟子[跟老师老是学习中文→一直学习中文] — her note: “老是“ for something negative, used to complain\n\n[I126] 对他【^】很多好处   correction: ∅ → 有   strength: error\n  checker's note: 对他有很多好处 needs 有\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 因为他们觉得[祭拜有很多好处，对他们的生活→对生活有很多好处]\n  her past correction: 因为[-他们]觉得祭拜有很多好处 — her note: redundant\n  her past correction: 他[+的]朋友帮他\n\n[I127] 他【是大人的时候】   correction: 是大人的时候 → 长大后   strength: error\n  checker's note: 长大后 is the natural time expression\n  rule card (fixed_expressions, Vocabulary): Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place.  Pattern: <wrong> → <correct>: use the established expression <correct>, not the literal/nonstandard combination <wrong>.  Her terms: 从 + Place, 制定规定, 自然规律, Subj.算是Obj., 只/不过/才(+num.) + 而已\n  her past correction: [是大人的时候→长大以后]\n  her past correction: [大人的时候→长大以后]\n  her past correction: [长大的时候→长大以后]\n\n[I128] 【他】成为很有名的哲人   correction: 他 → (delete)   strength: error\n  checker's note: 他 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 他成为[有名的→有名的哲学家] — her note: 成为+N\n  her past correction: [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为\n  her past correction: [他成为很有名的老师→哲学家]\n\n[I129] 他成为【^】很有名的哲人   correction: ∅ → 了   strength: suggestion\n  rule card (become_and_profession, Vocabulary): 成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才.  Pattern: <wrong> → <correct>: 成为 needs an appropriate noun, such as a profession or public identity; for becoming capable or successful, use 成才.  Her terms: 成为+N, 成为 + N. (profession/celebrity), 成为 + profession/celebrity\n  her past correction: 他成为[有名的→有名的哲学家] — her note: 成为+N\n  her past correction: 他成为[+了]哲学家\n  her past correction: [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I123",
+    "explanation": "The person successfully finds a job, so use 找到find, not 找look for.",
+    "dimension": "word_choice",
+    "corrected": "找到了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I124",
+    "explanation": "The phrase 而是喜欢的工作 does not fit the meaning here, so delete it.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I125",
+    "explanation": "Use 在 before a place where an action happens: 在学习馆学了十五年.",
+    "dimension": "grammar",
+    "corrected": "在",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I126",
+    "explanation": "Use 有 in 对他有很多好处 to say something has many benefits for him.",
+    "dimension": "grammar",
+    "corrected": "有",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I127",
+    "explanation": "Use the established time expression 长大后, not the literal combination 是大人的时候.",
+    "dimension": "word_choice",
+    "corrected": "长大后",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I128",
+    "explanation": "The subject is already clear from the previous clause, so delete 他. Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I129",
+    "explanation": "It would be more natural to add 了 after 成为 to show the completed change: 成为了很有名的哲人.",
+    "dimension": "word_choice",
+    "corrected": "了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1971,
+  "completion_tokens": 329,
+  "total_tokens": 2300,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1968,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

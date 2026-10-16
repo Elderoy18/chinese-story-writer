@@ -1,0 +1,81 @@
+{
+ "input": "EARLIER SCENES (context only):\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\nCURRENT SCENE:\n孟子想，难怪我们常常搬家，原来我妈妈很忙。可是常常搬家害得孟子很难找到朋友。每次搬家孟子也觉得新的地方不是太热就是太冷，不是太大就是太小。在哪的地方，他都不高兴。孟子想帮助妈妈祭拜，可是他六岁，所以不能祭拜。\n\nFLAGGED PLACES:\n\n[P79] 每次搬家孟子【也】觉得新的地方不是太热就是太冷\n  proposed by the correction model: 每次搬家孟子[也→都]觉得新的地方不是太热就是太冷\n  her past correction (first_mention_introduction): ⟦孟子⟧长大的时候一直搬家 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction (incorrect_story_information): 孟子[长大的时候→小时候]一直搬家\n  her past correction (modal_and_control_verb_complements): 孟子的妈妈叫[-了]孟子搬家 — her note: 叫/让 is a modal verb, no了\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card incorrect_story_information: Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information. Not an error: Do not flag a word or sentence under this rule only because of grammar or vocabulary. Flag it here when it changes or adds a fact in the traditional story.\n\n[P80] 不是【太】大就是太小\n  proposed by the correction model: 不是[-太]大就是太小\n  her past correction (zero_redundant_pronoun): [-他]就不会成为好的大人 — her note: redundant\n  her past correction (redundant_words): [-你]就太淘气了 — her note: redundant\n  her past correction (incorrect_story_information): 她有一个很小的[孩子→儿子]\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P81] 不是太大就是【太】小\n  proposed by the correction model: 不是太大就是[-太]小\n  her past correction (zero_redundant_pronoun): [-他]就不会成为好的大人 — her note: redundant\n  her past correction (incorrect_story_information): 她有一个很小的[孩子→儿子]\n  her past correction (zero_redundant_pronoun): 可是[-他们的]收入也很低\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card incorrect_story_information: Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information. Not an error: Do not flag a word or sentence under this rule only because of grammar or vocabulary. Flag it here when it changes or adds a fact in the traditional story.\n\n[P82] 在【哪的】地方\n  proposed by the AI checker: 在[哪→哪个]的地方 (“在哪个地方” is the grammatical phrase.)\n  proposed by the correction model: 在[哪的→任何]地方\n  her past correction (collocation_selection): 在[第三个房子→第三个地方]\n  her past correction (location_with_zai): 就[在地方→在地上]躺着\n  her past correction (collocation_selection): 在第一个[房子→地方]\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n\n[P83] 可是他【^】六岁\n  proposed by the correction model: 可是他[+只有]六岁\n  her past correction (redundant_words): 他才四[-年]岁\n  her past correction (adversative_connector): 他才三岁[+，可是一直]的以后待在墓地里\n  her past correction (time_sequence_markers): 他才三岁[-的以后]待在墓地里 — her note: Time + 以后\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card adversative_connector: Use 可是, 却, 而, and 但 only when there is a real “semantic turn,” such as a contrast or an unexpected result. 却 indicates an unexpected semantic turn. Not an error: Use 却 when the result is an unexpected semantic turn.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P79",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "搬家孟子",
+    "after": "也觉得新的",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "“也” naturally adds another difficulty of moving."
+   },
+   {
+    "place_id": "P80",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "不是",
+    "after": "太大就是",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "“不是太大就是太小” is a natural either-or expression."
+   },
+   {
+    "place_id": "P81",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "太大就是",
+    "after": "小",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "“太小” correctly parallels “太大” in this expression."
+   },
+   {
+    "place_id": "P82",
+    "decision": "keep",
+    "category": "collocation_selection",
+    "original": "哪的",
+    "before": "在",
+    "after": "地方，他",
+    "corrected": "任何",
+    "confidence": "high",
+    "reason": "哪的地方 is not a natural phrase here; the meaning is any place."
+   },
+   {
+    "place_id": "P83",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "可是他",
+    "after": "六岁，所",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "“他六岁” is grammatically acceptable and supports the contrast."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2046,
+  "completion_tokens": 1238,
+  "total_tokens": 3284,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2043,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 954,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

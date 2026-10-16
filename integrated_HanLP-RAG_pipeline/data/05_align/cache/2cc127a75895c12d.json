@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 古代的时候，一个家人住在中国。那个家人是孟子的家人。\nquote: 古代的时候，一个家人住在中国。那个家人是孟子的家人\npart p0: fix [ref p0/k0-1] 在古代，孟子一家人住在中国 ; notes: better to briefly introduce “孟子” when this character first appears",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "before": "",
+    "after": "，一个家",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the time expression with her correction"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "一个家人",
+    "corrected": "孟子一家人",
+    "before": "的时候，",
+    "after": "住在中国",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the subject with her corrected introduction"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "。那个家人是孟子的家人",
+    "corrected": "",
+    "before": "住在中国",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "her rewrite omits the repeated second sentence"
+   },
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "一个家人",
+    "corrected": "",
+    "before": "的时候，",
+    "after": "住在中国",
+    "note": "better to briefly introduce “孟子” when this character first appears",
+    "confidence": "high",
+    "reason": "note explains introducing 孟子 at first mention"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1023,
+  "completion_tokens": 235,
+  "total_tokens": 1258,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

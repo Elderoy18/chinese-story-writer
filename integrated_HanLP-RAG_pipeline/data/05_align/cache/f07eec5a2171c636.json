@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 家教对孟子的压力很大，从早到晚他学习不是历史，就是哲学。\nquote: 从早到晚他学习不是历史，就是哲学\npart p0: fix [ref p0/k0-1] 不是学习历史，就是学习哲学",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "学习不是历史，就是哲学",
+    "corrected": "不是学习历史，就是学习哲学",
+    "before": "从早到晚他",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "moves 学习 into each side of the 不是…就是… pattern"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 998,
+  "completion_tokens": 181,
+  "total_tokens": 1179,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 96,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

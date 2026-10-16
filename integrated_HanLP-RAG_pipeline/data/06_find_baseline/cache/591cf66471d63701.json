@@ -1,0 +1,62 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\ncurrent scene: 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "常常搬了",
+    "corrected": "搬了三次",
+    "before": "因为他们",
+    "after": "家，中国人",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "the story says they moved three times"
+   },
+   {
+    "original": "从这儿到那儿",
+    "corrected": "每到一个地方",
+    "before": "重要。",
+    "after": "，妈妈教孟",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "this needs a setting meaning “at each place”"
+   },
+   {
+    "original": "先她",
+    "corrected": "她先",
+    "before": "教孟子很多技能。",
+    "after": "让孟子跟",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the subject comes before 先"
+   },
+   {
+    "original": "好质量",
+    "corrected": "质量好",
+    "before": "又便宜又",
+    "after": "的东西。",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "质量好 is the natural modifier order"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 672,
+  "completion_tokens": 1714,
+  "total_tokens": 2386,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1503,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

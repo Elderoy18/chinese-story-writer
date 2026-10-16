@@ -1,0 +1,103 @@
+{
+ "input": "EARLIER SCENES (context only):\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\nCURRENT SCENE:\n他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nFLAGGED PLACES:\n\n[P58] 他们【住才一】月就又搬家\n  proposed by the AI checker: 他们[住才→才住]一月就又搬家 (才 should precede the verb for “only lived”.)\n  proposed by the correction model: 他们[+才]住才一月就又搬家\n  proposed by the correction model: 他们住[才→了]一月就又搬家\n  proposed by the AI checker: 他们住才[+了]一月就又搬家 (completed duration needs 了 after 住.)\n  proposed by the AI checker: 他们住才一[+个]月就又搬家 (个月 is the usual duration measure word.)\n  her past correction (near_synonym_precision): 他们⟦才搬了三次家⟧ — her note: 才 + Num. to express “small, few”, but here搬了三次家 is a large quantity\n  her past correction (directional_complements): 他们[去了→搬到了]一个房子\n  her past correction (numeral_measure_word_order): 他们[搬了家两次→搬了两次家] — her note: V. + Num. + MW. + Obj.\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card directional_complements: Use V. + directional complement + Place + 来/去: put the place after the directional complement and before 来/去. For walking to a place, use 走到place来/去, not 走去 or 走来Place. Not an error: Do not treat 拿起来 and 拿上去 as interchangeable word-order forms: 拿起来 means “pick up,” while 拿上去 means “bring it up.”\n\n[P59] 他们住才一月就又搬家【^】\n  proposed by the AI checker: 他们住才一月就又搬家[+了] (the completed move needs sentence-final 了.)\n  proposed by the correction model: 他们住才一月就又搬家[+了]\n  her past correction (near_synonym_precision): 他们⟦才搬了三次家⟧ — her note: 才 + Num. to express “small, few”, but here搬了三次家 is a large quantity\n  her past correction (numeral_measure_word_order): 他们[搬了家两次→搬了两次家] — her note: V. + Num. + MW. + Obj.\n  her past correction (directional_complements): 他们[去了→搬到了]一个房子\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card numeral_measure_word_order: With a number and measure word, use Num. + MW. + noun directly, with no 的. For actions, use V. + Num. + MW. + Obj.; for a completed action, use 了completed, V. + Num. + MW. + Obj. Not an error: Do not use 们 or 些 with a number: use 三个男孩, not 三个男孩子们, and 那三个男孩, not 那些三个男孩.\n\n[P60] 【古代的时候】\n  proposed by the teacher's pattern/rule: [古代的时候→在古代] (her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train))\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  her past correction (location_with_zai): [古代的时候→在古代]\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n\n[P61] 但是孟子【老是】跟这些卖东西的人常常玩儿\n  proposed by the AI checker: 但是孟子[-老是]跟这些卖东西的人常常玩儿 (老是 and 常常 are redundant together.)\n  her past correction (he_scope_coordination): 结果孟子常常[玩游戏跟孩子→跟孩子玩游戏]\n  her past correction (haide_harmful_result): 所以孟子⟦常常玩玩⟧ — her note: 害得孟子+harmful result, 常常玩\n  her past correction (verb_reduplication_requests): 孟子老是想[玩玩→玩] — her note: V.V. is used to make requests or plans\n  rule card he_scope_coordination: 和/跟 + noun connects multiple nouns that share the same action. Do not use 和/跟 to connect clauses, verb phrases, or adjectives; if the noun is an accompanying object and does not do the action, use V.着 instead. Not an error: 和/跟 + noun is correct when the nouns share the same action, such as 一个男生和一个女生走…… . Do not flag an accompanying noun when it is correctly expressed with V.着.\n  rule card haide_harmful_result: Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得. Not an error: Do not use this rule for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling such as 不高兴; these are not harmful results for 害得.\n\n[P62] 因为她【恐怕】儿子会成为跟他们很像\n  proposed by the correction model: 因为她[恐怕→担心]儿子会成为跟他们很像\n  her past correction (redundant_words): 就自己觉得我[不想我的→我的]儿子在这个地方长大\n  her past correction (possessive_reference): 有一个妈妈和[他的→她的]儿子\n  her past correction (zero_redundant_pronoun): 就自己觉得[-我]不想我的儿子在这个地方长大\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card possessive_reference: Do not use 他的/她的 for people or a place when it sounds like the person owns them. Use a precise relationship word, such as 家人, 朋友邻居, 人们, or 这个小城市. Not an error: Do not flag 他的/她的 when the intended meaning is actual ownership or when it clearly gives the needed relationship.\n\n[P63] 因为她恐怕儿子会【成为】跟他们很像\n  proposed by the AI checker: 因为她恐怕儿子会[成为→变得]跟他们很像 (变得 is needed before an adjective phrase such as 很像.)\n  proposed by the correction model: 因为她恐怕儿子会[-成为]跟他们很像\n  her past correction (near_synonym_precision): 难怪她的[男孩子→儿子]成为孟子 — her note: 男孩子boys, not have the meaning of son\n  her past correction (possessive_reference): 有一个妈妈和[他的→她的]儿子\n  her past correction (incorrect_story_information): 她有一个很小的[孩子→儿子]\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card possessive_reference: Do not use 他的/她的 for people or a place when it sounds like the person owns them. Use a precise relationship word, such as 家人, 朋友邻居, 人们, or 这个小城市. Not an error: Do not flag 他的/她的 when the intended meaning is actual ownership or when it clearly gives the needed relationship.\n\n[P64] 她告诉【了】孟子：他们不是朋友\n  proposed by the correction model: 她告诉[-了]孟子：他们不是朋友\n  proposed by the teacher's pattern/rule: 她告诉[-了]孟子：他们不是朋友 (no 了 after the speaking verb 告诉)\n  her past correction (first_mention_introduction): ⟦孟子⟧不是跟朋友玩 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction (redundant_words): [-孟子的妈妈]告诉孟子 — her note: redundant\n  her past correction (ambiguous_pronoun): [他然后没有朋友→然后孟子失去了这个朋友] — her note: “他“ is ambiguous\n  rule card no_le_speaking_word: A speaking word that introduces quoted speech normally uses no particle, not 了.\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P58",
+    "decision": "keep",
+    "category": "other",
+    "original": "住才一",
+    "before": "他们",
+    "after": "月就又搬",
+    "corrected": "才住了一个",
+    "confidence": "high",
+    "reason": "Word order, aspect, and duration measure word are needed."
+   },
+   {
+    "place_id": "P59",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "就又搬家",
+    "after": "",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Sentence-final 了 is optional here."
+   },
+   {
+    "place_id": "P60",
+    "decision": "keep",
+    "category": "fixed_expressions",
+    "original": "古代的时候",
+    "before": "",
+    "after": "，一般人不",
+    "corrected": "在古代",
+    "confidence": "high",
+    "reason": "Matches her established correction pattern."
+   },
+   {
+    "place_id": "P61",
+    "decision": "keep",
+    "category": "other",
+    "original": "老是",
+    "before": "但是孟子",
+    "after": "跟这些卖",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "老是 and 常常 redundantly express frequency."
+   },
+   {
+    "place_id": "P62",
+    "decision": "drop",
+    "category": "near_synonym_precision",
+    "original": "恐怕",
+    "before": "因为她",
+    "after": "儿子会成",
+    "corrected": "恐怕",
+    "confidence": "high",
+    "reason": "恐怕 naturally expresses her worry or fear."
+   },
+   {
+    "place_id": "P63",
+    "decision": "keep",
+    "category": "near_synonym_precision",
+    "original": "成为",
+    "before": "怕儿子会",
+    "after": "跟他们很",
+    "corrected": "变得",
+    "confidence": "high",
+    "reason": "成为 cannot directly take an adjective phrase."
+   },
+   {
+    "place_id": "P64",
+    "decision": "keep",
+    "category": "no_le_speaking_word",
+    "original": "了",
+    "before": "她告诉",
+    "after": "孟子：他",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Her rule omits 了 after a speech-introducing verb."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 3076,
+  "completion_tokens": 1421,
+  "total_tokens": 4497,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3073,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

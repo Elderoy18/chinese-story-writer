@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 老板不可动，得问男人给他地方上像蘑菇一样的植物吃了。\nquote: 老板不可动，得问男人给他地方上像蘑菇一样的植物吃了\npart p0: fix [ref p0/k0] 不能动\npart p1: fix [ref p1/k0] 让男人 ; notes: the “ask” in “ask sb. to do” is not问\npart p2: fix [ref p2/k0] 把地上……给他吃了 ; notes: to avoid “他” and “地上像……的植物” too close to each other",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "不可动",
+    "corrected": "不能动",
+    "before": "老板",
+    "after": "，得问男",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the modal phrase"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "问",
+    "corrected": "让",
+    "before": "不可动，得",
+    "after": "男人给他",
+    "note": "the “ask” in “ask sb. to do” is not问",
+    "confidence": "high",
+    "reason": "replaces 问 with 让 for causative ask"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "给他地方上像蘑菇一样的植物吃了",
+    "corrected": "把地上像蘑菇一样的植物给他吃了",
+    "before": "得问男人",
+    "after": "",
+    "note": "to avoid “他” and “地上像……的植物” too close to each other",
+    "confidence": "high",
+    "reason": "reorders the object using 把 construction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1083,
+  "completion_tokens": 221,
+  "total_tokens": 1304,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1080,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

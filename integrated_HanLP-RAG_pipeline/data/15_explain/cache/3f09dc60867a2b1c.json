@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。\n\nITEMS:\n\n[I177] 【神农】和他的家人住在古代   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 神农: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦神农⟧住在一个中国小镇 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 神农[回→回到]他的家\n  her past correction: ⟦很久以前，在古代⟧有一个叫神农的老人 — her note: “很久以前“ and ”在古代” are redundant, only keep one\n\n[I178] 神农和他的家人【住】在古代   correction: 住 → 生活   strength: error\n  checker's note: 生活在古代 is needed for living in a historical era\n  rule card (directional_complements, Grammar): Use V. + directional complement + Place + 来/去: put the place after the directional complement and before 来/去. For walking to a place, use 走到place来/去, not 走去 or 走来Place.  Pattern: <wrong> → <correct>: put the place after the directional complement; use V. + directional complement + Place + 来/去 (or 走到place来/去).  Her terms: V. + directional complement + Place + 来/去, 走到place来/去, 走去/来Place, 拿起来, 拿上去\n  her past correction: 神农[回→回到]他的家\n  her past correction: 在古代[有一个神农→有一个叫神农的老人]\n  her past correction: 神农回[-他的]家 — her note: redundant\n\n[I179] 因为他的家人常常生病【了】   correction: 了 → (delete)   strength: error\n  checker's note: habitual action with 常常 does not take 了\n  rule card (no_le_routine_state, Coherence: temporality (了/着/在)): For a routine, habit, repeated condition, or state, use zero particle: do not add 了completed. This is especially true with words such as 老是, 常常, and 从早到晚.  Pattern: <wrong> → <correct>: this describes a routine/habit or repeated condition, so use no 了 (no了for routine/habit).  Her terms: no了for routine/habit, no了for habit/routine, 看look vs.看到see, no了\n  her past correction: 因为他们常常生病[-了] — her note: no了for routine/habit\n  her past correction: 他们常常生病[-了] — her note: no了for routine/habit\n  her past correction: ⟦他有时候病了⟧ — her note: the component before “这就要看……了“ should be “not definite” condition, 他会不会生病\n\n[I180] 他们去【^】很多不一样的地方   correction: ∅ → 了   strength: error\n  checker's note: a completed action in this narrative normally needs 了\n  rule card (directional_complements, Grammar): Use V. + directional complement + Place + 来/去: put the place after the directional complement and before 来/去. For walking to a place, use 走到place来/去, not 走去 or 走来Place.  Pattern: <wrong> → <correct>: put the place after the directional complement; use V. + directional complement + Place + 来/去 (or 走到place来/去).  Her terms: V. + directional complement + Place + 来/去, 走到place来/去, 走去/来Place, 拿起来, 拿上去\n  her past correction: 他们[走去→走了] — her note: usually we do not say “走去”.\n  her past correction: 他们[在到处的中国住→在中国各地都住过] — her note: “过” experience, have done, Place到处都 + Clause\n  her past correction: 所以他[走路旅行找足多→步行去找很多]不同的植物",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I177",
+    "explanation": "This character appears for the first time, so please introduce 神农 briefly, for example as a person in ancient times.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I178",
+    "explanation": "For living in a historical era, use 生活在古代 rather than 住在古代.",
+    "dimension": "grammar",
+    "corrected": "住 → 生活",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I179",
+    "explanation": "This describes a routine or repeated condition with 常常, so use no 了 for routine/habit.",
+    "dimension": "coherence_temporality",
+    "corrected": "了 → (delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I180",
+    "explanation": "This is a completed action in the narrative, so add 了 after 去.",
+    "dimension": "coherence_temporality",
+    "corrected": "∅ → 了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1489,
+  "completion_tokens": 349,
+  "total_tokens": 1838,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1486,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 128,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

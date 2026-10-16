@@ -1,0 +1,107 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n古代的生活很多的人吃很多的植物，可是一些的人一吃植物，就难受，肚子疼。 因为他们吃毒。一天，一个老人决定了，坐路很远，吃很多的植物。看看如果能吃还是不能吃，药还是毒。这个老人叫神农。神农吃了很多的植物，就在植物用上写了。一天，他看到大的黄色的花，开着山上。他吃了花，就肚子疼。神农说：我死了吗？他一说了，就穿着蓝色的衣服的人来。他看到神农，给他一个灵芝。神农的肚子最好以后，他问：穿着紫色衣服的男人怎么了？我一会儿死了一会儿身体最好的。紫色人告诉他：你吃了灵芝，一吃就你的身体最好的。神农说：啊，所以这个灵芝是药啊，和这个花是毒，我要马上写这个花不能吃，特别很新鲜的时候。可是这个灵芝可能是啊。神农加下去很多的植物，看看如果毒还是药。我觉得神农很有名的人，因为他作用这个时代的医学。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "told",
+    "evidence": [
+     "古代的生活很多的人吃很多的植物，可是一些的人一吃植物，就难受，肚子疼。",
+     "因为他们吃毒。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "一天，一个老人决定了，坐路很远，吃很多的植物。",
+     "看看如果能吃还是不能吃，药还是毒。"
+    ],
+    "missing_part": "神农 climbing mountains is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 finding 茶 and making a record of it is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "一天，他看到大的黄色的花，开着山上。",
+     "他吃了花，就肚子疼。"
+    ],
+    "missing_part": "The plant is not identified as 夹竹桃, and 神农 does not faint.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "told",
+    "evidence": [
+     "他一说了，就穿着蓝色的衣服的人来。",
+     "他看到神农，给他一个灵芝。",
+     "神农的肚子最好以后，他问：穿着紫色衣服的男人怎么了？",
+     "紫色人告诉他：你吃了灵芝，一吃就你的身体最好的。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "verdict": "partly",
+    "evidence": [
+     "神农的肚子最好以后，他问：穿着紫色衣服的男人怎么了？",
+     "紫色人告诉他：你吃了灵芝，一吃就你的身体最好的。"
+    ],
+    "missing_part": "The person who comes and talks with 神农 should be wearing brown clothes, not purple.",
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "verdict": "partly",
+    "evidence": [
+     "神农说：啊，所以这个灵芝是药啊，和这个花是毒，我要马上写这个花不能吃，特别很新鲜的时候。"
+    ],
+    "missing_part": "神农 records the poisonous flower, but he does not clearly record 灵芝, and the flower is not identified as 夹竹桃.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "紫色人告诉他：你吃了灵芝，一吃就你的身体最好的。",
+    "problem": "The second visitor should be a person in brown clothes, not a purple-clothed person."
+   }
+  ],
+  "feedback": [
+   "After 神农 decides to test plants, add that he climbs mountains to try them.",
+   "Before he tries the poisonous flower, include that 神农 finds 茶 and writes it down.",
+   "After finding 茶, say that 神农 tries 夹竹桃 and faints.",
+   "After 灵芝 makes 神农 better, a person in brown clothes should come and talk with him.",
+   "After the conversation, add that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 932,
+  "completion_tokens": 1612,
+  "total_tokens": 2544,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 950,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

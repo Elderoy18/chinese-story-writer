@@ -1,0 +1,58 @@
+{
+ "input": "learner text: 可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。\nquote: 一个灵芝和一个男人正好在我的旁边\npart p0: fix [ref p0/k1-2] 一个男人正好过来，看到我的旁边长着一个灵芝 ; notes: “男人” is moving to神农(dynamic) while “灵芝” is next to神农(static), so it’s better not to combine the two",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k1-2",
+    "op": "delete",
+    "original": "一个灵芝和",
+    "corrected": "",
+    "before": "",
+    "after": "一个男人正好",
+    "note": "“男人” is moving to神农(dynamic) while “灵芝” is next to神农(static), so it’s better not to combine the two",
+    "confidence": "high",
+    "reason": "separates the static 灵芝 from the moving 男人"
+   },
+   {
+    "ref": "p0/k1-2",
+    "op": "replace",
+    "original": "在",
+    "corrected": "过来，看到",
+    "before": "一个男人正好",
+    "after": "我的旁边",
+    "note": "“男人” is moving to神农(dynamic) while “灵芝” is next to神农(static), so it’s better not to combine the two",
+    "confidence": "high",
+    "reason": "changes the man's location state to movement and seeing"
+   },
+   {
+    "ref": "p0/k1-2",
+    "op": "insert",
+    "original": "",
+    "corrected": "长着一个灵芝",
+    "before": "我的旁边",
+    "after": "",
+    "note": "“男人” is moving to神农(dynamic) while “灵芝” is next to神农(static), so it’s better not to combine the two",
+    "confidence": "high",
+    "reason": "adds the separate static description of the 灵芝"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1049,
+  "completion_tokens": 503,
+  "total_tokens": 1552,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1046,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 230,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

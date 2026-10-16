@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟母老是搬家，所以孟子会跟别的教授学哲学。\nquote: 孟母老是搬家，所以孟子会跟别的教授学哲学\npart p0: comment [ref p0/note] “老是“ for something negative, used to complain\npart p1: comment [ref p1/note] 这样in this way",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "老是",
+    "corrected": "",
+    "before": "孟母",
+    "after": "搬家，所以",
+    "note": "“老是“ for something negative, used to complain",
+    "confidence": "high",
+    "reason": "comment concerns the use of 老是"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "所以",
+    "corrected": "",
+    "before": "母老是搬家，",
+    "after": "孟子会跟别",
+    "note": "这样in this way",
+    "confidence": "low",
+    "reason": "interprets 这样 as a comment on the connective 所以"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1023,
+  "completion_tokens": 229,
+  "total_tokens": 1252,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 91,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

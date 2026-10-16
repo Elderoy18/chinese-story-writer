@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 夹竹桃里面原来也有毒，所以神农吃以后就生病了。\nquote: 夹竹桃里面原来也有毒，所以神农吃以后就生病了\npart p0: comment [ref p0/note] 原来……otherwise “原来” will have both “it turns out” and “originally” meaning\npart p1: fix [ref p1/k0] 吃了以后 ; notes: 了completed",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "原来",
+    "corrected": "",
+    "before": "夹竹桃里面",
+    "after": "也有毒，所",
+    "note": "原来……otherwise “原来” will have both “it turns out” and “originally” meaning",
+    "confidence": "low",
+    "reason": "comment indicates ambiguous use of 原来 but gives no exact replacement"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "以神农吃",
+    "after": "以后就生病",
+    "note": "了completed",
+    "confidence": "high",
+    "reason": "adds completed-action 了 after 吃"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1039,
+  "completion_tokens": 143,
+  "total_tokens": 1182,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1036,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

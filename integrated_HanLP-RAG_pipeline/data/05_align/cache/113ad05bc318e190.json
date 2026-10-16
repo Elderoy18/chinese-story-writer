@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 古代的时候，神农看了很多生病的人。\nquote: 神农看了很多生病的人\npart p0: fix [ref p0/k0] 看到了 ; notes: 看look vs.看到see\npart p1: comment [ref p1/note] better to briefly introduce “神农” when this character first appears",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "看了",
+    "corrected": "看到了",
+    "before": "神农",
+    "after": "很多生病的",
+    "note": "看look vs.看到see",
+    "confidence": "high",
+    "reason": "replaces 看了 with 看到了"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "神农",
+    "corrected": "",
+    "before": "",
+    "after": "看了很多生",
+    "note": "better to briefly introduce “神农” when this character first appears",
+    "confidence": "high",
+    "reason": "comment requests an introduction for 神农"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1015,
+  "completion_tokens": 128,
+  "total_tokens": 1143,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

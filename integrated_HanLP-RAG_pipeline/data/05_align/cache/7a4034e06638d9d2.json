@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 只吃灵芝对身体不好，特别是夹竹桃对身体更不好。\nquote: 特别是夹竹桃对身体更不好\npart p0: comment [ref p0/note] 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "特别是夹竹桃",
+    "corrected": "",
+    "before": "只吃灵芝对身体不好，",
+    "after": "对身体更不好。",
+    "note": "特别是is used to single out a typical example, but夹竹桃is not an example of灵芝",
+    "confidence": "high",
+    "reason": "comment identifies the misuse of 特别是 with 夹竹桃"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1009,
+  "completion_tokens": 99,
+  "total_tokens": 1108,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

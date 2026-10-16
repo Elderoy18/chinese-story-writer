@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 第二个花，一吃就身体坏了。\nquote: 第二个花，一吃就身体坏了\npart p0: fix [ref p0/k0] 身体就坏了 ; notes: Subj. + 就",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "一吃",
+    "corrected": "",
+    "before": "二个花，",
+    "after": "就身体坏",
+    "note": "Subj. + 就",
+    "confidence": "high",
+    "reason": "her fix removes 一吃 so 身体 is the subject before 就"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 989,
+  "completion_tokens": 167,
+  "total_tokens": 1156,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 88,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

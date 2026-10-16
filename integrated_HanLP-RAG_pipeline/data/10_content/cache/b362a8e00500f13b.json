@@ -1,0 +1,107 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n古代的时候，孟子和孟母住在一起。孟母望子成龙，可是孟子想当小商贩，老是在路上跟朋友们一起卖东西。孟母认为他们住在墓地的旁边，害得对孟子有不好的影响。所以孟子才八岁，跟孟母一起搬家三次。他们搬家不是为了孟母要住在更好的房子，而是为了给孟子找一个好老师。虽然一直学习很厉害，孟子从早到晚努力学习。孟子不是在吃饭，就是在读书，难怪他成为了一个很有名的哲学家。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "living near a graveyard; 孟子 imitates sacrifice offerings",
+    "verdict": "partly",
+    "evidence": [
+     "古代的时候，孟子和孟母住在一起。",
+     "孟母认为他们住在墓地的旁边，害得对孟子有不好的影响。"
+    ],
+    "missing_part": "孟子 imitates how to offer sacrifices.",
+    "details_left_out": [
+     "孟子 does this every day."
+    ],
+    "out_of_order": true
+   },
+   {
+    "id": "S2",
+    "core": "孟母 leaves the graveyard area because the sacrifice imitation may harm 孟子",
+    "verdict": "partly",
+    "evidence": [
+     "孟母认为他们住在墓地的旁边，害得对孟子有不好的影响。",
+     "所以孟子才八岁，跟孟母一起搬家三次。"
+    ],
+    "missing_part": "孟母's concern that imitating sacrifice offerings would have a bad impact on 孟子.",
+    "details_left_out": [
+     "孟母 decides specifically to move away from the graveyard neighbourhood."
+    ],
+    "out_of_order": true
+   },
+   {
+    "id": "S3",
+    "core": "move near the market; 孟子 imitates buying and selling",
+    "verdict": "partly",
+    "evidence": [
+     "孟子和孟母住在一起。孟母望子成龙，可是孟子想当小商贩，老是在路上跟朋友们一起卖东西。",
+     "所以孟子才八岁，跟孟母一起搬家三次。"
+    ],
+    "missing_part": "They move to the neighbourhood near the market.",
+    "details_left_out": [],
+    "out_of_order": true
+   },
+   {
+    "id": "S4",
+    "core": "move from the market to a school neighbourhood; 孟子 begins studying",
+    "verdict": "partly",
+    "evidence": [
+     "所以孟子才八岁，跟孟母一起搬家三次。",
+     "虽然一直学习很厉害，孟子从早到晚努力学习。"
+    ],
+    "missing_part": "孟母 moves from the market to a neighbourhood near a school.",
+    "details_left_out": [
+     "孟子 starts studying after the move."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a famous philosopher",
+    "verdict": "told",
+    "evidence": [
+     "孟子不是在吃饭，就是在读书，难怪他成为了一个很有名的哲学家。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "所以孟子才八岁，跟孟母一起搬家三次。",
+    "problem": "The required story has two moves: first from the graveyard area to the market area, then from the market area to the school area; it does not have three moves."
+   },
+   {
+    "learner_text": "孟子和孟母住在一起。孟母望子成龙，可是孟子想当小商贩，老是在路上跟朋友们一起卖东西。",
+    "problem": "The story says 孟子 imitates buying and selling after moving near the market; it does not say that he actually sells things with friends as a street vendor."
+   }
+  ],
+  "feedback": [
+   "Before 孟母 decides to move, add that 孟子 imitates sacrifice offerings every day near the graveyard.",
+   "When 孟母 leaves the graveyard area, say that she worries 孟子’s sacrifice imitation will affect him badly.",
+   "After leaving the graveyard area and before the school move, add that they move near the market and 孟子 imitates buying and selling there.",
+   "After the market events and before 孟子 studies hard, add that 孟母 moves to a neighbourhood near a school."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1045,
+  "completion_tokens": 2150,
+  "total_tokens": 3195,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1042,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1377,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

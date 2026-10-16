@@ -1,0 +1,125 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\nCURRENT SCENE:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nFLAGGED PLACES:\n\n[P195] 凉山【^】很大的山\n  proposed by the AI checker: 凉山[+是]很大的山 (a predicate needs 是 here)\n  proposed by the correction model: 凉山[+是一座]很大的山\n  her past correction (example_emphasis_connectors): 这个大山⟦特别是⟧的 — her note: 特别是+N, + clause\n  her past correction (le_completed): 他[爬山→爬了很多山]\n  her past correction (fixed_expressions): 他走过[有大有小山→大山小山]\n  rule card example_emphasis_connectors: 比方说 introduces a following example; delete it when no example follows. 特别是+N, + Clause singles out a typical example, so N must be an example of the category. Not an error: Do not flag 比方说 when it is followed by an actual example. Do not flag 特别是 when it has the 特别是+N, + Clause pattern and N is a typical example of the category.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P196] 【这也找】植物\n  proposed by the AI checker: [这→他]也找植物 (this refers to Shennong, not a thing)\n  proposed by the correction model: 这[+里]也找植物\n  proposed by the correction model: 这也[+能]找植物\n  proposed by the correction model: 这也找[+到]植物\n  her past correction (search_find): 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction (specific_noun_choice): 他找了第一个[菜→植物]\n  her past correction (near_synonym_precision): 他[测试→尝试]别的植物\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n  rule card specific_noun_choice: Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦. Not an error: Do not flag a general word when the context does not require a more specific meaning. This rule applies when the general word makes the story unclear or does not name what is actually meant.\n\n[P197] 他找到【^】黄色的花\n  proposed by the AI checker: 他找到[+一朵]黄色的花 (a single flower needs a measure word)\n  proposed by the correction model: 他找到[+了]黄色的花\n  her past correction (no_le_mental_state): 他发现[-了]黄色花有毒 — her note: 发现is a mental state verb, no了\n  her past correction (search_find): 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction (redundant_words): [-他]偶然看到了一朵美丽的黄花 — her note: redundant\n  rule card no_le_mental_state: Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative. Not an error: Apply this rule when 决定 or 发现 expresses the decision or discovery in this narrative use.\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n\n[P198] 他听说【你跟】黄色的花做茶很有用\n  proposed by the AI checker: 他听说[你跟→用]黄色的花做茶很有用 (用 marks the material used to make tea)\n  proposed by the correction model: 他听说你[跟→用]黄色的花做茶很有用\n  her past correction (le_completed): 神农尝[+了]花儿以后就发现这个花儿不但可以被用做茶 — her note: 了completed\n  her past correction (no_le_mental_state): 他发现[-了]黄色花有毒 — her note: 发现is a mental state verb, no了\n  her past correction (redundant_words): 喝茶对[-你的]身体有好处\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card no_le_mental_state: Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative. Not an error: Apply this rule when 决定 or 发现 expresses the decision or discovery in this narrative use.\n\n[P199] 他听说你跟黄色的花做【^】茶很有用\n  proposed by the AI checker: 他听说你跟黄色的花做[+的]茶很有用 (links 做 to 茶 as the tea made from the flower)\n  her past correction (no_le_mental_state): 他发现[-了]黄色花有毒 — her note: 发现is a mental state verb, no了\n  her past correction (le_completed): 神农尝[+了]花儿以后就发现这个花儿不但可以被用做茶 — her note: 了completed\n  her past correction (redundant_words): 喝茶对[-你的]身体有好处\n  rule card no_le_mental_state: Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative. Not an error: Apply this rule when 决定 or 发现 expresses the decision or discovery in this narrative use.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P200] 你的头【发】疼死\n  proposed by the AI checker: 你的头[-发]疼死 (a headache is 头疼, not hair hurting)\n  her past correction (specific_noun_choice): [就疼死了→肚子/头就疼死了]\n  her past correction (specific_noun_choice): 可是[有很多麻烦→头疼起来了] — her note: “有很多麻烦” is too vague\n  her past correction (zero_redundant_pronoun): [-他]累死了 — her note: delete他\n  rule card specific_noun_choice: Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦. Not an error: Do not flag a general word when the context does not require a more specific meaning. This rule applies when the general word makes the story unclear or does not name what is actually meant.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n\n[P201] 你的头发疼【死】\n  proposed by the AI checker: 你的头发疼[+得要]死 (疼得要死 needs the degree complement)\n  proposed by the correction model: 你的头发疼死[+了]\n  her past correction (specific_noun_choice): [就疼死了→肚子/头就疼死了]\n  her past correction (specific_noun_choice): 可是[有很多麻烦→头疼起来了] — her note: “有很多麻烦” is too vague\n  her past correction (le_completed): 快要死[+了]\n  rule card specific_noun_choice: Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦. Not an error: Do not flag a general word when the context does not require a more specific meaning. This rule applies when the general word makes the story unclear or does not name what is actually meant.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P202] 这【冰】茶是药\n  proposed by the AI checker: 这[冰→杯]茶是药 (杯 is the measure word for a cup of tea)\n  her past correction (zero_redundant_pronoun): [-他]喝了茶 — her note: redundant\n  her past correction (redundant_words): 喝茶对[-你的]身体有好处\n  her past correction (question_patterns): [+是]药还是毒\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P203] 他一喝茶就【^】很不舒服\n  proposed by the correction model: 他一喝茶就[+觉得]很不舒服\n  her past correction (zero_redundant_pronoun): [-他]喝了茶 — her note: redundant\n  her past correction (conditional_jiu): 他一看[+就]觉得担心\n  her past correction (redundant_words): 喝茶对[-你的]身体有好处\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card conditional_jiu: Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future. Not an error: When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P195",
+    "decision": "keep",
+    "category": "other",
+    "original": "",
+    "before": "凉山",
+    "after": "很大的山",
+    "corrected": "是一座",
+    "confidence": "high",
+    "reason": "A copula and measure word are needed for the noun predicate."
+   },
+   {
+    "place_id": "P196",
+    "decision": "keep",
+    "category": "other",
+    "original": "这",
+    "before": "凉山很大的山，",
+    "after": "也找植物",
+    "corrected": "他",
+    "confidence": "high",
+    "reason": "这 cannot refer to Shennong as the subject."
+   },
+   {
+    "place_id": "P197",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "他找到",
+    "after": "黄色的花",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "找到黄色的花 is acceptable without a classifier or 了."
+   },
+   {
+    "place_id": "P198",
+    "decision": "keep",
+    "category": "other",
+    "original": "你跟",
+    "before": "他听说",
+    "after": "黄色的花",
+    "corrected": "用",
+    "confidence": "high",
+    "reason": "用 is needed to mark the material for making tea."
+   },
+   {
+    "place_id": "P199",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "黄色的花做",
+    "after": "茶很有用",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "做茶很有用 is already grammatical."
+   },
+   {
+    "place_id": "P200",
+    "decision": "keep",
+    "category": "specific_noun_choice",
+    "original": "发",
+    "before": "你的头",
+    "after": "疼死",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "头发疼 means hair hurts; the intended meaning is 头疼."
+   },
+   {
+    "place_id": "P201",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "",
+    "before": "头发疼死",
+    "after": "，这冰茶",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "疼死了 expresses the completed change of state."
+   },
+   {
+    "place_id": "P202",
+    "decision": "keep",
+    "category": "other",
+    "original": "冰",
+    "before": "这",
+    "after": "茶是药",
+    "corrected": "杯",
+    "confidence": "low",
+    "reason": "The context calls for a cup of tea, not iced tea."
+   },
+   {
+    "place_id": "P203",
+    "decision": "drop",
+    "category": "conditional_jiu",
+    "original": "",
+    "before": "他一喝茶就",
+    "after": "很不舒服",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "一喝茶就很不舒服 is a valid immediate-result pattern."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 3334,
+  "completion_tokens": 2280,
+  "total_tokens": 5614,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3331,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1763,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

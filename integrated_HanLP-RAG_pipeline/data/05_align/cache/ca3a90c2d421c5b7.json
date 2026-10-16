@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 一天，神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物。\nquote: 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物\npart p0: fix [ref p0/k0-1] 在空气新鲜的山里走路，很多人在吃植物 ; notes: 在ongoing",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "新鲜空气的山",
+    "corrected": "空气新鲜的山里",
+    "before": "神农在",
+    "after": "走路看到几",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the mountain description and adds 里"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "看到几种的植物，也看到了",
+    "corrected": "",
+    "before": "的山走路",
+    "after": "很多人吃植",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits the seeing-plants clause"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "，",
+    "before": "的山走路",
+    "after": "看到几种的",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the clause boundary shown in her fix"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "在",
+    "before": "到了很多人",
+    "after": "吃植物",
+    "note": "在ongoing",
+    "confidence": "high",
+    "reason": "adds 在 for ongoing action"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1027,
+  "completion_tokens": 751,
+  "total_tokens": 1778,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1024,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

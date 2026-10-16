@@ -1,0 +1,98 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n在古代，一位叫神农的老人和他的家人决定一起爬山。爬山前，他们吃了很多植物，神农的儿子王朋吃了夹竹桃，就开始肚子疼。神农越来越紧张，因为王朋不停地哭。 这时，神农快速地跑上山。在上山的路上，神农吃了一个蘑菇，他觉得蘑菇很好吃，一点儿甜一点儿咸。神农决定跟家人回家，他要回家，所以王朋也可以吃一个蘑菇，那个蘑菇是药。在家，王朋吃了蘑菇吃了以后，王朋不再哭了。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "在古代，一位叫神农的老人和他的家人决定一起爬山。",
+     "爬山前，他们吃了很多植物，神农的儿子王朋吃了夹竹桃，就开始肚子疼。"
+    ],
+    "missing_part": "It does not say that people did not know which plants were edible, or that people often became sick from eating unknown plants.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "这时，神农快速地跑上山。",
+     "在上山的路上，神农吃了一个蘑菇，他觉得蘑菇很好吃，一点儿甜一点儿咸。"
+    ],
+    "missing_part": "It does not say that 神农 decided to discover which plants were safe or unsafe to eat, and he is not shown trying different plants for this purpose.",
+    "out_of_order": true
+   },
+   {
+    "id": "S3",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 finding 茶 and making a record of it is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "爬山前，他们吃了很多植物，神农的儿子王朋吃了夹竹桃，就开始肚子疼。"
+    ],
+    "missing_part": "神农 himself does not try 夹竹桃, and he does not faint.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "A person in blue giving 灵芝 to 神农, and 神农 feeling better after eating it, is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Another person in brown coming by and talking with 神农 is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 recording both 灵芝 and 夹竹桃 is not told.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "爬山前，他们吃了很多植物，神农的儿子王朋吃了夹竹桃，就开始肚子疼。",
+    "problem": "In the required story, 神农 eats 夹竹桃 and faints; it is not his son 王朋 who eats it and gets a stomachache."
+   }
+  ],
+  "feedback": [
+   "At the beginning, before 神农 goes up the mountain, say that people did not know which plants were safe to eat and often got sick.",
+   "After people get sick from unknown plants, explain that 神农 goes into the mountains to test plants and learn which ones are safe.",
+   "After 神农 tests plants in the mountains, include that he finds 茶 and writes it down.",
+   "After finding 茶, say that 神农 eats 夹竹桃 and faints, before the person in blue arrives.",
+   "After 神农 faints, include the person in blue giving him 灵芝, which makes him feel better.",
+   "After the person in blue helps 神农, include the person in brown coming to talk with him.",
+   "At the end, after the conversation, say that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 829,
+  "completion_tokens": 1584,
+  "total_tokens": 2413,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 884,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

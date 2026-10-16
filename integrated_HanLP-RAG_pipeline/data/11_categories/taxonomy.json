@@ -1,0 +1,798 @@
+{
+ "prompt_version": "3a2fddb5fb",
+ "categories": [
+  {
+   "id": "measure_word_choice",
+   "name": "量词选择",
+   "section": "grammar",
+   "definition": "Use the appropriate measure word for the noun, including polite 位 and noun-specific classifiers such as 棵.",
+   "her_notes": [
+    "“位” is a polite MW."
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "numeral_measure_word_order",
+   "name": "Num. + MW. + N., no 的",
+   "section": "grammar",
+   "definition": "With a number and measure word, use Num. + MW. + noun directly; normally do not add 的. Use V. + Num. + MW. + Obj. in the normal object order.",
+   "her_notes": [
+    "V. + Num. + MW. + Obj.",
+    "了completed, V. + Num. + MW. + Obj.",
+    "num. + MW. + noun, no的",
+    "“们”cannot be used with num.",
+    "“些” cannot be used with num."
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "modifier_de_structure",
+   "name": "的 in modifier phrases",
+   "section": "grammar",
+   "definition": "Use 的 only where a modifier needs it, and omit it in structures that do not take 的. A descriptive modifier before a noun normally needs the appropriate 的 structure.",
+   "her_notes": [
+    "no的",
+    "the Obj. in “Place + V. 着 + Obj.” is usually “number + MW + noun”, not specific “that/this/those/these/the + noun”.",
+    "的 -> ∅"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "adjective_predicate_degree",
+   "name": "Adj. can be predicate; usually Adj. takes 很",
+   "section": "grammar",
+   "definition": "An adjective can be the predicate without 是. Usually use 很 before an adjective when giving a plain description, unless another degree pattern is intended.",
+   "her_notes": [
+    "usually Adj. takes 很",
+    "Delete 是，Adj. can be predicate, without是",
+    "是Adj.的 is to emphasize",
+    "“这个植物“ is not unclear, which one? Delete 是，Adj. can be predicate, without是"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "non_adjective_degree_patterns",
+   "name": "病 is not a normal Adj.",
+   "section": "grammar",
+   "definition": "Do not treat verbs or nouns such as 病 / 生病 as ordinary adjectives with 很 or 不. Use patterns such as 病得很厉害 when describing the degree.",
+   "her_notes": [
+    "“病” is not a normal Adj., so it cannot be with 很 or 不",
+    "“生病”cannot be with “很”",
+    "病得很厉害，“病” is not a normal Adj., so it cannot be with 很 or 不"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "verb_object_valency",
+   "name": "V. + Obj. structure",
+   "section": "grammar",
+   "definition": "Use each verb with the object and complement structure it allows; do not give a verb an extra object or omit a required one.",
+   "her_notes": [
+    "管事V.+Obj. compound, not followed by another Obj.",
+    "摘掉我的家人：掉itself cannot be followed by an Obj., Subj. 掉 + directional + place, but掉can be resultative complement following another main action verb",
+    "坐”sit” is used for animate Obj.",
+    "“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items."
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "verb_reduplication_requests",
+   "name": "V.V. for requests or plans",
+   "section": "grammar",
+   "definition": "Use V.V. to make a request or express a tentative plan, not simply for any completed narrative action.",
+   "her_notes": [
+    "V.V. is used to make requests or plans"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "modal_and_control_verb_complements",
+   "name": "想 + V.; 叫/让 + V.",
+   "section": "grammar",
+   "definition": "想 must be followed by a verb phrase, not a noun. Control and modal-like verbs such as 叫/让 take a following action and do not take 了 in this use.",
+   "her_notes": [
+    "想 + V., cannot be followed by N.",
+    "叫/让 is a modal verb, no了",
+    "会will"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "location_with_zai",
+   "name": "在+Place / 在Place + V.",
+   "section": "grammar",
+   "definition": "Use 在 + Place for a location, and place the location correctly before the action when needed: 在Place + V. or 住在+Place.",
+   "her_notes": [
+    "在+Place",
+    "在+ place",
+    "在Place",
+    "在Place住",
+    "住在+Place"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "directional_complements",
+   "name": "V. + directional complement + Place + 来/去",
+   "section": "grammar",
+   "definition": "Use directional complements in the correct order, for example 走到place来/去 and V. + directional complement + Place + 来/去. Do not use forms such as 走去 or 走来Place.",
+   "her_notes": [
+    "V. + directional complement + Place + 来/去",
+    "走到place来/去，cannot say “走去/来Place”",
+    "usually we do not say “走去”.",
+    "but not both回and走",
+    "拿起来pick up，拿上去means “bring it up”"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "resultative_complements",
+   "name": "resultative complement",
+   "section": "grammar",
+   "definition": "Use a resultative complement when the action has reached its result, for example 吃到, 找到, 撞到, 把Obj. V. Resultative complement.",
+   "her_notes": [
+    "找look for vs.找到find",
+    "吃到result, 写下",
+    "add “又” to make it smooth, 撞到+Obj.",
+    "把Obj. V. Resultative complement"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "ba_bei_constructions",
+   "name": "把 / 被",
+   "section": "grammar",
+   "definition": "Use 把 for an initiated disposal action, usually with a result or completion; use 被 for passive voice. Do not use 把 when the subject did not cause the event.",
+   "her_notes": [
+    "“把”usually ends with了",
+    "被 means passive voice “be done”",
+    "“把“ is used for initiated actions (“disposal”), here it is not he who threw those pears, but the pears fell themselves."
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "negation_bu_mei",
+   "name": "不 for habit; 没 for non-occurrence",
+   "section": "grammar",
+   "definition": "Use 不 for habit, routine, willingness, or general negation; use 没 for an event that did not occur. Use 没 + V. for a negated action event.",
+   "her_notes": [
+    "不for habit/routine/willingness, 没for non-occurrence of an event",
+    "没+ V.",
+    "没 +V., no了, the verb is an action verb"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "question_patterns",
+   "name": "是……吗 / repeated Wh-Q",
+   "section": "grammar",
+   "definition": "Form questions with the appropriate Chinese question pattern, such as 能不能吃, 知不知道, or the repeated Wh-Q pattern for “wh-ever…”.",
+   "her_notes": [
+    "the structure “repeated Wh-Q” expressing “wh-ever…, will do that…”.",
+    "e.g., 蘑菇能不能吃",
+    "the “if” in “see if + clause” is not 如果",
+    "the “if” in “not know if + clause” is not 如果"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "missing_or_unclear_subject",
+   "name": "miss a Subj.",
+   "section": "grammar",
+   "definition": "State the subject when it is required for grammatical clarity, especially after an inserted narrator comment or when the previous subject cannot continue.",
+   "her_notes": [
+    "miss a Subj.",
+    "here needs a subject",
+    "the Subj. here cannot be omitted, because the preceding “我怎么能…” is an inserted “narrator comment”, which is temporarily detached from the main storyline. When it goes back to the main story, the Subj. should be restated.",
+    "it is unclear what the subject is, add “神农说：一吃夹竹桃就不舒服”, it is not “死”"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "perception_look_see",
+   "name": "看 look vs. 看到 see",
+   "section": "word_choice",
+   "definition": "看 is “look”; 看到 is “see/catch sight of” and includes the result of seeing. Choose according to whether the narrative means the attempt or the achieved perception.",
+   "her_notes": [
+    "看look vs.看到see",
+    "看look vs.看到see, no了",
+    "看look, 看到see"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "search_find",
+   "name": "找 look for vs. 找到 find",
+   "section": "word_choice",
+   "definition": "找 means “look for”; 找到 means “find” and includes the successful result.",
+   "her_notes": [
+    "找look for vs.找到find",
+    "找look for vs. 找到find"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "listen_hear",
+   "name": "听 listen vs. 听到 hear",
+   "section": "word_choice",
+   "definition": "听 is “listen”; 听到 is “hear” and expresses the result of perceiving a sound.",
+   "her_notes": [
+    "听listen vs.听到hear"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "near_synonym_precision",
+   "name": "near-synonyms: choose the intended word",
+   "section": "word_choice",
+   "definition": "Choose the near-synonym whose meaning fits the intended event, duration, possibility, or degree; similar-looking words are not interchangeable.",
+   "her_notes": [
+    "高兴is for short-term and can change quickly，幸福is for long-term, life-related happiness",
+    "“又“ emphasizes repeating vs. ”也“ emphasizes similarity",
+    "会means “will”, for future",
+    "“结果” for unexpected result",
+    "“经验” is a noun."
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "collocation_selection",
+   "name": "word collocation",
+   "section": "word_choice",
+   "definition": "Use words with their normal collocations; a grammatically possible combination may still not be a natural Chinese phrase.",
+   "her_notes": [
+    "良好 is usually not with生活",
+    "良好is not with工作",
+    "“食品” is usually for processed food",
+    "麻烦is usually not used to describe植物",
+    "口味is for a person"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "word_class_choice",
+   "name": "word class",
+   "section": "word_choice",
+   "definition": "Choose the word class required by the structure, for example noun, adjective, adverb, or verb, rather than using a related word of the wrong class.",
+   "her_notes": [
+    "“思维“ is a noun",
+    "“经验” is a noun.",
+    "“文明” can be an Adj., meaning “civilized”.",
+    "adv.地V",
+    "在place滚来滚去，multi-syllabic adv. + 地（mono-syllabic adv. cannot be used with 地）"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "fixed_expressions",
+   "name": "fixed expression",
+   "section": "word_choice",
+   "definition": "Use conventional fixed expressions and established compounds rather than creating a literal or nonstandard combination.",
+   "her_notes": [
+    "自然规律 as a fixed expression",
+    "制定规定 as a fixed expression.",
+    "新人means newly married couple",
+    "“人山人海” is to describe a scene where there are a lot of people in a space"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "formal_register",
+   "name": "formal words and register",
+   "section": "word_choice",
+   "definition": "Choose words that fit the register of the sentence; some words are formal, conversational, or used only in a particular context.",
+   "her_notes": [
+    "“真” is usually used in conversation",
+    "本+N. is usually used in formal advertisement/news, also it indicates the author owns the tree, which is not the fact: the author is a pear, who does not own the whole pear tree. 爬上这棵树。",
+    "“使” is more formal and better fit other formal words like “失业",
+    "家长“ is used in the context related to “education”, usually referring to parents who deal with children’s education."
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "specific_noun_choice",
+   "name": "be specific",
+   "section": "word_choice",
+   "definition": "Use a specific noun when the story requires one; avoid overly general words such as 人, 东西, 事情, 水果, or vague 有麻烦.",
+   "her_notes": [
+    "“人“ is too general and too vague, and does not stand alone",
+    "“东西” is too general and vague",
+    "be more specific, 什么经验？",
+    "be specific, what不太好的事情？",
+    "“有麻烦“ is too vague"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "other_vs_additional",
+   "name": "别的 vs. 另外",
+   "section": "word_choice",
+   "definition": "别的 means a different type or all others except the one mentioned. 另外 means an additional quantity or another/the other.",
+   "her_notes": [
+    "“别的” is for “a different type”, and “all else except the spoken one”",
+    "“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”",
+    "“别(的)” is for “a different type”, and “all else except the spoken one”"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "laoshi_negative_repetition",
+   "name": "老是 for something negative",
+   "section": "word_choice",
+   "definition": "老是 means “always” with a negative or complaining tone; do not use it for a neutral or positive repeated action.",
+   "her_notes": [
+    "“老是“ for something negative, used to complain",
+    "“老是“ means always, ”死” cannot be done multiple times"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "haide_harmful_result",
+   "name": "害得 + N/sb. + harmful result",
+   "section": "word_choice",
+   "definition": "害得 is followed by a person or noun and a genuinely harmful result. Do not use it for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling.",
+   "her_notes": [
+    "害得+Sb.+V.",
+    "“害得“ is followed by something harmful, 搬家is not harmful",
+    "害得孟子+harmful result, 常常玩",
+    "害得 + N/sb. + Harmful result",
+    "害得 + harmful result，不高兴is not that “harmful”"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "become_and_profession",
+   "name": "成为 + N. / 成才",
+   "section": "word_choice",
+   "definition": "成为 is followed by an appropriate noun, especially a profession or public identity; use 成才 rather than a literal phrase for becoming successful or capable.",
+   "her_notes": [
+    "成为+N",
+    "成为 + profession/celebrity",
+    "成为 + N. (profession/celebrity)",
+    "出家become a monk"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "ask_request_verbs",
+   "name": "问 vs. ask for help / ask sb. to do",
+   "section": "word_choice",
+   "definition": "问 is for asking a question. Use the appropriate verb for “ask for help” or “ask somebody to do something.”",
+   "her_notes": [
+    "the “ask” in “ask for help” is not问",
+    "the “ask” in “ask sb. to do” is not问"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "wrong_character",
+   "name": "use the wrong character",
+   "section": "word_choice",
+   "definition": "Use the correct written Chinese character for the intended word or adverbial form.",
+   "her_notes": [
+    "use the wrong character",
+    "马虎地V., use the wrong character"
+   ],
+   "detectable_by": "pattern"
+  },
+  {
+   "id": "first_mention_introduction",
+   "name": "1st time, briefly introduce N.",
+   "section": "coherence_reference",
+   "definition": "The first time a story character appears, introduce the person with a brief identifying noun phrase rather than using only the name or pronoun.",
+   "her_notes": [
+    "better to briefly introduce “孟子” when this character first appears",
+    "better to briefly introduce “神农” when this character first appears",
+    "please introduce神农",
+    "please introduce 神农",
+    "first appearing noun should not be specific"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "ambiguous_pronoun",
+   "name": "“他/她/它” is ambiguous",
+   "section": "coherence_reference",
+   "definition": "Use a pronoun only when its referent is close and unambiguous. Repeat the name or use a clear noun phrase when more than one possible referent intervenes.",
+   "her_notes": [
+    "“他“ is ambiguous",
+    "“她” is ambiguous",
+    "“他” is ambiguous, 后来成为",
+    "“妈妈” here is ambiguous",
+    "“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "pronoun_name_zero_reference",
+   "name": "re-occur: pronoun, zero, or N.",
+   "section": "coherence_reference",
+   "definition": "For a re-occurring referent, use a pronoun when it is close, zero form within the same clause, and repeat the noun/name when it is far away or something intervenes. Avoid too many repeated names or too many pronouns.",
+   "her_notes": [
+    "too many他",
+    "replace the second孟子with他",
+    "replace孟子with他",
+    "use神农instead of他to avoid ambiguity",
+    "use他to replace神农，otherwise it is ambiguous, as if there are three persons referred here, in fact there are only two"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "demonstrative_reference",
+   "name": "这个/这种 + N. must be clear",
+   "section": "coherence_reference",
+   "definition": "Use 这个, 这种, 这些, and 有的 only when the preceding context identifies exactly which entity or set they refer to.",
+   "her_notes": [
+    "“这种植物” is unclear, sine preceding sentence has two types of plants",
+    "“这个小孩子” is unclear and ambiguous",
+    "“这个植物“ is not unclear, which one?",
+    "what does the first他们refer to? what does the second他们refer to? 灵芝和夹竹桃混在一起以后变成了药"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "possessive_reference",
+   "name": "他的/她的 implies ownership",
+   "section": "coherence_reference",
+   "definition": "Do not use a possessive pronoun when it wrongly implies ownership or leaves the owner unclear; use a more precise relationship expression instead.",
+   "her_notes": [
+    "“他的人民”implies that神农is a king",
+    "“他的……” indicates that孟子owns this city",
+    "“他的” is ambiguous"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "zero_redundant_pronoun",
+   "name": "zero form: delete redundant pronoun",
+   "section": "coherence_reference",
+   "definition": "Within the same clause or a close continuation, omit a repeated subject or possessive when Chinese naturally uses zero form.",
+   "her_notes": [
+    "delete孟母",
+    "delete他",
+    "replace the second孟子with他",
+    "她的 -> ∅"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "le_completed",
+   "name": "了 completed",
+   "section": "coherence_temporality",
+   "definition": "Use 了 for a completed action or a change of state in the narrative. Do not add it merely because an action verb appears.",
+   "her_notes": [
+    "了completed",
+    "了completed，V. + Num. + MW. + Obj.",
+    "了completed/change",
+    "completed",
+    "了completed, 山上is a place"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "no_le_mental_state",
+   "name": "mental state V.: no 了",
+   "section": "coherence_temporality",
+   "definition": "Mental-state verbs such as 决定 and 发现 normally take zero particle when expressing the state, decision, or discovery in this narrative use.",
+   "her_notes": [
+    "决定is a mental state verb, no了",
+    "发现is a mental state verb, no了",
+    "“决定“ is a mental state verb, no了"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "no_le_routine_state",
+   "name": "no 了 for routine/habit",
+   "section": "coherence_temporality",
+   "definition": "Use zero particle for routines, habits, repeated conditions, and states, especially with 常常, 每天, 有的时候, and similar expressions.",
+   "her_notes": [
+    "no了for routine/habit",
+    "no了for habit/routine",
+    "or 他有的时候跟朋友玩儿",
+    "后来每年都搬家",
+    "常常cannot be with很"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "no_le_speaking_word",
+   "name": "no 了 for speaking word",
+   "section": "coherence_temporality",
+   "definition": "A saying word that introduces quoted speech normally uses zero particle, not 了.",
+   "her_notes": [
+    "no 了for speaking word",
+    "no了for speaking word",
+    "no了for speaking word introducing quoted speech",
+    "in quoted speech"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "no_le_with_mei",
+   "name": "没 + V., no 了",
+   "section": "coherence_temporality",
+   "definition": "After 没/没有 for a non-occurring action, do not add 了 to the action verb.",
+   "her_notes": [
+    "no了in “没+V.”",
+    "没 +V., no了, the verb is an action verb",
+    "没+ V."
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "zhe_durative",
+   "name": "着 durative",
+   "section": "coherence_temporality",
+   "definition": "Use 着 for a durative, accompanying, or static state, including an accompanying action such as V.着 + V2.",
+   "her_notes": [
+    "着durative",
+    "着 durative",
+    "走着durative",
+    "在Place V1.着V2",
+    "着durative，“遛“ for 狗only."
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "zai_progressive",
+   "name": "在/正在 ongoing",
+   "section": "coherence_temporality",
+   "definition": "Use 在/正在 for a dynamic action that is ongoing. Do not use it when the sentence is only stating a location or does not emphasize an ongoing action.",
+   "her_notes": [
+    "here is not emphasizing “ongoing”",
+    "在ongoing",
+    "一直在+V., emphasizing always ongoing"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "guo_experience",
+   "name": "过 for experience",
+   "section": "coherence_temporality",
+   "definition": "Use 过 to mean “have done/have experienced.” Do not use it when the stated experience has not happened yet.",
+   "her_notes": [
+    "“过” is to express “experience”, now the experience has not yet been experienced",
+    "“过” for “have done, experience”",
+    "“过” experience, have done, Place到处都 + Clause"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "action_series_last_le",
+   "name": "a series of actions: last one with 了",
+   "section": "coherence_temporality",
+   "definition": "When narrating a series of actions, use the aspect marking to organize the sequence; normally the final completed action takes 了.",
+   "her_notes": [
+    "either 了completed or 着 durative",
+    "着durative vs.了completed",
+    "it’s not about “completion”, no了",
+    "not occur yet, no了"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "time_sequence_markers",
+   "name": "Time + 以后 / 后来",
+   "section": "coherence_temporality",
+   "definition": "Use Time + 以后 and 后来 to show a clear temporal sequence, and avoid redundant time expressions.",
+   "her_notes": [
+    "Time+以后",
+    "Time + 以后",
+    "“很久以前“ and ”在古代” are redundant, only keep one",
+    "“所以” is not appropriate because here is not a result, 后来"
+   ],
+   "detectable_by": "pattern"
+  },
+  {
+   "id": "cause_result_soyi",
+   "name": "所以: cause-result relationship",
+   "section": "coherence_connectors",
+   "definition": "Use 所以 only when the preceding clause is genuinely the cause or reason for the following result. Otherwise delete it or use a connector that matches the relationship.",
+   "her_notes": [
+    "“所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”",
+    "“所以” is inappropriate because here is not a result, delete it, add “在山上”",
+    "“所以” is not appropriate, since here is not a cause-effect relationship",
+    "no cause-effect relationship, so “所以” is inappropriate",
+    "there is no cause-effect relationship"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "purpose_weile",
+   "name": "为了 + VP.",
+   "section": "coherence_connectors",
+   "definition": "Use 为了 + verb phrase to state a purpose, in the appropriate clause position; do not use it as a result connector.",
+   "her_notes": [
+    "为了 + VP.",
+    "“为了……” cannot be in the latter clause",
+    "it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "adversative_connector",
+   "name": "可是/却/而: semantic turn",
+   "section": "coherence_connectors",
+   "definition": "Use 可是, 却, 而, and 但 only when there is a real contrast, unexpected semantic turn, or concession. Do not add an adversative connector without that relationship.",
+   "her_notes": [
+    "no “semantic turn” relationship, so可是is inappropriate",
+    "“而” is not appropriate, because here is no “semantic turn”",
+    "“却” indicates unexpected semantic turn",
+    "because earlier “但“ is already used, here use “可” as alternative."
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "addition_repetition_connectors",
+   "name": "又 / 也 / 还 / 并",
+   "section": "coherence_connectors",
+   "definition": "Use additive and repetition connectors according to their meanings: 又 for repetition, 也 for similarity, 还 for an added or surprising point, and 并 to strengthen a coherent addition.",
+   "her_notes": [
+    "又for something already occurred",
+    "“又“ emphasizes repeating vs. ”也“ emphasizes similarity",
+    "又+ modal V.",
+    "adding “并” will increase the coherence.",
+    "“还“ indicates “surprising, anger” tone, as opposed to “就” with the natural continuation tone."
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "conditional_jiu",
+   "name": "只要……就 / Subj. + 就",
+   "section": "coherence_connectors",
+   "definition": "Use 只要……就 for an “as long as” condition, and place the subject and 就 so that the conditional or natural continuation relationship is clear.",
+   "her_notes": [
+    "wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as",
+    "Subj. + 就",
+    "Subj.+就",
+    "才 Num.就V.",
+    "才Num.就V."
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "not_but_refutation",
+   "name": "不是……而是……",
+   "section": "coherence_connectors",
+   "definition": "不是……而是…… refutes something conventional or mistaken and affirms an unexpected correction. Use it only when the two alternatives have that correction relationship.",
+   "her_notes": [
+    "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+    "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章",
+    "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 画画儿 is not a conventional activity related to 寺庙",
+    "Subj.不是……而是……",
+    "Subj. before “不是……而是……”"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "either_or_choice",
+   "name": "不是……就是……",
+   "section": "coherence_connectors",
+   "definition": "不是……就是…… means “either…or…” and requires two genuinely alternative possibilities, not two compatible purposes, states, or actions.",
+   "her_notes": [
+    "不是……就是……is used for “either…or…”",
+    "不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education",
+    "不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship",
+    "不是……就是…… is “either…or…”"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "he_scope_coordination",
+   "name": "和 cannot connect clauses/verb phrases",
+   "section": "coherence_connectors",
+   "definition": "和/跟 + noun connects multiple nouns that share the same action. Do not use it to connect whole clauses, unrelated verb phrases, adjectives, or an accompanying object that does not perform the action.",
+   "her_notes": [
+    "和cannot connect verb phrases",
+    "和cannot connect clauses",
+    "和cannot link clauses",
+    "和cannot connect Adj.",
+    "“跟/和+noun.” is used for multiple nouns that have the same action, we can say: 马先生和张先生走……，because both 马先生and 张先生 “walk”, but here “驴” does not walk by itself, but walked by 马先生, so you need to use the accompanying phrase “V.着”"
+   ],
+   "detectable_by": "parser"
+  },
+  {
+   "id": "example_emphasis_connectors",
+   "name": "比方说 / 特别是",
+   "section": "coherence_connectors",
+   "definition": "比方说 introduces an example; delete it when no example follows. 特别是 + N, + clause singles out a typical example and must match the category being exemplified.",
+   "her_notes": [
+    "比方说is used to express “for example”, delete it",
+    "是不是有用了。比方说is used to express “for example”, delete it",
+    "”特别是+N, + Clause” is used to single out a typical example",
+    "特别是is used to single out a typical example, but夹竹桃is not an example of灵芝",
+    "特别是+N, + clause"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "loose_clause_connection",
+   "name": "loose connection / no logic relationship",
+   "section": "coherence_connectors",
+   "definition": "Make the relationship between clauses and sentences explicit. Add an appropriate connector, purpose, condition, place, or sequence marker when the narrative is fractured or loosely connected.",
+   "her_notes": [
+    "loosely connected, unclear between-sentence relationship",
+    "loosely connected with the preceding sentence",
+    "no logic relationship, fractured",
+    "no logic relationship with the preceding or following sentences",
+    "loose connection between the two clauses, 决定去旅行找到能吃的植物"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "condition_not_definite",
+   "name": "condition is not definite",
+   "section": "coherence_connectors",
+   "definition": "Before expressions such as 这就要看……了, state an uncertain condition or alternative, for example 会不会生病 or 要不要吃.",
+   "her_notes": [
+    "the component before “这就要看……了“ should be “not definite” condition, 他会不会生病",
+    "the condition is “not definite”",
+    "add a condition “会不会生病？” before “这就要看……了”",
+    "add a condition “要不要吃？” before “这就要看……了”"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "incorrect_story_information",
+   "name": "wrong information",
+   "section": "content",
+   "definition": "Retell the traditional story accurately: do not add people, places, actions, objects, or character identities that are not in the story, and do not change established facts.",
+   "her_notes": [
+    "wrong information, his father did not appear in this story",
+    "wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell",
+    "wrong information, 搬了三次家",
+    "wrong information, it’s not a temple but a school",
+    "wrong information, 灵芝is medicine"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "missing_story_information",
+   "name": "miss information / result",
+   "section": "content",
+   "definition": "Include the important scene, action, motivation, or result needed for a complete retelling, rather than leaving a key event unexplained.",
+   "her_notes": [
+    "miss information: 孟子 imitated how to offer sacrifices",
+    "miss the result of eating",
+    "it does not answer the previous Q “什么植物可以吃?”",
+    "wrong information, he directly ate夹竹桃"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "redundant_words",
+   "name": "redundant",
+   "section": "other",
+   "definition": "Delete words, names, time phrases, or repeated structures that add no meaning or repeat information already expressed.",
+   "her_notes": [
+    "redundant",
+    "redundant with看起来",
+    "redundant with是",
+    "otherwise redundant.",
+    "“前途” itself means “hopeful future”, so “有希望” is a little bit redundant."
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "expressive_detail_and_description",
+   "name": "add descriptive detail",
+   "section": "other",
+   "definition": "Use clear descriptive detail and internal-state language where needed so the retelling has sufficient scenes and is more expressive, not only a bare sequence of events.",
+   "her_notes": [
+    "be specific, what不太好的事情？",
+    "“有很多麻烦” is too vague",
+    "一位很有名的文学家 -> 作家的家里"
+   ],
+   "detectable_by": "judgement"
+  },
+  {
+   "id": "other",
+   "name": "other",
+   "section": "other",
+   "definition": "Fits no other category.",
+   "her_notes": [],
+   "detectable_by": "judgement"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 有一天，孟母找到一个打工，在墓地做祭拜。\nquote: 孟母找到一个打工，在墓地做祭拜\npart p0: fix [ref p0/k0-1] 打工的工作，在墓地祭拜",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "打工",
+    "corrected": "打工的工作",
+    "before": "找到一个",
+    "after": "，在墓地",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix expands 打工 to 打工的工作"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "做",
+    "corrected": "",
+    "before": "，在墓地",
+    "after": "祭拜",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 做 before 祭拜"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 997,
+  "completion_tokens": 283,
+  "total_tokens": 1280,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 157,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

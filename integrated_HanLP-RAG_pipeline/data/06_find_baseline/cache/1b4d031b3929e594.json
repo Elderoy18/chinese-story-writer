@@ -1,0 +1,80 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\nscene 2: 这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\ncurrent scene: 孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "original": "了到",
+    "corrected": "到了",
+    "before": "商店也找",
+    "after": "工作，可不",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "completed result uses 到了, not 了到"
+   },
+   {
+    "original": "",
+    "corrected": "他",
+    "before": "作，而是",
+    "after": "喜欢的工",
+    "type": "reference",
+    "confidence": "high",
+    "why": "喜欢的工作 needs a subject"
+   },
+   {
+    "original": "",
+    "corrected": "在",
+    "before": "孟子",
+    "after": "学习馆学",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "a location needs 在"
+   },
+   {
+    "original": "学习馆",
+    "corrected": "学校",
+    "before": "孟子",
+    "after": "学了十五年",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "学习馆 is not the usual word for school"
+   },
+   {
+    "original": "",
+    "corrected": "有",
+    "before": "要，对他",
+    "after": "很多好处",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "对……有很多好处 is required"
+   },
+   {
+    "original": "是大人的时候",
+    "corrected": "长大后",
+    "before": "他",
+    "after": "，他成为很",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "this is the natural time expression for becoming an adult"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 768,
+  "completion_tokens": 2169,
+  "total_tokens": 2937,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1894,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 帮他后，他们走去。\nquote: 帮他后，他们走去\npart p0: fix [ref p0/k0] 帮了他以后 ; notes: 了completed\npart p1: fix [ref p1/k0] 他们走了/走过去了 ; notes: usually we do not say “走去”.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "帮他后",
+    "corrected": "帮了他以后",
+    "before": "",
+    "after": "，他们走去",
+    "note": "了completed",
+    "confidence": "high",
+    "reason": "changes the completed action phrase as in her fix"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "走去",
+    "corrected": "走了",
+    "before": "帮他后，他们",
+    "after": "。",
+    "note": "usually we do not say “走去”.",
+    "confidence": "low",
+    "reason": "teacher offers 走了 or 走过去了; chose the first alternative"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1016,
+  "completion_tokens": 135,
+  "total_tokens": 1151,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

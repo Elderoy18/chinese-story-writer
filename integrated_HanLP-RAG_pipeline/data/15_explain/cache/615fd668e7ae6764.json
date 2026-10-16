@@ -1,0 +1,68 @@
+{
+ "input": "CURRENT SCENE:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nITEMS:\n\n[I73] 【一天，很久很久以前】   correction: 一天，很久很久以前 → 很久很久以前的一天   strength: error\n  checker's note: time expression needs this word order\n  rule card (fixed_expressions, Vocabulary): Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place.  Pattern: <wrong> → <correct>: use the established expression <correct>, not the literal/nonstandard combination <wrong>.  Her terms: 从 + Place, 制定规定, 自然规律, Subj.算是Obj., 只/不过/才(+num.) + 而已\n  her past correction: [一个天时候→有一天]\n  her past correction: 每天[就是→都是]这样\n  her past correction: 但我没想到他[可能很久以前→很久以前可能]并不是这样\n\n[I74] 【孟子】和他妈妈住在中国   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 孟子: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧的妈妈跟孟子一起住在中国 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子⟧和孟母住在一起 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子⟧跟妈妈一起住在西安 — her note: better to briefly introduce “孟子” when this character first appears\n\n[I75] 孟子妈妈的工作是祭拜【^】   correction: ∅ → 祖先   strength: error\n  checker's note: 祭拜 needs an object here\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 孟子的妈妈每天从早到晚[-做]工作\n  her past correction: 孟母[一看→看到]孟子祭拜 — her note: 看look vs.看到see\n  her past correction: [她→孟母]跟孟子搬家去墓地做祭拜 — her note: “她” is ambiguous\n\n[I76] 很多墓地【得】我祭拜   correction: 得 → 需要   strength: error\n  checker's note: 得 is not natural in this statement\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 在墓地[-做]祭拜\n  her past correction: 他们一起常常[去祭拜，会去墓地→去墓地祭拜]\n  her past correction: 不是去墓地就是[+去]教堂\n\n[I77] 很多墓地得【我】祭拜   correction: 我 → (delete)   strength: error\n  checker's note: 我 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 在墓地[-做]祭拜\n  her past correction: 他们一起常常[去祭拜，会去墓地→去墓地祭拜]\n  her past correction: 而是[-他]祭拜\n\n[I78] 所以我们得【去】很多不同的地方   correction: 去 → 搬到   strength: error\n  checker's note: moving house requires 搬到, not 去\n  rule card (cause_result_soyi, Coherence: connectors): Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate.  Pattern: <wrong> → <correct>: the following event is not a result of the preceding clause, so 所以 is not appropriate; use <connector> / delete it.  Her terms: 这样, 结果, 后来\n  her past correction: 所以[他们→我们]要搬家 — her note: in quoted speech\n  her past correction: [+所以]他们常常搬家 — her note: 无聊？add所以\n  her past correction: 我们要[搬家再一次→再搬一次家] — her note: 再V. + Num. + MW. + N.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I73",
+    "explanation": "一天，很久很久以前 → 很久很久以前的一天: use the established time expression 很久很久以前的一天, not the nonstandard order 一天，很久很久以前.",
+    "dimension": "word_choice",
+    "corrected": "很久很久以前的一天",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I74",
+    "explanation": "孟子 appears for the first time, so please introduce him briefly, for example as a person or child, rather than using only his name.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I75",
+    "explanation": "祭拜 needs an object here. Add 祖先 to say whom she worships.",
+    "dimension": "other",
+    "corrected": "祖先",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I76",
+    "explanation": "得 → 需要: use 需要 in this statement to say that many cemeteries need worshipping.",
+    "dimension": "grammar",
+    "corrected": "需要",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I77",
+    "explanation": "我 is already clear from the previous clause, so delete it; Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I78",
+    "explanation": "去 → 搬到: moving house requires 搬到, not 去. Here, 所以 correctly introduces the result.",
+    "dimension": "coherence_connectors",
+    "corrected": "搬到",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1863,
+  "completion_tokens": 516,
+  "total_tokens": 2379,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1860,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 178,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

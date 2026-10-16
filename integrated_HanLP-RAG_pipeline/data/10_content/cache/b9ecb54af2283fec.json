@@ -1,0 +1,106 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n在古代 ，人们爱吃东西，所以东西一看就吃了。除了植物以外，其他的东西人们都不想吃。在地上开着很多植物。有的很好吃，有的有毒。可是一位叫神农的老人觉得无论植物，都味道不太好，所以他决定去山上找什么植物很好吃。他走啊走啊，植物一看就吃了。对他来说，这个植物的味道是最好。他叫这个植物茶，记下每种好吃的茶。有一天，神农走到了一个很美的地方。那儿开着黄色的花，又漂亮又香。他吃花了。可是一吃就肚子疼，难受得不得了。他想：我会死吗？这时，一个穿着蓝色衣服的男人正好过来，赶快拿起来像伞的植物，给神农吃了。神农问他：这个植物是什么？蓝衣男人说：“这个植物除了很好吃以外，我也不知道。”像伞的植物神农决定叫灵芝，叫黄花“夹竹桃”。一个穿着咖啡色衣服的男人走过来，问神农：你怎么了？神农说：我吃坏肚子了。我发现了黄色的花不好吃，有毒。我也发现了很好吃的植物，像伞的植物很好吃。我觉得神农帮了千千万万的人 ，因为他找到很多好吃的植物。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "在古代 ，人们爱吃东西，所以东西一看就吃了。",
+     "有的很好吃，有的有毒。"
+    ],
+    "missing_part": "People often becoming sick after eating unknown plants is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "可是一位叫神农的老人觉得无论植物，都味道不太好，所以他决定去山上找什么植物很好吃。",
+     "他走啊走啊，植物一看就吃了。"
+    ],
+    "missing_part": "His purpose to find out which plants were safe to eat and which were unsafe is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "told",
+    "evidence": [
+     "他叫这个植物茶，记下每种好吃的茶。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "他吃花了。",
+     "可是一吃就肚子疼，难受得不得了。",
+     "像伞的植物神农决定叫灵芝，叫黄花“夹竹桃”。"
+    ],
+    "missing_part": "神农 fainting after trying 夹竹桃 is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": [
+     "这时，一个穿着蓝色衣服的男人正好过来，赶快拿起来像伞的植物，给神农吃了。",
+     "像伞的植物神农决定叫灵芝，叫黄花“夹竹桃”。"
+    ],
+    "missing_part": "That 神农 felt better after eating 灵芝 is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "verdict": "told",
+    "evidence": [
+     "一个穿着咖啡色衣服的男人走过来，问神农：你怎么了？",
+     "神农说：我吃坏肚子了。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 recording both 灵芝 and 夹竹桃 is not told.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "可是一位叫神农的老人觉得无论植物，都味道不太好，所以他决定去山上找什么植物很好吃。",
+    "problem": "神农's reason and goal are changed: he should go to find which plants are safe to eat and which are not, rather than looking for plants that taste good."
+   }
+  ],
+  "feedback": [
+   "At the beginning, add that people often became sick after eating plants they did not know.",
+   "Before 神农 climbs the mountains, say that he wants to learn which plants are safe to eat and which are unsafe.",
+   "After 神农 eats the yellow 夹竹桃, add that he faints.",
+   "After the blue-clothed man gives 神农 灵芝, add that 神农 feels better after eating it.",
+   "After the conversation with the brown-clothed man, add that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 993,
+  "completion_tokens": 2218,
+  "total_tokens": 3211,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

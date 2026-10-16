@@ -1,0 +1,70 @@
+{
+ "input": "CURRENT SCENE:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nFLAGGED PLACES:\n\n[P40] 【孟子】小的时候\n  proposed by the teacher's pattern/rule: ⟦孟子⟧小的时候 (first appearance of 孟子: briefly introduce who this is)\n  her past correction (first_mention_introduction): ⟦孟子⟧小的时候 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction (first_mention_introduction): ⟦孟子⟧出生以后 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction (loose_clause_connection): ⟦孟子是孩子⟧ — her note: no logic relationship with the preceding or following sentences\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card loose_clause_connection: Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.\n\n[P41] 所以他每天【老是】从早到晚去墓地跟朋友们玩玩儿\n  proposed by the AI checker: 所以他每天[-老是]从早到晚去墓地跟朋友们玩玩儿 (redundant with 每天)\n  her past correction (loose_clause_connection): ⟦孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜⟧ — her note: loosely connected with the preceding sentence\n  her past correction (zero_redundant_pronoun): 所以[-他]和朋友坐墓地在祭拜\n  her past correction (conditional_jiu): 他[-有的时候]只要跟朋友玩儿 — her note: wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as\n  rule card loose_clause_connection: Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n\n[P42] 所以他每天老是从早到晚【去】墓地跟朋友们玩玩儿\n  proposed by the AI checker: 所以他每天老是从早到晚[去→在]墓地跟朋友们玩玩儿 (duration takes place at the cemetery)\n  her past correction (loose_clause_connection): ⟦孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜⟧ — her note: loosely connected with the preceding sentence\n  her past correction (conditional_jiu): 他[-有的时候]只要跟朋友玩儿 — her note: wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as\n  her past correction (zero_redundant_pronoun): 所以[-他]和朋友坐墓地在祭拜\n  rule card loose_clause_connection: Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.\n  rule card conditional_jiu: Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future. Not an error: When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.\n\n[P43] 所以他每天老是从早到晚去墓地跟朋友们玩【玩】儿\n  proposed by the correction model: 所以他每天老是从早到晚去墓地跟朋友们玩[-玩]儿\n  her past correction (loose_clause_connection): ⟦孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜⟧ — her note: loosely connected with the preceding sentence\n  her past correction (conditional_jiu): 他[-有的时候]只要跟朋友玩儿 — her note: wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as\n  her past correction (conditional_jiu): 他有的时候[-只要]跟朋友玩儿 — her note: or 他有的时候跟朋友玩儿\n  rule card conditional_jiu: Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future. Not an error: When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.\n  rule card loose_clause_connection: Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P40",
+    "decision": "keep",
+    "category": "first_mention_introduction",
+    "original": "孟子",
+    "before": "。",
+    "after": "小的时候",
+    "corrected": "有一个小男孩叫孟子，他",
+    "confidence": "high",
+    "reason": "First mention needs a generic identifying introduction."
+   },
+   {
+    "place_id": "P41",
+    "decision": "drop",
+    "category": "other",
+    "original": "老是",
+    "before": "以他每天",
+    "after": "从早到晚",
+    "corrected": "老是",
+    "confidence": "high",
+    "reason": "每天老是 is acceptable emphasis here."
+   },
+   {
+    "place_id": "P42",
+    "decision": "drop",
+    "category": "other",
+    "original": "去",
+    "before": "从早到晚",
+    "after": "墓地跟朋",
+    "corrected": "去",
+    "confidence": "high",
+    "reason": "去墓地跟朋友玩 is grammatical and clear."
+   },
+   {
+    "place_id": "P43",
+    "decision": "drop",
+    "category": "other",
+    "original": "玩",
+    "before": "朋友们玩",
+    "after": "儿",
+    "corrected": "玩",
+    "confidence": "high",
+    "reason": "玩玩儿 is a valid reduplicated verb form."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1790,
+  "completion_tokens": 1268,
+  "total_tokens": 3058,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1787,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

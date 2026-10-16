@@ -1,0 +1,98 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n古代时候有一个男孩名叫孟子，他成为哲学家。孟母一直管事儿，儿子的教养，所以她搬家二次。起头，他们住在墓地旁边。有一天，孟子在墓地和祭拜跟其他孩子。孟母想她的儿子在更好的地方长大，所以他们搬家去市场旁边的城市。但这个地方不是教育意义，而是教导野心。在第二个城市，孟母发现孩子们老是用功工作，但没有道德。他在这个地方学到了害得习惯，所以他们又搬家了。下一次搬家他们去了一座学术城市。最后在这个城市，重要创新和知识的地方，他能从早到晚都在努力学习哲学，也成为大哲学。她才搬过两次家，也她感到孩子教育的好地方。在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方。难怪孟子成为一个大好聪明哲学。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "孟子 lives near a graveyard and imitates sacrifice rituals",
+    "verdict": "told",
+    "evidence": [
+     "起头，他们住在墓地旁边。",
+     "有一天，孟子在墓地和祭拜跟其他孩子。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "孟子 did this every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "孟母 decides to leave the graveyard neighbourhood",
+    "verdict": "told",
+    "evidence": [
+     "孟母想她的儿子在更好的地方长大，所以他们搬家去市场旁边的城市。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "孟母 specifically thought that imitating sacrifices would have a bad impact on 孟子."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "They move near a market, and 孟子 imitates buying and selling",
+    "verdict": "partly",
+    "evidence": [
+     "所以他们搬家去市场旁边的城市。",
+     "在第二个城市，孟母发现孩子们老是用功工作，但没有道德。",
+     "他在这个地方学到了害得习惯，所以他们又搬家了。"
+    ],
+    "missing_part": "孟子 imitating how to buy and sell at the market.",
+    "details_left_out": [
+     "孟子 did this every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "They move near a school, and 孟子 starts studying",
+    "verdict": "partly",
+    "evidence": [
+     "下一次搬家他们去了一座学术城市。",
+     "最后在这个城市，重要创新和知识的地方，他能从早到晚都在努力学习哲学，也成为大哲学。"
+    ],
+    "missing_part": "They moved to a neighbourhood near a school.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a famous philosopher",
+    "verdict": "told",
+    "evidence": [
+     "古代时候有一个男孩名叫孟子，他成为哲学家。",
+     "最后在这个城市，重要创新和知识的地方，他能从早到晚都在努力学习哲学，也成为大哲学。",
+     "难怪孟子成为一个大好聪明哲学。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": true
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "After they move near the market, add that 孟子 imitates buying and selling there.",
+   "After the market scene, say that they move to a neighbourhood near a school before 孟子 begins studying."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1128,
+  "completion_tokens": 2092,
+  "total_tokens": 3220,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1125,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1535,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

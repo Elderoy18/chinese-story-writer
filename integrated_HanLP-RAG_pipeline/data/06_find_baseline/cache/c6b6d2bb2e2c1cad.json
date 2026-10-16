@@ -1,0 +1,53 @@
+{
+ "input": "current scene: 古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "original": "",
+    "corrected": "到",
+    "before": "孟母注意",
+    "after": "，住在墓",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "注意到 means “notice/realize” a fact"
+   },
+   {
+    "original": "祭拜玩",
+    "corrected": "玩祭拜的游戏",
+    "before": "跟朋友们",
+    "after": "，所以孟",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "玩 must come before the activity being played"
+   },
+   {
+    "original": "他们会",
+    "corrected": "",
+    "before": "孟母决定",
+    "after": "搬家。这",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "决定搬家 does not take 他们会 here"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 617,
+  "completion_tokens": 1695,
+  "total_tokens": 2312,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1537,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

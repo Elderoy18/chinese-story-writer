@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 在古代，神农和他的城市不知道什么植物他们可以吃。\nquote: 神农和他的城市不知道什么植物他们可以吃\npart p0: fix [ref p0/k0] 人们不知道什么植物可以吃 ; instruction [ref p0/k1] delete他们\npart p1: comment [ref p1/note] better to briefly introduce “神农” when this character first appears",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "神农和他的城市",
+    "corrected": "人们",
+    "before": "在古代，",
+    "after": "不知道什么",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the subject phrase with 人们"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "他们",
+    "corrected": "",
+    "before": "什么植物",
+    "after": "可以吃。",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit deletion instruction"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "神农",
+    "corrected": "",
+    "before": "在古代，",
+    "after": "和他的城",
+    "note": "better to briefly introduce “神农” when this character first appears",
+    "confidence": "high",
+    "reason": "comment requests an introduction at the character's first appearance"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1028,
+  "completion_tokens": 299,
+  "total_tokens": 1327,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1025,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 120,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

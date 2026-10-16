@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 他找了第一个菜，他学了什么可能和不可能吃。\nquote: 他找了第一个菜，他学了什么可能和不可能吃\npart p0: fix [ref p0/k0] 找到了 ; notes: 找look for vs.找到find\npart p1: fix [ref p1/k0] 植物\npart p2: fix [ref p2/k0-1] 学到了什么能吃，什么不能吃\npart p3: instruction [ref p3/k0] delete the second他 ; notes: redundant",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "找了",
+    "corrected": "找到了",
+    "before": "他",
+    "after": "第一个菜",
+    "note": "找look for vs.找到find",
+    "confidence": "high",
+    "reason": "changes 找了 to 找到了"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "菜",
+    "corrected": "植物",
+    "before": "找了第一个",
+    "after": "，他学了什",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 菜 with 植物"
+   },
+   {
+    "ref": "p2/k0-1",
+    "op": "replace",
+    "original": "学了什么可能和不可能吃",
+    "corrected": "学到了什么能吃，什么不能吃",
+    "before": "一个菜，他",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "rephrases what was learned and what can be eaten"
+   },
+   {
+    "ref": "p3/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "第一个菜，",
+    "after": "学了什么可",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the second 他"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1062,
+  "completion_tokens": 373,
+  "total_tokens": 1435,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1059,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 131,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

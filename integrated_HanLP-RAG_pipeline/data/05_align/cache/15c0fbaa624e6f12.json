@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟母觉得这个环境不对孩子的成长有好处，她害怕如果孟子继续在这个环境成长，他就不会成为好的大人。\nquote: 她害怕如果孟子继续在这个环境成长，他就不会成为好的大人\npart p0: instruction [ref p0/k0] delete他 ; notes: redundant\npart p1: fix [ref p1/k0] 就不会成才",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "境成长，",
+    "after": "就不会成为",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the redundant subject pronoun"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "成为好的大人",
+    "corrected": "成才",
+    "before": "他就不会",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the phrase with the teacher's wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1032,
+  "completion_tokens": 238,
+  "total_tokens": 1270,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1029,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 117,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

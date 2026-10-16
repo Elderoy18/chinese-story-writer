@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 正好两个人在他吃毒的地方，他们帮助老人。\nquote: 正好两个人在他吃毒的地方，他们帮助老人\npart p0: fix [ref p0/k0-1] 吃到有毒植物的地方，就帮助他",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "吃毒",
+    "corrected": "吃到有毒植物",
+    "before": "两个人在他",
+    "after": "的地方，",
+    "note": "",
+    "confidence": "high",
+    "reason": "expands the object to 有毒植物 and adds 到"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "，他们帮助老人",
+    "corrected": "，就帮助他",
+    "before": "毒的地方",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the result clause to 就帮助他"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 997,
+  "completion_tokens": 387,
+  "total_tokens": 1384,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 255,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

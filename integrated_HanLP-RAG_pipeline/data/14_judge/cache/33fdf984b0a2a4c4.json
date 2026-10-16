@@ -1,0 +1,70 @@
+{
+ "input": "EARLIER SCENES (context only):\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\nCURRENT SCENE:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nFLAGGED PLACES:\n\n[P44] 他的妈妈【觉得在墓地】玩儿\n  proposed by the teacher's pattern/rule: 他的妈妈[觉得在墓地→在墓地觉得]玩儿 (在 + Place comes before the action: 在Place + V.)\n  her past correction (modal_and_control_verb_complements): 他的妈妈[不想跟他的朋友去墓地→不想让他跟朋友去墓地] — her note: otherwise it means his mother didn’t want to go with his friend to the graveyard.\n  her past correction (specific_noun_choice): 妈妈认为他们[拿东西→拿了墓地的东西] — her note: “东西” is too general and vague\n  her past correction (verb_object_valency): 而是她觉得墓地[不合适→不适合]孩子们玩\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card modal_and_control_verb_complements: 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了. Not an error: Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.\n\n[P45] 【害得】\n  proposed by the AI checker: [害得→不好] (害得 needs a result complement; 不好 fits the meaning.)\n  her past correction (haide_harmful_result): [害得→让]她很不高兴 — her note: 害得 + harmful result，不高兴is not that “harmful”\n  her past correction (haide_harmful_result): ⟦害得他不高兴⟧ — her note: 害得 + harmful result, “不高兴” is not that “harmful”\n  her past correction (haide_harmful_result): 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n  rule card haide_harmful_result: Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得. Not an error: Do not use this rule for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling such as 不高兴; these are not harmful results for 害得.\n\n[P46] 害得【，所以】他们搬家\n  proposed by the correction model: 害得[-，所以]他们搬家\n  her past correction (other): 所以[他们→我们]要搬家 — her note: in quoted speech\n  her past correction (cause_result_soyi): [+所以]他们常常搬家 — her note: 无聊？add所以\n  her past correction (addition_repetition_connectors): 所以他们[再搬家→又搬家了] — her note: 又for something already occurred\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).\n  rule card addition_repetition_connectors: Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.). Not an error: Do not add an additive connector when the sentence does not show repetition, similarity, or an added point. Use 就, not 还, for a natural continuation rather than a surprising or angry one.\n\n[P47] 可是每天不是写字就是帮妈妈【的】工作\n  proposed by the AI checker: 可是每天不是写字就是帮妈妈[-的]工作 (帮妈妈工作 does not take 的 here.)\n  proposed by the correction model: 可是每天不是写字就是帮妈妈[-的]工作\n  her past correction (no_le_routine_state): 妈妈老是工作[-了] — her note: no了for routine/habit\n  her past correction (redundant_words): 孟子的妈妈每天从早到晚[-做]工作\n  her past correction (pronoun_name_zero_reference): [妈妈→孟母]老是工作了 — her note: “妈妈” here is ambiguous\n  rule card no_le_routine_state: For a routine, habit, repeated condition, or state, use zero particle: do not add 了completed. This is especially true with words such as 老是, 常常, and 从早到晚.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P44",
+    "decision": "drop",
+    "category": "location_with_zai",
+    "original": "觉得在墓地",
+    "before": "他的妈妈",
+    "after": "玩儿，",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "在墓地玩儿 is a valid verb phrase after 觉得."
+   },
+   {
+    "place_id": "P45",
+    "decision": "keep",
+    "category": "haide_harmful_result",
+    "original": "害得",
+    "before": "地玩儿，",
+    "after": "，所以他",
+    "corrected": "不好",
+    "confidence": "high",
+    "reason": "害得 lacks an appropriate harmful-result structure here."
+   },
+   {
+    "place_id": "P46",
+    "decision": "drop",
+    "category": "cause_result_soyi",
+    "original": "，所以",
+    "before": "儿，害得",
+    "after": "他们搬家",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "After correcting 害得 to 不好, 所以 correctly marks cause and result."
+   },
+   {
+    "place_id": "P47",
+    "decision": "drop",
+    "category": "redundant_words",
+    "original": "的",
+    "before": "是帮妈妈",
+    "after": "工作",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "帮妈妈的工作 is acceptable and not merely redundant."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1907,
+  "completion_tokens": 1150,
+  "total_tokens": 3057,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1904,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 894,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

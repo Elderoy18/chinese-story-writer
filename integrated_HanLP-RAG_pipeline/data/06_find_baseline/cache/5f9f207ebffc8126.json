@@ -1,0 +1,62 @@
+{
+ "input": "current scene: 有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "original": "不合适的地方让孩子玩",
+    "corrected": "不适合让孩子玩的地方",
+    "before": "妈觉得这是",
+    "after": "，所以她",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the modifier for 地方 needs to include 让孩子玩"
+   },
+   {
+    "original": "决定了他们会",
+    "corrected": "决定",
+    "before": "，所以她",
+    "after": "搬家找更",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "决定 should directly take 搬家 as its action"
+   },
+   {
+    "original": "住在这儿教育",
+    "corrected": "这儿的教育",
+    "before": "福，而且",
+    "after": "不太好。",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the location needs to modify 教育 with 的"
+   },
+   {
+    "original": "会",
+    "corrected": "要",
+    "before": "，所以她",
+    "after": "一直搬家",
+    "type": "connector",
+    "confidence": "high",
+    "why": "要…才能 expresses the necessary condition"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 632,
+  "completion_tokens": 2578,
+  "total_tokens": 3210,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2347,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

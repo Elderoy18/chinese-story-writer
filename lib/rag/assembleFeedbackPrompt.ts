@@ -27,7 +27,7 @@ export const SYSTEM_INSTRUCTIONS = buildSystemPrompt(PRODUCTION_FLAGS);
 
 /** Production retrieval: Atlas $vectorSearch over rag_chunks. */
 const atlasRetriever: Retriever = {
-    search: (text, { chunkTypes, k, storyId }) => searchChunks(text, { chunkTypes, k, storyId }),
+    search: (text, opts) => searchChunks(text, opts),
     byIds: getChunksByIds,
     byType: getChunksByType,
 };

@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 他的妈妈不想跟他的朋友去墓地，他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了。\nquote: 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了\npart p0: fix [ref p0/k0-1] 他们才在那儿住了一个星期，就又搬家了\npart p1: instruction [ref p1/k1] delete孟子跟他的妈妈 ; notes: 在Place住",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "一个星期住在那儿",
+    "corrected": "在那儿住了一个星期",
+    "before": "他们才",
+    "after": "，孟子跟",
+    "note": "",
+    "confidence": "high",
+    "reason": "reorders the duration and place phrase and adds 了"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "已经",
+    "corrected": "就又",
+    "before": "跟他的妈妈",
+    "after": "搬家了",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 已经 to 就又 as in the teacher's rewrite"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "delete",
+    "original": "孟子跟他的妈妈",
+    "corrected": "",
+    "before": "住在那儿，",
+    "after": "已经搬家了",
+    "note": "",
+    "confidence": "high",
+    "reason": "follows the explicit deletion instruction"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "一个星期住在那儿",
+    "corrected": "",
+    "before": "他们才",
+    "after": "，孟子跟",
+    "note": "在Place住",
+    "confidence": "high",
+    "reason": "note addresses the place-before-住 word order"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1048,
+  "completion_tokens": 761,
+  "total_tokens": 1809,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1045,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

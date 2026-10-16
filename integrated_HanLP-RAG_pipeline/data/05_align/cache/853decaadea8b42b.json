@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他们的儿子们不听父亲的话，决定了吃外面的植物。\nquote: 他们的儿子们不听父亲的话，决定了吃外面的植物\npart p0: instruction [ref p0/k0] delete他们的\npart p1: instruction [ref p1/k0] delete了 ; notes: “决定“ is a mental state verb, no了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "他们的",
+    "corrected": "",
+    "before": "",
+    "after": "儿子们不听",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the possessive phrase as instructed"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "的话，决定",
+    "after": "吃外面的",
+    "note": "“决定“ is a mental state verb, no了",
+    "confidence": "high",
+    "reason": "deletes 了 as instructed"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1026,
+  "completion_tokens": 186,
+  "total_tokens": 1212,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 64,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

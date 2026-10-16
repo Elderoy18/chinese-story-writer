@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 看看如果能吃还是不能吃，药还是毒。\nquote: 看看如果能吃还是不能吃，药还是毒\npart p0: instruction [ref p0/k0] delete如果 ; notes: the “if” in “see if + clause” is not 如果\npart p1: fix [ref p1/k0] 是药还是毒",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "如果",
+    "corrected": "",
+    "before": "看看",
+    "after": "能吃还是",
+    "note": "the “if” in “see if + clause” is not 如果",
+    "confidence": "high",
+    "reason": "explicit deletion instruction"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "是",
+    "before": "能吃，",
+    "after": "药还是毒",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 是 before 药还是毒"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1018,
+  "completion_tokens": 114,
+  "total_tokens": 1132,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

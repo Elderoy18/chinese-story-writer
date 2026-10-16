@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。\nquote: 你得小心吃植物，因为有的植物对你的健康有坏处\npart p0: fix [ref p0/k0] 吃植物得小心 ; instruction [ref p0/k1] delete“对你”",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "你得小心吃植物",
+    "corrected": "吃植物得小心",
+    "before": "所以，",
+    "after": "，因为有的",
+    "note": "",
+    "confidence": "high",
+    "reason": "reorders the phrase as in her fix"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "对你",
+    "corrected": "",
+    "before": "有的植物",
+    "after": "的健康有坏",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1019,
+  "completion_tokens": 165,
+  "total_tokens": 1184,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 44,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

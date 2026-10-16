@@ -1,0 +1,92 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他正在墓地旁边思考。 | 一天，孟子决定了祭拜。 | 她跟孟子搬家去墓地做祭拜\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他们把家搬到了别的地方， | 孟子跟他的妈妈搬家，去一个最好的学校。 | 孟母老是搬家，所以孟子会跟别的教授学哲学。 ; flagged as missing: 孟子的妈妈搬了三次家。 | 因为他这么无，他们常常搬家。\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 所以他们搬家去商店的旁边 | 所以她带孟子到一个城市搬家了。 | 他们去了一个房子，在购物中心的旁边。 ; flagged as missing: 孟子的妈妈搬了三次家。 | 在新的城，孟子老是想玩玩。\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 从早到晚小孟待着学哲学和读写。 | 在新的地方，孟子跟老师老是学习中文。 | 从早到晚孟子一直学习，他不是看书，就是写文章。 ; flagged as missing: 后来，练习写文字。 | 他从早到晚学医学。\nS5: 孟子becomes a famous philosopher\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 孟子成为很聪明的人。 | 难怪他成为很聪明的人。 | 现在孟子是一个有名的学者。 ; flagged as missing: 孟子决定他应该学哲学。孟子决定他可以学习和高兴。\n\nlearner's story:\n古代的时候，孟子跟妈妈一起住在西安。孟子的妈妈爱她的小孩子，望子成龙。她以为孟子每天出去跟别的小孩子在马路上老是玩游戏，可是他不是玩游戏，而是他祭拜。他妈妈就让他搬去城市。搬家害得孟子每天哭，可是他知道他们帮助了，因为他妈妈爱他。孟子才五岁，从早到晚一直学习，难怪孟子成为哲学家，原来他不是睡觉就是学习。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "孟子 imitates sacrifices while living near a graveyard",
+    "verdict": "partly",
+    "evidence": [
+     "可是他不是玩游戏，而是他祭拜。"
+    ],
+    "missing_part": "They lived near a graveyard.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "孟母 decides to move away",
+    "verdict": "told",
+    "evidence": [
+     "他妈妈就让他搬去城市。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "孟母's concern that copying sacrifices would negatively affect 孟子",
+     "that they were leaving the graveyard neighbourhood"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "They move near a market and 孟子 imitates buying and selling",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Moving to a neighbourhood near a market and 孟子 copying buying and selling.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "孟子 starts studying every day",
+    "verdict": "told",
+    "evidence": [
+     "孟子才五岁，从早到晚一直学习，",
+     "原来他不是睡觉就是学习。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "孟母 moving from the market area to a neighbourhood near a school"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a philosopher",
+    "verdict": "told",
+    "evidence": [
+     "难怪孟子成为哲学家，"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "that he was famous"
+    ],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "At the beginning, add that 孟子 and 孟母 lived near a graveyard before he copied sacrifices.",
+   "After they leave the graveyard area, add that they live near a market and 孟子 copies buying and selling."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1463,
+  "completion_tokens": 1833,
+  "total_tokens": 3296,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1460,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1426,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ef48428c82"
+}

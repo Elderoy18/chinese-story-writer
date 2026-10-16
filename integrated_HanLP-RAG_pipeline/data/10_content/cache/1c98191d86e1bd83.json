@@ -1,0 +1,82 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": "孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。",
+    "missing_part": "It does not say that 孟子 and 孟母 lived near a graveyard, or that 孟子 was imitating sacrificial rituals.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": "孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。",
+    "missing_part": "It does not say that 孟母 moved away from the graveyard because she feared that 孟子 imitating sacrifices would affect him badly.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "missing",
+    "evidence": "",
+    "missing_part": "孟母 moves near the market, and 孟子 imitates buying and selling every day.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "missing",
+    "evidence": "",
+    "missing_part": "孟母 moves from the market to a neighborhood near a school, where 孟子 begins to study every day.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": "孟子才十一岁，成为一个哲学家。",
+    "missing_part": "It does not say that he becomes a famous philosopher at the end of the story.",
+    "out_of_order": true
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。",
+    "problem": "The move is described as being caused by his classmates' bad influence. In the required story, 孟母 moves because she worries about his imitation of sacrificial rituals near the graveyard."
+   },
+   {
+    "learner_text": "孟子才十一岁，成为一个哲学家。",
+    "problem": "孟子 becomes a famous philosopher only later, after the moves and his studying; he does not become a philosopher at age eleven."
+   },
+   {
+    "learner_text": "孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。",
+    "problem": "This says 孟子 was not performing sacrifices, but the required story says that he imitated sacrificial rituals every day at the beginning."
+   }
+  ],
+  "feedback": [
+   "At the beginning, before the move, add that 孟子 and 孟母 lived near a graveyard and that 孟子 copied sacrificial rituals every day.",
+   "After his daily sacrificial imitation, explain that 孟母 moved because she feared this would affect him badly.",
+   "After they leave the graveyard area, add that they live near a market and 孟子 copies people buying and selling every day.",
+   "After the market, add that they move near a school and 孟子 begins to study every day.",
+   "At the end, after his studying, say that 孟子 becomes a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 813,
+  "completion_tokens": 1366,
+  "total_tokens": 2179,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 742,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "c86145e6fc"
+}

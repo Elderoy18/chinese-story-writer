@@ -1,0 +1,99 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n在古代有一个老人，他的名字是神农。有一天，很多人病了。他们麻烦神农帮他们找一个药，所以神农去找一些植物，对身体有好处，比方说，茶。神农找了一个很漂亮的花，这个花他还没有尝。不知道如果有毒，这就要看他的运气了。他一吃就病了，正好有一个人帮他吃一个灵芝，一个别的人跟神农说，有很多花有毒，特别是夹竹桃，可以杀人。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "在古代有一个老人，他的名字是神农。",
+     "有一天，很多人病了。"
+    ],
+    "missing_part": "It does not say that people did not know which plants were edible or that they became sick after eating plants.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "他们麻烦神农帮他们找一个药，所以神农去找一些植物，对身体有好处，比方说，茶。"
+    ],
+    "missing_part": "It does not say that 神农 decided to distinguish safe plants from unsafe ones, climbed mountains, and tried different plants.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "partly",
+    "evidence": [
+     "对身体有好处，比方说，茶。"
+    ],
+    "missing_part": "It does not say that 神农 found 茶 and wrote it down in a record.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "他一吃就病了",
+     "特别是夹竹桃，可以杀人。"
+    ],
+    "missing_part": "It does not clearly say that the flower 神农 ate was 夹竹桃, and it does not say that he fainted.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": [
+     "正好有一个人帮他吃一个灵芝"
+    ],
+    "missing_part": "It does not say that the helper wore blue or that 神农 felt better after eating 灵芝.",
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "verdict": "partly",
+    "evidence": [
+     "一个别的人跟神农说，有很多花有毒，特别是夹竹桃，可以杀人。"
+    ],
+    "missing_part": "It does not say that this other person wore brown.",
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "It does not say that 神农 recorded both 灵芝 and 夹竹桃.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "At the beginning, explain that people did not know which plants were safe to eat, so eating some plants made them sick.",
+   "After the people become sick, say that 神农 decides to find safe and unsafe plants by climbing mountains and trying many plants.",
+   "While looking for useful plants, show 神农 finding 茶 and writing it in his record.",
+   "After finding 茶, say clearly that 神农 eats 夹竹桃 and faints.",
+   "After 神农 faints, add that a person in blue gives him 灵芝 and that he feels better after eating it.",
+   "After 神农 feels better, say that another person in brown comes and talks with him.",
+   "After the conversation about poisonous flowers, show 神农 writing down both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 788,
+  "completion_tokens": 1596,
+  "total_tokens": 2384,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 989,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

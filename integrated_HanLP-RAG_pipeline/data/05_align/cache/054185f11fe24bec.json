@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 他的朋友太糟糕了，他们常常饿死了，所以他看什么就吃什么。\nquote: 他的朋友太糟糕了，他们常常饿死了，所以他看什么就吃什么\npart p0: comment [ref p0/note] 糟糕is usually for情况situations, 太穷了better? Delete他们, redundant\npart p1: instruction [ref p1/k0] delete他 ; notes: this is ambiguous, as the topic is他的朋友\npart p2: fix [ref p2/k0] 看到什么 ; notes: 看look vs.看到see",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "糟糕",
+    "corrected": "",
+    "before": "他的朋友太",
+    "after": "了，他们常",
+    "note": "糟糕is usually for情况situations, 太穷了better? Delete他们, redundant",
+    "confidence": "high",
+    "reason": "comments that 糟糕 is not the usual description here"
+   },
+   {
+    "ref": "p0/note",
+    "op": "delete",
+    "original": "他们",
+    "corrected": "",
+    "before": "朋友太糟糕了，",
+    "after": "常常饿死了",
+    "note": "糟糕is usually for情况situations, 太穷了better? Delete他们, redundant",
+    "confidence": "high",
+    "reason": "explicitly says to delete redundant 他们"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "死了，所以",
+    "after": "看什么就吃",
+    "note": "this is ambiguous, as the topic is他的朋友",
+    "confidence": "high",
+    "reason": "deletes 他 because the topic is his friends"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "看",
+    "corrected": "看到",
+    "before": "了，所以",
+    "after": "什么就吃什",
+    "note": "看look vs.看到see",
+    "confidence": "high",
+    "reason": "changes look to see"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1075,
+  "completion_tokens": 435,
+  "total_tokens": 1510,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1072,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 156,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,58 @@
+{
+ "input": "learner text: 他难怪抱怨，他想他的朋友，因为他不要离开他的城市。\nquote: 他难怪抱怨，他想他的朋友，因为他不要离开他的城市\npart p0: fix [ref p0/k0] 难怪他抱怨 ; notes: 难怪 + sentence\npart p1: fix [ref p1/k0-1] 原来他想他的朋友，不想离开他的城市",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "他难怪抱怨",
+    "corrected": "难怪他抱怨",
+    "before": "",
+    "after": "，他想他的",
+    "note": "难怪 + sentence",
+    "confidence": "high",
+    "reason": "moves 他 after 难怪 to form 难怪 + sentence"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "原来",
+    "before": "难怪他抱怨，",
+    "after": "他想他的朋",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 原来 before the explanation"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "replace",
+    "original": "因为他不要",
+    "corrected": "不想",
+    "before": "想他的朋友，",
+    "after": "离开他的城",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the causal phrase with 不想"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1034,
+  "completion_tokens": 366,
+  "total_tokens": 1400,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1031,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 172,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

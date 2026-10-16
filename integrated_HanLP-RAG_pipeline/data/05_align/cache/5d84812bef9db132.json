@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 这就要看蘑菇看不看像伞。\nquote: 这就要看蘑菇看不看像伞\npart p0: instruction [ref p0/k0] add a condition before “这就要看……了“ ; fix [ref p0/k2] 这就要看蘑菇像不像伞了 ; notes: e.g., 蘑菇能不能吃",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "蘑菇能不能吃，",
+    "before": "",
+    "after": "这就要看",
+    "note": "e.g., 蘑菇能不能吃",
+    "confidence": "high",
+    "reason": "adds the requested condition before the quoted clause"
+   },
+   {
+    "ref": "p0/k2",
+    "op": "replace",
+    "original": "看不看像",
+    "corrected": "像不像",
+    "before": "就要看蘑菇",
+    "after": "伞。",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the repeated verb construction to 像不像"
+   },
+   {
+    "ref": "p0/k2",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "看不看像伞",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds sentence-final 了 from her correction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1036,
+  "completion_tokens": 182,
+  "total_tokens": 1218,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1033,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

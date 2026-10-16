@@ -1,0 +1,59 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\nCURRENT SCENE:\n然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。\n\nFLAGGED PLACES:\n\n[P353] 一些植物【吃真好】\n  proposed by the AI checker: 一些植物[吃真好→真好吃] (adverb and adjective should come before 吃)\n  proposed by the correction model: 一些植物[+很好]吃真好\n  proposed by the correction model: 一些植物吃[-真好]\n  her past correction (resultative_complements): 有的人吃[+到]很好吃的植物\n  her past correction (modifier_de_structure): 吃很多[-的]植物\n  her past correction (modifier_de_structure): 可是一些[-的]人一吃植物 — her note: no的\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n  rule card resultative_complements: Use a resultative complement when the action reaches its result: 吃到, 写下, 撞到+Obj., or 把Obj. V. Resultative complement. Not an error: Do not use 撞+Obj. when the meaning is that the object hits something else: 撞自行车 means to hit the bike.\n\n[P354] 一些植物【^】毒得很\n  proposed by the correction model: 一些植物[+有]毒得很\n  her past correction (word_class_choice): 哪些植物是[毒→有毒]\n  her past correction (word_class_choice): 什么植物[是毒→有毒]\n  her past correction (word_class_choice): 特别是[毒的→有毒的]植物\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n\n[P355] 一些植物毒【得很】\n  proposed by the correction model: 一些植物毒[-得很]\n  her past correction (word_class_choice): 哪些植物是[毒→有毒]\n  her past correction (word_class_choice): 什么植物[是毒→有毒]\n  her past correction (modifier_de_structure): 哪些植物是毒[+的书]\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P353",
+    "decision": "keep",
+    "category": "other",
+    "original": "吃真好",
+    "before": "一些植物",
+    "after": "，特别是",
+    "corrected": "真好吃",
+    "confidence": "high",
+    "reason": "The word order for “tastes very good” is incorrect."
+   },
+   {
+    "place_id": "P354",
+    "decision": "keep",
+    "category": "word_class_choice",
+    "original": "",
+    "before": "一些植物",
+    "after": "毒得很",
+    "corrected": "有",
+    "confidence": "high",
+    "reason": "“Poisonous” needs the form 有毒."
+   },
+   {
+    "place_id": "P355",
+    "decision": "keep",
+    "category": "word_class_choice",
+    "original": "得很",
+    "before": "一些植物毒",
+    "after": "，特别是",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The intended fixed predicate is 有毒, not 毒得很."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1467,
+  "completion_tokens": 697,
+  "total_tokens": 2164,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1464,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

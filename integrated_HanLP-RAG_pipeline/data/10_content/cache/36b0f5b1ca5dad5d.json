@@ -1,0 +1,104 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他正在墓地旁边思考。 | 一天，孟子决定了祭拜。 | 她跟孟子搬家去墓地做祭拜\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他妈妈就让他搬去城市。 | 他们把家搬到了别的地方， | 孟子跟他的妈妈搬家，去一个最好的学校。 ; flagged as missing: 孟子的妈妈搬了三次家。 | 因为他这么无，他们常常搬家。\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 所以他们搬家去商店的旁边 | 所以她带孟子到一个城市搬家了。 | 他们去了一个房子，在购物中心的旁边。 ; flagged as missing: 孟子的妈妈搬了三次家。 | 在新的城，孟子老是想玩玩。\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 从早到晚小孟待着学哲学和读写。 | 在新的地方，孟子跟老师老是学习中文。 | 从早到晚孟子一直学习，他不是看书，就是写文章。 ; flagged as missing: 后来，练习写文字。 | 他从早到晚学医学。\nS5: 孟子becomes a famous philosopher\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 孟子成为很聪明的人。 | 难怪他成为很聪明的人。 | 现在孟子是一个有名的学者。 ; flagged as missing: 孟子决定他应该学哲学。孟子决定他可以学习和高兴。\n\nlearner's story:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。孟子想，难怪我们常常搬家，原来我妈妈很忙。可是常常搬家害得孟子很难找到朋友。每次搬家孟子也觉得新的地方不是太热就是太冷，不是太大就是太小。在哪的地方，他都不高兴。孟子想帮助妈妈祭拜，可是他六岁，所以不能祭拜。四年后，孟子开始帮妈妈祭拜。他画画很厉害，他越来越喜欢祭拜，所以他祭拜不是想帮妈妈工作，而是他很喜欢画画。孟子成为很著名的古代画家。今天很多中国人很喜欢孟子。",
+ "salt": "run2",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "Mengzi performs sacrifice rituals, near a graveyard",
+    "verdict": "told",
+    "evidence": [
+     "孟子想帮助妈妈祭拜",
+     "四年后，孟子开始帮妈妈祭拜。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "They lived beside a graveyard.",
+     "Mengzi imitated the sacrifice rituals rather than helping his mother.",
+     "He did this every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "Mengmu moves away because the sacrifice imitation may harm Mengzi",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Mengmu's decision to leave the graveyard neighbourhood because she worries the sacrifice imitation will have a bad effect on Mengzi.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "Move near a market; Mengzi imitates buying and selling",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "They move to a neighbourhood near a market, and Mengzi copies buying and selling.",
+    "details_left_out": [
+     "Mengzi does this every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "Move from the market to a school; Mengzi studies",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Mengmu moves from the market area to a neighbourhood near a school, and Mengzi begins studying.",
+    "details_left_out": [
+     "Mengzi studies every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "Mengzi becomes a famous philosopher",
+    "verdict": "partly",
+    "evidence": [
+     "孟子成为很著名的古代画家。"
+    ],
+    "missing_part": "He becomes a famous philosopher, rather than a painter.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "孟子想帮助妈妈祭拜，可是他六岁，所以不能祭拜。",
+    "problem": "This says Mengzi could not perform sacrifices at this time, but the opening story has him imitating sacrifice rituals every day."
+   },
+   {
+    "learner_text": "很多墓地得我祭拜。所以我们得去很多不同的地方。",
+    "problem": "This gives Mengmu's sacrifice work as the reason for moving, instead of her worry that Mengzi's imitation of sacrifices will affect him badly."
+   },
+   {
+    "learner_text": "孟子成为很著名的古代画家。",
+    "problem": "Mengzi becomes a famous philosopher in this story, not a famous painter."
+   }
+  ],
+  "feedback": [
+   "After the graveyard sacrifices, add that 孟母 moves because she worries the imitation will affect 孟子 badly.",
+   "After they leave the graveyard area, add that they move near a market and 孟子 copies buying and selling.",
+   "After the market scene, add that they move near a school and 孟子 studies every day.",
+   "After his studying, say that 孟子 becomes a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1547,
+  "completion_tokens": 2507,
+  "total_tokens": 4054,
+  "prompt_tokens_details": {
+   "cached_tokens": 1544,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1887,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ef48428c82"
+}

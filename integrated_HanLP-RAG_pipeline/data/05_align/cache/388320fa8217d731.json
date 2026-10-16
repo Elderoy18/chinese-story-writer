@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 在这个城市，孟子的妈妈不是工作就是试一试帮助她的儿子孟子。\nquote: 孟子的妈妈不是工作就是试一试帮助她的儿子孟子\npart p0: instruction [ref p0/k0] delete试一试 ; fix [ref p0/k1] 辅导儿子孟子",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "试一试",
+    "corrected": "",
+    "before": "不是工作就是",
+    "after": "帮助她的儿",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "replace",
+    "original": "帮助她的儿子孟子",
+    "corrected": "辅导儿子孟子",
+    "before": "是工作就是试一试",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the helping phrase with the teacher's wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1015,
+  "completion_tokens": 121,
+  "total_tokens": 1136,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

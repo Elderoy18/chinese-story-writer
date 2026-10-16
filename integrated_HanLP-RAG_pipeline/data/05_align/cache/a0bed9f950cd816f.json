@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 但人类连人类划定的规定也不尊重！\nquote: 但人类连人类划定的规定也不尊重\npart p0: fix [ref p0/k0] 连自己制定的规定 ; notes: do not repeat “人类” twice, 制定规定 as a fixed expression.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "人类划定",
+    "corrected": "自己制定",
+    "before": "但人类连",
+    "after": "的规定也不",
+    "note": "do not repeat “人类” twice, 制定规定 as a fixed expression.",
+    "confidence": "high",
+    "reason": "replaces the repeated subject and changes 划定 to 制定"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1013,
+  "completion_tokens": 90,
+  "total_tokens": 1103,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

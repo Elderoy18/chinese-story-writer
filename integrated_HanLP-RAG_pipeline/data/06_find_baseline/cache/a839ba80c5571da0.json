@@ -1,0 +1,62 @@
+{
+ "input": "current scene: 古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "original": "人",
+    "corrected": "人们",
+    "before": "代的时候",
+    "after": "觉得祭拜",
+    "type": "grammar",
+    "confidence": "low",
+    "why": "a general group of people is normally 人们 here"
+   },
+   {
+    "original": "虽然",
+    "corrected": "",
+    "before": "很重要。",
+    "after": "他没有朋",
+    "type": "connector",
+    "confidence": "high",
+    "why": "虽然 cannot introduce this because-clause structure"
+   },
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "对他开玩",
+    "after": "。",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "老是 describes a habitual action, so sentence-final 了 is inappropriate"
+   },
+   {
+    "original": "看了",
+    "corrected": "看到了",
+    "before": "孟子妈妈",
+    "after": "他的同学",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "noticed an effect requires the result complement 到"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 630,
+  "completion_tokens": 2767,
+  "total_tokens": 3397,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2560,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

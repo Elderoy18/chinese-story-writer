@@ -1,0 +1,103 @@
+{
+ "input": "learner text: 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜。\nquote: 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜\npart p0: comment [ref p0/note] loosely connected with the preceding sentence\npart p1: instruction [ref p1/k1] delete the second他 ; notes: replace孟子with他\npart p2: fix [ref p2/k0] 都想玩儿 ; notes: V.V. is used to make requests or plans\npart p3: fix [ref p3/k0] 坐在墓地祭拜",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜",
+    "corrected": "",
+    "before": "",
+    "after": "。",
+    "note": "loosely connected with the preceding sentence",
+    "confidence": "high",
+    "reason": "comments on the whole quoted sentence's connection"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "儿，所以",
+    "after": "和朋友坐墓",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the 他 after 所以"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "孟子",
+    "corrected": "",
+    "before": "",
+    "after": "从早到晚",
+    "note": "replace孟子with他",
+    "confidence": "high",
+    "reason": "note identifies 孟子 as needing replacement with 他"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "都",
+    "before": "从早到晚",
+    "after": "想玩玩儿",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 都 from her correction"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "玩玩儿",
+    "corrected": "玩儿",
+    "before": "从早到晚想",
+    "after": "，所以他和",
+    "note": "V.V. is used to make requests or plans",
+    "confidence": "high",
+    "reason": "removes the repeated verb form"
+   },
+   {
+    "ref": "p3/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "在",
+    "before": "和朋友坐",
+    "after": "墓地在祭",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 在 after 坐"
+   },
+   {
+    "ref": "p3/k0",
+    "op": "delete",
+    "original": "在",
+    "corrected": "",
+    "before": "友坐墓地",
+    "after": "祭拜。",
+    "note": "",
+    "confidence": "high",
+    "reason": "removes 在 before 祭拜"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1081,
+  "completion_tokens": 1418,
+  "total_tokens": 2499,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1078,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1023,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

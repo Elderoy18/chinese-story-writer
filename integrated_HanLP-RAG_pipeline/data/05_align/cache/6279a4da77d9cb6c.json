@@ -1,0 +1,92 @@
+{
+ "input": "learner text: 但政府实行的改革经济一系列政策就让他失业，被迫转行。\nquote: 但政府实行的改革经济一系列政策就让他失业，被迫转行\npart p0: fix [ref p0/k0-1] 实行的改革经济的一系列政策，却使他失业并被迫转行\npart p1: fix [ref p1/k1-2] 被迫，转行” ; notes: “却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业 ; adding “并” will increase the coherence.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "但",
+    "corrected": "",
+    "before": "",
+    "after": "政府实行的",
+    "note": "",
+    "confidence": "high",
+    "reason": "her rewritten sentence omits 但"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "的",
+    "before": "改革经济",
+    "after": "一系列政",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix adds 的 after 经济"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "就让",
+    "corrected": "却使",
+    "before": "系列政策",
+    "after": "他失业，",
+    "note": "“却” indicates unexpected semantic turn",
+    "confidence": "high",
+    "reason": "her fix replaces 就让 with 却使"
+   },
+   {
+    "ref": "p1/k1-2",
+    "op": "insert",
+    "original": "",
+    "corrected": "并",
+    "before": "使他失业",
+    "after": "，被迫转",
+    "note": "adding “并” will increase the coherence.",
+    "confidence": "high",
+    "reason": "adds 并 to link 失业 and 被迫转行"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "，",
+    "corrected": "",
+    "before": "使他失业",
+    "after": "被迫转行",
+    "note": "",
+    "confidence": "high",
+    "reason": "the comma is replaced by the added conjunction 并"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "comment",
+    "original": "就让",
+    "corrected": "",
+    "before": "系列政策",
+    "after": "他失业，",
+    "note": "“使” is more formal and better fit other formal words like “失业",
+    "confidence": "high",
+    "reason": "teacher explains the more formal verb choice"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1074,
+  "completion_tokens": 1386,
+  "total_tokens": 2460,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1071,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

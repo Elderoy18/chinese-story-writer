@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 所以他去了又空又高的山，可是他没有吃了，因为他怕毒。\nquote: 所以他去了又空又高的山，可是他没有吃了，因为他怕毒\npart p0: comment [ref p0/note] “所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”\npart p1: fix [ref p1/k0] 什么都没有吃 ; notes: no了in “没+V.”\npart p2: fix [ref p2/k0] 怕有毒",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "delete",
+    "original": "所以",
+    "corrected": "",
+    "before": "",
+    "after": "他去了又空",
+    "note": "“所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”",
+    "confidence": "high",
+    "reason": "deletes the inappropriate result marker"
+   },
+   {
+    "ref": "p0/note",
+    "op": "insert",
+    "original": "",
+    "corrected": "为了找到没有毒的植物，",
+    "before": "",
+    "after": "所以他去了",
+    "note": "“所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”",
+    "confidence": "high",
+    "reason": "adds the stated purpose phrase at the sentence start"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "什么都",
+    "before": "，可是他",
+    "after": "没有吃了",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the object phrase from her correction"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "没有吃",
+    "after": "，因为他怕",
+    "note": "no了in “没+V.”",
+    "confidence": "high",
+    "reason": "removes 了 after 没有吃"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "有",
+    "before": "因为他怕",
+    "after": "毒",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 有 to form 怕有毒"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1065,
+  "completion_tokens": 1059,
+  "total_tokens": 2124,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1062,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 743,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

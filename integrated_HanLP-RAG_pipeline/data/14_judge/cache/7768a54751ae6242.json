@@ -1,0 +1,70 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\n\nFLAGGED PLACES:\n\n[P349] 【古代的时候】\n  proposed by the teacher's pattern/rule: [古代的时候→在古代] (her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train))\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  her past correction (location_with_zai): [古代的时候→在古代]\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n\n[P350] 【一看】很多人正在吃一些植物\n  proposed by the AI checker: [一看→看见]很多人正在吃一些植物 (一看 cannot directly take this object; use 看见.)\n  proposed by the teacher's pattern/rule: [一看→一看到]很多人正在吃一些植物 (her pattern: 一看 -> 一看到 (corrected 10/15 in train))\n  proposed by the teacher's pattern/rule: 一[看→看到]很多人正在吃一些植物 (her pattern: 看 -> 看到 (corrected 37/71 in train))\n  her past correction (zai_progressive): 也看到了很多人[+在]吃植物 — her note: 在ongoing\n  her past correction (perception_look_see): 他[看了→看到了]很多人吃毒的植物 — her note: 看look vs.看到see\n  her past correction (perception_look_see): [植物一看→一看到植物]就吃了 — her note: 看look vs.看到see\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n  rule card zai_progressive: Use 在/正在 before a dynamic verb when the action is ongoing; use 一直在+V. to emphasize that it is always ongoing. Do not use 在 when the sentence only states what someone does and does not emphasize an ongoing action. Not an error: Do not flag a sentence for lacking 在 when it only states what someone does and does not emphasize an ongoing action.\n\n[P351] 神农想帮【^】别人\n  proposed by the correction model: 神农想帮[+助]别人\n  her past correction (le_completed): ”神农[帮→帮了]很多人 — her note: 了completed\n  her past correction (ask_request_verbs): 神农[问人帮他→请人]给他灵芝 — her note: the “ask” in “ask for help” is not问\n  her past correction (perception_look_see): 他一[看→看到]神农就帮他 — her note: 看look vs.看到see\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card ask_request_verbs: 问 is for asking a question. For “ask for help,” use 请人 or 找别人帮忙; for “ask somebody to do something,” use 请 or 让. Not an error: Do not flag 问 when the meaning is asking a question.\n\n[P352] 哪些【植物】不能吃\n  proposed by the correction model: 哪些[-植物]不能吃\n  her past correction (cause_result_soyi): [因为→这样]大家知道什么植物不能吃 — her note: not “because”\n  her past correction (question_patterns): 中国人不知道什么植物[可能还是不可能→能吃，什么植物不能]吃\n  her past correction (question_patterns): 他们不知道什么植物[-能吃]不能吃\n  rule card question_patterns: Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P349",
+    "decision": "drop",
+    "category": "location_with_zai",
+    "original": "古代的时候",
+    "before": "",
+    "after": "，有一个人",
+    "corrected": "古代的时候",
+    "confidence": "high",
+    "reason": "Natural time expression; 在古代 is only a style alternative."
+   },
+   {
+    "place_id": "P350",
+    "decision": "keep",
+    "category": "perception_look_see",
+    "original": "一看",
+    "before": "路上走，",
+    "after": "很多人正在",
+    "corrected": "一看到",
+    "confidence": "high",
+    "reason": "The narrative states the result of seeing."
+   },
+   {
+    "place_id": "P351",
+    "decision": "drop",
+    "category": "other",
+    "original": "帮",
+    "before": "神农想",
+    "after": "别人。所以",
+    "corrected": "帮",
+    "confidence": "high",
+    "reason": "帮别人 is correct and natural."
+   },
+   {
+    "place_id": "P352",
+    "decision": "drop",
+    "category": "question_patterns",
+    "original": "植物",
+    "before": "哪些",
+    "after": "不能吃。",
+    "corrected": "植物",
+    "confidence": "high",
+    "reason": "Repeating 植物 makes the contrast clear and is grammatical."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1754,
+  "completion_tokens": 750,
+  "total_tokens": 2504,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1751,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

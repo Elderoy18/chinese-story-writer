@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 比方说他吃植物和花，可是有一天，他吃花的时候生病了。夹竹桃有毒，但是他们不知道这个花有毒，所以肚子疼死了。\nquote: 他吃花的时候生病了。夹竹桃有毒，但是他们不知道这个花有毒\npart p0: fix [ref p0/k1-2] 夹竹桃，这个花 ; notes: it is confusing to have花 ; it looks like they refer to two different flowers, but actually the same. 吃一种叫夹竹桃的花的时候",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k1-2",
+    "op": "replace",
+    "original": "花",
+    "corrected": "夹竹桃",
+    "before": "方说他吃",
+    "after": "的时候生",
+    "note": "it is confusing to have花 ; it looks like they refer to two different flowers, but actually the same. 吃一种叫夹竹桃的花的时候",
+    "confidence": "high",
+    "reason": "names the flower being eaten"
+   },
+   {
+    "ref": "p0/k1-2",
+    "op": "replace",
+    "original": "夹竹桃",
+    "corrected": "这个花",
+    "before": "生病了。",
+    "after": "有毒，但",
+    "note": "it is confusing to have花 ; it looks like they refer to two different flowers, but actually the same. 吃一种叫夹竹桃的花的时候",
+    "confidence": "high",
+    "reason": "uses a consistent reference to the same flower"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1061,
+  "completion_tokens": 702,
+  "total_tokens": 1763,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1058,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,129 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n古代的生活很多的人吃很多的植物，可是一些的人一吃植物，就难受，肚子疼。 因为他们吃毒。一天，一个老人决定了，坐路很远，吃很多的植物。看看如果能吃还是不能吃，药还是毒。这个老人叫神农。神农吃了很多的植物，就在植物用上写了。一天，他看到大的黄色的花，开着山上。他吃了花，就肚子疼。神农说：我死了吗？他一说了，就穿着蓝色的衣服的人来。他看到神农，给他一个灵芝。神农的肚子最好以后，他问：穿着紫色衣服的男人怎么了？我一会儿死了一会儿身体最好的。紫色人告诉他：你吃了灵芝，一吃就你的身体最好的。神农说：啊，所以这个灵芝是药啊，和这个花是毒，我要马上写这个花不能吃，特别很新鲜的时候。可是这个灵芝可能是啊。神农加下去很多的植物，看看如果毒还是药。我觉得神农很有名的人，因为他作用这个时代的医学。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "People eat poisonous plants and become sick",
+    "verdict": "told",
+    "evidence": [
+     "古代的生活很多的人吃很多的植物，可是一些的人一吃植物，就难受，肚子疼。",
+     "因为他们吃毒。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "People did not know which plants were safe to eat."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 decides to test plants for safety",
+    "verdict": "told",
+    "evidence": [
+     "一天，一个老人决定了，坐路很远，吃很多的植物。",
+     "看看如果能吃还是不能吃，药还是毒。",
+     "这个老人叫神农。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "He climbed mountains to test the plants."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it",
+    "verdict": "partly",
+    "evidence": [
+     "神农吃了很多的植物，就在植物用上写了。"
+    ],
+    "missing_part": "He does not find or name 茶.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints",
+    "verdict": "partly",
+    "evidence": [
+     "他吃了花，就肚子疼。"
+    ],
+    "missing_part": "The flower is not identified as 夹竹桃, and 神农 does not faint.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "A blue-clothed person gives 神农 灵芝, and he feels better",
+    "verdict": "told",
+    "evidence": [
+     "他一说了，就穿着蓝色的衣服的人来。",
+     "他看到神农，给他一个灵芝。",
+     "紫色人告诉他：你吃了灵芝，一吃就你的身体最好的。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "Another brown-clothed person talks with 神农",
+    "verdict": "partly",
+    "evidence": [
+     "神农的肚子最好以后，他问：穿着紫色衣服的男人怎么了？",
+     "紫色人告诉他：你吃了灵芝，一吃就你的身体最好的。"
+    ],
+    "missing_part": "The second person is described as wearing purple, not brown.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃",
+    "verdict": "partly",
+    "evidence": [
+     "神农说：啊，所以这个灵芝是药啊，和这个花是毒，我要马上写这个花不能吃，特别很新鲜的时候。"
+    ],
+    "missing_part": "He does not name 夹竹桃, and he does not say that he records 灵芝.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "穿着紫色衣服的男人怎么了？",
+    "problem": "The second person should be wearing brown, not purple."
+   },
+   {
+    "learner_text": "紫色人告诉他：你吃了灵芝，一吃就你的身体最好的。",
+    "problem": "The second person should be wearing brown, not purple."
+   }
+  ],
+  "feedback": [
+   "After 神农 starts testing plants, add that he finds 茶 and writes it down.",
+   "After he finds 茶, say that 神农 eats 夹竹桃 and faints.",
+   "After the person in blue gives 灵芝, add a conversation with another person in brown.",
+   "After the conversation, say that 神农 writes down both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1173,
+  "completion_tokens": 2311,
+  "total_tokens": 3484,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1170,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

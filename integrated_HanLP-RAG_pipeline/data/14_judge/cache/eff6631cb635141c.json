@@ -1,0 +1,92 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\nCURRENT SCENE:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nFLAGGED PLACES:\n\n[P245] 【^】一百岁时候\n  proposed by the AI checker: [+的]一百岁时候 (age expression needs 的 before 时候)\n  her past correction (fixed_expressions): [是大人的时候→长大以后]\n  her past correction (fixed_expressions): [大人的时候→长大以后]\n  her past correction (location_with_zai): 在照片[+上]可以看一个很老的人\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n\n[P246] 不小心吃了【毒的】花\n  proposed by the AI checker: 不小心吃了[毒→有毒]的花 (poisonous flowers are 有毒的花)\n  proposed by the teacher's pattern/rule: 不小心吃了[毒的→有毒的]花 (her pattern: 毒的 -> 有毒的 (corrected 9/11 in train))\n  her past correction (resultative_complements): 他[正好吃→吃到]一毒的花\n  her past correction (measure_word_choice): 他正好吃[一毒→一种有毒]的花\n  her past correction (word_class_choice): [是毒的花→有毒的花]\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n  rule card resultative_complements: Use a resultative complement when the action reaches its result: 吃到, 写下, 撞到+Obj., or 把Obj. V. Resultative complement. Not an error: Do not use 撞+Obj. when the meaning is that the object hits something else: 撞自行车 means to hit the bike.\n\n[P247] 一吃就【开始死】\n  proposed by the AI checker: 一吃就[开始死→死了] (death is a completed event here, not something that starts)\n  proposed by the correction model: 一吃就[开始→会]死\n  her past correction (zero_redundant_pronoun): [-他]一吃就生病了\n  her past correction (conditional_jiu): [-一吃]就身体坏了 — her note: Subj. + 就\n  her past correction (incorrect_story_information): 所以⟦他一吃，肚子就疼死了⟧ — her note: it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card conditional_jiu: Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future. Not an error: When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.\n\n[P248] 但是生病【^】时候告诉人什么植物是药\n  proposed by the AI checker: 但是生病[+的]时候告诉人什么植物是药 (time phrase needs 的 before 时候)\n  her past correction (incorrect_story_information): [几棵植物→有的植物]可以是药\n  her past correction (specific_noun_choice): 他问那些生病人觉得[这儿→他们吃的植物]应该有毒\n  her past correction (numeral_measure_word_order): 后来神农写[书了→了一本]哪些植物是药\n  rule card incorrect_story_information: Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information. Not an error: Do not flag a word or sentence under this rule only because of grammar or vocabulary. Flag it here when it changes or adds a fact in the traditional story.\n  rule card specific_noun_choice: Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦. Not an error: Do not flag a general word when the context does not require a more specific meaning. This rule applies when the general word makes the story unclear or does not name what is actually meant.\n\n[P249] 什么【植物】是毒\n  proposed by the correction model: 什么[-植物]是毒\n  her past correction (word_class_choice): 什么植物[是毒→有毒]\n  her past correction (word_class_choice): 哪些植物是[毒→有毒]\n  her past correction (modifier_de_structure): 哪些植物是毒[+的书]\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n\n[P250] 什么植物【是毒】\n  proposed by the teacher's pattern/rule: 什么植物[是毒→有毒] (her pattern: 是毒 -> 有毒 (corrected 14/15 in train))\n  her past correction (word_class_choice): 什么植物[是毒→有毒]\n  her past correction (word_class_choice): 哪些植物是[毒→有毒]\n  her past correction (modifier_de_structure): 哪些植物是毒[+的书]\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P245",
+    "decision": "keep",
+    "category": "fixed_expressions",
+    "original": "",
+    "before": "一百岁",
+    "after": "时候，不",
+    "corrected": "的",
+    "confidence": "high",
+    "reason": "Age-time phrase needs 的 before 时候."
+   },
+   {
+    "place_id": "P246",
+    "decision": "keep",
+    "category": "word_class_choice",
+    "original": "毒的",
+    "before": "不小心吃了",
+    "after": "花",
+    "corrected": "有毒的",
+    "confidence": "high",
+    "reason": "Poisonous plants are 有毒的花."
+   },
+   {
+    "place_id": "P247",
+    "decision": "keep",
+    "category": "other",
+    "original": "开始死",
+    "before": "一吃就",
+    "after": "。但是",
+    "corrected": "死了",
+    "confidence": "high",
+    "reason": "Death is a completed event here."
+   },
+   {
+    "place_id": "P248",
+    "decision": "keep",
+    "category": "fixed_expressions",
+    "original": "",
+    "before": "但是生病",
+    "after": "时候告诉",
+    "corrected": "的",
+    "confidence": "high",
+    "reason": "Time phrase needs 的 before 时候."
+   },
+   {
+    "place_id": "P249",
+    "decision": "drop",
+    "category": "word_class_choice",
+    "original": "植物",
+    "before": "什么",
+    "after": "是毒",
+    "corrected": "植物",
+    "confidence": "high",
+    "reason": "植物 is needed to specify what is poisonous."
+   },
+   {
+    "place_id": "P250",
+    "decision": "keep",
+    "category": "word_class_choice",
+    "original": "是毒",
+    "before": "什么植物",
+    "after": "",
+    "corrected": "有毒",
+    "confidence": "high",
+    "reason": "Use 有毒 to describe poisonous plants."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2558,
+  "completion_tokens": 1440,
+  "total_tokens": 3998,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2555,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1105,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

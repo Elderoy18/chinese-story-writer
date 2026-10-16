@@ -1,0 +1,103 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\nCURRENT SCENE:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nFLAGGED PLACES:\n\n[P124] 孟子在那个商店也【找了到】工作\n  proposed by the teacher's pattern/rule: 孟子在那个商店也[找了→找到了]到工作 (her pattern: 找了 -> 找到了 (corrected 3/5 in train))\n  proposed by the AI checker: 孟子在那个商店也找[了到→到了]工作 (了 follows 到 in 找到)\n  her past correction (zai_progressive): 孟子不是[-在]看商店的员工 — her note: here is not emphasizing “ongoing”\n  her past correction (word_class_choice): 孟母找到一个[打工→打工的工作]\n  her past correction (collocation_selection): 孟母找到了[良好的→好]工作 — her note: 良好is not with工作\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n  rule card zai_progressive: Use 在/正在 before a dynamic verb when the action is ongoing; use 一直在+V. to emphasize that it is always ongoing. Do not use 在 when the sentence only states what someone does and does not emphasize an ongoing action. Not an error: Do not flag a sentence for lacking 在 when it only states what someone does and does not emphasize an ongoing action.\n\n[P125] 可是不是做衣服的工作【，而是喜欢的工作】\n  proposed by the correction model: 可是不是做衣服的工作[-，而是喜欢的工作]\n  her past correction (modifier_de_structure): 就是做冬天[+的]衣服\n  her past correction (zhe_durative): 她[穿→穿着]很漂亮的衣服 — her note: 着durative\n  her past correction (modifier_de_structure): 穿上一件蓝色[-的]衣服的人\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n  rule card zhe_durative: Use 着 for a durative, accompanying, or static state. When one action accompanies the main action, use V.着 + V2 (for example, 牵着驴走). Not an error: Do not use 着 when the action is completed, such as 吃了夹竹桃以后 (了completed). Do not change 和/跟 + noun when both nouns perform the same action.\n\n[P126] 孟子【学习馆】学了十五年\n  proposed by the AI checker: 孟子[+在]学习馆学了十五年 (location needs 在 before it)\n  proposed by the AI checker: 孟子[学习馆→学校]学了十五年 (学习馆 is not the normal word for school)\n  her past correction (zai_progressive): 孟子[一直学了→一直在学习]很多东西 — her note: 一直在+V., emphasizing always ongoing\n  her past correction (laoshi_negative_repetition): 所以孟子[老是→一直]在学习 — her note: “老是“ for something negative, used to complain\n  her past correction (laoshi_negative_repetition): 孟子[跟老师老是学习中文→一直学习中文] — her note: “老是“ for something negative, used to complain\n  rule card laoshi_negative_repetition: 老是 means “always” and is used for something negative or to complain; for a neutral or positive repeated action, use 一直 or 常常 instead. Not an error: Use 老是 when the repeated action is negative or the speaker is complaining about it. Do not flag it merely because it means “always.”\n  rule card zai_progressive: Use 在/正在 before a dynamic verb when the action is ongoing; use 一直在+V. to emphasize that it is always ongoing. Do not use 在 when the sentence only states what someone does and does not emphasize an ongoing action. Not an error: Do not flag a sentence for lacking 在 when it only states what someone does and does not emphasize an ongoing action.\n\n[P127] 对他【^】很多好处\n  proposed by the AI checker: 对他[+有]很多好处 (对他有很多好处 needs 有)\n  proposed by the correction model: 对他[+有]很多好处\n  her past correction (redundant_words): 因为他们觉得[祭拜有很多好处，对他们的生活→对生活有很多好处]\n  her past correction (redundant_words): 因为[-他们]觉得祭拜有很多好处 — her note: redundant\n  her past correction (modifier_de_structure): 他[+的]朋友帮他\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n\n[P128] 他【是大人的时候】\n  proposed by the AI checker: 他[是大人的时候→长大后] (长大后 is the natural time expression)\n  her past correction (fixed_expressions): [是大人的时候→长大以后]\n  her past correction (fixed_expressions): [大人的时候→长大以后]\n  her past correction (time_sequence_markers): [长大的时候→长大以后]\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n  rule card time_sequence_markers: Use Time + 以后 after a completed time or action to show “after”; when moving to a later event in the story, use 后来 or 然后 rather than 以后 by itself. Do not add 以后 when the time phrase already says the time clearly. Not an error: Do not use 结果 merely as a general later-time connector; it is for an unexpected result. Use 后来 for a later development instead.\n\n[P129] 【他】成为很有名的哲人\n  proposed by the teacher's pattern/rule: [-他]成为很有名的哲人 (他 repeats the subject of the clause before: zero form)\n  her past correction (become_and_profession): 他成为[有名的→有名的哲学家] — her note: 成为+N\n  her past correction (time_sequence_markers): [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为\n  her past correction (incorrect_story_information): [他成为很有名的老师→哲学家]\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card become_and_profession: 成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才. Not an error: Do not flag 成为 when it is followed by an appropriate noun, especially a profession or public identity, such as 成为哲学家.\n\n[P130] 他成为【^】很有名的哲人\n  proposed by the correction model: 他成为[+了]很有名的哲人\n  her past correction (become_and_profession): 他成为[有名的→有名的哲学家] — her note: 成为+N\n  her past correction (le_completed): 他成为[+了]哲学家\n  her past correction (time_sequence_markers): [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为\n  rule card become_and_profession: 成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才. Not an error: Do not flag 成为 when it is followed by an appropriate noun, especially a profession or public identity, such as 成为哲学家.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P124",
+    "decision": "keep",
+    "category": "search_find",
+    "original": "了到",
+    "before": "商店也找",
+    "after": "工作",
+    "corrected": "到了",
+    "confidence": "high",
+    "reason": "Successful finding requires 找到; the aspect marker follows 到."
+   },
+   {
+    "place_id": "P125",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "服的工作",
+    "after": "，而是喜欢",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "喜欢的工作 is grammatically acceptable and the contrast is coherent."
+   },
+   {
+    "place_id": "P126",
+    "decision": "keep",
+    "category": "other",
+    "original": "学习馆",
+    "before": "孟子",
+    "after": "学了十五年",
+    "corrected": "在学校",
+    "confidence": "high",
+    "reason": "学习馆 is not the normal word for school, and the location needs 在."
+   },
+   {
+    "place_id": "P127",
+    "decision": "keep",
+    "category": "other",
+    "original": "",
+    "before": "对他",
+    "after": "很多好处",
+    "corrected": "有",
+    "confidence": "high",
+    "reason": "对他有很多好处 requires 有."
+   },
+   {
+    "place_id": "P128",
+    "decision": "keep",
+    "category": "fixed_expressions",
+    "original": "他是大人的时候",
+    "before": "多好处。",
+    "after": "，他成为",
+    "corrected": "长大以后",
+    "confidence": "high",
+    "reason": "长大以后 is the established expression for this later life stage."
+   },
+   {
+    "place_id": "P129",
+    "decision": "keep",
+    "category": "zero_redundant_pronoun",
+    "original": "他",
+    "before": "人的时候，",
+    "after": "成为很有",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The subject is already clear from the close preceding clause."
+   },
+   {
+    "place_id": "P130",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "",
+    "before": "他成为",
+    "after": "很有名的",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "Becoming a philosopher is a completed change of state in the narrative."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2952,
+  "completion_tokens": 1958,
+  "total_tokens": 4910,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2949,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

@@ -1,0 +1,62 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\nscene 2: 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\ncurrent scene: 他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "original": "",
+    "corrected": "的",
+    "before": "现这个口味，",
+    "after": "一百岁时",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "age expression needs 的 before 时候"
+   },
+   {
+    "original": "毒",
+    "corrected": "有毒",
+    "before": "小心吃了",
+    "after": "的花。一吃",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "poisonous flowers are 有毒的花"
+   },
+   {
+    "original": "开始死",
+    "corrected": "死了",
+    "before": "。一吃就",
+    "after": "。但是生",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "death is a completed event here, not something that starts"
+   },
+   {
+    "original": "",
+    "corrected": "的",
+    "before": "是生病",
+    "after": "时候告诉",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "time phrase needs 的 before 时候"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 721,
+  "completion_tokens": 2719,
+  "total_tokens": 3440,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2511,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

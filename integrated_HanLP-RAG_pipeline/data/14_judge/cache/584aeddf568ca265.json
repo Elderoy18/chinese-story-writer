@@ -1,0 +1,70 @@
+{
+ "input": "EARLIER SCENES (context only):\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\nCURRENT SCENE:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nFLAGGED PLACES:\n\n[P168] 【旅行很远】找到很多植物\n  proposed by the AI checker: [旅行很远→走了很远]找到很多植物 (走了很远 is the natural way to express travelling a long distance here.)\n  proposed by the correction model: 旅行很远[+还]找到很多植物\n  her past correction (collocation_selection): 所以他[走路旅行找足多→步行去找很多]不同的植物\n  her past correction (possessive_reference): [在他的旅行，→旅行中，]神农发现很多植物\n  her past correction (location_with_zai): 他[在这个旅程→在旅程中]尝了很多植物\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n  rule card possessive_reference: Do not use 他的/她的 for people or a place when it sounds like the person owns them. Use a precise relationship word, such as 家人, 朋友邻居, 人们, or 这个小城市. Not an error: Do not flag 他的/她的 when the intended meaning is actual ownership or when it clearly gives the needed relationship.\n\n[P169] 旅行很远【找到】很多植物\n  proposed by the AI checker: 旅行很远[找到→找到了]很多植物 (the completed discovery needs 了.)\n  her past correction (collocation_selection): 所以他[走路旅行找足多→步行去找很多]不同的植物\n  her past correction (possessive_reference): [在他的旅行，→旅行中，]神农发现很多植物\n  her past correction (perception_look_see): [看很多植物→看到了很多植物] — her note: 看look vs.看到see\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n  rule card possessive_reference: Do not use 他的/她的 for people or a place when it sounds like the person owns them. Use a precise relationship word, such as 家人, 朋友邻居, 人们, or 这个小城市. Not an error: Do not flag 他的/她的 when the intended meaning is actual ownership or when it clearly gives the needed relationship.\n\n[P170] 神农【写】他的主意\n  proposed by the AI checker: 神农[写→写下了]他的主意 (ideas should be written down, using 写下了.)\n  proposed by the correction model: 神农写[+了]他的主意\n  her past correction (modifier_de_structure): 神农就想到了一个好[-的]主意\n  her past correction (directional_complements): 神农[回→回到]他的家\n  her past correction (specific_noun_choice): 神农写下来他所有学到的[事情→知识]\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n  rule card directional_complements: Use V. + directional complement + Place + 来/去: put the place after the directional complement and before 来/去. For walking to a place, use 走到place来/去, not 走去 or 走来Place. Not an error: Do not treat 拿起来 and 拿上去 as interchangeable word-order forms: 拿起来 means “pick up,” while 拿上去 means “bring it up.”\n\n[P171] 神农遇到了一【个】黄色的花\n  proposed by the AI checker: 神农遇到了一[个→朵]黄色的花 (朵 is the measure word for flowers.)\n  proposed by the correction model: 神农遇到了一[个→种]黄色的花\n  her past correction (search_find): 神农找[+到]了一个很漂亮的花 — her note: 找look for vs.找到find\n  her past correction (near_synonym_precision): 神农在他[远走→远行]的过程中碰见了一个长得像太阳的花儿 — her note: “远走” indicates leave something behind and go to a place far away\n  her past correction (le_completed): 神农的朋友给[+了]他这植物 — her note: 了completed\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P168",
+    "decision": "keep",
+    "category": "collocation_selection",
+    "original": "旅行很远",
+    "before": "又努力，",
+    "after": "找到很多",
+    "corrected": "走了很远",
+    "confidence": "high",
+    "reason": "旅行很远 is not a natural travel expression here."
+   },
+   {
+    "place_id": "P169",
+    "decision": "keep",
+    "category": "other",
+    "original": "找到",
+    "before": "行很远",
+    "after": "很多植物",
+    "corrected": "找到了",
+    "confidence": "high",
+    "reason": "The completed narrative event needs 了."
+   },
+   {
+    "place_id": "P170",
+    "decision": "keep",
+    "category": "other",
+    "original": "写",
+    "before": "神农",
+    "after": "他的主意",
+    "corrected": "写下了",
+    "confidence": "high",
+    "reason": "Ideas are naturally written down in this completed event."
+   },
+   {
+    "place_id": "P171",
+    "decision": "keep",
+    "category": "other",
+    "original": "个",
+    "before": "遇到了一",
+    "after": "黄色的花",
+    "corrected": "朵",
+    "confidence": "high",
+    "reason": "朵 is the appropriate measure word for an individual flower."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1887,
+  "completion_tokens": 1142,
+  "total_tokens": 3029,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1884,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 901,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

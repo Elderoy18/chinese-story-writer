@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他有一段时间算是人才，有高的学历和厉害的主修。\nquote: 有高的学历和厉害的主修\npart p0: fix [ref p0/k1] 主修专业竞争力也很强。 ; notes: instead of using “有……” structure, it is better to use short sentences: 学历很高",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k1",
+    "op": "replace",
+    "original": "有高的学历",
+    "corrected": "学历很高",
+    "before": "他",
+    "after": "和厉害的",
+    "note": "instead of using “有……” structure, it is better to use short sentences: 学历很高",
+    "confidence": "high",
+    "reason": "replaces 有… structure with the short sentence"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "replace",
+    "original": "和厉害的主修",
+    "corrected": "。主修专业竞争力也很强。",
+    "before": "高的学历",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the second coordinated phrase with the teacher's second sentence"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1018,
+  "completion_tokens": 413,
+  "total_tokens": 1431,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 254,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

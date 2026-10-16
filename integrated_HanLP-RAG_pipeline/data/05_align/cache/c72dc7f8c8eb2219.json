@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 因为他们不知道什么能不能吃，所以他走路走了很长的时间找药。\nquote: 因为他们不知道什么能不能吃\npart p0: fix [ref p0/k0-1] 什么能吃，什么不能吃",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "什么能不能吃",
+    "corrected": "什么能吃，什么不能吃",
+    "before": "们不知道",
+    "after": "，",
+    "note": "",
+    "confidence": "high",
+    "reason": "expands the ambiguous 能不能 structure into two parallel clauses"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 997,
+  "completion_tokens": 159,
+  "total_tokens": 1156,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 80,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,5358 @@
+[
+ {
+  "id": "measure_word_choice",
+  "name": "量词选择",
+  "section": "grammar",
+  "definition": "Use the appropriate measure word for the noun, including polite 位 and noun-specific classifiers such as 棵.",
+  "her_notes": [
+   "“位” is a polite MW."
+  ],
+  "detectable_by": "judgement",
+  "n_train": 11,
+  "edit_shapes": [
+   [
+    "insert 个 after DT",
+    1
+   ],
+   [
+    "comment",
+    1
+   ],
+   [
+    "replace CD+M+NN+VV+NR",
+    1
+   ],
+   [
+    "insert 个 after AS",
+    1
+   ],
+   [
+    "replace CD+M+NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use the appropriate measure word before the noun: 这/那 + Measure word + noun. Use noun-specific measure words such as 棵 for trees, and 位 is a polite MW.",
+   "explanation_template": "<wrong> → <correct>: use <measure word> with <noun>; <brief reason, such as “位” is polite or 棵 is for trees>.",
+   "examples": [
+    {
+     "edit_id": "pear_story#4/f38/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "这[+个]奇怪的男孩一看到她",
+     "original": "",
+     "corrected": "个",
+     "op": "insert",
+     "her_note": "这/那 + Measure word + noun.",
+     "explanation": "这奇怪的男孩 → 这个奇怪的男孩: 这/那 + Measure word + noun."
+    },
+    {
+     "edit_id": "pear_story#4/f3/p0/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "他这个没有礼貌的人每天爬上⟦本树⟧",
+     "original": "本树",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "本+N. is usually used in formal advertisement/news, also it indicates the author owns the tree, which is not the fact: the author is a pear, who does not own the whole pear tree. 爬上这棵树。",
+     "explanation": "本树 → 这棵树: use 棵 for a tree; 本+N. is usually formal advertisement/news language and can indicate ownership."
+    },
+    {
+     "edit_id": "mengmu_samples#1/f0/p0/k0/e0",
+     "sample_id": "mengmu_samples#1",
+     "display": "有[一位小孩子叫孟子→一个叫孟子的小孩子]",
+     "original": "一位小孩子叫孟子",
+     "corrected": "一个叫孟子的小孩子",
+     "op": "replace",
+     "her_note": "“位” is a polite MW.",
+     "explanation": "一位小孩子 → 一个叫孟子的小孩子: 位 is a polite MW."
+    },
+    {
+     "edit_id": "pear_story#2/f0/p1/k0/e0",
+     "sample_id": "pear_story#2",
+     "display": "一个农人爬着[一个树→一棵树]",
+     "original": "一个树",
+     "corrected": "一棵树",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "一个树 → 一棵树: use 棵 for a tree."
+    }
+   ],
+   "not_an_error": "Do not use 位 for a child in this context; 位 is a polite MW. 本+N. is usually used in formal advertisement/news and may indicate that the author owns the noun.",
+   "her_terms": [
+    "这/那 + Measure word + noun",
+    "本+N.",
+    "位",
+    "MW"
+   ]
+  }
+ },
+ {
+  "id": "numeral_measure_word_order",
+  "name": "Num. + MW. + N., no 的",
+  "section": "grammar",
+  "definition": "With a number and measure word, use Num. + MW. + noun directly; normally do not add 的. Use V. + Num. + MW. + Obj. in the normal object order.",
+  "her_notes": [
+   "V. + Num. + MW. + Obj.",
+   "了completed, V. + Num. + MW. + Obj.",
+   "num. + MW. + noun, no的",
+   "“们”cannot be used with num.",
+   "“些” cannot be used with num."
+  ],
+  "detectable_by": "parser",
+  "n_train": 19,
+  "edit_shapes": [
+   [
+    "replace VV+CD+M",
+    4
+   ],
+   [
+    "replace VV+AD+CD+M",
+    3
+   ],
+   [
+    "replace VV+AS+NN+CD+M",
+    1
+   ],
+   [
+    "replace CD+M+DEG+NN",
+    1
+   ],
+   [
+    "replace AD+CD+M+VV+SP",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "With a number and measure word, use Num. + MW. + noun directly, with no 的. For actions, use V. + Num. + MW. + Obj.; for a completed action, use 了completed, V. + Num. + MW. + Obj.",
+   "explanation_template": "<wrong> → <correct>: use <formula>; do not put 的 between the measure word and the noun / put the verb before the number phrase. <Action> is finished, so it takes 了 (了completed).",
+   "examples": [
+    {
+     "edit_id": "pear_story#3/f7/p0/k0/e0",
+     "sample_id": "pear_story#3",
+     "display": "所以他偷走[一筐的梨→一筐梨]",
+     "original": "一筐的梨",
+     "corrected": "一筐梨",
+     "op": "replace",
+     "her_note": "num. + MW. + noun, no的",
+     "explanation": "一筐的梨 → 一筐梨: use Num. + MW. + noun directly; do not use 的."
+    },
+    {
+     "edit_id": "mengmu_samples#21/f10/p0/k0/e0",
+     "sample_id": "mengmu_samples#21",
+     "display": "他们[搬了家两次→搬了两次家]",
+     "original": "搬了家两次",
+     "corrected": "搬了两次家",
+     "op": "replace",
+     "her_note": "V. + Num. + MW. + Obj.",
+     "explanation": "搬了家两次 → 搬了两次家: use V. + Num. + MW. + Obj."
+    },
+    {
+     "edit_id": "mengmu_samples#41/f1/p1/k0/e0",
+     "sample_id": "mengmu_samples#41",
+     "display": "所以她[搬家二次→搬了两次家]",
+     "original": "搬家二次",
+     "corrected": "搬了两次家",
+     "op": "replace",
+     "her_note": "了completed, V. + Num. + MW. + Obj.",
+     "explanation": "搬家二次 → 搬了两次家: the action is finished, so use 了completed, V. + Num. + MW. + Obj."
+    },
+    {
+     "edit_id": "mengmu_samples#8/f4/p0/k0/e0",
+     "sample_id": "mengmu_samples#8",
+     "display": "我们要[搬家再一次→再搬一次家]",
+     "original": "搬家再一次",
+     "corrected": "再搬一次家",
+     "op": "replace",
+     "her_note": "再V. + Num. + MW. + N.",
+     "explanation": "搬家再一次 → 再搬一次家: use 再V. + Num. + MW. + N."
+    },
+    {
+     "edit_id": "mengmu_samples#31/f1/p0/k0/e0",
+     "sample_id": "mengmu_samples#31",
+     "display": "可是[搬才三次→才搬了三次]就找到好的地方",
+     "original": "搬才三次",
+     "corrected": "才搬了三次",
+     "op": "replace",
+     "her_note": "才V. + Num., 了completed",
+     "explanation": "搬才三次 → 才搬了三次: use 才V. + Num.; the action is finished, so it takes 了completed."
+    }
+   ],
+   "not_an_error": "Do not use 们 or 些 with a number: use 三个男孩, not 三个男孩子们, and 那三个男孩, not 那些三个男孩.",
+   "her_terms": [
+    "V. + Num. + MW. + Obj.",
+    "了completed",
+    "num. + MW. + noun, no的",
+    "再V. + Num. + MW. + N.",
+    "才V. + Num."
+   ]
+  }
+ },
+ {
+  "id": "modifier_de_structure",
+  "name": "的 in modifier phrases",
+  "section": "grammar",
+  "definition": "Use 的 only where a modifier needs it, and omit it in structures that do not take 的. A descriptive modifier before a noun normally needs the appropriate 的 structure.",
+  "her_notes": [
+   "no的",
+   "the Obj. in “Place + V. 着 + Obj.” is usually “number + MW + noun”, not specific “that/this/those/these/the + noun”.",
+   "的 -> ∅"
+  ],
+  "detectable_by": "parser",
+  "n_train": 57,
+  "edit_shapes": [
+   [
+    "delete DEG",
+    14
+   ],
+   [
+    "insert words after VA",
+    2
+   ],
+   [
+    "insert 的 after PN",
+    2
+   ],
+   [
+    "replace JJ+NN",
+    2
+   ],
+   [
+    "replace DEV+MSP",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.",
+   "explanation_template": "<wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.",
+   "examples": [
+    {
+     "edit_id": "pear_story#4/f34/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "我无话可说！[人类创造文明→人类创造的文明]到底从哪里由此而来啊",
+     "original": "人类创造文明",
+     "corrected": "人类创造的文明",
+     "op": "replace",
+     "her_note": "the Subj. should be a noun “文明”, not a verb phrase “人类创造文明”",
+     "explanation": "人类创造文明 → 人类创造的文明: 人类创造 describes the noun 文明, so use 的."
+    },
+    {
+     "edit_id": "shennong_samples#9/f2/p0/k0/e0",
+     "sample_id": "shennong_samples#9",
+     "display": "[找植物能吃→找能吃的植物]",
+     "original": "找植物能吃",
+     "corrected": "找能吃的植物",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "找植物能吃 → 找能吃的植物: 能吃 describes the noun 植物, so use 的."
+    },
+    {
+     "edit_id": "shennong_samples#5/f1/p0/k0/e0",
+     "sample_id": "shennong_samples#5",
+     "display": "很多[-的]人吃了有毒的饭",
+     "original": "的",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "no的",
+     "explanation": "很多的人 → 很多人: 很多 does not need 的 before 人 here, so omit it."
+    },
+    {
+     "edit_id": "pear_story#4/f10/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "今天[-的]清晨",
+     "original": "的",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "",
+     "explanation": "今天的清晨 → 今天清晨: 今天 does not need 的 before 清晨 here, so omit it."
+    },
+    {
+     "edit_id": "shennong_samples#11/f1/p0/k0/e0",
+     "sample_id": "shennong_samples#11",
+     "display": "他们吃[毒→有毒的]植物",
+     "original": "毒",
+     "corrected": "有毒的",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "毒植物 → 有毒的植物: 有毒 describes the noun 植物, so use 的."
+    }
+   ],
+   "not_an_error": "Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.",
+   "her_terms": [
+    "no的"
+   ]
+  }
+ },
+ {
+  "id": "adjective_predicate_degree",
+  "name": "Adj. can be predicate; usually Adj. takes 很",
+  "section": "grammar",
+  "definition": "An adjective can be the predicate without 是. Usually use 很 before an adjective when giving a plain description, unless another degree pattern is intended.",
+  "her_notes": [
+   "usually Adj. takes 很",
+   "Delete 是，Adj. can be predicate, without是",
+   "是Adj.的 is to emphasize",
+   "“这个植物“ is not unclear, which one? Delete 是，Adj. can be predicate, without是"
+  ],
+  "detectable_by": "parser",
+  "n_train": 12,
+  "edit_shapes": [
+   [
+    "delete VC",
+    3
+   ],
+   [
+    "delete SP",
+    1
+   ],
+   [
+    "insert 很 after NN",
+    1
+   ],
+   [
+    "insert 很 after AD",
+    1
+   ],
+   [
+    "replace VE+VA+DEC+NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "An Adj. can be the predicate without 是. Usually an Adj. takes 很 for a plain description; 是Adj.的 is used to emphasize.",
+   "explanation_template": "<wrong> → <correct>: <adjective> is a plain description, so use it as the predicate without 是 and usually add 很.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#7/f4/p0/k0/e0",
+     "sample_id": "shennong_samples#7",
+     "display": "你应该特别[-是]小心",
+     "original": "是",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "Adj. can be predicate",
+     "explanation": "你应该特别是小心 → 你应该特别小心: 小心 is an Adj. predicate, so it does not take 是."
+    },
+    {
+     "edit_id": "mengmu_samples#5/f3/p0/k0/e0",
+     "sample_id": "mengmu_samples#5",
+     "display": "第二个房子离购物中心[+很]近",
+     "original": "",
+     "corrected": "很",
+     "op": "insert",
+     "her_note": "usually Adj. takes 很",
+     "explanation": "第二个房子离购物中心近 → 第二个房子离购物中心很近: 近 is a plain description, so it usually takes 很."
+    },
+    {
+     "edit_id": "mengmu_samples#8/f1/p0/k0/e0",
+     "sample_id": "mengmu_samples#8",
+     "display": "孟母看出来孟子老是[+很]难过",
+     "original": "",
+     "corrected": "很",
+     "op": "insert",
+     "her_note": "usually Adj. takes 很",
+     "explanation": "孟母看出来孟子老是难过 → 孟母看出来孟子老是很难过: 难过 is a plain description, so it usually takes 很."
+    },
+    {
+     "edit_id": "mengmu_samples#23/f1/p0/k0/e0",
+     "sample_id": "mengmu_samples#23",
+     "display": "孟子[是淘气的孩子→很淘气]",
+     "original": "是淘气的孩子",
+     "corrected": "很淘气",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "孟子是淘气的孩子 → 孟子很淘气: 淘气 can be the predicate; use 很淘气 rather than 是淘气的孩子."
+    },
+    {
+     "edit_id": "pear_story#4/f22/p0/k1/e0",
+     "sample_id": "pear_story#4",
+     "display": "[有高的学历→学历很高]和厉害的主修",
+     "original": "有高的学历",
+     "corrected": "学历很高",
+     "op": "replace",
+     "her_note": "instead of using “有……” structure, it is better to use short sentences: 学历很高",
+     "explanation": "有高的学历 → 学历很高: use a short sentence with the Adj. predicate, 学历很高."
+    }
+   ],
+   "not_an_error": "Do not flag 是Adj.的 when the writer intends emphasis. Do not require 很 when another degree pattern, such as 特别, is used.",
+   "her_terms": [
+    "Adj. can be predicate",
+    "usually Adj. takes 很",
+    "是Adj.的 is to emphasize"
+   ]
+  }
+ },
+ {
+  "id": "non_adjective_degree_patterns",
+  "name": "病 is not a normal Adj.",
+  "section": "grammar",
+  "definition": "Do not treat verbs or nouns such as 病 / 生病 as ordinary adjectives with 很 or 不. Use patterns such as 病得很厉害 when describing the degree.",
+  "her_notes": [
+   "“病” is not a normal Adj., so it cannot be with 很 or 不",
+   "“生病”cannot be with “很”",
+   "病得很厉害，“病” is not a normal Adj., so it cannot be with 很 or 不"
+  ],
+  "detectable_by": "parser",
+  "n_train": 6,
+  "edit_shapes": [
+   [
+    "replace AD+VV",
+    2
+   ],
+   [
+    "comment",
+    1
+   ],
+   [
+    "replace AD+PU+AD+VV",
+    1
+   ],
+   [
+    "replace AD+AD+VV",
+    1
+   ],
+   [
+    "replace VV+AS+AD+VA",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "“病” and “生病” are not normal Adj., so do not use 很 or 不 directly with them. To show degree, use 病得很厉害 or 病得很重.",
+   "explanation_template": "<wrong> → <correct>: 病/生病 is not a normal Adj., so it cannot take 很 or 不; use 病得很<degree> to describe how serious the illness is.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#34/f4/p0/note/e0",
+     "sample_id": "shennong_samples#34",
+     "display": "他⟦病得很⟧",
+     "original": "病得很",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "病得很厉害，“病” is not a normal Adj., so it cannot be with 很 or 不",
+     "explanation": "病得很 → 病得很厉害: 病 is not a normal Adj., so use 病得很厉害 to show the degree."
+    },
+    {
+     "edit_id": "shennong_samples#17/f0/p0/k0/e0",
+     "sample_id": "shennong_samples#17",
+     "display": "神农看他的朋友[很生病→病得很重]",
+     "original": "很生病",
+     "corrected": "病得很重",
+     "op": "replace",
+     "her_note": "“生病” is not an Adj., so it cannot be with 很 or 不",
+     "explanation": "很生病 → 病得很重: 生病 is not an Adj., so it cannot take 很; use 病得很重."
+    },
+    {
+     "edit_id": "shennong_samples#13/f4/p0/k0/e0",
+     "sample_id": "shennong_samples#13",
+     "display": "[然后，不病→就好了]",
+     "original": "然后，不病",
+     "corrected": "就好了",
+     "op": "replace",
+     "her_note": "“病” is not a normal Adj., so it cannot be with 很 or 不",
+     "explanation": "不病 → 就好了: 病 is not a normal Adj., so it cannot take 不."
+    },
+    {
+     "edit_id": "mengmu_samples#2/f7/p0/k0/e0",
+     "sample_id": "mengmu_samples#2",
+     "display": "一天孟子[病了很重→病得很重]",
+     "original": "病了很重",
+     "corrected": "病得很重",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "病了很重 → 病得很重: use 病得很重 to describe how serious the illness is."
+    }
+   ],
+   "not_an_error": "",
+   "her_terms": [
+    "病得很厉害",
+    "病得很重",
+    "Adj."
+   ]
+  }
+ },
+ {
+  "id": "verb_object_valency",
+  "name": "V. + Obj. structure",
+  "section": "grammar",
+  "definition": "Use each verb with the object and complement structure it allows; do not give a verb an extra object or omit a required one.",
+  "her_notes": [
+   "管事V.+Obj. compound, not followed by another Obj.",
+   "摘掉我的家人：掉itself cannot be followed by an Obj., Subj. 掉 + directional + place, but掉can be resultative complement following another main action verb",
+   "坐”sit” is used for animate Obj.",
+   "“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items."
+  ],
+  "detectable_by": "parser",
+  "n_train": 41,
+  "edit_shapes": [
+   [
+    "delete VV",
+    3
+   ],
+   [
+    "replace AD+VV",
+    2
+   ],
+   [
+    "comment",
+    2
+   ],
+   [
+    "insert words after VV",
+    2
+   ],
+   [
+    "replace NN+NN",
+    2
+   ]
+  ],
+  "card": {
+   "rule": "Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.",
+   "explanation_template": "<wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#13/f5/p0/k0/e0",
+     "sample_id": "shennong_samples#13",
+     "display": "他[拿说→拿着花说]",
+     "original": "拿说",
+     "corrected": "拿着花说",
+     "op": "replace",
+     "her_note": "着durative",
+     "explanation": "拿说 → 拿着花说: holding the flower is durative, so use 着durative and put 花 after 拿着."
+    },
+    {
+     "edit_id": "pear_story#4/f40/p0/k0-1/e2",
+     "sample_id": "pear_story#4",
+     "display": "[拿起骑车→扶起自行车]",
+     "original": "拿起骑车",
+     "corrected": "扶起自行车",
+     "op": "replace",
+     "her_note": "“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.",
+     "explanation": "拿起骑车 → 扶起自行车: 骑车 is a verb phrase and cannot be the object here; use 自行车 as the object of 扶起."
+    },
+    {
+     "edit_id": "shennong_samples#50/f4/p0/k0/e0",
+     "sample_id": "shennong_samples#50",
+     "display": "他跑遍[+大山小山]尝尝各种各样的植物",
+     "original": "",
+     "corrected": "大山小山",
+     "op": "insert",
+     "her_note": "跑遍 + place",
+     "explanation": "跑遍 → 跑遍大山小山: 跑遍 needs a place after it."
+    },
+    {
+     "edit_id": "mengmu_samples#41/f1/p0/k0/e0",
+     "sample_id": "mengmu_samples#41",
+     "display": "孟母一直管[事儿，儿子的教养→儿子的教育]",
+     "original": "事儿，儿子的教养",
+     "corrected": "儿子的教育",
+     "op": "replace",
+     "her_note": "管事V.+Obj. compound, not followed by another Obj.",
+     "explanation": "管事儿，儿子的教养 → 管儿子的教育: 管事 is a V.+Obj. compound, so it cannot be followed by another object."
+    },
+    {
+     "edit_id": "pear_story#4/f8/p1/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "他怎么能随便马虎得⟦掉我家庭⟧呢？一点都不合理",
+     "original": "掉我家庭",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "摘掉我的家人：掉itself cannot be followed by an Obj., Subj. 掉 + directional + place, but掉can be resultative complement following another main action verb",
+     "explanation": "掉我家庭 is not possible: 掉 itself cannot take an object; use 掉 + directional + place, or use 掉 as a resultative complement after another main action verb."
+    }
+   ],
+   "not_an_error": "Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.",
+   "her_terms": [
+    "着durative",
+    "跑遍 + place",
+    "管事V.+Obj. compound",
+    "掉 + directional + place",
+    "resultative complement"
+   ]
+  }
+ },
+ {
+  "id": "verb_reduplication_requests",
+  "name": "V.V. for requests or plans",
+  "section": "grammar",
+  "definition": "Use V.V. to make a request or express a tentative plan, not simply for any completed narrative action.",
+  "her_notes": [
+   "V.V. is used to make requests or plans"
+  ],
+  "detectable_by": "parser",
+  "n_train": 8,
+  "edit_shapes": [
+   [
+    "replace VV+VV",
+    4
+   ],
+   [
+    "replace VV+VV+SP",
+    1
+   ],
+   [
+    "replace VV+VV+NN",
+    1
+   ],
+   [
+    "replace VV",
+    1
+   ],
+   [
+    "delete VV+CD+VV",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use V.V. to make a request or express a plan. Do not use V.V. simply to describe an action in a completed narrative; use the ordinary verb or the corrected completed form instead.",
+   "explanation_template": "<wrong> → <correct>: This describes a completed/narrative action, not a request or plan, so do not use V.V.; use <correct> instead.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#26/f4/p0/k0-1/e2",
+     "sample_id": "mengmu_samples#26",
+     "display": "孟子老是想[玩玩→玩]",
+     "original": "玩玩",
+     "corrected": "玩",
+     "op": "replace",
+     "her_note": "V.V. is used to make requests or plans",
+     "explanation": "玩玩 → 玩: This is a habitual narrative action, not a request or plan, so do not use V.V.; use 玩 instead."
+    },
+    {
+     "edit_id": "shennong_samples#39/f4/p0/k0/e0",
+     "sample_id": "shennong_samples#39",
+     "display": "但是他刚[尝尝→尝]的花",
+     "original": "尝尝",
+     "corrected": "尝",
+     "op": "replace",
+     "her_note": "V.V. is used to make requests or plans",
+     "explanation": "尝尝 → 尝: This describes the flower he had just tasted, not a request or plan, so do not use V.V.; use 尝 instead."
+    },
+    {
+     "edit_id": "mengmu_samples#26/f2/p2/k0/e1",
+     "sample_id": "mengmu_samples#26",
+     "display": "孟子从早到晚想[玩玩儿→玩儿]",
+     "original": "玩玩儿",
+     "corrected": "玩儿",
+     "op": "replace",
+     "her_note": "V.V. is used to make requests or plans",
+     "explanation": "玩玩儿 → 玩儿: This is what he wanted to do from morning to night, not a request or plan, so do not use V.V.; use 玩儿 instead."
+    },
+    {
+     "edit_id": "shennong_samples#50/f4/p1/k0/e0",
+     "sample_id": "shennong_samples#50",
+     "display": "他跑遍[尝尝→尝了]各种各样的植物",
+     "original": "尝尝",
+     "corrected": "尝了",
+     "op": "replace",
+     "her_note": "V.V. is used to make requests or plans",
+     "explanation": "尝尝 → 尝了: This is a completed narrative action, not a request or plan, so do not use V.V.; use 尝了 instead."
+    },
+    {
+     "edit_id": "shennong_samples#40/f4/p0/k0/e0",
+     "sample_id": "shennong_samples#40",
+     "display": "他[跳跳了→跳了跳]",
+     "original": "跳跳了",
+     "corrected": "跳了跳",
+     "op": "replace",
+     "her_note": "V.V. is used to make requests or plans",
+     "explanation": "跳跳了 → 跳了跳: For this completed action, use 跳了跳, not 跳跳了."
+    }
+   ],
+   "not_an_error": "V.V. is appropriate when making a request or expressing a plan.",
+   "her_terms": [
+    "V.V."
+   ]
+  }
+ },
+ {
+  "id": "modal_and_control_verb_complements",
+  "name": "想 + V.; 叫/让 + V.",
+  "section": "grammar",
+  "definition": "想 must be followed by a verb phrase, not a noun. Control and modal-like verbs such as 叫/让 take a following action and do not take 了 in this use.",
+  "her_notes": [
+   "想 + V., cannot be followed by N.",
+   "叫/让 is a modal verb, no了",
+   "会will"
+  ],
+  "detectable_by": "parser",
+  "n_train": 14,
+  "edit_shapes": [
+   [
+    "delete AS",
+    1
+   ],
+   [
+    "insert 让 after VV",
+    1
+   ],
+   [
+    "replace CD+NN+VV",
+    1
+   ],
+   [
+    "replace VV+NN",
+    1
+   ],
+   [
+    "replace VV+PN+DEG+NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了.",
+   "explanation_template": "<wrong> → <correct>: 想 needs a following action (想 + V.); use 想让 + <person> + <V.> if the person is meant to do the action.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#35/f12/p0/k0/e0",
+     "sample_id": "mengmu_samples#35",
+     "display": "孟母一直想[+让]她的孩子受到良好的教育",
+     "original": "",
+     "corrected": "让",
+     "op": "insert",
+     "her_note": "想 + V., cannot be followed by N.",
+     "explanation": "孟母一直想她的孩子受到良好的教育 → 孟母一直想让她的孩子受到良好的教育: 想 needs a following action, so use 想让 + person + V."
+    },
+    {
+     "edit_id": "mengmu_samples#38/f2/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#38",
+     "display": "孟母[想儿子→想让儿子]开始打工可能减轻她的负担",
+     "original": "想儿子",
+     "corrected": "想让儿子",
+     "op": "replace",
+     "her_note": "想 + V., cannot be followed by N.",
+     "explanation": "孟母想儿子开始打工可能减轻她的负担 → 孟母想让儿子开始打工可能减轻她的负担: 想 needs a following action, so use 想让 + person + V."
+    },
+    {
+     "edit_id": "mengmu_samples#11/f3/p0/k0/e0",
+     "sample_id": "mengmu_samples#11",
+     "display": "他的妈妈[不想跟他的朋友去墓地→不想让他跟朋友去墓地]",
+     "original": "不想跟他的朋友去墓地",
+     "corrected": "不想让他跟朋友去墓地",
+     "op": "replace",
+     "her_note": "otherwise it means his mother didn’t want to go with his friend to the graveyard.",
+     "explanation": "不想跟他的朋友去墓地 → 不想让他跟朋友去墓地: use 想让 + person + V.; otherwise, it means his mother did not want to go to the graveyard with his friend."
+    },
+    {
+     "edit_id": "mengmu_samples#7/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#7",
+     "display": "孟子的妈妈叫[-了]孟子搬家",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "叫/让 is a modal verb, no了",
+     "explanation": "孟子的妈妈叫了孟子搬家 → 孟子的妈妈叫孟子搬家: 叫/让 is a modal verb here, so it takes no 了."
+    }
+   ],
+   "not_an_error": "Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.",
+   "her_terms": [
+    "想 + V.",
+    "叫/让 is a modal verb",
+    "no了"
+   ]
+  }
+ },
+ {
+  "id": "location_with_zai",
+  "name": "在+Place / 在Place + V.",
+  "section": "grammar",
+  "definition": "Use 在 + Place for a location, and place the location correctly before the action when needed: 在Place + V. or 住在+Place.",
+  "her_notes": [
+   "在+Place",
+   "在+ place",
+   "在Place",
+   "在Place住",
+   "住在+Place"
+  ],
+  "detectable_by": "parser",
+  "n_train": 50,
+  "edit_shapes": [
+   [
+    "insert 里 after NN",
+    3
+   ],
+   [
+    "insert 上 after NN",
+    3
+   ],
+   [
+    "replace NT+DEG+NN",
+    3
+   ],
+   [
+    "replace NN+DEG+NN",
+    3
+   ],
+   [
+    "comment",
+    2
+   ]
+  ],
+  "card": {
+   "rule": "Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.",
+   "explanation_template": "<wrong> → <correct>: <place> is the location, so use 在+Place before the action.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#21/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#21",
+     "display": "孟母觉得孩子[成长在什么地方→在什么地方成长]很重要",
+     "original": "成长在什么地方",
+     "corrected": "在什么地方成长",
+     "op": "replace",
+     "her_note": "在Place + V.",
+     "explanation": "成长在什么地方 → 在什么地方成长: 什么地方 is the location, so use 在Place + V."
+    },
+    {
+     "edit_id": "mengmu_samples#13/f0/p1/k0/e0",
+     "sample_id": "mengmu_samples#13",
+     "display": "孟子和他的妈妈住在离墓地很近[+的地方]",
+     "original": "",
+     "corrected": "的地方",
+     "op": "insert",
+     "her_note": "住在+Place",
+     "explanation": "住在离墓地很近 → 住在离墓地很近的地方: 住 takes 住在+Place, so the location needs 的地方."
+    },
+    {
+     "edit_id": "pear_story#1/f8/p0/k0/e0",
+     "sample_id": "pear_story#1",
+     "display": "小王[在马路→在马路上]骑自行车一看到别个人",
+     "original": "在马路",
+     "corrected": "在马路上",
+     "op": "replace",
+     "her_note": "在+ place",
+     "explanation": "在马路 → 在马路上: 马路上 is the place, so use 在+Place."
+    },
+    {
+     "edit_id": "pear_story#3/f1/p0/k0/e0",
+     "sample_id": "pear_story#3",
+     "display": "一个戴围巾的男人[站着在树顶的梯子上→在树顶的梯子上站着]拿一些梨",
+     "original": "站着在树顶的梯子上",
+     "corrected": "在树顶的梯子上站着",
+     "op": "replace",
+     "her_note": "在Place V1.着V2",
+     "explanation": "站着在树顶的梯子上 → 在树顶的梯子上站着: put the location before the action: 在Place V1.着V2."
+    }
+   ],
+   "not_an_error": "Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.",
+   "her_terms": [
+    "在+Place",
+    "在Place住",
+    "住在+Place",
+    "在Place + V.",
+    "在Place V1.着V2"
+   ]
+  }
+ },
+ {
+  "id": "directional_complements",
+  "name": "V. + directional complement + Place + 来/去",
+  "section": "grammar",
+  "definition": "Use directional complements in the correct order, for example 走到place来/去 and V. + directional complement + Place + 来/去. Do not use forms such as 走去 or 走来Place.",
+  "her_notes": [
+   "V. + directional complement + Place + 来/去",
+   "走到place来/去，cannot say “走去/来Place”",
+   "usually we do not say “走去”.",
+   "but not both回and走",
+   "拿起来pick up，拿上去means “bring it up”"
+  ],
+  "detectable_by": "parser",
+  "n_train": 31,
+  "edit_shapes": [
+   [
+    "replace VV",
+    6
+   ],
+   [
+    "replace VV+VV",
+    5
+   ],
+   [
+    "replace VV+VV+NN",
+    3
+   ],
+   [
+    "comment",
+    2
+   ],
+   [
+    "replace VV+AS",
+    2
+   ]
+  ],
+  "card": {
+   "rule": "Use V. + directional complement + Place + 来/去: put the place after the directional complement and before 来/去. For walking to a place, use 走到place来/去, not 走去 or 走来Place.",
+   "explanation_template": "<wrong> → <correct>: put the place after the directional complement; use V. + directional complement + Place + 来/去 (or 走到place来/去).",
+   "examples": [
+    {
+     "edit_id": "pear_story#1/f2/p0/k0/e0",
+     "sample_id": "pear_story#1",
+     "display": "[爬下来梯子→爬下梯子来]",
+     "original": "爬下来梯子",
+     "corrected": "爬下梯子来",
+     "op": "replace",
+     "her_note": "V. + directional complement + Place + 来/去",
+     "explanation": "爬下来梯子 → 爬下梯子来: put 梯子 after 下 and before 来: V. + directional complement + Place + 来/去."
+    },
+    {
+     "edit_id": "pear_story#1/f1/p0/k0/e0",
+     "sample_id": "pear_story#1",
+     "display": "张先生[爬上去梯子→爬上梯子去]",
+     "original": "爬上去梯子",
+     "corrected": "爬上梯子去",
+     "op": "replace",
+     "her_note": "V. + directional complement + Place + 来/去",
+     "explanation": "爬上去梯子 → 爬上梯子去: put 梯子 after 上 and before 去: V. + directional complement + Place + 来/去."
+    },
+    {
+     "edit_id": "pear_story#1/f14/p0/k0/e0",
+     "sample_id": "pear_story#1",
+     "display": "孩子一直[走去张先生的树→走到张先生的树下]",
+     "original": "走去张先生的树",
+     "corrected": "走到张先生的树下",
+     "op": "replace",
+     "her_note": "走到place来/去，cannot say “走去/来Place”",
+     "explanation": "走去张先生的树 → 走到张先生的树下: for walking to a place, use 走到place, not 走去place."
+    },
+    {
+     "edit_id": "pear_story#1/f5/p1/note/e0",
+     "sample_id": "pear_story#1",
+     "display": "马先生跟他的驴⟦走去筐的后边来⟧",
+     "original": "走去筐的后边来",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "走到place来/去，cannot say “走去/来Place”",
+     "explanation": "走去筐的后边来: use 走到place来/去; do not say 走去 or 来Place."
+    },
+    {
+     "edit_id": "shennong_samples#27/f7/p0/k0/e0",
+     "sample_id": "shennong_samples#27",
+     "display": "他把灵芝[带回走了→带回家了]",
+     "original": "带回走了",
+     "corrected": "带回家了",
+     "op": "replace",
+     "her_note": "but not both回and走",
+     "explanation": "带回走了 → 带回家了: do not use both 回 and 走 together."
+    }
+   ],
+   "not_an_error": "Do not treat 拿起来 and 拿上去 as interchangeable word-order forms: 拿起来 means “pick up,” while 拿上去 means “bring it up.”",
+   "her_terms": [
+    "V. + directional complement + Place + 来/去",
+    "走到place来/去",
+    "走去/来Place",
+    "拿起来",
+    "拿上去"
+   ]
+  }
+ },
+ {
+  "id": "resultative_complements",
+  "name": "resultative complement",
+  "section": "grammar",
+  "definition": "Use a resultative complement when the action has reached its result, for example 吃到, 找到, 撞到, 把Obj. V. Resultative complement.",
+  "her_notes": [
+   "找look for vs.找到find",
+   "吃到result, 写下",
+   "add “又” to make it smooth, 撞到+Obj.",
+   "把Obj. V. Resultative complement"
+  ],
+  "detectable_by": "parser",
+  "n_train": 18,
+  "edit_shapes": [
+   [
+    "replace VV",
+    3
+   ],
+   [
+    "replace VV+NN",
+    2
+   ],
+   [
+    "comment",
+    1
+   ],
+   [
+    "replace VV+AS+CD+JJ+NN",
+    1
+   ],
+   [
+    "replace VV+PU+BA+NN+VA",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use a resultative complement when the action reaches its result: 吃到, 写下, 撞到+Obj., or 把Obj. V. Resultative complement.",
+   "explanation_template": "<wrong> → <correct>: the action reaches a result, so use <resultative complement>.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#29/f3/p0/k3/e0",
+     "sample_id": "shennong_samples#29",
+     "display": "然后写[+下了]他学了什么",
+     "original": "",
+     "corrected": "下了",
+     "op": "insert",
+     "her_note": "",
+     "explanation": "写 → 写下了: the writing is completed, so use 写下."
+    },
+    {
+     "edit_id": "pear_story#2/f6/p1/k0/e0",
+     "sample_id": "pear_story#2",
+     "display": "一下子[撞了一个大石→撞到了一个大石头]",
+     "original": "撞了一个大石",
+     "corrected": "撞到了一个大石头",
+     "op": "replace",
+     "her_note": "add “又” to make it smooth, 撞到+Obj.",
+     "explanation": "撞了一个大石 → 撞到了一个大石头: the action reaches the rock, so use 撞到+Obj."
+    },
+    {
+     "edit_id": "pear_story#3/f3/p0/k0/e0",
+     "sample_id": "pear_story#3",
+     "display": "他用他的围巾[擦，把梨干净→把梨擦干净]",
+     "original": "擦，把梨干净",
+     "corrected": "把梨擦干净",
+     "op": "replace",
+     "her_note": "把Obj. V. Resultative complement",
+     "explanation": "擦，把梨干净 → 把梨擦干净: the pear becomes clean, so use 把Obj. V. Resultative complement."
+    },
+    {
+     "edit_id": "shennong_samples#5/f7/p0/k0/e0",
+     "sample_id": "shennong_samples#5",
+     "display": "特别是他[吃毒→吃到有毒的植物]的时候",
+     "original": "吃毒",
+     "corrected": "吃到有毒的植物",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "吃毒 → 吃到有毒的植物: he comes across and eats a poisonous plant, so use 吃到."
+    },
+    {
+     "edit_id": "pear_story#1/f9/p0/k0/e0",
+     "sample_id": "pear_story#1",
+     "display": "[一下子就撞自行车→自行车一下子就撞到石头了]",
+     "original": "一下子就撞自行车",
+     "corrected": "自行车一下子就撞到石头了",
+     "op": "replace",
+     "her_note": "“撞自行车” means to hit the bike, in fact, it is: the bike hit the rock.",
+     "explanation": "一下子就撞自行车 → 自行车一下子就撞到石头了: 撞自行车 means to hit the bike; here the bike hits the rock, so use 自行车撞到石头."
+    }
+   ],
+   "not_an_error": "Do not use 撞+Obj. when the meaning is that the object hits something else: 撞自行车 means to hit the bike.",
+   "her_terms": [
+    "吃到result",
+    "写下",
+    "撞到+Obj.",
+    "把Obj. V. Resultative complement"
+   ]
+  }
+ },
+ {
+  "id": "ba_bei_constructions",
+  "name": "把 / 被",
+  "section": "grammar",
+  "definition": "Use 把 for an initiated disposal action, usually with a result or completion; use 被 for passive voice. Do not use 把 when the subject did not cause the event.",
+  "her_notes": [
+   "“把”usually ends with了",
+   "被 means passive voice “be done”",
+   "“把“ is used for initiated actions (“disposal”), here it is not he who threw those pears, but the pears fell themselves."
+  ],
+  "detectable_by": "parser",
+  "n_train": 9,
+  "edit_shapes": [
+   [
+    "replace VV",
+    1
+   ],
+   [
+    "comment",
+    1
+   ],
+   [
+    "replace LB",
+    1
+   ],
+   [
+    "replace VV+PU+BA+NN+VA",
+    1
+   ],
+   [
+    "replace VV+JJ+NN+NR",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 把 for an initiated action that disposes of an object: 把Obj. V. Resultative complement, usually ending with 了. Use 被 for passive voice (“be done”), not for an active or self-happening event.",
+   "explanation_template": "<wrong> → <correct>: <subject> <does/does not initiate> the action. Use <把Obj. V. Resultative complement + 了 / 被 / no 把> because <object> is <disposed of / passively affected / doing the action by itself>.",
+   "examples": [
+    {
+     "edit_id": "pear_story#2/f6/p0/k0/e0",
+     "sample_id": "pear_story#2",
+     "display": "把帽子[弄掉→弄掉了]",
+     "original": "弄掉",
+     "corrected": "弄掉了",
+     "op": "replace",
+     "her_note": "“把”usually ends with了",
+     "explanation": "把帽子弄掉 → 把帽子弄掉了: this is a completed 把 action, so it usually ends with 了."
+    },
+    {
+     "edit_id": "pear_story#3/f8/p1/note/e0",
+     "sample_id": "pear_story#3",
+     "display": "⟦他把梨从筐里倒出去⟧",
+     "original": "他把梨从筐里倒出去",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“把“ is used for initiated actions (“disposal”), here it is not he who threw those pears, but the pears fell themselves. 倒 means “pour” if it is an initiated action, and means “fall” if it is not an initiated action, and followed by 下去/下来。",
+     "explanation": "他把梨从筐里倒出去: do not use 把 because he did not initiate throwing the pears; the pears fell themselves, so use 倒下去/倒下来."
+    },
+    {
+     "edit_id": "pear_story#2/f7/p0/k0/e0",
+     "sample_id": "pear_story#2",
+     "display": "[被→]筐里的梨子坐在地上了",
+     "original": "被",
+     "corrected": "",
+     "op": "replace",
+     "her_note": "被 means passive voice “be done”",
+     "explanation": "被筐里的梨子坐在地上了 → 筐里的梨子坐在地上了: 被 means passive voice, “be done,” so do not use it here."
+    },
+    {
+     "edit_id": "pear_story#3/f3/p0/k0/e0",
+     "sample_id": "pear_story#3",
+     "display": "他用他的围巾[擦，把梨干净→把梨擦干净]",
+     "original": "擦，把梨干净",
+     "corrected": "把梨擦干净",
+     "op": "replace",
+     "her_note": "把Obj. V. Resultative complement",
+     "explanation": "擦，把梨干净 → 把梨擦干净: put the object after 把 and use the resultative complement: 把Obj. V. Resultative complement."
+    },
+    {
+     "edit_id": "shennong_samples#41/f5/p0/k0/e0",
+     "sample_id": "shennong_samples#41",
+     "display": "[叫了这个对身体有好处的植物→把这个对身体有好处的植物叫做]灵芝",
+     "original": "叫了这个对身体有好处的植物",
+     "corrected": "把这个对身体有好处的植物叫做",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "叫了这个对身体有好处的植物灵芝 → 把这个对身体有好处的植物叫做灵芝: use 把 to show the initiated action of naming the plant."
+    }
+   ],
+   "not_an_error": "Do not use 把 when the subject did not cause the event, such as when the pears fell themselves. Do not flag 被 unless passive voice (“be done”) is intended.",
+   "her_terms": [
+    "initiated actions (“disposal”)",
+    "把Obj. V. Resultative complement",
+    "passive voice “be done”"
+   ]
+  }
+ },
+ {
+  "id": "negation_bu_mei",
+  "name": "不 for habit; 没 for non-occurrence",
+  "section": "grammar",
+  "definition": "Use 不 for habit, routine, willingness, or general negation; use 没 for an event that did not occur. Use 没 + V. for a negated action event.",
+  "her_notes": [
+   "不for habit/routine/willingness, 没for non-occurrence of an event",
+   "没+ V.",
+   "没 +V., no了, the verb is an action verb"
+  ],
+  "detectable_by": "parser",
+  "n_train": 5,
+  "edit_shapes": [
+   [
+    "replace AD",
+    2
+   ],
+   [
+    "replace AD+VV",
+    1
+   ],
+   [
+    "replace AD+VA",
+    1
+   ],
+   [
+    "replace AD+P+NN+DEG+NN+VE",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 不 for a habit, routine, willingness, or general negation; use 没 for an action or event that did not occur. Use 没 + V. for a negated action event.",
+   "explanation_template": "<wrong> → <correct>: this is a non-occurrence of an event, so use 没, not 不.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#1/f8/p0/k2/e2",
+     "sample_id": "shennong_samples#1",
+     "display": "这就要看你也吃[不→没]吃灵芝了",
+     "original": "不",
+     "corrected": "没",
+     "op": "replace",
+     "her_note": "不for habit/routine/willingness, 没for non-occurrence of an event",
+     "explanation": "不吃 → 没吃: this asks whether eating lingzhi occurred, so use 没 for non-occurrence of an event."
+    },
+    {
+     "edit_id": "shennong_samples#47/f12/p0/k0-1-2/e3",
+     "sample_id": "shennong_samples#47",
+     "display": "[没→不]再有毒了",
+     "original": "没",
+     "corrected": "不",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "没再有毒了 → 不再有毒了: this is a general change of state, not one event that did not occur, so use 不."
+    },
+    {
+     "edit_id": "shennong_samples#11/f7/p0/k0-1/e1",
+     "sample_id": "shennong_samples#11",
+     "display": "现在他们懂什么植物[不毒→没有毒]",
+     "original": "不毒",
+     "corrected": "没有毒",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "不毒 → 没有毒: having poison is negated here with 没有."
+    },
+    {
+     "edit_id": "mengmu_samples#21/f3/p0/k0/e0",
+     "sample_id": "mengmu_samples#21",
+     "display": "孟母觉得这个环境[不对孩子的成长有→对孩子的成长没有]好处",
+     "original": "不对孩子的成长有",
+     "corrected": "对孩子的成长没有",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "不对孩子的成长有好处 → 对孩子的成长没有好处: use 没有 to say that this environment has no benefit for the child's growth."
+    }
+   ],
+   "not_an_error": "Do not use this rule for the pattern “不是……而是……”, which is used to refute something conventional and affirm something unexpected, or to correct something wrong.",
+   "her_terms": [
+    "不for habit/routine/willingness",
+    "没for non-occurrence of an event"
+   ]
+  }
+ },
+ {
+  "id": "question_patterns",
+  "name": "是……吗 / repeated Wh-Q",
+  "section": "grammar",
+  "definition": "Form questions with the appropriate Chinese question pattern, such as 能不能吃, 知不知道, or the repeated Wh-Q pattern for “wh-ever…”.",
+  "her_notes": [
+   "the structure “repeated Wh-Q” expressing “wh-ever…, will do that…”.",
+   "e.g., 蘑菇能不能吃",
+   "the “if” in “see if + clause” is not 如果",
+   "the “if” in “not know if + clause” is not 如果"
+  ],
+  "detectable_by": "parser",
+  "n_train": 28,
+  "edit_shapes": [
+   [
+    "replace VV",
+    2
+   ],
+   [
+    "replace PN+VV+VV",
+    2
+   ],
+   [
+    "replace CS",
+    1
+   ],
+   [
+    "replace CS+VV",
+    1
+   ],
+   [
+    "delete CS",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.",
+   "explanation_template": "<wrong> → <correct>: this asks <whether/what/where>, so use <question pattern>, not 如果.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#52/f16/p1/k0/e0",
+     "sample_id": "shennong_samples#52",
+     "display": "看看[如果→是]毒还是药",
+     "original": "如果",
+     "corrected": "是",
+     "op": "replace",
+     "her_note": "the “if” in “see if + clause” is not 如果",
+     "explanation": "如果 → 是: “see if” asks whether it is poison or medicine, so use 是……还是……, not 如果."
+    },
+    {
+     "edit_id": "shennong_samples#15/f2/p0/k0/e0",
+     "sample_id": "shennong_samples#15",
+     "display": "不知道[如果有毒→有没有毒]",
+     "original": "如果有毒",
+     "corrected": "有没有毒",
+     "op": "replace",
+     "her_note": "the “if” in “not know if + clause” is not 如果",
+     "explanation": "如果有毒 → 有没有毒: “not know if” asks whether it is poisonous, so use a V不V question, not 如果."
+    },
+    {
+     "edit_id": "pear_story#4/f34/p1/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "我无话可说！人类创造文明到底⟦从哪里由此而来⟧啊",
+     "original": "从哪里由此而来",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "到底从何而来：由此而来 means “come from this”, but here should be a question “come from where”.",
+     "explanation": "从哪里由此而来 → 从何而来: this asks where it comes from, so use a “where” question; 由此而来 means “come from this”."
+    },
+    {
+     "edit_id": "pear_story#2/f3/p1/k0/e0",
+     "sample_id": "pear_story#2",
+     "display": "男孩一看哪一筐有更多梨子就往自己的自行车上放[梨子的筐→哪一筐]",
+     "original": "梨子的筐",
+     "corrected": "哪一筐",
+     "op": "replace",
+     "her_note": "the structure “repeated Wh-Q” expressing “wh-ever…, will do that…”.",
+     "explanation": "梨子的筐 → 哪一筐: for “whichever basket has more pears, put that basket...”, repeat 哪一筐 in the result clause."
+    }
+   ],
+   "not_an_error": "",
+   "her_terms": [
+    "repeated Wh-Q"
+   ]
+  }
+ },
+ {
+  "id": "missing_or_unclear_subject",
+  "name": "miss a Subj.",
+  "section": "grammar",
+  "definition": "State the subject when it is required for grammatical clarity, especially after an inserted narrator comment or when the previous subject cannot continue.",
+  "her_notes": [
+   "miss a Subj.",
+   "here needs a subject",
+   "the Subj. here cannot be omitted, because the preceding “我怎么能…” is an inserted “narrator comment”, which is temporarily detached from the main storyline. When it goes back to the main story, the Subj. should be restated.",
+   "it is unclear what the subject is, add “神农说：一吃夹竹桃就不舒服”, it is not “死”"
+  ],
+  "detectable_by": "parser",
+  "n_train": 11,
+  "edit_shapes": [
+   [
+    "comment",
+    3
+   ],
+   [
+    "insert words after PU",
+    2
+   ],
+   [
+    "insert 他 after PU",
+    1
+   ],
+   [
+    "insert 孟子 after PU",
+    1
+   ],
+   [
+    "insert 他 after P",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "State the Subj. when leaving it out would make it unclear who does the action. Restate the Subj. after a different Subj. or an inserted “narrator comment” before returning to the main story.",
+   "explanation_template": "<wrong> → <correct>: Add <Subj.> because otherwise it is unclear who <action>; the previous <Subj./narrator comment> cannot continue here.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#1/f4/p0/k0/e1",
+     "sample_id": "shennong_samples#1",
+     "display": "[+他]就生病了",
+     "original": "",
+     "corrected": "他",
+     "op": "insert",
+     "her_note": "otherwise it is ambiguous who gets sick",
+     "explanation": "就生病了 → 他就生病了: Add 他 because otherwise it is ambiguous who gets sick."
+    },
+    {
+     "edit_id": "mengmu_samples#2/f3/p0/k1/e0",
+     "sample_id": "mengmu_samples#2",
+     "display": "[+孟子]练习写文字",
+     "original": "",
+     "corrected": "孟子",
+     "op": "insert",
+     "her_note": "miss a Subj.",
+     "explanation": "练习写文字 → 孟子练习写文字: Add 孟子; this sentence misses a Subj."
+    },
+    {
+     "edit_id": "pear_story#4/f40/p0/k0-1/e0",
+     "sample_id": "pear_story#4",
+     "display": "[+他们过来]用心得来帮忙整理梨子",
+     "original": "",
+     "corrected": "他们过来",
+     "op": "insert",
+     "her_note": "since the preceding phrase has “我们”, the Subj. 他们 should be stated",
+     "explanation": "用心得来帮忙整理梨子 → 他们过来用心得来帮忙整理梨子: Add 他们 because the preceding Subj. is 我们."
+    },
+    {
+     "edit_id": "pear_story#4/f26/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "我怎么能还要发火呢？但[+我]只能思考几分钟",
+     "original": "",
+     "corrected": "我",
+     "op": "insert",
+     "her_note": "",
+     "explanation": "但只能思考几分钟 → 但我只能思考几分钟: Add 我 because the preceding 我怎么能… is an inserted narrator comment, so the Subj. must be restated when returning to the story."
+    },
+    {
+     "edit_id": "pear_story#4/f15/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "然后突然一口气吃掉了我家长！他到底以为自己是谁啊？难道以为自己是上帝吗？我生气极了！下午[就→他还]继续爬上树",
+     "original": "就",
+     "corrected": "他还",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "下午就继续爬上树 → 下午他还继续爬上树: Add 他, or readers will understand the Subj. as 我; 还 gives a surprising, angry tone."
+    }
+   ],
+   "not_an_error": "Do not flag an omitted subject when the previous subject can clearly continue. A subject needs to be restated when the previous subject cannot continue or would cause ambiguity.",
+   "her_terms": [
+    "Subj.",
+    "narrator comment"
+   ]
+  }
+ },
+ {
+  "id": "perception_look_see",
+  "name": "看 look vs. 看到 see",
+  "section": "word_choice",
+  "definition": "看 is “look”; 看到 is “see/catch sight of” and includes the result of seeing. Choose according to whether the narrative means the attempt or the achieved perception.",
+  "her_notes": [
+   "看look vs.看到see",
+   "看look vs.看到see, no了",
+   "看look, 看到see"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 26,
+  "edit_shapes": [
+   [
+    "replace VV",
+    12
+   ],
+   [
+    "replace AD+VV",
+    4
+   ],
+   [
+    "replace VV+AS",
+    3
+   ],
+   [
+    "replace NN+AD+VV",
+    2
+   ],
+   [
+    "replace AD+VV+PN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.",
+   "explanation_template": "<wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#43/f3/p0/k0/e0",
+     "sample_id": "shennong_samples#43",
+     "display": "他一[看→看到]花",
+     "original": "看",
+     "corrected": "看到",
+     "op": "replace",
+     "her_note": "看look vs.看到see",
+     "explanation": "看 → 看到: he actually sees the flower, so use 看到, not 看."
+    },
+    {
+     "edit_id": "shennong_samples#14/f0/p0/k0/e0",
+     "sample_id": "shennong_samples#14",
+     "display": "然后他们[看了→看到了]很多植物",
+     "original": "看了",
+     "corrected": "看到了",
+     "op": "replace",
+     "her_note": "看look vs.看到see",
+     "explanation": "看了 → 看到了: they actually see many plants, so use 看到; 了 follows the completed result."
+    },
+    {
+     "edit_id": "mengmu_samples#9/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#9",
+     "display": "他妈妈[看→看到]他跟别的孩子在墓地里祭拜",
+     "original": "看",
+     "corrected": "看到",
+     "op": "replace",
+     "her_note": "看look vs.看到see",
+     "explanation": "看 → 看到: the mother actually sees him worshipping in the cemetery, so use 看到, not 看."
+    },
+    {
+     "edit_id": "shennong_samples#11/f3/p0/k0/e1",
+     "sample_id": "shennong_samples#11",
+     "display": "神农不喜欢[看→看到]他的城市生病了",
+     "original": "看",
+     "corrected": "看到",
+     "op": "replace",
+     "her_note": "看look vs.看到see, no了",
+     "explanation": "看 → 看到: Shennong sees that his city is sick, so use 看到; no 了 is needed."
+    }
+   ],
+   "not_an_error": "Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.",
+   "her_terms": [
+    "看look vs.看到see",
+    "no了",
+    "看look, 看到see"
+   ]
+  }
+ },
+ {
+  "id": "search_find",
+  "name": "找 look for vs. 找到 find",
+  "section": "word_choice",
+  "definition": "找 means “look for”; 找到 means “find” and includes the successful result.",
+  "her_notes": [
+   "找look for vs.找到find",
+   "找look for vs. 找到find"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 7,
+  "edit_shapes": [
+   [
+    "replace VV+AS",
+    2
+   ],
+   [
+    "replace VV+DT+NN",
+    1
+   ],
+   [
+    "insert 到 after VV",
+    1
+   ],
+   [
+    "replace VV",
+    1
+   ],
+   [
+    "delete VV",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "找 means “look for.” Use 找到 when the person successfully finds something.",
+   "explanation_template": "<wrong> → <correct>: the person successfully finds <object>, so use 找到, not 找.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#29/f4/p0/k0/e0",
+     "sample_id": "shennong_samples#29",
+     "display": "他[找了→找到了]第一个菜",
+     "original": "找了",
+     "corrected": "找到了",
+     "op": "replace",
+     "her_note": "找look for vs.找到find",
+     "explanation": "找了 → 找到了: he successfully finds the first dish, so use 找到, not 找."
+    },
+    {
+     "edit_id": "shennong_samples#13/f2/p0/k0/e0",
+     "sample_id": "shennong_samples#13",
+     "display": "他[找有的花→找到一种植物]",
+     "original": "找有的花",
+     "corrected": "找到一种植物",
+     "op": "replace",
+     "her_note": "找look for vs.找到find",
+     "explanation": "找有的花 → 找到一种植物: he successfully finds a plant, so use 找到, not 找."
+    },
+    {
+     "edit_id": "shennong_samples#1/f5/p0/k0/e0",
+     "sample_id": "shennong_samples#1",
+     "display": "一个人正好[找了→找到了]神农",
+     "original": "找了",
+     "corrected": "找到了",
+     "op": "replace",
+     "her_note": "找look for vs.找到find",
+     "explanation": "找了 → 找到了: the person successfully finds Shennong, so use 找到, not 找."
+    },
+    {
+     "edit_id": "mengmu_samples#1/f1/p0/k0/e1",
+     "sample_id": "mengmu_samples#1",
+     "display": "孟母终于在一位很有名的文学家[找→找到]工作了",
+     "original": "找",
+     "corrected": "找到",
+     "op": "replace",
+     "her_note": "找look for vs. 找到find",
+     "explanation": "找 → 找到: Meng Mu successfully finds work with a famous writer, so use 找到, not 找."
+    }
+   ],
+   "not_an_error": "Do not use this rule when the meaning is only “look for” and does not include a successful result.",
+   "her_terms": [
+    "找look for vs.找到find"
+   ]
+  }
+ },
+ {
+  "id": "listen_hear",
+  "name": "听 listen vs. 听到 hear",
+  "section": "word_choice",
+  "definition": "听 is “listen”; 听到 is “hear” and expresses the result of perceiving a sound.",
+  "her_notes": [
+   "听listen vs.听到hear"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 1,
+  "edit_shapes": [
+   [
+    "replace VV",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 听 for “listen”; use 听到 for “hear,” when the sentence means that someone perceived a sound.",
+   "explanation_template": "<听> → <听到>: this means “hear” a sound, the result of perceiving it, not “listen.”",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#35/f6/p0/k0/e0",
+     "sample_id": "mengmu_samples#35",
+     "display": "他们[听→听到]饭馆和商店",
+     "original": "听",
+     "corrected": "听到",
+     "op": "replace",
+     "her_note": "听listen vs.听到hear",
+     "explanation": "听 → 听到: this means “hear” the restaurant and shops, the result of perceiving a sound, not “listen.”"
+    }
+   ],
+   "not_an_error": "Do not flag 听 when the meaning is “listen.”",
+   "her_terms": [
+    "听listen vs.听到hear"
+   ]
+  }
+ },
+ {
+  "id": "near_synonym_precision",
+  "name": "near-synonyms: choose the intended word",
+  "section": "word_choice",
+  "definition": "Choose the near-synonym whose meaning fits the intended event, duration, possibility, or degree; similar-looking words are not interchangeable.",
+  "her_notes": [
+   "高兴is for short-term and can change quickly，幸福is for long-term, life-related happiness",
+   "“又“ emphasizes repeating vs. ”也“ emphasizes similarity",
+   "会means “will”, for future",
+   "“结果” for unexpected result",
+   "“经验” is a noun."
+  ],
+  "detectable_by": "judgement",
+  "n_train": 75,
+  "edit_shapes": [
+   [
+    "replace NN",
+    16
+   ],
+   [
+    "replace VV",
+    12
+   ],
+   [
+    "comment",
+    6
+   ],
+   [
+    "replace AD",
+    4
+   ],
+   [
+    "replace VA",
+    3
+   ]
+  ],
+  "card": {
+   "rule": "Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.",
+   "explanation_template": "<wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#44/f6/p0/k0/e0",
+     "sample_id": "shennong_samples#44",
+     "display": "神农很[幸福→高兴]",
+     "original": "幸福",
+     "corrected": "高兴",
+     "op": "replace",
+     "her_note": "幸福is for long-term, life-related happiness",
+     "explanation": "幸福 → 高兴: use 高兴 because this is short-term happiness; 幸福 is for long-term, life-related happiness."
+    },
+    {
+     "edit_id": "mengmu_samples#17/f1/p0/k0-1/e1",
+     "sample_id": "mengmu_samples#17",
+     "display": "而是[很高兴→幸福]的童年",
+     "original": "很高兴",
+     "corrected": "幸福",
+     "op": "replace",
+     "her_note": "高兴is for short-term and can change quickly，幸福is for long-term, life-related happiness",
+     "explanation": "很高兴 → 幸福: use 幸福 because this describes a long-term, life-related happy childhood; 高兴 is short-term and can change quickly."
+    },
+    {
+     "edit_id": "shennong_samples#13/f6/p0/k0/e0",
+     "sample_id": "shennong_samples#13",
+     "display": "有的[食品→植物]很有用",
+     "original": "食品",
+     "corrected": "植物",
+     "op": "replace",
+     "her_note": "“食品” is usually for processed food",
+     "explanation": "食品 → 植物: use 植物 for plants; 食品 is usually for processed food."
+    },
+    {
+     "edit_id": "mengmu_samples#35/f13/p0/k0/e0",
+     "sample_id": "mengmu_samples#35",
+     "display": "难怪她的[男孩子→儿子]成为孟子",
+     "original": "男孩子",
+     "corrected": "儿子",
+     "op": "replace",
+     "her_note": "男孩子boys, not have the meaning of son",
+     "explanation": "男孩子 → 儿子: use 儿子 for a son; 男孩子 means boys, not son."
+    },
+    {
+     "edit_id": "pear_story#1/f15/p0/k0/e0",
+     "sample_id": "pear_story#1",
+     "display": "觉得这些梨子比别的水果[最好不过了→都好]",
+     "original": "最好不过了",
+     "corrected": "都好",
+     "op": "replace",
+     "her_note": "最好不过了cannot be used in comparative sentences, it means “the best option”.",
+     "explanation": "最好不过了 → 都好: use 都好 in this comparison; 最好不过了 means “the best option” and cannot be used in comparative sentences."
+    }
+   ],
+   "not_an_error": "Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.",
+   "her_terms": [
+    "了completed"
+   ]
+  }
+ },
+ {
+  "id": "collocation_selection",
+  "name": "word collocation",
+  "section": "word_choice",
+  "definition": "Use words with their normal collocations; a grammatically possible combination may still not be a natural Chinese phrase.",
+  "her_notes": [
+   "良好 is usually not with生活",
+   "良好is not with工作",
+   "“食品” is usually for processed food",
+   "麻烦is usually not used to describe植物",
+   "口味is for a person"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 69,
+  "edit_shapes": [
+   [
+    "replace VV",
+    10
+   ],
+   [
+    "comment",
+    5
+   ],
+   [
+    "replace NN",
+    3
+   ],
+   [
+    "replace VV+PN+DEG+NN",
+    2
+   ],
+   [
+    "replace VA",
+    2
+   ]
+  ],
+  "card": {
+   "rule": "Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.",
+   "explanation_template": "<wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.",
+   "examples": [
+    {
+     "edit_id": "pear_story#4/f1/p1/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "⟦秋季期间⟧",
+     "original": "秋季期间",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.",
+     "explanation": "秋季期间 → 整个秋季期间: Time + 期间 usually refers to a particular, special, or long period, so 整个 makes this period specific."
+    },
+    {
+     "edit_id": "pear_story#4/f12/p1/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "然后忙着偷走⟦优秀的梨子⟧",
+     "original": "优秀的梨子",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“优秀“ cannot be used for items/things, usually for people.",
+     "explanation": "优秀的梨子: 优秀 normally describes people, not items such as pears."
+    },
+    {
+     "edit_id": "mengmu_samples#15/f3/p0/k0/e1",
+     "sample_id": "mengmu_samples#15",
+     "display": "下个家在[很忙的地方→市场附近]",
+     "original": "很忙的地方",
+     "corrected": "市场附近",
+     "op": "replace",
+     "her_note": "“忙“ is for people",
+     "explanation": "很忙的地方 → 市场附近: 忙 is normally used for people, not places."
+    },
+    {
+     "edit_id": "pear_story#2/f7/p0/k0/e1",
+     "sample_id": "pear_story#2",
+     "display": "被筐里的梨子[坐→撒]在地上了",
+     "original": "坐",
+     "corrected": "撒",
+     "op": "replace",
+     "her_note": "坐”sit” is used for animate Obj.",
+     "explanation": "梨子坐在地上 → 梨子撒在地上: 坐 “sit” is used with an animate object."
+    },
+    {
+     "edit_id": "pear_story#3/f4/p0/k1/e0",
+     "sample_id": "pear_story#3",
+     "display": "就一个男人[遛→牵着]一只驴走过去",
+     "original": "遛",
+     "corrected": "牵着",
+     "op": "replace",
+     "her_note": "着durative，“遛“ for 狗only.",
+     "explanation": "遛一只驴 → 牵着一只驴: 遛 is normally used for dogs only."
+    }
+   ],
+   "not_an_error": "",
+   "her_terms": [
+    "Time + 期间",
+    "V.得很厉害",
+    "着durative",
+    "no了for habit/routine"
+   ]
+  }
+ },
+ {
+  "id": "word_class_choice",
+  "name": "word class",
+  "section": "word_choice",
+  "definition": "Choose the word class required by the structure, for example noun, adjective, adverb, or verb, rather than using a related word of the wrong class.",
+  "her_notes": [
+   "“思维“ is a noun",
+   "“经验” is a noun.",
+   "“文明” can be an Adj., meaning “civilized”.",
+   "adv.地V",
+   "在place滚来滚去，multi-syllabic adv. + 地（mono-syllabic adv. cannot be used with 地）"
+  ],
+  "detectable_by": "parser",
+  "n_train": 34,
+  "edit_shapes": [
+   [
+    "replace VV",
+    3
+   ],
+   [
+    "replace NN",
+    3
+   ],
+   [
+    "replace VC+VA",
+    2
+   ],
+   [
+    "replace JJ+NN",
+    2
+   ],
+   [
+    "comment",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.",
+   "explanation_template": "<wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#29/f6/p0/k0/e0",
+     "sample_id": "mengmu_samples#29",
+     "display": "他整天不是[思维→思考]就是读书",
+     "original": "思维",
+     "corrected": "思考",
+     "op": "replace",
+     "her_note": "“思维“ is a noun",
+     "explanation": "思维 → 思考: here 整天不是…就是… needs a verb, but 思维 is a noun."
+    },
+    {
+     "edit_id": "mengmu_samples#17/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#17",
+     "display": "旅行的时候孟子[经验→了解]很多的看法",
+     "original": "经验",
+     "corrected": "了解",
+     "op": "replace",
+     "her_note": "“经验” is a noun.",
+     "explanation": "经验 → 了解: here the sentence needs a verb before 很多的看法, but 经验 is a noun."
+    },
+    {
+     "edit_id": "pear_story#3/f5/p0/k0/e1",
+     "sample_id": "pear_story#3",
+     "display": "这个戴围巾的男人拿[多→很多]梨",
+     "original": "多",
+     "corrected": "很多",
+     "op": "replace",
+     "her_note": "很多+noun",
+     "explanation": "多 → 很多: before the noun 梨, use 很多+noun."
+    },
+    {
+     "edit_id": "pear_story#4/f35/p0/k0/e2",
+     "sample_id": "pear_story#4",
+     "display": "看起一点[文明都没有→都不文明]",
+     "original": "文明都没有",
+     "corrected": "都不文明",
+     "op": "replace",
+     "her_note": "“文明” can be an Adj., meaning “civilized”.",
+     "explanation": "文明都没有 → 都不文明: here 文明 can be an Adj., meaning “civilized”."
+    },
+    {
+     "edit_id": "pear_story#4/f9/p0/k1/e0",
+     "sample_id": "pear_story#4",
+     "display": "这[-个]肯定不是上帝创造世界的目的",
+     "original": "个",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "这个 + Noun.",
+     "explanation": "这一个 → 这: 这个 must be followed by a Noun; here it is not."
+    }
+   ],
+   "not_an_error": "Do not flag 文明 when it is used as an Adj. meaning “civilized.”",
+   "her_terms": [
+    "noun",
+    "Adj.",
+    "Subj.",
+    "很多+noun",
+    "这个 + Noun"
+   ]
+  }
+ },
+ {
+  "id": "fixed_expressions",
+  "name": "fixed expression",
+  "section": "word_choice",
+  "definition": "Use conventional fixed expressions and established compounds rather than creating a literal or nonstandard combination.",
+  "her_notes": [
+   "自然规律 as a fixed expression",
+   "制定规定 as a fixed expression.",
+   "新人means newly married couple",
+   "“人山人海” is to describe a scene where there are a lot of people in a space"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 40,
+  "edit_shapes": [
+   [
+    "replace NN",
+    4
+   ],
+   [
+    "replace VV",
+    4
+   ],
+   [
+    "comment",
+    3
+   ],
+   [
+    "replace NT+DEG+NN",
+    2
+   ],
+   [
+    "replace NN+DEG+NN",
+    2
+   ]
+  ],
+  "card": {
+   "rule": "Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place.",
+   "explanation_template": "<wrong> → <correct>: use the established expression <correct>, not the literal/nonstandard combination <wrong>.",
+   "examples": [
+    {
+     "edit_id": "pear_story#4/f29/p0/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "我以前以为人类的问题是人们不尊重⟦世界上自然的规定⟧",
+     "original": "世界上自然的规定",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "自然规律 as a fixed expression",
+     "explanation": "世界上自然的规定 → 自然规律: use the fixed expression 自然规律 for natural laws."
+    },
+    {
+     "edit_id": "pear_story#4/f30/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "但人类连[人类划定→自己制定]的规定也不尊重！虽然我认为自己的树木不是任何人的所有权",
+     "original": "人类划定",
+     "corrected": "自己制定",
+     "op": "replace",
+     "her_note": "do not repeat “人类” twice, 制定规定 as a fixed expression.",
+     "explanation": "人类划定的规定 → 自己制定的规定: 制定规定 is the established expression; also avoid repeating 人类."
+    },
+    {
+     "edit_id": "pear_story#4/f0/p1/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "“咕噜咕噜”某个人肚子叫的声音把我⟦从香甜的睡梦⟧吵醒了！这个人如蜗牛一般爬上我住的树木",
+     "original": "从香甜的睡梦",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "从 + Place",
+     "explanation": "从香甜的睡梦: use 从 + Place to show where the action starts."
+    },
+    {
+     "edit_id": "mengmu_samples#28/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#28",
+     "display": "难怪孟轲的妈妈[出家→出家门]的时候看看她的儿子做一样的事情",
+     "original": "出家",
+     "corrected": "出家门",
+     "op": "replace",
+     "her_note": "出家become a monk",
+     "explanation": "出家 → 出家门: 出家 means “become a monk,” so use 出家门 for leaving the home."
+    },
+    {
+     "edit_id": "shennong_samples#38/f0/p0/k0/e0",
+     "sample_id": "shennong_samples#38",
+     "display": "[人山人海→很多人]死了",
+     "original": "人山人海",
+     "corrected": "很多人",
+     "op": "replace",
+     "her_note": "“人山人海” is to describe a scene where there are a lot of people in a space",
+     "explanation": "人山人海 → 很多人: 人山人海 describes a scene with many people in a space, not simply that many people died."
+    }
+   ],
+   "not_an_error": "Do not flag 人山人海 when it describes a scene where many people are gathered in a space.",
+   "her_terms": [
+    "从 + Place",
+    "制定规定",
+    "自然规律",
+    "Subj.算是Obj.",
+    "只/不过/才(+num.) + 而已"
+   ]
+  }
+ },
+ {
+  "id": "formal_register",
+  "name": "formal words and register",
+  "section": "word_choice",
+  "definition": "Choose words that fit the register of the sentence; some words are formal, conversational, or used only in a particular context.",
+  "her_notes": [
+   "“真” is usually used in conversation",
+   "本+N. is usually used in formal advertisement/news, also it indicates the author owns the tree, which is not the fact: the author is a pear, who does not own the whole pear tree. 爬上这棵树。",
+   "“使” is more formal and better fit other formal words like “失业",
+   "家长“ is used in the context related to “education”, usually referring to parents who deal with children’s education."
+  ],
+  "detectable_by": "judgement",
+  "n_train": 4,
+  "edit_shapes": [
+   [
+    "comment",
+    2
+   ],
+   [
+    "replace AD",
+    1
+   ],
+   [
+    "replace AD+VV",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Choose words that fit the sentence’s register and meaning: 真 is usually conversational, while 使 fits formal words such as 失业; 本+N. is usually formal advertisement/news language and can imply ownership, and 却 indicates an unexpected semantic turn.",
+   "explanation_template": "<wrong> → <correct>: <wrong> is <conversational/formal/ownership-implying> here, while <correct> fits the <formal register/meaning/context>; use 却 only for an unexpected semantic turn.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#35/f4/p0/k0/e0",
+     "sample_id": "mengmu_samples#35",
+     "display": "墓地的人[真→很]影响孟子",
+     "original": "真",
+     "corrected": "很",
+     "op": "replace",
+     "her_note": "“真” is usually used in conversation",
+     "explanation": "真 → 很: 真 is usually used in conversation, while 很 fits this narrative sentence."
+    },
+    {
+     "edit_id": "pear_story#4/f3/p0/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "他这个没有礼貌的人每天爬上⟦本树⟧",
+     "original": "本树",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "本+N. is usually used in formal advertisement/news, also it indicates the author owns the tree, which is not the fact: the author is a pear, who does not own the whole pear tree. 爬上这棵树。",
+     "explanation": "本树 → 这棵树: 本+N. is usually formal advertisement/news language and implies that the author owns the tree; 这棵树 fits the context."
+    },
+    {
+     "edit_id": "pear_story#4/f23/p0/k0-1/e4",
+     "sample_id": "pear_story#4",
+     "display": "但政府实行的改革经济一系列政策⟦就让⟧他失业",
+     "original": "就让",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“使” is more formal and better fit other formal words like “失业",
+     "explanation": "就让 → 使: 使 is more formal and fits the formal word 失业."
+    },
+    {
+     "edit_id": "pear_story#4/f23/p0/k0-1/e2",
+     "sample_id": "pear_story#4",
+     "display": "但政府实行的改革经济一系列政策[就让→却使]他失业",
+     "original": "就让",
+     "corrected": "却使",
+     "op": "replace",
+     "her_note": "“却” indicates unexpected semantic turn",
+     "explanation": "就让 → 却使: 却 indicates an unexpected semantic turn, and 使 fits the formal register of 失业."
+    }
+   ],
+   "not_an_error": "Do not flag 却 merely because it is formal; use it when there is an unexpected semantic turn. Do not use 本+N. when it would incorrectly imply that the author owns the noun.",
+   "her_terms": [
+    "本+N."
+   ]
+  }
+ },
+ {
+  "id": "specific_noun_choice",
+  "name": "be specific",
+  "section": "word_choice",
+  "definition": "Use a specific noun when the story requires one; avoid overly general words such as 人, 东西, 事情, 水果, or vague 有麻烦.",
+  "her_notes": [
+   "“人“ is too general and too vague, and does not stand alone",
+   "“东西” is too general and vague",
+   "be more specific, 什么经验？",
+   "be specific, what不太好的事情？",
+   "“有麻烦“ is too vague"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 34,
+  "edit_shapes": [
+   [
+    "replace NN",
+    13
+   ],
+   [
+    "comment",
+    3
+   ],
+   [
+    "replace VE+CD+NN",
+    1
+   ],
+   [
+    "replace CD+DEG+NN",
+    1
+   ],
+   [
+    "replace AD+VE+NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦.",
+   "explanation_template": "<wrong> → <correct>: <wrong> is too general/vague here; say specifically what <person/thing/problem> it is.",
+   "examples": [
+    {
+     "edit_id": "pear_story#1/f7/p0/k0/e1",
+     "sample_id": "pear_story#1",
+     "display": "就拿一筐[水果→梨子]",
+     "original": "水果",
+     "corrected": "梨子",
+     "op": "replace",
+     "her_note": "“水果” is more generic and here it should be “梨子”，otherwise it will cause ambiguity, what “fruits” other than “pears”?",
+     "explanation": "水果 → 梨子: 水果 is more general; say 梨子, or it is unclear which fruits you mean besides pears."
+    },
+    {
+     "edit_id": "shennong_samples#20/f3/p0/k0/e0",
+     "sample_id": "shennong_samples#20",
+     "display": "他一吃黄色的花[就有麻烦→肚子就疼]",
+     "original": "就有麻烦",
+     "corrected": "肚子就疼",
+     "op": "replace",
+     "her_note": "“有麻烦“ is too vague",
+     "explanation": "就有麻烦 → 肚子就疼: 有麻烦 is too vague; say specifically what happened."
+    },
+    {
+     "edit_id": "mengmu_samples#42/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#42",
+     "display": "妈妈认为他们[拿东西→拿了墓地的东西]",
+     "original": "拿东西",
+     "corrected": "拿了墓地的东西",
+     "op": "replace",
+     "her_note": "“东西” is too general and vague",
+     "explanation": "拿东西 → 拿了墓地的东西: 东西 is too general and vague; say what they took."
+    },
+    {
+     "edit_id": "shennong_samples#27/f1/p1/k0/e2",
+     "sample_id": "shennong_samples#27",
+     "display": "神农很常走去找[饭→能吃的植物]",
+     "original": "饭",
+     "corrected": "能吃的植物",
+     "op": "replace",
+     "her_note": "饭refers to rice/cooked food",
+     "explanation": "饭 → 能吃的植物: 饭 refers to rice/cooked food; say 能吃的植物 here."
+    }
+   ],
+   "not_an_error": "Do not flag a general word when the context does not require a more specific meaning. This rule applies when the general word makes the story unclear or does not name what is actually meant.",
+   "her_terms": []
+  }
+ },
+ {
+  "id": "other_vs_additional",
+  "name": "别的 vs. 另外",
+  "section": "word_choice",
+  "definition": "别的 means a different type or all others except the one mentioned. 另外 means an additional quantity or another/the other.",
+  "her_notes": [
+   "“别的” is for “a different type”, and “all else except the spoken one”",
+   "“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”",
+   "“别(的)” is for “a different type”, and “all else except the spoken one”"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 9,
+  "edit_shapes": [
+   [
+    "replace DT+NN",
+    5
+   ],
+   [
+    "replace DT",
+    2
+   ],
+   [
+    "replace CD+DT+NN",
+    1
+   ],
+   [
+    "replace DT+M+NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "别的 is for a different type or for all others except the one already mentioned. 另外 is for an additional quantity, or for another/the other; say 另外一个人, not 别个人.",
+   "explanation_template": "<wrong> → <correct>: this means an additional/another <noun>, so use 另外, not 别的.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#15/f4/p0/k0/e0",
+     "sample_id": "shennong_samples#15",
+     "display": "[一个别的人→另外一个人]跟神农说",
+     "original": "一个别的人",
+     "corrected": "另外一个人",
+     "op": "replace",
+     "her_note": "“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”",
+     "explanation": "一个别的人 → 另外一个人: this means another person, so use 另外 for another/the other."
+    },
+    {
+     "edit_id": "shennong_samples#9/f3/p0/k0/e0",
+     "sample_id": "shennong_samples#9",
+     "display": "然后他又找到了[别的→另外一种]白花",
+     "original": "别的",
+     "corrected": "另外一种",
+     "op": "replace",
+     "her_note": "“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”",
+     "explanation": "别的白花 → 另外一种白花: this means an additional kind of white flower, so use 另外 for addition."
+    },
+    {
+     "edit_id": "shennong_samples#20/f4/p0/k0/e0",
+     "sample_id": "shennong_samples#20",
+     "display": "[别的人→另外一个人]看到神农疼死了",
+     "original": "别的人",
+     "corrected": "另外一个人",
+     "op": "replace",
+     "her_note": "“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”",
+     "explanation": "别的人 → 另外一个人: this means another person, so use 另外一个人."
+    },
+    {
+     "edit_id": "pear_story#1/f8/p2/k0/e0",
+     "sample_id": "pear_story#1",
+     "display": "小王在马路骑自行车一看到[别个人→另外一个人]",
+     "original": "别个人",
+     "corrected": "另外一个人",
+     "op": "replace",
+     "her_note": "there is no “别个人”.",
+     "explanation": "别个人 → 另外一个人: there is no 别个人; use 另外一个人 for another person."
+    }
+   ],
+   "not_an_error": "Do not flag 别的 when it means a different type or all others except the one already mentioned.",
+   "her_terms": [
+    "别的",
+    "另外"
+   ]
+  }
+ },
+ {
+  "id": "laoshi_negative_repetition",
+  "name": "老是 for something negative",
+  "section": "word_choice",
+  "definition": "老是 means “always” with a negative or complaining tone; do not use it for a neutral or positive repeated action.",
+  "her_notes": [
+   "“老是“ for something negative, used to complain",
+   "“老是“ means always, ”死” cannot be done multiple times"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 9,
+  "edit_shapes": [
+   [
+    "replace AD",
+    5
+   ],
+   [
+    "comment",
+    1
+   ],
+   [
+    "replace CC+NN+AD+VV+NN",
+    1
+   ],
+   [
+    "replace NN+AD+VV+AS",
+    1
+   ],
+   [
+    "replace NN+VV+NN+AD+VA",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "老是 means “always” and is used for something negative or to complain; for a neutral or positive repeated action, use 一直 or 常常 instead.",
+   "explanation_template": "<老是 + action> → <一直/常常 + action>: the action is neutral or positive, not something negative to complain about, so do not use 老是.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#21/f9/p0/k0/e0",
+     "sample_id": "mengmu_samples#21",
+     "display": "所以孟子[老是→一直]在学习",
+     "original": "老是",
+     "corrected": "一直",
+     "op": "replace",
+     "her_note": "“老是“ for something negative, used to complain",
+     "explanation": "老是在学习 → 一直在学习: studying is not a negative action to complain about, so use 一直."
+    },
+    {
+     "edit_id": "mengmu_samples#30/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#30",
+     "display": "他写汉字[老是→一直]写得很好",
+     "original": "老是",
+     "corrected": "一直",
+     "op": "replace",
+     "her_note": "“老是“ for something negative, used to complain",
+     "explanation": "老是写得很好 → 一直写得很好: writing very well is positive, so use 一直."
+    },
+    {
+     "edit_id": "mengmu_samples#42/f5/p0/k0/e0",
+     "sample_id": "mengmu_samples#42",
+     "display": "他说他[老是→常常]来墓地请祖先给他建议",
+     "original": "老是",
+     "corrected": "常常",
+     "op": "replace",
+     "her_note": "“老是“ for something negative, used to complain",
+     "explanation": "老是来墓地请祖先给他建议 → 常常来墓地请祖先给他建议: this is not a negative action to complain about, so use 常常."
+    },
+    {
+     "edit_id": "mengmu_samples#49/f7/p0/k0/e2",
+     "sample_id": "mengmu_samples#49",
+     "display": "他认为没做过祭拜的孩子的[父母老是死了→会失去父母]",
+     "original": "父母老是死了",
+     "corrected": "会失去父母",
+     "op": "replace",
+     "her_note": "“老是“ means always, ”死” cannot be done multiple times",
+     "explanation": "父母老是死了 → 会失去父母: 老是 means “always,” but 死 cannot happen multiple times."
+    }
+   ],
+   "not_an_error": "Use 老是 when the repeated action is negative or the speaker is complaining about it. Do not flag it merely because it means “always.”",
+   "her_terms": [
+    "老是"
+   ]
+  }
+ },
+ {
+  "id": "haide_harmful_result",
+  "name": "害得 + N/sb. + harmful result",
+  "section": "word_choice",
+  "definition": "害得 is followed by a person or noun and a genuinely harmful result. Do not use it for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling.",
+  "her_notes": [
+   "害得+Sb.+V.",
+   "“害得“ is followed by something harmful, 搬家is not harmful",
+   "害得孟子+harmful result, 常常玩",
+   "害得 + N/sb. + Harmful result",
+   "害得 + harmful result，不高兴is not that “harmful”"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 16,
+  "edit_shapes": [
+   [
+    "comment",
+    6
+   ],
+   [
+    "replace VV+DER",
+    1
+   ],
+   [
+    "delete P",
+    1
+   ],
+   [
+    "insert 不好 after NN",
+    1
+   ],
+   [
+    "replace VE",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得.",
+   "explanation_template": "<wrong> → <correct>: after 害得 + <person/noun>, use a genuinely harmful result; <neutral or mild result> is not harmful enough.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#24/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#24",
+     "display": "[害得→让]她很不高兴",
+     "original": "害得",
+     "corrected": "让",
+     "op": "replace",
+     "her_note": "害得 + harmful result，不高兴is not that “harmful”",
+     "explanation": "害得她很不高兴 → 让她很不高兴: 不高兴 is not a harmful enough result for 害得."
+    },
+    {
+     "edit_id": "mengmu_samples#43/f3/p0/k0/e0",
+     "sample_id": "mengmu_samples#43",
+     "display": "孟母害得孟子[玩儿→整天都很郁闷]",
+     "original": "玩儿",
+     "corrected": "整天都很郁闷",
+     "op": "replace",
+     "her_note": "害得 + N/sb. + Harmful result, 玩儿is not harmful",
+     "explanation": "孟母害得孟子玩儿 → 孟母害得孟子整天都很郁闷: after 害得 + N/sb., 玩儿 is not harmful; use a harmful result."
+    },
+    {
+     "edit_id": "mengmu_samples#22/f4/p0/k0/e0",
+     "sample_id": "mengmu_samples#22",
+     "display": "有的人觉得常常搬家害得孩子的生活[+不稳定]",
+     "original": "",
+     "corrected": "不稳定",
+     "op": "insert",
+     "her_note": "害得 + harmful result",
+     "explanation": "有的人觉得常常搬家害得孩子的生活 → 有的人觉得常常搬家害得孩子的生活不稳定: add 不稳定 as the harmful result after 害得."
+    },
+    {
+     "edit_id": "mengmu_samples#42/f11/p0/k0/e0",
+     "sample_id": "mengmu_samples#42",
+     "display": "[当商人会害得他的价值观→害得他的价值观出现问题]",
+     "original": "当商人会害得他的价值观",
+     "corrected": "害得他的价值观出现问题",
+     "op": "replace",
+     "her_note": "害得+ N. + Harmful result",
+     "explanation": "当商人会害得他的价值观 → 害得他的价值观出现问题: after 害得 + N., use 出现问题 as the harmful result."
+    },
+    {
+     "edit_id": "mengmu_samples#44/f2/p0/k0/e1",
+     "sample_id": "mengmu_samples#44",
+     "display": "觉得[交新朋友老是害得→害得他老是交不到新朋友]",
+     "original": "交新朋友老是害得",
+     "corrected": "害得他老是交不到新朋友",
+     "op": "replace",
+     "her_note": "害得 + N/sb. + Harmful result",
+     "explanation": "交新朋友老是害得 → 害得他老是交不到新朋友: 害得 needs a person and a harmful result."
+    }
+   ],
+   "not_an_error": "Do not use this rule for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling such as 不高兴; these are not harmful results for 害得.",
+   "her_terms": [
+    "害得 + N/sb. + Harmful result",
+    "害得+Sb.+V.",
+    "害得 + clause (harmful result)"
+   ]
+  }
+ },
+ {
+  "id": "become_and_profession",
+  "name": "成为 + N. / 成才",
+  "section": "word_choice",
+  "definition": "成为 is followed by an appropriate noun, especially a profession or public identity; use 成才 rather than a literal phrase for becoming successful or capable.",
+  "her_notes": [
+   "成为+N",
+   "成为 + profession/celebrity",
+   "成为 + N. (profession/celebrity)",
+   "出家become a monk"
+  ],
+  "detectable_by": "parser",
+  "n_train": 16,
+  "edit_shapes": [
+   [
+    "replace VV",
+    2
+   ],
+   [
+    "replace JJ+DEG",
+    1
+   ],
+   [
+    "replace VV+AD+VA",
+    1
+   ],
+   [
+    "replace VV+AD+VA+DEC+NN",
+    1
+   ],
+   [
+    "insert words after VA",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才.",
+   "explanation_template": "<wrong> → <correct>: 成为 needs an appropriate noun, such as a profession or public identity; for becoming capable or successful, use 成才.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#7/f6/p0/k0/e0",
+     "sample_id": "mengmu_samples#7",
+     "display": "他成为[有名的→有名的哲学家]",
+     "original": "有名的",
+     "corrected": "有名的哲学家",
+     "op": "replace",
+     "her_note": "成为+N",
+     "explanation": "成为有名的 → 成为有名的哲学家: 成为 needs a noun after it (成为+N)."
+    },
+    {
+     "edit_id": "mengmu_samples#28/f4/p0/k0/e0",
+     "sample_id": "mengmu_samples#28",
+     "display": "才几个星期就[成为很明智→变得很聪明]",
+     "original": "成为很明智",
+     "corrected": "变得很聪明",
+     "op": "replace",
+     "her_note": "成为 + N. (profession/celebrity)",
+     "explanation": "成为很明智 → 变得很聪明: 成为 is for an N., especially a profession/celebrity; use 变得 with an adjective."
+    },
+    {
+     "edit_id": "mengmu_samples#21/f4/p1/k0/e0",
+     "sample_id": "mengmu_samples#21",
+     "display": "他就不会[成为好的大人→成才]",
+     "original": "成为好的大人",
+     "corrected": "成才",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "成为好的大人 → 成才: for becoming capable or successful, use 成才."
+    },
+    {
+     "edit_id": "mengmu_samples#49/f8/p0/k0-1/e1",
+     "sample_id": "mengmu_samples#49",
+     "display": "孟子成为中国最重要的[哲学人→哲学家]",
+     "original": "哲学人",
+     "corrected": "哲学家",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "哲学人 → 哲学家: use 哲学家 as the profession noun after 成为."
+    }
+   ],
+   "not_an_error": "Do not flag 成为 when it is followed by an appropriate noun, especially a profession or public identity, such as 成为哲学家.",
+   "her_terms": [
+    "成为+N",
+    "成为 + N. (profession/celebrity)",
+    "成为 + profession/celebrity"
+   ]
+  }
+ },
+ {
+  "id": "ask_request_verbs",
+  "name": "问 vs. ask for help / ask sb. to do",
+  "section": "word_choice",
+  "definition": "问 is for asking a question. Use the appropriate verb for “ask for help” or “ask somebody to do something.”",
+  "her_notes": [
+   "the “ask” in “ask for help” is not问",
+   "the “ask” in “ask sb. to do” is not问"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 3,
+  "edit_shapes": [
+   [
+    "replace VV+NN+VV+PN",
+    1
+   ],
+   [
+    "replace VV+NN",
+    1
+   ],
+   [
+    "replace VV",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "问 is for asking a question. For “ask for help,” use 请人 or 找别人帮忙; for “ask somebody to do something,” use 请 or 让.",
+   "explanation_template": "<wrong> → <correct>: here “ask” means <ask for help / ask somebody to do something>, not asking a question, so do not use 问.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#32/f5/p0/k0/e0",
+     "sample_id": "shennong_samples#32",
+     "display": "神农[问人帮他→请人]给他灵芝",
+     "original": "问人帮他",
+     "corrected": "请人",
+     "op": "replace",
+     "her_note": "the “ask” in “ask for help” is not问",
+     "explanation": "问人帮他 → 请人: here “ask” means ask for help, not asking a question, so do not use 问."
+    },
+    {
+     "edit_id": "shennong_samples#23/f7/p1/k0/e1",
+     "sample_id": "shennong_samples#23",
+     "display": "他又不能思考清楚又不能[问帮忙→找别人帮忙]",
+     "original": "问帮忙",
+     "corrected": "找别人帮忙",
+     "op": "replace",
+     "her_note": "the “ask” in “ask for help” is not问",
+     "explanation": "问帮忙 → 找别人帮忙: here “ask” means ask for help, not asking a question, so do not use 问."
+    },
+    {
+     "edit_id": "shennong_samples#47/f9/p1/k0/e0",
+     "sample_id": "shennong_samples#47",
+     "display": "得[问→让]男人给他地方上像蘑菇一样的植物吃了",
+     "original": "问",
+     "corrected": "让",
+     "op": "replace",
+     "her_note": "the “ask” in “ask sb. to do” is not问",
+     "explanation": "问 → 让: here “ask” means ask somebody to do something, not asking a question, so do not use 问."
+    }
+   ],
+   "not_an_error": "Do not flag 问 when the meaning is asking a question.",
+   "her_terms": []
+  }
+ },
+ {
+  "id": "wrong_character",
+  "name": "use the wrong character",
+  "section": "word_choice",
+  "definition": "Use the correct written Chinese character for the intended word or adverbial form.",
+  "her_notes": [
+   "use the wrong character",
+   "马虎地V., use the wrong character"
+  ],
+  "detectable_by": "pattern",
+  "n_train": 6,
+  "edit_shapes": [
+   [
+    "comment",
+    2
+   ],
+   [
+    "replace AD+AD",
+    1
+   ],
+   [
+    "replace VV",
+    1
+   ],
+   [
+    "delete VV",
+    1
+   ],
+   [
+    "replace DT+AD",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use the correct Chinese character for the intended word. For an adverb before a verb, use 地: 马虎地V.",
+   "explanation_template": "<wrong> → <correct>: use the correct character for the intended word; for an adverb before a verb, use 地 in <adverb>地V.",
+   "examples": [
+    {
+     "edit_id": "pear_story#4/f24/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "政府[不短→不断]采取限制工作的措施",
+     "original": "不短",
+     "corrected": "不断",
+     "op": "replace",
+     "her_note": "use the wrong character",
+     "explanation": "不短 → 不断: use the correct character for the intended word."
+    },
+    {
+     "edit_id": "pear_story#4/f8/p0/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "他怎么能随便⟦马虎得⟧掉我家庭呢？一点都不合理",
+     "original": "马虎得",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "马虎地V., use the wrong character",
+     "explanation": "马虎得 → 马虎地: 马虎 is an adverb before a verb, so use 马虎地V."
+    },
+    {
+     "edit_id": "pear_story#4/f20/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "我兄弟说：“他并不一直如此[精辟力尽→精疲力尽]",
+     "original": "精辟力尽",
+     "corrected": "精疲力尽",
+     "op": "replace",
+     "her_note": "use the wrong character. I’m not very sure if “精疲力尽” is the most appropriate word here, since it means “exhausted”, and the pear thief is just busy stealing pears, and I did not see signs of him being “exhausted”.",
+     "explanation": "精辟力尽 → 精疲力尽: use the correct characters for this word; however, 精疲力尽 means “exhausted,” which may not fit someone who is only busy stealing pears."
+    },
+    {
+     "edit_id": "pear_story#4/f5/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "这个坏人好像以为自己有我们家的[所有全→所有权]！但并不是这样",
+     "original": "所有全",
+     "corrected": "所有权",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "所有全 → 所有权: use the correct characters for the intended word."
+    },
+    {
+     "edit_id": "shennong_samples#3/f5/p0/k0/e0",
+     "sample_id": "shennong_samples#3",
+     "display": "[-感]觉得身体健康",
+     "original": "感",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "",
+     "explanation": "感觉得 → 觉得: use the correct written word."
+    }
+   ],
+   "not_an_error": "Do not flag a character choice under this rule when the characters form the intended word correctly; whether a word is appropriate to the situation may be a separate issue.",
+   "her_terms": [
+    "马虎地V."
+   ]
+  }
+ },
+ {
+  "id": "first_mention_introduction",
+  "name": "1st time, briefly introduce N.",
+  "section": "coherence_reference",
+  "definition": "The first time a story character appears, introduce the person with a brief identifying noun phrase rather than using only the name or pronoun.",
+  "her_notes": [
+   "better to briefly introduce “孟子” when this character first appears",
+   "better to briefly introduce “神农” when this character first appears",
+   "please introduce神农",
+   "please introduce 神农",
+   "first appearing noun should not be specific"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 46,
+  "edit_shapes": [
+   [
+    "comment",
+    41
+   ],
+   [
+    "replace AD+JJ+DEC+NN",
+    1
+   ],
+   [
+    "replace VE+CD+NR",
+    1
+   ],
+   [
+    "replace CD+NN+VV+NR",
+    1
+   ],
+   [
+    "replace CD+M+NR+NN+DEG+NN+VC+NR",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.",
+   "explanation_template": "<name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#2/f0/p0/note/e0",
+     "sample_id": "mengmu_samples#2",
+     "display": "⟦孟子⟧一直祭拜",
+     "original": "孟子",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "better to briefly introduce “孟子” when this character first appears",
+     "explanation": "孟子 → a brief introduction to 孟子: this character appears for the first time, so please introduce 孟子 briefly."
+    },
+    {
+     "edit_id": "shennong_samples#7/f0/p0/note/e0",
+     "sample_id": "shennong_samples#7",
+     "display": "所以⟦神农⟧去旅行",
+     "original": "神农",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "better to briefly introduce “神农” when this character first appears",
+     "explanation": "神农 → a brief introduction to 神农: this character appears for the first time, so please introduce 神农 briefly."
+    },
+    {
+     "edit_id": "shennong_samples#31/f1/p2/note/e0",
+     "sample_id": "shennong_samples#31",
+     "display": "在照片可以看⟦一个很老的人⟧",
+     "original": "一个很老的人",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "please introduce神农",
+     "explanation": "一个很老的人 → a brief introduction identifying 神农: this character appears for the first time, so please introduce 神农."
+    },
+    {
+     "edit_id": "mengmu_samples#15/f0/p0/note/e0",
+     "sample_id": "mengmu_samples#15",
+     "display": "⟦一个家人⟧住在中国",
+     "original": "一个家人",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "better to briefly introduce “孟子” when this character first appears",
+     "explanation": "一个家人 → a brief introduction to 孟子: this character appears for the first time, so please introduce 孟子 briefly."
+    }
+   ],
+   "not_an_error": "After a character has already been introduced, this rule does not require another brief introduction.",
+   "her_terms": []
+  }
+ },
+ {
+  "id": "ambiguous_pronoun",
+  "name": "“他/她/它” is ambiguous",
+  "section": "coherence_reference",
+  "definition": "Use a pronoun only when its referent is close and unambiguous. Repeat the name or use a clear noun phrase when more than one possible referent intervenes.",
+  "her_notes": [
+   "“他“ is ambiguous",
+   "“她” is ambiguous",
+   "“他” is ambiguous, 后来成为",
+   "“妈妈” here is ambiguous",
+   "“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 17,
+  "edit_shapes": [
+   [
+    "replace PN",
+    6
+   ],
+   [
+    "comment",
+    5
+   ],
+   [
+    "delete PN",
+    1
+   ],
+   [
+    "replace NN+NN",
+    1
+   ],
+   [
+    "replace PN+DEG",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 他/她/它/他们 only when it is clear who or what they refer to. If more than one person or thing is possible, repeat the name or use a clear noun phrase.",
+   "explanation_template": "<wrong pronoun> → <clear name/noun phrase>: <pronoun> is ambiguous; it can refer to <possible referent(s)>.",
+   "examples": [
+    {
+     "edit_id": "pear_story#3/f6/p0/note/e0",
+     "sample_id": "pear_story#3",
+     "display": "⟦他⟧停在树下",
+     "original": "他",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.",
+     "explanation": "他 is ambiguous; it can refer to the boy or the man wearing the scarf."
+    },
+    {
+     "edit_id": "shennong_samples#16/f2/p0/note/e0",
+     "sample_id": "shennong_samples#16",
+     "display": "所以⟦他⟧走路走了很长的时间找药",
+     "original": "他",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "use神农instead of他to avoid ambiguity",
+     "explanation": "他 → 神农: 他 is ambiguous, so use 神农 to avoid ambiguity."
+    },
+    {
+     "edit_id": "mengmu_samples#43/f5/p0/k0/e0",
+     "sample_id": "mengmu_samples#43",
+     "display": "[她→孟母]跟孟子搬家去墓地做祭拜",
+     "original": "她",
+     "corrected": "孟母",
+     "op": "replace",
+     "her_note": "“她” is ambiguous",
+     "explanation": "他 → 孟子: 他 is ambiguous; use 孟子."
+    },
+    {
+     "edit_id": "shennong_samples#20/f6/p0/k0/e0",
+     "sample_id": "shennong_samples#20",
+     "display": "[他问→蓝衣男人问]：“你为什么疼死了？“神农说：”这就要看我吃什么",
+     "original": "他问",
+     "corrected": "蓝衣男人问",
+     "op": "replace",
+     "her_note": "otherwise “他” refers to神农",
+     "explanation": "他问 → 蓝衣男人问: otherwise, 他 refers to 神农."
+    },
+    {
+     "edit_id": "mengmu_samples#51/f6/p0/k0/e0",
+     "sample_id": "mengmu_samples#51",
+     "display": "孟母[爱你→很爱他]",
+     "original": "爱你",
+     "corrected": "很爱他",
+     "op": "replace",
+     "her_note": "“你” refers to the reader of this story",
+     "explanation": "你 → 他: 你 refers to the reader of this story, not the person in the story."
+    }
+   ],
+   "not_an_error": "A pronoun is fine when its referent is close and unambiguous. Do not use 你 for a story character when it refers to the reader instead.",
+   "her_terms": []
+  }
+ },
+ {
+  "id": "pronoun_name_zero_reference",
+  "name": "re-occur: pronoun, zero, or N.",
+  "section": "coherence_reference",
+  "definition": "For a re-occurring referent, use a pronoun when it is close, zero form within the same clause, and repeat the noun/name when it is far away or something intervenes. Avoid too many repeated names or too many pronouns.",
+  "her_notes": [
+   "too many他",
+   "replace the second孟子with他",
+   "replace孟子with他",
+   "use神农instead of他to avoid ambiguity",
+   "use他to replace神农，otherwise it is ambiguous, as if there are three persons referred here, in fact there are only two"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 11,
+  "edit_shapes": [
+   [
+    "replace NR",
+    2
+   ],
+   [
+    "replace NN",
+    2
+   ],
+   [
+    "replace PN",
+    2
+   ],
+   [
+    "comment",
+    1
+   ],
+   [
+    "replace NN+VV",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "For a re-occurring referent, use 他/她/它 when the referent is close, and do not repeat the noun/name unnecessarily. Repeat the noun/name when a pronoun would be ambiguous, especially after another person or thing intervenes; in quoted speech, use the pronoun that matches the speaker and listener.",
+   "explanation_template": "<wrong> → <correct>: <referent> is already clear/needs to be clear here, so use <pronoun/zero form/repeated noun> instead of <repeated noun/ambiguous pronoun>.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#40/f6/p0/note/e0",
+     "sample_id": "shennong_samples#40",
+     "display": "[神农→他]可能会死",
+     "original": "神农",
+     "corrected": "他",
+     "op": "replace",
+     "her_note": "use他to replace神农，otherwise it is ambiguous, as if there are three persons referred here, in fact there are only two",
+     "explanation": "神农 → 他: 神农 is already clear here, so use 他; otherwise it is ambiguous, as if there are three people although there are only two."
+    },
+    {
+     "edit_id": "mengmu_samples#17/f0/p2/note/e0",
+     "sample_id": "mengmu_samples#17",
+     "display": "[孟子→他]每个地方才住了一年",
+     "original": "孟子",
+     "corrected": "他",
+     "op": "replace",
+     "her_note": "replace the second孟子with他",
+     "explanation": "孟子 → 他: 孟子 is already clear here, so replace the second 孟子 with 他."
+    },
+    {
+     "edit_id": "shennong_samples#43/f7/p0/k0-1/e0",
+     "sample_id": "shennong_samples#43",
+     "display": "然后[另外一个人看见他。穿着棕色的人问神农→另外一个穿着棕色衣服的人，那个人问]：“发生什么事了？”神农解释了",
+     "original": "另外一个人看见他。穿着棕色的人问神农",
+     "corrected": "另外一个穿着棕色衣服的人，那个人问",
+     "op": "replace",
+     "her_note": "otherwise it will be ambiguous, as if there are two persons to see and ask 神农",
+     "explanation": "另外一个人看见他。穿着棕色的人问神农 → 另外一个穿着棕色衣服的人，那个人问: repeat the description to make the person clear; otherwise it seems that two different people see and ask 神农."
+    },
+    {
+     "edit_id": "shennong_samples#10/f3/p0/k1-2/e1",
+     "sample_id": "shennong_samples#10",
+     "display": "[夹竹桃→这个花]有毒",
+     "original": "夹竹桃",
+     "corrected": "这个花",
+     "op": "replace",
+     "her_note": "it is confusing to have花 ; it looks like they refer to two different flowers, but actually the same. 吃一种叫夹竹桃的花的时候",
+     "explanation": "夹竹桃 → 这个花: use 这个花 for the same flower; 花 is confusing because it looks like two different flowers."
+    },
+    {
+     "edit_id": "mengmu_samples#42/f3/p1/k0/e0",
+     "sample_id": "mengmu_samples#42",
+     "display": "[他们→你们]为什么拿水果？孟子说他们不是拿东西",
+     "original": "他们",
+     "corrected": "你们",
+     "op": "replace",
+     "her_note": "in quoted speech",
+     "explanation": "他们 → 你们: in quoted speech, use 你们 for the people the speaker is talking to."
+    }
+   ],
+   "not_an_error": "Do not replace a noun/name with a pronoun if the pronoun would be ambiguous, such as when another person or thing has intervened. In quoted speech, pronouns must match the speaker and listener.",
+   "her_terms": []
+  }
+ },
+ {
+  "id": "demonstrative_reference",
+  "name": "这个/这种 + N. must be clear",
+  "section": "coherence_reference",
+  "definition": "Use 这个, 这种, 这些, and 有的 only when the preceding context identifies exactly which entity or set they refer to.",
+  "her_notes": [
+   "“这种植物” is unclear, sine preceding sentence has two types of plants",
+   "“这个小孩子” is unclear and ambiguous",
+   "“这个植物“ is not unclear, which one?",
+   "what does the first他们refer to? what does the second他们refer to? 灵芝和夹竹桃混在一起以后变成了药"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 10,
+  "edit_shapes": [
+   [
+    "replace DT+NN",
+    3
+   ],
+   [
+    "comment",
+    2
+   ],
+   [
+    "replace JJ+NN",
+    1
+   ],
+   [
+    "replace VE+PN",
+    1
+   ],
+   [
+    "insert 这个 after PU",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 这个/这种/这些/有的 + N. only when the preceding context makes exactly which person, thing, place, or set clear. If it is already a known event, use 这样的 + N.; if the reference is unclear, name it more specifically.",
+   "explanation_template": "<wrong reference> → <correct reference>: the preceding context does not identify exactly which <person/thing/place/set> this refers to.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#50/f6/p0/note/e0",
+     "sample_id": "shennong_samples#50",
+     "display": "⟦这种植物⟧原来是茶",
+     "original": "这种植物",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“这种植物” is unclear, sine preceding sentence has two types of plants",
+     "explanation": "这种植物 is unclear: the preceding sentence mentions two types of plants, so it does not identify which plant this means."
+    },
+    {
+     "edit_id": "mengmu_samples#19/f0/p0/k0-1-2-3/e3",
+     "sample_id": "mengmu_samples#19",
+     "display": "[这个小孩子→儿子]叫孟子",
+     "original": "这个小孩子",
+     "corrected": "儿子",
+     "op": "replace",
+     "her_note": "“这个小孩子” is unclear and ambiguous",
+     "explanation": "这个小孩子 → 儿子: 这个小孩子 is unclear and ambiguous; use the specific relationship."
+    },
+    {
+     "edit_id": "mengmu_samples#11/f1/p0/k0/e0",
+     "sample_id": "mengmu_samples#11",
+     "display": "[小房子→这个小房子]离一个墓地不太远",
+     "original": "小房子",
+     "corrected": "这个小房子",
+     "op": "replace",
+     "her_note": "otherwise unclear which house",
+     "explanation": "小房子 → 这个小房子: use 这个 to show which house is meant."
+    },
+    {
+     "edit_id": "pear_story#4/f28/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "我完全没想到[什么事情→这样的事情]会立刻发生",
+     "original": "什么事情",
+     "corrected": "这样的事情",
+     "op": "replace",
+     "her_note": "as “being picked up” already occurred, so it is not unknown “什么事情”, but a certain “这样的事情”.",
+     "explanation": "什么事情 → 这样的事情: being picked up has already happened, so this is a certain 这样的事情, not an unknown 什么事情."
+    }
+   ],
+   "not_an_error": "Do not flag 这个/这种/这些/有的 when the preceding context identifies exactly what it refers to. 这个 can be used when it makes the intended person, thing, or place clear.",
+   "her_terms": []
+  }
+ },
+ {
+  "id": "possessive_reference",
+  "name": "他的/她的 implies ownership",
+  "section": "coherence_reference",
+  "definition": "Do not use a possessive pronoun when it wrongly implies ownership or leaves the owner unclear; use a more precise relationship expression instead.",
+  "her_notes": [
+   "“他的人民”implies that神农is a king",
+   "“他的……” indicates that孟子owns this city",
+   "“他的” is ambiguous"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 8,
+  "edit_shapes": [
+   [
+    "replace PN+DEG+NN",
+    4
+   ],
+   [
+    "replace PN+DEG+JJ+DEG+NN",
+    1
+   ],
+   [
+    "replace PN+DEG",
+    1
+   ],
+   [
+    "delete PN+DEG",
+    1
+   ],
+   [
+    "replace P+PN+DEG+NN+PU",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Do not use 他的/她的 for people or a place when it sounds like the person owns them. Use a precise relationship word, such as 家人, 朋友邻居, 人们, or 这个小城市.",
+   "explanation_template": "<wrong> → <correct>: <他的/她的 + noun> implies that <person> owns <noun>; use <relationship/reference expression> instead.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#9/f0/p0/k0/e0",
+     "sample_id": "shennong_samples#9",
+     "display": "[他的人民→他发现人们]又饿又病",
+     "original": "他的人民",
+     "corrected": "他发现人们",
+     "op": "replace",
+     "her_note": "“他的人民”implies that神农is a king",
+     "explanation": "他的人民 → 他发现人们: “他的人民” implies that 神农 is a king; use 人们 instead."
+    },
+    {
+     "edit_id": "mengmu_samples#26/f3/p0/k0/e0",
+     "sample_id": "mengmu_samples#26",
+     "display": "孟母觉得孟子不喜欢[他的小的城→这个小城市]",
+     "original": "他的小的城",
+     "corrected": "这个小城市",
+     "op": "replace",
+     "her_note": "“他的……” indicates that孟子owns this city",
+     "explanation": "他的小的城 → 这个小城市: “他的……” indicates that 孟子 owns this city; use 这个小城市 instead."
+    },
+    {
+     "edit_id": "shennong_samples#30/f1/p1/k0/e0",
+     "sample_id": "shennong_samples#30",
+     "display": "但是[他的人民→他的朋友邻居]不知道什么植物能吃",
+     "original": "他的人民",
+     "corrected": "他的朋友邻居",
+     "op": "replace",
+     "her_note": "“他的人民”implies that神农is a king",
+     "explanation": "他的人民 → 他的朋友邻居: “他的人民” implies that 神农 is a king; use the more precise relationship expression 他的朋友邻居."
+    },
+    {
+     "edit_id": "shennong_samples#23/f10/p0/k0-1/e1",
+     "sample_id": "shennong_samples#23",
+     "display": "可以告诉[他的家→家人]",
+     "original": "他的家",
+     "corrected": "家人",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "他的家 → 家人: use 家人 when you mean the person's family, not a house he owns."
+    }
+   ],
+   "not_an_error": "Do not flag 他的/她的 when the intended meaning is actual ownership or when it clearly gives the needed relationship.",
+   "her_terms": []
+  }
+ },
+ {
+  "id": "zero_redundant_pronoun",
+  "name": "zero form: delete redundant pronoun",
+  "section": "coherence_reference",
+  "definition": "Within the same clause or a close continuation, omit a repeated subject or possessive when Chinese naturally uses zero form.",
+  "her_notes": [
+   "delete孟母",
+   "delete他",
+   "replace the second孟子with他",
+   "她的 -> ∅"
+  ],
+  "detectable_by": "parser",
+  "n_train": 53,
+  "edit_shapes": [
+   [
+    "delete PN",
+    34
+   ],
+   [
+    "delete PN+DEG",
+    6
+   ],
+   [
+    "delete P+PN",
+    1
+   ],
+   [
+    "replace AD+VC+NR+VV+DT+NN+PU+CC+PN+VV+DT+NN+DEG+NN",
+    1
+   ],
+   [
+    "delete NR",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.",
+   "explanation_template": "<wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#23/f4/p1/k0/e0",
+     "sample_id": "shennong_samples#23",
+     "display": "[-他]喝了茶",
+     "original": "他",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "redundant",
+     "explanation": "他喝了茶 → 喝了茶: 他 is already clear, so delete it; Chinese uses zero form here."
+    },
+    {
+     "edit_id": "shennong_samples#11/f5/p0/k1/e0",
+     "sample_id": "shennong_samples#11",
+     "display": "神农回[-他的]家",
+     "original": "他的",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "redundant",
+     "explanation": "神农回他的家 → 神农回家: 他的 is already clear, so delete it; Chinese uses zero form here."
+    },
+    {
+     "edit_id": "mengmu_samples#35/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#35",
+     "display": "而是[-她]望子成龙",
+     "original": "她",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "Subj.不是……而是……",
+     "explanation": "而是她望子成龙 → 而是望子成龙: in 不是……而是……, the subject is not repeated after 而是."
+    },
+    {
+     "edit_id": "mengmu_samples#50/f9/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#50",
+     "display": "[不是孟子喜欢这个城市，而是他喜欢这个城市的人→孟子不是喜欢这个城市，而是喜欢这个城市的人]",
+     "original": "不是孟子喜欢这个城市，而是他喜欢这个城市的人",
+     "corrected": "孟子不是喜欢这个城市，而是喜欢这个城市的人",
+     "op": "replace",
+     "her_note": "Subj. before “不是……而是……”",
+     "explanation": "不是孟子喜欢这个城市，而是他喜欢这个城市的人 → 孟子不是喜欢这个城市，而是喜欢这个城市的人: put the subject before 不是 and do not repeat it after 而是."
+    },
+    {
+     "edit_id": "mengmu_samples#42/f6/p0/k1/e0",
+     "sample_id": "mengmu_samples#42",
+     "display": "这个天他请他们[-给他]建议怎么减轻他的家庭的负担",
+     "original": "给他",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "too many他",
+     "explanation": "请他们给他建议怎么减轻他的家庭的负担 → 请他们给他建议怎么减轻家庭的负担: there are too many 他; 他的 is already clear, so delete it."
+    }
+   ],
+   "not_an_error": "Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.",
+   "her_terms": [
+    "redundant",
+    "too many他",
+    "Subj.不是……而是……",
+    "Subj. before “不是……而是……”"
+   ]
+  }
+ },
+ {
+  "id": "le_completed",
+  "name": "了 completed",
+  "section": "coherence_temporality",
+  "definition": "Use 了 for a completed action or a change of state in the narrative. Do not add it merely because an action verb appears.",
+  "her_notes": [
+   "了completed",
+   "了completed，V. + Num. + MW. + Obj.",
+   "了completed/change",
+   "completed",
+   "了completed, 山上is a place"
+  ],
+  "detectable_by": "parser",
+  "n_train": 83,
+  "edit_shapes": [
+   [
+    "insert 了 after VV",
+    27
+   ],
+   [
+    "replace VV",
+    19
+   ],
+   [
+    "replace VV+CD+M",
+    5
+   ],
+   [
+    "delete AS",
+    3
+   ],
+   [
+    "comment",
+    2
+   ]
+  ],
+  "card": {
+   "rule": "Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.",
+   "explanation_template": "<wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#22/f2/p0/k0/e0",
+     "sample_id": "shennong_samples#22",
+     "display": "他尝[+了]很多植物",
+     "original": "",
+     "corrected": "了",
+     "op": "insert",
+     "her_note": "了completed",
+     "explanation": "他尝很多植物 → 他尝了很多植物: the trying is completed in the story, so it takes 了 (了completed)."
+    },
+    {
+     "edit_id": "pear_story#2/f6/p0/k0/e0",
+     "sample_id": "pear_story#2",
+     "display": "把帽子[弄掉→弄掉了]",
+     "original": "弄掉",
+     "corrected": "弄掉了",
+     "op": "replace",
+     "her_note": "“把”usually ends with了",
+     "explanation": "把帽子弄掉 → 把帽子弄掉了: the 把 construction usually ends with 了 because the result is completed."
+    },
+    {
+     "edit_id": "pear_story#1/f10/p0/k0/e0",
+     "sample_id": "pear_story#1",
+     "display": "小王和那筐梨子倒[+了]",
+     "original": "",
+     "corrected": "了",
+     "op": "insert",
+     "her_note": "了completed/change",
+     "explanation": "小王和那筐梨子倒 → 小王和那筐梨子倒了: falling is a change of state, so it takes 了 (了completed/change)."
+    },
+    {
+     "edit_id": "mengmu_samples#37/f1/p0/k0/e0",
+     "sample_id": "mengmu_samples#37",
+     "display": "但是孟子一直哭[-了]",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "it’s not about “completion”, no了",
+     "explanation": "孟子一直哭了 → 孟子一直哭: this is not about completion, so do not use 了."
+    }
+   ],
+   "not_an_error": "Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.",
+   "her_terms": [
+    "了completed",
+    "了completed/change",
+    "着durative",
+    "把"
+   ]
+  }
+ },
+ {
+  "id": "no_le_mental_state",
+  "name": "mental state V.: no 了",
+  "section": "coherence_temporality",
+  "definition": "Mental-state verbs such as 决定 and 发现 normally take zero particle when expressing the state, decision, or discovery in this narrative use.",
+  "her_notes": [
+   "决定is a mental state verb, no了",
+   "发现is a mental state verb, no了",
+   "“决定“ is a mental state verb, no了"
+  ],
+  "detectable_by": "parser",
+  "n_train": 7,
+  "edit_shapes": [
+   [
+    "delete AS",
+    6
+   ],
+   [
+    "comment",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative.",
+   "explanation_template": "<wrong> → <correct>: <verb> is a mental-state verb here, so use no 了.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#44/f3/p0/note/e0",
+     "sample_id": "mengmu_samples#44",
+     "display": "孟子⟦决定了⟧祭拜",
+     "original": "决定了",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "决定is a mental state verb, no了",
+     "explanation": "决定了 → 决定: 决定 is a mental-state verb, so use no 了."
+    },
+    {
+     "edit_id": "shennong_samples#44/f0/p1/k0/e0",
+     "sample_id": "shennong_samples#44",
+     "display": "决定[-了]吃外面的植物",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "“决定“ is a mental state verb, no了",
+     "explanation": "决定了吃外面的植物 → 决定吃外面的植物: 决定 is a mental-state verb, so use no 了."
+    },
+    {
+     "edit_id": "shennong_samples#47/f11/p0/k0/e0",
+     "sample_id": "shennong_samples#47",
+     "display": "他发现[-了]黄色花有毒",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "发现is a mental state verb, no了",
+     "explanation": "发现了黄色花有毒 → 发现黄色花有毒: 发现 is a mental-state verb, so use no 了."
+    },
+    {
+     "edit_id": "shennong_samples#50/f3/p0/note/e0",
+     "sample_id": "shennong_samples#50",
+     "display": "神农发现[-了]大家都不知道什么植物能吃",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "发现is a mental state verb, no了",
+     "explanation": "发现了大家都不知道什么植物能吃 → 发现大家都不知道什么植物能吃: 发现 is a mental-state verb, so use no 了."
+    }
+   ],
+   "not_an_error": "Apply this rule when 决定 or 发现 expresses the decision or discovery in this narrative use.",
+   "her_terms": [
+    "mental state verb",
+    "no了"
+   ]
+  }
+ },
+ {
+  "id": "no_le_routine_state",
+  "name": "no 了 for routine/habit",
+  "section": "coherence_temporality",
+  "definition": "Use zero particle for routines, habits, repeated conditions, and states, especially with 常常, 每天, 有的时候, and similar expressions.",
+  "her_notes": [
+   "no了for routine/habit",
+   "no了for habit/routine",
+   "or 他有的时候跟朋友玩儿",
+   "后来每年都搬家",
+   "常常cannot be with很"
+  ],
+  "detectable_by": "parser",
+  "n_train": 7,
+  "edit_shapes": [
+   [
+    "delete AS",
+    2
+   ],
+   [
+    "delete SP",
+    2
+   ],
+   [
+    "replace AD+PN+VV",
+    1
+   ],
+   [
+    "comment",
+    1
+   ],
+   [
+    "replace VV+AS+VA+DEC+NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "For a routine, habit, repeated condition, or state, use zero particle: do not add 了completed. This is especially true with words such as 老是, 常常, and 从早到晚.",
+   "explanation_template": "<wrong> → <correct>: this describes a routine/habit or repeated condition, so use no 了 (no了for routine/habit).",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#6/f1/p1/k0/e0",
+     "sample_id": "mengmu_samples#6",
+     "display": "妈妈老是工作[-了]",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "no了for routine/habit",
+     "explanation": "妈妈老是工作了 → 妈妈老是工作: 老是 describes a routine, so use no 了."
+    },
+    {
+     "edit_id": "shennong_samples#11/f2/p0/k0/e0",
+     "sample_id": "shennong_samples#11",
+     "display": "他们常常生病[-了]",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "no了for routine/habit",
+     "explanation": "他们常常生病了 → 他们常常生病: 常常 describes a repeated condition, so use no 了."
+    },
+    {
+     "edit_id": "shennong_samples#25/f4/p0/k0/e0",
+     "sample_id": "shennong_samples#25",
+     "display": "因此[时而他到了→会遇到]麻烦",
+     "original": "时而他到了",
+     "corrected": "会遇到",
+     "op": "replace",
+     "her_note": "no了for habit/routine",
+     "explanation": "时而他到了麻烦 → 时而他会遇到麻烦: 时而 describes a repeated situation, so use 会遇到, not 了."
+    },
+    {
+     "edit_id": "mengmu_samples#17/f4/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#17",
+     "display": "孟子从早到晚[学了新的东西→学习新知识]",
+     "original": "学了新的东西",
+     "corrected": "学习新知识",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "孟子从早到晚学了新的东西 → 孟子从早到晚学习新知识: 从早到晚 describes a routine, so use 学习 with no 了."
+    }
+   ],
+   "not_an_error": "",
+   "her_terms": [
+    "no了for routine/habit",
+    "no了for habit/routine",
+    "看look vs.看到see, no了"
+   ]
+  }
+ },
+ {
+  "id": "no_le_speaking_word",
+  "name": "no 了 for speaking word",
+  "section": "coherence_temporality",
+  "definition": "A saying word that introduces quoted speech normally uses zero particle, not 了.",
+  "her_notes": [
+   "no 了for speaking word",
+   "no了for speaking word",
+   "no了for speaking word introducing quoted speech",
+   "in quoted speech"
+  ],
+  "detectable_by": "parser",
+  "n_train": 3,
+  "edit_shapes": [
+   [
+    "delete AS",
+    3
+   ]
+  ],
+  "card": {
+   "rule": "A speaking word that introduces quoted speech normally uses no particle, not 了.",
+   "explanation_template": "<wrong> → <correct>: <speaking word> introduces quoted speech, so use no 了.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#20/f1/p0/k0/e0",
+     "sample_id": "shennong_samples#20",
+     "display": "他问[-了]",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "no了for speaking word introducing quoted speech",
+     "explanation": "他问了 → 他问: 问 introduces quoted speech, so use no 了."
+    },
+    {
+     "edit_id": "mengmu_samples#42/f3/p0/k0/e0",
+     "sample_id": "mengmu_samples#42",
+     "display": "所以她问[-了]",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "no 了for speaking word",
+     "explanation": "所以她问了 → 所以她问: 问 introduces quoted speech, so use no 了."
+    },
+    {
+     "edit_id": "shennong_samples#52/f7/p0/note/e0",
+     "sample_id": "shennong_samples#52",
+     "display": "神农说：我死了吗？他一说[-了]",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "no了for speaking word",
+     "explanation": "他一说了 → 他一说: 说 introduces quoted speech, so use no 了."
+    }
+   ],
+   "not_an_error": "",
+   "her_terms": [
+    "no了for speaking word introducing quoted speech",
+    "no 了for speaking word",
+    "no了for speaking word"
+   ]
+  }
+ },
+ {
+  "id": "no_le_with_mei",
+  "name": "没 + V., no 了",
+  "section": "coherence_temporality",
+  "definition": "After 没/没有 for a non-occurring action, do not add 了 to the action verb.",
+  "her_notes": [
+   "no了in “没+V.”",
+   "没 +V., no了, the verb is an action verb",
+   "没+ V."
+  ],
+  "detectable_by": "parser",
+  "n_train": 4,
+  "edit_shapes": [
+   [
+    "delete SP",
+    3
+   ],
+   [
+    "replace VE+NN+AS",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "After 没/没有 with an action verb for an action that did not happen, use 没 + V. and do not add 了.",
+   "explanation_template": "<wrong> → <correct>: this action did not happen, so use 没 + V. with no 了 (no了in “没+V.”).",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#1/f9/p0/k0/e0",
+     "sample_id": "shennong_samples#1",
+     "display": "神农没死[-了]",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "没+ V.",
+     "explanation": "没死了 → 没死: this action did not happen, so use 没 + V. with no 了."
+    },
+    {
+     "edit_id": "shennong_samples#38/f2/p1/k0/e1",
+     "sample_id": "shennong_samples#38",
+     "display": "可是他没有吃[-了]",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "no了in “没+V.”",
+     "explanation": "没有吃了 → 没有吃: this action did not happen, so use 没 + V. with no 了."
+    },
+    {
+     "edit_id": "shennong_samples#25/f7/p3/k0/e0",
+     "sample_id": "shennong_samples#25",
+     "display": "和他[没病了→病好了]",
+     "original": "没病了",
+     "corrected": "病好了",
+     "op": "replace",
+     "her_note": "没 +V., no了, the verb is an action verb",
+     "explanation": "没病了 → 病好了: 病 is not an action verb; use 病好了 for “got better.”"
+    }
+   ],
+   "not_an_error": "This rule is for 没/没有 + an action verb. Do not apply it when the word after 没 is not an action verb, as in 没病了.",
+   "her_terms": [
+    "没+ V.",
+    "no了in “没+V.”",
+    "verb is an action verb"
+   ]
+  }
+ },
+ {
+  "id": "zhe_durative",
+  "name": "着 durative",
+  "section": "coherence_temporality",
+  "definition": "Use 着 for a durative, accompanying, or static state, including an accompanying action such as V.着 + V2.",
+  "her_notes": [
+   "着durative",
+   "着 durative",
+   "走着durative",
+   "在Place V1.着V2",
+   "着durative，“遛“ for 狗only."
+  ],
+  "detectable_by": "parser",
+  "n_train": 12,
+  "edit_shapes": [
+   [
+    "replace VV",
+    4
+   ],
+   [
+    "replace VV+NN",
+    2
+   ],
+   [
+    "replace AD+VV",
+    1
+   ],
+   [
+    "replace VV+AS+NN+SP+LC",
+    1
+   ],
+   [
+    "replace CC",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 着 for a durative, accompanying, or static state. When one action accompanies the main action, use V.着 + V2 (for example, 牵着驴走).",
+   "explanation_template": "<wrong> → <correct>: <V> is a durative/accompanying action while <main action> happens, so use 着 (着durative).",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#13/f5/p0/k0/e0",
+     "sample_id": "shennong_samples#13",
+     "display": "他[拿说→拿着花说]",
+     "original": "拿说",
+     "corrected": "拿着花说",
+     "op": "replace",
+     "her_note": "着durative",
+     "explanation": "拿说 → 拿着花说: holding the flowers accompanies speaking, so use 着 (着durative)."
+    },
+    {
+     "edit_id": "mengmu_samples#46/f1/p0/k0/e0",
+     "sample_id": "mengmu_samples#46",
+     "display": "她[穿→穿着]很漂亮的衣服",
+     "original": "穿",
+     "corrected": "穿着",
+     "op": "replace",
+     "her_note": "着durative",
+     "explanation": "穿 → 穿着: wearing the beautiful clothes is a durative state, so use 着 (着durative)."
+    },
+    {
+     "edit_id": "pear_story#3/f4/p0/k1/e0",
+     "sample_id": "pear_story#3",
+     "display": "就一个男人[遛→牵着]一只驴走过去",
+     "original": "遛",
+     "corrected": "牵着",
+     "op": "replace",
+     "her_note": "着durative，“遛“ for 狗only.",
+     "explanation": "遛 → 牵着: leading the donkey accompanies walking; use 牵着, since 遛 is for dogs only."
+    },
+    {
+     "edit_id": "pear_story#1/f8/p1/k0/e0",
+     "sample_id": "pear_story#1",
+     "display": "小王在马路[骑自行车→骑着自行车]一看到别个人",
+     "original": "骑自行车",
+     "corrected": "骑着自行车",
+     "op": "replace",
+     "her_note": "“着” is for “durative”",
+     "explanation": "骑自行车 → 骑着自行车: riding the bicycle is a durative action, so use 着."
+    },
+    {
+     "edit_id": "pear_story#4/f41/p1/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "但那些三个男孩不知不觉[和梨子→拿着梨子]走过了被偷走的有梨子所有权的第一个人",
+     "original": "和梨子",
+     "corrected": "拿着梨子",
+     "op": "replace",
+     "her_note": "“和+noun.” is used for multiple nouns that have the same action, we can say: 那三个男孩和拿走梨子的小男孩走过了……，because both 三个男孩 and 小男孩 “walk past…”, but here “梨子” do not walk, so you need to use the accompanying phrase “V.着”",
+     "explanation": "和梨子 → 拿着梨子: the pears do not walk themselves; holding them accompanies walking, so use V.着."
+    }
+   ],
+   "not_an_error": "Do not use 着 when the action is completed, such as 吃了夹竹桃以后 (了completed). Do not change 和/跟 + noun when both nouns perform the same action.",
+   "her_terms": [
+    "着durative",
+    "了completed",
+    "V.着"
+   ]
+  }
+ },
+ {
+  "id": "zai_progressive",
+  "name": "在/正在 ongoing",
+  "section": "coherence_temporality",
+  "definition": "Use 在/正在 for a dynamic action that is ongoing. Do not use it when the sentence is only stating a location or does not emphasize an ongoing action.",
+  "her_notes": [
+   "here is not emphasizing “ongoing”",
+   "在ongoing",
+   "一直在+V., emphasizing always ongoing"
+  ],
+  "detectable_by": "parser",
+  "n_train": 5,
+  "edit_shapes": [
+   [
+    "delete AD",
+    2
+   ],
+   [
+    "insert 在 after NN",
+    1
+   ],
+   [
+    "replace AD+VV+AS",
+    1
+   ],
+   [
+    "replace AD+AD+AD+VV",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 在/正在 before a dynamic verb when the action is ongoing; use 一直在+V. to emphasize that it is always ongoing. Do not use 在 when the sentence only states what someone does and does not emphasize an ongoing action.",
+   "explanation_template": "<wrong> → <correct>: use/remove 在 because <action> is/is not emphasized as ongoing.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#50/f1/p0/k0-1/e3",
+     "sample_id": "shennong_samples#50",
+     "display": "也看到了很多人[+在]吃植物",
+     "original": "",
+     "corrected": "在",
+     "op": "insert",
+     "her_note": "在ongoing",
+     "explanation": "也看到了很多人吃植物 → 也看到了很多人在吃植物: use 在 because eating is ongoing."
+    },
+    {
+     "edit_id": "mengmu_samples#17/f0/p1/k0/e0",
+     "sample_id": "mengmu_samples#17",
+     "display": "孟子[一直学了→一直在学习]很多东西",
+     "original": "一直学了",
+     "corrected": "一直在学习",
+     "op": "replace",
+     "her_note": "一直在+V., emphasizing always ongoing",
+     "explanation": "一直学了很多东西 → 一直在学习很多东西: use 一直在+V. because the learning is emphasized as always ongoing."
+    },
+    {
+     "edit_id": "mengmu_samples#21/f7/p0/k0/e0",
+     "sample_id": "mengmu_samples#21",
+     "display": "孟子不是[-在]看商店的员工",
+     "original": "在",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "here is not emphasizing “ongoing”",
+     "explanation": "孟子不是在看商店的员工 → 孟子不是看商店的员工: remove 在 because this does not emphasize an ongoing action."
+    },
+    {
+     "edit_id": "mengmu_samples#21/f7/p0/k0/e1",
+     "sample_id": "mengmu_samples#21",
+     "display": "就是[-在]跟其他的孩子玩商店的游戏",
+     "original": "在",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "here is not emphasizing “ongoing”",
+     "explanation": "就是在跟其他的孩子玩商店的游戏 → 就是跟其他的孩子玩商店的游戏: remove 在 because this does not emphasize an ongoing action."
+    },
+    {
+     "edit_id": "mengmu_samples#13/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#13",
+     "display": "而是因为住在那里以后孟子[一直在没读书→一直没在读书]",
+     "original": "一直在没读书",
+     "corrected": "一直没在读书",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "一直在没读书 → 一直没在读书: put 没 before 在 for “has always not been studying.”"
+    }
+   ],
+   "not_an_error": "Do not flag a sentence for lacking 在 when it only states what someone does and does not emphasize an ongoing action.",
+   "her_terms": [
+    "在ongoing",
+    "一直在+V."
+   ]
+  }
+ },
+ {
+  "id": "guo_experience",
+  "name": "过 for experience",
+  "section": "coherence_temporality",
+  "definition": "Use 过 to mean “have done/have experienced.” Do not use it when the stated experience has not happened yet.",
+  "her_notes": [
+   "“过” is to express “experience”, now the experience has not yet been experienced",
+   "“过” for “have done, experience”",
+   "“过” experience, have done, Place到处都 + Clause"
+  ],
+  "detectable_by": "parser",
+  "n_train": 5,
+  "edit_shapes": [
+   [
+    "replace VV",
+    1
+   ],
+   [
+    "replace P+PN+DEG+NR+VV",
+    1
+   ],
+   [
+    "replace NR+VV+AS+PU+VV+AS+JJ+DEG+NN",
+    1
+   ],
+   [
+    "replace AD+VV+AS+NOI+VV",
+    1
+   ],
+   [
+    "replace NN+DEC",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 过 to mean “have done” or “have experienced” something. Do not use 过 when the action or experience has not happened yet.",
+   "explanation_template": "<wrong> → <correct>: <action/experience> has happened before, so use 过 to show “have done/have experienced”; if it has not happened yet, do not use 过.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#22/f5/p0/k0/e0",
+     "sample_id": "mengmu_samples#22",
+     "display": "他跟很多人[打交道→打过交道]",
+     "original": "打交道",
+     "corrected": "打过交道",
+     "op": "replace",
+     "her_note": "“过” for “have done, experience”",
+     "explanation": "打交道 → 打过交道: He has had this experience before, so use 过 for “have done/experienced.”"
+    },
+    {
+     "edit_id": "mengmu_samples#50/f11/p0/k0/e0",
+     "sample_id": "mengmu_samples#50",
+     "display": "他们[在到处的中国住→在中国各地都住过]",
+     "original": "在到处的中国住",
+     "corrected": "在中国各地都住过",
+     "op": "replace",
+     "her_note": "“过” experience, have done, Place到处都 + Clause",
+     "explanation": "在到处的中国住 → 在中国各地都住过: Living in places across China is past experience, so use 住过; use Place到处都 + Clause."
+    },
+    {
+     "edit_id": "shennong_samples#1/f2/p0/note/e1",
+     "sample_id": "shennong_samples#1",
+     "display": "[神农旅行了，吃过新的植物→神农决定去旅行尝试新的植物]",
+     "original": "神农旅行了，吃过新的植物",
+     "corrected": "神农决定去旅行尝试新的植物",
+     "op": "replace",
+     "her_note": "it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced",
+     "explanation": "神农旅行了，吃过新的植物 → 神农决定去旅行尝试新的植物: The experience has not happened yet—he only decides to travel and try new plants—so do not use 过."
+    },
+    {
+     "edit_id": "mengmu_samples#49/f6/p1/k0/e0",
+     "sample_id": "mengmu_samples#49",
+     "display": "原来他的父母都[没做过而祭拜→没祭拜过]",
+     "original": "没做过而祭拜",
+     "corrected": "没祭拜过",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "没做过而祭拜 → 没祭拜过: Not worshipping is an experience/action that has not happened before, so put 过 after 祭拜."
+    }
+   ],
+   "not_an_error": "Do not flag a sentence for missing 过 if it is about a future or not-yet-happened action; 过 cannot describe an experience that has not yet been experienced.",
+   "her_terms": [
+    "“过” for “have done, experience”",
+    "“过” experience, have done",
+    "Place到处都 + Clause"
+   ]
+  }
+ },
+ {
+  "id": "action_series_last_le",
+  "name": "a series of actions: last one with 了",
+  "section": "coherence_temporality",
+  "definition": "When narrating a series of actions, use the aspect marking to organize the sequence; normally the final completed action takes 了.",
+  "her_notes": [
+   "either 了completed or 着 durative",
+   "着durative vs.了completed",
+   "it’s not about “completion”, no了",
+   "not occur yet, no了"
+  ],
+  "detectable_by": "parser",
+  "n_train": 1,
+  "edit_shapes": [
+   [
+    "delete AS",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "In a series of actions, normally put 了completed on the final completed action, not on an earlier action that leads to the next one.",
+   "explanation_template": "<wrong> → <correct>: <action> leads to the next action, so do not use 了completed here; normally the final completed action takes 了.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#25/f1/p0/k0/e0",
+     "sample_id": "shennong_samples#25",
+     "display": "他走了很远的路去[-了]学哪些植物可以入药",
+     "original": "了",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "",
+     "explanation": "他走了很远的路去学哪些植物可以入药 → 他走很远的路去学哪些植物可以入药: 走 leads to 去学, so do not use 了completed on 走."
+    }
+   ],
+   "not_an_error": "Do not apply this rule when the sentence is not narrating a series of actions.",
+   "her_terms": []
+  }
+ },
+ {
+  "id": "time_sequence_markers",
+  "name": "Time + 以后 / 后来",
+  "section": "coherence_temporality",
+  "definition": "Use Time + 以后 and 后来 to show a clear temporal sequence, and avoid redundant time expressions.",
+  "her_notes": [
+   "Time+以后",
+   "Time + 以后",
+   "“很久以前“ and ”在古代” are redundant, only keep one",
+   "“所以” is not appropriate because here is not a result, 后来"
+  ],
+  "detectable_by": "pattern",
+  "n_train": 18,
+  "edit_shapes": [
+   [
+    "replace AD",
+    3
+   ],
+   [
+    "replace VV+PN+LC",
+    1
+   ],
+   [
+    "delete SP+NT",
+    1
+   ],
+   [
+    "replace PN+NT",
+    1
+   ],
+   [
+    "replace NT",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use Time + 以后 after a completed time or action to show “after”; when moving to a later event in the story, use 后来 or 然后 rather than 以后 by itself. Do not add 以后 when the time phrase already says the time clearly.",
+   "explanation_template": "<wrong> → <correct>: use <Time/action> + 以后 for “after <Time/action>”; if the action is finished, use 了completed before 以后. Use 后来/然后 for the next story event, or delete a redundant 以后.",
+   "examples": [
+    {
+     "edit_id": "pear_story#3/f11/p0/k0/e0",
+     "sample_id": "pear_story#3",
+     "display": "[帮他后→帮了他以后]",
+     "original": "帮他后",
+     "corrected": "帮了他以后",
+     "op": "replace",
+     "her_note": "了completed",
+     "explanation": "帮他后 → 帮了他以后: helping him is finished, so use 了completed before 以后."
+    },
+    {
+     "edit_id": "mengmu_samples#27/f1/p0/k0/e1",
+     "sample_id": "mengmu_samples#27",
+     "display": "[以后→后来]每年搬家",
+     "original": "以后",
+     "corrected": "后来",
+     "op": "replace",
+     "her_note": "后来每年都搬家",
+     "explanation": "以后每年搬家 → 后来每年搬家: use 后来 to introduce the later repeated event."
+    },
+    {
+     "edit_id": "shennong_samples#7/f3/p0/k0/e0",
+     "sample_id": "shennong_samples#7",
+     "display": "[他以后→然后]正好看一个灵芝",
+     "original": "他以后",
+     "corrected": "然后",
+     "op": "replace",
+     "her_note": "Time+以后",
+     "explanation": "他以后正好看一个灵芝 → 他然后正好看一个灵芝: use 然后 for the next event in the story, not 以后 after 他."
+    },
+    {
+     "edit_id": "mengmu_samples#49/f2/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#49",
+     "display": "他才三岁[-的以后]待在墓地里",
+     "original": "的以后",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "Time + 以后",
+     "explanation": "他才三岁的以后待在墓地里 → 他才三岁待在墓地里: delete 以后 because the age phrase already gives the time."
+    },
+    {
+     "edit_id": "mengmu_samples#49/f8/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#49",
+     "display": "[长大的时候→长大以后]",
+     "original": "长大的时候",
+     "corrected": "长大以后",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "长大的时候 → 长大以后: use Time + 以后 to show what happened after growing up."
+    }
+   ],
+   "not_an_error": "Do not use 结果 merely as a general later-time connector; it is for an unexpected result. Use 后来 for a later development instead.",
+   "her_terms": [
+    "Time+以后",
+    "Time + 以后",
+    "了completed"
+   ]
+  }
+ },
+ {
+  "id": "cause_result_soyi",
+  "name": "所以: cause-result relationship",
+  "section": "coherence_connectors",
+  "definition": "Use 所以 only when the preceding clause is genuinely the cause or reason for the following result. Otherwise delete it or use a connector that matches the relationship.",
+  "her_notes": [
+   "“所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”",
+   "“所以” is inappropriate because here is not a result, delete it, add “在山上”",
+   "“所以” is not appropriate, since here is not a cause-effect relationship",
+   "no cause-effect relationship, so “所以” is inappropriate",
+   "there is no cause-effect relationship"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 16,
+  "edit_shapes": [
+   [
+    "comment",
+    4
+   ],
+   [
+    "insert 所以 after PU",
+    2
+   ],
+   [
+    "delete AD",
+    2
+   ],
+   [
+    "replace AD",
+    2
+   ],
+   [
+    "delete AD+PN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate.",
+   "explanation_template": "<wrong> → <correct>: the following event is not a result of the preceding clause, so 所以 is not appropriate; use <connector> / delete it.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#40/f1/p0/k0/e0",
+     "sample_id": "mengmu_samples#40",
+     "display": "[-所以他们]祭拜",
+     "original": "所以他们",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "there is no cause-effect relationship",
+     "explanation": "所以他们 → 他们: there is no cause-effect relationship, so 所以 is not appropriate."
+    },
+    {
+     "edit_id": "mengmu_samples#29/f3/p0/note/e1",
+     "sample_id": "mengmu_samples#29",
+     "display": "[+所以]他们常常搬家",
+     "original": "",
+     "corrected": "所以",
+     "op": "insert",
+     "her_note": "无聊？add所以",
+     "explanation": "他们常常搬家 → 所以他们常常搬家: the preceding reason leads to this result, so add 所以."
+    },
+    {
+     "edit_id": "shennong_samples#38/f2/p0/note/e0",
+     "sample_id": "shennong_samples#38",
+     "display": "[-所以]他去了又空又高的山",
+     "original": "所以",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "“所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”",
+     "explanation": "所以他去了又空又高的山 → 他为了找到没有毒的植物去了又空又高的山: going to the mountain is a purpose, not a result, so delete 所以 and use 为了找到没有毒的植物."
+    },
+    {
+     "edit_id": "shennong_samples#25/f8/p0/note/e0",
+     "sample_id": "shennong_samples#25",
+     "display": "⟦所以⟧神农告诉他有些植物是好的",
+     "original": "所以",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“所以” is not appropriate because here is not a result, 后来",
+     "explanation": "所以神农告诉他有些植物是好的 → 后来神农告诉他有些植物是好的: this is not a result, so use 后来 instead of 所以."
+    },
+    {
+     "edit_id": "mengmu_samples#22/f5/p1/k0-1/e0",
+     "sample_id": "mengmu_samples#22",
+     "display": "[结果他→所以，]取得生活经验",
+     "original": "结果他",
+     "corrected": "所以，",
+     "op": "replace",
+     "her_note": "“结果” for unexpected result",
+     "explanation": "结果他取得生活经验 → 所以，取得生活经验: this is a cause-result relationship; use 所以, while 结果 is for an unexpected result."
+    }
+   ],
+   "not_an_error": "Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).",
+   "her_terms": [
+    "这样",
+    "结果",
+    "后来"
+   ]
+  }
+ },
+ {
+  "id": "purpose_weile",
+  "name": "为了 + VP.",
+  "section": "coherence_connectors",
+  "definition": "Use 为了 + verb phrase to state a purpose, in the appropriate clause position; do not use it as a result connector.",
+  "her_notes": [
+   "为了 + VP.",
+   "“为了……” cannot be in the latter clause",
+   "it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced"
+  ],
+  "detectable_by": "parser",
+  "n_train": 5,
+  "edit_shapes": [
+   [
+    "insert words after PU",
+    2
+   ],
+   [
+    "delete VV",
+    1
+   ],
+   [
+    "replace AD+NN+PN+AD+VA+DEV+VV+PU+P+P+NR+VV+AD+VA+DEC+NN+NN",
+    1
+   ],
+   [
+    "replace AD+P",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 为了 + VP. to state a purpose, usually before the main clause. Do not use 为了 as a result connector, and do not put the 为了 phrase in the latter clause.",
+   "explanation_template": "<wrong> → <correct>: <purpose> is the purpose of <main action>, so use 为了 + <VP> before the main clause; do not use 所以 to show a result here.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#3/f3/p0/k0/e1",
+     "sample_id": "mengmu_samples#3",
+     "display": "他们搬家不是为了孟母[-要]住在更好的房子",
+     "original": "要",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "为了 + VP.",
+     "explanation": "为了孟母要住在更好的房子 → 为了孟母住在更好的房子: use 为了 + VP.; the purpose phrase is 孟母住在更好的房子."
+    },
+    {
+     "edit_id": "shennong_samples#1/f2/p0/note/e0",
+     "sample_id": "shennong_samples#1",
+     "display": "[+为了帮助人们找到能吃的植物，]神农旅行了",
+     "original": "",
+     "corrected": "为了帮助人们找到能吃的植物，",
+     "op": "insert",
+     "her_note": "it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced",
+     "explanation": "神农旅行了 → 为了帮助人们找到能吃的植物，神农旅行了: add 为了 + VP. to show the purpose of the trip."
+    },
+    {
+     "edit_id": "shennong_samples#38/f2/p0/note/e1",
+     "sample_id": "shennong_samples#38",
+     "display": "[+为了找到没有毒的植物，]所以他去了又空又高的山",
+     "original": "",
+     "corrected": "为了找到没有毒的植物，",
+     "op": "insert",
+     "her_note": "“所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”",
+     "explanation": "所以他去了又空又高的山 → 为了找到没有毒的植物，他去了又空又高的山: finding non-poisonous plants is the purpose, not a result, so do not use 所以."
+    },
+    {
+     "edit_id": "mengmu_samples#48/f0/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#48",
+     "display": "[每次搬家她都辛苦地工作，为了给孟子提供更好的学习环境→为了给孟子提供更好的学习环境，每次搬家她都辛苦地工作]",
+     "original": "每次搬家她都辛苦地工作，为了给孟子提供更好的学习环境",
+     "corrected": "为了给孟子提供更好的学习环境，每次搬家她都辛苦地工作",
+     "op": "replace",
+     "her_note": "“为了……” cannot be in the latter clause",
+     "explanation": "每次搬家她都辛苦地工作，为了给孟子提供更好的学习环境 → 为了给孟子提供更好的学习环境，每次搬家她都辛苦地工作: the 为了 phrase cannot be in the latter clause."
+    }
+   ],
+   "not_an_error": "Do not flag 为了 when it correctly introduces a purpose before the main clause. If the meaning is a result, do not use 为了 for that connection.",
+   "her_terms": [
+    "为了 + VP."
+   ]
+  }
+ },
+ {
+  "id": "adversative_connector",
+  "name": "可是/却/而: semantic turn",
+  "section": "coherence_connectors",
+  "definition": "Use 可是, 却, 而, and 但 only when there is a real contrast, unexpected semantic turn, or concession. Do not add an adversative connector without that relationship.",
+  "her_notes": [
+   "no “semantic turn” relationship, so可是is inappropriate",
+   "“而” is not appropriate, because here is no “semantic turn”",
+   "“却” indicates unexpected semantic turn",
+   "because earlier “但“ is already used, here use “可” as alternative."
+  ],
+  "detectable_by": "judgement",
+  "n_train": 8,
+  "edit_shapes": [
+   [
+    "comment",
+    2
+   ],
+   [
+    "delete AD",
+    2
+   ],
+   [
+    "replace AD+VV",
+    1
+   ],
+   [
+    "insert 但是 after PU",
+    1
+   ],
+   [
+    "insert 但 after PU",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 可是, 却, 而, and 但 only when there is a real “semantic turn,” such as a contrast or an unexpected result. 却 indicates an unexpected semantic turn.",
+   "explanation_template": "<wrong> → <correct>: there is no real contrast or “semantic turn” here, so do not use <connector>.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#36/f5/p0/note/e0",
+     "sample_id": "mengmu_samples#36",
+     "display": "⟦可是⟧他很聪明",
+     "original": "可是",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "no “semantic turn” relationship, so可是is inappropriate",
+     "explanation": "可是: there is no “semantic turn” relationship here, so 可是 is inappropriate."
+    },
+    {
+     "edit_id": "mengmu_samples#48/f1/p0/note/e0",
+     "sample_id": "mengmu_samples#48",
+     "display": "⟦而⟧追求知识是很重要的",
+     "original": "而",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“而” is not appropriate, because here is no “semantic turn”",
+     "explanation": "而: there is no “semantic turn” here, so 而 is not appropriate."
+    },
+    {
+     "edit_id": "pear_story#4/f23/p0/k0-1/e2",
+     "sample_id": "pear_story#4",
+     "display": "但政府实行的改革经济一系列政策[就让→却使]他失业",
+     "original": "就让",
+     "corrected": "却使",
+     "op": "replace",
+     "her_note": "“却” indicates unexpected semantic turn",
+     "explanation": "就让 → 却使: losing his job is an unexpected semantic turn, so use 却."
+    },
+    {
+     "edit_id": "mengmu_samples#29/f2/p0/k0/e0",
+     "sample_id": "mengmu_samples#29",
+     "display": "[-可是]孟子的妈妈一直很控制他",
+     "original": "可是",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "",
+     "explanation": "可是 → delete: there is no real contrast or “semantic turn” here, so do not use 可是."
+    }
+   ],
+   "not_an_error": "Use 却 when the result is an unexpected semantic turn.",
+   "her_terms": [
+    "semantic turn"
+   ]
+  }
+ },
+ {
+  "id": "addition_repetition_connectors",
+  "name": "又 / 也 / 还 / 并",
+  "section": "coherence_connectors",
+  "definition": "Use additive and repetition connectors according to their meanings: 又 for repetition, 也 for similarity, 还 for an added or surprising point, and 并 to strengthen a coherent addition.",
+  "her_notes": [
+   "又for something already occurred",
+   "“又“ emphasizes repeating vs. ”也“ emphasizes similarity",
+   "又+ modal V.",
+   "adding “并” will increase the coherence.",
+   "“还“ indicates “surprising, anger” tone, as opposed to “就” with the natural continuation tone."
+  ],
+  "detectable_by": "judgement",
+  "n_train": 22,
+  "edit_shapes": [
+   [
+    "delete AD",
+    5
+   ],
+   [
+    "replace AD",
+    3
+   ],
+   [
+    "replace AD+VV",
+    2
+   ],
+   [
+    "insert 都 after AD",
+    2
+   ],
+   [
+    "insert 又 after PU",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.).",
+   "explanation_template": "<wrong> → <correct>: use <connector> here because it shows <repetition / similarity / an added or surprising point / a coherent addition>; place it as <position> when needed.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#21/f8/p0/k0/e0",
+     "sample_id": "mengmu_samples#21",
+     "display": "所以他们[再→又]搬家一次",
+     "original": "再",
+     "corrected": "又",
+     "op": "replace",
+     "her_note": "又for something already occurred",
+     "explanation": "再 → 又: the moving happened before, so use 又 for something already occurred."
+    },
+    {
+     "edit_id": "mengmu_samples#35/f10/p0/k0/e0",
+     "sample_id": "mengmu_samples#35",
+     "display": "[也他就→他也]理解他妈妈的做法",
+     "original": "也他就",
+     "corrected": "他也",
+     "op": "replace",
+     "her_note": "Subj.也",
+     "explanation": "也他就 → 他也: 也 follows the subject (Subj.也)."
+    },
+    {
+     "edit_id": "mengmu_samples#11/f7/p0/k0/e0",
+     "sample_id": "mengmu_samples#11",
+     "display": "妈妈觉得他们[应该又搬家了→又应该搬家了]",
+     "original": "应该又搬家了",
+     "corrected": "又应该搬家了",
+     "op": "replace",
+     "her_note": "又+ modal V.",
+     "explanation": "应该又搬家了 → 又应该搬家了: put 又 before the modal V. (又+ modal V.)."
+    },
+    {
+     "edit_id": "pear_story#4/f23/p1/k1-2/e0",
+     "sample_id": "pear_story#4",
+     "display": "但政府实行的改革经济一系列政策就让他失业[+并]",
+     "original": "",
+     "corrected": "并",
+     "op": "insert",
+     "her_note": "adding “并” will increase the coherence.",
+     "explanation": "失业 → 失业并: add 并 to make the addition more coherent."
+    },
+    {
+     "edit_id": "pear_story#4/f15/p0/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "然后突然一口气吃掉了我家长！他到底以为自己是谁啊？难道以为自己是上帝吗？我生气极了！下午[就→他还]继续爬上树",
+     "original": "就",
+     "corrected": "他还",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "就 → 他还: use 还 for a surprising, angry continuation; 就 would sound like a natural continuation."
+    }
+   ],
+   "not_an_error": "Do not add an additive connector when the sentence does not show repetition, similarity, or an added point. Use 就, not 还, for a natural continuation rather than a surprising or angry one.",
+   "her_terms": [
+    "又for something already occurred",
+    "Subj.也",
+    "又+ modal V.",
+    "surprising, anger tone",
+    "natural continuation tone"
+   ]
+  }
+ },
+ {
+  "id": "conditional_jiu",
+  "name": "只要……就 / Subj. + 就",
+  "section": "coherence_connectors",
+  "definition": "Use 只要……就 for an “as long as” condition, and place the subject and 就 so that the conditional or natural continuation relationship is clear.",
+  "her_notes": [
+   "wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as",
+   "Subj. + 就",
+   "Subj.+就",
+   "才 Num.就V.",
+   "才Num.就V."
+  ],
+  "detectable_by": "parser",
+  "n_train": 19,
+  "edit_shapes": [
+   [
+    "insert 就 after PU",
+    5
+   ],
+   [
+    "insert 就 after NN",
+    3
+   ],
+   [
+    "delete AD",
+    2
+   ],
+   [
+    "delete CC+NR+DEG",
+    2
+   ],
+   [
+    "replace VV",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future.",
+   "explanation_template": "<wrong> → <correct>: <meaning/condition> leads naturally to <result>, so use 只要……就 or put the subject before 就 (Subj. + 就 + V.).",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#44/f1/p0/k1/e0",
+     "sample_id": "mengmu_samples#44",
+     "display": "他[-有的时候]只要跟朋友玩儿",
+     "original": "有的时候",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as",
+     "explanation": "他有的时候只要跟朋友玩儿 → 他只要跟朋友玩儿: use 只要 for an “as long as” condition, not 有的时候 (“sometimes”)."
+    },
+    {
+     "edit_id": "mengmu_samples#44/f1/p0/k1/e2",
+     "sample_id": "mengmu_samples#44",
+     "display": "可是孟子的妈妈[有别的看法→就抱怨]",
+     "original": "有别的看法",
+     "corrected": "就抱怨",
+     "op": "replace",
+     "her_note": "wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as",
+     "explanation": "可是孟子的妈妈有别的看法 → 可是孟子的妈妈就抱怨: the condition leads to the result, so use 就抱怨."
+    },
+    {
+     "edit_id": "shennong_samples#7/f3/p2/k0/e0",
+     "sample_id": "shennong_samples#7",
+     "display": "他一吃灵芝[就身体好了→身体就好了]",
+     "original": "就身体好了",
+     "corrected": "身体就好了",
+     "op": "replace",
+     "her_note": "Subj. + 就",
+     "explanation": "他一吃灵芝，就身体好了 → 他一吃灵芝，身体就好了: put the subject before 就 (Subj. + 就)."
+    },
+    {
+     "edit_id": "mengmu_samples#27/f1/p0/k0/e0",
+     "sample_id": "mengmu_samples#27",
+     "display": "孟子才三岁[+就]开始搬家",
+     "original": "",
+     "corrected": "就",
+     "op": "insert",
+     "her_note": "才Num.就V.",
+     "explanation": "孟子才三岁开始搬家 → 孟子才三岁就开始搬家: at only age three, the action already starts, so use 才 Num.就V."
+    },
+    {
+     "edit_id": "shennong_samples#13/f3/p0/k0-1-2/e2",
+     "sample_id": "shennong_samples#13",
+     "display": "[会→就]生病了",
+     "original": "会",
+     "corrected": "就",
+     "op": "replace",
+     "her_note": "会means “will”, for future",
+     "explanation": "会生病了 → 就生病了: this is the result of the condition, so use 就; 会 means “will” for the future."
+    }
+   ],
+   "not_an_error": "When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.",
+   "her_terms": [
+    "只要……就",
+    "Subj. + 就",
+    "Subj.+就",
+    "才 Num.就V.",
+    "才Num.就V."
+   ]
+  }
+ },
+ {
+  "id": "not_but_refutation",
+  "name": "不是……而是……",
+  "section": "coherence_connectors",
+  "definition": "不是……而是…… refutes something conventional or mistaken and affirms an unexpected correction. Use it only when the two alternatives have that correction relationship.",
+  "her_notes": [
+   "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+   "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章",
+   "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 画画儿 is not a conventional activity related to 寺庙",
+   "Subj.不是……而是……",
+   "Subj. before “不是……而是……”"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 16,
+  "edit_shapes": [
+   [
+    "comment",
+    3
+   ],
+   [
+    "delete AD",
+    2
+   ],
+   [
+    "delete CC",
+    1
+   ],
+   [
+    "replace AD+AD",
+    1
+   ],
+   [
+    "insert words after CC",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 不是……而是…… only to correct a conventional or mistaken idea with an unexpected alternative. Put the subject before 不是……而是…… when both alternatives have the same subject.",
+   "explanation_template": "<wrong> → <correct>: 不是……而是…… must refute a mistaken or expected idea and give its correction; <first alternative> is not conventionally related to <second alternative>.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#37/f6/p0/note/e0",
+     "sample_id": "mengmu_samples#37",
+     "display": "⟦不是商店而是学校⟧",
+     "original": "不是商店而是学校",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 商店is not conventionally related to对教育有好处",
+     "explanation": "不是商店而是学校: 商店 is not conventionally related to 对教育有好处, so this is not a correction relationship for 不是……而是……."
+    },
+    {
+     "edit_id": "mengmu_samples#34/f4/p0/note/e0",
+     "sample_id": "mengmu_samples#34",
+     "display": "⟦不是画画儿，而是祭拜⟧",
+     "original": "不是画画儿，而是祭拜",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 画画儿 is not a conventional activity related to 寺庙",
+     "explanation": "不是画画儿，而是祭拜: 画画儿 is not a conventional activity related to 寺庙, so 不是……而是…… does not fit here."
+    },
+    {
+     "edit_id": "mengmu_samples#44/f5/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#44",
+     "display": "他[不是在→不再]搬家",
+     "original": "不是在",
+     "corrected": "不再",
+     "op": "replace",
+     "her_note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章",
+     "explanation": "他不是在搬家 → 他不再搬家: 搬家 is not conventionally related to 看文章, so do not use 不是……而是……."
+    },
+    {
+     "edit_id": "mengmu_samples#50/f9/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#50",
+     "display": "[不是孟子喜欢这个城市，而是他喜欢这个城市的人→孟子不是喜欢这个城市，而是喜欢这个城市的人]",
+     "original": "不是孟子喜欢这个城市，而是他喜欢这个城市的人",
+     "corrected": "孟子不是喜欢这个城市，而是喜欢这个城市的人",
+     "op": "replace",
+     "her_note": "Subj. before “不是……而是……”",
+     "explanation": "不是孟子喜欢这个城市，而是他喜欢这个城市的人 → 孟子不是喜欢这个城市，而是喜欢这个城市的人: put the subject 孟子 before 不是……而是……."
+    }
+   ],
+   "not_an_error": "Do not flag a sentence that genuinely corrects a mistaken or conventional idea with an unexpected alternative. Do not use this pattern merely to connect two unrelated actions, places, or ideas.",
+   "her_terms": [
+    "不是……而是……",
+    "Subj."
+   ]
+  }
+ },
+ {
+  "id": "either_or_choice",
+  "name": "不是……就是……",
+  "section": "coherence_connectors",
+  "definition": "不是……就是…… means “either…or…” and requires two genuinely alternative possibilities, not two compatible purposes, states, or actions.",
+  "her_notes": [
+   "不是……就是……is used for “either…or…”",
+   "不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education",
+   "不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship",
+   "不是……就是…… is “either…or…”"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 9,
+  "edit_shapes": [
+   [
+    "comment",
+    2
+   ],
+   [
+    "replace VC+VA+DEC+NN+PU+CC+VA+DEC+NN",
+    1
+   ],
+   [
+    "replace AD+VC+VV+NN+PU+PN+AD+P+NN+VV+NN",
+    1
+   ],
+   [
+    "replace P+NN+VV+DEC+NN+LC+PU+VC+P+NN+PU+AD+P+P+PN+VV+AD+VV+AS+VV+JJ+DEG+NN",
+    1
+   ],
+   [
+    "replace CC",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use 不是……就是…… for two real alternatives (“either…or…”). Put the Subj. at the beginning: <Subj.>不是……就是……; do not use it when the two parts are compatible or are the same purpose.",
+   "explanation_template": "<wrong> → <correct>: 不是……就是…… means “either…or…,” but <A> and <B> are not genuine alternative possibilities.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#43/f4/p0/k0/e0",
+     "sample_id": "mengmu_samples#43",
+     "display": "难怪孟子[不是高兴的孩子，就是安静的孩子→每天都不高兴]",
+     "original": "不是高兴的孩子，就是安静的孩子",
+     "corrected": "每天都不高兴",
+     "op": "replace",
+     "her_note": "不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship",
+     "explanation": "不是高兴的孩子，就是安静的孩子 → 每天都不高兴: “高兴” and “安静” cannot form an either…or… relationship."
+    },
+    {
+     "edit_id": "mengmu_samples#7/f4/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#7",
+     "display": "[不是学习中文，他就是跟老师说中文→他不是学习中文，就是跟老师说中文]",
+     "original": "不是学习中文，他就是跟老师说中文",
+     "corrected": "他不是学习中文，就是跟老师说中文",
+     "op": "replace",
+     "her_note": "Subj. at the beginning of 不是……就是……",
+     "explanation": "不是学习中文，他就是跟老师说中文 → 他不是学习中文，就是跟老师说中文: put the subject at the beginning of 不是……就是……."
+    },
+    {
+     "edit_id": "mengmu_samples#41/f11/p0/k0/e0",
+     "sample_id": "mengmu_samples#41",
+     "display": "[在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方→孟母搬家是为了让孟子接受良好的教育]",
+     "original": "在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方",
+     "corrected": "孟母搬家是为了让孟子接受良好的教育",
+     "op": "replace",
+     "her_note": "不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education",
+     "explanation": "不是为了学问，就是为了以她搬家又搬着找合适的地方 → 孟母搬家是为了让孟子接受良好的教育: “学问” and “合适的地方” are the same purpose, not either…or…."
+    },
+    {
+     "edit_id": "mengmu_samples#13/f5/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#13",
+     "display": "从早到晚他[学习不是历史，就是哲学→不是学习历史，就是学习哲学]",
+     "original": "学习不是历史，就是哲学",
+     "corrected": "不是学习历史，就是学习哲学",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "学习不是历史，就是哲学 → 不是学习历史，就是学习哲学: use 不是……就是…… with the two alternative actions."
+    }
+   ],
+   "not_an_error": "Do not flag 不是……就是…… when the two parts are genuinely alternative possibilities. With a shared subject, the subject can come before the connector.",
+   "her_terms": [
+    "either…or…",
+    "Subj."
+   ]
+  }
+ },
+ {
+  "id": "he_scope_coordination",
+  "name": "和 cannot connect clauses/verb phrases",
+  "section": "coherence_connectors",
+  "definition": "和/跟 + noun connects multiple nouns that share the same action. Do not use it to connect whole clauses, unrelated verb phrases, adjectives, or an accompanying object that does not perform the action.",
+  "her_notes": [
+   "和cannot connect verb phrases",
+   "和cannot connect clauses",
+   "和cannot link clauses",
+   "和cannot connect Adj.",
+   "“跟/和+noun.” is used for multiple nouns that have the same action, we can say: 马先生和张先生走……，because both 马先生and 张先生 “walk”, but here “驴” does not walk by itself, but walked by 马先生, so you need to use the accompanying phrase “V.着”"
+  ],
+  "detectable_by": "parser",
+  "n_train": 13,
+  "edit_shapes": [
+   [
+    "delete CC",
+    4
+   ],
+   [
+    "replace CC",
+    2
+   ],
+   [
+    "delete P",
+    1
+   ],
+   [
+    "replace VV+CC+VV+NN",
+    1
+   ],
+   [
+    "replace CC+PN+DEG+NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "和/跟 + noun connects multiple nouns that share the same action. Do not use 和/跟 to connect clauses, verb phrases, or adjectives; if the noun is an accompanying object and does not do the action, use V.着 instead.",
+   "explanation_template": "<wrong> → <correct>: 和/跟 cannot connect <clauses/verb phrases/adjectives>. Use <correct connector or structure> instead.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#19/f4/p0/k0/e0",
+     "sample_id": "mengmu_samples#19",
+     "display": "孟子才四岁就开始学文学[-和]写汉字",
+     "original": "和",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "和cannot connect verb phrases",
+     "explanation": "学文学和写汉字 → 学文学，写汉字: 和 cannot connect verb phrases."
+    },
+    {
+     "edit_id": "mengmu_samples#28/f6/p0/k0-1/e1",
+     "sample_id": "mengmu_samples#28",
+     "display": "哲学人很聪明[和→也很]重要",
+     "original": "和",
+     "corrected": "也很",
+     "op": "replace",
+     "her_note": "和cannot connect Adj.",
+     "explanation": "很聪明和重要 → 很聪明，也很重要: 和 cannot connect adjectives."
+    },
+    {
+     "edit_id": "pear_story#2/f1/p0/k0/e1",
+     "sample_id": "pear_story#2",
+     "display": "一个男生[和→牵着]一只驴从农人经过了",
+     "original": "和",
+     "corrected": "牵着",
+     "op": "replace",
+     "her_note": "“跟/和+noun.” is used for multiple nouns that have the same action, we can say: 一个男生和一个女生走……，because both 男生and 女生 “walk”, but here “驴” does not walk by itself, but walked by 男生, so you need to use the accompanying phrase “V.着”",
+     "explanation": "一个男生和一只驴从农人经过了 → 一个男生牵着一只驴从农人经过了: 和 + noun is for nouns that share the same action; the donkey does not walk by itself, so use V.着."
+    },
+    {
+     "edit_id": "pear_story#4/f41/p1/k0/e0",
+     "sample_id": "pear_story#4",
+     "display": "但那些三个男孩不知不觉[和梨子→拿着梨子]走过了被偷走的有梨子所有权的第一个人",
+     "original": "和梨子",
+     "corrected": "拿着梨子",
+     "op": "replace",
+     "her_note": "“和+noun.” is used for multiple nouns that have the same action, we can say: 那三个男孩和拿走梨子的小男孩走过了……，because both 三个男孩 and 小男孩 “walk past…”, but here “梨子” do not walk, so you need to use the accompanying phrase “V.着”",
+     "explanation": "和梨子走过了 → 拿着梨子走过了: 和 + noun is for nouns that share the same action; the pears do not walk, so use V.着."
+    }
+   ],
+   "not_an_error": "和/跟 + noun is correct when the nouns share the same action, such as 一个男生和一个女生走…… . Do not flag an accompanying noun when it is correctly expressed with V.着.",
+   "her_terms": [
+    "和cannot connect clauses",
+    "和cannot link clauses",
+    "和cannot connect verb phrases",
+    "和cannot connect Adj.",
+    "跟/和+noun.",
+    "和+noun.",
+    "V.着"
+   ]
+  }
+ },
+ {
+  "id": "example_emphasis_connectors",
+  "name": "比方说 / 特别是",
+  "section": "coherence_connectors",
+  "definition": "比方说 introduces an example; delete it when no example follows. 特别是 + N, + clause singles out a typical example and must match the category being exemplified.",
+  "her_notes": [
+   "比方说is used to express “for example”, delete it",
+   "是不是有用了。比方说is used to express “for example”, delete it",
+   "”特别是+N, + Clause” is used to single out a typical example",
+   "特别是is used to single out a typical example, but夹竹桃is not an example of灵芝",
+   "特别是+N, + clause"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 10,
+  "edit_shapes": [
+   [
+    "delete AD+PU",
+    3
+   ],
+   [
+    "comment",
+    2
+   ],
+   [
+    "delete AD",
+    1
+   ],
+   [
+    "replace AD+VC+VV",
+    1
+   ],
+   [
+    "replace VC+AD+VC+VA",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "比方说 introduces a following example; delete it when no example follows. 特别是+N, + Clause singles out a typical example, so N must be an example of the category.",
+   "explanation_template": "<wrong> → <correct>: <比方说> needs a following example, or <特别是+N, + Clause> must single out an N that is a typical example of <category>.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#24/f2/p0/note/e0",
+     "sample_id": "shennong_samples#24",
+     "display": "[-比方说]",
+     "original": "比方说",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "比方说is used to express “for example”, delete it",
+     "explanation": "比方说 → delete: 比方说 means “for example,” but no example follows."
+    },
+    {
+     "edit_id": "shennong_samples#22/f4/p0/note/e0",
+     "sample_id": "shennong_samples#22",
+     "display": "⟦特别是夹竹桃⟧对身体更不好",
+     "original": "特别是夹竹桃",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "特别是is used to single out a typical example, but夹竹桃is not an example of灵芝",
+     "explanation": "特别是夹竹桃: 特别是 should single out a typical example, but 夹竹桃 is not an example of 灵芝."
+    },
+    {
+     "edit_id": "shennong_samples#23/f9/p0/k0/e0",
+     "sample_id": "shennong_samples#23",
+     "display": "灵芝[特别是帮忙→特别有用]",
+     "original": "特别是帮忙",
+     "corrected": "特别有用",
+     "op": "replace",
+     "her_note": "”特别是+N, + Clause” is used to single out a typical example",
+     "explanation": "灵芝特别是帮忙 → 灵芝特别有用: 特别是+N, + Clause is for singling out a typical example, not for describing 灵芝 as useful."
+    },
+    {
+     "edit_id": "shennong_samples#25/f5/p0/k0/e0",
+     "sample_id": "shennong_samples#25",
+     "display": "夹竹桃[是特别是毒→的毒特别厉害]",
+     "original": "是特别是毒",
+     "corrected": "的毒特别厉害",
+     "op": "replace",
+     "her_note": "”特别是+N, + Clause” is used to single out a typical example",
+     "explanation": "夹竹桃是特别是毒 → 夹竹桃的毒特别厉害: 特别是+N, + Clause is for singling out a typical example."
+    }
+   ],
+   "not_an_error": "Do not flag 比方说 when it is followed by an actual example. Do not flag 特别是 when it has the 特别是+N, + Clause pattern and N is a typical example of the category.",
+   "her_terms": [
+    "比方说",
+    "特别是+N, + Clause"
+   ]
+  }
+ },
+ {
+  "id": "loose_clause_connection",
+  "name": "loose connection / no logic relationship",
+  "section": "coherence_connectors",
+  "definition": "Make the relationship between clauses and sentences explicit. Add an appropriate connector, purpose, condition, place, or sequence marker when the narrative is fractured or loosely connected.",
+  "her_notes": [
+   "loosely connected, unclear between-sentence relationship",
+   "loosely connected with the preceding sentence",
+   "no logic relationship, fractured",
+   "no logic relationship with the preceding or following sentences",
+   "loose connection between the two clauses, 决定去旅行找到能吃的植物"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 15,
+  "edit_shapes": [
+   [
+    "comment",
+    8
+   ],
+   [
+    "insert 接着 after PU",
+    2
+   ],
+   [
+    "insert words after PU",
+    1
+   ],
+   [
+    "insert 的是 after VV",
+    1
+   ],
+   [
+    "replace AD",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.",
+   "explanation_template": "<wrong> → <correct>: use <connector/purpose/sequence phrase> to show how this sentence connects to the previous clause or sentence.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#1/f2/p0/note/e0",
+     "sample_id": "shennong_samples#1",
+     "display": "[+为了帮助人们找到能吃的植物，]神农旅行了",
+     "original": "",
+     "corrected": "为了帮助人们找到能吃的植物，",
+     "op": "insert",
+     "her_note": "it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced",
+     "explanation": "神农旅行了 → 为了帮助人们找到能吃的植物，神农旅行了: add a purpose phrase to connect his travel with its goal."
+    },
+    {
+     "edit_id": "pear_story#2/f4/p0/k1/e0",
+     "sample_id": "pear_story#2",
+     "display": "[+接着]一下子就骑车逃跑",
+     "original": "",
+     "corrected": "接着",
+     "op": "insert",
+     "her_note": "otherwise it is broken from the preceding clause",
+     "explanation": "一下子就骑车逃跑 → 接着一下子就骑车逃跑: add 接着 to show the next event in the sequence."
+    },
+    {
+     "edit_id": "shennong_samples#38/f8/p0/k0/e0",
+     "sample_id": "shennong_samples#38",
+     "display": "[然后→因为]他认识他在山上吃的花",
+     "original": "然后",
+     "corrected": "因为",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "然后他认识他在山上吃的花 → 因为他认识他在山上吃的花: use 因为 to show the causal relationship, not sequence."
+    },
+    {
+     "edit_id": "pear_story#4/f19/p0/k1-2/e0",
+     "sample_id": "pear_story#4",
+     "display": "但我没想到[+的是]他可能很久以前并不是这样",
+     "original": "",
+     "corrected": "的是",
+     "op": "insert",
+     "her_note": "the coherence needs to be improved, 但我没想到的是",
+     "explanation": "但我没想到他可能很久以前并不是这样 → 但我没想到的是他可能很久以前并不是这样: add 的是 to make the connection coherent."
+    }
+   ],
+   "not_an_error": "",
+   "her_terms": []
+  }
+ },
+ {
+  "id": "condition_not_definite",
+  "name": "condition is not definite",
+  "section": "coherence_connectors",
+  "definition": "Before expressions such as 这就要看……了, state an uncertain condition or alternative, for example 会不会生病 or 要不要吃.",
+  "her_notes": [
+   "the component before “这就要看……了“ should be “not definite” condition, 他会不会生病",
+   "the condition is “not definite”",
+   "add a condition “会不会生病？” before “这就要看……了”",
+   "add a condition “要不要吃？” before “这就要看……了”"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 9,
+  "edit_shapes": [
+   [
+    "insert words after PU",
+    6
+   ],
+   [
+    "comment",
+    1
+   ],
+   [
+    "replace AD",
+    1
+   ],
+   [
+    "insert 了 after NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Before 这就要看……了, state a not definite condition or alternative, such as 会不会生病, 要不要吃, or 蘑菇能不能吃.",
+   "explanation_template": "<wrong> → <correct>: Before 这就要看……了, add a not definite condition or alternative, such as <condition>.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#11/f2/p1/k0/e0",
+     "sample_id": "shennong_samples#11",
+     "display": "他们[常常→会不会]生病了",
+     "original": "常常",
+     "corrected": "会不会",
+     "op": "replace",
+     "her_note": "the condition is “not definite”",
+     "explanation": "他们常常生病了 → 他们会不会生病: the condition is not definite."
+    },
+    {
+     "edit_id": "shennong_samples#14/f2/p0/k0/e0",
+     "sample_id": "shennong_samples#14",
+     "display": "[+你要不要吃？]这就要看你饿不饿了",
+     "original": "",
+     "corrected": "你要不要吃？",
+     "op": "insert",
+     "her_note": "add a condition “要不要吃？” before “这就要看……了”",
+     "explanation": "这就要看你饿不饿了 → 你要不要吃？这就要看你饿不饿了: add the not definite condition 要不要吃？ before 这就要看……了."
+    },
+    {
+     "edit_id": "shennong_samples#13/f5/p1/k0/e0",
+     "sample_id": "shennong_samples#13",
+     "display": "[+会不会生病？]这就要看什么植物吃了",
+     "original": "",
+     "corrected": "会不会生病？",
+     "op": "insert",
+     "her_note": "add a condition “会不会生病？” before “这就要看……了”",
+     "explanation": "这就要看什么植物吃了 → 会不会生病？这就要看什么植物吃了: add the not definite condition 会不会生病？ before 这就要看……了."
+    },
+    {
+     "edit_id": "shennong_samples#7/f5/p0/k0/e0",
+     "sample_id": "shennong_samples#7",
+     "display": "[+蘑菇能不能吃，]这就要看蘑菇看不看像伞",
+     "original": "",
+     "corrected": "蘑菇能不能吃，",
+     "op": "insert",
+     "her_note": "e.g., 蘑菇能不能吃",
+     "explanation": "这就要看蘑菇看不看像伞 → 蘑菇能不能吃，这就要看蘑菇看不看像伞: state the not definite condition 蘑菇能不能吃 before 这就要看……了."
+    },
+    {
+     "edit_id": "shennong_samples#1/f8/p0/k0/e0",
+     "sample_id": "shennong_samples#1",
+     "display": "[+如果吃了夹竹桃，]这就要看你也吃不吃灵芝了",
+     "original": "",
+     "corrected": "如果吃了夹竹桃，",
+     "op": "insert",
+     "her_note": "e.g., 如果吃了夹竹桃",
+     "explanation": "这就要看你也吃不吃灵芝了 → 如果吃了夹竹桃，这就要看你也吃不吃灵芝了: add the condition 如果吃了夹竹桃 before 这就要看……了."
+    }
+   ],
+   "not_an_error": "",
+   "her_terms": [
+    "not definite condition",
+    "这就要看……了"
+   ]
+  }
+ },
+ {
+  "id": "incorrect_story_information",
+  "name": "wrong information",
+  "section": "content",
+  "definition": "Retell the traditional story accurately: do not add people, places, actions, objects, or character identities that are not in the story, and do not change established facts.",
+  "her_notes": [
+   "wrong information, his father did not appear in this story",
+   "wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell",
+   "wrong information, 搬了三次家",
+   "wrong information, it’s not a temple but a school",
+   "wrong information, 灵芝is medicine"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 43,
+  "edit_shapes": [
+   [
+    "comment",
+    17
+   ],
+   [
+    "replace NN",
+    7
+   ],
+   [
+    "delete AD",
+    1
+   ],
+   [
+    "replace VE+CD+AD+JJ+DEG+NN",
+    1
+   ],
+   [
+    "replace AD+AD+VV+NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information.",
+   "explanation_template": "<wrong> → <correct>: this changes a story fact; the story says <fact>.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#7/f1/p0/note/e0",
+     "sample_id": "mengmu_samples#7",
+     "display": "可是⟦搬了十次家⟧",
+     "original": "搬了十次家",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "wrong information, 搬了三次家",
+     "explanation": "搬了十次家: this changes a story fact; the story says 搬了三次家."
+    },
+    {
+     "edit_id": "mengmu_samples#34/f3/p1/note/e0",
+     "sample_id": "mengmu_samples#34",
+     "display": "所以他们最后搬到了⟦寺庙⟧",
+     "original": "寺庙",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "wrong information, it’s not a temple but a school",
+     "explanation": "寺庙: this changes a story fact; the final place is a school, not a temple."
+    },
+    {
+     "edit_id": "mengmu_samples#2/f5/p0/note/e0",
+     "sample_id": "mengmu_samples#2",
+     "display": "⟦他爸爸说⟧",
+     "original": "他爸爸说",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "wrong information, his father did not appear in this story",
+     "explanation": "他爸爸说: this adds a person who is not in the story; his father did not appear."
+    },
+    {
+     "edit_id": "mengmu_samples#34/f5/p0/note/e0",
+     "sample_id": "mengmu_samples#34",
+     "display": "孟子长大了以后⟦成为一名画家⟧",
+     "original": "成为一名画家",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "wrong information, 哲学家",
+     "explanation": "成为一名画家: this changes Mengzi’s identity; he became a 哲学家."
+    },
+    {
+     "edit_id": "shennong_samples#21/f3/p0/note/e0",
+     "sample_id": "shennong_samples#21",
+     "display": "⟦夹竹桃很好吃，也对你的健康有好处⟧",
+     "original": "夹竹桃很好吃，也对你的健康有好处",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "wrong information, 夹竹桃 is a poison",
+     "explanation": "夹竹桃很好吃，也对你的健康有好处: this changes a story fact; 夹竹桃 is a poison."
+    }
+   ],
+   "not_an_error": "Do not flag a word or sentence under this rule only because of grammar or vocabulary. Flag it here when it changes or adds a fact in the traditional story.",
+   "her_terms": [
+    "wrong information",
+    "problematic in coherence"
+   ]
+  }
+ },
+ {
+  "id": "missing_story_information",
+  "name": "miss information / result",
+  "section": "content",
+  "definition": "Include the important scene, action, motivation, or result needed for a complete retelling, rather than leaving a key event unexplained.",
+  "her_notes": [
+   "miss information: 孟子 imitated how to offer sacrifices",
+   "miss the result of eating",
+   "it does not answer the previous Q “什么植物可以吃?”",
+   "wrong information, he directly ate夹竹桃"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 9,
+  "edit_shapes": [
+   [
+    "insert words after NN",
+    3
+   ],
+   [
+    "comment",
+    2
+   ],
+   [
+    "replace VV+AD+VA",
+    1
+   ],
+   [
+    "insert 每人 after NN",
+    1
+   ],
+   [
+    "replace NT+DEG+NN+VV+AS+NR+CC+NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Do not miss important information in a retelling: include the key scene, action, motivation, or result so the event is complete and clear.",
+   "explanation_template": "<incomplete sentence> → <complete sentence>: add <missing information> to show <key action/result/scene>; this information is needed for the retelling.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#22/f3/p0/note/e0",
+     "sample_id": "shennong_samples#22",
+     "display": "⟦神农吃以后⟧",
+     "original": "神农吃以后",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "miss the result of eating",
+     "explanation": "⟦神农吃以后⟧: add the result of eating; the result is missing."
+    },
+    {
+     "edit_id": "mengmu_samples#8/f1/p1/note/e0",
+     "sample_id": "mengmu_samples#8",
+     "display": "⟦孟母看出来孟子老是难过，害得他不能好好学习。⟧孟母恐怕孟子住在墓地的旁边对孟子有影响",
+     "original": "孟母看出来孟子老是难过，害得他不能好好学习。",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "miss information: 孟子 imitated how to offer sacrifices",
+     "explanation": "孟母恐怕孟子住在墓地的旁边对孟子有影响: add that 孟子 imitated how to offer sacrifices; this important action is missing."
+    },
+    {
+     "edit_id": "mengmu_samples#42/f1/p0/k0/e1",
+     "sample_id": "mengmu_samples#42",
+     "display": "在当地的墓地找到了他跟别的孩子[+祭拜]",
+     "original": "",
+     "corrected": "祭拜",
+     "op": "insert",
+     "her_note": "",
+     "explanation": "在当地的墓地找到了他跟别的孩子[+祭拜]: add 祭拜 to show what he and the other children did at the cemetery."
+    },
+    {
+     "edit_id": "mengmu_samples#34/f0/p0/k0-1/e0",
+     "sample_id": "mengmu_samples#34",
+     "display": "[古代的时候住了孟子和孟母→在古代，孟子和孟母住在墓地边]",
+     "original": "古代的时候住了孟子和孟母",
+     "corrected": "在古代，孟子和孟母住在墓地边",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "古代的时候住了孟子和孟母 → 在古代，孟子和孟母住在墓地边: add the scene detail 墓地边 so the setting is clear."
+    }
+   ],
+   "not_an_error": "Do not flag a sentence just because it does not include every possible detail. Flag it only when an important scene, action, motivation, or result is missing and the retelling is incomplete.",
+   "her_terms": [
+    "miss information",
+    "miss the result of eating"
+   ]
+  }
+ },
+ {
+  "id": "redundant_words",
+  "name": "redundant",
+  "section": "other",
+  "definition": "Delete words, names, time phrases, or repeated structures that add no meaning or repeat information already expressed.",
+  "her_notes": [
+   "redundant",
+   "redundant with看起来",
+   "redundant with是",
+   "otherwise redundant.",
+   "“前途” itself means “hopeful future”, so “有希望” is a little bit redundant."
+  ],
+  "detectable_by": "judgement",
+  "n_train": 79,
+  "edit_shapes": [
+   [
+    "delete PN",
+    15
+   ],
+   [
+    "delete AD",
+    10
+   ],
+   [
+    "delete VV",
+    8
+   ],
+   [
+    "comment",
+    4
+   ],
+   [
+    "delete NR",
+    3
+   ]
+  ],
+  "card": {
+   "rule": "Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.",
+   "explanation_template": "<wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.",
+   "examples": [
+    {
+     "edit_id": "mengmu_samples#50/f12/p0/k0/e0",
+     "sample_id": "mengmu_samples#50",
+     "display": "他现在是[-当]医生",
+     "original": "当",
+     "corrected": "",
+     "op": "delete",
+     "her_note": "redundant with是",
+     "explanation": "是当医生 → 是医生: 当 is redundant with 是."
+    },
+    {
+     "edit_id": "pear_story#4/f17/p1/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "这个坏人好像没有什么⟦有希望的前途⟧",
+     "original": "有希望的前途",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.",
+     "explanation": "有希望的前途 → 前途: 有希望 is a little redundant because 前途 itself means a hopeful future."
+    },
+    {
+     "edit_id": "shennong_samples#39/f0/p0/note/e0",
+     "sample_id": "shennong_samples#39",
+     "display": "⟦很久以前，在古代⟧有一个叫神农的老人",
+     "original": "很久以前，在古代",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“很久以前“ and ”在古代” are redundant, only keep one",
+     "explanation": "很久以前，在古代 → keep only one: these two time phrases are redundant."
+    },
+    {
+     "edit_id": "pear_story#4/f41/p2/note/e0",
+     "sample_id": "pear_story#4",
+     "display": "但那些三个男孩不知不觉和梨子走过了⟦被偷走的有梨子所有权的第一个人⟧",
+     "original": "被偷走的有梨子所有权的第一个人",
+     "corrected": null,
+     "op": "comment",
+     "her_note": "“被偷走的有梨子所有权的第一个人” is too long, 第一个被偷走梨子的人 is clear enough.",
+     "explanation": "被偷走的有梨子所有权的第一个人 → 第一个被偷走梨子的人: the longer repeated structure is unnecessary; the shorter phrase is clear enough."
+    }
+   ],
+   "not_an_error": "Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.",
+   "her_terms": [
+    "redundant",
+    "redundant with是",
+    "redundant with看起来"
+   ]
+  }
+ },
+ {
+  "id": "expressive_detail_and_description",
+  "name": "add descriptive detail",
+  "section": "other",
+  "definition": "Use clear descriptive detail and internal-state language where needed so the retelling has sufficient scenes and is more expressive, not only a bare sequence of events.",
+  "her_notes": [
+   "be specific, what不太好的事情？",
+   "“有很多麻烦” is too vague",
+   "一位很有名的文学家 -> 作家的家里"
+  ],
+  "detectable_by": "judgement",
+  "n_train": 3,
+  "edit_shapes": [
+   [
+    "replace NN",
+    1
+   ],
+   [
+    "insert 很多 after VV",
+    1
+   ],
+   [
+    "insert words after NN",
+    1
+   ]
+  ],
+  "card": {
+   "rule": "Add specific descriptive detail, such as what kind, how much, or how often, when it makes the scene clearer and less like a bare sequence of events.",
+   "explanation_template": "<wrong> → <correct>: add <detail> to make <thing/action> more specific and expressive.",
+   "examples": [
+    {
+     "edit_id": "shennong_samples#24/f3/p0/k0/e0",
+     "sample_id": "shennong_samples#24",
+     "display": "[植物→一种绿色的植物]他觉得好吃得很",
+     "original": "植物",
+     "corrected": "一种绿色的植物",
+     "op": "replace",
+     "her_note": "",
+     "explanation": "植物 → 一种绿色的植物: add 一种绿色的 to make the plant more specific and expressive."
+    },
+    {
+     "edit_id": "mengmu_samples#22/f5/p1/k0-1/e2",
+     "sample_id": "mengmu_samples#22",
+     "display": "结果他取得[+很多]生活经验",
+     "original": "",
+     "corrected": "很多",
+     "op": "insert",
+     "her_note": "",
+     "explanation": "取得生活经验 → 取得很多生活经验: add 很多 to show how much life experience he gained."
+    },
+    {
+     "edit_id": "shennong_samples#52/f0/p0/k0-1/e2",
+     "sample_id": "shennong_samples#52",
+     "display": "古代的生活很多的人[+每天都]吃很多的植物",
+     "original": "",
+     "corrected": "每天都",
+     "op": "insert",
+     "her_note": "",
+     "explanation": "古代的生活很多的人吃很多的植物 → 古代的生活很多的人每天都吃很多的植物: add 每天都 to show how often they ate plants."
+    }
+   ],
+   "not_an_error": "",
+   "her_terms": []
+  }
+ }
+]

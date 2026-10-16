@@ -1,0 +1,49 @@
+{
+ "input": "CATEGORY: 比方说 / 特别是 (Coherence: connectors)\ndefinition: 比方说 introduces an example; delete it when no example follows. 特别是 + N, + clause singles out a typical example and must match the category being exemplified.\n\nHER NOTES IN THIS CATEGORY (5 distinct):\n3 | 比方说is used to express “for example”, delete it\n3 | ”特别是+N, + Clause” is used to single out a typical example\n1 | 特别是+N, + clause\n1 | 是不是有用了。比方说is used to express “for example”, delete it\n1 | 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n\nHER CORRECTIONS (10 of 10):\n[shennong_samples#24/f2/p0/note/e0] [-比方说]  || her note: 比方说is used to express “for example”, delete it\n[shennong_samples#17/f1/p0/note/e0] 这个大山⟦特别是⟧的  || her note: 特别是+N, + clause\n[shennong_samples#27/f4/p0/note/e1] [-比方说，]可能是毒的  || her note: 是不是有用了。比方说is used to express “for example”, delete it\n[shennong_samples#22/f4/p0/note/e0] ⟦特别是夹竹桃⟧对身体更不好  || her note: 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n[shennong_samples#23/f9/p0/k0/e0] 灵芝[特别是帮忙→特别有用]  || her note: ”特别是+N, + Clause” is used to single out a typical example\n[shennong_samples#27/f6/p0/note/e0] [-比方说，]他可以又唱又跳  || her note: 比方说is used to express “for example”, delete it\n[shennong_samples#25/f5/p0/k0/e0] 夹竹桃[是特别是毒→的毒特别厉害]  || her note: ”特别是+N, + Clause” is used to single out a typical example\n[shennong_samples#23/f7/p0/note/e0] [-比方说，]他又不能思考清楚又不能问帮忙  || her note: 比方说is used to express “for example”, delete it\n[shennong_samples#25/f3/p0/k0/e0] 吃不知名的植物是[特别是危险的→特别危险的]  || her note: ”特别是+N, + Clause” is used to single out a typical example\n[shennong_samples#52/f14/p2/k0/e0] [特别很→特别是]新鲜的时候",
+ "salt": "",
+ "output": {
+  "rule": "比方说 introduces a following example; delete it when no example follows. 特别是+N, + Clause singles out a typical example, so N must be an example of the category.",
+  "explanation_template": "<wrong> → <correct>: <比方说> needs a following example, or <特别是+N, + Clause> must single out an N that is a typical example of <category>.",
+  "examples": [
+   {
+    "edit_id": "shennong_samples#24/f2/p0/note/e0",
+    "explanation": "比方说 → delete: 比方说 means “for example,” but no example follows."
+   },
+   {
+    "edit_id": "shennong_samples#22/f4/p0/note/e0",
+    "explanation": "特别是夹竹桃: 特别是 should single out a typical example, but 夹竹桃 is not an example of 灵芝."
+   },
+   {
+    "edit_id": "shennong_samples#23/f9/p0/k0/e0",
+    "explanation": "灵芝特别是帮忙 → 灵芝特别有用: 特别是+N, + Clause is for singling out a typical example, not for describing 灵芝 as useful."
+   },
+   {
+    "edit_id": "shennong_samples#25/f5/p0/k0/e0",
+    "explanation": "夹竹桃是特别是毒 → 夹竹桃的毒特别厉害: 特别是+N, + Clause is for singling out a typical example."
+   }
+  ],
+  "not_an_error": "Do not flag 比方说 when it is followed by an actual example. Do not flag 特别是 when it has the 特别是+N, + Clause pattern and N is a typical example of the category.",
+  "her_terms": [
+   "比方说",
+   "特别是+N, + Clause"
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1085,
+  "completion_tokens": 820,
+  "total_tokens": 1905,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1082,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 442,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5bd17f1771"
+}

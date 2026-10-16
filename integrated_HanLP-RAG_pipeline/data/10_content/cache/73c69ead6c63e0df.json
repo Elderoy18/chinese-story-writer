@@ -1,0 +1,95 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他正在墓地旁边思考。 | 一天，孟子决定了祭拜。 | 她跟孟子搬家去墓地做祭拜\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他妈妈就让他搬去城市。 | 他们把家搬到了别的地方， | 孟子跟他的妈妈搬家，去一个最好的学校。 ; flagged as missing: 孟子的妈妈搬了三次家。 | 因为他这么无，他们常常搬家。\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 所以他们搬家去商店的旁边 | 所以她带孟子到一个城市搬家了。 | 他们去了一个房子，在购物中心的旁边。 ; flagged as missing: 孟子的妈妈搬了三次家。 | 在新的城，孟子老是想玩玩。\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 从早到晚小孟待着学哲学和读写。 | 在新的地方，孟子跟老师老是学习中文。 | 从早到晚孟子一直学习，他不是看书，就是写文章。 ; flagged as missing: 后来，练习写文字。 | 他从早到晚学医学。\nS5: 孟子becomes a famous philosopher\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 孟子成为很聪明的人。 | 难怪他成为很聪明的人。 | 现在孟子是一个有名的学者。 ; flagged as missing: 孟子决定他应该学哲学。孟子决定他可以学习和高兴。\n\nlearner's story:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。所以，孟母和孟子搬到学校的旁边住。才五岁孟子开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。",
+ "salt": "run2",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "孟子 and 孟母 live near a graveyard; 孟子 imitates sacrifices",
+    "verdict": "told",
+    "evidence": [
+     "古代，孟子跟孟母住在墓地的旁边。",
+     "他常常跟朋友们祭拜玩"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "He does not explicitly say that this happens every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "孟母 decides to move because the graveyard behaviour negatively affects 孟子",
+    "verdict": "told",
+    "evidence": [
+     "可是孟母注意，住在墓地的旁边影响孟子。",
+     "所以孟母决定他们会搬家。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "They move near the market; 孟子 imitates buying and selling",
+    "verdict": "partly",
+    "evidence": [
+     "这次，他们住在城市里的商店的旁边"
+    ],
+    "missing_part": "孟子 imitating buying and selling near the market",
+    "details_left_out": [
+     "He does not say that this happens every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "孟母 moves from the market to near a school; 孟子 begins studying",
+    "verdict": "told",
+    "evidence": [
+     "所以，孟母和孟子搬到学校的旁边住。",
+     "才五岁孟子开始学哲学。",
+     "在学校，孟子不是看书，就是练习写字。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "He does not explicitly say that he studies every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a famous philosopher",
+    "verdict": "told",
+    "evidence": [
+     "将来，他成为中国的一个非常有名的哲学家。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "After they move next to the market, add that 孟子 copies people buying and selling there."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1512,
+  "completion_tokens": 876,
+  "total_tokens": 2388,
+  "prompt_tokens_details": {
+   "cached_tokens": 1509,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 432,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ef48428c82"
+}

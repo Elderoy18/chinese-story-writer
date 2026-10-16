@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 古代时候有一个男孩名叫孟子，他成为哲学家。\nquote: 古代时候有一个男孩名叫孟子，他成为哲学家\npart p0: fix [ref p0/k0] 在古代 ; notes: better to briefly introduce “孟子” when this character first appears\npart p1: fix [ref p1/k0] 他后来成为了哲学家",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "古代时候",
+    "corrected": "在古代",
+    "before": "",
+    "after": "有一个男孩",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the time expression with her corrected wording"
+   },
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "孟子",
+    "corrected": "",
+    "before": "男孩名叫",
+    "after": "，他成为哲",
+    "note": "better to briefly introduce “孟子” when this character first appears",
+    "confidence": "high",
+    "reason": "note requests an introduction when 孟子 first appears"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "后来",
+    "before": "孟子，他",
+    "after": "成为哲学家",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 后来 after 他"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "，他成为",
+    "after": "哲学家",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 了 after 成为"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1029,
+  "completion_tokens": 471,
+  "total_tokens": 1500,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1026,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 245,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

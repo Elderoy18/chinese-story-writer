@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 你不是祭拜，而是学习很多。\nquote: 你不是祭拜，而是学习很多\npart p0: instruction [ref p0/k0] delete你不是祭拜 ; fix [ref p0/k1] 而是要多学习",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "你不是祭拜",
+    "corrected": "",
+    "before": "",
+    "after": "，而是学习",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "replace",
+    "original": "而是学习很多",
+    "corrected": "而是要多学习",
+    "before": "是祭拜，",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the remaining contrast clause"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 996,
+  "completion_tokens": 106,
+  "total_tokens": 1102,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

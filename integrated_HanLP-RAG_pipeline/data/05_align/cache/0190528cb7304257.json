@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他走过有大有小山，找到了很多对做好饭的植物，比方说茶。\nquote: 他走过有大有小山，找到了很多对做好饭的植物\npart p0: fix [ref p0/k0-1] 大山小山，能做饭的",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "有大有小山",
+    "corrected": "大山小山",
+    "before": "他走过",
+    "after": "，找到",
+    "note": "",
+    "confidence": "high",
+    "reason": "teacher removes 有…有 from the mountain phrase"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "对做好饭",
+    "corrected": "能做饭",
+    "before": "了很多",
+    "after": "的植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "teacher changes the modifier for 植物"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1007,
+  "completion_tokens": 643,
+  "total_tokens": 1650,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

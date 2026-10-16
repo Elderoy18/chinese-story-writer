@@ -1,0 +1,82 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nITEMS:\n\n[I88] 【古代的时候】人觉得祭拜非常重要   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: 因为[-他们]觉得祭拜有很多好处 — her note: redundant\n  her past correction: 因为他们觉得[祭拜有很多好处，对他们的生活→对生活有很多好处]\n  her past correction: 而是[-他]祭拜\n\n[I89] 【孟子】很小的时候   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 孟子: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧小的时候 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子是孩子⟧ — her note: no logic relationship with the preceding or following sentences\n  her past correction: ⟦孟子⟧出生以后 — her note: better to briefly introduce “孟子” when this character first appears\n\n[I90] 【虽然】他没有朋友   correction: 虽然 → (delete)   strength: error\n  checker's note: 虽然 cannot introduce this causal statement without a matching contrast.\n  rule card (conditional_jiu, Coherence: connectors): Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future.  Pattern: <wrong> → <correct>: <meaning/condition> leads naturally to <result>, so use 只要……就 or put the subject before 就 (Subj. + 就 + V.).  Her terms: 只要……就, Subj. + 就, Subj.+就, 才 Num.就V., 才Num.就V.\n  her past correction: [他然后没有朋友→然后孟子失去了这个朋友] — her note: “他“ is ambiguous\n  her past correction: 他有的时候[-只要]跟朋友玩儿 — her note: or 他有的时候跟朋友玩儿\n  her past correction: 他[-有的时候]只要跟朋友玩儿 — her note: wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as\n\n[I91] 因为每天只【^】祭拜   correction: ∅ → 是   strength: suggestion\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 而是[-他]祭拜\n  her past correction: 他们[一起常常→常常一起]去祭拜\n  her past correction: [-所以他们]祭拜 — her note: there is no cause-effect relationship\n\n[I92] 他的同学们老是对他开玩笑【了】   correction: 了 → (delete)   strength: error\n  checker's note: habitual action with 老是 does not take sentence-final 了.\n  rule card (conditional_jiu, Coherence: connectors): Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future.  Pattern: <wrong> → <correct>: <meaning/condition> leads naturally to <result>, so use 只要……就 or put the subject before 就 (Subj. + 就 + V.).  Her terms: 只要……就, Subj. + 就, Subj.+就, 才 Num.就V., 才Num.就V.\n  her past correction: 他有的时候[-只要]跟朋友玩儿 — her note: or 他有的时候跟朋友玩儿\n  her past correction: 他[-有的时候]只要跟朋友玩儿 — her note: wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as\n  her past correction: 可是他们[老是有问题→碰到麻烦]\n\n[I93] 孟子妈妈【看】了他的同学们对孟子不好的影响   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: ⟦孟母看出来孟子老是难过，害得他不能好好学习。⟧孟母恐怕孟子住在墓地的旁边对孟子有影响 — her note: miss information: 孟子 imitated how to offer sacrifices\n  her past correction: 孟母看出来孟子老是[+很]难过 — her note: usually Adj. takes 很\n  her past correction: 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n\n[I94] 孟子妈妈看了他的同学们对孟子【^】不好的影响   correction: ∅ → 有   strength: suggestion\n  rule card (adjective_predicate_degree, Grammar): An Adj. can be the predicate without 是. Usually an Adj. takes 很 for a plain description; 是Adj.的 is used to emphasize.  Pattern: <wrong> → <correct>: <adjective> is a plain description, so use it as the predicate without 是 and usually add 很.  Her terms: Adj. can be predicate, usually Adj. takes 很, 是Adj.的 is to emphasize\n  her past correction: 孟母看出来孟子老是[+很]难过 — her note: usually Adj. takes 很\n  her past correction: ⟦孟母看出来孟子老是难过，害得他不能好好学习。⟧孟母恐怕孟子住在墓地的旁边对孟子有影响 — her note: miss information: 孟子 imitated how to offer sacrifices\n  her past correction: 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n\n[I95] 所以孟子和孟子【^】妈妈搬家了   correction: ∅ → 的   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 所以妈妈跟孟子一起搬家[+了] — her note: 了completed\n  her past correction: 所以妈妈[跟孟子一起→带孟子]搬家\n  her past correction: [-所以]妈妈跟孟子一起搬家",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I88",
+    "explanation": "古代 is the setting, so use 在+Place before the action: 在古代人觉得祭拜非常重要。",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I89",
+    "explanation": "This character appears for the first time, so please introduce 孟子 briefly, for example 孟子是一个小男孩。",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I90",
+    "explanation": "虽然 needs a matching contrast, such as 但是. There is no contrast here, so delete 虽然.",
+    "dimension": "coherence_connectors",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I91",
+    "explanation": "It would be more natural to say 因为每天只是祭拜. 是 emphasizes that worshipping was the only activity.",
+    "dimension": "coherence_reference",
+    "corrected": "是",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I92",
+    "explanation": "老是 describes a habitual action, so do not use sentence-final 了 here.",
+    "dimension": "coherence_connectors",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I93",
+    "explanation": "孟子妈妈 actually sees the bad influence, so use 看到see, not 看look.",
+    "dimension": "word_choice",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I94",
+    "explanation": "It would be more natural to say 对孟子有不好的影响. Use 有 to show that the classmates caused a bad influence.",
+    "dimension": "grammar",
+    "corrected": "有",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I95",
+    "explanation": "It would be more natural to say 孟子和孟子的妈妈. Use 的 to show that the mother is Mengzi's mother.",
+    "dimension": "coherence_temporality",
+    "corrected": "的",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2489,
+  "completion_tokens": 879,
+  "total_tokens": 3368,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2486,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 451,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

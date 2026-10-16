@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 在照片可以看一个很老的人，他看到很多人很病了，所以他一去爬山就试很多植物。\nquote: 他看到很多人很病了\npart p0: fix [ref p0/k0] 生病了 ; notes: “病” is not a normal Adj., so it cannot be with 很 or 不",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "很病",
+    "corrected": "生病",
+    "before": "到很多人",
+    "after": "了。",
+    "note": "“病” is not a normal Adj., so it cannot be with 很 or 不",
+    "confidence": "high",
+    "reason": "replaces 很病 with the verb 生病"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1014,
+  "completion_tokens": 145,
+  "total_tokens": 1159,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 57,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

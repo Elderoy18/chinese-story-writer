@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 她跟孟子搬家去墓地做祭拜，他成为一个有名的哲学家。\nquote: 她跟孟子搬家去墓地做祭拜，他成为一个有名的哲学家\npart p0: fix [ref p0/k0] 孟母 ; notes: “她” is ambiguous\npart p1: fix [ref p1/k0] 孟子 ; notes: “他” is ambiguous, 后来成为",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "她",
+    "corrected": "孟母",
+    "before": "",
+    "after": "跟孟子搬",
+    "note": "“她” is ambiguous",
+    "confidence": "high",
+    "reason": "replaces ambiguous pronoun with 孟母"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "他",
+    "corrected": "孟子",
+    "before": "做祭拜，",
+    "after": "成为一个有",
+    "note": "“他” is ambiguous, 后来成为",
+    "confidence": "high",
+    "reason": "replaces ambiguous pronoun with 孟子"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "后来",
+    "before": "墓地做祭拜，",
+    "after": "他成为一个有",
+    "note": "“他” is ambiguous, 后来成为",
+    "confidence": "high",
+    "reason": "adds 后来 before 成为"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1041,
+  "completion_tokens": 188,
+  "total_tokens": 1229,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1038,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

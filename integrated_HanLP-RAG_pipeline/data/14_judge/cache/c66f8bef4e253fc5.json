@@ -1,0 +1,114 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。\n\nFLAGGED PLACES:\n\n[P322] 【古代的时候】\n  proposed by the teacher's pattern/rule: [古代的时候→在古代] (her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train))\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  her past correction (location_with_zai): [古代的时候→在古代]\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n\n[P323] 什【么】植物不能吃\n  proposed by the correction model: 什[么→麼]植物不能吃\n  her past correction (cause_result_soyi): [因为→这样]大家知道什么植物不能吃 — her note: not “because”\n  her past correction (question_patterns): 中国人不知道什么植物[可能还是不可能→能吃，什么植物不能]吃\n  her past correction (question_patterns): 他们不知道什么植物[-能吃]不能吃\n  rule card question_patterns: Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).\n\n[P324] 因为他们吃了【毒】\n  proposed by the AI checker: 因为他们吃了[毒→有毒的植物] (people eat poisonous plants, not simply “poison”)\n  her past correction (word_class_choice):  [因为他们吃毒→他们吃的植物有毒]\n  her past correction (modifier_de_structure): 他们吃[毒→有毒的]植物\n  her past correction (other): 但是[你→他]也吃过有毒的植物\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n\n[P325] 他【什么植物都觉得】好吃\n  proposed by the AI checker: 他[什么植物都觉得→觉得什么植物都]好吃 (觉得 should come before its object clause)\n  her past correction (expressive_detail_and_description): [植物→一种绿色的植物]他觉得好吃得很\n  her past correction (resultative_complements): 有的人吃[+到]很好吃的植物\n  her past correction (cause_result_soyi): [+所以]他看到什么植物就吃什么\n  rule card expressive_detail_and_description: Add specific descriptive detail, such as what kind, how much, or how often, when it makes the scene clearer and less like a bare sequence of events.\n  rule card resultative_complements: Use a resultative complement when the action reaches its result: 吃到, 写下, 撞到+Obj., or 把Obj. V. Resultative complement. Not an error: Do not use 撞+Obj. when the meaning is that the object hits something else: 撞自行车 means to hit the bike.\n\n[P326] 【^】不怕毒\n  proposed by the correction model: [+也]不怕毒\n  her past correction (verb_object_valency): 因为他怕[+有]毒\n  her past correction (negation_bu_mei): [没→不]再有毒了\n  her past correction (addition_repetition_connectors): [-还]有的有毒\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n  rule card negation_bu_mei: Use 不 for a habit, routine, willingness, or general negation; use 没 for an action or event that did not occur. Use 没 + V. for a negated action event. Not an error: Do not use this rule for the pattern “不是……而是……”, which is used to refute something conventional and affirm something unexpected, or to correct something wrong.\n\n[P327] 他希望别人也可以吃【^】好吃的植物\n  proposed by the correction model: 他希望别人也可以吃[+到]好吃的植物\n  her past correction (resultative_complements): 有的人吃[+到]很好吃的植物\n  her past correction (expressive_detail_and_description): [植物→一种绿色的植物]他觉得好吃得很\n  her past correction (zero_redundant_pronoun): [-他]决定找出什么植物可以吃\n  rule card resultative_complements: Use a resultative complement when the action reaches its result: 吃到, 写下, 撞到+Obj., or 把Obj. V. Resultative complement. Not an error: Do not use 撞+Obj. when the meaning is that the object hits something else: 撞自行车 means to hit the bike.\n  rule card expressive_detail_and_description: Add specific descriptive detail, such as what kind, how much, or how often, when it makes the scene clearer and less like a bare sequence of events.\n\n[P328] 如果他们还【怕吃毒】\n  proposed by the AI checker: 如果他们还[怕吃毒→怕中毒] (怕中毒 is the natural expression)\n  proposed by the teacher's pattern/rule: 如果他们还怕[吃毒→吃到有毒的植物] (her pattern: 吃毒 -> 吃到有毒的植物 (corrected 5/5 in train))\n  her past correction (modifier_de_structure): 他们吃[毒→有毒的]植物\n  her past correction (word_class_choice):  [因为他们吃毒→他们吃的植物有毒]\n  her past correction (verb_object_valency): 因为他怕[+有]毒\n  rule card resultative_complements: Use a resultative complement when the action reaches its result: 吃到, 写下, 撞到+Obj., or 把Obj. V. Resultative complement. Not an error: Do not use 撞+Obj. when the meaning is that the object hits something else: 撞自行车 means to hit the bike.\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n\n[P329] 【^】不会吃他喜欢的植物\n  proposed by the correction model: [+就]不会吃他喜欢的植物\n  her past correction (question_patterns): 他们不知道什么植物[-能吃]不能吃\n  her past correction (incorrect_story_information): 但是不多植物[可能→不能]吃\n  her past correction (modifier_de_structure): 吃很多[-的]植物\n  rule card question_patterns: Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.\n  rule card incorrect_story_information: Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information. Not an error: Do not flag a word or sentence under this rule only because of grammar or vocabulary. Flag it here when it changes or adds a fact in the traditional story.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P322",
+    "decision": "drop",
+    "category": "fixed_expressions",
+    "original": "",
+    "before": "",
+    "after": "",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "古代的时候 is natural and grammatical."
+   },
+   {
+    "place_id": "P323",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "",
+    "after": "",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "什么 is correct simplified Chinese."
+   },
+   {
+    "place_id": "P324",
+    "decision": "keep",
+    "category": "word_class_choice",
+    "original": "吃了毒",
+    "before": "因为他们",
+    "after": "。",
+    "corrected": "吃的植物有毒",
+    "confidence": "high",
+    "reason": "The intended cause is poisonous plants, not eating poison itself."
+   },
+   {
+    "place_id": "P325",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "",
+    "after": "",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "什么植物都觉得好吃 is acceptable word order."
+   },
+   {
+    "place_id": "P326",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "",
+    "after": "",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "也 is optional in this parallel phrase."
+   },
+   {
+    "place_id": "P327",
+    "decision": "drop",
+    "category": "resultative_complements",
+    "original": "",
+    "before": "",
+    "after": "",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Generic 吃好吃的植物 does not require 到."
+   },
+   {
+    "place_id": "P328",
+    "decision": "keep",
+    "category": "modifier_de_structure",
+    "original": "吃毒",
+    "before": "他们还怕",
+    "after": "，不会吃",
+    "corrected": "吃到有毒的植物",
+    "confidence": "high",
+    "reason": "Poisonous plants need the modifier 有毒的植物."
+   },
+   {
+    "place_id": "P329",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "",
+    "after": "",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "就 may be omitted after 如果."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2779,
+  "completion_tokens": 1510,
+  "total_tokens": 4289,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2776,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1122,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

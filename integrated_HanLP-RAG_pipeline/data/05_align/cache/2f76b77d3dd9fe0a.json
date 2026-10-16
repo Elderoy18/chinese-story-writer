@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟母一直管事儿，儿子的教养，所以她搬家二次。\nquote: 孟母一直管事儿，儿子的教养，所以她搬家二次\npart p0: fix [ref p0/k0] 一直管儿子的教育 ; notes: 管事V.+Obj. compound, not followed by another Obj.\npart p1: fix [ref p1/k0] 搬了两次家 ; notes: 了completed, V. + Num. + MW. + Obj.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "事儿，儿子的教养",
+    "corrected": "儿子的教育",
+    "before": "孟母一直管",
+    "after": "，所以她搬",
+    "note": "管事V.+Obj. compound, not followed by another Obj.",
+    "confidence": "high",
+    "reason": "replaces the compound-object construction with 管儿子的教育"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "搬家二次",
+    "corrected": "搬了两次家",
+    "before": "，所以她",
+    "after": "。",
+    "note": "了completed, V. + Num. + MW. + Obj.",
+    "confidence": "high",
+    "reason": "adds completed 了 and changes the verb-object word order"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1053,
+  "completion_tokens": 310,
+  "total_tokens": 1363,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1050,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 144,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

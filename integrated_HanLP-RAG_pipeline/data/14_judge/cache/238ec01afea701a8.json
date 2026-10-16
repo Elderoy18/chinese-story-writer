@@ -1,0 +1,48 @@
+{
+ "input": "EARLIER SCENES (context only):\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\nCURRENT SCENE:\n他很聪明的人，难怪他成为有名的人。\n\nFLAGGED PLACES:\n\n[P48] 他【^】很聪明的人\n  proposed by the AI checker: 他[+是个]很聪明的人 (a noun predicate needs 是个 here)\n  proposed by the correction model: 他[+是]很聪明的人\n  her past correction (become_and_profession): 结果他[成为很聪明的人→变得越来越聪明] — her note: 成为 + profession/celebrity\n  her past correction (adversative_connector): ⟦可是⟧他很聪明 — her note: no “semantic turn” relationship, so可是is inappropriate\n  her past correction (other_vs_additional): [别的人→人们]觉得他很聪明 — her note: “别的” is for “a different type”, and “all else except the spoken one”\n  rule card become_and_profession: 成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才. Not an error: Do not flag 成为 when it is followed by an appropriate noun, especially a profession or public identity, such as 成为哲学家.\n  rule card adversative_connector: Use 可是, 却, 而, and 但 only when there is a real “semantic turn,” such as a contrast or an unexpected result. 却 indicates an unexpected semantic turn. Not an error: Use 却 when the result is an unexpected semantic turn.\n\n[P49] 难怪【他】成为有名的人\n  proposed by the teacher's pattern/rule: 难怪[-他]成为有名的人 (他 repeats the subject of the clause before: zero form)\n  her past correction (become_and_profession): 难怪他成为很聪明[+的人]\n  her past correction (word_class_choice): 难怪他成为[名的→有名的]哲学家\n  her past correction (become_and_profession): 难怪他长大以后[当→成为]很有名的哲学家\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card become_and_profession: 成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才. Not an error: Do not flag 成为 when it is followed by an appropriate noun, especially a profession or public identity, such as 成为哲学家.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P48",
+    "decision": "keep",
+    "category": "other",
+    "original": "",
+    "before": "他",
+    "after": "很聪明的人",
+    "corrected": "是个",
+    "confidence": "high",
+    "reason": "A noun predicate needs 是个 here."
+   },
+   {
+    "place_id": "P49",
+    "decision": "keep",
+    "category": "zero_redundant_pronoun",
+    "original": "他",
+    "before": "难怪",
+    "after": "成为有名的人",
+    "corrected": "",
+    "confidence": "low",
+    "reason": "Repeated subject can be omitted in a close continuation."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1248,
+  "completion_tokens": 362,
+  "total_tokens": 1610,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1245,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 239,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

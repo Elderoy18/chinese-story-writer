@@ -1,0 +1,71 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。\n\ncurrent scene: 所以，他上山下山找植物，吃了很多样子的植物。他是第一人，找到了茶。他把所有的植物写下来了。他一直都吃了，他连毒都能吃。可是他还没吃了一个叫夹竹桃的植物。他找到了那个像星星的植物，觉得很漂亮，马上就吃下了。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "original": "很多样子的",
+    "corrected": "很多种",
+    "before": "物，吃了",
+    "after": "植物。他",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "种 is needed for kinds of plants; 样子 means appearance."
+   },
+   {
+    "original": "第一人，找到了茶",
+    "corrected": "第一个找到茶的人",
+    "before": "他是",
+    "after": "。他把所",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the modifier for “first person to find tea” needs this word order."
+   },
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "一直都吃",
+    "after": "，他连毒",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "一直都吃 does not take completed-action 了 here."
+   },
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "他还没吃",
+    "after": "一个叫夹",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "还没 cannot be followed by 了."
+   },
+   {
+    "original": "个",
+    "corrected": "种",
+    "before": "还没吃了",
+    "after": "叫夹竹桃",
+    "type": "other",
+    "confidence": "high",
+    "why": "plants/species use 种, not 个."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 722,
+  "completion_tokens": 2569,
+  "total_tokens": 3291,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2295,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

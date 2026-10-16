@@ -1,0 +1,81 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\nCURRENT SCENE:\n啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。\n\nFLAGGED PLACES:\n\n[P317] 他怎么忘记了？他把灵芝放【^】在包里\n  proposed by the AI checker: 他怎么忘记了？他把灵芝放[+了]在包里 (a completed past action normally takes 了)\n  her past correction (directional_complements): 他把灵芝[带回走了→带回家了] — her note: but not both回and走\n  her past correction (le_completed): 给[+了]他一个灵芝 — her note: 了completed\n  her past correction (le_completed): 那个人给[+了]他灵芝 — her note: 了completed\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card directional_complements: Use V. + directional complement + Place + 来/去: put the place after the directional complement and before 来/去. For walking to a place, use 走到place来/去, not 走去 or 走来Place. Not an error: Do not treat 拿起来 and 拿上去 as interchangeable word-order forms: 拿起来 means “pick up,” while 拿上去 means “bring it up.”\n\n[P318] 一回家就告诉【^】别人\n  proposed by the AI checker: 一回家就告诉[+了]别人 (specific completed telling action normally takes 了)\n  her past correction (possessive_reference): 所以他回家告诉[他的人→人们]\n  her past correction (possessive_reference): 可以告诉[他的家→家人]\n  her past correction (other_vs_additional): 告诉[别的人→其他人] — her note: “别的” is for “a different type”, and “all else except the spoken one”\n  rule card possessive_reference: Do not use 他的/她的 for people or a place when it sounds like the person owns them. Use a precise relationship word, such as 家人, 朋友邻居, 人们, or 这个小城市. Not an error: Do not flag 他的/她的 when the intended meaning is actual ownership or when it clearly gives the needed relationship.\n  rule card other_vs_additional: 别的 is for a different type or for all others except the one already mentioned. 另外 is for an additional quantity, or for another/the other; say 另外一个人, not 别个人. Not an error: Do not flag 别的 when it means a different type or all others except the one already mentioned.\n\n[P319] 他找到药以后他【写下怎么做药在书上】\n  proposed by the AI checker: 他找到药以后他[写下怎么做药在书上→在书上写下怎么做药] (location phrase must come before 写下)\n  proposed by the correction model: 他找到药以后他[+在书上]写下怎么做药在书上\n  proposed by the AI checker: 他找到药以后他写下[+了]怎么做药在书上 (completed writing action needs 了)\n  proposed by the correction model: 他找到药以后他写下怎么做药[-在书上]\n  her past correction (numeral_measure_word_order): 后来神农写[书了→了一本]哪些植物是药\n  her past correction (redundant_words): 后来神农写书了哪些植物是药[-，]哪些植物是毒\n  her past correction (ambiguous_pronoun): 所以⟦他⟧走路走了很长的时间找药 — her note: use神农instead of他to avoid ambiguity\n  rule card numeral_measure_word_order: With a number and measure word, use Num. + MW. + noun directly, with no 的. For actions, use V. + Num. + MW. + Obj.; for a completed action, use 了completed, V. + Num. + MW. + Obj. Not an error: Do not use 们 or 些 with a number: use 三个男孩, not 三个男孩子们, and 那三个男孩, not 那些三个男孩.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P320] 那【^】红灵芝对身体好处\n  proposed by the AI checker: 那[+种]红灵芝对身体好处 (a demonstrative needs a classifier for a type)\n  her past correction (zero_redundant_pronoun): [-这些植物]对身体好处\n  her past correction (verb_object_valency): 这些植物对身体[+有]好处\n  her past correction (ba_bei_constructions): [叫了这个对身体有好处的植物→把这个对身体有好处的植物叫做]灵芝\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n\n[P321] 那红灵芝对身体【^】好处\n  proposed by the AI checker: 那红灵芝对身体[+有]好处 (the phrase is 对身体有好处)\n  proposed by the correction model: 那红灵芝对身体[+有]好处\n  her past correction (verb_object_valency): 这些植物对身体[+有]好处\n  her past correction (zero_redundant_pronoun): [-这些植物]对身体好处\n  her past correction (collocation_selection): 灵芝一吃[就正好→身体就好了]\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P317",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "",
+    "before": "把灵芝放",
+    "after": "在包里",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "completed narrative action needs 了"
+   },
+   {
+    "place_id": "P318",
+    "decision": "drop",
+    "category": "le_completed",
+    "original": "",
+    "before": "家就告诉",
+    "after": "别人",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "一……就…… can omit 了"
+   },
+   {
+    "place_id": "P319",
+    "decision": "keep",
+    "category": "other",
+    "original": "写下怎么做药在书上",
+    "before": "他找到药以后他",
+    "after": "。所以",
+    "corrected": "在书上写下了怎么做药",
+    "confidence": "high",
+    "reason": "location order is wrong and writing is completed"
+   },
+   {
+    "place_id": "P320",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "。所以人们都知道，那",
+    "after": "红灵芝对身体好处",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "那红灵芝 is acceptable without a classifier"
+   },
+   {
+    "place_id": "P321",
+    "decision": "keep",
+    "category": "verb_object_valency",
+    "original": "",
+    "before": "红灵芝对身体",
+    "after": "好处",
+    "corrected": "有",
+    "confidence": "high",
+    "reason": "好处 requires 有 in this structure"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2417,
+  "completion_tokens": 795,
+  "total_tokens": 3212,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2414,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

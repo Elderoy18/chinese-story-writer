@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 孟子出生以后，孟子和孟子的妈妈一直住在墓地的旁边。\nquote: 孟子出生以后，孟子和孟子的妈妈一直住在墓地的旁边\npart p0: comment [ref p0/note] better to briefly introduce “孟子” when this character first appears\npart p1: instruction [ref p1/k0] delete the second孟子 ; instruction [ref p1/k1] delete孟子的",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "孟子",
+    "corrected": "",
+    "before": "",
+    "after": "出生以后，",
+    "note": "better to briefly introduce “孟子” when this character first appears",
+    "confidence": "high",
+    "reason": "comment on the character's first appearance"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "孟子",
+    "corrected": "",
+    "before": "子出生以后，",
+    "after": "和孟子的妈",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the second 孟子"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "delete",
+    "original": "孟子的",
+    "corrected": "",
+    "before": "后，孟子和",
+    "after": "妈妈一直住",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes 孟子的 before 妈妈"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1041,
+  "completion_tokens": 170,
+  "total_tokens": 1211,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1038,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

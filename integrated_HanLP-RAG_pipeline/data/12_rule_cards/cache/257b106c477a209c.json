@@ -1,0 +1,48 @@
+{
+ "input": "CATEGORY: formal words and register (Vocabulary (word choice))\ndefinition: Choose words that fit the register of the sentence; some words are formal, conversational, or used only in a particular context.\n\nHER NOTES IN THIS CATEGORY (4 distinct):\n1 | “真” is usually used in conversation\n1 | 本+N. is usually used in formal advertisement/news, also it indicates the author owns the tree, which is not the fact: the author is a pear, who does not own the whole pear tree. 爬上这棵树。\n1 | “使” is more formal and better fit other formal words like “失业\n1 | “却” indicates unexpected semantic turn\n\nHER CORRECTIONS (4 of 4):\n[mengmu_samples#35/f4/p0/k0/e0] 墓地的人[真→很]影响孟子  || her note: “真” is usually used in conversation\n[pear_story#4/f3/p0/note/e0] 他这个没有礼貌的人每天爬上⟦本树⟧  || her note: 本+N. is usually used in formal advertisement/news, also it indicates the author owns the tree, which is not the fact: the author is a pear, who does not own the whole pear tree. 爬上这棵树。\n[pear_story#4/f23/p0/k0-1/e4] 但政府实行的改革经济一系列政策⟦就让⟧他失业  || her note: “使” is more formal and better fit other formal words like “失业\n[pear_story#4/f23/p0/k0-1/e2] 但政府实行的改革经济一系列政策[就让→却使]他失业  || her note: “却” indicates unexpected semantic turn",
+ "salt": "",
+ "output": {
+  "rule": "Choose words that fit the sentence’s register and meaning: 真 is usually conversational, while 使 fits formal words such as 失业; 本+N. is usually formal advertisement/news language and can imply ownership, and 却 indicates an unexpected semantic turn.",
+  "explanation_template": "<wrong> → <correct>: <wrong> is <conversational/formal/ownership-implying> here, while <correct> fits the <formal register/meaning/context>; use 却 only for an unexpected semantic turn.",
+  "examples": [
+   {
+    "edit_id": "mengmu_samples#35/f4/p0/k0/e0",
+    "explanation": "真 → 很: 真 is usually used in conversation, while 很 fits this narrative sentence."
+   },
+   {
+    "edit_id": "pear_story#4/f3/p0/note/e0",
+    "explanation": "本树 → 这棵树: 本+N. is usually formal advertisement/news language and implies that the author owns the tree; 这棵树 fits the context."
+   },
+   {
+    "edit_id": "pear_story#4/f23/p0/k0-1/e4",
+    "explanation": "就让 → 使: 使 is more formal and fits the formal word 失业."
+   },
+   {
+    "edit_id": "pear_story#4/f23/p0/k0-1/e2",
+    "explanation": "就让 → 却使: 却 indicates an unexpected semantic turn, and 使 fits the formal register of 失业."
+   }
+  ],
+  "not_an_error": "Do not flag 却 merely because it is formal; use it when there is an unexpected semantic turn. Do not use 本+N. when it would incorrectly imply that the author owns the noun.",
+  "her_terms": [
+   "本+N."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 822,
+  "completion_tokens": 736,
+  "total_tokens": 1558,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 372,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5bd17f1771"
+}

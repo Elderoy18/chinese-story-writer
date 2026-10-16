@@ -1,0 +1,106 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n古代的时候，有一个孩子和他的妈妈。孩子叫孟子，孟子是淘气的孩子，因为老是去墓地吃祭品。孟子妈妈说，哎呀，你从早到晚去墓地吃祭品，所以他们要搬家。在新家，一直去墓地吃祭品。孟子妈妈说：难怪我们运气不好，你才五岁，你就太淘气了。孟子说：妈妈，我不是拿祖先的祭品，而是祖先给我他们的祭品，因为我从早到晚饿得很。妈妈说：我知道我们没有食品，但是你不应该吃祭品，害得我们得一直搬家。妈妈说：你常常不是吃饭就是玩儿，你可以学习。所以孟子找了一个师傅，从小到大他努力学习，成为了一个大师，现在很多人认识孟子。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "Living near a graveyard; 孟子 imitates sacrifice rituals",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟子 and 孟母 living near a graveyard, and 孟子 copying how people offer sacrifices",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "孟母 decides to leave the graveyard neighborhood",
+    "verdict": "partly",
+    "evidence": [
+     "孟子妈妈说，哎呀，你从早到晚去墓地吃祭品，所以他们要搬家。"
+    ],
+    "missing_part": "that they were leaving their neighborhood near the graveyard",
+    "details_left_out": [
+     "孟母 thinks copying sacrifice rituals will have a bad impact on 孟子"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "Move near the market; 孟子 imitates buying and selling",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 moving to a neighborhood near the market, and 孟子 copying buying and selling there",
+    "details_left_out": [
+     "孟子 does this every day"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "Move from the market to a school neighborhood; 孟子 studies",
+    "verdict": "partly",
+    "evidence": [
+     "妈妈说：你常常不是吃饭就是玩儿，你可以学习。",
+     "所以孟子找了一个师傅，从小到大他努力学习，成为了一个大师，现在很多人认识孟子。"
+    ],
+    "missing_part": "孟母 moving from the market to a neighborhood near a school",
+    "details_left_out": [
+     "孟子 studies every day"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a famous philosopher",
+    "verdict": "partly",
+    "evidence": [
+     "成为了一个大师",
+     "现在很多人认识孟子"
+    ],
+    "missing_part": "that 孟子 becomes a philosopher",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "孩子叫孟子，孟子是淘气的孩子，因为老是去墓地吃祭品。",
+    "problem": "In the story, 孟子 imitates the way people offer sacrifices; he does not go to the graveyard to eat offerings."
+   },
+   {
+    "learner_text": "孟子妈妈说，哎呀，你从早到晚去墓地吃祭品，所以他们要搬家。",
+    "problem": "The move is prompted by 孟子 copying sacrifice rituals and 孟母's concern about their influence, not by him eating offerings."
+   },
+   {
+    "learner_text": "在新家，一直去墓地吃祭品。",
+    "problem": "After the first move, they live near a market and 孟子 imitates buying and selling; he does not continue going to the graveyard to eat offerings."
+   }
+  ],
+  "feedback": [
+   "Before the first move, add that 孟子 and 孟母 live near a graveyard and 孟子 copies sacrifice rituals.",
+   "When 孟母 decides to move after the graveyard events, say that she is leaving their neighborhood near the graveyard.",
+   "After they leave the graveyard area, add that they move near a market and 孟子 copies buying and selling.",
+   "After the market events, add that 孟母 moves near a school before 孟子 begins studying.",
+   "At the end, say that 孟子 becomes a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1091,
+  "completion_tokens": 3028,
+  "total_tokens": 4119,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1088,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2297,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

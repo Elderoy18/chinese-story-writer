@@ -1,0 +1,92 @@
+{
+ "input": "CURRENT SCENE:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nFLAGGED PLACES:\n\n[P0] 【孟子】小的时候\n  proposed by the teacher's pattern/rule: ⟦孟子⟧小的时候 (first appearance of 孟子: briefly introduce who this is)\n  her past correction (first_mention_introduction): ⟦孟子⟧小的时候 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction (first_mention_introduction): ⟦孟子⟧出生以后 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction (loose_clause_connection): ⟦孟子是孩子⟧ — her note: no logic relationship with the preceding or following sentences\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card loose_clause_connection: Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.\n\n[P1] 孟子和他的朋友喜欢【玩在墓地里】\n  proposed by the AI checker: 孟子和他的朋友喜欢[玩在墓地里→在墓地里玩] (location should come before the verb 玩)\n  proposed by the correction model: 孟子和他的朋友喜欢[-玩]在墓地里\n  proposed by the teacher's pattern/rule: 孟子和他的朋友喜欢[玩在墓地里→在墓地里玩] (在 + Place comes before the action: 在Place + V.)\n  proposed by the correction model: 孟子和他的朋友喜欢玩在墓地里[+玩]\n  her past correction (loose_clause_connection): ⟦孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜⟧ — her note: loosely connected with the preceding sentence\n  her past correction (no_le_routine_state): 孟子一直跟他的朋友⟦去了⟧墓地祭拜 — her note: no了for routine/habit\n  her past correction (perception_look_see): 孟子跟朋友[看→看到]很多的大人在墓地祭拜 — her note: 看look vs.看到see\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card loose_clause_connection: Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.\n\n[P2] 【装】祭拜\n  proposed by the AI checker: [装→装作]祭拜 (装作 is needed before a verb phrase)\n  her past correction (conditional_jiu): [+就]开始祭拜 — her note: 才 Num.就V.\n  her past correction (verb_object_valency): 在墓地[-做]祭拜\n  her past correction (zero_redundant_pronoun): 而是[-他]祭拜\n  rule card conditional_jiu: Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future. Not an error: When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n\n[P3] 孟子五岁【的】时候\n  proposed by the teacher's pattern/rule: 孟子五岁[-的]时候 (Num. + MW. + N., no 的)\n  her past correction (redundant_words): [-有一天]孟子才四岁\n  her past correction (first_mention_introduction): ⟦孟子⟧小的时候 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction (conditional_jiu): 孟子才三岁[+就]开始搬家 — her note: 才Num.就V.\n  rule card numeral_measure_word_order: With a number and measure word, use Num. + MW. + noun directly, with no 的. For actions, use V. + Num. + MW. + Obj.; for a completed action, use 了completed, V. + Num. + MW. + Obj. Not an error: Do not use 们 or 些 with a number: use 三个男孩, not 三个男孩子们, and 那三个男孩, not 那些三个男孩.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P4] 跟妈妈搬家【^】\n  proposed by the correction model: 跟妈妈搬家[+了]\n  her past correction (redundant_words): 跟孟母[-一起]搬家三次\n  her past correction (numeral_measure_word_order): 跟孟母一起[搬家三次→搬了三次家] — her note: 了completed，V. + Num. + MW. + Obj.\n  her past correction (conditional_jiu): [+就]跟孟母一起搬家三次 — her note: 才 Num.就V.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card numeral_measure_word_order: With a number and measure word, use Num. + MW. + noun directly, with no 的. For actions, use V. + Num. + MW. + Obj.; for a completed action, use 了completed, V. + Num. + MW. + Obj. Not an error: Do not use 们 or 些 with a number: use 三个男孩, not 三个男孩子们, and 那三个男孩, not 那些三个男孩.\n\n[P5] 而是【因为】妈妈认为他们的家离墓地太近\n  proposed by the correction model: 而是[-因为]妈妈认为他们的家离墓地太近\n  her past correction (modal_and_control_verb_complements): 他的妈妈[不想跟他的朋友去墓地→不想让他跟朋友去墓地] — her note: otherwise it means his mother didn’t want to go with his friend to the graveyard.\n  her past correction (location_with_zai): 孟子和他的妈妈住在离墓地很近[+的地方] — her note: 住在+Place\n  her past correction (specific_noun_choice): 妈妈认为他们[拿东西→拿了墓地的东西] — her note: “东西” is too general and vague\n  rule card modal_and_control_verb_complements: 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了. Not an error: Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P0",
+    "decision": "keep",
+    "category": "first_mention_introduction",
+    "original": "孟子",
+    "before": "",
+    "after": "小的时候",
+    "corrected": "有一个孩子叫孟子，他",
+    "confidence": "high",
+    "reason": "First mention needs an identifying noun phrase."
+   },
+   {
+    "place_id": "P1",
+    "decision": "keep",
+    "category": "location_with_zai",
+    "original": "玩在墓地里",
+    "before": "朋友喜欢",
+    "after": "，装祭拜",
+    "corrected": "在墓地里玩",
+    "confidence": "high",
+    "reason": "Location should precede the action."
+   },
+   {
+    "place_id": "P2",
+    "decision": "keep",
+    "category": "other",
+    "original": "装",
+    "before": "墓地里，",
+    "after": "祭拜。孟",
+    "corrected": "装作",
+    "confidence": "high",
+    "reason": "装作 is needed before a verb phrase."
+   },
+   {
+    "place_id": "P3",
+    "decision": "keep",
+    "category": "numeral_measure_word_order",
+    "original": "的",
+    "before": "孟子五岁",
+    "after": "时候，跟妈",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "五岁的时候 does not take 的."
+   },
+   {
+    "place_id": "P4",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "妈搬家",
+    "after": "。他们搬",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The completed-event 了 is optional here."
+   },
+   {
+    "place_id": "P5",
+    "decision": "drop",
+    "category": "other",
+    "original": "因为",
+    "before": "太多，而是",
+    "after": "妈妈认为他",
+    "corrected": "因为",
+    "confidence": "high",
+    "reason": "不是因为……而是因为…… is a valid paired structure."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2579,
+  "completion_tokens": 1292,
+  "total_tokens": 3871,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2576,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 941,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

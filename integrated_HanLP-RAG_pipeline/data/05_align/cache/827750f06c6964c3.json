@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 这个坏人好像以为自己有我们家的所有全！\nquote: 所有全\npart p0: fix [ref p0/k0] 所有权\npart p1: comment [ref p1/note] use the wrong character",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "所有全",
+    "corrected": "所有权",
+    "before": "自己有我们家的",
+    "after": "！",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 全 with 权 in 所有权"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "全",
+    "corrected": "",
+    "before": "有我们家的所有",
+    "after": "！",
+    "note": "use the wrong character",
+    "confidence": "high",
+    "reason": "comments on the incorrect character"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 995,
+  "completion_tokens": 112,
+  "total_tokens": 1107,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 漂亮是漂亮，可是他马上生病了，然后下躺了。\nquote: 漂亮是漂亮，可是他马上生病了，然后下躺了\npart p0: fix [ref p0/k0] 这朵花漂亮是漂亮 ; notes: here needs a subject\npart p1: instruction [ref p1/k0] delete然后\npart p2: fix [ref p2/k0] 躺下",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "这朵花",
+    "before": "",
+    "after": "漂亮是漂亮",
+    "note": "here needs a subject",
+    "confidence": "high",
+    "reason": "adds the subject supplied by her fix"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "然后",
+    "corrected": "",
+    "before": "马上生病了，",
+    "after": "下躺了。",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the instructed connector"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "下躺",
+    "corrected": "躺下",
+    "before": "病了，然后",
+    "after": "了。",
+    "note": "",
+    "confidence": "high",
+    "reason": "reverses the directional complement order"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1039,
+  "completion_tokens": 248,
+  "total_tokens": 1287,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1036,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 80,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

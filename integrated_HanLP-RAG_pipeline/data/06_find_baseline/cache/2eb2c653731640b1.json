@@ -1,0 +1,71 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\nscene 2: 孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\ncurrent scene: 他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "",
+    "corrected": "了",
+    "before": "孟子长大",
+    "after": "，他开始能解",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "a completed change of state needs 了"
+   },
+   {
+    "original": "不是",
+    "corrected": "不要",
+    "before": "常常建议你",
+    "after": "学金融，而是学",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "建议 uses 不要 for negative advice"
+   },
+   {
+    "original": "而是",
+    "corrected": "而要",
+    "before": "不是学金融，",
+    "after": "学政治，因为",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "不要…而要… is the required contrast"
+   },
+   {
+    "original": "成为高薪",
+    "corrected": "有高薪的工作",
+    "before": "治，你会",
+    "after": "。后来孟子成",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "高薪 cannot be what a person becomes"
+   },
+   {
+    "original": "教学生很厉害",
+    "corrected": "很会教学生",
+    "before": "后来孟子成为教授，他",
+    "after": "。",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the original says the students are formidable, not that he teaches well"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 745,
+  "completion_tokens": 758,
+  "total_tokens": 1503,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

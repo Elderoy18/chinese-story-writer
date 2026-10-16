@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n孟子想，难怪我们常常搬家，原来我妈妈很忙。可是常常搬家害得孟子很难找到朋友。每次搬家孟子也觉得新的地方不是太热就是太冷，不是太大就是太小。在哪的地方，他都不高兴。孟子想帮助妈妈祭拜，可是他六岁，所以不能祭拜。\n\nITEMS:\n\n[I79] 每次搬家孟子【也】觉得新的地方不是太热就是太冷   correction: 也 → 都   strength: suggestion\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧长大的时候一直搬家 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: 孟子[长大的时候→小时候]一直搬家\n  her past correction: 搬家[带给了孟子→带给孟子的]不是悲伤的童年\n\n[I80] 不是【太】大就是太小   correction: 太 → (delete)   strength: suggestion\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]就不会成为好的大人 — her note: redundant\n  her past correction: [-你]就太淘气了 — her note: redundant\n  her past correction: 她有一个很小的[孩子→儿子]\n\n[I81] 不是太大就是【太】小   correction: 太 → (delete)   strength: suggestion\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]就不会成为好的大人 — her note: redundant\n  her past correction: 她有一个很小的[孩子→儿子]\n  her past correction: 可是[-他们的]收入也很低\n\n[I82] 在【哪】的地方   correction: 哪 → 哪个   strength: error\n  checker's note: “在哪个地方” is the grammatical phrase.\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 在[第三个房子→第三个地方]\n  her past correction: 就[在地方→在地上]躺着\n  her past correction: 在第一个[房子→地方]\n\n[I83] 可是他【^】六岁   correction: ∅ → 只有   strength: suggestion\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 他才四[-年]岁\n  her past correction: 他才三岁[+，可是一直]的以后待在墓地里\n  her past correction: 他才三岁[-的以后]待在墓地里 — her note: Time + 以后",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I79",
+    "explanation": "It would be more natural to use 都 with 每次 to show that this feeling happened every time they moved. 也 usually adds another similar action or idea.",
+    "dimension": "coherence_reference",
+    "corrected": "也 → 都",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I80",
+    "explanation": "It would be more natural to omit 太 here to make the contrast shorter and less repetitive.",
+    "dimension": "coherence_reference",
+    "corrected": "太 → (delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I81",
+    "explanation": "It would be more natural to omit 太 here to make the contrast shorter and less repetitive.",
+    "dimension": "coherence_reference",
+    "corrected": "太 → (delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I82",
+    "explanation": "哪 does not normally collocate with 的地方 by itself; use 哪个地方 instead.",
+    "dimension": "word_choice",
+    "corrected": "哪 → 哪个",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I83",
+    "explanation": "It would be more natural to say 他只有六岁. 只有 emphasizes that six is a very young age, which explains why he cannot 祭拜.",
+    "dimension": "other",
+    "corrected": "∅ → 只有",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1496,
+  "completion_tokens": 653,
+  "total_tokens": 2149,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1493,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 374,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

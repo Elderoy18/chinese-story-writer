@@ -1,0 +1,53 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\ncurrent scene: 妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "",
+    "corrected": "得",
+    "before": "认为，住",
+    "after": "离墓地太",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "住 needs 得 before a distance complement"
+   },
+   {
+    "original": "害得",
+    "corrected": "影响",
+    "before": "地太近，",
+    "after": "孟子的心",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "害得 needs a result clause; 影响 can take an object"
+   },
+   {
+    "original": "心气",
+    "corrected": "心情",
+    "before": "得孟子的",
+    "after": "。",
+    "type": "word_choice",
+    "confidence": "low",
+    "why": "心情 is the usual word for emotional state here"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 700,
+  "completion_tokens": 2392,
+  "total_tokens": 3092,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2222,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

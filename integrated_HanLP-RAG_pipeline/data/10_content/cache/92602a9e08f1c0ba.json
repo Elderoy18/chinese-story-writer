@@ -1,0 +1,120 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n古代有一位老人名叫神农。他看到许多病人，他想帮忙。神农想知道是否有植物可以食用来帮助病人。他走了很远的路去了学哪些植物可以入药，但是如果他想知道这些植物有毒或有药性，他必须吃它们。吃不知名的植物是特别是危险的，因此时而他到了麻烦。比方说，他一吃夹竹桃，就生病了。夹竹桃是特别是毒。幸运的是，附近有灵芝，因为灵芝是正好药植物。神农的朋友给他这植物，和他没病了。他的朋友很惊讶灵芝帮了神农，所以神农告诉他有些植物是好的，有些是坏的。这就要看你知道该吃哪一个了。后来神农写书了哪些植物是药，哪些植物是毒。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "people eat unknown plants and become sick",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "People did not know which plants were safe to eat, and they often became sick after eating plants.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 tests plants to learn which are safe",
+    "verdict": "told",
+    "evidence": [
+     "神农想知道是否有植物可以食用来帮助病人。",
+     "他走了很远的路去了学哪些植物可以入药，但是如果他想知道这些植物有毒或有药性，他必须吃它们。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "He climbed mountains."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 finds 茶 and takes a record of it.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints",
+    "verdict": "partly",
+    "evidence": [
+     "比方说，他一吃夹竹桃，就生病了。"
+    ],
+    "missing_part": "神农 faints after trying 夹竹桃.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "someone gives 灵芝 to 神农, and he feels better",
+    "verdict": "told",
+    "evidence": [
+     "幸运的是，附近有灵芝，因为灵芝是正好药植物。",
+     "神农的朋友给他这植物，和他没病了。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "The person who stopped by was dressed in blue."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "another person comes and talks with 神农",
+    "verdict": "partly",
+    "evidence": [
+     "他的朋友很惊讶灵芝帮了神农，所以神农告诉他有些植物是好的，有些是坏的。"
+    ],
+    "missing_part": "Another person comes by to have the conversation with 神农.",
+    "details_left_out": [
+     "The other person was dressed in brown."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃",
+    "verdict": "partly",
+    "evidence": [
+     "后来神农写书了哪些植物是药，哪些植物是毒。"
+    ],
+    "missing_part": "The record should specifically include 灵芝 and 夹竹桃.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "比方说，他一吃夹竹桃，就生病了。",
+    "problem": "In the required story, 神农 faints after trying 夹竹桃, rather than only becoming ill."
+   }
+  ],
+  "feedback": [
+   "At the beginning, before 神农 decides to test plants, add that people did not know which plants were safe to eat and often became ill after eating plants.",
+   "Before 神农 tries 夹竹桃, add that he finds 茶 and records it.",
+   "When 神农 eats 夹竹桃, say that he faints.",
+   "After 灵芝 makes 神农 feel better, add that another person comes by and talks with him.",
+   "At the end, say that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1107,
+  "completion_tokens": 2196,
+  "total_tokens": 3303,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1104,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1488,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

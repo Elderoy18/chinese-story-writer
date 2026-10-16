@@ -1,0 +1,68 @@
+{
+ "input": "CURRENT SCENE:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nITEMS:\n\n[I244] 【^】一百岁时候   correction: ∅ → 的   strength: error\n  checker's note: age expression needs 的 before 时候\n  rule card (fixed_expressions, Vocabulary): Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place.  Pattern: <wrong> → <correct>: use the established expression <correct>, not the literal/nonstandard combination <wrong>.  Her terms: 从 + Place, 制定规定, 自然规律, Subj.算是Obj., 只/不过/才(+num.) + 而已\n  her past correction: [是大人的时候→长大以后]\n  her past correction: [大人的时候→长大以后]\n  her past correction: 在照片[+上]可以看一个很老的人\n\n[I245] 不小心吃了【毒的】花   correction: 毒的 → 有毒的   strength: error\n  checker's note: her pattern: 毒的 -> 有毒的 (corrected 9/11 in train)\n  rule card (word_class_choice, Vocabulary): Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.  Pattern: <wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.  Her terms: noun, Adj., Subj., 很多+noun, 这个 + Noun\n  her past correction: 他[正好吃→吃到]一毒的花\n  her past correction: 他正好吃[一毒→一种有毒]的花\n  her past correction: [是毒的花→有毒的花]\n\n[I246] 一吃就【开始死】   correction: 开始死 → 死了   strength: error\n  checker's note: death is a completed event here, not something that starts\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]一吃就生病了\n  her past correction: [-一吃]就身体坏了 — her note: Subj. + 就\n  her past correction: 所以⟦他一吃，肚子就疼死了⟧ — her note: it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n\n[I247] 但是生病【^】时候告诉人什么植物是药   correction: ∅ → 的   strength: error\n  checker's note: time phrase needs 的 before 时候\n  rule card (incorrect_story_information, Content): Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information.  Pattern: <wrong> → <correct>: this changes a story fact; the story says <fact>.  Her terms: wrong information, problematic in coherence\n  her past correction: [几棵植物→有的植物]可以是药\n  her past correction: 他问那些生病人觉得[这儿→他们吃的植物]应该有毒\n  her past correction: 后来神农写[书了→了一本]哪些植物是药\n\n[I248] 什么【植物】是毒   correction: 植物 → (delete)   strength: suggestion\n  rule card (word_class_choice, Vocabulary): Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.  Pattern: <wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.  Her terms: noun, Adj., Subj., 很多+noun, 这个 + Noun\n  her past correction: 什么植物[是毒→有毒]\n  her past correction: 哪些植物是[毒→有毒]\n  her past correction: 哪些植物是毒[+的书]\n\n[I249] 什么植物【是毒】   correction: 是毒 → 有毒   strength: error\n  checker's note: her pattern: 是毒 -> 有毒 (corrected 14/15 in train)\n  rule card (word_class_choice, Vocabulary): Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.  Pattern: <wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.  Her terms: noun, Adj., Subj., 很多+noun, 这个 + Noun\n  her past correction: 什么植物[是毒→有毒]\n  her past correction: 哪些植物是[毒→有毒]\n  her past correction: 哪些植物是毒[+的书]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I244",
+    "explanation": "Use the established time expression 一百岁的时候, with 的 before 时候.",
+    "dimension": "grammar",
+    "corrected": "的",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I245",
+    "explanation": "Here the noun 花 needs an adjective phrase. 毒 is a noun, so use 有毒的花.",
+    "dimension": "word_choice",
+    "corrected": "有毒的",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I246",
+    "explanation": "Death is a completed event here, so use 死了 rather than 开始死.",
+    "dimension": "grammar",
+    "corrected": "死了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I247",
+    "explanation": "Use 的 before 时候 in this time phrase: 生病的时候.",
+    "dimension": "grammar",
+    "corrected": "的",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I248",
+    "explanation": "It would be more natural to say 什么是毒 after 什么植物是药; the omitted noun 植物 is already clear.",
+    "dimension": "word_choice",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I249",
+    "explanation": "Here 毒 needs the adjective form 有毒. Say 什么植物有毒.",
+    "dimension": "word_choice",
+    "corrected": "有毒",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1729,
+  "completion_tokens": 505,
+  "total_tokens": 2234,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1726,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 222,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

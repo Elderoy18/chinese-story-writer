@@ -1,0 +1,92 @@
+{
+ "input": "learner text: 一个男生和一只驴从农人经过了。\nquote: 一个男生和一只驴从农人经过了\npart p0: fix [ref p0/k0] 一个男人牵着一只驴从农民身边经过 ; notes: “跟/和+noun.” is used for multiple nouns that have the same action, we can say: 一个男生和一个女生走……，because both 男生and 女生 “walk”, but here “驴” does not walk by itself, but walked by 男生, so you need to use the accompanying phrase “V.着”\npart p1: comment [ref p1/note] 从 + place，农民is not a place, 农民身边 is a place\npart p2: comment [ref p2/note] the  word “经过” implies ongoing process, so no了(completed).",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "男生",
+    "corrected": "男人",
+    "before": "一个",
+    "after": "和一只驴",
+    "note": "",
+    "confidence": "high",
+    "reason": "uses 男人 in the teacher's rewrite"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "和",
+    "corrected": "牵着",
+    "before": "一个男生",
+    "after": "一只驴从农",
+    "note": "“跟/和+noun.” is used for multiple nouns that have the same action, we can say: 一个男生和一个女生走……，because both 男生and 女生 “walk”, but here “驴” does not walk by itself, but walked by 男生, so you need to use the accompanying phrase “V.着”",
+    "confidence": "high",
+    "reason": "replaces coordination with the accompanying-action phrase"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "农人",
+    "corrected": "农民身边",
+    "before": "一只驴从",
+    "after": "经过了",
+    "note": "",
+    "confidence": "high",
+    "reason": "uses the location phrase in the teacher's rewrite"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "农人经过",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "the teacher's rewrite omits 了"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "农人",
+    "corrected": "",
+    "before": "一只驴从",
+    "after": "经过了",
+    "note": "从 + place，农民is not a place, 农民身边 is a place",
+    "confidence": "high",
+    "reason": "comments that 农民 needs a location expression"
+   },
+   {
+    "ref": "p2/note",
+    "op": "comment",
+    "original": "经过了",
+    "corrected": "",
+    "before": "一只驴从农人",
+    "after": "",
+    "note": "the  word “经过” implies ongoing process, so no了(completed).",
+    "confidence": "high",
+    "reason": "comments that 经过 should not take completed 了"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1134,
+  "completion_tokens": 942,
+  "total_tokens": 2076,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1131,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

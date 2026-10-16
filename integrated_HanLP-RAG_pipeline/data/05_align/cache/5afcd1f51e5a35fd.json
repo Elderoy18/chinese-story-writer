@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟子的妈妈怕孟子会受到别的小孩子的影响，所以她带孟子到一个城市搬家了。\nquote: 所以她带孟子到一个城市搬家了\npart p0: fix [ref p0/k0] 带孟子搬到城市了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "到一个",
+    "corrected": "",
+    "before": "她带孟子",
+    "after": "城市搬家",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 到一个"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "城市搬家了",
+    "corrected": "搬到城市了",
+    "before": "孟子到一个",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "moves 搬 before 到城市"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1003,
+  "completion_tokens": 112,
+  "total_tokens": 1115,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

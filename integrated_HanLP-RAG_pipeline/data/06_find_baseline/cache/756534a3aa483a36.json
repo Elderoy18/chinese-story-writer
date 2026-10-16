@@ -1,0 +1,98 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\ncurrent scene: 他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "original": "如果",
+    "corrected": "",
+    "before": "他不知道",
+    "after": "这把花对你",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "不知道 takes a statement or whether-question, not 如果"
+   },
+   {
+    "original": "你的",
+    "corrected": "人的",
+    "before": "果这把花对",
+    "after": "身体好，这",
+    "type": "reference",
+    "confidence": "high",
+    "why": "generic “your” is inappropriate in this narration"
+   },
+   {
+    "original": "好",
+    "corrected": "好不好",
+    "before": "你的身体",
+    "after": "，这就要看",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "needs a whether-question after 不知道"
+   },
+   {
+    "original": "如果",
+    "corrected": "",
+    "before": "这就要看",
+    "after": "这把花毒不",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "看 does not take 如果 here"
+   },
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "花毒不毒",
+    "after": "。",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "no sentence-final 了 in this general whether-question"
+   },
+   {
+    "original": "花",
+    "corrected": "这朵花",
+    "before": "。他一吃",
+    "after": "，很快就生",
+    "type": "grammar",
+    "confidence": "low",
+    "why": "a specific flower needs a determiner and measure word"
+   },
+   {
+    "original": "吃不吃",
+    "corrected": "吃的是",
+    "before": "神农不知道他",
+    "after": "灵芝或者夹",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "needs to ask what he had eaten"
+   },
+   {
+    "original": "或者",
+    "corrected": "还是",
+    "before": "的是灵芝",
+    "after": "夹竹桃。",
+    "type": "connector",
+    "confidence": "high",
+    "why": "whether alternatives use 还是"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 723,
+  "completion_tokens": 1380,
+  "total_tokens": 2103,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

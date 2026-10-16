@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他决定找出什么植物可以吃，什么植物有毒，告诉别的人。\nquote: 他决定找出什么植物可以吃，什么植物有毒，告诉别的人\npart p0: instruction [ref p0/k0] delete他\npart p1: fix [ref p1/k0] 其他人 ; notes: “别的” is for “a different type”, and “all else except the spoken one”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "",
+    "after": "决定找出什",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "别的人",
+    "corrected": "其他人",
+    "before": "毒，告诉",
+    "after": "。",
+    "note": "“别的” is for “a different type”, and “all else except the spoken one”",
+    "confidence": "high",
+    "reason": "replaces 别的人 with 其他人"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1033,
+  "completion_tokens": 123,
+  "total_tokens": 1156,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1030,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

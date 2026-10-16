@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 在家不是学习就是玩玩，孟母觉得学习害得孟子，所以孟子常常玩玩。\nquote: 孟母觉得学习害得孟子，所以孟子常常玩玩\npart p0: comment [ref p0/note] 害得孟子+harmful result, 常常玩\npart p1: comment [ref p1/note] “所以” is not appropriate, since here is not a cause-effect relationship",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "害得孟子",
+    "corrected": "",
+    "before": "孟母觉得学习",
+    "after": "，所以孟子",
+    "note": "害得孟子+harmful result, 常常玩",
+    "confidence": "high",
+    "reason": "notes that 害得孟子 needs a harmful result"
+   },
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "常常玩玩",
+    "corrected": "",
+    "before": "，所以孟子",
+    "after": "。",
+    "note": "害得孟子+harmful result, 常常玩",
+    "confidence": "high",
+    "reason": "notes the use of 常常玩"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "所以",
+    "corrected": "",
+    "before": "得孟子，",
+    "after": "孟子常常",
+    "note": "“所以” is not appropriate, since here is not a cause-effect relationship",
+    "confidence": "high",
+    "reason": "comments that 所以 does not fit the relationship"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1038,
+  "completion_tokens": 294,
+  "total_tokens": 1332,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1035,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 80,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

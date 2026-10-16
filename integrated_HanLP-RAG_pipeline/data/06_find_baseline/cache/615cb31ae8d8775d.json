@@ -1,0 +1,89 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\ncurrent scene: 他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "如果这把花",
+    "corrected": "这把花是不是",
+    "before": "他不知道",
+    "after": "对你的身",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "indirect yes/no question needs 是不是, not 如果"
+   },
+   {
+    "original": "你",
+    "corrected": "人",
+    "before": "这把花对",
+    "after": "身体好，",
+    "type": "reference",
+    "confidence": "high",
+    "why": "你 has no clear referent; this is a general statement"
+   },
+   {
+    "original": "如果",
+    "corrected": "",
+    "before": "这就要看",
+    "after": "这把花毒",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "看后面直接 takes the alternative question"
+   },
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "把花毒不毒",
+    "after": "。",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "毒不毒 asks about an inherent quality, not a changed state"
+   },
+   {
+    "original": "",
+    "corrected": "就",
+    "before": "一吃花，",
+    "after": "很快就生",
+    "type": "connector",
+    "confidence": "high",
+    "why": "一… needs a following 就"
+   },
+   {
+    "original": "吃不吃",
+    "corrected": "该吃",
+    "before": "农不知道",
+    "after": "灵芝或者",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "he is uncertain about what he should eat"
+   },
+   {
+    "original": "或者",
+    "corrected": "还是",
+    "before": "不吃灵芝",
+    "after": "夹竹桃。",
+    "type": "connector",
+    "confidence": "high",
+    "why": "an alternative in an indirect question uses 还是"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 723,
+  "completion_tokens": 1616,
+  "total_tokens": 2339,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1287,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 她望子成龙，所以孟子的妈妈安排他的生活。\nquote: 她望子成龙，所以孟子的妈妈安排他的生活\npart p0: fix [ref p0/k0-1] 孟子的妈妈望子成龙，所以安排他的生活 ; notes: otherwise the references are confusing",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "她",
+    "corrected": "孟子的妈妈",
+    "before": "",
+    "after": "望子成龙",
+    "note": "otherwise the references are confusing",
+    "confidence": "high",
+    "reason": "replaces the ambiguous pronoun with 孟子的妈妈"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "孟子的妈妈",
+    "corrected": "",
+    "before": "龙，所以",
+    "after": "安排他的",
+    "note": "otherwise the references are confusing",
+    "confidence": "high",
+    "reason": "removes the repeated subject after 所以"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1006,
+  "completion_tokens": 393,
+  "total_tokens": 1399,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 260,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

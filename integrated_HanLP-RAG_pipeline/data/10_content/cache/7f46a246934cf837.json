@@ -1,0 +1,107 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n有一个关于灰色的头发老老的人叫神农的故事。一天，神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物。有些人吃生病了，有些人吃得好。神农发现了大家都不知道什么植物能吃，什么植物不能吃。所以神农决定找出哪些植物可以做药，哪些植物有毒。他跑遍尝尝各种各样的植物。有一时找到了一株黄色的花像太阳一样的，也找到了一个绿色的植物。这种植物原来是茶。这些植物对身体好处。他一吃植物，就在笔记本写下来观测结果。有一天神农走过去漂亮的地方的时候，找到了开着黄色的像星星一样的花。他想：“这么漂亮，一定会好吃！”。 那种花虽然很漂亮，但是有毒。“糟糕，那是夹竹桃！” 神农吃得生病了，头疼肚子疼。那时，一个男人正好过来，看到了神农躺着地上。男人穿着一件蓝色的衣服。他赶快拿起夹竹桃旁边的像伞一样的植物给神农吃了。神农恢复知觉了以前，男人走了。几分钟过来，神农越来越好，想起来发生了什么事，想： 谢谢，穿上一件蓝色的衣服的人。一个矮矮的男人过来。他穿着一件棕色的衣服。问：爷爷，这个像伞一样的植物有毒吗？神农发现了那个植物是灵芝。他回答： 不是。那是灵芝，可以做药。可是那个像星星一样的植物有毒，不能吃。我觉得，神农是在古代一个了不起的人。他特别关心关于可以做药还是有毒的植物。他不怕危险只要让人们安全。他真的很厉害！",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "有些人吃生病了，有些人吃得好。",
+     "神农发现了大家都不知道什么植物能吃，什么植物不能吃。"
+    ],
+    "missing_part": "It does not say that this happened in ancient times.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "所以神农决定找出哪些植物可以做药，哪些植物有毒。",
+     "他跑遍尝尝各种各样的植物。"
+    ],
+    "missing_part": "It does not clearly say that 神农 climbed mountains to try the plants.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "told",
+    "evidence": [
+     "这种植物原来是茶。",
+     "他一吃植物，就在笔记本写下来观测结果。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "told",
+    "evidence": [
+     "“糟糕，那是夹竹桃！”",
+     "神农吃得生病了，头疼肚子疼。",
+     "神农恢复知觉了以前，男人走了。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "told",
+    "evidence": [
+     "男人穿着一件蓝色的衣服。",
+     "他赶快拿起夹竹桃旁边的像伞一样的植物给神农吃了。",
+     "几分钟过来，神农越来越好，想起来发生了什么事，想： 谢谢，穿上一件蓝色的衣服的人。",
+     "神农发现了那个植物是灵芝。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "verdict": "told",
+    "evidence": [
+     "一个矮矮的男人过来。",
+     "他穿着一件棕色的衣服。",
+     "问：爷爷，这个像伞一样的植物有毒吗？",
+     "他回答： 不是。那是灵芝，可以做药。可是那个像星星一样的植物有毒，不能吃。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "verdict": "told",
+    "evidence": [
+     "他一吃植物，就在笔记本写下来观测结果。",
+     "“糟糕，那是夹竹桃！”",
+     "神农发现了那个植物是灵芝。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "At the beginning, add that this was in ancient times, before people did not know which plants they could eat.",
+   "After 神农 decides to test plants, say that he climbs mountains to try the different plants."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1095,
+  "completion_tokens": 1609,
+  "total_tokens": 2704,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1092,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

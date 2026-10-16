@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 但是他学到了很多学习，孟子的妈妈每天从早到晚做工作，所以孟子每天不是去上课就是跟新人一起聊天，学新的文化。\nquote: 孟子的妈妈每天从早到晚做工作，所以孟子每天不是去上课就是跟新人一起聊天\npart p0: fix [ref p0/k0-1] 工作，新朋友 ; notes: 新人means newly married couple",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "做",
+    "corrected": "",
+    "before": "从早到晚",
+    "after": "工作，所以",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix leaves out 做 before 工作"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "新人",
+    "corrected": "新朋友",
+    "before": "就是跟",
+    "after": "一起聊天",
+    "note": "新人means newly married couple",
+    "confidence": "high",
+    "reason": "replaces 新人 with 新朋友"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1031,
+  "completion_tokens": 210,
+  "total_tokens": 1241,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1028,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 88,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

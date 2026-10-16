@@ -1,0 +1,125 @@
+{
+ "input": "EARLIER SCENES (context only):\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\nCURRENT SCENE:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nFLAGGED PLACES:\n\n[P220] 他【一次】试一试有些植物的叶\n  proposed by the AI checker: 他[一次→有一次]试一试有些植物的叶 (needs 有 before 一次 for “on one occasion”)\n  her past correction (near_synonym_precision): 就[测试→尝试]更植物\n  her past correction (near_synonym_precision): 他[测试→尝试]别的植物\n  her past correction (other_vs_additional): 他测试[别的→各种]植物 — her note: “别的” is for “a different type”, and “all else except the spoken one”\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card other_vs_additional: 别的 is for a different type or for all others except the one already mentioned. 另外 is for an additional quantity, or for another/the other; say 另外一个人, not 别个人. Not an error: Do not flag 别的 when it means a different type or all others except the one already mentioned.\n\n[P221] 他一次【试一试】有些植物的叶\n  proposed by the AI checker: 他一次[试一试→试了试]有些植物的叶 (a completed past action needs 了)\n  her past correction (near_synonym_precision): 就[测试→尝试]更植物\n  her past correction (near_synonym_precision): 他[测试→尝试]别的植物\n  her past correction (other_vs_additional): 他测试[别的→各种]植物 — her note: “别的” is for “a different type”, and “all else except the spoken one”\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card other_vs_additional: 别的 is for a different type or for all others except the one already mentioned. 另外 is for an additional quantity, or for another/the other; say 另外一个人, not 别个人. Not an error: Do not flag 别的 when it means a different type or all others except the one already mentioned.\n\n[P222] 他一次试一试有些植物的【叶】\n  proposed by the AI checker: 他一次试一试有些植物的[叶→叶子] (叶子 is the usual noun for leaves)\n  proposed by the correction model: 他一次试一试有些植物的叶[+子]\n  her past correction (near_synonym_precision): 就[测试→尝试]更植物\n  her past correction (near_synonym_precision): 他[测试→尝试]别的植物\n  her past correction (other_vs_additional): 他测试[别的→各种]植物 — her note: “别的” is for “a different type”, and “all else except the spoken one”\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card other_vs_additional: 别的 is for a different type or for all others except the one already mentioned. 另外 is for an additional quantity, or for another/the other; say 另外一个人, not 别个人. Not an error: Do not flag 别的 when it means a different type or all others except the one already mentioned.\n\n[P223] 【吃得】又新鲜又甜\n  proposed by the AI checker: [吃得→吃起来]又新鲜又甜 (吃起来 introduces a description of taste)\n  her past correction (zhe_durative): [吃梨子→吃着梨子] — her note: 着 durative\n  her past correction (le_completed): 他[吃→吃了]一个香香的花 — her note: 了completed\n  her past correction (near_synonym_precision): 有些人[吃得好→吃了以后没事儿]\n  rule card zhe_durative: Use 着 for a durative, accompanying, or static state. When one action accompanies the main action, use V.着 + V2 (for example, 牵着驴走). Not an error: Do not use 着 when the action is completed, such as 吃了夹竹桃以后 (了completed). Do not change 和/跟 + noun when both nouns perform the same action.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P224] 煮【^】这些叶以后\n  proposed by the AI checker: 煮[+了]这些叶以后 (completed cooking before 以后 needs 了)\n  her past correction (le_completed): 神农吃[+了]以后 — her note: 了completed\n  her past correction (le_completed): 但是吃[+了]像伞一样的植物以后 — her note: 了completed\n  her past correction (zero_redundant_pronoun): [-他]吃了以后 — her note: redundant\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n\n[P225] 煮这些【叶】以后\n  proposed by the AI checker: 煮这些[叶→叶子]以后 (叶子 is the usual noun for leaves)\n  proposed by the correction model: 煮这些叶[+子]以后\n  her past correction (le_completed): 神农吃[+了]以后 — her note: 了completed\n  her past correction (le_completed): 但是吃[+了]像伞一样的植物以后 — her note: 了completed\n  her past correction (le_completed): [吃→吃了]像伞的植物以后 — her note: 了completed\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P226] 他一喝就知道他发现【^】新的茶叶\n  proposed by the AI checker: 他一喝就知道他发现[+了]新的茶叶 (发现 is a completed discovery)\n  proposed by the correction model: 他一喝就知道他发现[+了]新的茶叶\n  her past correction (zero_redundant_pronoun): [-他]喝了茶 — her note: redundant\n  her past correction (incorrect_story_information): 今天的奶茶[是从他对茶学到的→是他从自己的尝试中学到的]\n  her past correction (le_completed): 神农尝[+了]花儿以后就发现这个花儿不但可以被用做茶 — her note: 了completed\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card incorrect_story_information: Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information. Not an error: Do not flag a word or sentence under this rule only because of grammar or vocabulary. Flag it here when it changes or adds a fact in the traditional story.\n\n[P227] 虽然他找到了很多【的】新的植物\n  proposed by the AI checker: 虽然他找到了很多[-的]新的植物 (很多新的植物 does not need 的)\n  her past correction (modifier_de_structure): 他找到了很多[-的]中国的植物\n  her past correction (modifier_de_structure): 他找到了很多[有用植物→有用的植物]\n  her past correction (search_find): 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n\n[P228] 但是他的旅程有的时候特别【是】危险\n  proposed by the AI checker: 但是他的旅程有的时候特别[-是]危险 (特别 directly modifies 危险)\n  proposed by the correction model: 但是他的旅程有的时候特别[-是]危险\n  her past correction (no_le_routine_state): 因此[时而他到了→会遇到]麻烦 — her note: no了for habit/routine\n  her past correction (near_synonym_precision): 可是他们[老是有问题→碰到麻烦]\n  her past correction (loose_clause_connection): ⟦所以他决定去旅行⟧ — her note: loose connection between the two clauses, 决定去旅行找到能吃的植物\n  rule card no_le_routine_state: For a routine, habit, repeated condition, or state, use zero particle: do not add 了completed. This is especially true with words such as 老是, 常常, and 从早到晚.\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P220",
+    "decision": "keep",
+    "category": "other",
+    "original": "一次",
+    "before": "他",
+    "after": "试一试有",
+    "corrected": "有一次",
+    "confidence": "high",
+    "reason": "An isolated past occasion needs 有一次."
+   },
+   {
+    "place_id": "P221",
+    "decision": "keep",
+    "category": "other",
+    "original": "试一试",
+    "before": "他一次",
+    "after": "有些植物",
+    "corrected": "试了试",
+    "confidence": "high",
+    "reason": "A one-time completed narrative action needs 了."
+   },
+   {
+    "place_id": "P222",
+    "decision": "drop",
+    "category": "near_synonym_precision",
+    "original": "叶",
+    "before": "植物的",
+    "after": "，吃得又",
+    "corrected": "叶",
+    "confidence": "high",
+    "reason": "叶 is an acceptable word for leaves."
+   },
+   {
+    "place_id": "P223",
+    "decision": "keep",
+    "category": "near_synonym_precision",
+    "original": "吃得",
+    "before": "物的叶，",
+    "after": "又新鲜又",
+    "corrected": "吃起来",
+    "confidence": "high",
+    "reason": "吃起来 introduces the leaves’ taste description."
+   },
+   {
+    "place_id": "P224",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "",
+    "before": "煮",
+    "after": "这些叶以后",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "The cooking is completed before 以后."
+   },
+   {
+    "place_id": "P225",
+    "decision": "drop",
+    "category": "near_synonym_precision",
+    "original": "叶",
+    "before": "煮这些",
+    "after": "以后，他一",
+    "corrected": "叶",
+    "confidence": "high",
+    "reason": "叶 is acceptable here; 叶子 is only an alternative."
+   },
+   {
+    "place_id": "P226",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "",
+    "before": "道他发现",
+    "after": "新的茶叶",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "The discovery is a completed narrative event."
+   },
+   {
+    "place_id": "P227",
+    "decision": "keep",
+    "category": "modifier_de_structure",
+    "original": "的",
+    "before": "到了很多",
+    "after": "新的植物",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "很多 does not take 的 before the noun modifier."
+   },
+   {
+    "place_id": "P228",
+    "decision": "keep",
+    "category": "other",
+    "original": "是",
+    "before": "时候特别",
+    "after": "危险",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "特别 directly modifies 危险 in this predicate."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 3373,
+  "completion_tokens": 1877,
+  "total_tokens": 5250,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3370,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1379,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

@@ -1,0 +1,147 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。\nCURRENT SCENE:\n所以，他上山下山找植物，吃了很多样子的植物。他是第一人，找到了茶。他把所有的植物写下来了。他一直都吃了，他连毒都能吃。可是他还没吃了一个叫夹竹桃的植物。他找到了那个像星星的植物，觉得很漂亮，马上就吃下了。\n\nFLAGGED PLACES:\n\n[P330] 吃了很多【样子】的植物\n  proposed by the AI checker: 吃了很多[样子→种]的植物 (plants are counted with 种, not 样子)\n  proposed by the correction model: 吃了很多[样子→种类]的植物\n  her past correction (modifier_de_structure): 吃很多[-的]植物\n  her past correction (le_completed): 他尝[+了]很多植物 — her note: 了completed\n  her past correction (resultative_complements): 有的人吃[+到]很好吃的植物\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P331] 他是第【一】人\n  proposed by the AI checker: 他是第[一→一个]人 (第一人 needs the measure word 个)\n  her past correction (measure_word_choice): 有[一位人→一个人]来了\n  her past correction (collocation_selection): 在第一个[房子→地方]\n  her past correction (specific_noun_choice): 他找了第一个[菜→植物]\n  rule card measure_word_choice: Use the appropriate measure word before the noun: 这/那 + Measure word + noun. Use noun-specific measure words such as 棵 for trees, and 位 is a polite MW. Not an error: Do not use 位 for a child in this context; 位 is a polite MW. 本+N. is usually used in formal advertisement/news and may indicate that the author owns the noun.\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n\n[P332] 他是第一【人，】找到了茶\n  proposed by the correction model: 他是第一[人，→个]找到了茶\n  her past correction (search_find): 他[找了→找到了]第一个菜 — her note: 找look for vs.找到find\n  her past correction (specific_noun_choice): 他找了第一个[菜→植物]\n  her past correction (zero_redundant_pronoun): [-他]喝了茶 — her note: redundant\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n  rule card specific_noun_choice: Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦. Not an error: Do not flag a general word when the context does not require a more specific meaning. This rule applies when the general word makes the story unclear or does not name what is actually meant.\n\n[P333] 找到【了】茶\n  proposed by the correction model: 找到[-了]茶\n  her past correction (zero_redundant_pronoun): [-他]喝了茶 — her note: redundant\n  her past correction (search_find): 他[找了→找到了]第一个菜 — her note: 找look for vs.找到find\n  her past correction (demonstrative_reference): ⟦这种植物⟧原来是茶 — her note: “这种植物” is unclear, sine preceding sentence has two types of plants\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n\n[P334] 找到了茶【^】\n  proposed by the correction model: 找到了茶[+的人]\n  her past correction (zero_redundant_pronoun): [-他]喝了茶 — her note: redundant\n  her past correction (search_find): 一个人正好[找了→找到了]神农 — her note: 找look for vs.找到find\n  her past correction (search_find): 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n\n[P335] 他把所有的植物【^】写下来了\n  proposed by the AI checker: 他把所有的植物[+的名字]写下来了 (one writes down the plants' names)\n  proposed by the correction model: 他把所有的植物[+都]写下来了\n  her past correction (zero_redundant_pronoun): [-他]写下了哪些植物有毒 — her note: redundant\n  her past correction (fixed_expressions): 他[写好→写下]了什么植物能吃\n  her past correction (perception_look_see): 然后他们[看了→看到了]很多植物 — her note: 看look vs.看到see\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n\n[P336] 他一直都【^】吃了\n  proposed by the correction model: 他一直都[+在]吃了\n  her past correction (zero_redundant_pronoun): [-他]吃了以后 — her note: redundant\n  her past correction (le_completed): 毒他吃[+了]很多次 — her note: 了completed\n  her past correction (verb_object_valency): 可是他[+什么都]没有吃了\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P337] 他一直都吃【了】\n  proposed by the AI checker: 他一直都吃[-了] (一直 describing an ongoing habit does not take 了)\n  proposed by the correction model: 他一直都吃[-了]\n  her past correction (zero_redundant_pronoun): [-他]吃了以后 — her note: redundant\n  her past correction (no_le_with_mei): 可是他没有吃[-了] — her note: no了in “没+V.”\n  her past correction (le_completed): 毒他吃[+了]很多次 — her note: 了completed\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card no_le_with_mei: After 没/没有 with an action verb for an action that did not happen, use 没 + V. and do not add 了. Not an error: This rule is for 没/没有 + an action verb. Do not apply it when the word after 没 is not an action verb, as in 没病了.\n\n[P338] 【他】连毒都能吃\n  proposed by the teacher's pattern/rule: [-他]连毒都能吃 (他 repeats the subject of the clause before: zero form)\n  her past correction (collocation_selection): [+有]毒他吃很多次\n  her past correction (le_completed): 毒他吃[+了]很多次 — her note: 了completed\n  her past correction (other): 但是[你→他]也吃过有毒的植物\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n\n[P339] 可是他还没吃【了】一个叫夹竹桃的植物\n  proposed by the AI checker: 可是他还没吃[了→过]一个叫夹竹桃的植物 (还没吃过 expresses that he has never eaten it)\n  proposed by the correction model: 可是他还没吃[了→过]一个叫夹竹桃的植物\n  proposed by the teacher's pattern/rule: 可是他还没吃[-了]一个叫夹竹桃的植物 (没 + V., no 了)\n  her past correction (no_le_with_mei): 可是他没有吃[-了] — her note: no了in “没+V.”\n  her past correction (redundant_words): 可是[-吃]夹竹桃有毒\n  her past correction (verb_object_valency): 可是他[+什么都]没有吃了\n  rule card no_le_with_mei: After 没/没有 with an action verb for an action that did not happen, use 没 + V. and do not add 了. Not an error: This rule is for 没/没有 + an action verb. Do not apply it when the word after 没 is not an action verb, as in 没病了.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P340] 可是他还没吃了一【个】叫夹竹桃的植物\n  proposed by the AI checker: 可是他还没吃了一[个→种]叫夹竹桃的植物 (plants are normally counted with 种)\n  proposed by the correction model: 可是他还没吃了一[个→种]叫夹竹桃的植物\n  her past correction (redundant_words): 可是[-吃]夹竹桃有毒\n  her past correction (no_le_with_mei): 可是他没有吃[-了] — her note: no了in “没+V.”\n  her past correction (verb_object_valency): 可是他[+什么都]没有吃了\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card no_le_with_mei: After 没/没有 with an action verb for an action that did not happen, use 没 + V. and do not add 了. Not an error: This rule is for 没/没有 + an action verb. Do not apply it when the word after 没 is not an action verb, as in 没病了.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P330",
+    "decision": "keep",
+    "category": "other",
+    "original": "样子",
+    "before": "吃了很多",
+    "after": "的植物",
+    "corrected": "种",
+    "confidence": "high",
+    "reason": "“样子” does not mean kinds of plants here."
+   },
+   {
+    "place_id": "P331",
+    "decision": "keep",
+    "category": "measure_word_choice",
+    "original": "一",
+    "before": "他是第",
+    "after": "人，找到",
+    "corrected": "一个",
+    "confidence": "high",
+    "reason": "Ordinal person needs 个: 第一个人."
+   },
+   {
+    "place_id": "P332",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "他是第一",
+    "after": "找到了茶",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "No missing word at this position."
+   },
+   {
+    "place_id": "P333",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "一人，找到",
+    "after": "茶。他把",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "找到了 correctly marks a completed finding."
+   },
+   {
+    "place_id": "P334",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "找到了茶",
+    "after": "他把所有",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "人 is already present in 第一个人 after the needed correction."
+   },
+   {
+    "place_id": "P335",
+    "decision": "keep",
+    "category": "other",
+    "original": "",
+    "before": "有的植物",
+    "after": "写下来了",
+    "corrected": "的名字",
+    "confidence": "high",
+    "reason": "One writes down the plants’ names, not the plants themselves."
+   },
+   {
+    "place_id": "P336",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "",
+    "before": "他一直都",
+    "after": "吃了，他",
+    "corrected": "在",
+    "confidence": "high",
+    "reason": "一直都 describes an ongoing action here."
+   },
+   {
+    "place_id": "P337",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "了",
+    "before": "他一直都吃",
+    "after": "，他连毒",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "了 conflicts with the ongoing 一直都在吃."
+   },
+   {
+    "place_id": "P338",
+    "decision": "keep",
+    "category": "zero_redundant_pronoun",
+    "original": "他",
+    "before": "都吃了，",
+    "after": "连毒都能",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The same subject is clear from the preceding clause."
+   },
+   {
+    "place_id": "P339",
+    "decision": "keep",
+    "category": "no_le_with_mei",
+    "original": "了",
+    "before": "他还没吃",
+    "after": "一个叫夹",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "没 + action verb does not take 了."
+   },
+   {
+    "place_id": "P340",
+    "decision": "keep",
+    "category": "measure_word_choice",
+    "original": "个",
+    "before": "没吃了一",
+    "after": "叫夹竹桃",
+    "corrected": "种",
+    "confidence": "high",
+    "reason": "夹竹桃 is a type of plant, so 种 is needed."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 3863,
+  "completion_tokens": 2665,
+  "total_tokens": 6528,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3860,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

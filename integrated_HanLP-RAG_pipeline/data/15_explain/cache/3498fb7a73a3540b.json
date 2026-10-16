@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n所以，孟母和孟子搬到学校的旁边住。才五岁孟子开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。\n\nITEMS:\n\n[I23] 才五岁【^】孟子开始学哲学   correction: ∅ → 时   strength: error\n  checker's note: a temporal phrase needs 时 here\n  rule card (conditional_jiu, Coherence: connectors): Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future.  Pattern: <wrong> → <correct>: <meaning/condition> leads naturally to <result>, so use 只要……就 or put the subject before 就 (Subj. + 就 + V.).  Her terms: 只要……就, Subj. + 就, Subj.+就, 才 Num.就V., 才Num.就V.\n  her past correction: [+就]开始学哲学 — her note: 才 Num.就V.\n  her past correction: 孟子从早到晚[老是→一直]学哲学 — her note: “老是“ for something negative, used to complain\n  her past correction: 孟子决定[-他应该]学哲学\n\n[I24] 才五岁孟子【^】开始学哲学   correction: ∅ → 就   strength: suggestion\n  rule card (conditional_jiu, Coherence: connectors): Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future.  Pattern: <wrong> → <correct>: <meaning/condition> leads naturally to <result>, so use 只要……就 or put the subject before 就 (Subj. + 就 + V.).  Her terms: 只要……就, Subj. + 就, Subj.+就, 才 Num.就V., 才Num.就V.\n  her past correction: [+就]开始学哲学 — her note: 才 Num.就V.\n  her past correction: 孟子决定[-他应该]学哲学\n  her past correction: 孟子从早到晚[老是→一直]学哲学 — her note: “老是“ for something negative, used to complain\n\n[I25] 【将来】   correction: 将来 → 后来   strength: error\n  checker's note: the narrative refers to a later past event\n  rule card (time_sequence_markers, Coherence: temporality (了/着/在)): Use Time + 以后 after a completed time or action to show “after”; when moving to a later event in the story, use 后来 or 然后 rather than 以后 by itself. Do not add 以后 when the time phrase already says the time clearly.  Pattern: <wrong> → <correct>: use <Time/action> + 以后 for “after <Time/action>”; if the action is finished, use 了completed before 以后. Use 后来/然后 for the next story event, or delete a redundant 以后.  Her terms: Time+以后, Time + 以后, 了completed\n  her past correction: [长大的时候→长大以后]\n  her past correction: [-然后]\n  her past correction: [帮他后→帮了他以后] — her note: 了completed\n\n[I26] 他【^】成为中国的一个非常有名的哲学家   correction: ∅ → 会   strength: suggestion\n  rule card (become_and_profession, Vocabulary): 成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才.  Pattern: <wrong> → <correct>: 成为 needs an appropriate noun, such as a profession or public identity; for becoming capable or successful, use 成才.  Her terms: 成为+N, 成为 + N. (profession/celebrity), 成为 + profession/celebrity\n  her past correction: 他成为[有名的→有名的哲学家] — her note: 成为+N\n  her past correction: [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为\n  her past correction: 成为他一个很重要[和聪明的中国哲学→的哲学家]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I23",
+    "explanation": "Use 时 after an age phrase to show the time when an action happened: 才五岁时。",
+    "dimension": "coherence_connectors",
+    "corrected": "时",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I24",
+    "explanation": "It would be more natural to use 才Num.就V. to emphasize that he started learning at the early age of five.",
+    "dimension": "coherence_connectors",
+    "corrected": "就",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I25",
+    "explanation": "将来 means “in the future,” but this is a later event in a past story. Use 后来 for the next story event.",
+    "dimension": "coherence_temporality",
+    "corrected": "后来",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I26",
+    "explanation": "It would be more natural to add 会 to show that becoming a famous philosopher was his future result. 成为 is correctly followed by the profession noun 哲学家.",
+    "dimension": "word_choice",
+    "corrected": "会",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1465,
+  "completion_tokens": 414,
+  "total_tokens": 1879,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1462,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 179,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

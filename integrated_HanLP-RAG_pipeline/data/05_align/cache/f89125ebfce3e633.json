@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 他问了，人正好生病还是百草让他们生病了。\nquote: 他问了，人正好生病还是百草让他们生病了\npart p0: fix [ref p0/k0] 他问 ; notes: no了for speaking word introducing quoted speech\npart p1: fix [ref p1/k0] 你们是正好生病还是吃了这些植物所以生病",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "他问",
+    "after": "，人正好生",
+    "note": "no了for speaking word introducing quoted speech",
+    "confidence": "high",
+    "reason": "removes 了 from the speech-introducing verb"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "人",
+    "corrected": "你们",
+    "before": "他问了，",
+    "after": "正好生病还",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the referent to the addressed people"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "是",
+    "before": "他问了，人",
+    "after": "正好生病还",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 是 after 你们"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "百草让他们",
+    "corrected": "吃了这些植物所以",
+    "before": "病还是",
+    "after": "生病了。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the cause clause with the teacher's phrasing"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "他们生病",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "teacher's corrected question omits final 了"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1032,
+  "completion_tokens": 668,
+  "total_tokens": 1700,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1029,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 383,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

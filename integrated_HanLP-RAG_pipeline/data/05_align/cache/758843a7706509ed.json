@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子。\nquote: 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子\npart p0: fix [ref p0/k0-1-2-3] 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子 ; notes: “这个小孩子” is unclear and ambiguous",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1-2-3",
+    "op": "replace",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "before": "",
+    "after": "，有一个妈",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the time expression"
+   },
+   {
+    "ref": "p0/k0-1-2-3",
+    "op": "replace",
+    "original": "他的",
+    "corrected": "她的",
+    "before": "一个妈妈和",
+    "after": "儿子，这个",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the pronoun to 她"
+   },
+   {
+    "ref": "p0/k0-1-2-3",
+    "op": "insert",
+    "original": "",
+    "corrected": "住在一起",
+    "before": "和她的儿子",
+    "after": "，这个小孩",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the stated living-together predicate"
+   },
+   {
+    "ref": "p0/k0-1-2-3",
+    "op": "replace",
+    "original": "这个小孩子",
+    "corrected": "儿子",
+    "before": "他的儿子，",
+    "after": "叫孟子",
+    "note": "“这个小孩子” is unclear and ambiguous",
+    "confidence": "high",
+    "reason": "replaces the ambiguous child reference"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1033,
+  "completion_tokens": 426,
+  "total_tokens": 1459,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1030,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 174,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

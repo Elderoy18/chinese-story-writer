@@ -1,0 +1,69 @@
+{
+ "input": "learner text: 他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。\nquote: 他不知道如果这把花对你的身体好\npart p0: fix [ref p0/k0] 不知道这种花对身体好不好 ; notes: the “if” in “not know if + clause” is not 如果",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "如果",
+    "corrected": "",
+    "before": "他不知道",
+    "after": "这把花对",
+    "note": "the “if” in “not know if + clause” is not 如果",
+    "confidence": "high",
+    "reason": "removes 如果 in the embedded yes-or-no question"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "这把花",
+    "corrected": "这种花",
+    "before": "他不知道如果",
+    "after": "对你的身",
+    "note": "",
+    "confidence": "high",
+    "reason": "uses the teacher's corrected noun phrase"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "你的",
+    "corrected": "",
+    "before": "果这把花对",
+    "after": "身体好，这",
+    "note": "",
+    "confidence": "high",
+    "reason": "removes 你的 as omitted in the correction"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "好",
+    "corrected": "好不好",
+    "before": "对你的身体",
+    "after": "，这就要看",
+    "note": "the “if” in “not know if + clause” is not 如果",
+    "confidence": "high",
+    "reason": "forms the embedded positive-negative question"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1016,
+  "completion_tokens": 653,
+  "total_tokens": 1669,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 402,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

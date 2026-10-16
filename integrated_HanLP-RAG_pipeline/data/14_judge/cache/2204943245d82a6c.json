@@ -1,0 +1,114 @@
+{
+ "input": "CURRENT SCENE:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nFLAGGED PLACES:\n\n[P50] 有一天【孟子】去了墓地玩儿\n  proposed by the teacher's pattern/rule: 有一天⟦孟子⟧去了墓地玩儿 (first appearance of 孟子: briefly introduce who this is)\n  her past correction (loose_clause_connection): ⟦孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜⟧ — her note: loosely connected with the preceding sentence\n  her past correction (he_scope_coordination): 孟子在墓地[-和]祭拜跟其他孩子\n  her past correction (pronoun_name_zero_reference): ⟦孟子⟧从早到晚想玩玩儿 — her note: replace孟子with他\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card loose_clause_connection: Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.\n\n[P51] 有一天孟子去【了】墓地玩儿\n  proposed by the correction model: 有一天孟子去[-了]墓地玩儿\n  her past correction (loose_clause_connection): ⟦孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜⟧ — her note: loosely connected with the preceding sentence\n  her past correction (he_scope_coordination): 孟子在墓地[-和]祭拜跟其他孩子\n  her past correction (other): 孟子在墓地和[祭拜跟其他孩子→跟其他孩子祭拜]\n  rule card loose_clause_connection: Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.\n  rule card he_scope_coordination: 和/跟 + noun connects multiple nouns that share the same action. Do not use 和/跟 to connect clauses, verb phrases, or adjectives; if the noun is an accompanying object and does not do the action, use V.着 instead. Not an error: 和/跟 + noun is correct when the nouns share the same action, such as 一个男生和一个女生走…… . Do not flag an accompanying noun when it is correctly expressed with V.着.\n\n[P52] 但是他妈妈觉得这是【不合适的地方让孩子玩】\n  proposed by the AI checker: 但是他妈妈觉得这是[不合适的地方让孩子玩→不适合让孩子玩的地方] (the modifier and verb phrase are in the wrong order)\n  proposed by the correction model: 但是他妈妈觉得这是不合适[-的地方]让孩子玩\n  proposed by the correction model: 但是他妈妈觉得这是不合适的地方让孩子玩[+的地方]\n  her past correction (verb_object_valency): 而是她觉得墓地[不合适→不适合]孩子们玩\n  her past correction (negation_bu_mei): 孟母觉得这个环境[不对孩子的成长有→对孩子的成长没有]好处\n  her past correction (modal_and_control_verb_complements): 就自己觉得我不想[我的儿子→儿子不应该]在这个地方长大\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n  rule card negation_bu_mei: Use 不 for a habit, routine, willingness, or general negation; use 没 for an action or event that did not occur. Use 没 + V. for a negated action event. Not an error: Do not use this rule for the pattern “不是……而是……”, which is used to refute something conventional and affirm something unexpected, or to correct something wrong.\n\n[P53] 所以她【决定了他们会】搬家找更好的地方\n  proposed by the AI checker: 所以她[决定了他们会→决定]搬家找更好的地方 (决定 should directly take 搬家 here)\n  proposed by the correction model: 所以她决定[-了]他们会搬家找更好的地方\n  proposed by the teacher's pattern/rule: 所以她决定[-了]他们会搬家找更好的地方 (no 了 after the mental-state verb 决定)\n  her past correction (other): 所以[他们→我们]要搬家 — her note: in quoted speech\n  her past correction (addition_repetition_connectors): 所以他们[再→又]搬家一次 — her note: 又for something already occurred\n  her past correction (addition_repetition_connectors): 所以他们[再搬家→又搬家了] — her note: 又for something already occurred\n  rule card no_le_mental_state: Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative. Not an error: Apply this rule when 决定 or 发现 expresses the decision or discovery in this narrative use.\n  rule card addition_repetition_connectors: Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.). Not an error: Do not add an additive connector when the sentence does not show repetition, similarity, or an added point. Use 就, not 还, for a natural continuation rather than a surprising or angry one.\n\n[P54] 所以她决定了他们会搬家找更好的【地方】\n  proposed by the correction model: 所以她决定了他们会搬家找更好的[-地方]\n  her past correction (redundant_words): 他们搬家不是为了[-孟母]要住在更好的房子 — her note: delete孟母\n  her past correction (location_with_zai): 他们搬家不是为了孟母要住在更好的房子[+里] — her note: 在+Place\n  her past correction (other): 所以[他们→我们]要搬家 — her note: in quoted speech\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n\n[P55] 而且【住在这儿】教育不太好\n  proposed by the AI checker: 而且[住在这儿→这儿的]教育不太好 (the location should modify 教育 with 的)\n  her past correction (verb_object_valency): 但这个地方不是[教育意义→教导孩子学习知识]\n  her past correction (redundant_words): 我现在有良好的[-教育和]生活\n  her past correction (zero_redundant_pronoun): 也[-她]感到孩子教育的好地方\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P56] 所以【她】会一直搬家才能找到质量好的教育\n  proposed by the teacher's pattern/rule: 所以[-她]会一直搬家才能找到质量好的教育 (她 repeats the subject of the clause before: zero form)\n  her past correction (collocation_selection): 也她[感到孩子教育的好地方→就找到了让孩子接受良好教育的环境]\n  her past correction (addition_repetition_connectors): [-也]她感到孩子教育的好地方\n  her past correction (zero_redundant_pronoun): 也[-她]感到孩子教育的好地方\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n\n[P57] 所以她【会】一直搬家才能找到质量好的教育\n  proposed by the AI checker: 所以她[会→要]一直搬家才能找到质量好的教育 (要...才能 is the appropriate conditional pattern)\n  proposed by the correction model: 所以她[会→要]一直搬家才能找到质量好的教育\n  her past correction (collocation_selection): 也她[感到孩子教育的好地方→就找到了让孩子接受良好教育的环境]\n  her past correction (addition_repetition_connectors): [-也]她感到孩子教育的好地方\n  her past correction (zero_redundant_pronoun): 也[-她]感到孩子教育的好地方\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n  rule card addition_repetition_connectors: Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.). Not an error: Do not add an additive connector when the sentence does not show repetition, similarity, or an added point. Use 就, not 还, for a natural continuation rather than a surprising or angry one.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P50",
+    "decision": "keep",
+    "category": "first_mention_introduction",
+    "original": "孟子",
+    "before": "有一天",
+    "after": "去了墓地玩儿",
+    "corrected": "一个叫孟子的孩子",
+    "confidence": "high",
+    "reason": "First mention needs an identifying noun phrase."
+   },
+   {
+    "place_id": "P51",
+    "decision": "drop",
+    "category": "other",
+    "original": "了",
+    "before": "有一天孟子去",
+    "after": "墓地玩儿",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "Completed past action naturally takes 了."
+   },
+   {
+    "place_id": "P52",
+    "decision": "keep",
+    "category": "verb_object_valency",
+    "original": "不合适的地方让孩子玩",
+    "before": "是",
+    "after": "",
+    "corrected": "不适合让孩子玩的地方",
+    "confidence": "high",
+    "reason": "The modifier structure is ungrammatical."
+   },
+   {
+    "place_id": "P53",
+    "decision": "keep",
+    "category": "no_le_mental_state",
+    "original": "决定了他们会",
+    "before": "所以她",
+    "after": "搬家找更好的地方",
+    "corrected": "决定",
+    "confidence": "high",
+    "reason": "决定 should directly take 搬家 and not take 了 here."
+   },
+   {
+    "place_id": "P54",
+    "decision": "drop",
+    "category": "redundant_words",
+    "original": "地方",
+    "before": "搬家找更好的",
+    "after": "。她恐怕",
+    "corrected": "地方",
+    "confidence": "high",
+    "reason": "地方 adds necessary meaning as the destination."
+   },
+   {
+    "place_id": "P55",
+    "decision": "drop",
+    "category": "other",
+    "original": "住在这儿",
+    "before": "而且",
+    "after": "教育不太好",
+    "corrected": "住在这儿",
+    "confidence": "low",
+    "reason": "This is understandable and not a necessary correction."
+   },
+   {
+    "place_id": "P56",
+    "decision": "keep",
+    "category": "zero_redundant_pronoun",
+    "original": "她",
+    "before": "所以",
+    "after": "会一直搬家",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The subject is already clear from the close context."
+   },
+   {
+    "place_id": "P57",
+    "decision": "keep",
+    "category": "collocation_selection",
+    "original": "会",
+    "before": "所以她",
+    "after": "一直搬家才能",
+    "corrected": "要",
+    "confidence": "high",
+    "reason": "要……才能 expresses the required condition naturally."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 3128,
+  "completion_tokens": 991,
+  "total_tokens": 4119,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3125,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

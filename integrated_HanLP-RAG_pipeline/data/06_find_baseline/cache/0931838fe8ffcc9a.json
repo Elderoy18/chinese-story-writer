@@ -1,0 +1,53 @@
+{
+ "input": "current scene: 古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "original": "毒",
+    "corrected": "有毒的植物",
+    "before": "们吃了",
+    "after": "。那个时",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "people eat poisonous plants, not simply “poison”"
+   },
+   {
+    "original": "什么植物都觉得",
+    "corrected": "觉得什么植物都",
+    "before": "神农，他",
+    "after": "好吃，不怕",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "觉得 should come before its object clause"
+   },
+   {
+    "original": "怕吃毒",
+    "corrected": "怕中毒",
+    "before": "果他们还",
+    "after": "，不会吃",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "怕中毒 is the natural expression"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 634,
+  "completion_tokens": 1505,
+  "total_tokens": 2139,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1339,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

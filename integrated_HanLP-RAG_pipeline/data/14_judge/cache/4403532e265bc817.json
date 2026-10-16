@@ -1,0 +1,147 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nFLAGGED PLACES:\n\n[P299] 【古代的时候】有一个人叫神农\n  proposed by the teacher's pattern/rule: [古代的时候→在古代]有一个人叫神农 (her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train))\n  her past correction (first_mention_introduction): 在古代[有一个神农→有一个叫神农的老人]\n  her past correction (redundant_words): ⟦很久以前，在古代⟧有一个叫神农的老人 — her note: “很久以前“ and ”在古代” are redundant, only keep one\n  her past correction (fixed_expressions): 这是[一个神农的→关于神农的]古代故事\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n\n[P300] 他需要当【上】医\n  proposed by the correction model: 他需要当[-上]医\n  her past correction (redundant_words): 他现在是[-当]医生 — her note: redundant with是\n  her past correction (not_but_refutation): 他那[不是成为→没有当]医生 — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong\n  her past correction (redundant_words): 他[-那]不是成为医生\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card not_but_refutation: Use 不是……而是…… only to correct a conventional or mistaken idea with an unexpected alternative. Put the subject before 不是……而是…… when both alternatives have the same subject. Not an error: Do not flag a sentence that genuinely corrects a mistaken or conventional idea with an unexpected alternative. Do not use this pattern merely to connect two unrelated actions, places, or ideas.\n\n[P301] 他需要当上【医】\n  proposed by the AI checker: 他需要当上[医→医生] (医 alone is not the usual word for a doctor here)\n  proposed by the correction model: 他需要当上医[+生]\n  her past correction (redundant_words): 他现在是[-当]医生 — her note: redundant with是\n  her past correction (not_but_refutation): 他那[不是成为→没有当]医生 — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong\n  her past correction (missing_or_unclear_subject): [+他]就生病了 — her note: otherwise it is ambiguous who gets sick\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card not_but_refutation: Use 不是……而是…… only to correct a conventional or mistaken idea with an unexpected alternative. Put the subject before 不是……而是…… when both alternatives have the same subject. Not an error: Do not flag a sentence that genuinely corrects a mistaken or conventional idea with an unexpected alternative. Do not use this pattern merely to connect two unrelated actions, places, or ideas.\n\n[P302] 【一看别的人】就想帮助他们\n  proposed by the teacher's pattern/rule: [一看→一看到]别的人就想帮助他们 (her pattern: 一看 -> 一看到 (corrected 10/15 in train))\n  proposed by the teacher's pattern/rule: 一[看→看到]别的人就想帮助他们 (her pattern: 看 -> 看到 (corrected 37/71 in train))\n  proposed by the correction model: 一看[+到]别的人就想帮助他们\n  proposed by the teacher's pattern/rule: 一看[-别的人]就想帮助他们 (her pattern: 别的人 -> (delete) (corrected 8/8 in train))\n  her past correction (zero_redundant_pronoun): [-他]想帮他们 — her note: redundant\n  her past correction (conditional_jiu): 他[+就]想帮忙\n  her past correction (redundant_words): [-他]想帮忙 — her note: redundant\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n  rule card other_vs_additional: 别的 is for a different type or for all others except the one already mentioned. 另外 is for an additional quantity, or for another/the other; say 另外一个人, not 别个人. Not an error: Do not flag 别的 when it means a different type or all others except the one already mentioned.\n\n[P303] 【他】不知道什么东西能做药\n  proposed by the teacher's pattern/rule: [-他]不知道什么东西能做药 (他 repeats the subject of the clause before: zero form)\n  her past correction (zero_redundant_pronoun): [-他]看到了药 — her note: redundant\n  her past correction (ambiguous_pronoun): ⟦它⟧可以做药 — her note: “它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine\n  her past correction (zero_redundant_pronoun): [-他]决定找出什么植物可以吃\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card ambiguous_pronoun: Use 他/她/它/他们 only when it is clear who or what they refer to. If more than one person or thing is possible, repeat the name or use a clear noun phrase. Not an error: A pronoun is fine when its referent is close and unambiguous. Do not use 你 for a story character when it refers to the reader instead.\n\n[P304] 神农听说【^】一个远远的地方有一种植物\n  proposed by the correction model: 神农听说[+在]一个远远的地方有一种植物\n  her past correction (le_completed): 神农[发现→发现了]很多植物 — her note: 了completed\n  her past correction (modal_and_control_verb_complements): 神农[什么想尝→想尝什么植物]\n  her past correction (collocation_selection): 神农[加→吃]下去很多的植物\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card modal_and_control_verb_complements: 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了. Not an error: Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.\n\n[P305] 神农听说一个【远远】的地方有一种植物\n  proposed by the AI checker: 神农听说一个[远远→很远]的地方有一种植物 (很远的地方 is the standard expression)\n  her past correction (le_completed): 神农[发现→发现了]很多植物 — her note: 了completed\n  her past correction (modal_and_control_verb_complements): 神农[什么想尝→想尝什么植物]\n  her past correction (le_completed): 神农的朋友给[+了]他这植物 — her note: 了completed\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card modal_and_control_verb_complements: 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了. Not an error: Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.\n\n[P306] 什么病人吃【^】都会觉得身体更好\n  proposed by the correction model: 什么病人吃[+了]都会觉得身体更好\n  her past correction (le_completed): 有的人吃的生病[+了]\n  her past correction (le_completed): 感觉得身体健康[+了]\n  her past correction (time_sequence_markers): 有的人吃[的→了以后]生病\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card time_sequence_markers: Use Time + 以后 after a completed time or action to show “after”; when moving to a later event in the story, use 后来 or 然后 rather than 以后 by itself. Do not add 以后 when the time phrase already says the time clearly. Not an error: Do not use 结果 merely as a general later-time connector; it is for an unexpected result. Use 后来 for a later development instead.\n\n[P307] 神农【三个月走去】\n  proposed by the AI checker: 神农[三个月走去→走了三个月] (duration and verb order are incorrect here)\n  proposed by the correction model: 神农[+走了]三个月走去\n  proposed by the correction model: 神农三个月[-走去]\n  proposed by the teacher's pattern/rule: 神农三个月[走去→走着] (her pattern: 走去 -> 走着 (corrected 5/5 in train))\n  her past correction (redundant_words): 神农一走路就[-走]到了\n  her past correction (redundant_words): 神农一走[-路]就走到了\n  her past correction (zhe_durative): 神农很常[走去→走着]找饭 — her note: 走着durative\n  rule card zhe_durative: Use 着 for a durative, accompanying, or static state. When one action accompanies the main action, use V.着 + V2 (for example, 牵着驴走). Not an error: Do not use 着 when the action is completed, such as 吃了夹竹桃以后 (了completed). Do not change 和/跟 + noun when both nouns perform the same action.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P308] 找到有【^】植物的地方\n  proposed by the AI checker: 找到有[+这种]植物的地方 (it should refer to the specific plant mentioned earlier)\n  her past correction (search_find): 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction (modifier_de_structure): 他找到了很多[-的]中国的植物\n  her past correction (collocation_selection): 找到了很多[对做好饭→能做饭]的植物\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n\n[P309] 他看到一【个】很漂亮的植物\n  proposed by the AI checker: 他看到一[个→株]很漂亮的植物 (株 is the measure word for plants)\n  her past correction (perception_look_see): 他一[看→看到]植物就吃 — her note: 看look vs.看到see\n  her past correction (perception_look_see): 然后他们[看了→看到了]很多植物 — her note: 看look vs.看到see\n  her past correction (perception_look_see): [看很多植物→看到了很多植物] — her note: 看look vs.看到see\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P299",
+    "decision": "drop",
+    "category": "other",
+    "original": "古代的时候",
+    "before": "",
+    "after": "有一个人",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Natural time expression; 在古代 is only a stylistic alternative."
+   },
+   {
+    "place_id": "P300",
+    "decision": "drop",
+    "category": "other",
+    "original": "上",
+    "before": "他需要当",
+    "after": "医，一看",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "当上 expresses successfully becoming a doctor and is not redundant."
+   },
+   {
+    "place_id": "P301",
+    "decision": "keep",
+    "category": "other",
+    "original": "医",
+    "before": "需要当上",
+    "after": "，一看别",
+    "corrected": "医生",
+    "confidence": "high",
+    "reason": "医 alone is not the usual noun for a doctor here."
+   },
+   {
+    "place_id": "P302",
+    "decision": "keep",
+    "category": "perception_look_see",
+    "original": "看",
+    "before": "上医，一",
+    "after": "别的人就",
+    "corrected": "看到",
+    "confidence": "high",
+    "reason": "The sentence describes seeing people as the trigger for the result."
+   },
+   {
+    "place_id": "P303",
+    "decision": "keep",
+    "category": "zero_redundant_pronoun",
+    "original": "他",
+    "before": "个问题，",
+    "after": "不知道什",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The subject is already clear from the close preceding clause."
+   },
+   {
+    "place_id": "P304",
+    "decision": "drop",
+    "category": "location_with_zai",
+    "original": "",
+    "before": "神农听说",
+    "after": "一个远远",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "听说一个地方有…… is grammatical without 在."
+   },
+   {
+    "place_id": "P305",
+    "decision": "drop",
+    "category": "other",
+    "original": "远远",
+    "before": "听说一个",
+    "after": "的地方有",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "远远的地方 is an acceptable expression."
+   },
+   {
+    "place_id": "P306",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "",
+    "before": "么病人吃",
+    "after": "都会觉得",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "吃了 marks the completed eating before the resulting feeling."
+   },
+   {
+    "place_id": "P307",
+    "decision": "keep",
+    "category": "other",
+    "original": "三个月走去",
+    "before": "神农",
+    "after": "，找到有",
+    "corrected": "走了三个月",
+    "confidence": "high",
+    "reason": "Duration should follow the completed verb in this narrative action."
+   },
+   {
+    "place_id": "P308",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "找到有",
+    "after": "植物的地",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "有植物的地方 is grammatical and coherent without 这种."
+   },
+   {
+    "place_id": "P309",
+    "decision": "drop",
+    "category": "other",
+    "original": "个",
+    "before": "他看到一",
+    "after": "很漂亮的",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "个 is an acceptable general measure word at this level."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 4055,
+  "completion_tokens": 2958,
+  "total_tokens": 7013,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 4052,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2328,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

@@ -1,0 +1,89 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\ncurrent scene: 他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "original": "如果",
+    "corrected": "",
+    "before": "他不知道",
+    "after": "这把花",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "不要在“不知道”后用如果引导间接疑问"
+   },
+   {
+    "original": "你的",
+    "corrected": "他的",
+    "before": "这把花对",
+    "after": "身体好，这",
+    "type": "reference",
+    "confidence": "high",
+    "why": "refers to Shennong's body, not the listener's"
+   },
+   {
+    "original": "好",
+    "corrected": "好不好",
+    "before": "你的身体",
+    "after": "，这就要看",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "indirect yes/no question needs 好不好"
+   },
+   {
+    "original": "如果",
+    "corrected": "",
+    "before": "这就要看",
+    "after": "这把花毒",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "看后面直接用“毒不毒”"
+   },
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "花毒不毒",
+    "after": "。神农想找",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "no sentence-final 了 is needed here"
+   },
+   {
+    "original": "吃不吃",
+    "corrected": "吃的是",
+    "before": "不知道他",
+    "after": "灵芝或者",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "identifying which flower it was needs 是"
+   },
+   {
+    "original": "或者",
+    "corrected": "还是",
+    "before": "不吃灵芝",
+    "after": "夹竹桃。",
+    "type": "connector",
+    "confidence": "high",
+    "why": "use 还是 for alternatives in an embedded question"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 723,
+  "completion_tokens": 2600,
+  "total_tokens": 3323,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2260,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

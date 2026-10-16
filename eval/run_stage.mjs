@@ -14,6 +14,7 @@ import {
     assembleStageContentPrompt,
     buildSystemPrompt,
 } from "../lib/rag/promptStages.ts";
+import { runTwoPass } from "../lib/rag/twoPass.ts";
 import {
     EVAL_DIR, FEEDBACK_MODEL, REASONING_EFFORT, gitCommit, loadSnapshot, makeRetriever,
     openai, readJson, resolveStage, runDir, sampleKey, sha, withRetry, writeJson,
@@ -61,6 +62,26 @@ async function complete(prompt) {
     return { text: res.choices[0]?.message?.content ?? "", usage: res.usage, ms: Date.now() - t0 };
 }
 
+/** Structured-output call for the two-pass stages: returns the parsed JSON. */
+const usageLog = [];
+async function completeJson({ pass, system, user, schemaName, schema }) {
+    const t0 = Date.now();
+    const res = await withRetry(
+        () => openai().chat.completions.create({
+            model: FEEDBACK_MODEL,
+            reasoning_effort: REASONING_EFFORT,
+            messages: [
+                { role: "system", content: system },
+                { role: "user", content: user },
+            ],
+            response_format: { type: "json_schema", json_schema: { name: schemaName, strict: true, schema } },
+        }),
+        `${pass} call`
+    );
+    usageLog.push({ pass, usage: res.usage, ms: Date.now() - t0 });
+    return JSON.parse(res.choices[0]?.message?.content ?? "{}");
+}
+
 async function runSample(sample) {
     const out = path.join(runDir(stageId), `${sampleKey(sample.sample_id)}.json`);
     if (fs.existsSync(out) && !force) {
@@ -70,10 +91,20 @@ async function runSample(sample) {
     const opts = { storyId: sample.story_id };
     const scenes = [];
     for (let i = 0; i < sample.scenes.length; i++) {
-        const prompt = await assembleStagePrompt(
-            sample.scenes[i], { ...opts, previousScenes: sample.scenes.slice(0, i) },
-            stage.flags, retriever, stage.overrides
-        );
+        const sceneOpts = { ...opts, previousScenes: sample.scenes.slice(0, i) };
+        if (stage.flags.twoPass) {
+            const t0 = Date.now();
+            const tp = await runTwoPass(sample.scenes[i], sceneOpts, stage.flags, retriever, completeJson, stage.overrides);
+            scenes.push({ scene: i + 1, text: sample.scenes[i], retrieved: tp.retrievedChunkIds, feedback: tp.feedback, ms: Date.now() - t0,
+                two_pass: {
+                    find: { system_sha: sha(tp.find.system), user: tp.find.user, candidates: tp.find.candidates, dropped: tp.find.dropped },
+                    write: { system_sha: sha(tp.write.system), user: tp.write.user, output: tp.write.output, dropped: tp.write.dropped },
+                } });
+            console.log(`${sample.sample_id}: scene ${i + 1}/${sample.scenes.length} done (two-pass, ${tp.find.candidates.length} candidates, ` +
+                `${tp.find.dropped.length + tp.write.dropped.length} spans dropped, ${((Date.now() - t0) / 1000).toFixed(0)}s)`);
+            continue;
+        }
+        const prompt = await assembleStagePrompt(sample.scenes[i], sceneOpts, stage.flags, retriever, stage.overrides);
         const res = await complete(prompt);
         scenes.push({ scene: i + 1, text: sample.scenes[i], prompt: { system_sha: sha(prompt.system), user: prompt.user },
             retrieved: prompt.retrievedChunkIds, feedback: res.text, usage: res.usage, ms: res.ms });

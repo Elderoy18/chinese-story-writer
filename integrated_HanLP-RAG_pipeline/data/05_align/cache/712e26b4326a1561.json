@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他擦腿，疼死了。\nquote: 他擦腿\npart p0: fix [ref p0/k0] 他擦了一下腿/擦着腿 ; notes: either 了completed or 着 durative",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "擦",
+    "corrected": "擦了一下",
+    "before": "他",
+    "after": "腿",
+    "note": "either 了completed or 着 durative",
+    "confidence": "low",
+    "reason": "uses the completed-action alternative in the teacher's slash correction"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "擦",
+    "corrected": "擦着",
+    "before": "他",
+    "after": "腿",
+    "note": "either 了completed or 着 durative",
+    "confidence": "low",
+    "reason": "uses the durative-action alternative in the teacher's slash correction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 989,
+  "completion_tokens": 133,
+  "total_tokens": 1122,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

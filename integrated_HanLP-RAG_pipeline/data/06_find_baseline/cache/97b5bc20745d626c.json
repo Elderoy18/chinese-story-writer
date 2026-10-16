@@ -1,0 +1,53 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\ncurrent scene: 他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "旅行很远",
+    "corrected": "到很远的地方",
+    "before": "又努力，",
+    "after": "找到很多",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "旅行 cannot directly take 很远 this way"
+   },
+   {
+    "original": "",
+    "corrected": "了",
+    "before": "的地方找到",
+    "after": "很多植物。",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "completed discovery needs 了"
+   },
+   {
+    "original": "写",
+    "corrected": "写下",
+    "before": "后，神农",
+    "after": "他的主意",
+    "type": "word_choice",
+    "confidence": "low",
+    "why": "ideas are normally written down"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 690,
+  "completion_tokens": 2888,
+  "total_tokens": 3578,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2722,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

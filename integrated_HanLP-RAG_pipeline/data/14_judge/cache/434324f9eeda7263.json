@@ -1,0 +1,103 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\nCURRENT SCENE:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nFLAGGED PLACES:\n\n[P100] 孟子长大【^】\n  proposed by the AI checker: 孟子长大[+了] (completed change of state needs 了)\n  proposed by the correction model: 孟子长大[+后]\n  her past correction (incorrect_story_information): 孟子长大了以后⟦成为一名画家⟧ — her note: wrong information, 哲学家\n  her past correction (incorrect_story_information): 孟子[长大的时候→小时候]一直搬家\n  her past correction (first_mention_introduction): ⟦孟子⟧出生以后 — her note: better to briefly introduce “孟子” when this character first appears\n  rule card incorrect_story_information: Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information. Not an error: Do not flag a word or sentence under this rule only because of grammar or vocabulary. Flag it here when it changes or adds a fact in the traditional story.\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n\n[P101] 他常常建议【你】不是学金融\n  proposed by the AI checker: 他常常建议[你→人们]不是学金融 (the sudden “you” has no clear referent in the narrative)\n  her past correction (fixed_expressions): 原来他想给[别的人→别人]建议\n  her past correction (redundant_words): [-他]建议孩子们常常做祭拜 — her note: redundant\n  her past correction (verb_object_valency): 他建议孩子们常常[-做]祭拜\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P102] 他常常建议你【不是】学金融\n  proposed by the AI checker: 他常常建议你[不是→不要]学金融 (a recommendation uses 不要, not 不是)\n  proposed by the correction model: 他常常建议你不[是→要]学金融\n  her past correction (near_synonym_precision): 你[可以→应该]学习\n  her past correction (fixed_expressions): 原来他想给[别的人→别人]建议\n  her past correction (redundant_words): [-他]建议孩子们常常做祭拜 — her note: redundant\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n\n[P103] 【而是】学政治\n  proposed by the AI checker: [而是→而要]学政治 (不要 is paired with 而要)\n  her past correction (word_class_choice): [而是学习很多→而是要多学习]\n  her past correction (near_synonym_precision): 而是因为[学校→学业]很难\n  her past correction (collocation_selection): 而是[学→学习]多文章\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n\n[P104] 因为如果你懂政治【^】\n  proposed by the correction model: 因为如果你懂政治[+的话]\n  her past correction (other): 这样每个人[+都]会知道你最聪明\n  her past correction (near_synonym_precision): 你[可以→应该]学习\n  her past correction (become_and_profession): 成为很聪明[+的哲学家]\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card become_and_profession: 成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才. Not an error: Do not flag 成为 when it is followed by an appropriate noun, especially a profession or public identity, such as 成为哲学家.\n\n[P105] 【你】会成为高薪\n  proposed by the teacher's pattern/rule: [-你]会成为高薪 (你 repeats the subject of the clause before: zero form)\n  her past correction (zero_redundant_pronoun): [-她]挣不少钱 — her note: redundant\n  her past correction (zero_redundant_pronoun): [-他]就不会成为好的大人 — her note: redundant\n  her past correction (zero_redundant_pronoun): 可是[-他们的]收入也很低\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n\n[P106] 你会【成为】高薪\n  proposed by the AI checker: 你会[成为→获得]高薪 (a salary is received, not become)\n  proposed by the correction model: 你会[成为→得到]高薪\n  her past correction (near_synonym_precision): 你[可以→应该]学习\n  her past correction (zero_redundant_pronoun): [-她]挣不少钱 — her note: redundant\n  her past correction (collocation_selection): 难怪老板给他们[很好工资→很高的工资]\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P100",
+    "decision": "keep",
+    "category": "other",
+    "original": "",
+    "before": "孟子长大",
+    "after": "，他开始能",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "Completed change of state needs 了."
+   },
+   {
+    "place_id": "P101",
+    "decision": "keep",
+    "category": "other",
+    "original": "你",
+    "before": "他常常建议",
+    "after": "不是学金融",
+    "corrected": "人们",
+    "confidence": "high",
+    "reason": "Sudden addressee has no narrative referent."
+   },
+   {
+    "place_id": "P102",
+    "decision": "keep",
+    "category": "near_synonym_precision",
+    "original": "不是",
+    "before": "常常建议你",
+    "after": "学金融，而",
+    "corrected": "不要",
+    "confidence": "high",
+    "reason": "Advice not to do something uses 不要."
+   },
+   {
+    "place_id": "P103",
+    "decision": "keep",
+    "category": "word_class_choice",
+    "original": "而是",
+    "before": "是学金融，",
+    "after": "学政治，因",
+    "corrected": "而要",
+    "confidence": "high",
+    "reason": "不要 is paired with 而要."
+   },
+   {
+    "place_id": "P104",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "果你懂政治",
+    "after": "，你会成为",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "的话 is optional after 如果."
+   },
+   {
+    "place_id": "P105",
+    "decision": "keep",
+    "category": "zero_redundant_pronoun",
+    "original": "你",
+    "before": "懂政治，",
+    "after": "会成为高薪",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Subject is already clear from the conditional clause."
+   },
+   {
+    "place_id": "P106",
+    "decision": "keep",
+    "category": "other",
+    "original": "成为",
+    "before": "，你会",
+    "after": "高薪。后来",
+    "corrected": "获得",
+    "confidence": "high",
+    "reason": "A person obtains a high salary, not becomes one."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2664,
+  "completion_tokens": 1411,
+  "total_tokens": 4075,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2661,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1015,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

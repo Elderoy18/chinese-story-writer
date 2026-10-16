@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 孟子跟他的妈妈旅行很多时间，害得孟子的妈妈生病了。\nquote: 孟子跟他的妈妈旅行很多时间\npart p0: fix [ref p0/k0] 旅行了很长时间 ; notes: 了completed",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "跟他的妈妈",
+    "corrected": "",
+    "before": "孟子",
+    "after": "旅行很多时",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits the companion phrase"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "妈妈旅行",
+    "after": "很多时间",
+    "note": "了completed",
+    "confidence": "high",
+    "reason": "adds completed-action 了 after 旅行"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "很多",
+    "corrected": "很长",
+    "before": "妈妈旅行",
+    "after": "时间，害得",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the duration description"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 997,
+  "completion_tokens": 315,
+  "total_tokens": 1312,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 155,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

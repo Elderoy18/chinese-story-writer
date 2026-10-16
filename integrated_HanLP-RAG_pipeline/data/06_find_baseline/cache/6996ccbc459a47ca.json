@@ -1,0 +1,53 @@
+{
+ "input": "current scene: 神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "住在",
+    "corrected": "生活在",
+    "before": "农和他的",
+    "after": "古代，所",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "生活在 is used for living in a historical period"
+   },
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "常常生病",
+    "after": "，所以神",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "常常 marks a habitual action, so 了 is not used"
+   },
+   {
+    "original": "",
+    "corrected": "了",
+    "before": "。他们去",
+    "after": "很多不一",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "the completed trip needs 了 after 去"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 610,
+  "completion_tokens": 1170,
+  "total_tokens": 1780,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1019,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

@@ -1,0 +1,79 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n很多人想孟子做哲学家是本质的，但是他做厉害的哲学家的原因不是因为他本质上是哲学家，而是因为妈妈努力地培养他。孟母觉得孩子成长在什么地方很重要。孟子小的时候住在墓地的旁边，所以他从早到晚一直在祭拜。孟母觉得这个环境不对孩子的成长有好处，她害怕如果孟子继续在这个环境成长，他就不会成为好的大人。这个想法害得她跟孟子搬家。他们新的家在商店的旁边，孟子不是在看商店的员工，就是在跟其他的孩子玩商店的游戏。妈妈觉得这也不是一个对孩子好的环境，所以他们再搬家一次。第三个家在学校的旁边，所以孟子老是在学习。他们搬了家两次，妈妈才觉得这是一个对孩子好的环境。难怪孟子成为哲学家，他成长在学校的旁边。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "told",
+    "evidence": [
+     "孟子小的时候住在墓地的旁边，所以他从早到晚一直在祭拜。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "told",
+    "evidence": [
+     "孟母觉得这个环境不对孩子的成长有好处，她害怕如果孟子继续在这个环境成长，他就不会成为好的大人。",
+     "这个想法害得她跟孟子搬家。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "partly",
+    "evidence": [
+     "他们新的家在商店的旁边，孟子不是在看商店的员工，就是在跟其他的孩子玩商店的游戏。"
+    ],
+    "missing_part": "It does not clearly say that they moved near a market and that 孟子 imitated buying and selling every day.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "told",
+    "evidence": [
+     "妈妈觉得这也不是一个对孩子好的环境，所以他们再搬家一次。",
+     "第三个家在学校的旁边，所以孟子老是在学习。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": [
+     "很多人想孟子做哲学家是本质的，但是他做厉害的哲学家的原因不是因为他本质上是哲学家，而是因为妈妈努力地培养他。",
+     "难怪孟子成为哲学家，他成长在学校的旁边。"
+    ],
+    "missing_part": "It does not say that 孟子 became a famous philosopher.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "After moving near the market, say that 孟子 copied people buying and selling every day.",
+   "At the end, say that 孟子 became a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 875,
+  "completion_tokens": 793,
+  "total_tokens": 1668,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 381,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

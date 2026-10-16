@@ -1,0 +1,98 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\ncurrent scene: 凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "",
+    "corrected": "是一座",
+    "before": "凉山",
+    "after": "很大的山",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "a singular mountain needs 是 and the measure word 座"
+   },
+   {
+    "original": "这",
+    "corrected": "他",
+    "before": "大的山，",
+    "after": "也找植物",
+    "type": "reference",
+    "confidence": "high",
+    "why": "the subject should refer to Shennong, not “this”"
+   },
+   {
+    "original": "",
+    "corrected": "一朵",
+    "before": "他找到",
+    "after": "黄色的花",
+    "type": "grammar",
+    "confidence": "low",
+    "why": "a single flower normally needs a measure word"
+   },
+   {
+    "original": "你跟",
+    "corrected": "用",
+    "before": "他听说",
+    "after": "黄色的花",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "用 means “use ... to make tea”"
+   },
+   {
+    "original": "",
+    "corrected": "的",
+    "before": "色的花做",
+    "after": "茶很有用",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "a modifier before 茶 needs 的"
+   },
+   {
+    "original": "头发",
+    "corrected": "头",
+    "before": "说，你的",
+    "after": "疼死，这",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "头发 is hair; a headache is 头疼"
+   },
+   {
+    "original": "",
+    "corrected": "了",
+    "before": "头发疼死",
+    "after": "，这冰茶",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "疼死 needs 了 here to express the resulting state"
+   },
+   {
+    "original": "冰",
+    "corrected": "种",
+    "before": "疼死，这",
+    "after": "茶是药。",
+    "type": "other",
+    "confidence": "high",
+    "why": "这种茶 means “this kind of tea”"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 655,
+  "completion_tokens": 3254,
+  "total_tokens": 3909,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2870,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

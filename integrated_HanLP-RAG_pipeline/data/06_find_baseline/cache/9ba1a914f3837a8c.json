@@ -1,0 +1,53 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\ncurrent scene: 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "们常常搬",
+    "after": "家，中国",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "habitual action with 常常 does not take 了"
+   },
+   {
+    "original": "先她",
+    "corrected": "她先",
+    "before": "。",
+    "after": "让孟子跟",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the subject comes before 先"
+   },
+   {
+    "original": "好质量",
+    "corrected": "质量好",
+    "before": "又便宜又",
+    "after": "的东西。",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "quality adjective order is reversed"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 672,
+  "completion_tokens": 2115,
+  "total_tokens": 2787,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1959,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

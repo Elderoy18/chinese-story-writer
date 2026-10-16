@@ -1,0 +1,92 @@
+{
+ "input": "learner text: 他有的时候只要跟朋友玩儿，可是孟子的妈妈有别的看法。\nquote: 他有的时候只要跟朋友玩儿，可是孟子的妈妈有别的看法\npart p0: fix [ref p0/k1] 妈妈就抱怨 ; notes: wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as\npart p1: fix [ref p1/k1] 妈妈就有别的看法 ; notes: or 他有的时候跟朋友玩儿",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "有的时候",
+    "corrected": "",
+    "before": "他",
+    "after": "只要跟朋友",
+    "note": "wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as",
+    "confidence": "high",
+    "reason": "removes the time-frequency phrase for the 只要…就 pattern"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "可是孟子的",
+    "corrected": "",
+    "before": "朋友玩儿，",
+    "after": "妈妈有别的",
+    "note": "wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as",
+    "confidence": "high",
+    "reason": "removes the contrasting conjunction and subject modifier"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "replace",
+    "original": "有别的看法",
+    "corrected": "就抱怨",
+    "before": "朋友玩儿，可是孟子的妈妈",
+    "after": "。",
+    "note": "wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as",
+    "confidence": "high",
+    "reason": "changes the predicate to 抱怨 and supplies 就"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "delete",
+    "original": "只要",
+    "corrected": "",
+    "before": "他有的时候",
+    "after": "跟朋友玩儿",
+    "note": "or 他有的时候跟朋友玩儿",
+    "confidence": "high",
+    "reason": "uses the alternative 有的时候 construction instead of 只要"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "delete",
+    "original": "可是孟子的",
+    "corrected": "",
+    "before": "朋友玩儿，",
+    "after": "妈妈有别的",
+    "note": "or 他有的时候跟朋友玩儿",
+    "confidence": "high",
+    "reason": "removes the contrasting conjunction and subject modifier"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "insert",
+    "original": "",
+    "corrected": "就",
+    "before": "朋友玩儿，可是孟子的妈妈",
+    "after": "有别的看",
+    "note": "or 他有的时候跟朋友玩儿",
+    "confidence": "high",
+    "reason": "adds 就 before the alternative predicate"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1059,
+  "completion_tokens": 941,
+  "total_tokens": 2000,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1056,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

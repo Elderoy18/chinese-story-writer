@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 几分钟过来，神农越来越好，想起来发生了什么事，想： 谢谢，穿上一件蓝色的衣服的人。\nquote: 谢谢，穿上一件蓝色的衣服的人\npart p0: fix [ref p0/k0] 谢谢那个穿蓝色衣服的人 ; notes: 穿上is for a dynamic, ongoing action",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "，",
+    "corrected": "",
+    "before": "谢谢",
+    "after": "穿上一件",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction removes the comma"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "那个",
+    "before": "谢谢，",
+    "after": "穿上一件",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction adds the demonstrative"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "穿上",
+    "corrected": "穿",
+    "before": "谢谢，",
+    "after": "一件蓝色",
+    "note": "穿上is for a dynamic, ongoing action",
+    "confidence": "high",
+    "reason": "uses 穿 for a person characterized by clothing"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "一件",
+    "corrected": "",
+    "before": "谢谢，穿上",
+    "after": "蓝色的衣",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction omits the measure phrase"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "的",
+    "corrected": "",
+    "before": "一件蓝色",
+    "after": "衣服的人",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction uses 蓝色衣服"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1027,
+  "completion_tokens": 468,
+  "total_tokens": 1495,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1024,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 206,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

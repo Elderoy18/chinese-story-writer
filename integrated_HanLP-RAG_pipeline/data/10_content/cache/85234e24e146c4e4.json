@@ -1,0 +1,76 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。子思认为，对孩子来说，读书最重要，特别是学哲学。孟子不是练习写文章，就是看哲学书。孟子从五岁一直学哲学。他才五岁就学哲学，难怪他成为很有名的哲学家。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": "孟子和他的朋友喜欢玩在墓地里，装祭拜。妈妈认为，住离墓地太近，害得孟子的心气。",
+    "missing_part": "It does not clearly say that 孟子 imitated offering sacrifices every day.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "told",
+    "evidence": "孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。妈妈认为，住离墓地太近，害得孟子的心气。",
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "missing",
+    "evidence": "",
+    "missing_part": "孟母 and 孟子 moving to a neighborhood near the market, and 孟子 imitating buying and selling every day, are not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": "孟母搬到子思老师的家，跟子思老师住。因为孟子现在没有朋友，他老是读书。",
+    "missing_part": "It does not say that they moved from the market to a neighborhood near a school.",
+    "out_of_order": true
+   },
+   {
+    "id": "S5",
+    "verdict": "told",
+    "evidence": "他才五岁就学哲学，难怪他成为很有名的哲学家。",
+    "missing_part": "",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "孟母搬到子思老师的家，跟子思老师住。",
+    "problem": "This says their move was to 子思老师's home, but the story requires a move near the market first and then to a neighborhood near a school."
+   },
+   {
+    "learner_text": "子思帮孟母教她的儿子。",
+    "problem": "子思 is not a character in the required story scenes."
+   }
+  ],
+  "feedback": [
+   "Before the move away from the graveyard, say that 孟子 copied the sacrifice ritual every day.",
+   "After they leave the graveyard and before they move near the school, add that they live near a market and 孟子 copies buying and selling every day.",
+   "After the market episode, say that 孟母 moves near a school, where 孟子 begins studying every day."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 832,
+  "completion_tokens": 1355,
+  "total_tokens": 2187,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 842,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "c86145e6fc"
+}

@@ -1,0 +1,80 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\nscene 2: 凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\ncurrent scene: 糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "original": "是",
+    "corrected": "有",
+    "before": "桃，特别",
+    "after": "毒。正好",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "特别有毒 is the required expression."
+   },
+   {
+    "original": "灵芝药的夹竹桃",
+    "corrected": "有灵芝",
+    "before": "在这儿，",
+    "after": "他吃完了",
+    "type": "grammar",
+    "confidence": "low",
+    "why": "this noun phrase cannot express that lingzhi was present."
+   },
+   {
+    "original": "他",
+    "corrected": "他把它",
+    "before": "的夹竹桃",
+    "after": "吃完了，",
+    "type": "grammar",
+    "confidence": "low",
+    "why": "after introducing 灵芝, the eaten object needs to be marked."
+   },
+   {
+    "original": "",
+    "corrected": "了",
+    "before": "了，也写",
+    "after": "一个课文",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "写 is a completed past action."
+   },
+   {
+    "original": "个",
+    "corrected": "本",
+    "before": "，也写一",
+    "after": "课文的植",
+    "type": "other",
+    "confidence": "high",
+    "why": "本 is the measure word for a book."
+   },
+   {
+    "original": "课文的植物",
+    "corrected": "关于植物的书",
+    "before": "也写一个",
+    "after": "。谢谢神",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the modifier order and noun do not mean “a book about plants.”"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 704,
+  "completion_tokens": 4430,
+  "total_tokens": 5134,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4096,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

@@ -1,0 +1,50 @@
+{
+ "input": "CATEGORY: “他/她/它” is ambiguous (Coherence: reference)\ndefinition: Use a pronoun only when its referent is close and unambiguous. Repeat the name or use a clear noun phrase when more than one possible referent intervenes.\n\nHER NOTES IN THIS CATEGORY (15 distinct):\n2 | “她” is ambiguous\n2 | “他“ is ambiguous\n1 | “它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine\n1 | here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n1 | “他” is a bit ambiguous\n1 | what does the first他们refer to? what does the second他们refer to? 灵芝和夹竹桃混在一起以后变成了药\n1 | this is ambiguous, as the topic is他的朋友\n1 | “他” is ambiguous, 后来成为\n1 | use神农instead of他to avoid ambiguity\n1 | the first他is a bit ambiguous\n1 | “孩子们” is ambiguous\n1 | “他的” is ambiguous\n1 | replace “他” with “这个小男孩”，otherwise “他” is ambiguous, who? 一个女孩儿，“某个” refers to a specific person/thing, only not identifying the name. Here he saw “one girl”, not “a specific girl”.\n1 | otherwise “他” refers to神农\n1 | “你” refers to the reader of this story\n\nHER CORRECTIONS (17 of 17):\n[shennong_samples#46/f6/p1/note/e0] ⟦它⟧可以做药  || her note: “它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine\n[pear_story#3/f6/p0/note/e0] ⟦他⟧停在树下  || her note: here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n[pear_story#3/f13/p1/note/e0] ⟦他⟧送三个梨给他们  || her note: “他” is a bit ambiguous\n[shennong_samples#22/f6/p0/note/e0] ⟦他们混在以后给他们药⟧  || her note: what does the first他们refer to? what does the second他们refer to? 灵芝和夹竹桃混在一起以后变成了药\n[shennong_samples#10/f1/p1/k0/e0] 所以[-他]看什么就吃什么  || her note: this is ambiguous, as the topic is他的朋友\n[mengmu_samples#43/f5/p1/k0/e0] [他→孟子]成为一个有名的哲学家  || her note: “他” is ambiguous, 后来成为\n[shennong_samples#16/f2/p0/note/e0] 所以⟦他⟧走路走了很长的时间找药  || her note: use神农instead of他to avoid ambiguity\n[mengmu_samples#43/f5/p0/k0/e0] [她→孟母]跟孟子搬家去墓地做祭拜  || her note: “她” is ambiguous\n[mengmu_samples#46/f4/p0/k0/e0] [他→孟子]看起来一个很聪明的孩子  || her note: “他“ is ambiguous\n[shennong_samples#21/f2/p0/k0-1/e0] 因为[他→神农]想知道什么植物能吃  || her note: the first他is a bit ambiguous\n[mengmu_samples#37/f2/p0/k0/e0] [她→他的妈妈]认为搬家对孟子有好处  || her note: “她” is ambiguous\n[mengmu_samples#41/f6/p0/k0/e0] 孟母发现[孩子们→孟子]老是用功工作  || her note: “孩子们” is ambiguous\n[mengmu_samples#36/f1/p0/k0/e0] [他的→孟子的]妈妈告诉他：你不能祭拜  || her note: “他的” is ambiguous\n[pear_story#4/f37/p0/note/e0] [他→这个小男孩]突然看到了某个女孩儿  || her note: replace “他” with “这个小男孩”，otherwise “他” is ambiguous, who? 一个女孩儿，“某个” refers to a specific person/thing, only not identifying the name. Here he saw “one girl”, not “a specific girl”.\n[mengmu_samples#29/f5/p0/k0/e0] [他然后没有朋友→然后孟子失去了这个朋友]  || her note: “他“ is ambiguous\n[shennong_samples#20/f6/p0/k0/e0] [他问→蓝衣男人问]：“你为什么疼死了？“神农说：”这就要看我吃什么  || her note: otherwise “他” refers to神农\n[mengmu_samples#51/f6/p0/k0/e0] 孟母[爱你→很爱他]  || her note: “你” refers to the reader of this story",
+ "salt": "",
+ "output": {
+  "rule": "Use 他/她/它/他们 only when it is clear who or what they refer to. If more than one person or thing is possible, repeat the name or use a clear noun phrase.",
+  "explanation_template": "<wrong pronoun> → <clear name/noun phrase>: <pronoun> is ambiguous; it can refer to <possible referent(s)>.",
+  "examples": [
+   {
+    "edit_id": "pear_story#3/f6/p0/note/e0",
+    "explanation": "他 is ambiguous; it can refer to the boy or the man wearing the scarf."
+   },
+   {
+    "edit_id": "shennong_samples#16/f2/p0/note/e0",
+    "explanation": "他 → 神农: 他 is ambiguous, so use 神农 to avoid ambiguity."
+   },
+   {
+    "edit_id": "mengmu_samples#43/f5/p0/k0/e0",
+    "explanation": "他 → 孟子: 他 is ambiguous; use 孟子."
+   },
+   {
+    "edit_id": "shennong_samples#20/f6/p0/k0/e0",
+    "explanation": "他问 → 蓝衣男人问: otherwise, 他 refers to 神农."
+   },
+   {
+    "edit_id": "mengmu_samples#51/f6/p0/k0/e0",
+    "explanation": "你 → 他: 你 refers to the reader of this story, not the person in the story."
+   }
+  ],
+  "not_an_error": "A pronoun is fine when its referent is close and unambiguous. Do not use 你 for a story character when it refers to the reader instead.",
+  "her_terms": []
+ },
+ "usage": {
+  "prompt_tokens": 1593,
+  "completion_tokens": 322,
+  "total_tokens": 1915,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1590,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5bd17f1771"
+}

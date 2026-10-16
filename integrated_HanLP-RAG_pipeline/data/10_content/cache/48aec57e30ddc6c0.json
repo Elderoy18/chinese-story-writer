@@ -1,0 +1,110 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n从前有一户人家穷困潦倒，饥肠辘辘。他们的儿子们不听父亲的话，决定了吃外面的植物。然而，因为他们见什么植物就吃什么，结果儿子们都病倒了。他们的父亲神农担心儿子们的病，决定出发寻找药物来治病。他告别妻子，离开家，走遍天下，翻山越岭，都为了找到治病的方法。他尝试吃每一种植物以找到有效的方法。在这个过程中，他发现了许多新的可食用植物，尤其是茶叶。他意识到叶子可以帮助他们赚钱。于是他记下了哪些植物和茶叶很合，在一起味道最好的食谱。当他继续徘徊时，他偶然看到了一朵美丽的黄花。兴奋的老人决定试着吃这朵花，但立刻就后悔了。吃完花后，他感到头晕目旋，痛苦地倒在地上。一个穿蓝衣服的人和他的朋友路过，碰巧看到神农受苦，就给了他一个附近的蘑菇吃。神农吃了蘑菇后感觉好多了，他的胃不疼了，头也不晕了。他印象深刻，问年轻人给了他什么？他们说这是当地的一种药用植物。神农很幸福，他谢过这两个人，拿着一些蘑菇跑回家。他把蘑菇给了儿子们，他们开始感觉好多了。儿子们康复后，神农用他的新配方开了一家茶馆儿，很快就流行起来。从那时起，这家人有钱买食物，他们和睦相处。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "然而，因为他们见什么植物就吃什么，结果儿子们都病倒了。"
+    ],
+    "missing_part": "It does not say that people generally did not know which plants were edible or that this often made people sick.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "他们的父亲神农担心儿子们的病，决定出发寻找药物来治病。",
+     "他告别妻子，离开家，走遍天下，翻山越岭，都为了找到治病的方法。",
+     "他尝试吃每一种植物以找到有效的方法。"
+    ],
+    "missing_part": "神农's stated goal is to cure his sons, rather than to find out which plants are safe to eat and which are not.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "told",
+    "evidence": [
+     "在这个过程中，他发现了许多新的可食用植物，尤其是茶叶。",
+     "于是他记下了哪些植物和茶叶很合，在一起味道最好的食谱。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "当他继续徘徊时，他偶然看到了一朵美丽的黄花。",
+     "兴奋的老人决定试着吃这朵花，但立刻就后悔了。",
+     "吃完花后，他感到头晕目旋，痛苦地倒在地上。"
+    ],
+    "missing_part": "The plant is not identified as 夹竹桃.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": [
+     "一个穿蓝衣服的人和他的朋友路过，碰巧看到神农受苦，就给了他一个附近的蘑菇吃。",
+     "神农吃了蘑菇后感觉好多了，他的胃不疼了，头也不晕了。"
+    ],
+    "missing_part": "The medicine is not identified as 灵芝.",
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "verdict": "partly",
+    "evidence": [
+     "他印象深刻，问年轻人给了他什么？",
+     "他们说这是当地的一种药用植物。"
+    ],
+    "missing_part": "It does not say that another person in brown came by and spoke with 神农.",
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "verdict": "partly",
+    "evidence": [
+     "于是他记下了哪些植物和茶叶很合，在一起味道最好的食谱。"
+    ],
+    "missing_part": "The record does not include 灵芝 and 夹竹桃, and it is made before the events involving those plants.",
+    "out_of_order": true
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "他们的父亲神农担心儿子们的病，决定出发寻找药物来治病。",
+    "problem": "神农's decision in the required story is to discover which plants are safe to eat and which are not, not specifically to find medicine for his sons."
+   }
+  ],
+  "feedback": [
+   "At the beginning, before the children eat plants and get sick, say that people did not know which plants were safe to eat and often became sick.",
+   "After people become sick and before 神农 tries plants, say that he wants to learn which plants are safe to eat and which are not.",
+   "When 神农 eats the flower and falls down, name the flower 夹竹桃.",
+   "When the person in blue helps 神农 after he falls down, say that the mushroom is 灵芝.",
+   "After the person in blue helps 神农, add another person in brown who comes by and talks with him.",
+   "After the people in blue and brown visit, say that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1063,
+  "completion_tokens": 1841,
+  "total_tokens": 2904,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1060,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

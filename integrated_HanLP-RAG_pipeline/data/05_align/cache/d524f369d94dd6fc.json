@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他们的第三个家很合适，孟母找到了良好的工作，她挣不少钱。\nquote: 孟母找到了良好的工作，她挣不少钱\npart p0: fix [ref p0/k0] 好工作 ; notes: 良好is not with工作\npart p1: instruction [ref p1/k0] delete她, redundant",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "良好的",
+    "corrected": "好",
+    "before": "孟母找到了",
+    "after": "工作，她挣",
+    "note": "良好is not with工作",
+    "confidence": "high",
+    "reason": "replaces 良好的 with 好"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "她",
+    "corrected": "",
+    "before": "良好的工作，",
+    "after": "挣不少钱",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes redundant pronoun"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1020,
+  "completion_tokens": 119,
+  "total_tokens": 1139,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

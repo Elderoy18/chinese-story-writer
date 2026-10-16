@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 可是因为一个人正好找到他，给他一些药，所以他没死了。\nquote: 给他一些药，所以他没死了\npart p0: fix [ref p0/k0] 给了 ; notes: 了completed\npart p1: fix [ref p1/k0] 没死 ; notes: no了in “没+V.”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "给",
+    "corrected": "给了",
+    "before": "",
+    "after": "他一些药，",
+    "note": "了completed",
+    "confidence": "high",
+    "reason": "adds completed-action 了 to 给"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "所以他没死",
+    "after": "。",
+    "note": "no了in “没+V.”",
+    "confidence": "high",
+    "reason": "removes 了 after 没死"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1021,
+  "completion_tokens": 117,
+  "total_tokens": 1138,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

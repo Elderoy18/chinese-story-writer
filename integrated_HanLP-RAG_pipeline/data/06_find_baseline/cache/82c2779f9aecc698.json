@@ -1,0 +1,71 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。\nscene 2: 一个人问神农，哪个植物好吃。神农说，这就要看你的口味了。要是你喜欢吃甜的，有很多甜的水果，比方说苹果、西瓜和梨。一个别的人问神农，哪个植物对你的身体有好处。神农说，有很多种植物对你的身体有好处，比方说小白菜、黄瓜、茶和菠菜。一个别的人问神农，哪个植物对你的身体有坏处。\n\ncurrent scene: 神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "original": "个",
+    "corrected": "朵",
+    "before": "，我吃了一",
+    "after": "黄色的花",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "flowers use the measure word 朵"
+   },
+   {
+    "original": "是",
+    "corrected": "叫",
+    "before": "花，名字",
+    "after": "夹竹桃。",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "a name is normally introduced with 名字叫"
+   },
+   {
+    "original": "脑",
+    "corrected": "大脑",
+    "before": "物对我的",
+    "after": "有坏处。",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "大脑 is needed for “brain” here"
+   },
+   {
+    "original": "个",
+    "corrected": "朵",
+    "before": "可是，一",
+    "after": "灵芝和一",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "lingzhi is normally counted with 朵"
+   },
+   {
+    "original": "因为",
+    "corrected": "",
+    "before": "是夹竹桃。",
+    "after": "",
+    "type": "connector",
+    "confidence": "high",
+    "why": "because-clause cannot stand alone here"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 874,
+  "completion_tokens": 2291,
+  "total_tokens": 3165,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2047,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

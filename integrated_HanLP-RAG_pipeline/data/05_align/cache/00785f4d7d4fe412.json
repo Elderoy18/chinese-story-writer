@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 农人登梯子上的时候，男孩一看哪一筐有更多梨子就往自己的自行车上放梨子的筐。\nquote: 男孩一看哪一筐有更多梨子就往自己的自行车上放梨子的筐\npart p0: fix [ref p0/k0] 一看到 ; notes: 看look, 看到see\npart p1: fix [ref p1/k0] 哪一筐有更多梨子就往自己的自行车上放哪一筐 ; notes: the structure “repeated Wh-Q” expressing “wh-ever…, will do that…”.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "一看",
+    "corrected": "一看到",
+    "before": "男孩",
+    "after": "哪一筐有更",
+    "note": "看look, 看到see",
+    "confidence": "high",
+    "reason": "replaces 看 with 看到"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "梨子的筐",
+    "corrected": "哪一筐",
+    "before": "行车上放",
+    "after": "",
+    "note": "the structure “repeated Wh-Q” expressing “wh-ever…, will do that…”.",
+    "confidence": "high",
+    "reason": "repeats 哪一筐 in the result clause"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1077,
+  "completion_tokens": 145,
+  "total_tokens": 1222,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1074,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

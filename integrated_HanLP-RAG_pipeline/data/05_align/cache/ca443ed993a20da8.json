@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 下午就继续爬上树，努力地找挂满了梨子的树木。\nquote: 下午就继续爬上树\npart p0: fix [ref p0/k0] 下午他还继续爬上树\npart p1: comment [ref p1/note] miss the Subj., otherwise readers will understand the Subj. here as “我”, which is incorrect. “还“ indicates “surprising, anger” tone, as opposed to “就” with the natural continuation tone.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "就",
+    "corrected": "他还",
+    "before": "下午",
+    "after": "继续爬上",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 就 with the subject and 还"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "就",
+    "corrected": "",
+    "before": "下午",
+    "after": "继续爬上",
+    "note": "miss the Subj., otherwise readers will understand the Subj. here as “我”, which is incorrect. “还“ indicates “surprising, anger” tone, as opposed to “就” with the natural continuation tone.",
+    "confidence": "high",
+    "reason": "explains the missing subject and contrast between 还 and 就"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1050,
+  "completion_tokens": 159,
+  "total_tokens": 1209,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1047,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

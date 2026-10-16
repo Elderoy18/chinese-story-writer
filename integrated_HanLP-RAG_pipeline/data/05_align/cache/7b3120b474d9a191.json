@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 孩子一直走去张先生的树，吃梨子，觉得这些梨子比别的水果最好不过了。\nquote: 觉得这些梨子比别的水果最好不过了\npart p0: fix [ref p0/k0] 比别的水果都好/最好不过了 ; notes: 最好不过了cannot be used in comparative sentences, it means “the best option”.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "最好不过了",
+    "corrected": "都好",
+    "before": "比别的水果",
+    "after": "。",
+    "note": "最好不过了cannot be used in comparative sentences, it means “the best option”.",
+    "confidence": "high",
+    "reason": "replaces the superlative expression with the comparative form from the fix"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1027,
+  "completion_tokens": 88,
+  "total_tokens": 1115,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1024,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

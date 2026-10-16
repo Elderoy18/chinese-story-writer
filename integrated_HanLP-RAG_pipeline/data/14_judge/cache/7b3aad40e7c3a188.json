@@ -1,0 +1,92 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\nCURRENT SCENE:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nFLAGGED PLACES:\n\n[P204] 特别【是毒】\n  proposed by the AI checker: 特别[是→有]毒 (特别有毒 is the required expression.)\n  proposed by the correction model: 特别[是→有]毒\n  proposed by the teacher's pattern/rule: 特别[是毒→有毒] (her pattern: 是毒 -> 有毒 (corrected 14/15 in train))\n  her past correction (word_class_choice): 特别是[毒的→有毒的]植物\n  her past correction (example_emphasis_connectors): 夹竹桃[是特别是毒→的毒特别厉害] — her note: ”特别是+N, + Clause” is used to single out a typical example\n  her past correction (addition_repetition_connectors): [-还]有的有毒\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n  rule card example_emphasis_connectors: 比方说 introduces a following example; delete it when no example follows. 特别是+N, + Clause singles out a typical example, so N must be an example of the category. Not an error: Do not flag 比方说 when it is followed by an actual example. Do not flag 特别是 when it has the 特别是+N, + Clause pattern and N is a typical example of the category.\n\n[P205] 【灵芝药的夹竹桃】他吃完了\n  proposed by the AI checker: [灵芝药的夹竹桃→有灵芝]他吃完了 (this noun phrase cannot express that lingzhi was present.)\n  her past correction (condition_not_definite): [+如果吃了夹竹桃，]这就要看你也吃不吃灵芝了 — her note: e.g., 如果吃了夹竹桃\n  her past correction (verb_object_valency): 灵芝一吃[+灵芝]就正好\n  her past correction (incorrect_story_information): [灵芝→他]一吃就正好\n  rule card condition_not_definite: Before 这就要看……了, state a not definite condition or alternative, such as 会不会生病, 要不要吃, or 蘑菇能不能吃.\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n\n[P206] 灵芝药的夹竹桃【他】吃完了\n  proposed by the AI checker: 灵芝药的夹竹桃[他→他把它]吃完了 (after introducing 灵芝, the eaten object needs to be marked.)\n  her past correction (condition_not_definite): [+如果吃了夹竹桃，]这就要看你也吃不吃灵芝了 — her note: e.g., 如果吃了夹竹桃\n  her past correction (collocation_selection): 灵芝一吃[就正好→身体就好了]\n  her past correction (verb_object_valency): 灵芝一吃[+灵芝]就正好\n  rule card condition_not_definite: Before 这就要看……了, state a not definite condition or alternative, such as 会不会生病, 要不要吃, or 蘑菇能不能吃.\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n\n[P207] 也写【^】一个课文的植物\n  proposed by the AI checker: 也写[+了]一个课文的植物 (写 is a completed past action.)\n  proposed by the correction model: 也写[+了]一个课文的植物\n  her past correction (collocation_selection): 学习植物[+的知识]\n  her past correction (fixed_expressions): 他[写好→写下]了什么植物能吃\n  her past correction (verb_object_valency): 神农[写植物→写了一本有关植物]的书\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n\n[P208] 也写一【个】课文的植物\n  proposed by the AI checker: 也写一[个→本]课文的植物 (本 is the measure word for a book.)\n  her past correction (collocation_selection): 学习植物[+的知识]\n  her past correction (fixed_expressions): 他[写好→写下]了什么植物能吃\n  her past correction (zero_redundant_pronoun): 一回家就写什么植物[-他们]能和不能吃 — her note: redundant\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n\n[P209] 也写一个【课文的植物】\n  proposed by the AI checker: 也写一个[课文的植物→关于植物的书] (the modifier order and noun do not mean “a book about plants.”)\n  her past correction (verb_object_valency): 神农[写植物→写了一本有关植物]的书\n  her past correction (collocation_selection): 学习植物[+的知识]\n  her past correction (numeral_measure_word_order): 后来神农写[书了→了一本]哪些植物是药\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P204",
+    "decision": "keep",
+    "category": "word_class_choice",
+    "original": "是毒",
+    "before": "特别",
+    "after": "。正好在",
+    "corrected": "有毒",
+    "confidence": "high",
+    "reason": "特别 needs an adjective phrase."
+   },
+   {
+    "place_id": "P205",
+    "decision": "keep",
+    "category": "other",
+    "original": "灵芝药的夹竹桃",
+    "before": "正好在这儿，",
+    "after": "他吃完了，",
+    "corrected": "灵芝是夹竹桃的药，",
+    "confidence": "low",
+    "reason": "The noun phrase incorrectly combines two propositions."
+   },
+   {
+    "place_id": "P206",
+    "decision": "drop",
+    "category": "other",
+    "original": "他",
+    "before": "灵芝药的夹竹桃",
+    "after": "吃完了，也写",
+    "corrected": "他",
+    "confidence": "high",
+    "reason": "A pronoun object or 把 construction is not required."
+   },
+   {
+    "place_id": "P207",
+    "decision": "keep",
+    "category": "verb_object_valency",
+    "original": "",
+    "before": "也写",
+    "after": "一个课文的植",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "A completed narrative action needs 了."
+   },
+   {
+    "place_id": "P208",
+    "decision": "keep",
+    "category": "collocation_selection",
+    "original": "个",
+    "before": "也写一",
+    "after": "课文的植物",
+    "corrected": "本",
+    "confidence": "high",
+    "reason": "本 is the measure word for a book."
+   },
+   {
+    "place_id": "P209",
+    "decision": "keep",
+    "category": "verb_object_valency",
+    "original": "课文的植物",
+    "before": "也写一个",
+    "after": "。谢谢神农。",
+    "corrected": "关于植物的书",
+    "confidence": "high",
+    "reason": "课文的植物 does not express a book about plants."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2280,
+  "completion_tokens": 1917,
+  "total_tokens": 4197,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2277,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1537,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

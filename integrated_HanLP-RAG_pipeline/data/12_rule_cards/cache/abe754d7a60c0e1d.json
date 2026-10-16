@@ -1,0 +1,53 @@
+{
+ "input": "CATEGORY: miss a Subj. (Grammar)\ndefinition: State the subject when it is required for grammatical clarity, especially after an inserted narrator comment or when the previous subject cannot continue.\n\nHER NOTES IN THIS CATEGORY (7 distinct):\n1 | otherwise it is ambiguous who gets sick\n1 | it is unclear what the subject is, add “神农说：一吃夹竹桃就不舒服”, it is not “死”\n1 | miss a Subj.\n1 | here needs a subject\n1 | since the preceding phrase has “我们”, the Subj. 他们 should be stated\n1 | the Subj. here cannot be omitted, because the preceding “我怎么能…” is an inserted “narrator comment”, which is temporarily detached from the main storyline. When it goes back to the main story, the Subj. should be restated.\n1 | miss the Subj., otherwise readers will understand the Subj. here as “我”, which is incorrect. “还“ indicates “surprising, anger” tone, as opposed to “就” with the natural continuation tone.\n\nHER CORRECTIONS (11 of 11):\n[shennong_samples#1/f4/p0/k0/e1] [+他]就生病了  || her note: otherwise it is ambiguous who gets sick\n[shennong_samples#1/f7/p0/note/e0] ⟦一吃夹竹桃就死⟧  || her note: it is unclear what the subject is, add “神农说：一吃夹竹桃就不舒服”, it is not “死”\n[mengmu_samples#2/f3/p0/k1/e0] [+孟子]练习写文字  || her note: miss a Subj.\n[shennong_samples#43/f4/p0/k0/e0] [+这朵花]漂亮是漂亮  || her note: here needs a subject\n[pear_story#4/f40/p0/k0-1/e0] [+他们过来]用心得来帮忙整理梨子  || her note: since the preceding phrase has “我们”, the Subj. 他们 should be stated\n[pear_story#4/f26/p1/note/e0] 我怎么能还要发火呢？但⟦只能思考几分钟⟧  || her note: the Subj. here cannot be omitted, because the preceding “我怎么能…” is an inserted “narrator comment”, which is temporarily detached from the main storyline. When it goes back to the main story, the Subj. should be restated.\n[pear_story#4/f15/p1/note/e0] 然后突然一口气吃掉了我家长！他到底以为自己是谁啊？难道以为自己是上帝吗？我生气极了！下午⟦就⟧继续爬上树  || her note: miss the Subj., otherwise readers will understand the Subj. here as “我”, which is incorrect. “还“ indicates “surprising, anger” tone, as opposed to “就” with the natural continuation tone.\n[mengmu_samples#23/f2/p0/k0/e0] 因为[+他]老是去墓地吃祭品\n[shennong_samples#38/f4/p0/k0-1/e2] 直到小鸟扑飞[回上山→回来，他才上山]\n[pear_story#4/f26/p0/k0/e0] 我怎么能还要发火呢？但[+我]只能思考几分钟\n[pear_story#4/f15/p0/k0/e0] 然后突然一口气吃掉了我家长！他到底以为自己是谁啊？难道以为自己是上帝吗？我生气极了！下午[就→他还]继续爬上树",
+ "salt": "",
+ "output": {
+  "rule": "State the Subj. when leaving it out would make it unclear who does the action. Restate the Subj. after a different Subj. or an inserted “narrator comment” before returning to the main story.",
+  "explanation_template": "<wrong> → <correct>: Add <Subj.> because otherwise it is unclear who <action>; the previous <Subj./narrator comment> cannot continue here.",
+  "examples": [
+   {
+    "edit_id": "shennong_samples#1/f4/p0/k0/e1",
+    "explanation": "就生病了 → 他就生病了: Add 他 because otherwise it is ambiguous who gets sick."
+   },
+   {
+    "edit_id": "mengmu_samples#2/f3/p0/k1/e0",
+    "explanation": "练习写文字 → 孟子练习写文字: Add 孟子; this sentence misses a Subj."
+   },
+   {
+    "edit_id": "pear_story#4/f40/p0/k0-1/e0",
+    "explanation": "用心得来帮忙整理梨子 → 他们过来用心得来帮忙整理梨子: Add 他们 because the preceding Subj. is 我们."
+   },
+   {
+    "edit_id": "pear_story#4/f26/p0/k0/e0",
+    "explanation": "但只能思考几分钟 → 但我只能思考几分钟: Add 我 because the preceding 我怎么能… is an inserted narrator comment, so the Subj. must be restated when returning to the story."
+   },
+   {
+    "edit_id": "pear_story#4/f15/p0/k0/e0",
+    "explanation": "下午就继续爬上树 → 下午他还继续爬上树: Add 他, or readers will understand the Subj. as 我; 还 gives a surprising, angry tone."
+   }
+  ],
+  "not_an_error": "Do not flag an omitted subject when the previous subject can clearly continue. A subject needs to be restated when the previous subject cannot continue or would cause ambiguity.",
+  "her_terms": [
+   "Subj.",
+   "narrator comment"
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1263,
+  "completion_tokens": 926,
+  "total_tokens": 2189,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1260,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 498,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5bd17f1771"
+}

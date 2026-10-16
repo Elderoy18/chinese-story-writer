@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 孟子和他的妈妈原来住在墓地的旁边，但是孟子一直哭了。\nquote: 但是孟子一直哭了\npart p0: fix [ref p0/k0] 一直哭 ; notes: it’s not about “completion”, no了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "子一直哭",
+    "after": "。",
+    "note": "it’s not about “completion”, no了",
+    "confidence": "high",
+    "reason": "removes 了 as indicated by the fix"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1001,
+  "completion_tokens": 69,
+  "total_tokens": 1070,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

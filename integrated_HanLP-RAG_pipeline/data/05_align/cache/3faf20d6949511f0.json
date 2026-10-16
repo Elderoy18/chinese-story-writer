@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 骑自行车逃跑的时候，他突然看到了某个女孩儿，这奇怪的男孩一看到她，就头昏脑胀，紧接着撞到石头摔倒了。\nquote: 骑自行车逃跑的时候，他突然看到了某个女孩儿\npart p0: comment [ref p0/note] replace “他” with “这个小男孩”，otherwise “他” is ambiguous, who? 一个女孩儿，“某个” refers to a specific person/thing, only not identifying the name. Here he saw “one girl”, not “a specific girl”.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "replace",
+    "original": "他",
+    "corrected": "这个小男孩",
+    "before": "跑的时候，",
+    "after": "突然看到",
+    "note": "replace “他” with “这个小男孩”，otherwise “他” is ambiguous, who? 一个女孩儿，“某个” refers to a specific person/thing, only not identifying the name. Here he saw “one girl”, not “a specific girl”.",
+    "confidence": "high",
+    "reason": "replaces the ambiguous pronoun as instructed"
+   },
+   {
+    "ref": "p0/note",
+    "op": "replace",
+    "original": "某个",
+    "corrected": "一个",
+    "before": "突然看到",
+    "after": "女孩儿",
+    "note": "replace “他” with “这个小男孩”，otherwise “他” is ambiguous, who? 一个女孩儿，“某个” refers to a specific person/thing, only not identifying the name. Here he saw “one girl”, not “a specific girl”.",
+    "confidence": "high",
+    "reason": "uses 一个女孩儿 rather than 某个女孩儿"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1070,
+  "completion_tokens": 437,
+  "total_tokens": 1507,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1067,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 206,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

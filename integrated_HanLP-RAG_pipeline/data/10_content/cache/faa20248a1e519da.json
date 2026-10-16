@@ -1,0 +1,80 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n孟子没有星期日。他有的时候只要跟朋友玩儿，可是孟子的妈妈有别的看法。她常常搬家，觉得对孟子有好处，可是孟子不喜欢常常搬家，觉得交新朋友老是害得。一天，孟子决定了祭拜。他从早到晚看古代的文章，难怪他没睡觉。他不是在搬家，而是学多文章，成为很聪明。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "一天，孟子决定了祭拜。"
+    ],
+    "missing_part": "It does not say that 孟子 and 孟母 lived near a graveyard, or that 孟子 imitated sacrifice offerings every day.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "她常常搬家，觉得对孟子有好处，"
+    ],
+    "missing_part": "It does not say that 孟母 chose to leave the graveyard neighborhood because 孟子's imitation of sacrifices would affect him badly.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "The move to the market neighborhood and 孟子's daily imitation of buying and selling are not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "The move from the market to a school neighborhood and 孟子 beginning to study every day are not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": [
+     "成为很聪明。"
+    ],
+    "missing_part": "It does not say that 孟子 became a famous philosopher.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "一天，孟子决定了祭拜。",
+    "problem": "The story requires that 孟子 imitated sacrifice offerings every day near the graveyard, not that he simply decided to worship on one day."
+   }
+  ],
+  "feedback": [
+   "At the beginning, add that 孟子 and 孟母 lived near a graveyard and that 孟子 copied sacrifice offerings every day.",
+   "After this, explain that 孟母 moved away because she feared the sacrifice imitation would affect 孟子 badly.",
+   "Next, include their move near the market, where 孟子 copied buying and selling every day.",
+   "After the market, include the move near a school and say that 孟子 began studying every day.",
+   "At the end, say that 孟子 became a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 759,
+  "completion_tokens": 956,
+  "total_tokens": 1715,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

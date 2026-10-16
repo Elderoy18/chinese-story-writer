@@ -32,6 +32,15 @@ export interface StageFlags {
     /** Refinement after the teacher's review of S4 (under evaluation as S5-v2): show the
      *  teacher's examples of good vocabulary suggestions as models. */
     vocabExamples?: boolean;
+    /** Teacher's additional rules (extra_rules.json) shown to the model, with the places
+     *  in the scene their triggers match listed as possible issues to check. */
+    teacherRules?: boolean;
+    /** End-of-story feedback refers to parts of the story by content, never by
+     *  "Scene N" or required-scene numbers (the teacher found the numbers confusing). */
+    noSceneNumbers?: boolean;
+    /** Two-pass RAG with structured JSON output (lib/rag/twoPass.ts); used by the
+     *  evaluation harness, not by assembleStagePrompt. */
+    twoPass?: boolean;
 }
 
 export const PRODUCTION_FLAGS: StageFlags = {
@@ -41,6 +50,9 @@ export const PRODUCTION_FLAGS: StageFlags = {
     coherence: true,
     critiqueRetrieval: false,
     vocabExamples: false,
+    teacherRules: false,
+    noSceneNumbers: false,
+    twoPass: false,
 };
 
 /** A stage's prompt changes: named fragments to replace (see FRAGMENT_NAMES)
@@ -61,11 +73,16 @@ export interface RetrievedChunk {
     eval_tags?: string[];
     story_ids?: string[];
     triggers?: string[];
+    grammar_tags?: string[];
 }
 
-/** The three lookups the assembler needs; production backs them with Atlas. */
+/** The three lookups the assembler needs; production backs them with Atlas.
+ *  `grammarTag` limits a search to correction_items labelled with that rule. */
 export interface Retriever {
-    search(text: string, opts: { chunkTypes: string[]; k: number; storyId?: string }): Promise<RetrievedChunk[]>;
+    search(
+        text: string,
+        opts: { chunkTypes: string[]; k: number; storyId?: string; grammarTag?: string }
+    ): Promise<RetrievedChunk[]>;
     byIds(ids: string[]): Promise<RetrievedChunk[]>;
     byType(chunkType: string): Promise<RetrievedChunk[]>;
 }
@@ -229,7 +246,7 @@ function renameGrammarHeading(text: string, overrides: PromptOverrides): string 
 }
 
 function checkFlags(f: StageFlags) {
-    if (!f.critique && (f.sceneList || f.vocab || f.coherence || f.critiqueRetrieval || f.vocabExamples)) {
+    if (!f.critique && (f.sceneList || f.vocab || f.coherence || f.critiqueRetrieval || f.vocabExamples || f.teacherRules || f.twoPass)) {
         throw new Error("sceneList/vocab/coherence build on the critique-stage prompt; enable critique too");
     }
 }
@@ -349,16 +366,51 @@ function formatCritique(hit: RetrievedChunk): string {
     return `### Past AI feedback and the teacher's verdict (${tags})\n${hit.text}`;
 }
 
-function formatRuleCard(hit: RetrievedChunk): string {
+export function formatRuleCard(hit: RetrievedChunk): string {
     return `### Rule: ${hit.grammar_tag ?? hit.chunk_id}\n${hit.text}`;
 }
 
-function formatErrorCard(hit: RetrievedChunk): string {
+export function formatErrorCard(hit: RetrievedChunk): string {
     return `### AI failure mode to avoid: ${hit.eval_tag ?? hit.chunk_id}\n${hit.text}`;
 }
 
+export interface TriggerHit {
+    rule: RetrievedChunk; // a teacher_rule chunk
+    match: string; // the student's text the trigger matched
+}
+
+/** Places in the scene where a teacher rule's trigger matches -- candidates to check. */
+export function findTeacherRuleHits(studentText: string, rules: RetrievedChunk[]): TriggerHit[] {
+    const hits: TriggerHit[] = [];
+    for (const rule of rules) {
+        for (const t of rule.triggers ?? []) {
+            for (const m of studentText.matchAll(new RegExp(t, "gu"))) {
+                const start = Math.max(0, (m.index ?? 0) - 4);
+                const match = studentText.slice(start, (m.index ?? 0) + m[0].length + 4);
+                if (!hits.some((h) => h.rule.chunk_id === rule.chunk_id && h.match === match)) hits.push({ rule, match });
+            }
+        }
+    }
+    return hits;
+}
+
+export function formatTeacherRules(rules: RetrievedChunk[], hits: TriggerHit[]): string {
+    const lines = [
+        "## The teacher's additional rules (apply them when giving feedback)",
+        ...rules.map((r) => `- ${r.text}`),
+    ];
+    if (hits.length) {
+        lines.push(
+            "",
+            "## Places in this scene that MAY break one of these rules (check each one; flag it only if it really is an error)",
+            ...hits.map((h) => `- “${h.match}” -- ${h.rule.text}`)
+        );
+    }
+    return lines.join("\n");
+}
+
 /** Vocab entries whose trigger regexes match the scene, this story's entries first. */
-function matchVocabTriggers(studentText: string, entries: RetrievedChunk[], storyId?: string): RetrievedChunk[] {
+export function matchVocabTriggers(studentText: string, entries: RetrievedChunk[], storyId?: string): RetrievedChunk[] {
     const matched = entries.filter((e) => (e.triggers ?? []).some((t) => new RegExp(t, "u").test(studentText)));
     if (storyId) {
         const inStory = (e: RetrievedChunk) => Number(Boolean(e.story_ids?.includes(storyId)));
@@ -388,7 +440,7 @@ export async function assembleStagePrompt(
     const previousScenes = f.coherence ? opts.previousScenes ?? [] : [];
     const system = buildSystemPrompt(f, overrides);
 
-    const [pinnedRules, similarRules, storyExamples, calibrationHits, vocabSemantic, vocabAll, modelStory, critiqueHits, suggestionExamples] =
+    const [pinnedRules, similarRules, storyExamples, calibrationHits, vocabSemantic, vocabAll, modelStory, critiqueHits, suggestionExamples, teacherRules] =
         await Promise.all([
             f.coherence ? r.byIds(PRIORITY_RULE_CARD_IDS) : none,
             r.search(studentText, { chunkTypes: ["rule_card"], k: topRules }),
@@ -402,6 +454,7 @@ export async function assembleStagePrompt(
             f.coherence && storyId ? r.byIds([`model_story:${storyId}`]) : none,
             f.critiqueRetrieval ? r.search(studentText, { chunkTypes: ["ai_feedback_item"], k: CRITIQUE_K }) : none,
             f.vocabExamples ? r.byType("vocab_suggestion_example") : none,
+            f.teacherRules ? r.byType("teacher_rule") : none,
         ]);
 
     const pinnedIds = pinnedRules.map((h) => h.chunk_id);
@@ -449,6 +502,9 @@ export async function assembleStagePrompt(
         for (const hit of vocabHits) parts.push(`- ${hit.text}`);
     }
 
+    const teacherRuleHits = findTeacherRuleHits(studentText, teacherRules);
+    if (teacherRules.length) parts.push(formatTeacherRules(teacherRules, teacherRuleHits));
+
     if (suggestionExamples.length) {
         parts.push(
             "## The teacher's examples of good vocabulary suggestions (models of what is worth suggesting: the student's word is correct but plain or general, and each alternative is more precise or expressive in that sentence while keeping its meaning. Use them as models of judgement and format, not as words to reuse; write your own explanations in English)"
@@ -482,6 +538,7 @@ export async function assembleStagePrompt(
         ...calibrationHits.map((h) => h.chunk_id),
         ...critiqueHits.map((h) => h.chunk_id),
         ...vocabHits.map((h) => h.chunk_id),
+        ...teacherRules.map((h) => h.chunk_id),
         ...suggestionExamples.map((h) => h.chunk_id),
         ...exampleHits.map((h) => h.chunk_id),
         ...modelStory.map((h) => h.chunk_id),
@@ -495,6 +552,17 @@ export async function assembleStagePrompt(
  * on, for a retelling) the teacher's required scenes to check completeness
  * against. Before that stage the model judges completeness on its own.
  */
+/** End-of-story instructions without scene numbers (noSceneNumbers stage). */
+export const CONTENT_INSTRUCTIONS_UNNUMBERED = CONTENT_INSTRUCTIONS.replace(
+    `3. Point to specific scenes ("Scene 2") when you flag a gap, and say concretely what is missing.`,
+    `3. When you flag a gap, say concretely what is missing and where it belongs by describing the events around it (e.g. "after 孟母 moves away from the graveyard"). Do NOT refer to scene numbers or to the numbers of the required scenes -- they confuse the student.`
+).replace(
+    "- one missing, unclear, or underdeveloped part of the story per line, naming the scene and what the story needs",
+    "- one missing, unclear, or underdeveloped part of the story per line, saying what the story needs and where it belongs"
+);
+
+export const RETELLING_NOTE_UNNUMBERED = `This is a RETELLING of a known story. The supervising teacher's list of required scenes (in story order) is given below. In "Content & Completeness", check the student's whole retelling against every required scene: describe each required scene that is missing, out of order, or misremembered in words -- never by number. Scenes the student covered correctly do NOT need to be listed. A required scene may be spread over several parts of the student's story, or several required scenes may be combined into one -- judge the story as a whole.`;
+
 export async function assembleStageContentPrompt(
     scenes: string[],
     opts: { storyId?: string },
@@ -506,19 +574,28 @@ export async function assembleStageContentPrompt(
     const fragments = overrides.fragments ?? {};
     const { storyId } = opts;
     const storyCards = f.sceneList && storyId ? await r.byIds([`scene_list:${storyId}`]) : [];
+    const unnumbered = Boolean(f.noSceneNumbers);
 
     const parts: string[] = [];
     if (storyCards.length) {
-        parts.push(fragments.retellingNote ?? RETELLING_NOTE);
-        parts.push(`### Required scenes\n${storyCards[0].text}`);
+        if (unnumbered) {
+            parts.push(fragments.retellingNote ?? RETELLING_NOTE_UNNUMBERED);
+            const scenesList = storyCards[0].text.split("\n").slice(1).map((l) => l.replace(/^\s*\d+\.\s*/, "- "));
+            parts.push(`### Required scenes, in story order\n${scenesList.join("\n")}`);
+        } else {
+            parts.push(fragments.retellingNote ?? RETELLING_NOTE);
+            parts.push(`### Required scenes\n${storyCards[0].text}`);
+        }
     }
     parts.push(
-        `## Student's complete story to review (${scenes.length} scenes)\n` +
-            scenes.map((text, i) => `Scene ${i + 1}: ${text}`).join("\n")
+        unnumbered
+            ? `## Student's complete story to review\n${scenes.join("\n")}`
+            : `## Student's complete story to review (${scenes.length} scenes)\n` +
+                  scenes.map((text, i) => `Scene ${i + 1}: ${text}`).join("\n")
     );
 
     return {
-        system: fragments.contentInstructions ?? CONTENT_INSTRUCTIONS,
+        system: fragments.contentInstructions ?? (unnumbered ? CONTENT_INSTRUCTIONS_UNNUMBERED : CONTENT_INSTRUCTIONS),
         user: parts.join("\n\n"),
         retrievedChunkIds: storyCards.map((h) => h.chunk_id),
     };

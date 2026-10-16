@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 在中国古代的时候有一个很漂亮的女儿，她穿很漂亮的衣服，去买东西和洗衣服。\nquote: 在中国古代的时候有一个很漂亮的女儿\npart p0: fix [ref p0/k0-1] 在古代中国，女人 ; notes: 女儿daughter",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "在中国古代的时候",
+    "corrected": "在古代中国，",
+    "before": "",
+    "after": "有一个很",
+    "note": "",
+    "confidence": "high",
+    "reason": "rewrites the opening time/place phrase"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "有一个很漂亮的女儿",
+    "corrected": "女人",
+    "before": "古代的时候",
+    "after": "",
+    "note": "女儿daughter",
+    "confidence": "high",
+    "reason": "changes 女儿 to 女人 and removes the unsupported description"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1011,
+  "completion_tokens": 308,
+  "total_tokens": 1319,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 176,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

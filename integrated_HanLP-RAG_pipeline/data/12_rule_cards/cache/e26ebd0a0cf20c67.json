@@ -1,0 +1,53 @@
+{
+ "input": "CATEGORY: 在/正在 ongoing (Coherence: temporality)\ndefinition: Use 在/正在 for a dynamic action that is ongoing. Do not use it when the sentence is only stating a location or does not emphasize an ongoing action.\n\nHER NOTES IN THIS CATEGORY (3 distinct):\n2 | here is not emphasizing “ongoing”\n1 | 在ongoing\n1 | 一直在+V., emphasizing always ongoing\n\nHER CORRECTIONS (5 of 5):\n[mengmu_samples#21/f7/p0/k0/e0] 孟子不是[-在]看商店的员工  || her note: here is not emphasizing “ongoing”\n[shennong_samples#50/f1/p0/k0-1/e3] 也看到了很多人[+在]吃植物  || her note: 在ongoing\n[mengmu_samples#17/f0/p1/k0/e0] 孟子[一直学了→一直在学习]很多东西  || her note: 一直在+V., emphasizing always ongoing\n[mengmu_samples#21/f7/p0/k0/e1] 就是[-在]跟其他的孩子玩商店的游戏  || her note: here is not emphasizing “ongoing”\n[mengmu_samples#13/f2/p0/k0/e0] 而是因为住在那里以后孟子[一直在没读书→一直没在读书]",
+ "salt": "",
+ "output": {
+  "rule": "Use 在/正在 before a dynamic verb when the action is ongoing; use 一直在+V. to emphasize that it is always ongoing. Do not use 在 when the sentence only states what someone does and does not emphasize an ongoing action.",
+  "explanation_template": "<wrong> → <correct>: use/remove 在 because <action> is/is not emphasized as ongoing.",
+  "examples": [
+   {
+    "edit_id": "shennong_samples#50/f1/p0/k0-1/e3",
+    "explanation": "也看到了很多人吃植物 → 也看到了很多人在吃植物: use 在 because eating is ongoing."
+   },
+   {
+    "edit_id": "mengmu_samples#17/f0/p1/k0/e0",
+    "explanation": "一直学了很多东西 → 一直在学习很多东西: use 一直在+V. because the learning is emphasized as always ongoing."
+   },
+   {
+    "edit_id": "mengmu_samples#21/f7/p0/k0/e0",
+    "explanation": "孟子不是在看商店的员工 → 孟子不是看商店的员工: remove 在 because this does not emphasize an ongoing action."
+   },
+   {
+    "edit_id": "mengmu_samples#21/f7/p0/k0/e1",
+    "explanation": "就是在跟其他的孩子玩商店的游戏 → 就是跟其他的孩子玩商店的游戏: remove 在 because this does not emphasize an ongoing action."
+   },
+   {
+    "edit_id": "mengmu_samples#13/f2/p0/k0/e0",
+    "explanation": "一直在没读书 → 一直没在读书: put 没 before 在 for “has always not been studying.”"
+   }
+  ],
+  "not_an_error": "Do not flag a sentence for lacking 在 when it only states what someone does and does not emphasize an ongoing action.",
+  "her_terms": [
+   "在ongoing",
+   "一直在+V."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 733,
+  "completion_tokens": 382,
+  "total_tokens": 1115,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5bd17f1771"
+}

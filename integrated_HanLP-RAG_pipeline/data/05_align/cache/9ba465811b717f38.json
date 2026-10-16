@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 很多年的时候，他测试别的植物。\nquote: 很多年的时候，他测试别的植物\npart p0: fix [ref p0/k0] 他尝试各种植物尝试了很多年 ; notes: “别的” is for “a different type”, and “all else except the spoken one”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "很多年的时候，",
+    "corrected": "",
+    "before": "",
+    "after": "他测试别的",
+    "note": "",
+    "confidence": "high",
+    "reason": "moves the duration expression to after the verb phrase"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "测试",
+    "corrected": "尝试",
+    "before": "年的时候，他",
+    "after": "别的植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "uses the verb in her correction"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "别的",
+    "corrected": "各种",
+    "before": "候，他测试",
+    "after": "植物。",
+    "note": "“别的” is for “a different type”, and “all else except the spoken one”",
+    "confidence": "high",
+    "reason": "replaces 别的 with 各种 as corrected"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "尝试了很多年",
+    "before": "别的植物",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the duration phrase after the object"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1009,
+  "completion_tokens": 505,
+  "total_tokens": 1514,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 269,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

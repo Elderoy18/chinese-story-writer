@@ -1,0 +1,70 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nFLAGGED PLACES:\n\n[P28] 【古代的时候】\n  proposed by the teacher's pattern/rule: [古代的时候→在古代] (her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train))\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  her past correction (location_with_zai): [古代的时候→在古代]\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n\n[P29] 【^】他们一直在哭\n  proposed by the correction model: [+所以]他们一直在哭\n  her past correction (le_completed): 但是孟子一直哭[-了] — her note: it’s not about “completion”, no了\n  her past correction (cause_result_soyi): [+所以]他们常常搬家 — her note: 无聊？add所以\n  her past correction (addition_repetition_connectors): 所以他们[再搬家→又搬家了] — her note: 又for something already occurred\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).\n\n[P30] 而且【害得】孟子的学习\n  proposed by the AI checker: 而且[害得→影响了]孟子的学习 (害得 needs a following result clause; 影响了 fits a noun object.)\n  her past correction (haide_harmful_result): 害得[-对]孟子有不好的影响 — her note: 害得+Sb.+V.\n  her past correction (haide_harmful_result): 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n  her past correction (haide_harmful_result): 孟母觉得学习⟦害得孟子⟧ — her note: 害得孟子+harmful result, 常常玩\n  rule card haide_harmful_result: Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得. Not an error: Do not use this rule for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling such as 不高兴; these are not harmful results for 害得.\n\n[P31] 而且害得孟子【的】学习\n  proposed by the correction model: 而且害得孟子[-的]学习\n  her past correction (haide_harmful_result): 孟母觉得学习⟦害得孟子⟧ — her note: 害得孟子+harmful result, 常常玩\n  her past correction (laoshi_negative_repetition): 所以孟子[老是→一直]在学习 — her note: “老是“ for something negative, used to complain\n  her past correction (haide_harmful_result): 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n  rule card haide_harmful_result: Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得. Not an error: Do not use this rule for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling such as 不高兴; these are not harmful results for 害得.\n  rule card laoshi_negative_repetition: 老是 means “always” and is used for something negative or to complain; for a neutral or positive repeated action, use 一直 or 常常 instead. Not an error: Use 老是 when the repeated action is negative or the speaker is complaining about it. Do not flag it merely because it means “always.”",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P28",
+    "decision": "drop",
+    "category": "fixed_expressions",
+    "original": "古代的时候",
+    "before": "",
+    "after": "有一个男",
+    "corrected": "古代的时候",
+    "confidence": "high",
+    "reason": "Natural temporal expression for a beginner."
+   },
+   {
+    "place_id": "P29",
+    "decision": "drop",
+    "category": "cause_result_soyi",
+    "original": "",
+    "before": "在祭拜，",
+    "after": "他们一直",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The cause-result relation is clear without 所以."
+   },
+   {
+    "place_id": "P30",
+    "decision": "keep",
+    "category": "haide_harmful_result",
+    "original": "害得",
+    "before": "而且",
+    "after": "孟子的学",
+    "corrected": "影响了",
+    "confidence": "high",
+    "reason": "害得 needs a harmful result clause, not a noun object."
+   },
+   {
+    "place_id": "P31",
+    "decision": "drop",
+    "category": "haide_harmful_result",
+    "original": "的",
+    "before": "害得孟子",
+    "after": "学习",
+    "corrected": "的",
+    "confidence": "high",
+    "reason": "The possessive is fine; the error is the verb construction."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1774,
+  "completion_tokens": 1041,
+  "total_tokens": 2815,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1771,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 795,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

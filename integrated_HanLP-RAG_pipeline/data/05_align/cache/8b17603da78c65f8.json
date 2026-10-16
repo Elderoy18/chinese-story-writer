@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 可是，他没走远，就看到很漂亮的女孩，把帽子弄掉，一下子撞了一个大石，被筐里的梨子坐在地上了。\nquote: 被筐里的梨子坐在地上了\npart p0: fix [ref p0/k0] 筐里的梨子撒在地上了 ; notes: 被 means passive voice “be done”, 坐”sit” is used for animate Obj.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "被",
+    "corrected": "",
+    "before": "",
+    "after": "筐里的梨",
+    "note": "被 means passive voice “be done”",
+    "confidence": "high",
+    "reason": "removes the passive marker omitted by her correction"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "坐",
+    "corrected": "撒",
+    "before": "里的梨子",
+    "after": "在地上了",
+    "note": "坐”sit” is used for animate Obj.",
+    "confidence": "high",
+    "reason": "replaces 坐 with 撒 as in her correction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1037,
+  "completion_tokens": 130,
+  "total_tokens": 1167,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1034,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

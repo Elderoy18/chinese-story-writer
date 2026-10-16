@@ -1,0 +1,79 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n孟子的妈妈一直想她的儿子在很好的地方长大。孟子才几岁的时候，他离墓地住很近。他妈妈看他跟别的孩子在墓地里祭拜，她一看这，就自己觉得我不想我的儿子在这个地方长大，也觉得那个地方对孟子有不好的影响，这害得孟母决定搬家。然后孟子和他的妈妈住在市场的旁边，孟母希望这个地方对孟子长大很合适。几天以后，孟子不是跟买东西的人说话，就是向商人讲价。孟母也觉得在市场的旁边对孟子不合适的地方长大，孟母看孟子老是做他们住很近的人做的事情，这害得孟母离学校很近搬家。孟子从早到晚在学校跟老师学习，最后孟母觉得不是孟子不好的男孩，而是他需要很好的地方长大。难怪孟子成为很有名的哲学家，原来他妈妈选择特别好的地方孟子长大。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "孟子才几岁的时候，他离墓地住很近。",
+     "他妈妈看他跟别的孩子在墓地里祭拜，她一看这，就自己觉得我不想我的儿子在这个地方长大，也觉得那个地方对孟子有不好的影响，这害得孟母决定搬家。"
+    ],
+    "missing_part": "孟子 imitating how to offer sacrifices every day is not clearly told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "told",
+    "evidence": [
+     "他妈妈看他跟别的孩子在墓地里祭拜，她一看这，就自己觉得我不想我的儿子在这个地方长大，也觉得那个地方对孟子有不好的影响，这害得孟母决定搬家。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "partly",
+    "evidence": [
+     "然后孟子和他的妈妈住在市场的旁边，孟母希望这个地方对孟子长大很合适。",
+     "几天以后，孟子不是跟买东西的人说话，就是向商人讲价。"
+    ],
+    "missing_part": "孟子 imitating buying and selling every day is not clearly told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "told",
+    "evidence": [
+     "孟母也觉得在市场的旁边对孟子不合适的地方长大，孟母看孟子老是做他们住很近的人做的事情，这害得孟母离学校很近搬家。",
+     "孟子从早到晚在学校跟老师学习，最后孟母觉得不是孟子不好的男孩，而是他需要很好的地方长大。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "told",
+    "evidence": [
+     "难怪孟子成为很有名的哲学家，原来他妈妈选择特别好的地方孟子长大。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "After saying that 孟子 lived near the graveyard, add that he copied the way people offered sacrifices every day.",
+   "After the move near the market and before the move near the school, add that 孟子 copied buying and selling every day."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 895,
+  "completion_tokens": 1018,
+  "total_tokens": 1913,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

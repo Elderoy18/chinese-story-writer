@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟母终于在一位很有名的文学家找工作了。\nquote: 孟母终于在一位很有名的文学家找工作了\npart p0: fix [ref p0/k0] 作家的家里找到工作了 ; notes: 找look for vs. 找到find",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "一位很有名的文学家",
+    "corrected": "作家的家里",
+    "before": "孟母终于在",
+    "after": "找工作了",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix changes the workplace phrase to 作家的家里"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "找",
+    "corrected": "找到",
+    "before": "作家的家里",
+    "after": "工作了",
+    "note": "找look for vs. 找到find",
+    "confidence": "high",
+    "reason": "changes 找 to 找到 as explained"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1008,
+  "completion_tokens": 294,
+  "total_tokens": 1302,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 155,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

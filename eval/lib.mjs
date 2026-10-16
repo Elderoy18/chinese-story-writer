@@ -143,11 +143,12 @@ export async function loadSnapshot(name) {
 export function makeRetriever(snap) {
     const byId = new Map(snap.docs.map((d, i) => [d.chunk_id, i]));
     return {
-        async search(text, { chunkTypes, k = 5, storyId }) {
+        async search(text, { chunkTypes, k = 5, storyId, grammarTag }) {
             const [q] = await embedTexts([text.replace(/\s+/g, " ").trim()]);
             const scored = [];
             snap.docs.forEach((d, i) => {
                 if (!chunkTypes.includes(d.chunk_type) || (storyId && d.story_id !== storyId)) return;
+                if (grammarTag && !(d.grammar_tags ?? []).includes(grammarTag)) return;
                 const v = snap.vectors[i];
                 let s = 0;
                 for (let j = 0; j < EMBED_DIM; j++) s += q[j] * v[j];

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他们从早到晚在墓地祭拜，可是小孩子孟子老是祭拜的时候行为不端，可是孟子的妈妈一直很控制他，害得他不高兴。\nquote: 可是小孩子孟子老是祭拜的时候行为不端\npart p0: comment [ref p0/note] better to briefly introduce “孟子” when this character first appears\npart p1: fix [ref p1/k0] 在祭拜的时候",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "孟子",
+    "corrected": "",
+    "before": "小孩子",
+    "after": "老是祭拜",
+    "note": "better to briefly introduce “孟子” when this character first appears",
+    "confidence": "high",
+    "reason": "teacher comments on first introduction of 孟子"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "老是祭拜的时候",
+    "corrected": "在祭拜的时候",
+    "before": "小孩子孟子",
+    "after": "行为不端",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the time phrase as in teacher's fix"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1043,
+  "completion_tokens": 256,
+  "total_tokens": 1299,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1040,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 115,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

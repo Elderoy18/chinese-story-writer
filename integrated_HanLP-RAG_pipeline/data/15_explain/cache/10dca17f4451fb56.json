@@ -1,0 +1,117 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nITEMS:\n\n[I107] 【古代的时候】   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I108] 【孟子】和孟母住了在靠墓地的家   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 孟子: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧和孟母住在一起 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子⟧和他的妈妈原来住在墓地的旁边 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子⟧和他的妈妈住在离墓地很近 — her note: better to briefly introduce “孟子” when this character first appears\n\n[I109] 孟子和【孟母】住了在靠墓地的家   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 孟母: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: 孟子和[-孟子的]妈妈一直住在墓地的旁边\n  her past correction: 孟子和他的妈妈住在离墓地很近[+的地方] — her note: 住在+Place\n  her past correction: [-孟子]和孟子的妈妈一直住在墓地的旁边\n\n[I110] 孟子和孟母住【了】在靠墓地的家   correction: 了 → (delete)   strength: error\n  checker's note: 住在 describes a state; 了 cannot occur before 在.\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 孟子和[-孟子的]妈妈一直住在墓地的旁边\n  her past correction: 孟子和他的妈妈住在离墓地很近[+的地方] — her note: 住在+Place\n  her past correction: [-孟子]和孟子的妈妈一直住在墓地的旁边\n\n[I111] 孟子和孟母住了在【靠】墓地的家   correction: 靠 → 靠近   strength: error\n  checker's note: 靠近 is needed for “near the cemetery.”\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: 孟子和他的妈妈住在离墓地很近[+的地方] — her note: 住在+Place\n  her past correction: 孟子和[-孟子的]妈妈一直住在墓地的旁边\n  her past correction: [-孟子]和孟子的妈妈一直住在墓地的旁边\n\n[I112] 孟子和孟母住了在靠墓地的家【^】   correction: ∅ → 里   strength: suggestion\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: 孟子和他的妈妈住在离墓地很近[+的地方] — her note: 住在+Place\n  her past correction: 孟子和[-孟子的]妈妈一直住在墓地的旁边\n  her past correction: [-孟子]和孟子的妈妈一直住在墓地的旁边\n\n[I113] 孩子才五岁就每天在墓地祭拜【了】   correction: 了 → (delete)   strength: error\n  checker's note: a habitual daily action does not take sentence-final 了 here.\n  rule card (he_scope_coordination, Coherence: connectors): 和/跟 + noun connects multiple nouns that share the same action. Do not use 和/跟 to connect clauses, verb phrases, or adjectives; if the noun is an accompanying object and does not do the action, use V.着 instead.  Pattern: <wrong> → <correct>: 和/跟 cannot connect <clauses/verb phrases/adjectives>. Use <correct connector or structure> instead.  Her terms: 和cannot connect clauses, 和cannot link clauses, 和cannot connect verb phrases, 和cannot connect Adj., 跟/和+noun., 和+noun., V.着\n  her past correction: 孟子在墓地[-和]祭拜跟其他孩子\n  her past correction: 孟子在墓地和[祭拜跟其他孩子→跟其他孩子祭拜]\n  her past correction: 在墓地[-做]祭拜\n\n[I114] 在【那个城市】   correction: 那个城市 → 他们住的城市   strength: suggestion\n  checker's note: no city has been introduced for 那个城市 to refer to.\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他们搬到[+了]城市 — her note: 了completed\n  her past correction: 第二次[，他们→搬家是]在城市住\n  her past correction: 他[回了→回到了]他的城市\n\n[I115] 孟母从早到晚都【^】找工作   correction: ∅ → 在   strength: suggestion\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 孟子的妈妈每天从早到晚[-做]工作\n  her past correction: 孟母找到一个[打工→打工的工作]\n  her past correction: [妈妈→孟母]老是工作了 — her note: “妈妈” here is ambiguous\n\n[I116] 原来【^】买不了房   correction: ∅ → 是因为   strength: suggestion\n  rule card (incorrect_story_information, Content): Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information.  Pattern: <wrong> → <correct>: this changes a story fact; the story says <fact>.  Her terms: wrong information, problematic in coherence\n  her past correction: 不是⟦房租太贵了⟧ — her note: wrong information, it’s not about房租\n  her past correction: 在新的房子[+里] — her note: 在+Place\n  her past correction: 在第一个[房子→地方]\n\n[I117] 他们搬【了】到别一个城市找工作   correction: 了 → 到了   strength: error\n  checker's note: the directional complement 到 must come before 了.\n  rule card (directional_complements, Grammar): Use V. + directional complement + Place + 来/去: put the place after the directional complement and before 来/去. For walking to a place, use 走到place来/去, not 走去 or 走来Place.  Pattern: <wrong> → <correct>: put the place after the directional complement; use V. + directional complement + Place + 来/去 (or 走到place来/去).  Her terms: V. + directional complement + Place + 来/去, 走到place来/去, 走去/来Place, 拿起来, 拿上去\n  her past correction: 他们搬到[+了]城市 — her note: 了completed\n  her past correction: 所以他们[到城市的外边搬家了→搬到城市外了]\n  her past correction: 他们[去了→搬到了]一个房子\n\n[I118] 他们搬了【到】别一个城市找工作   correction: 到 → (delete)   strength: suggestion\n  rule card (directional_complements, Grammar): Use V. + directional complement + Place + 来/去: put the place after the directional complement and before 来/去. For walking to a place, use 走到place来/去, not 走去 or 走来Place.  Pattern: <wrong> → <correct>: put the place after the directional complement; use V. + directional complement + Place + 来/去 (or 走到place来/去).  Her terms: V. + directional complement + Place + 来/去, 走到place来/去, 走去/来Place, 拿起来, 拿上去\n  her past correction: 他们搬到[+了]城市 — her note: 了completed\n  her past correction: 所以他们[到城市的外边搬家了→搬到城市外了]\n  her past correction: 他们[去了→搬到了]一个房子\n\n[I119] 他们搬了到【别】一个城市找工作   correction: 别 → 另   strength: error\n  checker's note: 另一个 is the standard expression for “another.”\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他们搬到[+了]城市 — her note: 了completed\n  her past correction: 所以他们[到城市的外边搬家了→搬到城市外了]\n  her past correction: 第二次[，他们→搬家是]在城市住",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I107",
+    "explanation": "古代 is the location/time setting, so use 在+Place before the action: 在古代。",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I108",
+    "explanation": "孟子 appears for the first time, so please introduce him briefly, for example 孟子这个孩子, instead of using only his name.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I109",
+    "explanation": "孟母 appears for the first time, so please introduce her briefly as 孟子的妈妈 or 孟母亲, rather than only using her name.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I110",
+    "explanation": "住在 describes a state, so do not put 了 before 在. Use 住在+Place.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I111",
+    "explanation": "For “near the cemetery,” use 靠近墓地. 靠近 is the natural word here.",
+    "dimension": "word_choice",
+    "corrected": "靠近",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I112",
+    "explanation": "It would be more natural to add 里 to make the place clear: 家里.",
+    "dimension": "grammar",
+    "corrected": "里",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I113",
+    "explanation": "每天 describes a habitual action, not a completed action. Do not use sentence-final 了 here.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I114",
+    "explanation": "It would be more natural to say 他们住的城市, because no city has been introduced for 那个城市 to refer to.",
+    "dimension": "coherence_reference",
+    "corrected": "他们住的城市",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I115",
+    "explanation": "It would be more natural to use 在 for an action in progress: 从早到晚都在找工作.",
+    "dimension": "grammar",
+    "corrected": "在",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I116",
+    "explanation": "It would be more natural to use 是因为 to show the reason clearly: 原来是因为买不了房.",
+    "dimension": "coherence_connectors",
+    "corrected": "是因为",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I117",
+    "explanation": "Put the directional complement 到 before 了: 搬到了一个城市. This shows the move was completed.",
+    "dimension": "grammar",
+    "corrected": "了到 → 到了",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I118",
+    "explanation": "It would be more natural to use 搬到了+Place for moving to a place. Do not leave 搬了 directly before the place.",
+    "dimension": "grammar",
+    "corrected": "了到 → 到了",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I119",
+    "explanation": "Use 另一个 for “another”: 另一个城市 is the standard expression.",
+    "dimension": "word_choice",
+    "corrected": "另",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 3373,
+  "completion_tokens": 1186,
+  "total_tokens": 4559,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3370,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

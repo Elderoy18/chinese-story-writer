@@ -1,0 +1,86 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n很久以前，有一个男孩叫孟子。孟母望子成龙，她让孟子才两岁就开始学习。孟子跟孟母住在墓地的旁边，人一直在墓地大声哭。孟母看出来孟子老是难过，害得他不能好好学习。孟母恐怕孟子住在墓地的旁边对孟子有影响，所以她跟孟子搬家。他们搬到城市。在城市里，孟子交了很多朋友，他不是睡觉就是跟他的朋友玩。孟子的成绩越来越糟糕。孟母对孟子很生气，她跟孟子说，你不在乎我从早到晚都在工作吗？难怪你的成绩不好，是因为你老是跟你的朋友出去玩。我们要搬家再一次。孟子说，妈妈，我的成绩不好不是因为我常常跟我的朋友玩，而是因为学校很难。我心里不让我们搬家再一次。我们搬家以前，我没有朋友。现在我很高兴，可是我知道我不能老是玩。我答应你我会好好学习。孟母说，好。孟子开始好好学习，他的成绩越来越好。他长大了以后，成为很有名的作家。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "孟子跟孟母住在墓地的旁边。"
+    ],
+    "missing_part": "孟子 imitating how to offer sacrifices every day is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "孟母恐怕孟子住在墓地的旁边对孟子有影响，所以她跟孟子搬家。"
+    ],
+    "missing_part": "孟母's concern that imitating sacrifices would negatively affect 孟子 is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 and 孟子 moving near the market, and 孟子 imitating buying and selling every day, are not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "孟子开始好好学习，他的成绩越来越好。"
+    ],
+    "missing_part": "孟母 moving from the market to a neighborhood near a school is not told, and the studying is not connected to living near the school.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": [
+     "他长大了以后，成为很有名的作家。"
+    ],
+    "missing_part": "孟子 becoming a famous philosopher is not told; he is called a famous writer instead.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "孟母望子成龙，她让孟子才两岁就开始学习。",
+    "problem": "This says 孟子 began studying at age two, but in the required story he starts studying every day after 孟母 moves near a school."
+   },
+   {
+    "learner_text": "他长大了以后，成为很有名的作家。",
+    "problem": "孟子 becomes a famous philosopher in the required story, not a famous writer."
+   }
+  ],
+  "feedback": [
+   "While 孟子 lives near the graveyard, add that he imitates offering sacrifices every day.",
+   "After seeing him imitate sacrifices, add that 孟母 worries this will affect him badly and decides to move.",
+   "After leaving the graveyard, add that they move near a market and 孟子 imitates buying and selling every day.",
+   "After the market scene, add that they move near a school, where 孟子 starts studying every day.",
+   "At the end, say that 孟子 grows up to become a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 933,
+  "completion_tokens": 1550,
+  "total_tokens": 2483,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

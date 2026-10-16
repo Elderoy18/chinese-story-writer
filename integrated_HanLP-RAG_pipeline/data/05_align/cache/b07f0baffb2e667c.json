@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 孟子和他的朋友喜欢玩在墓地里，装祭拜。\nquote: 孟子和他的朋友喜欢玩在墓地里，装祭拜\npart p0: fix [ref p0/k0] 在墓地玩 ; notes: 在Place V.\npart p1: fix [ref p1/k0] 装着祭拜的样子",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "玩在墓地里",
+    "corrected": "在墓地玩",
+    "before": "的朋友喜欢",
+    "after": "，装祭拜",
+    "note": "在Place V.",
+    "confidence": "high",
+    "reason": "moves the place phrase before the verb and removes 里"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "装祭拜",
+    "corrected": "装着祭拜的样子",
+    "before": "在墓地里，",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the action phrase with the teacher's stated form"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1021,
+  "completion_tokens": 297,
+  "total_tokens": 1318,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 156,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

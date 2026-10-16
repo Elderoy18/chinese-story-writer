@@ -1,0 +1,101 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n在古代的一个小镇住着一个小男孩和他的妈妈。在这个小镇，孟子和孟母才住在两个月。他们一直在搬家，因为孟母的工资很低。孟母想儿子开始打工可能减轻她的负担，但是孟子每天玩儿，不打工，害得孟母的压力很大。孟子从早到晚玩儿，他跟别的孩子画画儿很幸福。有一天，孟母找到一个打工，在墓地做祭拜。那里孟子会不是画画，祭拜，就是做冬天衣服。他们早上六点半去老板的墓地打工。难怪老板给他们很好工资，原来他们打工很厉害。现在孟子和孟母不是打算搬家，而是打算待在这个小镇。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "Living near a graveyard; 孟子 imitates sacrifices",
+    "verdict": "partly",
+    "evidence": [
+     "有一天，孟母找到一个打工，在墓地做祭拜。",
+     "那里孟子会不是画画，祭拜，就是做冬天衣服。"
+    ],
+    "missing_part": "孟子 and 孟母 living near the graveyard, and 孟子 imitating the sacrifices",
+    "details_left_out": [
+     "孟子 imitates the sacrifices every day"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "孟母 leaves the graveyard neighborhood over harmful imitation",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 decides to move away from the graveyard neighborhood because she worries that imitating sacrifices will affect 孟子 badly",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "Move near the market; 孟子 imitates buying and selling",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 and 孟子 move to the neighborhood near the market, where 孟子 imitates buying and selling",
+    "details_left_out": [
+     "孟子 does this every day"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "Move near a school; 孟子 begins studying",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 and 孟子 move from the market to the neighborhood near a school, and 孟子 starts studying",
+    "details_left_out": [
+     "孟子 studies every day"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a famous philosopher",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟子 becomes a famous philosopher",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "他们一直在搬家，因为孟母的工资很低。",
+    "problem": "The move away from the graveyard is supposed to happen because 孟母 is worried about 孟子 copying sacrifices, not because of low wages."
+   },
+   {
+    "learner_text": "有一天，孟母找到一个打工，在墓地做祭拜。",
+    "problem": "The graveyard scene is about the family living near a graveyard and 孟子 copying sacrifices, not 孟母 getting a job there."
+   },
+   {
+    "learner_text": "现在孟子和孟母不是打算搬家，而是打算待在这个小镇。",
+    "problem": "They need to move on from the graveyard area to the market area and then to the school area."
+   }
+  ],
+  "feedback": [
+   "Near the beginning, add that 孟子 and 孟母 live near a graveyard and 孟子 imitates sacrifices.",
+   "After the graveyard sacrifices, add that 孟母 decides to leave because she worries the imitation will affect 孟子 badly.",
+   "After they leave the graveyard, add that they move near the market and 孟子 imitates buying and selling.",
+   "After the market events, add that they move near a school and 孟子 begins to study.",
+   "After 孟子 starts studying near the school, add that he becomes a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1083,
+  "completion_tokens": 2455,
+  "total_tokens": 3538,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1080,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1775,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

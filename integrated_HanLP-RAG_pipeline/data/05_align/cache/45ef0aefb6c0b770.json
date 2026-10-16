@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 他一吃黄色的花就有麻烦。\nquote: 他一吃黄色的花就有麻烦\npart p0: fix [ref p0/k0] 肚子就疼 ; notes: “有麻烦“ is too vague",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "就有麻烦",
+    "corrected": "肚子就疼",
+    "before": "黄色的花",
+    "after": "",
+    "note": "“有麻烦“ is too vague",
+    "confidence": "high",
+    "reason": "replaces the vague consequence with the specific symptom"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 994,
+  "completion_tokens": 157,
+  "total_tokens": 1151,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 76,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

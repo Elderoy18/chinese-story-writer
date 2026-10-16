@@ -1,0 +1,59 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\n然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。\nCURRENT SCENE:\n一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。\n\nFLAGGED PLACES:\n\n[P356] 【麻烦】我们可以吃什么植物？神农说\n  proposed by the AI checker: [麻烦→请问]我们可以吃什么植物？神农说 (麻烦 cannot directly introduce this question; 请问 is needed.)\n  proposed by the correction model: 麻烦[+问]我们可以吃什么植物？神农说\n  her past correction (redundant_words): 神农[-开始]找我们可以吃的植物\n  her past correction (search_find): 神农开始[-找]我们可以吃的植物\n  her past correction (zero_redundant_pronoun): 神农开始找[-我们]可以吃的植物\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n\n[P357] 这就要【看】你想不想生病了\n  proposed by the teacher's pattern/rule: 这就要[看→看到]你想不想生病了 (her pattern: 看 -> 看到 (corrected 37/71 in train))\n  her past correction (perception_look_see): 他[看→看到]很多病人 — her note: 看look vs.看到see\n  her past correction (non_adjective_degree_patterns): 他看到很多人[很病→生病]了 — her note: “病” is not a normal Adj., so it cannot be with 很 or 不\n  her past correction (perception_look_see): 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n  rule card non_adjective_degree_patterns: “病” and “生病” are not normal Adj., so do not use 很 or 不 directly with them. To show degree, use 病得很厉害 or 病得很重.\n\n[P358] 一些【植物】不能吃\n  proposed by the correction model: 一些[-植物]不能吃\n  her past correction (cause_result_soyi): [因为→这样]大家知道什么植物不能吃 — her note: not “because”\n  her past correction (question_patterns): 他们不知道什么植物[-能吃]不能吃\n  her past correction (question_patterns): 中国人不知道什么植物[可能还是不可能→能吃，什么植物不能]吃\n  rule card question_patterns: Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P356",
+    "decision": "keep",
+    "category": "other",
+    "original": "麻烦",
+    "before": "一个人对神农说，",
+    "after": "我们可以吃什么植物？神农说",
+    "corrected": "请问",
+    "confidence": "high",
+    "reason": "麻烦 cannot directly introduce this question."
+   },
+   {
+    "place_id": "P357",
+    "decision": "drop",
+    "category": "perception_look_see",
+    "original": "看",
+    "before": "这就要",
+    "after": "你想不想生病了",
+    "corrected": "看",
+    "confidence": "high",
+    "reason": "看 means “depend on” here, not visual perception."
+   },
+   {
+    "place_id": "P358",
+    "decision": "drop",
+    "category": "other",
+    "original": "植物",
+    "before": "一些",
+    "after": "不能吃",
+    "corrected": "植物",
+    "confidence": "high",
+    "reason": "The noun is needed and the sentence is grammatical."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1529,
+  "completion_tokens": 413,
+  "total_tokens": 1942,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1526,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 221,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

@@ -1,0 +1,81 @@
+{
+ "input": "EARLIER SCENES (context only):\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\nCURRENT SCENE:\n一个爬山的男人正好看到神农的麻烦，然后给了他一些药。神农最终他的小镇回到，跟别的人分享他的发现。你认为神农的故事真的吗？这就要看你相信中药对身体有好处。\n\nFLAGGED PLACES:\n\n[P229] 神农最终【他的小镇回到】\n  proposed by the AI checker: 神农最终[他的小镇回到→回到他的小镇] (word order with 回到 is incorrect)\n  proposed by the correction model: 神农最终[+回到]他的小镇回到\n  proposed by the correction model: 神农最终他的小镇[-回到]\n  her past correction (directional_complements): 神农[回→回到]他的家\n  her past correction (zero_redundant_pronoun): 神农回[-他的]家 — her note: redundant\n  her past correction (redundant_words): 神农一走路就[-走]到了\n  rule card directional_complements: Use V. + directional complement + Place + 来/去: put the place after the directional complement and before 来/去. For walking to a place, use 走到place来/去, not 走去 or 走来Place. Not an error: Do not treat 拿起来 and 拿上去 as interchangeable word-order forms: 拿起来 means “pick up,” while 拿上去 means “bring it up.”\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n\n[P230] 跟【别的人】分享他的发现\n  proposed by the teacher's pattern/rule: 跟[-别的人]分享他的发现 (her pattern: 别的人 -> (delete) (corrected 8/8 in train))\n  her past correction (other_vs_additional): 告诉[别的人→其他人] — her note: “别的” is for “a different type”, and “all else except the spoken one”\n  her past correction (cause_result_soyi): [结果他→所以，]取得生活经验 — her note: “结果” for unexpected result\n  her past correction (fixed_expressions): 原来他想给[别的人→别人]建议\n  rule card other_vs_additional: 别的 is for a different type or for all others except the one already mentioned. 另外 is for an additional quantity, or for another/the other; say 另外一个人, not 别个人. Not an error: Do not flag 别的 when it means a different type or all others except the one already mentioned.\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).\n\n[P231] 你认为神农的故事【^】真的吗？这就要看你相信中药对身体有好处\n  proposed by the AI checker: 你认为神农的故事[+是]真的吗？这就要看你相信中药对身体有好处 (是 is needed before the adjective question)\n  proposed by the correction model: 你认为神农的故事[+是]真的吗？这就要看你相信中药对身体有好处\n  her past correction (modifier_de_structure): 所以神农去找[一些植物，对身体有好处→一些对身体有好处的植物]\n  her past correction (le_completed): 神农[身体好的以后→身体好了] — her note: 了completed\n  her past correction (fixed_expressions): 这是[一个神农的→关于神农的]古代故事\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P232] 你认为神农的故事真的吗？这就要【看】你相信中药对身体有好处\n  proposed by the teacher's pattern/rule: 你认为神农的故事真的吗？这就要[看→看到]你相信中药对身体有好处 (her pattern: 看 -> 看到 (corrected 37/71 in train))\n  her past correction (modifier_de_structure): 所以神农去找[一些植物，对身体有好处→一些对身体有好处的植物]\n  her past correction (perception_look_see): 神农[一看→一看到]朋友就想找药 — her note: 看look vs.看到see\n  her past correction (perception_look_see): 所以神农一[看→看到]病人就想找药 — her note: 看look vs.看到see\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n\n[P233] 你认为神农的故事真的吗？这就要看你【^】相信中药对身体有好处\n  proposed by the correction model: 你认为神农的故事真的吗？这就要看你[+是否]相信中药对身体有好处\n  her past correction (modifier_de_structure): 所以神农去找[一些植物，对身体有好处→一些对身体有好处的植物]\n  her past correction (le_completed): 神农[身体好的以后→身体好了] — her note: 了completed\n  her past correction (perception_look_see): 神农[一看→一看到]朋友就想找药 — her note: 看look vs.看到see\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P229",
+    "decision": "keep",
+    "category": "directional_complements",
+    "original": "他的小镇回到",
+    "before": "神农最终",
+    "after": "，跟别的",
+    "corrected": "回到他的小镇",
+    "confidence": "high",
+    "reason": "Place must follow 回到."
+   },
+   {
+    "place_id": "P230",
+    "decision": "keep",
+    "category": "other",
+    "original": "别的人",
+    "before": "神农最终",
+    "after": "分享他的",
+    "corrected": "别人",
+    "confidence": "high",
+    "reason": "Use the fixed expression 别人."
+   },
+   {
+    "place_id": "P231",
+    "decision": "keep",
+    "category": "other",
+    "original": "",
+    "before": "农的故事",
+    "after": "真的吗？这",
+    "corrected": "是",
+    "confidence": "high",
+    "reason": "是 is needed before 真的吗."
+   },
+   {
+    "place_id": "P232",
+    "decision": "drop",
+    "category": "perception_look_see",
+    "original": "看",
+    "before": "？这就要",
+    "after": "你相信中",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "看 means “depends on” here, not visual perception."
+   },
+   {
+    "place_id": "P233",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "就要看你",
+    "after": "相信中药",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "是否 is optional after 看."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2588,
+  "completion_tokens": 1243,
+  "total_tokens": 3831,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2585,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 959,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

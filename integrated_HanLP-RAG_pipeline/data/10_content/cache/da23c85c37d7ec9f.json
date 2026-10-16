@@ -1,0 +1,85 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n在古代的时候，有一个孩子叫孟轲，他一直住跟他的妈妈。他们住在一个墓地的旁边，孟轲老是看看别的人，从早到晚祭拜、哭哭啼啼的人。难怪孟轲的妈妈出家的时候看看她的儿子做一样的事情。他们把家搬到了别的地方，他们住离一个学校很近。所以孟轲开始不是学习就是看书，才几个星期就成为很明智。他那不是成为医生，而是成为哲学人。在以前，哲学人很聪明和重要。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "他们住在一个墓地的旁边。",
+     "孟轲老是看看别的人，从早到晚祭拜、哭哭啼啼的人。",
+     "难怪孟轲的妈妈出家的时候看看她的儿子做一样的事情。"
+    ],
+    "missing_part": "It does not clearly say that 孟子 himself imitated offering sacrifices every day.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "他们把家搬到了别的地方。"
+    ],
+    "missing_part": "It does not say that 孟母 decided to move because she thought the sacrifice imitation would negatively affect 孟子.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 and 孟子 do not move to a neighborhood near a market, and 孟子 does not imitate buying and selling there every day.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "他们住离一个学校很近。",
+     "所以孟轲开始不是学习就是看书，才几个星期就成为很明智。"
+    ],
+    "missing_part": "It does not say that 孟母 moved from the market neighborhood to the neighborhood near the school.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": [
+     "他那不是成为医生，而是成为哲学人。"
+    ],
+    "missing_part": "It does not say that 孟子 became a famous philosopher.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "难怪孟轲的妈妈出家的时候看看她的儿子做一样的事情。",
+    "problem": "This says that 孟母 出家 (left home to become a religious renunciant). In the story, she sees her son copying the sacrifice behavior and moves the family away; she does not 出家."
+   }
+  ],
+  "feedback": [
+   "After living near the graveyard, add that 孟子 himself copied the sacrifice rituals every day.",
+   "When the family leaves the graveyard, add that 孟母 decides to move because she worries this behavior will harm 孟子.",
+   "Between leaving the graveyard and living near the school, add that they move near a market and 孟子 copies buying and selling every day.",
+   "Before 孟子 begins studying near the school, add that 孟母 moves the family there from the market neighborhood.",
+   "At the end, add that 孟子 becomes a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 788,
+  "completion_tokens": 1543,
+  "total_tokens": 2331,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 992,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

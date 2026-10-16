@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他的朋友很惊讶灵芝帮了神农，所以神农告诉他有些植物是好的，有些是坏的。\nquote: 所以神农告诉他有些植物是好的，有些是坏的\npart p0: comment [ref p0/note] “所以” is not appropriate because here is not a result, 后来\npart p1: fix [ref p1/k0] 有毒的",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "所以",
+    "corrected": "",
+    "before": "芝帮了神农，",
+    "after": "神农告诉他有",
+    "note": "“所以” is not appropriate because here is not a result, 后来",
+    "confidence": "high",
+    "reason": "teacher comments that 所以 is inappropriate"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "坏的",
+    "corrected": "有毒的",
+    "before": "好的，有些是",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 坏的 with 有毒的"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1033,
+  "completion_tokens": 249,
+  "total_tokens": 1282,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1030,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 111,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

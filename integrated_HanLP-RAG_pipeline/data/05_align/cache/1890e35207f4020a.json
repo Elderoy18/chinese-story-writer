@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 第二次，他们在城市住，可是从早到晚，他们听饭馆和商店。\nquote: 他们听饭馆和商店\npart p0: fix [ref p0/k0] 听到 ; notes: 听listen vs.听到hear\npart p1: fix [ref p1/k0] 在饭馆和商店人们说话的声音",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "听",
+    "corrected": "听到",
+    "before": "他们",
+    "after": "饭馆和商店",
+    "note": "听listen vs.听到hear",
+    "confidence": "high",
+    "reason": "changes 听 to 听到 for the stated distinction"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "饭馆和商店",
+    "corrected": "在饭馆和商店人们说话的声音",
+    "before": "他们听",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the object with the teacher's specified phrase"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1024,
+  "completion_tokens": 260,
+  "total_tokens": 1284,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 117,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

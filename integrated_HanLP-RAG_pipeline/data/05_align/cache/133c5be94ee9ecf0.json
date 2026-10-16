@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 搬家十年，孟子一直学了很多东西，孟子每个地方才住了一年。\nquote: 搬家十年，孟子一直学了很多东西，孟子每个地方才住了一年\npart p0: fix [ref p0/k0] 在搬家的十年里\npart p1: fix [ref p1/k0] 一直在学习 ; notes: 一直在+V., emphasizing always ongoing\npart p2: comment [ref p2/note] replace the second孟子with他",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "搬家十年",
+    "corrected": "在搬家的十年里",
+    "before": "",
+    "after": "，孟子一直",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the opening time phrase"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "一直学了",
+    "corrected": "一直在学习",
+    "before": "年，孟子",
+    "after": "很多东西，",
+    "note": "一直在+V., emphasizing always ongoing",
+    "confidence": "high",
+    "reason": "changes the ongoing verb phrase"
+   },
+   {
+    "ref": "p2/note",
+    "op": "replace",
+    "original": "孟子",
+    "corrected": "他",
+    "before": "很多东西，",
+    "after": "每个地方",
+    "note": "replace the second孟子with他",
+    "confidence": "high",
+    "reason": "replaces the second occurrence of 孟子"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1059,
+  "completion_tokens": 184,
+  "total_tokens": 1243,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1056,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

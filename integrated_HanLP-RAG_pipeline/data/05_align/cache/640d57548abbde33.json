@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 所以他想找一个植物对药，他们可以吃对药。\nquote: 所以他想找一个植物对药，他们可以吃对药\npart p0: fix [ref p0/k0] 找一个可以做药的植物\npart p1: fix [ref p1/k0-1] 这样，他们可以……",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "植物对药",
+    "corrected": "可以做药的植物",
+    "before": "所以他想找一个",
+    "after": "，他们可以吃对药",
+    "note": "",
+    "confidence": "high",
+    "reason": "rewrites the noun phrase as a plant that can be made into medicine"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "这样，",
+    "before": "他们可以吃对药",
+    "after": "他们可以吃对药",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the transition phrase before 他们"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1013,
+  "completion_tokens": 343,
+  "total_tokens": 1356,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 205,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

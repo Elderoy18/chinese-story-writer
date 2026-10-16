@@ -1,0 +1,81 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。\n一个人问神农，哪个植物好吃。神农说，这就要看你的口味了。要是你喜欢吃甜的，有很多甜的水果，比方说苹果、西瓜和梨。一个别的人问神农，哪个植物对你的身体有好处。神农说，有很多种植物对你的身体有好处，比方说小白菜、黄瓜、茶和菠菜。一个别的人问神农，哪个植物对你的身体有坏处。\nCURRENT SCENE:\n神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。\n\nFLAGGED PLACES:\n\n[P294] 我吃了一【个】黄色的花\n  proposed by the AI checker: 我吃了一[个→朵]黄色的花 (花 normally uses the classifier 朵)\n  proposed by the correction model: 我吃了一[个→种]黄色的花\n  her past correction (le_completed): 他吃[+了]一片花瓣 — her note: 了completed\n  her past correction (specific_noun_choice): 他一吃黄色的花[就有麻烦→肚子就疼] — her note: “有麻烦“ is too vague\n  her past correction (le_completed): 他[吃→吃了]一个香香的花 — her note: 了completed\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card specific_noun_choice: Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦. Not an error: Do not flag a general word when the context does not require a more specific meaning. This rule applies when the general word makes the story unclear or does not name what is actually meant.\n\n[P295] 【^】名字是夹竹桃\n  proposed by the AI checker: [+它的]名字是夹竹桃 (the flower needs a possessive subject for 名字)\n  her past correction (collocation_selection): [还花的名字是夹竹桃→也发现了一种叫夹竹桃的花]\n  her past correction (verb_object_valency): 另外一个植物[-是]叫夹竹桃\n  her past correction (collocation_selection): 夹竹桃是[+有]毒的\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n\n[P296] 就觉得这种植物对我的【脑】有坏处\n  proposed by the AI checker: 就觉得这种植物对我的[脑→大脑]有坏处 (脑 is not normally used alone for the brain)\n  proposed by the correction model: 就觉得这种植物对我的[+大]脑有坏处\n  her past correction (verb_object_valency): 这些植物对身体[+有]好处\n  her past correction (zero_redundant_pronoun): [-这些植物]对身体好处\n  her past correction (expressive_detail_and_description): [植物→一种绿色的植物]他觉得好吃得很\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n\n[P297] 一【个】灵芝和一个男人正好在我的旁边\n  proposed by the AI checker: 一[个→株]灵芝和一个男人正好在我的旁边 (灵芝 normally uses 株 as its classifier)\n  her past correction (perception_look_see): 一个人[看→看到]一个灵芝 — her note: 看look vs.看到see\n  her past correction (perception_look_see): 他以后[正好看→他正好看到]一个灵芝 — her note: 看look vs.看到see\n  her past correction (verb_object_valency): 正好有一个人[帮他→给他]吃一个灵芝\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n\n[P298] 【因为】夹竹桃有毒\n  proposed by the AI checker: [-因为]夹竹桃有毒 (it unnecessarily starts a separate reason fragment)\n  her past correction (redundant_words): 可是[-吃]夹竹桃有毒\n  her past correction (collocation_selection): 夹竹桃是[+有]毒的\n  her past correction (word_class_choice): 夹竹桃[很毒→有毒]\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P294",
+    "decision": "drop",
+    "category": "other",
+    "original": "个",
+    "before": "我吃了一",
+    "after": "黄色的花",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "个 for a flower is acceptable beginner-level wording."
+   },
+   {
+    "place_id": "P295",
+    "decision": "drop",
+    "category": "collocation_selection",
+    "original": "",
+    "before": "色的花，",
+    "after": "名字是夹竹",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The flower as subject is naturally understood from context."
+   },
+   {
+    "place_id": "P296",
+    "decision": "keep",
+    "category": "collocation_selection",
+    "original": "脑",
+    "before": "物对我的",
+    "after": "有坏处",
+    "corrected": "大脑",
+    "confidence": "high",
+    "reason": "脑 alone is unnatural here; 大脑 is the normal noun."
+   },
+   {
+    "place_id": "P297",
+    "decision": "drop",
+    "category": "other",
+    "original": "个",
+    "before": "正好有一",
+    "after": "灵芝和一",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "个 is an acceptable general classifier here."
+   },
+   {
+    "place_id": "P298",
+    "decision": "drop",
+    "category": "redundant_words",
+    "original": "因为",
+    "before": "别是夹竹桃。",
+    "after": "夹竹桃有毒",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "It adds a causal explanation and is not redundant."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2320,
+  "completion_tokens": 798,
+  "total_tokens": 3118,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2317,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

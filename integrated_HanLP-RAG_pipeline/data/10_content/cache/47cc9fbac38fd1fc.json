@@ -1,0 +1,102 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他正在墓地旁边思考。 | 一天，孟子决定了祭拜。 | 她跟孟子搬家去墓地做祭拜\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他妈妈就让他搬去城市。 | 他们把家搬到了别的地方， | 孟子跟他的妈妈搬家，去一个最好的学校。 ; flagged as missing: 孟子的妈妈搬了三次家。 | 因为他这么无，他们常常搬家。\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 所以他们搬家去商店的旁边 | 所以她带孟子到一个城市搬家了。 | 他们去了一个房子，在购物中心的旁边。 ; flagged as missing: 孟子的妈妈搬了三次家。 | 在新的城，孟子老是想玩玩。\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 从早到晚小孟待着学哲学和读写。 | 在新的地方，孟子跟老师老是学习中文。 | 从早到晚孟子一直学习，他不是看书，就是写文章。 ; flagged as missing: 他从早到晚学医学。 | 他整天不是思维就是读书\nS5: 孟子becomes a famous philosopher\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 孟子成为很聪明的人。 | 难怪他成为很聪明的人。 | 现在孟子是一个有名的学者。 ; flagged as missing: 孟子决定他应该学哲学。孟子决定他可以学习和高兴。\n\nlearner's story:\n在墓地，孟子一直祭拜。他才四岁，开始祭拜。常常祭拜以后，孟子和他的妈妈一起去买东西。后来，练习写文字。不是他喜欢学习写文字，而是他的爸爸喜欢他练习。他爸爸说，你不是在祭拜，就是在学习，所以孟子从早到晚没有空，老是很累，害得他的身体不好。一天孟子病了很重，难怪他病了，原来他昨天吃一张纸，因为他不喜欢学习写名字。是大人的时候，他还想起来，别吃纸。他成为了一个人写文章老是好。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "孟子 at the graveyard, offering sacrifices",
+    "verdict": "told",
+    "evidence": [
+     "在墓地，孟子一直祭拜。",
+     "他才四岁，开始祭拜。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "孟子 and 孟母 lived near the graveyard."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "孟母 moves away from the graveyard area",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 moved away from the neighborhood near the graveyard.",
+    "details_left_out": [
+     "She moved because she thought imitating sacrifices would have a bad impact on 孟子."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "move near the market; 孟子 imitates buying and selling",
+    "verdict": "partly",
+    "evidence": [
+     "常常祭拜以后，孟子和他的妈妈一起去买东西。"
+    ],
+    "missing_part": "They moved to a neighborhood near the market, and 孟子 imitated buying and selling every day.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "孟子 studies every day after moving near a school",
+    "verdict": "told",
+    "evidence": [
+     "后来，练习写文字。",
+     "他爸爸说，你不是在祭拜，就是在学习，所以孟子从早到晚没有空，老是很累，害得他的身体不好。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "孟母 moved from the market area to a neighborhood near a school."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a famous philosopher",
+    "verdict": "partly",
+    "evidence": [
+     "他成为了一个人写文章老是好。"
+    ],
+    "missing_part": "孟子 became a famous philosopher, rather than only someone who was good at writing articles.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "不是他喜欢学习写文字，而是他的爸爸喜欢他练习。",
+    "problem": "The story gives 孟母, not his father, the role of guiding the changes that lead him to study."
+   },
+   {
+    "learner_text": "他爸爸说，你不是在祭拜，就是在学习，所以孟子从早到晚没有空，老是很累，害得他的身体不好。",
+    "problem": "The father does not give this instruction in the story; the story focuses on 孟母 moving the family so that 孟子 can learn from his surroundings."
+   }
+  ],
+  "feedback": [
+   "After the graveyard sacrifices and before buying things, add that 孟母 moved away from the graveyard area.",
+   "After they leave the graveyard, add that they moved near a market and 孟子 copied buying and selling.",
+   "After the part about studying, say that 孟子 became a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1478,
+  "completion_tokens": 1849,
+  "total_tokens": 3327,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1475,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1237,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ef48428c82"
+}

@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。\nquote: 吃不安全的植物对你的身体有坏处，很麻烦的情况\npart p0: instruction [ref p0/k0] delete你的 ; notes: redundant\npart p1: fix [ref p1/k0] 是很麻烦的情况",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "你的",
+    "corrected": "",
+    "before": "的植物对",
+    "after": "身体有坏",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the redundant possessive"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "是",
+    "before": "有坏处，",
+    "after": "很麻烦的",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 是 before 很麻烦的情况"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1028,
+  "completion_tokens": 360,
+  "total_tokens": 1388,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1025,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 243,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

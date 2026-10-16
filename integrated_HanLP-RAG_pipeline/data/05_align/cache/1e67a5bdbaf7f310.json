@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 有一天，孟子的妈妈找他的孩子，在当地的墓地找到了他跟别的孩子。\nquote: 在当地的墓地找到了他跟别的孩子\npart p0: fix [ref p0/k0] 他跟别的孩子祭拜",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "的墓地找到",
+    "after": "他跟别的",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction uses 找到 without 了 before the following action"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "祭拜",
+    "before": "跟别的孩子",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the action 祭拜 after 他跟别的孩子"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 998,
+  "completion_tokens": 457,
+  "total_tokens": 1455,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 334,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

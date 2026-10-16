@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 很多人想孟子做哲学家是本质的，但是他做厉害的哲学家的原因不是因为他本质上是哲学家，而是因为妈妈努力地培养他。\nquote: 很多人想孟子做哲学家是本质的\npart p0: fix [ref p0/k0] 很多人认为 ; notes: 想 + V., cannot be followed by N.\npart p1: fix [ref p1/k0] 孟子成为哲学家是有天赋\npart p2: comment [ref p2/note] better to briefly introduce “孟子” when this character first appears",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "很多人想",
+    "corrected": "很多人认为",
+    "before": "",
+    "after": "孟子做哲",
+    "note": "想 + V., cannot be followed by N.",
+    "confidence": "high",
+    "reason": "replaces 想 with 认为 before a noun clause"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "做",
+    "corrected": "成为",
+    "before": "人想孟子",
+    "after": "哲学家是",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 做哲学家 to 成为哲学家"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "本质的",
+    "corrected": "有天赋",
+    "before": "学家是",
+    "after": "，但是",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the stated quality with 有天赋"
+   },
+   {
+    "ref": "p2/note",
+    "op": "comment",
+    "original": "孟子",
+    "corrected": "",
+    "before": "很多人想",
+    "after": "做哲学家",
+    "note": "better to briefly introduce “孟子” when this character first appears",
+    "confidence": "high",
+    "reason": "comment requests an introduction at the first mention of 孟子"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1078,
+  "completion_tokens": 492,
+  "total_tokens": 1570,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1075,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 236,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他们搬家不是为了孟母要住在更好的房子，而是为了给孟子找一个好老师。\nquote: 他们搬家不是为了孟母要住在更好的房子\npart p0: fix [ref p0/k0] 为了住在更好的房子里 ; notes: 在+Place, delete孟母，为了 + VP.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "孟母",
+    "corrected": "",
+    "before": "不是为了",
+    "after": "要住在更",
+    "note": "delete孟母",
+    "confidence": "high",
+    "reason": "teacher explicitly deletes 孟母"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "要",
+    "corrected": "",
+    "before": "为了孟母",
+    "after": "住在更好",
+    "note": "为了 + VP.",
+    "confidence": "high",
+    "reason": "fix makes 为了 directly modify the verb phrase"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "里",
+    "before": "更好的房子",
+    "after": "，而是为",
+    "note": "在+Place",
+    "confidence": "high",
+    "reason": "adds the place suffix after 房子"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1022,
+  "completion_tokens": 385,
+  "total_tokens": 1407,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 211,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

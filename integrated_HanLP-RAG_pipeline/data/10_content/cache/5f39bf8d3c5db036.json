@@ -1,0 +1,125 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n古代的时候，没有人知道什么食品能吃。比方说，生病的时候没有人知道什么食物能吃，所以神农一看病人就想找药。他找有的花，然后做茶。但是，他正好吃一毒的花，会生病了。他说，麻烦你给我拿个灵芝。然后，不病。他拿说，这就要看什么植物吃了。有的食品很有用，特别是灵芝。他在岩石写什么植物可以吃，那我们现在知道什么菜能吃。因为神农我们教了。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "Ancient people did not know edible plants and became sick after eating some.",
+    "verdict": "partly",
+    "evidence": [
+     "古代的时候，没有人知道什么食品能吃。",
+     "比方说，生病的时候没有人知道什么食物能吃"
+    ],
+    "missing_part": "People became sick after eating some plants.",
+    "details_left_out": [
+     "This happened often."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 decides to identify safe and unsafe plants and tries plants.",
+    "verdict": "partly",
+    "evidence": [
+     "所以神农一看病人就想找药。",
+     "他找有的花，然后做茶。",
+     "但是，他正好吃一毒的花，会生病了。"
+    ],
+    "missing_part": "神农's decision to find which plants were safe to eat and which were not is not stated.",
+    "details_left_out": [
+     "He climbed mountains to try the plants."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it.",
+    "verdict": "partly",
+    "evidence": [
+     "他找有的花，然后做茶。",
+     "他在岩石写什么植物可以吃"
+    ],
+    "missing_part": "神农 does not clearly find 茶 or record 茶 specifically.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints.",
+    "verdict": "partly",
+    "evidence": [
+     "但是，他正好吃一毒的花，会生病了。"
+    ],
+    "missing_part": "The plant 夹竹桃 is not named, and 神农 does not faint.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "A passer-by gives 神农 灵芝, and he eats it and feels better.",
+    "verdict": "partly",
+    "evidence": [
+     "他说，麻烦你给我拿个灵芝。",
+     "然后，不病。"
+    ],
+    "missing_part": "A person gives 灵芝 to 神农, and 神农 eats it before feeling better.",
+    "details_left_out": [
+     "The helper wore blue."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "Another person comes by and talks with 神农.",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Another person comes by and has a conversation with 神农.",
+    "details_left_out": [
+     "The person wore brown."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃.",
+    "verdict": "partly",
+    "evidence": [
+     "有的食品很有用，特别是灵芝。",
+     "他在岩石写什么植物可以吃"
+    ],
+    "missing_part": "The record does not specifically include both 灵芝 and 夹竹桃.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "After saying that people did not know edible plants, add that eating some plants often made them sick.",
+   "Before 神农 finds 茶, say that he decided to learn which plants were safe to eat and which were not.",
+   "After finding 茶 and before trying 夹竹桃, say that 神农 finds 茶 and writes it down.",
+   "After 茶, name 夹竹桃 and say that it makes 神农 faint.",
+   "After 神农 faints, add that someone gives him 灵芝 and that he eats it before he feels better.",
+   "After 神农 feels better, add that another person comes and talks with him.",
+   "At the end, say that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1033,
+  "completion_tokens": 3095,
+  "total_tokens": 4128,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1030,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2331,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

@@ -1,0 +1,114 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n在古代，大家不知道什么菜能吃。神农想帮大家找到好吃的菜，比方说，他吃一个麻烦的植物。植物他觉得好吃得很。他一吃就知道那个植物是茶。什么植物是毒，这就要看神农肚子疼不疼了。除了吃灵芝，还吃夹竹桃。夹竹桃是毒，所以神农的肚子疼死了。他的朋友跑步的时候，他正好看神农。他把药送给神农。神农写植物的书，因为大家知道什么植物不能吃，特别是毒的植物。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "在古代，大家不知道什么菜能吃。"
+    ],
+    "missing_part": "People often became sick after eating some plants is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "神农想帮大家找到好吃的菜，比方说，他吃一个麻烦的植物。",
+     "什么植物是毒，这就要看神农肚子疼不疼了。"
+    ],
+    "missing_part": "神农 does not decide to find which plants are safe and unsafe, and he does not climb mountains to try plants.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "partly",
+    "evidence": [
+     "他一吃就知道那个植物是茶。",
+     "神农写植物的书，因为大家知道什么植物不能吃，特别是毒的植物。"
+    ],
+    "missing_part": "神农 finding 茶 is told, but he does not make a record of 茶.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "除了吃灵芝，还吃夹竹桃。",
+     "夹竹桃是毒，所以神农的肚子疼死了。"
+    ],
+    "missing_part": "神农 eating 夹竹桃 is told, but he faints after eating it is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": [
+     "除了吃灵芝，还吃夹竹桃。",
+     "他把药送给神农。"
+    ],
+    "missing_part": "A person in blue does not stop and give 灵芝 to 神农, and 神农 getting better after eating 灵芝 is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Another person in brown coming by and talking with 神农 is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "verdict": "partly",
+    "evidence": [
+     "神农写植物的书，因为大家知道什么植物不能吃，特别是毒的植物。"
+    ],
+    "missing_part": "神农 does not record both 灵芝 and 夹竹桃.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "夹竹桃是毒，所以神农的肚子疼死了。",
+    "problem": "In the required story, 神农 faints after trying 夹竹桃; he does not die from stomach pain."
+   },
+   {
+    "learner_text": "他的朋友跑步的时候，他正好看神农。",
+    "problem": "The helper in the required story is a person in blue who stops by, not 神农's friend who sees him while running."
+   },
+   {
+    "learner_text": "他把药送给神农。",
+    "problem": "In the required story, the person in blue gives 神农 灵芝, not unspecified medicine."
+   }
+  ],
+  "feedback": [
+   "After people do not know which plants can be eaten, add that they often get sick after eating some plants.",
+   "Before 神农 tries the plants, add that he wants to learn which plants are safe and which are not, and that he climbs mountains to try them.",
+   "When 神农 finds 茶, add that he writes it down.",
+   "After 神农 eats 夹竹桃, add that he faints.",
+   "After 神农 faints, add that a person in blue stops by, gives him 灵芝, and he feels better after eating it.",
+   "After 神农 feels better, add a person in brown who comes and talks with him.",
+   "After the people visit 神农, add that he records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 803,
+  "completion_tokens": 1271,
+  "total_tokens": 2074,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

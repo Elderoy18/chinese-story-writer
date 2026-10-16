@@ -1,0 +1,84 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n在古代有一个小孩子叫孟子。他才四年岁，爸爸就去世了。妈妈一个人养他长大，一直很累。他们住在离墓地很近的地方，从早到晚孟子跟小朋友看祭拜。妈妈有一次看到孟子在墓地玩，祭拜，害得她很不高兴。过了一段时间，她带着孟子搬家到了别的地方。他们住在很大的城市，人很多，妈妈让他学读书。可是他不是在家读书，而是老是出去玩。妈妈让孟子每天上课，孟子长得很乖，很聪明，不是学习，就是帮妈妈做饭、打扫房间。他很喜欢读书，常常学习哲学，难怪他成为哲学家。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "他们住在离墓地很近的地方，从早到晚孟子跟小朋友看祭拜。",
+     "妈妈有一次看到孟子在墓地玩，祭拜，害得她很不高兴。"
+    ],
+    "missing_part": "孟子 is not clearly said to imitate the sacrifice rituals every day.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "妈妈有一次看到孟子在墓地玩，祭拜，害得她很不高兴。",
+     "过了一段时间，她带着孟子搬家到了别的地方。"
+    ],
+    "missing_part": "It is not clearly said that 孟母 decided to move because she believed the sacrifice imitation would negatively affect 孟子.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "The story does not say they moved near a market or that 孟子 imitated buying and selling every day.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "妈妈让孟子每天上课，孟子长得很乖，很聪明，不是学习，就是帮妈妈做饭、打扫房间。"
+    ],
+    "missing_part": "It does not say that 孟母 moved from the market to live near a school before 孟子 began studying.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": [
+     "他很喜欢读书，常常学习哲学，难怪他成为哲学家。"
+    ],
+    "missing_part": "It does not say that 孟子 became a famous philosopher.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "可是他不是在家读书，而是老是出去玩。",
+    "problem": "This says 孟子 was always going out to play rather than studying, but the story requires that he began studying every day after the move near the school."
+   }
+  ],
+  "feedback": [
+   "At the beginning, after they live near the graveyard, say that 孟子 copied the sacrifice rituals every day.",
+   "Before they leave the graveyard, explain that 孟母 feared the sacrifice imitation would have a bad effect on 孟子, so she decided to move.",
+   "After they leave the graveyard and before 孟子 begins classes, add that they moved near a market and that 孟子 copied buying and selling every day.",
+   "After the market events, add that 孟母 moved near a school, and then 孟子 began studying every day.",
+   "At the end, say that 孟子 became a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 836,
+  "completion_tokens": 1555,
+  "total_tokens": 2391,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 979,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

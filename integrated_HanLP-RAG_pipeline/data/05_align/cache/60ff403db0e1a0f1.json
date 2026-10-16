@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 一个孩子在马路看到小王的帽子，拿上去，把帽子给小王。\nquote: 一个孩子在马路看到小王的帽子，拿上去\npart p0: fix [ref p0/k0] 在马路上 ; notes: 在+ place\npart p1: comment [ref p1/note] 拿起来pick up，拿上去means “bring it up”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "上",
+    "before": "在马路",
+    "after": "看到小王",
+    "note": "在+ place",
+    "confidence": "high",
+    "reason": "adds 上 after the place noun"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "拿上去",
+    "corrected": "",
+    "before": "王的帽子，",
+    "after": "，把帽子",
+    "note": "拿起来pick up，拿上去means “bring it up”",
+    "confidence": "high",
+    "reason": "comments that 拿上去 should be 拿起来 for pick up"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1032,
+  "completion_tokens": 135,
+  "total_tokens": 1167,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1029,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

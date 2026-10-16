@@ -1,0 +1,59 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\nCURRENT SCENE:\n城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nFLAGGED PLACES:\n\n[P21] 害得孟母只好一直陪【^】孟子\n  proposed by the correction model: 害得孟母只好一直陪[+着]孟子\n  her past correction (haide_harmful_result): 孟母害得孟子[玩儿→整天都很郁闷] — her note: 害得 + N/sb. + Harmful result, 玩儿is not harmful\n  her past correction (adversative_connector): [-可是]孟子的妈妈一直很控制他\n  her past correction (pronoun_name_zero_reference): [-孟子]和孟子的妈妈一直住在墓地的旁边\n  rule card haide_harmful_result: Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得. Not an error: Do not use this rule for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling such as 不高兴; these are not harmful results for 害得.\n  rule card adversative_connector: Use 可是, 却, 而, and 但 only when there is a real “semantic turn,” such as a contrast or an unexpected result. 却 indicates an unexpected semantic turn. Not an error: Use 却 when the result is an unexpected semantic turn.\n\n[P22] 住在商店的旁边【不是适合】孟子\n  proposed by the AI checker: 住在商店的旁边[不是适合→不但不适合]孟子 (适合 takes 不, and this needs the paired 不但…而且 structure)\n  her past correction (collocation_selection): 孟母也觉得在市场的旁边[对孟子不合适的地方长大→不适合孟子成长]\n  her past correction (modifier_de_structure): 他们[新的家→新家]在商店的旁边\n  her past correction (zai_progressive): 孟子不是[-在]看商店的员工 — her note: here is not emphasizing “ongoing”\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n\n[P23] 【而是】让他觉得很伤心\n  proposed by the AI checker: [而是→而且]让他觉得很伤心 (不但 should pair with 而且, not 而是)\n  her past correction (haide_harmful_result): [害得→让]她很不高兴 — her note: 害得 + harmful result，不高兴is not that “harmful”\n  her past correction (conditional_jiu): 他一看[+就]觉得担心\n  her past correction (adjective_predicate_degree): 但是他[觉得也饿→还是很饿]\n  rule card haide_harmful_result: Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得. Not an error: Do not use this rule for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling such as 不高兴; these are not harmful results for 害得.\n  rule card conditional_jiu: Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future. Not an error: When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P21",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "好一直陪",
+    "after": "孟子。",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "陪孟子 is acceptable; 着 is optional here."
+   },
+   {
+    "place_id": "P22",
+    "decision": "keep",
+    "category": "collocation_selection",
+    "original": "不是适合",
+    "before": "的旁边",
+    "after": "孟子，",
+    "corrected": "不但不适合",
+    "confidence": "high",
+    "reason": "适合 takes 不, and the sentence needs the paired connector."
+   },
+   {
+    "place_id": "P23",
+    "decision": "keep",
+    "category": "other",
+    "original": "而是",
+    "before": "孟子，",
+    "after": "让他觉得很伤心",
+    "corrected": "而且",
+    "confidence": "high",
+    "reason": "不但 should pair with 而且, not 而是."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1669,
+  "completion_tokens": 639,
+  "total_tokens": 2308,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1666,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 447,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

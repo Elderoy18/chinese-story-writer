@@ -1,0 +1,53 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\nscene 2: 他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\ncurrent scene: 他很聪明的人，难怪他成为有名的人。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "很",
+    "corrected": "是",
+    "before": "他",
+    "after": "聪明的人，",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "a noun predicate needs 是"
+   },
+   {
+    "original": "的",
+    "corrected": "",
+    "before": "很聪明",
+    "after": "人，难怪他",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "adjective does not take 的 before 人 here"
+   },
+   {
+    "original": "成为",
+    "corrected": "成了",
+    "before": "，难怪他",
+    "after": "有名的人。",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "completed story event needs 了"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 666,
+  "completion_tokens": 129,
+  "total_tokens": 795,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

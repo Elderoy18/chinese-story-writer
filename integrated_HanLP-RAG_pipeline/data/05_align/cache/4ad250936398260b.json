@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 孟子才三岁开始搬家，以后每年搬家。\nquote: 孟子才三岁开始搬家，以后每年搬家\npart p0: fix [ref p0/k0] 就开始 ; notes: 才Num.就V., 后来每年都搬家",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "就",
+    "before": "子才三岁",
+    "after": "开始搬家，",
+    "note": "才Num.就V.",
+    "confidence": "high",
+    "reason": "adds 就 for the 才…就 pattern"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "以后",
+    "corrected": "后来",
+    "before": "开始搬家，",
+    "after": "每年搬家",
+    "note": "后来每年都搬家",
+    "confidence": "high",
+    "reason": "changes 以后 to 后来 as in the correction"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "都",
+    "before": "以后每年",
+    "after": "搬家",
+    "note": "后来每年都搬家",
+    "confidence": "high",
+    "reason": "adds 都 after 每年"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1007,
+  "completion_tokens": 353,
+  "total_tokens": 1360,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 168,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,62 @@
+{
+ "input": "current scene: 一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "一天，很久很久以前",
+    "corrected": "很久很久以前，有一天",
+    "before": "",
+    "after": "，孟子和",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "time expressions are in the wrong order"
+   },
+   {
+    "original": "祭拜",
+    "corrected": "祭祀",
+    "before": "妈的工作是",
+    "after": "，孟子不高",
+    "type": "word_choice",
+    "confidence": "low",
+    "why": "祭祀 is more suitable as an occupation"
+   },
+   {
+    "original": "因为",
+    "corrected": "",
+    "before": "孟子不高兴，",
+    "after": "他说我们老",
+    "type": "connector",
+    "confidence": "high",
+    "why": "because does not introduce his spoken question"
+   },
+   {
+    "original": "得",
+    "corrected": "需要",
+    "before": "，很多墓地",
+    "after": "我祭拜。所",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "墓地 needs a verb meaning ‘need’ here"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 618,
+  "completion_tokens": 2263,
+  "total_tokens": 2881,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

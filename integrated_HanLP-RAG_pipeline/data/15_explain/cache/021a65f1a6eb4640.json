@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nITEMS:\n\n[I120] 就是【都】叫   correction: 都 → 有人   strength: error\n  checker's note: 都 has no clear plural referent here\n  rule card (measure_word_choice, Grammar): Use the appropriate measure word before the noun: 这/那 + Measure word + noun. Use noun-specific measure words such as 棵 for trees, and 位 is a polite MW.  Pattern: <wrong> → <correct>: use <measure word> with <noun>; <brief reason, such as “位” is polite or 棵 is for trees>.  Her terms: 这/那 + Measure word + noun, 本+N., 位, MW\n  her past correction: 有[一位人→一个人]来了\n  her past correction: [-他]叫孟子\n  her past correction: 我也不知道[+叫什么]\n\n[I121] 孟子和妈妈要【又一个次】搬了家   correction: 又一个次 → 再一次   strength: error\n  checker's note: 再一次 means “one more time”\n  rule card (addition_repetition_connectors, Coherence: connectors): Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.).  Pattern: <wrong> → <correct>: use <connector> here because it shows <repetition / similarity / an added or surprising point / a coherent addition>; place it as <position> when needed.  Her terms: 又for something already occurred, Subj.也, 又+ modal V., surprising, anger tone, natural continuation tone\n  her past correction: 孟子跟他的妈妈[已经→就又]搬家了\n  her past correction: 孟子的妈妈叫[-了]孟子搬家 — her note: 叫/让 is a modal verb, no了\n  her past correction: [-孟子跟他的妈妈]已经搬家了\n\n[I122] 孟子和妈妈要又一个次搬【了】家   correction: 了 → (delete)   strength: error\n  checker's note: 要 cannot be followed by completed-action 了\n  rule card (addition_repetition_connectors, Coherence: connectors): Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.).  Pattern: <wrong> → <correct>: use <connector> here because it shows <repetition / similarity / an added or surprising point / a coherent addition>; place it as <position> when needed.  Her terms: 又for something already occurred, Subj.也, 又+ modal V., surprising, anger tone, natural continuation tone\n  her past correction: 孟子跟他的妈妈[已经→就又]搬家了\n  her past correction: 孟子的妈妈叫[-了]孟子搬家 — her note: 叫/让 is a modal verb, no了\n  her past correction: [-孟子跟他的妈妈]已经搬家了\n\n[I123] 孟母找到【^】工作   correction: ∅ → 了   strength: suggestion\n  checker's note: a completed finding action normally takes 了\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 孟母找到了[良好的→好]工作 — her note: 良好is not with工作\n  her past correction: 孟母找到一个[打工→打工的工作]\n  her past correction: 孟母终于在[一位很有名的文学家→作家的家里]找工作了",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I120",
+    "explanation": "都 needs a clear plural referent, but there is none here. Use 有人叫 to mean that people are shouting.",
+    "dimension": "grammar",
+    "corrected": "有人",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I121",
+    "explanation": "又一个次 → 再一次: use 再一次 here because it means “one more time” in the future action 要搬家.",
+    "dimension": "coherence_connectors",
+    "corrected": "再一次",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I122",
+    "explanation": "After 要, do not use completed-action 了. 要搬家 describes a future plan, not a completed move.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I123",
+    "explanation": "It would be more natural to add 了: 找到了 shows that the finding action is completed.",
+    "dimension": "word_choice",
+    "corrected": "了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1402,
+  "completion_tokens": 212,
+  "total_tokens": 1614,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1399,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 神农看到人一吃百草就生病。\nquote: 神农看到人一吃百草就生病\npart p0: comment [ref p0/note] better to briefly introduce “神农” when this character first appears\npart p1: fix [ref p1/k0-1] 人们，一些植物 ; notes: “百草“ is a general term for “different plants”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "神农",
+    "corrected": "",
+    "before": "",
+    "after": "看到人一",
+    "note": "better to briefly introduce “神农” when this character first appears",
+    "confidence": "high",
+    "reason": "comment asks for an introduction when 神农 first appears"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "replace",
+    "original": "人",
+    "corrected": "人们",
+    "before": "神农看到",
+    "after": "一吃百草",
+    "note": "",
+    "confidence": "high",
+    "reason": "teacher changes the generic singular person to 人们"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "replace",
+    "original": "百草",
+    "corrected": "一些植物",
+    "before": "到人一吃",
+    "after": "就生病",
+    "note": "“百草“ is a general term for “different plants”",
+    "confidence": "high",
+    "reason": "teacher replaces 百草 with 一些植物"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1029,
+  "completion_tokens": 287,
+  "total_tokens": 1316,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1026,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 86,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

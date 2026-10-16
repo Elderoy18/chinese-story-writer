@@ -1,0 +1,70 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\nCURRENT SCENE:\n发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nFLAGGED PLACES:\n\n[P241] 让肚子感觉又暖和又【清楚】\n  proposed by the AI checker: 让肚子感觉又暖和又[清楚→舒服] (清楚 cannot describe how the stomach feels)\n  proposed by the correction model: 让肚子感觉又暖和又清[楚→爽]\n  her past correction (other): 肚子[还没疼死了→就不疼了]\n  her past correction (addition_repetition_connectors): 感觉得身体[+又]健康\n  her past correction (le_completed): 神农的肚子[最好→好了]以后\n  rule card addition_repetition_connectors: Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.). Not an error: Do not add an additive connector when the sentence does not show repetition, similarity, or an added point. Use 就, not 还, for a natural continuation rather than a surprising or angry one.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P242] 这就要【看】你的口味\n  proposed by the teacher's pattern/rule: 这就要[看→看到]你的口味 (her pattern: 看 -> 看到 (corrected 37/71 in train))\n  her past correction (near_synonym_precision): [口味→味道]太好 — her note: 口味is for a person\n  her past correction (perception_look_see): 她[一看这→一看到这样] — her note: 看look vs.看到see\n  her past correction (perception_look_see): 所以他[看→看到]什么就吃什么 — her note: 看look vs.看到see\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n\n[P243] 【可能】喜欢糖\n  proposed by the teacher's pattern/rule: [可能→，这样可以]喜欢糖 (her pattern: 可能 -> ，这样可以 (corrected 9/14 in train))\n  her past correction (word_class_choice): [可能是毒的→可能有毒]\n  her past correction (addition_repetition_connectors): 一点儿甜[+，也]一点儿咸\n  her past correction (near_synonym_precision): 一点儿甜[一点儿→有点儿]咸\n  rule card loose_clause_connection: Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n\n[P244] 什么【都花】想吃\n  proposed by the AI checker: 什么[都花→花都]想吃 (什么花都想吃 is the required word order)\n  proposed by the correction model: 什么[+花]都花想吃\n  proposed by the correction model: 什么都[-花]想吃\n  her past correction (resultative_complements): 他[正好吃→吃到]一毒的花\n  her past correction (measure_word_choice): 他正好吃[一毒→一种有毒]的花\n  her past correction (le_completed): 他[吃→吃了]一个香香的花 — her note: 了completed\n  rule card resultative_complements: Use a resultative complement when the action reaches its result: 吃到, 写下, 撞到+Obj., or 把Obj. V. Resultative complement. Not an error: Do not use 撞+Obj. when the meaning is that the object hits something else: 撞自行车 means to hit the bike.\n  rule card measure_word_choice: Use the appropriate measure word before the noun: 这/那 + Measure word + noun. Use noun-specific measure words such as 棵 for trees, and 位 is a polite MW. Not an error: Do not use 位 for a child in this context; 位 is a polite MW. 本+N. is usually used in formal advertisement/news and may indicate that the author owns the noun.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P241",
+    "decision": "keep",
+    "category": "other",
+    "original": "清楚",
+    "before": "又暖和又",
+    "after": "。",
+    "corrected": "舒服",
+    "confidence": "high",
+    "reason": "清楚 cannot describe a stomach feeling."
+   },
+   {
+    "place_id": "P242",
+    "decision": "drop",
+    "category": "perception_look_see",
+    "original": "看",
+    "before": "这就要",
+    "after": "你的口味",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "看你的口味 naturally means “depend on your taste.”"
+   },
+   {
+    "place_id": "P243",
+    "decision": "drop",
+    "category": "loose_clause_connection",
+    "original": "可能",
+    "before": "吃甜的，",
+    "after": "喜欢糖",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "可能 appropriately expresses a likely preference."
+   },
+   {
+    "place_id": "P244",
+    "decision": "keep",
+    "category": "other",
+    "original": "都花",
+    "before": "，什么",
+    "after": "想吃。",
+    "corrected": "花都",
+    "confidence": "high",
+    "reason": "The noun must precede 都 in 什么花都想吃."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1854,
+  "completion_tokens": 570,
+  "total_tokens": 2424,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1851,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 339,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

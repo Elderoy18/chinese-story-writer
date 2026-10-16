@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 在古代的时候，有一个孩子叫孟轲，他一直住跟他的妈妈。\nquote: 在古代的时候，有一个孩子叫孟轲，他一直住跟他的妈妈\npart p0: fix [ref p0/k0-1] 在古代，跟妈妈住",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "在古代的时候",
+    "corrected": "在古代",
+    "before": "",
+    "after": "，有一个",
+    "note": "",
+    "confidence": "high",
+    "reason": "shortens the time expression"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "一直",
+    "corrected": "",
+    "before": "孟轲，他",
+    "after": "住跟他的妈",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 一直"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "住跟他的妈妈",
+    "corrected": "跟妈妈住",
+    "before": "，他一直",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "reorders the living-with-mother phrase and omits 的"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1001,
+  "completion_tokens": 420,
+  "total_tokens": 1421,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 247,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

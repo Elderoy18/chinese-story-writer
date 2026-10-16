@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 开始改革经济以来，政府不短采取限制工作的措施，让每天拿梨子的这个人没办法回去以前的工作。\nquote: 政府不短采取限制工作的措施\npart p0: fix [ref p0/k0] 不断 ; notes: use the wrong character\npart p1: comment [ref p1/note] 限制就业 is better",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "不短",
+    "corrected": "不断",
+    "before": "政府",
+    "after": "采取限制",
+    "note": "use the wrong character",
+    "confidence": "high",
+    "reason": "replaces the incorrect character 短 with 断"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "限制工作",
+    "corrected": "",
+    "before": "不短采取",
+    "after": "的措施",
+    "note": "限制就业 is better",
+    "confidence": "high",
+    "reason": "teacher comments that 限制就业 is preferable"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1022,
+  "completion_tokens": 121,
+  "total_tokens": 1143,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

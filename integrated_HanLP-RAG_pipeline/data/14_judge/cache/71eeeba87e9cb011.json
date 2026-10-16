@@ -1,0 +1,59 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\nCURRENT SCENE:\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nFLAGGED PLACES:\n\n[P97] 【成为】一个哲学家\n  proposed by the AI checker: [成为→成为了]一个哲学家 (a completed past change needs 了)\n  proposed by the correction model: [+就]成为一个哲学家\n  proposed by the correction model: 成为[+了]一个哲学家\n  her past correction (le_completed): 他成为[+了]哲学家\n  her past correction (time_sequence_markers): 他[+后来]成为哲学家\n  her past correction (fixed_expressions): 而是成为[哲学人→哲学家]\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card time_sequence_markers: Use Time + 以后 after a completed time or action to show “after”; when moving to a later event in the story, use 后来 or 然后 rather than 以后 by itself. Do not add 以后 when the time phrase already says the time clearly. Not an error: Do not use 结果 merely as a general later-time connector; it is for an unexpected result. Use 后来 for a later development instead.\n\n[P98] 而是【看】政治文章\n  proposed by the teacher's pattern/rule: 而是[看→看到]政治文章 (her pattern: 看 -> 看到 (corrected 37/71 in train))\n  her past correction (collocation_selection): 而是[学→学习]多文章\n  her past correction (not_but_refutation): 而是[+待在这儿]学多文章 — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章\n  her past correction (perception_look_see): 她[一看这→一看到这样] — her note: 看look vs.看到see\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n\n[P99] 看过很多政治文章对他【害得】\n  proposed by the AI checker: 看过很多政治文章对他[害得→有害] (对他有害 is the correct expression)\n  proposed by the correction model: 看过很多政治文章对他[害→觉]得\n  her past correction (le_completed): 他[写→写了]太多的文章 — her note: 了completed\n  her past correction (haide_harmful_result): 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n  her past correction (perception_look_see): 他[看得很麻烦的事情→看到很麻烦的情况]\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card haide_harmful_result: Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得. Not an error: Do not use this rule for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling such as 不高兴; these are not harmful results for 害得.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P97",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "成为",
+    "before": "十一岁，",
+    "after": "一个哲学",
+    "corrected": "成为了",
+    "confidence": "high",
+    "reason": "completed change of state in the narrative"
+   },
+   {
+    "place_id": "P98",
+    "decision": "drop",
+    "category": "perception_look_see",
+    "original": "看",
+    "before": "拜，而是",
+    "after": "政治文章",
+    "corrected": "看",
+    "confidence": "high",
+    "reason": "看政治文章 describes habitual reading, not successful seeing"
+   },
+   {
+    "place_id": "P99",
+    "decision": "keep",
+    "category": "haide_harmful_result",
+    "original": "害得",
+    "before": "文章对他",
+    "after": "，他有很多",
+    "corrected": "有害",
+    "confidence": "high",
+    "reason": "对他有害 is the correct harmful-effect expression"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1597,
+  "completion_tokens": 623,
+  "total_tokens": 2220,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1594,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 438,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

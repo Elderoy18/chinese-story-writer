@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孩子一直走去张先生的树，吃梨子，觉得这些梨子比别的水果最好不过了。\nquote: 孩子一直走去张先生的树，吃梨子\npart p0: fix [ref p0/k0] 走到张先生的树下 ; notes: 走到place来/去，cannot say “走去/来Place”\npart p1: fix [ref p1/k0] 吃着梨子 ; notes: 着 durative",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "走去张先生的树",
+    "corrected": "走到张先生的树下",
+    "before": "孩子一直",
+    "after": "，吃梨子",
+    "note": "走到place来/去，cannot say “走去/来Place”",
+    "confidence": "high",
+    "reason": "replaces the movement phrase with 走到 and adds 树下"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "吃梨子",
+    "corrected": "吃着梨子",
+    "before": "先生的树，",
+    "after": "，觉得这些",
+    "note": "着 durative",
+    "confidence": "high",
+    "reason": "adds durative 着"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1050,
+  "completion_tokens": 152,
+  "total_tokens": 1202,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1047,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

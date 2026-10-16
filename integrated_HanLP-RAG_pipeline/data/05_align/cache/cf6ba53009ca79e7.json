@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 孟子小的时候，他跟他的妈妈住在一个小房子。\nquote: 孟子小的时候，他跟他的妈妈住在一个小房子\npart p0: comment [ref p0/note] better to briefly introduce “孟子” when this character first appears\npart p1: instruction [ref p1/k0] delete他\npart p2: fix [ref p2/k0] 住在一个小房子里 ; notes: 在Place",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "孟子",
+    "corrected": "",
+    "before": "",
+    "after": "小的时候",
+    "note": "better to briefly introduce “孟子” when this character first appears",
+    "confidence": "high",
+    "reason": "comment requests an introduction when 孟子 first appears"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "子小的时候，",
+    "after": "跟他的妈",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "里",
+    "before": "一个小房子",
+    "after": "。",
+    "note": "在Place",
+    "confidence": "high",
+    "reason": "adds the place suffix required by her fix"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1042,
+  "completion_tokens": 164,
+  "total_tokens": 1206,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1039,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

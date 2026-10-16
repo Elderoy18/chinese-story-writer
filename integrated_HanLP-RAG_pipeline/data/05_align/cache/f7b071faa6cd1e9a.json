@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 为了帮人们找到他们的饭，神农开始找我们可以吃的植物。\nquote: 为了帮人们找到他们的饭，神农开始找我们可以吃的植物\npart p0: fix [ref p0/k0] 找到可以吃的植物 ; instruction [ref p0/k1] delete我们\npart p1: comment [ref p1/note] better to briefly introduce “神农” when this character first appears",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "开始",
+    "corrected": "",
+    "before": "，神农",
+    "after": "找我们可以",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 开始"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "找",
+    "corrected": "",
+    "before": "，神农开始",
+    "after": "我们可以吃",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix changes 找 to 找到"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "找到",
+    "before": "农开始找",
+    "after": "我们可以吃",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix uses 找到 before 可以吃的植物"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "我们",
+    "corrected": "",
+    "before": "农开始找",
+    "after": "可以吃的植",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "神农",
+    "corrected": "",
+    "before": "们的饭，",
+    "after": "开始找我们",
+    "note": "better to briefly introduce “神农” when this character first appears",
+    "confidence": "high",
+    "reason": "comment asks for an introduction at first mention"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1039,
+  "completion_tokens": 260,
+  "total_tokens": 1299,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1036,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

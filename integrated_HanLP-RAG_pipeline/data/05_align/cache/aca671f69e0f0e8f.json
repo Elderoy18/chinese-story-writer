@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 一天，一个老人决定了，坐路很远，吃很多的植物。\nquote: 一个老人决定了，坐路很远，吃很多的植物\npart p0: fix [ref p0/k0] 决定 ; notes: “决定” is a mental state verb, no了\npart p1: fix [ref p1/k0-1] 走到很远的地方，尝试很多植物",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "人决定",
+    "after": "，坐路很",
+    "note": "“决定” is a mental state verb, no了",
+    "confidence": "high",
+    "reason": "removes 了 after 决定"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "replace",
+    "original": "坐路很远",
+    "corrected": "走到很远的地方",
+    "before": "人决定了，",
+    "after": "，吃很多的",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the travel phrase with the teacher's wording"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "replace",
+    "original": "吃",
+    "corrected": "尝试",
+    "before": "路很远，",
+    "after": "很多的植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the verb to 尝试"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "delete",
+    "original": "的",
+    "corrected": "",
+    "before": "吃很多",
+    "after": "植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "teacher's corrected phrase omits 的"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1032,
+  "completion_tokens": 399,
+  "total_tokens": 1431,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1029,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 161,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\nquote: 所以他每天老是从早到晚去墓地跟朋友们玩玩儿\npart p0: instruction [ref p0/k0] delete老是\npart p1: fix [ref p1/k0] 玩儿 ; notes: V.V. is used to make requests or plans",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "老是",
+    "corrected": "",
+    "before": "所以他每天",
+    "after": "从早到晚去",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "玩玩儿",
+    "corrected": "玩儿",
+    "before": "跟朋友们",
+    "after": "。",
+    "note": "V.V. is used to make requests or plans",
+    "confidence": "high",
+    "reason": "removes verb reduplication"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1034,
+  "completion_tokens": 155,
+  "total_tokens": 1189,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1031,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 32,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

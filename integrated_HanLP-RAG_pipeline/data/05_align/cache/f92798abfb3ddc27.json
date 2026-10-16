@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 这是一个神农的古代故事。\nquote: 这是一个神农的古代故事\npart p0: fix [ref p0/k0] 关于神农的 ; notes: better to briefly introduce “神农” when this character first appears",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "一个神农的",
+    "corrected": "关于神农的",
+    "before": "这是",
+    "after": "古代故事",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the noun phrase as given in the fix"
+   },
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "神农",
+    "corrected": "",
+    "before": "这是一个",
+    "after": "的古代故事",
+    "note": "better to briefly introduce “神农” when this character first appears",
+    "confidence": "high",
+    "reason": "note requests an introduction for 神农"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 996,
+  "completion_tokens": 129,
+  "total_tokens": 1125,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

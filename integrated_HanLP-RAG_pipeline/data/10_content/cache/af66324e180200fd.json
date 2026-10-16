@@ -1,0 +1,76 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n在中国古代的时候有一个很漂亮的女儿，她穿很漂亮的衣服，去买东西和洗衣服。她有一个很小的孩子，他叫孟子。她跟孟子常常去买东西在城市。他看起来一个很聪明的孩子。他跟他的妈妈常常去写字，学中文字和哲学。他们一起常常去祭拜，会去墓地。我觉得看起来他妈妈的中国教育，成为他一个很重要和聪明的中国哲学。他叫孟子。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "partly",
+    "evidence": [
+     "他们一起常常去祭拜，会去墓地。"
+    ],
+    "missing_part": "孟子 and 孟母 living near the graveyard, and 孟子 imitating sacrifice offerings every day, are not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 deciding to leave the graveyard neighborhood because she believes 孟子 copying sacrifices will negatively affect him is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "partly",
+    "evidence": [
+     "她跟孟子常常去买东西在城市。"
+    ],
+    "missing_part": "孟母 moving to a neighborhood near the market and 孟子 imitating buying and selling every day are not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "他跟他的妈妈常常去写字，学中文字和哲学。"
+    ],
+    "missing_part": "孟母 moving from the market to a neighborhood near a school is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "told",
+    "evidence": [
+     "我觉得看起来他妈妈的中国教育，成为他一个很重要和聪明的中国哲学。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "Before the visits to the 墓地, add that 孟子 and 孟母 lived near a graveyard and that 孟子 copied sacrifice offerings every day.",
+   "After 孟子 copies the sacrifices and before they go buying things, add that 孟母 worries this will affect him badly and decides to move away.",
+   "Before the studying part, add that they move near a market and 孟子 copies people buying and selling every day.",
+   "Between the market and the studying, add that 孟母 moves near a school."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 774,
+  "completion_tokens": 888,
+  "total_tokens": 1662,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 477,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

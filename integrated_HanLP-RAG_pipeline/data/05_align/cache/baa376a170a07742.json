@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 他吃了一种植物以后，就写了这个植物对你有没有好处。\nquote: 就写了这个植物对你有没有好处\npart p0: fix [ref p0/k0] 写下了 ; instruction [ref p0/k1] delete“对你”",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "写了",
+    "corrected": "写下了",
+    "before": "他吃了一种植物以后，就",
+    "after": "这个植物对你有没有好处。",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 下 to 写了"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "对你",
+    "corrected": "",
+    "before": "写了这个植物",
+    "after": "有没有好处。",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1001,
+  "completion_tokens": 168,
+  "total_tokens": 1169,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 46,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

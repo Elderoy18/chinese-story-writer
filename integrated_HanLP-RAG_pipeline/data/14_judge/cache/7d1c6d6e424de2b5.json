@@ -1,0 +1,136 @@
+{
+ "input": "CURRENT SCENE:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nFLAGGED PLACES:\n\n[P210] 有一个【老男人】叫神农\n  proposed by the AI checker: 有一个[老男人→老人]叫神农 (老人 is the normal term for an elderly man.)\n  her past correction (first_mention_introduction): [一个老先生叫神农→有一个叫神农的老先生]\n  her past correction (first_mention_introduction): 在古代[有一个神农→有一个叫神农的老人]\n  her past correction (first_mention_introduction): [一个中国老人的名字是神农→一个叫神农的中国老人]\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n\n[P211] 神农在古代每一天【看到了】别的小镇人生病还是不舒服\n  proposed by the AI checker: 神农在古代每一天[看到了→看到]别的小镇人生病还是不舒服 (a habitual action with 每一天 does not take completed 了.)\n  proposed by the correction model: 神农在古代每一天看到[-了]别的小镇人生病还是不舒服\n  her past correction (perception_look_see): 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n  her past correction (first_mention_introduction): ⟦神农⟧看到很多人生病了 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction (incorrect_story_information): 神农不喜欢看[他的城市→人们]生病了\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n\n[P212] 神农在古代每一天看到了别的【小镇人】生病还是不舒服\n  proposed by the AI checker: 神农在古代每一天看到了别的[小镇人→镇上的人]生病还是不舒服 (小镇人 is not the normal expression for townspeople.)\n  proposed by the correction model: 神农在古代每一天看到了别的小镇[+的]人生病还是不舒服\n  her past correction (first_mention_introduction): ⟦神农⟧看到很多人生病了 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction (incorrect_story_information): 神农不喜欢看[他的城市→人们]生病了\n  her past correction (perception_look_see): 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card incorrect_story_information: Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information. Not an error: Do not flag a word or sentence under this rule only because of grammar or vocabulary. Flag it here when it changes or adds a fact in the traditional story.\n\n[P213] 神农在古代每一天看到了别的小镇人生病【还是】不舒服\n  proposed by the AI checker: 神农在古代每一天看到了别的小镇人生病[还是→或者]不舒服 (a declarative alternative uses 或者, not 还是.)\n  her past correction (first_mention_introduction): ⟦神农⟧看到很多人生病了 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction (perception_look_see): 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n  her past correction (first_mention_introduction): ⟦神农⟧看了很多生病的人 — her note: better to briefly introduce “神农” when this character first appears\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n\n[P214] 他【下】一天开始爬当地的山脉\n  proposed by the correction model: 他[下→第]一天开始爬当地的山脉\n  her past correction (le_completed): 他[到山→到了山上]以后 — her note: 了completed, 山上is a place\n  her past correction (le_completed): 他[爬山→爬了很多山]\n  her past correction (cause_result_soyi): [-所以]他去了又空又高的山 — her note: “所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).\n\n[P215] 他下一天开始爬当地的【山脉】\n  proposed by the AI checker: 他下一天开始爬当地的[山脉→山] (爬山 is the usual expression; one does not normally 爬 a whole mountain range.)\n  her past correction (le_completed): 他[到山→到了山上]以后 — her note: 了completed, 山上is a place\n  her past correction (le_completed): 他[爬山→爬了很多山]\n  her past correction (cause_result_soyi): [-所以]他去了又空又高的山 — her note: “所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).\n\n[P216] 【找了】各种各样的植物\n  proposed by the AI checker: [找了→找到了]各种各样的植物 (the later sentence implies that he found the plants.)\n  proposed by the teacher's pattern/rule: [找了→找到了]各种各样的植物 (her pattern: 找了 -> 找到了 (corrected 3/5 in train))\n  proposed by the correction model: 找[-了]各种各样的植物\n  her past correction (search_find): 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction (modifier_de_structure): 他找到了很多[-的]中国的植物\n  her past correction (modifier_de_structure): 他找到了很多[有用植物→有用的植物]\n  rule card search_find: 找 means “look for.” Use 找到 when the person successfully finds something. Not an error: Do not use this rule when the meaning is only “look for” and does not include a successful result.\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n\n[P217] 神农【试一试】每个植物\n  proposed by the AI checker: 神农[试一试→试了试]每个植物 (a completed past action needs 了 in this verb reduplication.)\n  proposed by the correction model: 神农试[一→了]试每个植物\n  her past correction (modal_and_control_verb_complements): 神农[什么想尝→想尝什么植物]\n  her past correction (le_completed): 神农[发现→发现了]很多植物 — her note: 了completed\n  her past correction (collocation_selection): 神农[加→吃]下去很多的植物\n  rule card modal_and_control_verb_complements: 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了. Not an error: Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P218] 神农试一试每【个】植物\n  proposed by the AI checker: 神农试一试每[个→种]植物 (plants take the measure word 种 here.)\n  her past correction (near_synonym_precision): 就[测试→尝试]更植物\n  her past correction (modal_and_control_verb_complements): 神农[什么想尝→想尝什么植物]\n  her past correction (other_vs_additional): 他测试[别的→各种]植物 — her note: “别的” is for “a different type”, and “all else except the spoken one”\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card modal_and_control_verb_complements: 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了. Not an error: Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.\n\n[P219] 知道【^】有什么好处\n  proposed by the AI checker: 知道[+了]有什么好处 (knowing is a completed change of state in this narrative.)\n  her past correction (specific_noun_choice): 学了很多[东西→知识]\n  her past correction (collocation_selection): 但是他学到了很多[学习→知识]\n  her past correction (near_synonym_precision): 有的[食品→植物]很有用 — her note: “食品” is usually for processed food\n  rule card specific_noun_choice: Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦. Not an error: Do not flag a general word when the context does not require a more specific meaning. This rule applies when the general word makes the story unclear or does not name what is actually meant.\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P210",
+    "decision": "drop",
+    "category": "other",
+    "original": "老男人",
+    "before": "有一个",
+    "after": "叫神农。",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Understandable elderly-man introduction; replacing it is stylistic."
+   },
+   {
+    "place_id": "P211",
+    "decision": "keep",
+    "category": "perception_look_see",
+    "original": "了",
+    "before": "一天看到",
+    "after": "别的小镇",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Habitual 每一天 does not take completed 了 here."
+   },
+   {
+    "place_id": "P212",
+    "decision": "keep",
+    "category": "other",
+    "original": "小镇人",
+    "before": "到了别的",
+    "after": "生病还是",
+    "corrected": "小镇上的人",
+    "confidence": "high",
+    "reason": "小镇人 is not the normal expression for people in a town."
+   },
+   {
+    "place_id": "P213",
+    "decision": "keep",
+    "category": "other",
+    "original": "还是",
+    "before": "小镇人生",
+    "after": "不舒服，",
+    "corrected": "或者",
+    "confidence": "high",
+    "reason": "A declarative alternative needs 或者."
+   },
+   {
+    "place_id": "P214",
+    "decision": "keep",
+    "category": "other",
+    "original": "下一天",
+    "before": "所以他",
+    "after": "开始爬当",
+    "corrected": "第二天",
+    "confidence": "high",
+    "reason": "下一天 is not the usual narrative expression for the next day."
+   },
+   {
+    "place_id": "P215",
+    "decision": "keep",
+    "category": "other",
+    "original": "山脉",
+    "before": "爬当地的",
+    "after": "，找了各",
+    "corrected": "山",
+    "confidence": "high",
+    "reason": "爬山 is the normal collocation; one does not normally 爬山脉."
+   },
+   {
+    "place_id": "P216",
+    "decision": "keep",
+    "category": "search_find",
+    "original": "找了",
+    "before": "山脉，",
+    "after": "各种各样",
+    "corrected": "找到了",
+    "confidence": "high",
+    "reason": "He later tests the plants, so the sentence gives a successful finding result."
+   },
+   {
+    "place_id": "P217",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "一",
+    "before": "神农试",
+    "after": "试每个植",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "The testing is a completed narrative action."
+   },
+   {
+    "place_id": "P218",
+    "decision": "drop",
+    "category": "other",
+    "original": "个",
+    "before": "农试一试每",
+    "after": "植物，知",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "个 is acceptable for individual plants in this beginner sentence."
+   },
+   {
+    "place_id": "P219",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "物，知道",
+    "after": "有什么好",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "知道 can state the resulting knowledge without 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 3765,
+  "completion_tokens": 2539,
+  "total_tokens": 6304,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3762,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1949,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

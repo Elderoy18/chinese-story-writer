@@ -1,0 +1,54 @@
+{
+ "input": "CATEGORY: 所以: cause-result relationship (Coherence: connectors)\ndefinition: Use 所以 only when the preceding clause is genuinely the cause or reason for the following result. Otherwise delete it or use a connector that matches the relationship.\n\nHER NOTES IN THIS CATEGORY (10 distinct):\n1 | there is no cause-effect relationship\n1 | “所以” is not appropriate, since here is not a cause-effect relationship\n1 | 无聊？add所以\n1 | no cause-effect relationship, so “所以” is inappropriate\n1 | “所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”\n1 | “所以” is inappropriate because here is not a result, delete it, add “在山上”\n1 | 这样in this way\n1 | “结果” for unexpected result\n1 | “所以” is not appropriate because here is not a result, 后来\n1 | not “because”\n\nHER CORRECTIONS (16 of 16):\n[mengmu_samples#40/f1/p0/k0/e0] [-所以他们]祭拜  || her note: there is no cause-effect relationship\n[mengmu_samples#26/f6/p1/note/e0] ⟦所以⟧孟子常常玩玩  || her note: “所以” is not appropriate, since here is not a cause-effect relationship\n[mengmu_samples#29/f3/p0/note/e1] [+所以]他们常常搬家  || her note: 无聊？add所以\n[mengmu_samples#34/f3/p0/note/e0] ⟦所以⟧他们最后搬到了寺庙  || her note: no cause-effect relationship, so “所以” is inappropriate\n[shennong_samples#38/f2/p0/note/e0] [-所以]他去了又空又高的山  || her note: “所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”\n[shennong_samples#38/f5/p0/note/e0] [-所以，]他吃一个香香的花  || her note: “所以” is inappropriate because here is not a result, delete it, add “在山上”\n[mengmu_samples#22/f2/p1/note/e0] ⟦所以⟧孟子会跟别的教授学哲学  || her note: 这样in this way\n[mengmu_samples#22/f5/p1/k0-1/e0] [结果他→所以，]取得生活经验  || her note: “结果” for unexpected result\n[shennong_samples#25/f8/p0/note/e0] ⟦所以⟧神农告诉他有些植物是好的  || her note: “所以” is not appropriate because here is not a result, 后来\n[shennong_samples#24/f9/p0/k0/e0] [因为→这样]大家知道什么植物不能吃  || her note: not “because”\n[mengmu_samples#15/f2/p0/k0/e0] [-所以]妈妈跟孟子一起搬家\n[mengmu_samples#40/f4/p0/k0/e0] [所以→这样]我们可能住在家安静\n[shennong_samples#6/f1/p0/k0/e0] [所以人→这样人们]以后不会生病\n[shennong_samples#21/f2/p0/k0-1/e1] [+所以]他看到什么植物就吃什么\n[shennong_samples#48/f2/p0/k0/e0] [所以→这样]王朋也可以吃一个蘑菇\n[shennong_samples#20/f1/p1/k0/e2] 人正好生病还是[百草让他们→吃了这些植物所以]生病了",
+ "salt": "",
+ "output": {
+  "rule": "Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate.",
+  "explanation_template": "<wrong> → <correct>: the following event is not a result of the preceding clause, so 所以 is not appropriate; use <connector> / delete it.",
+  "examples": [
+   {
+    "edit_id": "mengmu_samples#40/f1/p0/k0/e0",
+    "explanation": "所以他们 → 他们: there is no cause-effect relationship, so 所以 is not appropriate."
+   },
+   {
+    "edit_id": "mengmu_samples#29/f3/p0/note/e1",
+    "explanation": "他们常常搬家 → 所以他们常常搬家: the preceding reason leads to this result, so add 所以."
+   },
+   {
+    "edit_id": "shennong_samples#38/f2/p0/note/e0",
+    "explanation": "所以他去了又空又高的山 → 他为了找到没有毒的植物去了又空又高的山: going to the mountain is a purpose, not a result, so delete 所以 and use 为了找到没有毒的植物."
+   },
+   {
+    "edit_id": "shennong_samples#25/f8/p0/note/e0",
+    "explanation": "所以神农告诉他有些植物是好的 → 后来神农告诉他有些植物是好的: this is not a result, so use 后来 instead of 所以."
+   },
+   {
+    "edit_id": "mengmu_samples#22/f5/p1/k0-1/e0",
+    "explanation": "结果他取得生活经验 → 所以，取得生活经验: this is a cause-result relationship; use 所以, while 结果 is for an unexpected result."
+   }
+  ],
+  "not_an_error": "Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).",
+  "her_terms": [
+   "这样",
+   "结果",
+   "后来"
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1265,
+  "completion_tokens": 594,
+  "total_tokens": 1859,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1262,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 146,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5bd17f1771"
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 一点都不合理，这个肯定不是上帝创造世界的目的。\nquote: 这个肯定不是上帝创造世界的目的\npart p0: fix [ref p0/k0] 这肯定不是上帝创造世界的目的 ; instruction [ref p0/k1] delete “个”, 这个 + Noun.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "这个",
+    "corrected": "这",
+    "before": "",
+    "after": "肯定不是",
+    "note": "",
+    "confidence": "high",
+    "reason": "shortens 这个 to 这 as in her fix"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "个",
+    "corrected": "",
+    "before": "这",
+    "after": "肯定不是",
+    "note": "这个 + Noun.",
+    "confidence": "high",
+    "reason": "explicit deletion instruction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1015,
+  "completion_tokens": 106,
+  "total_tokens": 1121,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

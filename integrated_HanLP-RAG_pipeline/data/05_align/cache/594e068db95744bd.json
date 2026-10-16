@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 神农很常走去找饭，他累死了。\nquote: 神农很常走去找饭，他累死了\npart p0: comment [ref p0/note] better to briefly introduce “神农” when this character first appears\npart p1: fix [ref p1/k0] 常常走着找能吃的植物 ; notes: 常常cannot be with很，走着durative, 饭refers to rice/cooked food, delete他",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "神农",
+    "corrected": "",
+    "before": "",
+    "after": "很常走去",
+    "note": "better to briefly introduce “神农” when this character first appears",
+    "confidence": "high",
+    "reason": "comment requests an introduction when 神农 first appears"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "很常",
+    "corrected": "常常",
+    "before": "神农",
+    "after": "走去找饭",
+    "note": "常常cannot be with很",
+    "confidence": "high",
+    "reason": "replaces 很常 with 常常"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "走去",
+    "corrected": "走着",
+    "before": "神农很常",
+    "after": "找饭，他累",
+    "note": "走着durative",
+    "confidence": "high",
+    "reason": "changes directional 走去 to durative 走着"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "饭",
+    "corrected": "能吃的植物",
+    "before": "农很常走去找",
+    "after": "，他累死了",
+    "note": "饭refers to rice/cooked food",
+    "confidence": "high",
+    "reason": "replaces 饭 with edible plants"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "走去找饭，",
+    "after": "累死了",
+    "note": "delete他",
+    "confidence": "high",
+    "reason": "explicit deletion instruction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1044,
+  "completion_tokens": 303,
+  "total_tokens": 1347,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1041,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

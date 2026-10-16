@@ -1,0 +1,46 @@
+{
+ "input": "CATEGORY: 这个/这种 + N. must be clear (Coherence: reference)\ndefinition: Use 这个, 这种, 这些, and 有的 only when the preceding context identifies exactly which entity or set they refer to.\n\nHER NOTES IN THIS CATEGORY (5 distinct):\n1 | “这种植物” is unclear, sine preceding sentence has two types of plants\n1 | “这个植物“ is not unclear, which one? Delete 是，Adj. can be predicate, without是\n1 | “这个小孩子” is unclear and ambiguous\n1 | otherwise unclear which house\n1 | as “being picked up” already occurred, so it is not unknown “什么事情”, but a certain “这样的事情”.\n\nHER CORRECTIONS (10 of 10):\n[shennong_samples#50/f6/p0/note/e0] ⟦这种植物⟧原来是茶  || her note: “这种植物” is unclear, sine preceding sentence has two types of plants\n[shennong_samples#45/f4/p0/note/e0] ⟦这个植物⟧的味道是最好  || her note: “这个植物“ is not unclear, which one? Delete 是，Adj. can be predicate, without是\n[mengmu_samples#19/f0/p0/k0-1-2-3/e3] [这个小孩子→儿子]叫孟子  || her note: “这个小孩子” is unclear and ambiguous\n[mengmu_samples#11/f1/p0/k0/e0] [小房子→这个小房子]离一个墓地不太远  || her note: otherwise unclear which house\n[pear_story#4/f28/p0/k0/e0] 我完全没想到[什么事情→这样的事情]会立刻发生  || her note: as “being picked up” already occurred, so it is not unknown “什么事情”, but a certain “这样的事情”.\n[shennong_samples#39/f1/p0/k1/e0] 还[有的→有些花]有毒\n[shennong_samples#38/f7/p0/k0/e0] [+这个]图书馆只有木的书\n[shennong_samples#25/f7/p1/k0/e0] 神农的朋友给他[这植物→灵芝]\n[shennong_samples#14/f1/p0/k0/e0] 因为我们不知道[+这个]植物是什么\n[shennong_samples#50/f13/p0/k0/e1] [+那个]穿上一件蓝色的衣服的人",
+ "salt": "",
+ "output": {
+  "rule": "Use 这个/这种/这些/有的 + N. only when the preceding context makes exactly which person, thing, place, or set clear. If it is already a known event, use 这样的 + N.; if the reference is unclear, name it more specifically.",
+  "explanation_template": "<wrong reference> → <correct reference>: the preceding context does not identify exactly which <person/thing/place/set> this refers to.",
+  "examples": [
+   {
+    "edit_id": "shennong_samples#50/f6/p0/note/e0",
+    "explanation": "这种植物 is unclear: the preceding sentence mentions two types of plants, so it does not identify which plant this means."
+   },
+   {
+    "edit_id": "mengmu_samples#19/f0/p0/k0-1-2-3/e3",
+    "explanation": "这个小孩子 → 儿子: 这个小孩子 is unclear and ambiguous; use the specific relationship."
+   },
+   {
+    "edit_id": "mengmu_samples#11/f1/p0/k0/e0",
+    "explanation": "小房子 → 这个小房子: use 这个 to show which house is meant."
+   },
+   {
+    "edit_id": "pear_story#4/f28/p0/k0/e0",
+    "explanation": "什么事情 → 这样的事情: being picked up has already happened, so this is a certain 这样的事情, not an unknown 什么事情."
+   }
+  ],
+  "not_an_error": "Do not flag 这个/这种/这些/有的 when the preceding context identifies exactly what it refers to. 这个 can be used when it makes the intended person, thing, or place clear.",
+  "her_terms": []
+ },
+ "usage": {
+  "prompt_tokens": 988,
+  "completion_tokens": 699,
+  "total_tokens": 1687,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 357,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5bd17f1771"
+}

@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 他不是在搬家，而是学多文章，成为很聪明。\nquote: 他不是在搬家，而是学多文章，成为很聪明\npart p0: fix [ref p0/k0-1] 不再搬家，而是待在这儿学习很多文章 ; notes: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章\npart p1: fix [ref p1/k0] 成为很聪明的哲学家",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "不是在",
+    "corrected": "不再",
+    "before": "他",
+    "after": "搬家，而",
+    "note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章",
+    "confidence": "high",
+    "reason": "changes the contrast from 不是…而是… to 不再…而是…"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "待在这儿",
+    "before": "，而是",
+    "after": "学多文章",
+    "note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章",
+    "confidence": "high",
+    "reason": "adds the teacher's contrasting action before 学习"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "学",
+    "corrected": "学习",
+    "before": "而是学",
+    "after": "多文章，",
+    "note": "",
+    "confidence": "high",
+    "reason": "uses 学习 as in the teacher's correction"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "很",
+    "before": "是学多",
+    "after": "文章，成",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 很 before 多 as in the correction"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "的哲学家",
+    "before": "成为很聪明",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the noun phrase from the teacher's correction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1063,
+  "completion_tokens": 867,
+  "total_tokens": 1930,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1060,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

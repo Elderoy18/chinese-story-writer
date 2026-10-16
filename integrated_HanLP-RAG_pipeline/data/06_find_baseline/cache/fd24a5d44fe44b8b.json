@@ -1,0 +1,62 @@
+{
+ "input": "current scene: 古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "去了吃",
+    "corrected": "去吃了",
+    "before": "所以神农",
+    "after": "每种植物",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "了 should mark the completed eating action, not separate 去 from 吃."
+   },
+   {
+    "original": "你的",
+    "corrected": "人的",
+    "before": "么植物对",
+    "after": "身体有好",
+    "type": "reference",
+    "confidence": "low",
+    "why": "the narration shifts unexpectedly to the reader; it refers to people generally."
+   },
+   {
+    "original": "你",
+    "corrected": "人",
+    "before": "这个植物对",
+    "after": "有没有好",
+    "type": "reference",
+    "confidence": "low",
+    "why": "the narration shifts unexpectedly to the reader; it refers to people generally."
+   },
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "吃的植物",
+    "after": "。",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "sentence-final 了 does not fit with the habitual/future marker 会."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 657,
+  "completion_tokens": 2785,
+  "total_tokens": 3442,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2560,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

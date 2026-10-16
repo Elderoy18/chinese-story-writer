@@ -1,0 +1,33 @@
+{
+ "input": "CURRENT SCENE:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nITEMS:\n\n[I149] 所以他们常常搬【了】家   correction: 了 → (delete)   strength: error\n  checker's note: habitual action should not take completed-action 了\n  rule card (cause_result_soyi, Coherence: connectors): Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate.  Pattern: <wrong> → <correct>: the following event is not a result of the preceding clause, so 所以 is not appropriate; use <connector> / delete it.  Her terms: 这样, 结果, 后来\n  her past correction: [+所以]他们常常搬家 — her note: 无聊？add所以\n  her past correction: 所以他们再[搬家一次→搬了一次家] — her note: 了completed\n  her past correction: 所以他们[再→又]搬家一次 — her note: 又for something already occurred",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I149",
+    "explanation": "This is a habitual action, so do not use completed-action 了. Say 常常搬家.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 689,
+  "completion_tokens": 90,
+  "total_tokens": 779,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 26,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

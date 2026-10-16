@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 在上山的路上，神农吃了一个蘑菇，他觉得蘑菇很好吃，一点儿甜一点儿咸。\nquote: 一点儿甜一点儿咸\npart p0: fix [ref p0/k0-1] 有点儿甜，也有点儿咸",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "一点儿",
+    "corrected": "有点儿",
+    "before": "很好吃，",
+    "after": "甜一点儿",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the first degree expression"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "，也",
+    "before": "一点儿甜",
+    "after": "一点儿咸",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the coordinating punctuation and 也"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "一点儿",
+    "corrected": "有点儿",
+    "before": "一点儿甜",
+    "after": "咸。",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the second degree expression"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1010,
+  "completion_tokens": 532,
+  "total_tokens": 1542,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 361,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

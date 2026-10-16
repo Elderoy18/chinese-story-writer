@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他们常常生病了，这就要看什么植物你吃了。\nquote: 他们常常生病了，这就要看什么植物你吃了\npart p0: fix [ref p0/k0] 常常生病 ; notes: no了for routine/habit\npart p1: instruction [ref p1/k0] add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”\npart p2: fix [ref p2/k0] 你吃了什么植物了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "常常生病",
+    "after": "，这就要看",
+    "note": "no了for routine/habit",
+    "confidence": "high",
+    "reason": "removes 了 for a habitual action"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "常常",
+    "corrected": "会不会",
+    "before": "他们",
+    "after": "生病了，这",
+    "note": "the condition is “not definite”",
+    "confidence": "high",
+    "reason": "changes the habitual adverb to the stated conditional form"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "什么植物你吃了",
+    "corrected": "你吃了什么植物了",
+    "before": "这就要看",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "reorders the object question as in her fix"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1060,
+  "completion_tokens": 765,
+  "total_tokens": 1825,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1057,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 567,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

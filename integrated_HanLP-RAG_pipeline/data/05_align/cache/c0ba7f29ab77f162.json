@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 有的人吃很好吃的植物，有的人吃的生病。\nquote: 有的人吃很好吃的植物，有的人吃的生病\npart p0: fix [ref p0/k0-1] 吃到很好吃的植物，吃了以后生病了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "到",
+    "before": "有的人吃",
+    "after": "很好吃的",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 吃很 to 吃到很"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "有的人",
+    "corrected": "",
+    "before": "很好吃的植物，",
+    "after": "吃的生病",
+    "note": "",
+    "confidence": "high",
+    "reason": "the corrected continuation omits the second subject"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "的",
+    "corrected": "了以后",
+    "before": "有的人吃",
+    "after": "生病",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 吃的生病 to 吃了以后生病"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "吃的生病",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds sentence-final completion marker"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1000,
+  "completion_tokens": 728,
+  "total_tokens": 1728,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 507,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 孟子决定他应该学哲学，孟子决定他可以学习和高兴。\nquote: 孟子决定他应该学哲学，孟子决定他可以学习和高兴\npart p0: instruction [ref p0/k0] delete the second孟子决定\npart p1: instruction [ref p1/k0] delete他应该\npart p2: fix [ref p2/k0] 这样又能学习又能每天都很高兴",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "孟子决定",
+    "corrected": "",
+    "before": "学哲学，",
+    "after": "他可以学习",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the second 孟子决定 as instructed"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "他应该",
+    "corrected": "",
+    "before": "孟子决定",
+    "after": "学哲学，",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes 他应该 as instructed"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "他可以学习和高兴",
+    "corrected": "这样又能学习又能每天都很高兴",
+    "before": "学哲学，",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "rewrites the remaining second clause with the teacher's fix"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1043,
+  "completion_tokens": 372,
+  "total_tokens": 1415,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1040,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 190,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

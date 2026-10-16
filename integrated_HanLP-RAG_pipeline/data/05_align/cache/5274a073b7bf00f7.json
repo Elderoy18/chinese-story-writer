@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他现在是当医生，他能帮很多人。\nquote: 他现在是当医生，他能帮很多人\npart p0: instruction [ref p0/k0] delete当 ; notes: redundant with是\npart p1: instruction [ref p1/k0] delete the second他 ; notes: redundant",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "当",
+    "corrected": "",
+    "before": "他现在是",
+    "after": "医生，他能",
+    "note": "redundant with是",
+    "confidence": "high",
+    "reason": "explicit deletion of 当"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "当医生，",
+    "after": "能帮很多",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the second 他"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1007,
+  "completion_tokens": 110,
+  "total_tokens": 1117,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

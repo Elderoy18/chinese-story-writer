@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 难怪她想搬家，因为如果她搬家，她会工作少，和她也会做她最喜欢的兴趣爱好。\nquote: 她会工作少，和她也会做她最喜欢的兴趣爱好\npart p0: fix [ref p0/k0] 减少工作\npart p1: instruction [ref p1/k0] delete和 ; notes: 和cannot connect clauses\npart p2: instruction [ref p2/k0] delete the second and third 她 ; notes: redundant\npart p3: fix [ref p3/k0] 也会发展最喜欢的兴趣爱好",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "会工作少",
+    "corrected": "减少工作",
+    "before": "她",
+    "after": "，和她也会",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the work phrase with 减少工作"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "和",
+    "corrected": "",
+    "before": "她会工作少，",
+    "after": "她也会做她",
+    "note": "和cannot connect clauses",
+    "confidence": "high",
+    "reason": "deletes the clause connector 和"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "delete",
+    "original": "她",
+    "corrected": "",
+    "before": "会工作少，和",
+    "after": "也会做她最",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the second 她"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "delete",
+    "original": "她",
+    "corrected": "",
+    "before": "，和她也会做",
+    "after": "最喜欢的兴",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the third 她"
+   },
+   {
+    "ref": "p3/k0",
+    "op": "replace",
+    "original": "做",
+    "corrected": "发展",
+    "before": "，和她也会",
+    "after": "她最喜欢的",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 做 to 发展 in the hobby phrase"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1078,
+  "completion_tokens": 611,
+  "total_tokens": 1689,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1075,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 325,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

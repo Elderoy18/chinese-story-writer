@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 小王骑自行车到张先生的梨子树，一看，这么多梨子，就拿一筐水果。\nquote: 就拿一筐水果\npart p0: fix [ref p0/k0] 就拿了一筐梨子 ; notes: 了completed, “水果” is more generic and here it should be “梨子”，otherwise it will cause ambiguity, what “fruits” other than “pears”?",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "就拿",
+    "after": "一筐水果",
+    "note": "了completed",
+    "confidence": "high",
+    "reason": "adds completed-action 了"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "水果",
+    "corrected": "梨子",
+    "before": "就拿一筐",
+    "after": "。",
+    "note": "“水果” is more generic and here it should be “梨子”，otherwise it will cause ambiguity, what “fruits” other than “pears”?",
+    "confidence": "high",
+    "reason": "replaces generic fruits with pears"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1035,
+  "completion_tokens": 141,
+  "total_tokens": 1176,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1032,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

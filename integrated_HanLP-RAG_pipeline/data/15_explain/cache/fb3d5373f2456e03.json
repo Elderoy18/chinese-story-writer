@@ -1,0 +1,68 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nITEMS:\n\n[I131] 【古代的时候】   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I132] 一个男孩子跟【他】的妈妈住在中国   correction: (comment, no correction)   strength: error\n  checker's note: the story starts with a pronoun: introduce the character first\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: 有一个孩子和他的妈妈[+住在一起]\n  her past correction: 他跟他的妈妈住在一个小房子[+里] — her note: 在Place\n  her past correction: [-他]跟他的妈妈住在一个小房子\n\n[I133] 所以孟子老是【祭拜】   correction: 祭拜 → 模仿别人办丧事   strength: error\n  checker's note: In this story, Mencius imitates funeral rituals rather than actually worshipping.\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧一直祭拜 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: [-所以他们]祭拜 — her note: there is no cause-effect relationship\n  her past correction: 所以孟子[老是→一直]在学习 — her note: “老是“ for something negative, used to complain\n\n[I134] 孟子不是【祭拜】   correction: 祭拜 → 模仿别人办丧事   strength: error\n  checker's note: He is described as imitating funerals, not performing worship.\n  rule card (he_scope_coordination, Coherence: connectors): 和/跟 + noun connects multiple nouns that share the same action. Do not use 和/跟 to connect clauses, verb phrases, or adjectives; if the noun is an accompanying object and does not do the action, use V.着 instead.  Pattern: <wrong> → <correct>: 和/跟 cannot connect <clauses/verb phrases/adjectives>. Use <correct connector or structure> instead.  Her terms: 和cannot connect clauses, 和cannot link clauses, 和cannot connect verb phrases, 和cannot connect Adj., 跟/和+noun., 和+noun., V.着\n  her past correction: 孟子在墓地[-和]祭拜跟其他孩子\n  her past correction: 孟子在墓地和[祭拜跟其他孩子→跟其他孩子祭拜]\n  her past correction: 孟子⟦决定了⟧祭拜 — her note: 决定is a mental state verb, no了\n\n[I135] 但是城市【^】有才两个学校   correction: ∅ → 只   strength: suggestion\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: 而是因为[学校→学业]很难\n  her past correction: [去→去了]一个最好的学校 — her note: 了completed\n  her past correction: ⟦不是商店而是学校⟧ — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 商店is not conventionally related to对教育有好处\n\n[I136] 但是城市有【才】两个学校   correction: 才 → (delete)   strength: suggestion\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: 而是因为[学校→学业]很难\n  her past correction: [去→去了]一个最好的学校 — her note: 了completed\n  her past correction: ⟦不是商店而是学校⟧ — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 商店is not conventionally related to对教育有好处",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I131",
+    "explanation": "古代 is the time/place setting, so use 在+Place before the action: 在古代。",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I132",
+    "explanation": "This character appears for the first time, so please introduce his mother briefly with an identifying noun phrase instead of only using 他。",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I133",
+    "explanation": "Use 模仿别人办丧事 because Mencius is imitating funeral rituals, not actually worshipping.",
+    "dimension": "content",
+    "corrected": "模仿别人办丧事",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I134",
+    "explanation": "Use 模仿别人办丧事 because he is imitating funeral rituals, not performing worship.",
+    "dimension": "content",
+    "corrected": "模仿别人办丧事",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I135",
+    "explanation": "It would be more natural to use 只 because it means “only” for the small number of schools.",
+    "dimension": "word_choice",
+    "corrected": "只",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I136",
+    "explanation": "It would be more natural to delete 才 here; 只 already expresses “only.”",
+    "dimension": "word_choice",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1807,
+  "completion_tokens": 316,
+  "total_tokens": 2123,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1804,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

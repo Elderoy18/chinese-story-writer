@@ -1,0 +1,70 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\nCURRENT SCENE:\n所以，孟母和孟子搬到学校的旁边住。才五岁孟子开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。\n\nFLAGGED PLACES:\n\n[P24] 才五岁【^】孟子开始学哲学\n  proposed by the AI checker: 才五岁[+时]孟子开始学哲学 (a temporal phrase needs 时 here)\n  her past correction (conditional_jiu): [+就]开始学哲学 — her note: 才 Num.就V.\n  her past correction (laoshi_negative_repetition): 孟子从早到晚[老是→一直]学哲学 — her note: “老是“ for something negative, used to complain\n  her past correction (redundant_words): 孟子决定[-他应该]学哲学\n  rule card conditional_jiu: Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future. Not an error: When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.\n  rule card laoshi_negative_repetition: 老是 means “always” and is used for something negative or to complain; for a neutral or positive repeated action, use 一直 or 常常 instead. Not an error: Use 老是 when the repeated action is negative or the speaker is complaining about it. Do not flag it merely because it means “always.”\n\n[P25] 才五岁孟子【^】开始学哲学\n  proposed by the correction model: 才五岁孟子[+就]开始学哲学\n  her past correction (conditional_jiu): [+就]开始学哲学 — her note: 才 Num.就V.\n  her past correction (redundant_words): 孟子决定[-他应该]学哲学\n  her past correction (laoshi_negative_repetition): 孟子从早到晚[老是→一直]学哲学 — her note: “老是“ for something negative, used to complain\n  rule card conditional_jiu: Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future. Not an error: When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P26] 【将来】\n  proposed by the AI checker: [将来→后来] (the narrative refers to a later past event)\n  her past correction (time_sequence_markers): [长大的时候→长大以后]\n  her past correction (redundant_words): [-然后]\n  her past correction (le_completed): [帮他后→帮了他以后] — her note: 了completed\n  rule card time_sequence_markers: Use Time + 以后 after a completed time or action to show “after”; when moving to a later event in the story, use 后来 or 然后 rather than 以后 by itself. Do not add 以后 when the time phrase already says the time clearly. Not an error: Do not use 结果 merely as a general later-time connector; it is for an unexpected result. Use 后来 for a later development instead.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P27] 他【^】成为中国的一个非常有名的哲学家\n  proposed by the correction model: 他[+会]成为中国的一个非常有名的哲学家\n  her past correction (become_and_profession): 他成为[有名的→有名的哲学家] — her note: 成为+N\n  her past correction (time_sequence_markers): [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为\n  her past correction (become_and_profession): 成为他一个很重要[和聪明的中国哲学→的哲学家]\n  rule card become_and_profession: 成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才. Not an error: Do not flag 成为 when it is followed by an appropriate noun, especially a profession or public identity, such as 成为哲学家.\n  rule card time_sequence_markers: Use Time + 以后 after a completed time or action to show “after”; when moving to a later event in the story, use 后来 or 然后 rather than 以后 by itself. Do not add 以后 when the time phrase already says the time clearly. Not an error: Do not use 结果 merely as a general later-time connector; it is for an unexpected result. Use 后来 for a later development instead.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P24",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "",
+    "after": "",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The needed early-age pattern is addressed by adding 就, not 时."
+   },
+   {
+    "place_id": "P25",
+    "decision": "keep",
+    "category": "conditional_jiu",
+    "original": "",
+    "before": "才五岁孟子",
+    "after": "开始学哲学",
+    "corrected": "就",
+    "confidence": "high",
+    "reason": "Early-age statement needs 才五岁就V."
+   },
+   {
+    "place_id": "P26",
+    "decision": "keep",
+    "category": "time_sequence_markers",
+    "original": "将来",
+    "before": "",
+    "after": "，他成为中",
+    "corrected": "后来",
+    "confidence": "high",
+    "reason": "Historical narrative needs a later-past connector."
+   },
+   {
+    "place_id": "P27",
+    "decision": "drop",
+    "category": "become_and_profession",
+    "original": "",
+    "before": "",
+    "after": "",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "成为中国的一个非常有名的哲学家 is grammatical without 会."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1957,
+  "completion_tokens": 502,
+  "total_tokens": 2459,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1954,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 281,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

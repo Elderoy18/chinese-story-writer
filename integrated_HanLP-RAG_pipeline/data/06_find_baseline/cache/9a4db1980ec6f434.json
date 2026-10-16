@@ -1,0 +1,71 @@
+{
+ "input": "current scene: 古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "original": "医",
+    "corrected": "医生",
+    "before": "要当上",
+    "after": "，一看别的",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "医 alone is not the usual word for a doctor here"
+   },
+   {
+    "original": "远远",
+    "corrected": "很远",
+    "before": "说一个",
+    "after": "的地方有",
+    "type": "word_choice",
+    "confidence": "low",
+    "why": "很远的地方 is the standard expression"
+   },
+   {
+    "original": "三个月走去",
+    "corrected": "走了三个月",
+    "before": "神农",
+    "after": "，找到有",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "duration and verb order are incorrect here"
+   },
+   {
+    "original": "",
+    "corrected": "这种",
+    "before": "，找到有",
+    "after": "植物的地",
+    "type": "reference",
+    "confidence": "high",
+    "why": "it should refer to the specific plant mentioned earlier"
+   },
+   {
+    "original": "个",
+    "corrected": "株",
+    "before": "看到一",
+    "after": "很漂亮的",
+    "type": "other",
+    "confidence": "high",
+    "why": "株 is the measure word for plants"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 632,
+  "completion_tokens": 2769,
+  "total_tokens": 3401,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2521,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

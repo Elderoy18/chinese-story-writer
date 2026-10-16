@@ -1,0 +1,92 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nFLAGGED PLACES:\n\n[P131] 【古代的时候】\n  proposed by the teacher's pattern/rule: [古代的时候→在古代] (her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train))\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  her past correction (location_with_zai): [古代的时候→在古代]\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n\n[P132] 一个男孩子跟【他】的妈妈住在中国\n  proposed by the teacher's pattern/rule: 一个男孩子跟⟦他⟧的妈妈住在中国 (the story starts with a pronoun: introduce the character first)\n  her past correction (missing_story_information): 有一个孩子和他的妈妈[+住在一起]\n  her past correction (location_with_zai): 他跟他的妈妈住在一个小房子[+里] — her note: 在Place\n  her past correction (zero_redundant_pronoun): [-他]跟他的妈妈住在一个小房子\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card missing_story_information: Do not miss important information in a retelling: include the key scene, action, motivation, or result so the event is complete and clear. Not an error: Do not flag a sentence just because it does not include every possible detail. Flag it only when an important scene, action, motivation, or result is missing and the retelling is incomplete.\n\n[P133] 所以孟子老是【祭拜】\n  proposed by the AI checker: 所以孟子老是[祭拜→模仿别人办丧事] (In this story, Mencius imitates funeral rituals rather than actually worshipping.)\n  proposed by the correction model: 所以孟子老是祭拜[+他们]\n  her past correction (first_mention_introduction): ⟦孟子⟧一直祭拜 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction (cause_result_soyi): [-所以他们]祭拜 — her note: there is no cause-effect relationship\n  her past correction (laoshi_negative_repetition): 所以孟子[老是→一直]在学习 — her note: “老是“ for something negative, used to complain\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).\n\n[P134] 孟子不是【祭拜】\n  proposed by the AI checker: 孟子不是[祭拜→模仿别人办丧事] (He is described as imitating funerals, not performing worship.)\n  her past correction (he_scope_coordination): 孟子在墓地[-和]祭拜跟其他孩子\n  her past correction (other): 孟子在墓地和[祭拜跟其他孩子→跟其他孩子祭拜]\n  her past correction (no_le_mental_state): 孟子⟦决定了⟧祭拜 — her note: 决定is a mental state verb, no了\n  rule card he_scope_coordination: 和/跟 + noun connects multiple nouns that share the same action. Do not use 和/跟 to connect clauses, verb phrases, or adjectives; if the noun is an accompanying object and does not do the action, use V.着 instead. Not an error: 和/跟 + noun is correct when the nouns share the same action, such as 一个男生和一个女生走…… . Do not flag an accompanying noun when it is correctly expressed with V.着.\n  rule card no_le_mental_state: Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative. Not an error: Apply this rule when 决定 or 发现 expresses the decision or discovery in this narrative use.\n\n[P135] 但是城市【^】有才两个学校\n  proposed by the correction model: 但是城市[+只]有才两个学校\n  her past correction (near_synonym_precision): 而是因为[学校→学业]很难\n  her past correction (le_completed): [去→去了]一个最好的学校 — her note: 了completed\n  her past correction (not_but_refutation): ⟦不是商店而是学校⟧ — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 商店is not conventionally related to对教育有好处\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P136] 但是城市有【才】两个学校\n  proposed by the correction model: 但是城市有[-才]两个学校\n  her past correction (near_synonym_precision): 而是因为[学校→学业]很难\n  her past correction (le_completed): [去→去了]一个最好的学校 — her note: 了completed\n  her past correction (not_but_refutation): ⟦不是商店而是学校⟧ — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 商店is not conventionally related to对教育有好处\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P131",
+    "decision": "drop",
+    "category": "fixed_expressions",
+    "original": "古代的时候",
+    "before": "",
+    "after": "，一个男",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Natural time expression; not an error."
+   },
+   {
+    "place_id": "P132",
+    "decision": "drop",
+    "category": "first_mention_introduction",
+    "original": "他",
+    "before": "一个男孩子跟",
+    "after": "的妈妈住在",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The boy has already been introduced."
+   },
+   {
+    "place_id": "P133",
+    "decision": "keep",
+    "category": "other",
+    "original": "祭拜",
+    "before": "所以孟子老是",
+    "after": "。孟子不是",
+    "corrected": "模仿别人办丧事",
+    "confidence": "high",
+    "reason": "This contradicts the story action."
+   },
+   {
+    "place_id": "P134",
+    "decision": "keep",
+    "category": "other",
+    "original": "祭拜",
+    "before": "孟子不是",
+    "after": "，就是跟朋",
+    "corrected": "模仿别人办丧事",
+    "confidence": "high",
+    "reason": "This contradicts the story action."
+   },
+   {
+    "place_id": "P135",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "但是城市",
+    "after": "有才两个学校",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Adding 只 is not the minimal correction."
+   },
+   {
+    "place_id": "P136",
+    "decision": "keep",
+    "category": "other",
+    "original": "有才",
+    "before": "但是城市",
+    "after": "两个学校，都",
+    "corrected": "才有",
+    "confidence": "high",
+    "reason": "才 is in the wrong position."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2406,
+  "completion_tokens": 846,
+  "total_tokens": 3252,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2403,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

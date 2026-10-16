@@ -1,0 +1,103 @@
+{
+ "input": "CURRENT SCENE:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nFLAGGED PLACES:\n\n[P234] 【古代时候】\n  proposed by the teacher's pattern/rule: [古代时候→古代] (her pattern: 古代时候 -> 古代 (corrected 3/3 in train))\n  proposed by the AI checker: 古代[+的]时候 (needs 的 in 古代的时候)\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  her past correction (location_with_zai): [古代的时候→在古代]\n  her past correction (fixed_expressions): [古代的时候→在古代]\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n\n[P235] 人不知道【他们】能吃什么植物\n  proposed by the AI checker: 人不知道[他们→自己]能吃什么植物 (generic 人 should refer to itself)\n  her past correction (question_patterns): 他们不知道什么植物[-能吃]不能吃\n  her past correction (zero_redundant_pronoun): 我们不知道[-我们]可以吃什么植物 — her note: redundant\n  her past correction (incorrect_story_information): 大家不知道什么[菜→植物]能吃\n  rule card question_patterns: Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n\n[P236] 【所以】有一天\n  proposed by the AI checker: [所以→于是]有一天 (于是 connects the resulting action naturally)\n  her past correction (fixed_expressions): [一个天时候→有一天]\n  her past correction (near_synonym_precision): 每天[就是→都是]这样\n  her past correction (redundant_words): [-然后]\n  rule card fixed_expressions: Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place. Not an error: Do not flag 人山人海 when it describes a scene where many people are gathered in a space.\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n\n[P237] 【神农】出去试一试很多种植物\n  proposed by the teacher's pattern/rule: ⟦神农⟧出去试一试很多种植物 (first appearance of 神农: briefly introduce who this is)\n  her past correction (collocation_selection): 神农[加→吃]下去很多的植物\n  her past correction (le_completed): 神农[发现→发现了]很多植物 — her note: 了completed\n  her past correction (first_mention_introduction): ⟦神农⟧看到很多人随便吃各种植物 — her note: better to briefly introduce “神农” when this character first appears\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n\n[P238] 神农出去【试一试】很多种植物\n  proposed by the AI checker: 神农出去[试一试→尝一尝]很多种植物 (plants are tasted to test whether they are edible)\n  proposed by the correction model: 神农出去试[一→了]试很多种植物\n  her past correction (collocation_selection): 神农[加→吃]下去很多的植物\n  her past correction (modal_and_control_verb_complements): 神农[什么想尝→想尝什么植物]\n  her past correction (le_completed): 神农[发现→发现了]很多植物 — her note: 了completed\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n  rule card modal_and_control_verb_complements: 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了. Not an error: Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.\n\n[P239] 告诉人什么植物是安全【^】什么是危险\n  proposed by the AI checker: 告诉人什么植物是安全[+的]什么是危险 (安全 needs 的 in this identifying phrase)\n  her past correction (modifier_de_structure): 每个人都不知道哪些植物能安全[+地]吃\n  her past correction (zero_redundant_pronoun): [-他]写下了哪些植物有毒 — her note: redundant\n  her past correction (word_class_choice): 什么植物[是毒→有毒]\n  rule card modifier_de_structure: Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意. Not an error: Do not flag 的 in modifiers that need it, such as 有毒的植物, 中国的植物, or 穿着蓝色衣服的人. Do not add 的 after short fixed modifiers such as 很多, 一些, 今天, 蓝色, or 好 in the examples shown.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n\n[P240] 告诉人什么植物是安全什么是危险【。】发现有的植物对身体非常好\n  proposed by the AI checker: 告诉人什么植物是安全什么是危险[+的] (危险 needs 的 in this identifying phrase)\n  proposed by the AI checker: [+了]发现有的植物对身体非常好 (completed discovery in the narrative needs 了)\n  her past correction (verb_object_valency): 这些植物对身体[+有]好处\n  her past correction (zero_redundant_pronoun): [-这些植物]对身体好处\n  her past correction (possessive_reference): 哪些植物对[-你的]健康有好处\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P234",
+    "decision": "keep",
+    "category": "fixed_expressions",
+    "original": "古代时候",
+    "before": "",
+    "after": "，人不",
+    "corrected": "古代",
+    "confidence": "high",
+    "reason": "古代时候 is not a standard time expression."
+   },
+   {
+    "place_id": "P235",
+    "decision": "keep",
+    "category": "zero_redundant_pronoun",
+    "original": "他们",
+    "before": "人不知道",
+    "after": "能吃什么植",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The repeated generic subject is unnecessary."
+   },
+   {
+    "place_id": "P236",
+    "decision": "keep",
+    "category": "near_synonym_precision",
+    "original": "所以",
+    "before": "有办法。",
+    "after": "有一天，神",
+    "corrected": "于是",
+    "confidence": "low",
+    "reason": "于是 better connects the resulting narrative action."
+   },
+   {
+    "place_id": "P237",
+    "decision": "keep",
+    "category": "first_mention_introduction",
+    "original": "神农",
+    "before": "有一天，",
+    "after": "出去试一",
+    "corrected": "一个叫神农的人",
+    "confidence": "high",
+    "reason": "The newly appearing character needs a brief introduction."
+   },
+   {
+    "place_id": "P238",
+    "decision": "keep",
+    "category": "collocation_selection",
+    "original": "试一试",
+    "before": "神农出去",
+    "after": "很多种植物",
+    "corrected": "尝一尝",
+    "confidence": "high",
+    "reason": "Plants are tasted to test whether they are edible."
+   },
+   {
+    "place_id": "P239",
+    "decision": "keep",
+    "category": "modifier_de_structure",
+    "original": "",
+    "before": "物是安全",
+    "after": "什么是危",
+    "corrected": "的",
+    "confidence": "high",
+    "reason": "安全 needs 的 in this identifying phrase."
+   },
+   {
+    "place_id": "P240",
+    "decision": "keep",
+    "category": "modifier_de_structure",
+    "original": "",
+    "before": "么是危险",
+    "after": "。发现有",
+    "corrected": "的",
+    "confidence": "high",
+    "reason": "危险 needs 的 in this identifying phrase."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2600,
+  "completion_tokens": 1878,
+  "total_tokens": 4478,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2597,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1469,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

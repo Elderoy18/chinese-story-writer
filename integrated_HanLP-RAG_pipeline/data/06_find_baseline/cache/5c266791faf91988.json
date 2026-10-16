@@ -1,0 +1,80 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\ncurrent scene: 比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "一次",
+    "corrected": "有一次",
+    "before": "方说，他",
+    "after": "试一试有",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "a single past occasion needs 有一次"
+   },
+   {
+    "original": "试一试",
+    "corrected": "尝了尝",
+    "before": "，他一次",
+    "after": "有些植物",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "leaves are tasted, and the past action needs 了"
+   },
+   {
+    "original": "吃得",
+    "corrected": "吃起来",
+    "before": "物的叶，",
+    "after": "又新鲜又",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "describes how the leaves taste, not how he eats"
+   },
+   {
+    "original": "",
+    "corrected": "了",
+    "before": "道他发现",
+    "after": "新的茶叶",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "the discovery is a completed past event"
+   },
+   {
+    "original": "的",
+    "corrected": "",
+    "before": "到了很多",
+    "after": "新的植物",
+    "type": "grammar",
+    "confidence": "low",
+    "why": "很多新的植物 is the usual modifier order"
+   },
+   {
+    "original": "是",
+    "corrected": "",
+    "before": "时候特别",
+    "after": "危险。比方",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "特别危险 does not take 是"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 698,
+  "completion_tokens": 2847,
+  "total_tokens": 3545,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2560,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

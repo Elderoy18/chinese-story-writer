@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 神农问人帮他给他灵芝，灵芝看起来伞，灵芝一吃就正好。\nquote: 灵芝看起来伞，灵芝一吃就正好\npart p0: fix [ref p0/k0-1] 看起来像伞，他一吃灵芝身体就好了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "像",
+    "before": "看起来",
+    "after": "伞，灵芝",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 像 before 伞"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "灵芝",
+    "corrected": "他",
+    "before": "起来伞，",
+    "after": "一吃就正",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the eater from 灵芝 to 他"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "灵芝",
+    "before": "，灵芝一吃",
+    "after": "就正好。",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the object after 吃"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "就正好",
+    "corrected": "身体就好了",
+    "before": "，灵芝一吃",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the result phrase with 身体就好了"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1012,
+  "completion_tokens": 544,
+  "total_tokens": 1556,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 313,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

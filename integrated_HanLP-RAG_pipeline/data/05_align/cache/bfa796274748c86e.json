@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 他妈妈看他跟别的孩子在墓地里祭拜，她一看这，就自己觉得我不想我的儿子在这个地方长大，也觉得那个地方对孟子有不好的影响，这害得孟母决定搬家。\nquote: 她一看这，就自己觉得我不想我的儿子在这个地方长大\npart p0: fix [ref p0/k0] 一看到这样 ; notes: 看look vs.看到see\npart p1: instruction [ref p1/k0] delete自己\npart p2: instruction [ref p2/k0] delete我 ; fix [ref p2/k1] 我的\npart p3: fix [ref p3/k0] 就觉得儿子不应该在这个地方长大",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "一看这",
+    "corrected": "一看到这样",
+    "before": "她",
+    "after": "，就自己",
+    "note": "看look vs.看到see",
+    "confidence": "high",
+    "reason": "changes 看 to 看到 and replaces 这 with 这样"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "自己",
+    "corrected": "",
+    "before": "看这，就",
+    "after": "觉得我不想",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "delete",
+    "original": "我",
+    "corrected": "",
+    "before": "己觉得",
+    "after": "不想我的",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the first-person subject"
+   },
+   {
+    "ref": "p2/k1",
+    "op": "replace",
+    "original": "不想我的",
+    "corrected": "我的",
+    "before": "己觉得我",
+    "after": "儿子在这",
+    "note": "",
+    "confidence": "high",
+    "reason": "reduces 我不想我的儿子 to 我的儿子"
+   },
+   {
+    "ref": "p3/k0",
+    "op": "replace",
+    "original": "我的儿子",
+    "corrected": "儿子不应该",
+    "before": "得我不想",
+    "after": "在这个地",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the phrasing to 儿子不应该在这个地方长大"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1104,
+  "completion_tokens": 1760,
+  "total_tokens": 2864,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1101,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1464,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

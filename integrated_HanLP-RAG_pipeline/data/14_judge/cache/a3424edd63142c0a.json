@@ -1,0 +1,70 @@
+{
+ "input": "EARLIER SCENES (context only):\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\nCURRENT SCENE:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nFLAGGED PLACES:\n\n[P120] 就是【都】叫\n  proposed by the AI checker: 就是[都→有人]叫 (都 has no clear plural referent here)\n  proposed by the correction model: 就是[都→狗]叫\n  her past correction (measure_word_choice): 有[一位人→一个人]来了\n  her past correction (zero_redundant_pronoun): [-他]叫孟子\n  her past correction (verb_object_valency): 我也不知道[+叫什么]\n  rule card measure_word_choice: Use the appropriate measure word before the noun: 这/那 + Measure word + noun. Use noun-specific measure words such as 棵 for trees, and 位 is a polite MW. Not an error: Do not use 位 for a child in this context; 位 is a polite MW. 本+N. is usually used in formal advertisement/news and may indicate that the author owns the noun.\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n\n[P121] 孟子和妈妈要【又一个次】搬了家\n  proposed by the AI checker: 孟子和妈妈要[又一个次→再一次]搬了家 (再一次 means “one more time”)\n  proposed by the correction model: 孟子和妈妈要[又→再搬]一个次搬了家\n  proposed by the correction model: 孟子和妈妈要又一[-个]次搬了家\n  her past correction (addition_repetition_connectors): 孟子跟他的妈妈[已经→就又]搬家了\n  her past correction (modal_and_control_verb_complements): 孟子的妈妈叫[-了]孟子搬家 — her note: 叫/让 is a modal verb, no了\n  her past correction (zero_redundant_pronoun): [-孟子跟他的妈妈]已经搬家了\n  rule card addition_repetition_connectors: Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.). Not an error: Do not add an additive connector when the sentence does not show repetition, similarity, or an added point. Use 就, not 还, for a natural continuation rather than a surprising or angry one.\n  rule card modal_and_control_verb_complements: 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了. Not an error: Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.\n\n[P122] 孟子和妈妈要又一个次【搬了】家\n  proposed by the correction model: 孟子和妈妈要又一个次[-搬了]家\n  proposed by the AI checker: 孟子和妈妈要又一个次搬[-了]家 (要 cannot be followed by completed-action 了)\n  her past correction (addition_repetition_connectors): 孟子跟他的妈妈[已经→就又]搬家了\n  her past correction (modal_and_control_verb_complements): 孟子的妈妈叫[-了]孟子搬家 — her note: 叫/让 is a modal verb, no了\n  her past correction (zero_redundant_pronoun): [-孟子跟他的妈妈]已经搬家了\n  rule card addition_repetition_connectors: Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.). Not an error: Do not add an additive connector when the sentence does not show repetition, similarity, or an added point. Use 就, not 还, for a natural continuation rather than a surprising or angry one.\n  rule card modal_and_control_verb_complements: 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了. Not an error: Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.\n\n[P123] 孟母找到【^】工作\n  proposed by the AI checker: 孟母找到[+了]工作 (a completed finding action normally takes 了)\n  her past correction (collocation_selection): 孟母找到了[良好的→好]工作 — her note: 良好is not with工作\n  her past correction (word_class_choice): 孟母找到一个[打工→打工的工作]\n  her past correction (location_with_zai): 孟母终于在[一位很有名的文学家→作家的家里]找工作了\n  rule card collocation_selection: Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P120",
+    "decision": "keep",
+    "category": "other",
+    "original": "都",
+    "before": "就是",
+    "after": "叫，害得",
+    "corrected": "有人",
+    "confidence": "high",
+    "reason": "都 lacks a clear plural referent; 有人叫 is coherent."
+   },
+   {
+    "place_id": "P121",
+    "decision": "keep",
+    "category": "addition_repetition_connectors",
+    "original": "要又一个次搬",
+    "before": "和妈妈",
+    "after": "了家。",
+    "corrected": "又要搬一次",
+    "confidence": "high",
+    "reason": "又 should precede 要, and 一次 has no measure word 个."
+   },
+   {
+    "place_id": "P122",
+    "decision": "keep",
+    "category": "modal_and_control_verb_complements",
+    "original": "了",
+    "before": "次搬",
+    "after": "家。在第",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "要 cannot be followed by completed-action 了."
+   },
+   {
+    "place_id": "P123",
+    "decision": "keep",
+    "category": "other",
+    "original": "",
+    "before": "孟母找到",
+    "after": "工作，在商",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "The completed finding action needs 了 in this narrative."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2043,
+  "completion_tokens": 734,
+  "total_tokens": 2777,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2040,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 488,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

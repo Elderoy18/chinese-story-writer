@@ -1,0 +1,130 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他看到很多人很病了 | 在中国古代很多人生病了 | 古代很多人不知道什么可以吃。\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 所以他走路旅行找足多不同的植物 | 所以神农走了很长的时间找到植物药。 | 所以他爬山找解药。在他的旅行，神农发现很多植物。\nS3: 神农found茶and took a record\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他找到了茶 | 他一吃就知道那个植物是茶。 | 他找到很好吃的植物，比方说茶。 ; flagged as missing: 喝茶对你的身体有好处 | 他到山以后，他喝了茶。\nS4: 神农tried 夹竹桃 and fainted\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他吃了花，就肚子疼。 | 吃着夹竹桃的以后，他病得很。 | 但一吃就病了。特别是夹竹桃。 ; flagged as missing: 他尝很多植物，比方说茶、灵芝和夹竹桃。 | 所以，他吃一个香香的花而且那个花的味道很好。\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 神农吃着植物，特别是灵芝。 | 神农问人帮他给他灵芝灵芝一吃就正好。 | 一个农民帮神农吃灵芝灵芝是夹竹桃毒的药。 ; flagged as missing: 他一吃灵芝就好了 | 他说，麻烦你给我拿个灵芝。然后，不病。\nS6: another person in brown came by and had a conversation with 神农\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 正好有一个人帮他吃一个灵芝，一个别的人跟神农说，有很多花有毒，特别是夹竹桃，可以杀人。 | 神农的肚子最好以后，他问：穿着紫色衣服的男人怎么了？紫色人告诉他：你吃了灵芝，一吃就你的身体最好的。 | 他印象深刻，问年轻人给了他什么？他们说这是当地的一种药用植物。 ; flagged as missing: 他们告诉神农，他得吃得慢。 | 他的朋友很惊讶灵芝帮了神农，所以神农告诉他有些植物是好的，有些是坏的。\nS7: 神农takes record of灵芝and夹竹桃\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 后来神农写书了哪些植物是药，哪些植物是毒。 | 有的食品很有用，特别是灵芝。他在岩石写什么植物可以吃 | 神农写植物的书，因为大家知道什么植物不能吃，特别是毒的植物。 ; flagged as missing: 山走以后，他找完了，写植物。 | 他一吃新的植物就写了植物有没有毒，他也写了每个植物的大小、长短和颜色。毒他吃很多次，比方说，他吃了灵芝和夹竹桃。\n\nlearner's story:\n在古代，人们还不知道肉的味道怎么样，非吃青菜不可。所以越来越餐馆儿没有那么多盘菜就关门了。有一位餐馆的老板决定世界旅行找新植物做饭。他走过有大有小山，找到了很多对做好饭的植物，比方说茶。茶虽然味道有一点儿苦，跟牛奶喝，香极了。今天的奶茶是从他对茶学到的。有一天，老板第一次看到一黄色新的花，赶快想吃下去。一吃，刚才，觉得难受得不得了，就在地方躺着。他说：啊，口味太好，但是为什么我越来越累了？ 一个男人去过来，一看到老板，就着急得很。老板不可动，得问男人给他地方上像蘑菇一样的植物吃了。老板吃了以后，身体有一点好。他发现了黄色花有毒，但是味道很好。如果跟蘑菇一样的植物，做饭可以，没再有毒了。后面这就是老板最好的菜，叫香毒菇蘑。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "People do not know edible plants and become sick after eating them",
+    "verdict": "missing",
+    "evidence": [
+     "在古代，人们还不知道肉的味道怎么样，非吃青菜不可。"
+    ],
+    "missing_part": "People did not know which plants were safe to eat, and they often became sick after eating plants.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 seeks safe plants and tries them in the mountains",
+    "verdict": "partly",
+    "evidence": [
+     "有一位餐馆的老板决定世界旅行找新植物做饭。",
+     "他走过有大有小山，找到了很多对做好饭的植物，比方说茶。"
+    ],
+    "missing_part": "神农's decision to discover which plants were safe or unsafe to eat; the traveller is instead a restaurant owner seeking cooking ingredients.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it",
+    "verdict": "partly",
+    "evidence": [
+     "他走过有大有小山，找到了很多对做好饭的植物，比方说茶。"
+    ],
+    "missing_part": "A record of 茶 being taken.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints",
+    "verdict": "partly",
+    "evidence": [
+     "有一天，老板第一次看到一黄色新的花，赶快想吃下去。",
+     "一吃，刚才，觉得难受得不得了，就在地方躺着。"
+    ],
+    "missing_part": "The poisonous flower is named 夹竹桃.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "A passer-by gives 神农 灵芝, and he feels better after eating it",
+    "verdict": "partly",
+    "evidence": [
+     "一个男人去过来，一看到老板，就着急得很。",
+     "老板不可动，得问男人给他地方上像蘑菇一样的植物吃了。",
+     "老板吃了以后，身体有一点好。"
+    ],
+    "missing_part": "The plant is identified as 灵芝.",
+    "details_left_out": [
+     "The helper is dressed in blue."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "Another person comes and talks with 神农",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "A second person comes by after the recovery and has a conversation with 神农.",
+    "details_left_out": [
+     "The second person is dressed in brown."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 records both 灵芝 and 夹竹桃.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "有一位餐馆的老板决定世界旅行找新植物做饭。",
+    "problem": "The story's traveller is 神农, and he travels to learn which plants are safe or unsafe to eat, not a restaurant owner looking for cooking ingredients."
+   },
+   {
+    "learner_text": "如果跟蘑菇一样的植物，做饭可以，没再有毒了。",
+    "problem": "灵芝 helps 神农 recover after he eats it; it does not make the poisonous plant safe to cook or remove its poison."
+   },
+   {
+    "learner_text": "后面这就是老板最好的菜，叫香毒菇蘑。",
+    "problem": "The story ends with 神农 recording 灵芝 and 夹竹桃, not with a new best restaurant dish."
+   }
+  ],
+  "feedback": [
+   "At the start, add that people did not know which plants were safe to eat and often became sick after eating them.",
+   "Before finding 茶, say that 神农 decided to learn which plants were safe or unsafe to eat.",
+   "After finding 茶, say that 神农 wrote it down.",
+   "When he eats the poisonous flower before the helper arrives, name it 夹竹桃.",
+   "After he falls ill, say that the helper gives 神农 灵芝 and that he feels better after eating it.",
+   "After 神农 feels better and before the final record, add another person who comes and talks with him.",
+   "At the end, say that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1885,
+  "completion_tokens": 2817,
+  "total_tokens": 4702,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1882,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1894,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ef48428c82"
+}

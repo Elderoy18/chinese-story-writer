@@ -1,0 +1,136 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n很多年以前有一个老人叫神农。他遇到了一个大问题，他的耳朵越来越大，对他来说，耳朵麻烦得很。他每次看到自己的耳朵都会变得非常生气。他想吃植物可能可以解决他的问题，他走到离家很远的地方。虽然他吃了所有的花，可是每天他的耳朵还在变大。无论吃什么花都没有解决他的问题。有一天，他的耳朵变得太重了，神农摔倒在地上。他穿蓝色衣服的朋友吃了灵芝。然后他开始出汗，所以他换了一件衣服。他穿灰色衣服以后，神农发现他朋友的耳朵突然变小了。神农一看就说：吃花没有用，非吃灵芝不可。灵芝是小耳朵的药，我非常开心。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "People do not know edible plants and become sick after eating some plants",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "People do not know which plants are safe to eat, and people get sick after eating some plants.",
+    "details_left_out": [
+     "It is ancient times.",
+     "This happens often."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 decides to identify safe plants and tries different plants",
+    "verdict": "partly",
+    "evidence": [
+     "他想吃植物可能可以解决他的问题，他走到离家很远的地方。",
+     "虽然他吃了所有的花，可是每天他的耳朵还在变大。"
+    ],
+    "missing_part": "神农's purpose is to find which plants are safe or unsafe to eat.",
+    "details_left_out": [
+     "He climbs mountains."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 finds 茶 and takes a record of it.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints",
+    "verdict": "partly",
+    "evidence": [
+     "虽然他吃了所有的花，可是每天他的耳朵还在变大。",
+     "有一天，他的耳朵变得太重了，神农摔倒在地上。"
+    ],
+    "missing_part": "The plant is 夹竹桃, and 神农 faints after trying it.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "A person in blue gives 灵芝 to 神农, who feels better after eating it",
+    "verdict": "partly",
+    "evidence": [
+     "他穿蓝色衣服的朋友吃了灵芝。",
+     "神农一看就说：吃花没有用，非吃灵芝不可。"
+    ],
+    "missing_part": "A person in blue gives 灵芝 to 神农, and 神农 eats it and feels better.",
+    "details_left_out": [
+     "The person in blue stops by."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "A person in brown comes and talks with 神农",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Another person in brown comes by and has a conversation with 神农.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 takes a record of both 灵芝 and 夹竹桃.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "他想吃植物可能可以解决他的问题，他走到离家很远的地方。",
+    "problem": "神农 tries plants to learn which are safe to eat, not to cure his growing ears."
+   },
+   {
+    "learner_text": "有一天，他的耳朵变得太重了，神农摔倒在地上。",
+    "problem": "神农 faints after trying 夹竹桃, not because his ears become too heavy."
+   },
+   {
+    "learner_text": "他穿蓝色衣服的朋友吃了灵芝。",
+    "problem": "The person in blue gives 灵芝 to 神农; the blue person does not eat it instead."
+   },
+   {
+    "learner_text": "他穿灰色衣服以后，神农发现他朋友的耳朵突然变小了。",
+    "problem": "After eating 灵芝, 神农 feels better; the story does not say that his friend's ears become smaller."
+   },
+   {
+    "learner_text": "灵芝是小耳朵的药，我非常开心。",
+    "problem": "灵芝 makes 神农 feel better after he faints from 夹竹桃; it is not medicine for making ears smaller."
+   }
+  ],
+  "feedback": [
+   "Before 神农 starts trying plants, add that people do not know safe plants and become sick after eating some of them.",
+   "When 神农 begins trying plants, say that he wants to find which plants are safe and unsafe to eat.",
+   "After he tries plants, add that 神农 finds 茶 and records it.",
+   "Before the person in blue arrives, say that 神农 tries 夹竹桃 and faints.",
+   "When the person in blue arrives, add that this person gives 灵芝 to 神农, and 神农 eats it and feels better.",
+   "After 神农 feels better, add a person in brown who comes and talks with 神农.",
+   "After the conversation, add that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1106,
+  "completion_tokens": 2092,
+  "total_tokens": 3198,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1103,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1122,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

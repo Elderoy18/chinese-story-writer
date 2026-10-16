@@ -1,0 +1,48 @@
+{
+ "input": "CATEGORY: 可是/却/而: semantic turn (Coherence: connectors)\ndefinition: Use 可是, 却, 而, and 但 only when there is a real contrast, unexpected semantic turn, or concession. Do not add an adversative connector without that relationship.\n\nHER NOTES IN THIS CATEGORY (3 distinct):\n1 | no “semantic turn” relationship, so可是is inappropriate\n1 | “而” is not appropriate, because here is no “semantic turn”\n1 | “却” indicates unexpected semantic turn\n\nHER CORRECTIONS (8 of 8):\n[mengmu_samples#36/f5/p0/note/e0] ⟦可是⟧他很聪明  || her note: no “semantic turn” relationship, so可是is inappropriate\n[mengmu_samples#48/f1/p0/note/e0] ⟦而⟧追求知识是很重要的  || her note: “而” is not appropriate, because here is no “semantic turn”\n[pear_story#4/f23/p0/k0-1/e2] 但政府实行的改革经济一系列政策[就让→却使]他失业  || her note: “却” indicates unexpected semantic turn\n[shennong_samples#47/f3/p0/k0/e0] [+但是]跟牛奶喝\n[pear_story#4/f32/p0/k0-1/e0] [+但]据人类法律规定\n[mengmu_samples#29/f2/p0/k0/e0] [-可是]孟子的妈妈一直很控制他\n[mengmu_samples#49/f2/p0/k0-1/e1] 他才三岁[+，可是一直]的以后待在墓地里\n[pear_story#4/f23/p0/k0-1/e0] [-但]政府实行的改革经济一系列政策就让他失业",
+ "salt": "",
+ "output": {
+  "rule": "Use 可是, 却, 而, and 但 only when there is a real “semantic turn,” such as a contrast or an unexpected result. 却 indicates an unexpected semantic turn.",
+  "explanation_template": "<wrong> → <correct>: there is no real contrast or “semantic turn” here, so do not use <connector>.",
+  "examples": [
+   {
+    "edit_id": "mengmu_samples#36/f5/p0/note/e0",
+    "explanation": "可是: there is no “semantic turn” relationship here, so 可是 is inappropriate."
+   },
+   {
+    "edit_id": "mengmu_samples#48/f1/p0/note/e0",
+    "explanation": "而: there is no “semantic turn” here, so 而 is not appropriate."
+   },
+   {
+    "edit_id": "pear_story#4/f23/p0/k0-1/e2",
+    "explanation": "就让 → 却使: losing his job is an unexpected semantic turn, so use 却."
+   },
+   {
+    "edit_id": "mengmu_samples#29/f2/p0/k0/e0",
+    "explanation": "可是 → delete: there is no real contrast or “semantic turn” here, so do not use 可是."
+   }
+  ],
+  "not_an_error": "Use 却 when the result is an unexpected semantic turn.",
+  "her_terms": [
+   "semantic turn"
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 838,
+  "completion_tokens": 273,
+  "total_tokens": 1111,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5bd17f1771"
+}

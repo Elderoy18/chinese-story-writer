@@ -1,0 +1,62 @@
+{
+ "input": "current scene: 古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "original": "住了在",
+    "corrected": "住在",
+    "before": "子和孟母",
+    "after": "靠墓地的",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "住在 a place does not take 了 here."
+   },
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "墓地祭拜",
+    "after": "。",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "每天 marks a habitual action, so sentence-final 了 is not used."
+   },
+   {
+    "original": "搬了到",
+    "corrected": "搬到了",
+    "before": "。他们",
+    "after": "别一个城",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "了 follows the directional complement 到."
+   },
+   {
+    "original": "别",
+    "corrected": "另",
+    "before": "他们搬了到",
+    "after": "一个城市",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "另一个 is the standard expression for “another one.”"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 628,
+  "completion_tokens": 3522,
+  "total_tokens": 4150,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3292,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

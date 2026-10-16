@@ -1,0 +1,69 @@
+{
+ "input": "learner text: 古代的时候，孟子和孟母住了在靠墓地的家。\nquote: 古代的时候，孟子和孟母住了在靠墓地的家\npart p0: fix [ref p0/k0] 在古代 ; notes: better to briefly introduce “孟子” when this character first appears\npart p1: fix [ref p1/k0] 住在靠近墓地的地方/墓地附近 ; instruction [ref p1/k1] delete了 ; notes: 在+Place",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "before": "",
+    "after": "，孟子和孟",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the time expression with her correction"
+   },
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "孟子",
+    "corrected": "",
+    "before": "古代的时候，",
+    "after": "和孟母住了",
+    "note": "better to briefly introduce “孟子” when this character first appears",
+    "confidence": "high",
+    "reason": "note requests an introduction when 孟子 first appears"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "在靠墓地的家",
+    "corrected": "在靠近墓地的地方",
+    "before": "孟母住了",
+    "after": "",
+    "note": "在+Place",
+    "confidence": "high",
+    "reason": "changes the location phrase to her suggested 在+Place wording"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "孟子和孟母住",
+    "after": "在靠墓地的",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1054,
+  "completion_tokens": 709,
+  "total_tokens": 1763,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1051,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 461,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

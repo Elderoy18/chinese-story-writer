@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 这个问题神农觉得很糟糕，所以神农去了吃每种植物。\nquote: 这个问题神农觉得很糟糕，所以神农去了吃每种植物\npart p0: comment [ref p0/note] 很严重better，usually糟糕for情况situations\npart p1: fix [ref p1/k0] 去吃了",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "糟糕",
+    "corrected": "",
+    "before": "农觉得很",
+    "after": "，所以",
+    "note": "很严重better，usually糟糕for情况situations",
+    "confidence": "high",
+    "reason": "teacher comments that 很严重 is better for this problem"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "去了吃",
+    "corrected": "去吃了",
+    "before": "所以神农",
+    "after": "每种植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "moves 了 to the end of 去吃"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1022,
+  "completion_tokens": 359,
+  "total_tokens": 1381,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 224,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

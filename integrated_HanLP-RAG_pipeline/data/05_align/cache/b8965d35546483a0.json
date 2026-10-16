@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 但那些三个男孩不知不觉和梨子走过了被偷走的有梨子所有权的第一个人。\nquote: 但那些三个男孩不知不觉和梨子走过了被偷走的有梨子所有权的第一个人\npart p0: fix [ref p0/k0] 那三个男孩/那些男孩 ; notes: “些” cannot be used with num.\npart p1: fix [ref p1/k0] 拿着梨子 ; notes: “和+noun.” is used for multiple nouns that have the same action, we can say: 那三个男孩和拿走梨子的小男孩走过了……，because both 三个男孩 and 小男孩 “walk past…”, but here “梨子” do not walk, so you need to use the accompanying phrase “V.着”\npart p2: comment [ref p2/note] “被偷走的有梨子所有权的第一个人” is too long, 第一个被偷走梨子的人 is clear enough.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "那些三个",
+    "corrected": "那三个",
+    "before": "但",
+    "after": "男孩不知",
+    "note": "“些” cannot be used with num.",
+    "confidence": "low",
+    "reason": "chooses the teacher's numbered-noun alternative"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "和梨子",
+    "corrected": "拿着梨子",
+    "before": "孩不知不觉",
+    "after": "走过了被",
+    "note": "“和+noun.” is used for multiple nouns that have the same action, we can say: 那三个男孩和拿走梨子的小男孩走过了……，because both 三个男孩 and 小男孩 “walk past…”, but here “梨子” do not walk, so you need to use the accompanying phrase “V.着”",
+    "confidence": "high",
+    "reason": "replaces 和+noun with the accompanying 着 phrase"
+   },
+   {
+    "ref": "p2/note",
+    "op": "comment",
+    "original": "被偷走的有梨子所有权的第一个人",
+    "corrected": "",
+    "before": "梨子走过了",
+    "after": "",
+    "note": "“被偷走的有梨子所有权的第一个人” is too long, 第一个被偷走梨子的人 is clear enough.",
+    "confidence": "high",
+    "reason": "teacher comments that this noun phrase is too long"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1174,
+  "completion_tokens": 474,
+  "total_tokens": 1648,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1171,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 170,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

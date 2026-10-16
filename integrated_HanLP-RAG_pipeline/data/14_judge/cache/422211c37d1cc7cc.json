@@ -1,0 +1,81 @@
+{
+ "input": "EARLIER SCENES (context only):\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\nCURRENT SCENE:\n发现了夹竹桃有毒。别人看到他，很快给他吃一个灵芝。神农一吃就觉得比较好。然后，他继续写他发现的信息。会告诉他的朋友哪一个植物能不能吃。\n\nFLAGGED PLACES:\n\n[P172] 发现【了】夹竹桃有毒\n  proposed by the correction model: 发现[-了]夹竹桃有毒\n  proposed by the teacher's pattern/rule: 发现[-了]夹竹桃有毒 (no 了 after the mental-state verb 发现)\n  her past correction (redundant_words): 可是[-吃]夹竹桃有毒\n  her past correction (word_class_choice): 夹竹桃[是毒→有毒]\n  her past correction (word_class_choice): 夹竹桃[很毒→有毒]\n  rule card no_le_mental_state: Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative. Not an error: Apply this rule when 决定 or 发现 expresses the decision or discovery in this narrative use.\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n\n[P173] 很快给他吃【^】一个灵芝\n  proposed by the correction model: 很快给他吃[+了]一个灵芝\n  her past correction (le_completed): 给[+了]他一个灵芝 — her note: 了completed\n  her past correction (verb_object_valency): 正好有一个人[帮他→给他]吃一个灵芝\n  her past correction (le_completed): [给→给了]他一个灵芝 — her note: 了completed\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card verb_object_valency: Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself. Not an error: Do not flag 掉 when it is a resultative complement after another main action verb. 掉 can also be used in the structure 掉 + directional + place.\n\n[P174] 神农一吃就觉得比较好【^】\n  proposed by the correction model: 神农一吃就觉得比较好[+吃]\n  her past correction (le_completed): 神农吃[+了]以后 — her note: 了completed\n  her past correction (le_completed): 神农[吃→吃了]一个夹竹桃 — her note: 了completed\n  her past correction (le_completed): 神农[吃→吃了]灵芝以后 — her note: 了completed\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P175] 会告诉他的朋友哪一【个】植物能不能吃\n  proposed by the AI checker: 会告诉他的朋友哪一[个→种]植物能不能吃 (植物种类 takes 种, not 个)\n  proposed by the correction model: 会告诉他的朋友哪一[个→种]植物能不能吃\n  her past correction (incorrect_story_information): 然后神农回家告诉他的[人民→朋友邻居]什么植物能吃\n  her past correction (possessive_reference): 但是[他的人民→他的朋友邻居]不知道什么植物能吃 — her note: “他的人民”implies that神农is a king\n  her past correction (cause_result_soyi): [因为→这样]大家知道什么植物不能吃 — her note: not “because”\n  rule card incorrect_story_information: Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information. Not an error: Do not flag a word or sentence under this rule only because of grammar or vocabulary. Flag it here when it changes or adds a fact in the traditional story.\n  rule card possessive_reference: Do not use 他的/她的 for people or a place when it sounds like the person owns them. Use a precise relationship word, such as 家人, 朋友邻居, 人们, or 这个小城市. Not an error: Do not flag 他的/她的 when the intended meaning is actual ownership or when it clearly gives the needed relationship.\n\n[P176] 会告诉他的朋友哪一个植物【能不能吃】\n  proposed by the AI checker: 会告诉他的朋友哪一个植物[能不能吃→能吃，哪一种不能吃] (which-plant and yes/no forms cannot be combined this way)\n  proposed by the correction model: 会告诉他的朋友哪一个植物能[-不能]吃\n  her past correction (question_patterns): 一回家就写什么植物他们[能和不能吃→能吃，什么植物不能吃]\n  her past correction (question_patterns): 中国人不知道什么植物[可能还是不可能→能吃，什么植物不能]吃\n  her past correction (possessive_reference): 但是[他的人民→他的朋友邻居]不知道什么植物能吃 — her note: “他的人民”implies that神农is a king\n  rule card question_patterns: Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.\n  rule card possessive_reference: Do not use 他的/她的 for people or a place when it sounds like the person owns them. Use a precise relationship word, such as 家人, 朋友邻居, 人们, or 这个小城市. Not an error: Do not flag 他的/她的 when the intended meaning is actual ownership or when it clearly gives the needed relationship.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P172",
+    "decision": "keep",
+    "category": "no_le_mental_state",
+    "original": "了",
+    "before": "发现",
+    "after": "夹竹桃有",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Discovery verb should not take 了 here."
+   },
+   {
+    "place_id": "P173",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "",
+    "before": "很快给他吃",
+    "after": "一个灵芝",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "Completed narrative action needs 了."
+   },
+   {
+    "place_id": "P174",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "得比较好",
+    "after": "",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "觉得比较好 is natural and complete."
+   },
+   {
+    "place_id": "P175",
+    "decision": "drop",
+    "category": "word_class_choice",
+    "original": "个",
+    "before": "的朋友哪一",
+    "after": "植物能不",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "个 can classify an individual plant."
+   },
+   {
+    "place_id": "P176",
+    "decision": "keep",
+    "category": "question_patterns",
+    "original": "能不能吃",
+    "before": "一个植物",
+    "after": "",
+    "corrected": "能吃，哪一个不能吃",
+    "confidence": "high",
+    "reason": "Wh-question should not combine with 能不能 here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2106,
+  "completion_tokens": 1298,
+  "total_tokens": 3404,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2103,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

@@ -1,0 +1,70 @@
+{
+ "input": "EARLIER SCENES (context only):\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\nCURRENT SCENE:\n子思认为，对孩子来说，读书最重要，特别是学哲学。孟子不是练习写文章，就是看哲学书。孟子从五岁一直学哲学。他才五岁就学哲学，难怪他成为很有名的哲学家。\n\nFLAGGED PLACES:\n\n[P11] 就是【看】哲学书\n  proposed by the teacher's pattern/rule: 就是[看→看到]哲学书 (her pattern: 看 -> 看到 (corrected 37/71 in train))\n  her past correction (le_completed): 他成为[+了]哲学家\n  her past correction (conditional_jiu): [+就]开始学哲学 — her note: 才 Num.就V.\n  her past correction (fixed_expressions): 而是成为[哲学人→哲学家]\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n\n[P12] 孟子从五岁【一直】学哲学\n  proposed by the AI checker: 孟子从五岁[+起]一直学哲学 (从五岁一直 usually needs 起 or an endpoint)\n  proposed by the correction model: 孟子从五岁[一直→开始]学哲学\n  her past correction (laoshi_negative_repetition): 孟子从早到晚[老是→一直]学哲学 — her note: “老是“ for something negative, used to complain\n  her past correction (redundant_words): 孟子决定[-他应该]学哲学\n  her past correction (zai_progressive): 孟子[一直学了→一直在学习]很多东西 — her note: 一直在+V., emphasizing always ongoing\n  rule card laoshi_negative_repetition: 老是 means “always” and is used for something negative or to complain; for a neutral or positive repeated action, use 一直 or 常常 instead. Not an error: Use 老是 when the repeated action is negative or the speaker is complaining about it. Do not flag it merely because it means “always.”\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P13] 难怪【他】成为很有名的哲学家\n  proposed by the teacher's pattern/rule: 难怪[-他]成为很有名的哲学家 (他 repeats the subject of the clause before: zero form)\n  her past correction (word_class_choice): 难怪他成为[名的→有名的]哲学家\n  her past correction (become_and_profession): 难怪他长大以后[当→成为]很有名的哲学家\n  her past correction (zero_redundant_pronoun): [-他]难怪成为了一个很聪明的哲学家\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n\n[P14] 难怪他成为【^】很有名的哲学家\n  proposed by the AI checker: 难怪他成为[+了]很有名的哲学家 (becoming a philosopher is a completed later event)\n  her past correction (word_class_choice): 难怪他成为[名的→有名的]哲学家\n  her past correction (become_and_profession): 难怪他长大以后[当→成为]很有名的哲学家\n  her past correction (time_sequence_markers): [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为\n  rule card word_class_choice: Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard. Not an error: Do not flag 文明 when it is used as an Adj. meaning “civilized.”\n  rule card become_and_profession: 成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才. Not an error: Do not flag 成为 when it is followed by an appropriate noun, especially a profession or public identity, such as 成为哲学家.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P11",
+    "decision": "drop",
+    "category": "perception_look_see",
+    "original": "看",
+    "before": "章，就是",
+    "after": "哲学书",
+    "corrected": "看",
+    "confidence": "high",
+    "reason": "看哲学书 means read/look at books, not successfully see them."
+   },
+   {
+    "place_id": "P12",
+    "decision": "drop",
+    "category": "other",
+    "original": "一直",
+    "before": "孟子从五岁",
+    "after": "学哲学",
+    "corrected": "一直",
+    "confidence": "high",
+    "reason": "从五岁一直学哲学 is acceptable without 起 or an endpoint."
+   },
+   {
+    "place_id": "P13",
+    "decision": "keep",
+    "category": "zero_redundant_pronoun",
+    "original": "他",
+    "before": "学，难怪",
+    "after": "成为很有",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The subject is already clear from the close preceding clause."
+   },
+   {
+    "place_id": "P14",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "",
+    "before": "难怪他成为",
+    "after": "很有名的",
+    "corrected": "了",
+    "confidence": "high",
+    "reason": "Becoming a famous philosopher is a completed change of state."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1971,
+  "completion_tokens": 764,
+  "total_tokens": 2735,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1968,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

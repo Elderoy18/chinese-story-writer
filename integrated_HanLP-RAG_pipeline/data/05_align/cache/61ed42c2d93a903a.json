@@ -1,0 +1,58 @@
+{
+ "input": "learner text: 因为她望子成龙，所以她会一直搬家才能找到质量好的教育。\nquote: 所以她会一直搬家才能找到质量好的教育\npart p0: instruction [ref p0/k0] delete会 ; notes: 会will\npart p1: instruction [ref p1/k0] delete才能 ; fix [ref p1/k1] 想要让孟子受到良好的教育",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "会",
+    "corrected": "",
+    "before": "所以她",
+    "after": "一直搬家才",
+    "note": "会will",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "才能",
+    "corrected": "",
+    "before": "会一直搬家",
+    "after": "找到质量",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "replace",
+    "original": "找到质量好的教育",
+    "corrected": "想要让孟子受到良好的教育",
+    "before": "搬家才能",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the purpose phrase with the teacher's correction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1030,
+  "completion_tokens": 508,
+  "total_tokens": 1538,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1027,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 344,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

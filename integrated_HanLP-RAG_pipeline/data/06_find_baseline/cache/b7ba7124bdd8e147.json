@@ -1,0 +1,44 @@
+{
+ "input": "current scene: 有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "不合适的地方让孩子玩",
+    "corrected": "不适合孩子玩的地方",
+    "before": "觉得这是",
+    "after": "，所以她",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the modifier order for a place suitable for children to play is wrong"
+   },
+   {
+    "original": "住在这儿",
+    "corrected": "这儿的",
+    "before": "福，而且",
+    "after": "教育不太好",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the sentence needs “the education here,” not “living here education”"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 632,
+  "completion_tokens": 2190,
+  "total_tokens": 2822,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2047,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

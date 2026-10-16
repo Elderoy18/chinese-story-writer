@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 她决定了以后搬出去学校的旁边。\nquote: 她决定了以后搬出去学校的旁边\npart p0: comment [ref p0/note] 决定is a mental state verb, no了\npart p1: fix [ref p1/k0] 搬到",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "她决定",
+    "after": "以后搬出",
+    "note": "决定is a mental state verb, no了",
+    "confidence": "high",
+    "reason": "deletes 了 after mental-state verb 决定"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "搬出去",
+    "corrected": "搬到",
+    "before": "决定了以后",
+    "after": "学校的旁边",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the movement phrase with the teacher's 搬到"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1007,
+  "completion_tokens": 298,
+  "total_tokens": 1305,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 164,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

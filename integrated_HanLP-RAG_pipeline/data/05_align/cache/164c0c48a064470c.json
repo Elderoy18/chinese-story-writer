@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他才三岁的以后待在墓地里。\nquote: 他才三岁的以后待在墓地里\npart p0: fix [ref p0/k0-1] 他才三岁，可是一直待在墓地里 ; notes: Time + 以后",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "的以后",
+    "corrected": "",
+    "before": "他才三岁",
+    "after": "待在墓地",
+    "note": "Time + 以后",
+    "confidence": "high",
+    "reason": "removes 的以后 after the age expression"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "，可是一直",
+    "before": "他才三岁",
+    "after": "待在墓地",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the contrasting conjunction and duration adverb from her rewrite"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 999,
+  "completion_tokens": 126,
+  "total_tokens": 1125,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

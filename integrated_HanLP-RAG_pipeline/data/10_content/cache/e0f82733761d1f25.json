@@ -1,0 +1,97 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n古代的时候，有一个男人叫神农。有一天，神农跟他的朋友玩儿。然后他们看了很多植物。他的朋友们说，你要不要吃这个植物。神农说，我觉得很蹊跷，因为我们不知道植物是什么，这就要看你饿不饿了。他的朋友们说，什么植物我们都喜欢吃，我们也不在乎植物是毒。我们饿死了。但是吃植物的时候他们正好觉得不舒服。神农一看就知道朋友们吃了夹竹桃。神农说，你们感觉怎么样？朋友说，我们的身体不舒服，特别是肚子疼。神农的朋友求他，麻烦给我们药。神农说，我当然把药给你们。所以他爬山找解药。在他的旅行，神农发现很多植物。把植物做成茶，比方说蝶窦花茶。有一天，他不小心吃了夹竹桃，身体觉得不舒服，正好有一些陌生人帮他把灵芝给他。神农吃了灵芝，立刻感觉好多了。他发现灵芝是夹竹桃的解药，所以他把灵芝治好了他的朋友们。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "told",
+    "evidence": [
+     "我们不知道植物是什么",
+     "但是吃植物的时候他们正好觉得不舒服。"
+    ],
+    "missing_part": "",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "所以他爬山找解药。",
+     "在他的旅行，神农发现很多植物。"
+    ],
+    "missing_part": "He does not decide to find which plants are safe to eat and which are poisonous, and he is not said to try different plants on the mountains.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "partly",
+    "evidence": [
+     "把植物做成茶，比方说蝶窦花茶。"
+    ],
+    "missing_part": "It does not say that 神农 found 茶 or that he made a record of it.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "partly",
+    "evidence": [
+     "有一天，他不小心吃了夹竹桃，身体觉得不舒服，正好有一些陌生人帮他把灵芝给他。"
+    ],
+    "missing_part": "He eats 夹竹桃, but the story does not say that he fainted.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "partly",
+    "evidence": [
+     "正好有一些陌生人帮他把灵芝给他。",
+     "神农吃了灵芝，立刻感觉好多了。"
+    ],
+    "missing_part": "The helper is not described as one person in blue.",
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "A person in brown coming by and having a conversation with 神农 is not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 does not record 灵芝 and 夹竹桃.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "Before finding 茶, add that 神农 wanted to learn which plants were safe or poisonous and climbed mountains to taste different plants.",
+   "While 神农 is finding plants on the mountain, say that he found 茶 and wrote it down.",
+   "After finding 茶, say that eating 夹竹桃 made 神农 faint.",
+   "After 神农 fainted, say that one person in blue gave him 灵芝.",
+   "After 神农 feels better, add a person in brown who comes and talks with him.",
+   "After the conversation with the person in brown, say that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 929,
+  "completion_tokens": 1433,
+  "total_tokens": 2362,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 888,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

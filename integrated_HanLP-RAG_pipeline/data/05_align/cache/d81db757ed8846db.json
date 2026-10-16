@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 一下子就骑车逃跑。\nquote: 一下子就骑车逃跑\npart p0: fix [ref p0/k0] 接着一下子就骑车逃跑了 ; instruction [ref p0/k1] add “接着” otherwise it is broken from the preceding clause\npart p1: instruction [ref p1/k0] add了 change.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "接着",
+    "before": "",
+    "after": "一下子就骑",
+    "note": "",
+    "confidence": "high",
+    "reason": "teacher's rewrite adds 接着 at the start"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "就骑车逃跑",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "teacher's rewrite adds sentence-final 了"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "insert",
+    "original": "",
+    "corrected": "接着",
+    "before": "",
+    "after": "一下子就骑",
+    "note": "otherwise it is broken from the preceding clause",
+    "confidence": "high",
+    "reason": "explicit instruction to add 接着"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "就骑车逃跑",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit instruction to add 了"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1023,
+  "completion_tokens": 199,
+  "total_tokens": 1222,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

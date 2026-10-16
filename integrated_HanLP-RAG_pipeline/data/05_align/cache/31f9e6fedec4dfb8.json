@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 人类就多么奇怪呢。\nquote: 人类就多么奇怪呢\npart p0: fix [ref p0/k0] 人类就是这么奇怪呢/人类多么奇怪啊",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "就多么奇怪呢",
+    "corrected": "就是这么奇怪呢",
+    "before": "人类",
+    "after": "",
+    "note": "",
+    "confidence": "low",
+    "reason": "first alternative replaces 就多么 with 就是这么"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "就",
+    "corrected": "",
+    "before": "人类",
+    "after": "多么奇怪呢",
+    "note": "",
+    "confidence": "low",
+    "reason": "second alternative removes 就"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "呢",
+    "corrected": "啊",
+    "before": "多么奇怪",
+    "after": "",
+    "note": "",
+    "confidence": "low",
+    "reason": "second alternative changes the sentence-final particle"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 989,
+  "completion_tokens": 157,
+  "total_tokens": 1146,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他看了很多人吃毒的植物，因为他们常常生病了，所以神农想弄清楚什么菜健康。\nquote: 因为他们常常生病了，所以神农想弄清楚什么菜健康\npart p0: fix [ref p0/k0] 常常生病 ; notes: no了for routine/habit\npart p1: fix [ref p1/k0] 什么植物",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "们常常生病",
+    "after": "，所以神",
+    "note": "no了for routine/habit",
+    "confidence": "high",
+    "reason": "removes 了 for a habitual action"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "什么菜",
+    "corrected": "什么植物",
+    "before": "想弄清楚",
+    "after": "健康",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 菜 with 植物"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1031,
+  "completion_tokens": 242,
+  "total_tokens": 1273,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1028,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 116,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

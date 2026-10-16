@@ -1,0 +1,98 @@
+{
+ "input": "current scene: 很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "original": "很",
+    "corrected": "",
+    "before": "古代的人",
+    "after": "不知道什么",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "很 cannot modify 不知道 here"
+   },
+   {
+    "original": "",
+    "corrected": "不知道",
+    "before": "能吃，也",
+    "after": "什么植物",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "parallel clause needs the verb 不知道"
+   },
+   {
+    "original": "不安全",
+    "corrected": "有毒",
+    "before": "人常常吃",
+    "after": "的植物，",
+    "type": "word_choice",
+    "confidence": "low",
+    "why": "plants harmful to eat are usually called 有毒的"
+   },
+   {
+    "original": "不安全",
+    "corrected": "有毒",
+    "before": "植物，吃",
+    "after": "的植物对",
+    "type": "word_choice",
+    "confidence": "low",
+    "why": "plants harmful to eat are usually called 有毒的"
+   },
+   {
+    "original": "你的",
+    "corrected": "人的",
+    "before": "的植物对",
+    "after": "身体有坏",
+    "type": "reference",
+    "confidence": "high",
+    "why": "generic statement should not shift to you"
+   },
+   {
+    "original": "",
+    "corrected": "这是一个",
+    "before": "有坏处，",
+    "after": "很麻烦的",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the noun phrase needs a subject and verb"
+   },
+   {
+    "original": "",
+    "corrected": "有",
+    "before": "题。但是",
+    "after": "一个人，神",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "introducing a new person needs 有"
+   },
+   {
+    "original": "神农",
+    "corrected": "叫神农",
+    "before": "一个人，",
+    "after": "，要解决这",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the person's name needs an introducing verb"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 605,
+  "completion_tokens": 2676,
+  "total_tokens": 3281,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2313,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

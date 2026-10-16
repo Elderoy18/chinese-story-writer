@@ -1,0 +1,68 @@
+{
+ "input": "CURRENT SCENE:\n夹竹桃是毒的，我想知道灵芝会帮他。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你帮得真好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“\n\nITEMS:\n\n[I185] 夹竹桃【是毒】的   correction: 是毒 → 有毒   strength: error\n  checker's note: her pattern: 是毒 -> 有毒 (corrected 14/15 in train)\n  rule card (word_class_choice, Vocabulary): Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.  Pattern: <wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.  Her terms: noun, Adj., Subj., 很多+noun, 这个 + Noun\n  her past correction: 夹竹桃[是毒→有毒]\n  her past correction: 夹竹桃[很毒→有毒]\n  her past correction: 夹竹桃是[+有]毒的\n\n[I186] 我想【知道】灵芝会帮他   correction: 知道 → (delete)   strength: error\n  checker's note: 想灵芝会帮他 means “think Lingzhi will help him.”\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 那个人给[+了]他灵芝 — her note: 了completed\n  her past correction: 神农[问人帮他→请人]给他灵芝 — her note: the “ask” in “ask for help” is not问\n  her past correction: 正好[有一些陌生人→一个陌生人]帮他把灵芝给他\n\n[I187] 我想知道灵芝会【^】帮他   correction: ∅ → 不会   strength: suggestion\n  rule card (ask_request_verbs, Vocabulary): 问 is for asking a question. For “ask for help,” use 请人 or 找别人帮忙; for “ask somebody to do something,” use 请 or 让.  Pattern: <wrong> → <correct>: here “ask” means <ask for help / ask somebody to do something>, not asking a question, so do not use 问.\n  her past correction: 神农[问人帮他→请人]给他灵芝 — her note: the “ask” in “ask for help” is not问\n  her past correction: 那个人给[+了]他灵芝 — her note: 了completed\n  her past correction: 灵芝[特别是帮忙→特别有用] — her note: ”特别是+N, + Clause” is used to single out a typical example\n\n[I188] ”哥哥给【^】神农灵芝   correction: ∅ → 了   strength: error\n  checker's note: the completed giving action needs 了.\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他给[+了]神农灵芝 — her note: 了completed\n  her past correction: ”他们[给→给了]神农灵芝 — her note: 了completed\n  her past correction: 他们给[+了]神农灵芝 — her note: 了completed\n\n[I189] 特别是如果【我们】已经吃了夹竹桃   correction: 我们 → (delete)   strength: error\n  checker's note: 我们 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 可是[-吃]夹竹桃有毒\n  her past correction: [吃着夹竹桃的以后→吃了夹竹桃以后] — her note: 着durative vs.了completed\n  her past correction: [+如果吃了夹竹桃，]这就要看你也吃不吃灵芝了 — her note: e.g., 如果吃了夹竹桃\n\n[I190] 特别是如果我们【已经】吃了夹竹桃   correction: 已经 → (delete)   strength: suggestion\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 可是[-吃]夹竹桃有毒\n  her past correction: [吃着夹竹桃的以后→吃了夹竹桃以后] — her note: 着durative vs.了completed\n  her past correction: [+如果吃了夹竹桃，]这就要看你也吃不吃灵芝了 — her note: e.g., 如果吃了夹竹桃",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I185",
+    "explanation": "The structure needs an Adj. to describe 夹竹桃. 有毒 means “poisonous”; 是毒 does not use the right word form.",
+    "dimension": "word_choice",
+    "corrected": "有毒",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I186",
+    "explanation": "知道 means “know,” but here you are saying what you think will happen. Delete 知道: 我想灵芝会帮他.",
+    "dimension": "word_choice",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I187",
+    "explanation": "It would be more natural to add 不会 if you mean that you think 灵芝 will not help him.",
+    "dimension": "word_choice",
+    "corrected": "不会",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I188",
+    "explanation": "The giving action is completed in the story, so it takes 了completed: 哥哥给了神农灵芝.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I189",
+    "explanation": "我们 is already clear from the previous clause, so delete it; Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I190",
+    "explanation": "It would be more natural to delete 已经 because 吃了 already shows a completed action.",
+    "dimension": "other",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1851,
+  "completion_tokens": 570,
+  "total_tokens": 2421,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1848,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 247,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

@@ -1,0 +1,81 @@
+{
+ "input": "EARLIER SCENES (context only):\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\nCURRENT SCENE:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nFLAGGED PLACES:\n\n[P6] 住【^】离墓地太近\n  proposed by the AI checker: 住[+得]离墓地太近 (degree complement needs 得: 住得离……太近)\n  proposed by the correction model: 住[+得]离墓地太近\n  her past correction (location_with_zai): 他[离墓地住很近→住在离墓地很近的地方]\n  her past correction (demonstrative_reference): [小房子→这个小房子]离一个墓地不太远 — her note: otherwise unclear which house\n  her past correction (redundant_words): [-他们]在墓地住 — her note: redundant\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card demonstrative_reference: Use 这个/这种/这些/有的 + N. only when the preceding context makes exactly which person, thing, place, or set clear. If it is already a known event, use 这样的 + N.; if the reference is unclear, name it more specifically. Not an error: Do not flag 这个/这种/这些/有的 when the preceding context identifies exactly what it refers to. 这个 can be used when it makes the intended person, thing, or place clear.\n\n[P7] 【害得】孟子的心气\n  proposed by the AI checker: [害得→伤了]孟子的心气 (伤了心气 is the natural expression)\n  proposed by the correction model: [+会伤]害得孟子的心气\n  proposed by the correction model: 害[-得]孟子的心气\n  her past correction (haide_harmful_result): 害得[-对]孟子有不好的影响 — her note: 害得+Sb.+V.\n  her past correction (haide_harmful_result): 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n  her past correction (haide_harmful_result): 觉得害得孟子的身体[+不好] — her note: 害得+harmful result\n  rule card haide_harmful_result: Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得. Not an error: Do not use this rule for a neutral event such as 搬家 or 玩儿, or for a merely mild feeling such as 不高兴; these are not harmful results for 害得.\n\n[P8] 孟子和【孟母】搬到子思老师的家\n  proposed by the teacher's pattern/rule: 孟子和⟦孟母⟧搬到子思老师的家 (first appearance of 孟母: briefly introduce who this is)\n  her past correction (modal_and_control_verb_complements): 孟子的妈妈叫[-了]孟子搬家 — her note: 叫/让 is a modal verb, no了\n  her past correction (addition_repetition_connectors): 孟子跟他的妈妈[已经→就又]搬家了\n  her past correction (zero_redundant_pronoun): [-孟子跟他的妈妈]已经搬家了\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card modal_and_control_verb_complements: 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了. Not an error: Do not flag 想 when it is followed by a verb phrase, such as 想尝什么植物. Do not add 了 to 叫/让 when it is followed by the action someone is told or made to do.\n\n[P9] 孟子和孟母搬到子思老师的家【，跟子思老师】住\n  proposed by the correction model: 孟子和孟母搬到子思老师的家[-，跟子思老师]住\n  her past correction (location_with_zai): 孟母和孟子住[了→在那儿]很高兴\n  her past correction (addition_repetition_connectors): 孟子跟他的妈妈[已经→就又]搬家了\n  her past correction (modal_and_control_verb_complements): 孟子的妈妈叫[-了]孟子搬家 — her note: 叫/让 is a modal verb, no了\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card addition_repetition_connectors: Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.). Not an error: Do not add an additive connector when the sentence does not show repetition, similarity, or an added point. Use 就, not 还, for a natural continuation rather than a surprising or angry one.\n\n[P10] 【^】他老是读书\n  proposed by the correction model: [+所以]他老是读书\n  her past correction (not_but_refutation): 可是他不[-是]在家读书 — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong\n  her past correction (redundant_words): 他小的时候[-现在]读书最重要\n  her past correction (laoshi_negative_repetition): 所以孟子[老是→一直]在学习 — her note: “老是“ for something negative, used to complain\n  rule card not_but_refutation: Use 不是……而是…… only to correct a conventional or mistaken idea with an unexpected alternative. Put the subject before 不是……而是…… when both alternatives have the same subject. Not an error: Do not flag a sentence that genuinely corrects a mistaken or conventional idea with an unexpected alternative. Do not use this pattern merely to connect two unrelated actions, places, or ideas.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P6",
+    "decision": "keep",
+    "category": "location_with_zai",
+    "original": "住离墓地太近",
+    "before": "妈认为，",
+    "after": "，害得孟",
+    "corrected": "住在离墓地太近的地方",
+    "confidence": "high",
+    "reason": "住 needs a clear 在-place construction."
+   },
+   {
+    "place_id": "P7",
+    "decision": "keep",
+    "category": "haide_harmful_result",
+    "original": "害得孟子的心气",
+    "before": "地太近，",
+    "after": "孟子的心",
+    "corrected": "害得孟子的心气不好",
+    "confidence": "high",
+    "reason": "害得 requires a harmful result."
+   },
+   {
+    "place_id": "P8",
+    "decision": "drop",
+    "category": "first_mention_introduction",
+    "original": "孟母",
+    "before": "孟子和",
+    "after": "搬到子思",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Mencius's mother was already introduced as 妈妈."
+   },
+   {
+    "place_id": "P9",
+    "decision": "drop",
+    "category": "other",
+    "original": "，跟子思老师",
+    "before": "思老师的家",
+    "after": "住。",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Living with the teacher is grammatical and adds information."
+   },
+   {
+    "place_id": "P10",
+    "decision": "keep",
+    "category": "other",
+    "original": "老是",
+    "before": "朋友，他",
+    "after": "读书。",
+    "corrected": "一直",
+    "confidence": "high",
+    "reason": "老是 suggests a complaint; reading is not negative here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2299,
+  "completion_tokens": 1815,
+  "total_tokens": 4114,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2296,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1485,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

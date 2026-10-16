@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他们把家搬到了别的地方，他们住离一个学校很近。\nquote: 他们把家搬到了别的地方，他们住离一个学校很近\npart p0: instruction [ref p0/k0] delete the second他们\npart p1: fix [ref p1/k0] 住在一个离学校很近的地方",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "他们",
+    "corrected": "",
+    "before": "的地方，",
+    "after": "住离一个",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the second 他们"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "住离一个学校很近",
+    "corrected": "住在一个离学校很近的地方",
+    "before": "地方，他们",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the residence phrase with the teacher's corrected wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1017,
+  "completion_tokens": 120,
+  "total_tokens": 1137,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,71 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\nscene 2: 这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\ncurrent scene: 孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "original": "了到",
+    "corrected": "到了",
+    "before": "商店也找",
+    "after": "工作，可",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "了 follows 到 in 找到"
+   },
+   {
+    "original": "",
+    "corrected": "在",
+    "before": "孟子",
+    "after": "学习馆学",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "location needs 在 before it"
+   },
+   {
+    "original": "学习馆",
+    "corrected": "学校",
+    "before": "孟子",
+    "after": "学了十五",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "学习馆 is not the normal word for school"
+   },
+   {
+    "original": "",
+    "corrected": "有",
+    "before": "要，对他",
+    "after": "很多好处",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "对他有很多好处 needs 有"
+   },
+   {
+    "original": "是大人的时候",
+    "corrected": "长大后",
+    "before": "好处。他",
+    "after": "，他成为",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "长大后 is the natural time expression"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 768,
+  "completion_tokens": 2446,
+  "total_tokens": 3214,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2206,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

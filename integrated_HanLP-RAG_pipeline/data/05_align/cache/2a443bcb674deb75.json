@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 他很喜欢他的城市，但是城市有才两个学校，都很小。\nquote: 但是城市有才两个学校\npart p0: fix [ref p0/k0-1] 这个城市，只有",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "但是",
+    "corrected": "这个",
+    "before": "他的城市，",
+    "after": "城市有才两",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the sentence connector to the demonstrative modifier"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "有才",
+    "corrected": "，只有",
+    "before": "是城市",
+    "after": "两个学校",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 有才 with ，只有"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 986,
+  "completion_tokens": 374,
+  "total_tokens": 1360,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 252,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。\nquote: 不是人吵架，就是都叫\npart p0: fix [ref p0/k0-1] 不是常常有人吵架，就是很多人都大声说话",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "常常有",
+    "before": "不是",
+    "after": "人吵架，",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the frequency and existential subject from her fix"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "都叫",
+    "corrected": "很多人都大声说话",
+    "before": "架，就是",
+    "after": "，害得孟",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the second noise description with her wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1011,
+  "completion_tokens": 350,
+  "total_tokens": 1361,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 220,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

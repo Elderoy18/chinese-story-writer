@@ -1,0 +1,89 @@
+{
+ "input": "CURRENT SCENE:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nITEMS:\n\n[I220] 他【一次】试一试有些植物的叶   correction: 一次 → 有一次   strength: error\n  checker's note: needs 有 before 一次 for “on one occasion”\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: 就[测试→尝试]更植物\n  her past correction: 他[测试→尝试]别的植物\n  her past correction: 他测试[别的→各种]植物 — her note: “别的” is for “a different type”, and “all else except the spoken one”\n\n[I221] 他一次【试一试】有些植物的叶   correction: 试一试 → 试了试   strength: error\n  checker's note: a completed past action needs 了\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: 就[测试→尝试]更植物\n  her past correction: 他[测试→尝试]别的植物\n  her past correction: 他测试[别的→各种]植物 — her note: “别的” is for “a different type”, and “all else except the spoken one”\n\n[I222] 他一次试一试有些植物的【叶】   correction: 叶 → 叶子   strength: error\n  checker's note: 叶子 is the usual noun for leaves\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: 就[测试→尝试]更植物\n  her past correction: 他[测试→尝试]别的植物\n  her past correction: 他测试[别的→各种]植物 — her note: “别的” is for “a different type”, and “all else except the spoken one”\n\n[I223] 【吃得】又新鲜又甜   correction: 吃得 → 吃起来   strength: error\n  checker's note: 吃起来 introduces a description of taste\n  rule card (zhe_durative, Coherence: temporality (了/着/在)): Use 着 for a durative, accompanying, or static state. When one action accompanies the main action, use V.着 + V2 (for example, 牵着驴走).  Pattern: <wrong> → <correct>: <V> is a durative/accompanying action while <main action> happens, so use 着 (着durative).  Her terms: 着durative, 了completed, V.着\n  her past correction: [吃梨子→吃着梨子] — her note: 着 durative\n  her past correction: 他[吃→吃了]一个香香的花 — her note: 了completed\n  her past correction: 有些人[吃得好→吃了以后没事儿]\n\n[I224] 煮【^】这些叶以后   correction: ∅ → 了   strength: error\n  checker's note: completed cooking before 以后 needs 了\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农吃[+了]以后 — her note: 了completed\n  her past correction: 但是吃[+了]像伞一样的植物以后 — her note: 了completed\n  her past correction: [-他]吃了以后 — her note: redundant\n\n[I225] 煮这些【叶】以后   correction: 叶 → 叶子   strength: error\n  checker's note: 叶子 is the usual noun for leaves\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农吃[+了]以后 — her note: 了completed\n  her past correction: 但是吃[+了]像伞一样的植物以后 — her note: 了completed\n  her past correction: [吃→吃了]像伞的植物以后 — her note: 了completed\n\n[I226] 他一喝就知道他发现【^】新的茶叶   correction: ∅ → 了   strength: error\n  checker's note: 发现 is a completed discovery\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]喝了茶 — her note: redundant\n  her past correction: 今天的奶茶[是从他对茶学到的→是他从自己的尝试中学到的]\n  her past correction: 神农尝[+了]花儿以后就发现这个花儿不但可以被用做茶 — her note: 了completed\n\n[I227] 虽然他找到了很多【的】新的植物   correction: 的 → (delete)   strength: error\n  checker's note: 很多新的植物 does not need 的\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 他找到了很多[-的]中国的植物\n  her past correction: 他找到了很多[有用植物→有用的植物]\n  her past correction: 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n\n[I228] 但是他的旅程有的时候特别【是】危险   correction: 是 → (delete)   strength: error\n  checker's note: 特别 directly modifies 危险\n  rule card (no_le_routine_state, Coherence: temporality (了/着/在)): For a routine, habit, repeated condition, or state, use zero particle: do not add 了completed. This is especially true with words such as 老是, 常常, and 从早到晚.  Pattern: <wrong> → <correct>: this describes a routine/habit or repeated condition, so use no 了 (no了for routine/habit).  Her terms: no了for routine/habit, no了for habit/routine, 看look vs.看到see, no了\n  her past correction: 因此[时而他到了→会遇到]麻烦 — her note: no了for habit/routine\n  her past correction: 可是他们[老是有问题→碰到麻烦]\n  her past correction: ⟦所以他决定去旅行⟧ — her note: loose connection between the two clauses, 决定去旅行找到能吃的植物",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I220",
+    "explanation": "一次 → 有一次: use 有一次 for “on one occasion”; 一次 alone usually needs a quantity context.",
+    "dimension": "word_choice",
+    "corrected": "有一次",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I221",
+    "explanation": "试一试 → 试了试: this is a completed action in the story, so use 了completed.",
+    "dimension": "grammar",
+    "corrected": "试了试",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I222",
+    "explanation": "叶 → 叶子: use 叶子 as the usual noun for leaves.",
+    "dimension": "word_choice",
+    "corrected": "叶子",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I223",
+    "explanation": "吃得 → 吃起来: use 吃起来 to introduce how something tastes, as in 吃起来又新鲜又甜.",
+    "dimension": "grammar",
+    "corrected": "吃起来",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I224",
+    "explanation": "煮 → 煮了: the cooking is completed before 以后, so it takes 了completed.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I225",
+    "explanation": "叶 → 叶子: use 叶子 as the usual noun for leaves.",
+    "dimension": "word_choice",
+    "corrected": "叶子",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I226",
+    "explanation": "发现 → 发现了: the discovery is completed in the story, so use 了completed.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I227",
+    "explanation": "很多 does not need 的 before 新的植物, so omit 的 here.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I228",
+    "explanation": "特别 directly modifies 危险, so omit 是: 特别危险.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2519,
+  "completion_tokens": 546,
+  "total_tokens": 3065,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2516,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 110,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

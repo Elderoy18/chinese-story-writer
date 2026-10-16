@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 她常常搬家，觉得对孟子有好处，可是孟子不喜欢常常搬家，觉得交新朋友老是害得。\nquote: 觉得交新朋友老是害得\npart p0: fix [ref p0/k0] 觉得常常搬家害得他老是交不到新朋友 ; notes: 害得 + N/sb. + Harmful result",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "常常搬家",
+    "before": "搬家，觉得",
+    "after": "交新朋友",
+    "note": "害得 + N/sb. + Harmful result",
+    "confidence": "high",
+    "reason": "adds the harmful cause before 害得"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "交新朋友老是害得",
+    "corrected": "害得他老是交不到新朋友",
+    "before": "家，觉得",
+    "after": "。",
+    "note": "害得 + N/sb. + Harmful result",
+    "confidence": "high",
+    "reason": "reorders 害得 and supplies its subject and harmful result"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1030,
+  "completion_tokens": 559,
+  "total_tokens": 1589,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1027,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 400,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

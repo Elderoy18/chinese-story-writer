@@ -1,0 +1,69 @@
+{
+ "input": "learner text: 神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。\nquote: 神农在古代每一天看到了别的小镇人生病还是不舒服\npart p0: instruction [ref p0/k0] delete “在古代”, it implies that 神农can travel between 古代 and 现代modern times\npart p1: fix [ref p1/k0] 都看到 ; notes: no了for routine/habit\npart p2: fix [ref p2/k0] 别的小镇上的人\npart p3: fix [ref p3/k0] 生病或者不舒服",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "在古代",
+    "corrected": "",
+    "before": "神农",
+    "after": "每一天看到",
+    "note": "it implies that 神农can travel between 古代 and 现代modern times",
+    "confidence": "high",
+    "reason": "explicit deletion instruction"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "看到了",
+    "corrected": "都看到",
+    "before": "古代每一天",
+    "after": "别的小镇",
+    "note": "no了for routine/habit",
+    "confidence": "high",
+    "reason": "replaces habitual completed action with 都看到"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "别的小镇人",
+    "corrected": "别的小镇上的人",
+    "before": "天看到了",
+    "after": "生病还是",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 的 and 上 to mark people in the town"
+   },
+   {
+    "ref": "p3/k0",
+    "op": "replace",
+    "original": "还是",
+    "corrected": "或者",
+    "before": "的小镇人",
+    "after": "不舒服",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the alternative conjunction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1081,
+  "completion_tokens": 568,
+  "total_tokens": 1649,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1078,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 328,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,49 @@
+{
+ "input": "CATEGORY: miss information / result (Content)\ndefinition: Include the important scene, action, motivation, or result needed for a complete retelling, rather than leaving a key event unexplained.\n\nHER NOTES IN THIS CATEGORY (2 distinct):\n1 | miss the result of eating\n1 | miss information: 孟子 imitated how to offer sacrifices\n\nHER CORRECTIONS (9 of 9):\n[shennong_samples#22/f3/p0/note/e0] ⟦神农吃以后⟧  || her note: miss the result of eating\n[mengmu_samples#8/f1/p1/note/e0] ⟦孟母看出来孟子老是难过，害得他不能好好学习。⟧孟母恐怕孟子住在墓地的旁边对孟子有影响  || her note: miss information: 孟子 imitated how to offer sacrifices\n[mengmu_samples#37/f5/p0/k0/e0] 孟子[学习很难→很难安静学习]\n[mengmu_samples#19/f0/p0/k0-1-2-3/e2] 有一个妈妈和他的儿子[+住在一起]\n[mengmu_samples#14/f0/p0/k0-1/e2] 有一个男孩子叫孟子和他的妈妈[+住在一起]\n[pear_story#3/f16/p0/k0/e0] 可是他看到这三个男孩子[+每人]都有一个梨\n[mengmu_samples#34/f0/p0/k0-1/e0] [古代的时候住了孟子和孟母→在古代，孟子和孟母住在墓地边]\n[mengmu_samples#23/f0/p0/k0-1/e1] 有一个孩子和他的妈妈[+住在一起]\n[mengmu_samples#42/f1/p0/k0/e1] 在当地的墓地找到了他跟别的孩子[+祭拜]",
+ "salt": "",
+ "output": {
+  "rule": "Do not miss important information in a retelling: include the key scene, action, motivation, or result so the event is complete and clear.",
+  "explanation_template": "<incomplete sentence> → <complete sentence>: add <missing information> to show <key action/result/scene>; this information is needed for the retelling.",
+  "examples": [
+   {
+    "edit_id": "shennong_samples#22/f3/p0/note/e0",
+    "explanation": "⟦神农吃以后⟧: add the result of eating; the result is missing."
+   },
+   {
+    "edit_id": "mengmu_samples#8/f1/p1/note/e0",
+    "explanation": "孟母恐怕孟子住在墓地的旁边对孟子有影响: add that 孟子 imitated how to offer sacrifices; this important action is missing."
+   },
+   {
+    "edit_id": "mengmu_samples#42/f1/p0/k0/e1",
+    "explanation": "在当地的墓地找到了他跟别的孩子[+祭拜]: add 祭拜 to show what he and the other children did at the cemetery."
+   },
+   {
+    "edit_id": "mengmu_samples#34/f0/p0/k0-1/e0",
+    "explanation": "古代的时候住了孟子和孟母 → 在古代，孟子和孟母住在墓地边: add the scene detail 墓地边 so the setting is clear."
+   }
+  ],
+  "not_an_error": "Do not flag a sentence just because it does not include every possible detail. Flag it only when an important scene, action, motivation, or result is missing and the retelling is incomplete.",
+  "her_terms": [
+   "miss information",
+   "miss the result of eating"
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 862,
+  "completion_tokens": 1136,
+  "total_tokens": 1998,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 769,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5bd17f1771"
+}

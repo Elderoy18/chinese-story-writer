@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 我们梨堆一族都乱地滚来滚去地上。\nquote: 我们梨堆一族都乱地滚来滚去地上\npart p0: fix [ref p0/k0] 我们这堆梨都在地上乱糟糟/乱七八糟地滚来滚去 ; notes: 在place滚来滚去，multi-syllabic adv. + 地（mono-syllabic adv. cannot be used with 地）",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "梨堆一族",
+    "corrected": "这堆梨",
+    "before": "我们",
+    "after": "都乱地滚",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the noun phrase to the teacher's wording"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "乱地滚来滚去地上",
+    "corrected": "在地上乱糟糟地滚来滚去",
+    "before": "一族都",
+    "after": "",
+    "note": "在place滚来滚去，multi-syllabic adv. + 地（mono-syllabic adv. cannot be used with 地）",
+    "confidence": "low",
+    "reason": "moves the place phrase before the verb and replaces 乱地 with one offered multisyllabic adverb"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1049,
+  "completion_tokens": 636,
+  "total_tokens": 1685,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1046,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 453,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

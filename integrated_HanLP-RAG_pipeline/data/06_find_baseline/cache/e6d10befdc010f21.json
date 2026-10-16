@@ -1,0 +1,80 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\nscene 2: 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\ncurrent scene: 他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "他难怪抱怨",
+    "corrected": "难怪他抱怨",
+    "before": "",
+    "after": "，他想他",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "难怪 normally comes before the subject"
+   },
+   {
+    "original": "想",
+    "corrected": "想念",
+    "before": "抱怨，他",
+    "after": "他的朋友",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "想念 means to miss someone"
+   },
+   {
+    "original": "要",
+    "corrected": "想",
+    "before": "因为他不",
+    "after": "离开他的",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "不想离开 means does not want to leave"
+   },
+   {
+    "original": "找到孟子一个老师",
+    "corrected": "给孟子找到一个老师",
+    "before": "他的妈妈",
+    "after": "。跟老师孟",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "给孟子 marks the person for whom she found a teacher"
+   },
+   {
+    "original": "跟老师孟子学",
+    "corrected": "孟子跟老师学",
+    "before": "个老师。",
+    "after": "最重要的",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "孟子 should be the subject before 跟老师"
+   },
+   {
+    "original": "",
+    "corrected": "了",
+    "before": "以他成为",
+    "after": "哲学家。",
+    "type": "aspect",
+    "confidence": "low",
+    "why": "了 can mark the completed change of becoming a philosopher"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 707,
+  "completion_tokens": 1465,
+  "total_tokens": 2172,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1163,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。\n\nITEMS:\n\n[I316] 他怎么忘记了？他把灵芝放【^】在包里   correction: ∅ → 了   strength: suggestion\n  checker's note: a completed past action normally takes 了\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他把灵芝[带回走了→带回家了] — her note: but not both回and走\n  her past correction: 给[+了]他一个灵芝 — her note: 了completed\n  her past correction: 那个人给[+了]他灵芝 — her note: 了completed\n\n[I317] 一回家就告诉【^】别人   correction: ∅ → 了   strength: suggestion\n  checker's note: specific completed telling action normally takes 了\n  rule card (possessive_reference, Coherence: reference): Do not use 他的/她的 for people or a place when it sounds like the person owns them. Use a precise relationship word, such as 家人, 朋友邻居, 人们, or 这个小城市.  Pattern: <wrong> → <correct>: <他的/她的 + noun> implies that <person> owns <noun>; use <relationship/reference expression> instead.\n  her past correction: 所以他回家告诉[他的人→人们]\n  her past correction: 可以告诉[他的家→家人]\n  her past correction: 告诉[别的人→其他人] — her note: “别的” is for “a different type”, and “all else except the spoken one”\n\n[I318] 他找到药以后他【写下怎么做药在书上】   correction: 写下怎么做药在书上 → 在书上写下怎么做药   strength: error\n  checker's note: location phrase must come before 写下\n  rule card (numeral_measure_word_order, Grammar): With a number and measure word, use Num. + MW. + noun directly, with no 的. For actions, use V. + Num. + MW. + Obj.; for a completed action, use 了completed, V. + Num. + MW. + Obj.  Pattern: <wrong> → <correct>: use <formula>; do not put 的 between the measure word and the noun / put the verb before the number phrase. <Action> is finished, so it takes 了 (了completed).  Her terms: V. + Num. + MW. + Obj., 了completed, num. + MW. + noun, no的, 再V. + Num. + MW. + N., 才V. + Num.\n  her past correction: 后来神农写[书了→了一本]哪些植物是药\n  her past correction: 后来神农写书了哪些植物是药[-，]哪些植物是毒\n  her past correction: 所以⟦他⟧走路走了很长的时间找药 — her note: use神农instead of他to avoid ambiguity\n\n[I319] 那【^】红灵芝对身体好处   correction: ∅ → 种   strength: error\n  checker's note: a demonstrative needs a classifier for a type\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-这些植物]对身体好处\n  her past correction: 这些植物对身体[+有]好处\n  her past correction: [叫了这个对身体有好处的植物→把这个对身体有好处的植物叫做]灵芝\n\n[I320] 那红灵芝对身体【^】好处   correction: ∅ → 有   strength: error\n  checker's note: the phrase is 对身体有好处\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 这些植物对身体[+有]好处\n  her past correction: [-这些植物]对身体好处\n  her past correction: 灵芝一吃[就正好→身体就好了]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I316",
+    "explanation": "It would be more natural to use 了completed because putting the 灵芝 in the bag is a completed action in the story.",
+    "dimension": "coherence_temporality",
+    "corrected": "把灵芝放在包里了",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I317",
+    "explanation": "It would be more natural to use 了completed because telling the other people is a specific completed action in the story.",
+    "dimension": "coherence_reference",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I318",
+    "explanation": "Put the location phrase 在书上 before the action 写下.",
+    "dimension": "grammar",
+    "corrected": "在书上写下怎么做药",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I319",
+    "explanation": "Use a classifier after 那 when you mean one type: 那种红灵芝.",
+    "dimension": "coherence_reference",
+    "corrected": "种",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I320",
+    "explanation": "Use the fixed phrase 对身体有好处. 有 is needed before 好处.",
+    "dimension": "grammar",
+    "corrected": "有",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1676,
+  "completion_tokens": 418,
+  "total_tokens": 2094,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1673,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 162,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

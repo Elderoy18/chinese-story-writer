@@ -1,0 +1,58 @@
+{
+ "input": "learner text: 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。\nquote: 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚\npart p0: instruction [ref p0/k0] add他in the beginning\npart p1: instruction [ref p1/k0] delete 感觉 ; fix [ref p1/k1] 又暖和又舒服",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "他",
+    "before": "",
+    "after": "发现有的植",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 他 at the beginning"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "感觉",
+    "corrected": "",
+    "before": "让肚子",
+    "after": "又暖和又",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "replace",
+    "original": "清楚",
+    "corrected": "舒服",
+    "before": "又暖和又",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 清楚 with 舒服"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1042,
+  "completion_tokens": 147,
+  "total_tokens": 1189,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1039,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

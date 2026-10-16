@@ -81,6 +81,27 @@
     "vocabOutput": "overrides/S5-v2/vocabOutput.txt"
    },
    "note": "S5 with the teacher's official list of good vocabulary suggestions shown as models, and positive guidance: 1-3 suggestions per scene for correct but plain/general words, each checked in the student's sentence (same meaning, strength, collocation, tone)."
+  },
+  "S6": {
+   "label": "+ Teacher's extra rules and definitions",
+   "extends": "S5-v2",
+   "snapshot": "base-v4",
+   "flags": {
+    "teacherRules": true,
+    "noSceneNumbers": true
+   },
+   "fragments": {
+    "rule8": "overrides/S6/rule8.txt"
+   },
+   "note": "The teacher's 8 additional rules (extra rules.docx + general rules from her S5 comments) shown with the places they may apply; her 25 revised rule definitions on the rule cards; end-of-story feedback without scene numbers; vocabulary suggestions aimed at precision rather than formality."
+  },
+  "S6-2pass": {
+   "label": "+ Two-pass retrieval with structured output",
+   "extends": "S6",
+   "flags": {
+    "twoPass": true
+   },
+   "note": "S6, but each scene runs in two passes: pass 1 lists candidate errors as JSON (span, category, rule); the teacher's rule card and labelled corrections are retrieved for each candidate; pass 2 writes the feedback as JSON. Every quoted span is checked against the student's text."
   }
  }
 }

@@ -1,0 +1,69 @@
+{
+ "input": "learner text: 凉山很大的山，这也找植物。\nquote: 凉山很大的山，这也找植物\npart p0: fix [ref p0/k0-1] 很大，在这儿也能找到植物",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "的山",
+    "corrected": "",
+    "before": "凉山很大",
+    "after": "，这也找植",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix removes 的山"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "这",
+    "corrected": "在这儿",
+    "before": "很大的山，",
+    "after": "也找植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix changes the location phrase"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "能",
+    "before": "大的山，这也",
+    "after": "找植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix adds 能"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "到",
+    "before": "山，这也找",
+    "after": "植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix changes 找 to 找到"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 989,
+  "completion_tokens": 429,
+  "total_tokens": 1418,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 216,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

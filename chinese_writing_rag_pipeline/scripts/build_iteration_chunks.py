@@ -12,6 +12,7 @@ the supervising teacher reviewing the system, in raw/iteration data/:
                            (the app pins these into every feedback prompt)
   2. Rules added by the teacher:
        vocab_error      -- one entry of the word-choice error list (vocab_errors.json)
+       teacher_rule     -- one of the teacher's additional rules (extra_rules.json)
        vocab_suggestion_example -- one of the teacher's examples of a good vocabulary
                            suggestion (vocab_suggestion_examples.txt)
        scene_list       -- one per story: the required scenes in story order
@@ -41,6 +42,7 @@ ITERATION_DIR = Path("raw/iteration data")
 CORPUS_PATH = "extracted/basic_corpus.json"
 VOCAB_PATH = ITERATION_DIR / "vocab_errors.json"
 SUGGESTION_EXAMPLES_PATH = ITERATION_DIR / "vocab_suggestion_examples.txt"
+EXTRA_RULES_PATH = ITERATION_DIR / "extra_rules.json"
 SCENES_PATH = ITERATION_DIR / "story_scenes.md"
 OUT_PATH = "chunks/iteration_chunks.jsonl"
 CHECKLISTS_PATH = "chunks/scene_checklists.json"
@@ -189,6 +191,23 @@ def build_vocab_chunks(registry):
     return chunks
 
 
+def build_teacher_rule_chunks():
+    """One chunk per rule in extra_rules.json (the teacher's additional rules).
+    `triggers` mark where a student's text may break the rule -- candidates for
+    the model to check, not errors by themselves."""
+    if not EXTRA_RULES_PATH.exists():
+        return []
+    chunks = []
+    for r in json.load(open(EXTRA_RULES_PATH, encoding="utf-8"))["rules"]:
+        for t in r["triggers"]:
+            re.compile(t)  # fail loudly on a malformed trigger
+        chunks.append(make_chunk(
+            f"teacher_rule:{r['id']}", "teacher_rule", r["rule"],
+            triggers=r["triggers"], source=r["source"],
+        ))
+    return chunks
+
+
 SUGGESTION_EXAMPLE = re.compile(r"^(\S+) -- “([^”]+)”：(.+)$")
 
 
@@ -272,7 +291,7 @@ def main():
 
     ai_items = build_ai_critique_chunks(registry, samples_by_id)
     chunks = (ai_items + build_ai_error_cards(ai_items) + build_vocab_chunks(registry)
-              + build_vocab_suggestion_chunks())
+              + build_vocab_suggestion_chunks() + build_teacher_rule_chunks())
     scene_chunks, checklists = build_scene_list_chunks(registry, corpus)
     chunks += scene_chunks
 

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 人类创造文明到底从哪里由此而来啊，看起一点文明都没有。\nquote: 人类创造文明到底从哪里由此而来啊\npart p0: fix [ref p0/k0] 人类创造的文明 ; notes: the Subj. should be a noun “文明”, not a verb phrase “人类创造文明”\npart p1: comment [ref p1/note] 到底从何而来：由此而来 means “come from this”, but here should be a question “come from where”.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "人类创造文明",
+    "corrected": "人类创造的文明",
+    "before": "",
+    "after": "到底从哪",
+    "note": "the Subj. should be a noun “文明”, not a verb phrase “人类创造文明”",
+    "confidence": "high",
+    "reason": "turns the verb phrase into a noun phrase"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "从哪里由此而来",
+    "corrected": "",
+    "before": "造文明到底",
+    "after": "啊",
+    "note": "到底从何而来：由此而来 means “come from this”, but here should be a question “come from where”.",
+    "confidence": "high",
+    "reason": "comments on the incorrect question phrasing"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1057,
+  "completion_tokens": 283,
+  "total_tokens": 1340,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1054,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 112,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

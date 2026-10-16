@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他爬下梯子后，就筐里放着差不多十个梨。\nquote: 就筐里放着差不多十个梨\npart p0: instruction [ref p0/k0] delete “就”, add “看到”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "就",
+    "corrected": "",
+    "before": "梯子后，",
+    "after": "筐里放着",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "看到",
+    "before": "子后，就",
+    "after": "筐里放着",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 看到 before 筐里"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 997,
+  "completion_tokens": 466,
+  "total_tokens": 1463,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 354,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

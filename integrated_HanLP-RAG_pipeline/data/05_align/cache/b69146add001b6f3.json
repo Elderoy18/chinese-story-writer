@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。\nquote: 这就要看如果这把花毒不毒了\npart p0: fix [ref p0/k1] 有没有毒 ; notes: the “if” in “not know if + clause” is not 如果, delete如果",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "如果",
+    "corrected": "",
+    "before": "这就要看",
+    "after": "这把花毒",
+    "note": "the “if” in “not know if + clause” is not 如果, delete如果",
+    "confidence": "high",
+    "reason": "explicitly deletes 如果"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "replace",
+    "original": "毒不毒了",
+    "corrected": "有没有毒",
+    "before": "如果这把花",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the question form to 有没有毒"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1016,
+  "completion_tokens": 292,
+  "total_tokens": 1308,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 158,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 吃不知名的植物是特别是危险的，因此时而他到了麻烦。\nquote: 吃不知名的植物是特别是危险的\npart p0: fix [ref p0/k0] 特别危险的 ; notes: ”特别是+N, + Clause” is used to single out a typical example",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "特别是危险的",
+    "corrected": "特别危险的",
+    "before": "的植物是",
+    "after": "，",
+    "note": "”特别是+N, + Clause” is used to single out a typical example",
+    "confidence": "high",
+    "reason": "replaces 特别是 with 特别 before the adjective"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1013,
+  "completion_tokens": 327,
+  "total_tokens": 1340,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 235,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

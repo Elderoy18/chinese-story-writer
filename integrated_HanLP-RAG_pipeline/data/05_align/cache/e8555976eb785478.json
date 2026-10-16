@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 我觉得看起来他妈妈的中国教育，成为他一个很重要和聪明的中国哲学。\nquote: 我觉得看起来他妈妈的中国教育，成为他一个很重要和聪明的中国哲学\npart p0: instruction [ref p0/k0] delete我觉得 ; notes: redundant with看起来\npart p1: instruction [ref p1/k0] delete中国\npart p2: fix [ref p2/k0] 让他成为一个很重要的哲学家",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "我觉得",
+    "corrected": "",
+    "before": "",
+    "after": "看起来他妈",
+    "note": "redundant with看起来",
+    "confidence": "high",
+    "reason": "deletes the redundant opening phrase"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "中国",
+    "corrected": "",
+    "before": "他妈妈的",
+    "after": "教育，成为",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes 中国 from 中国教育"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "成为他",
+    "corrected": "让他成为",
+    "before": "国教育，",
+    "after": "一个很重要",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the verb structure and word order"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "和聪明的中国哲学",
+    "corrected": "的哲学家",
+    "before": "个很重要",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the final description with 哲学家"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1051,
+  "completion_tokens": 818,
+  "total_tokens": 1869,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1048,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 591,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

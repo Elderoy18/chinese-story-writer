@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 回家以后孟子在家坐着，从早到晚一直学习，教育做完以后孟子考虑，不是当哲学家就是当商家。\nquote: 教育做完以后孟子考虑，不是当哲学家就是当商家\npart p0: fix [ref p0/k0-1] 学完以后，商人",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "教育做完",
+    "corrected": "学完",
+    "before": "一直学习，",
+    "after": "以后孟子",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix changes 教育做完 to 学完"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "，",
+    "before": "做完以后",
+    "after": "孟子考虑，",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix includes a comma after 以后"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "商家",
+    "corrected": "商人",
+    "before": "家就是当",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix changes 商家 to 商人"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1017,
+  "completion_tokens": 506,
+  "total_tokens": 1523,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 330,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

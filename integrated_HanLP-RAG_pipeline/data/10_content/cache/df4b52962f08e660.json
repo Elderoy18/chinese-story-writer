@@ -1,0 +1,78 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n在古代有很多人在中国。很多人想祭拜，因为他们觉得祭拜有很多好处，对他们的生活。有一个男孩子孟子，也有他的妈妈。孟子的妈妈觉得她得搬家，因为现在在他们的省，在中国不太安全。很多人死了，所以现在有很多墓地，也有很多人老是做不太好的事情。在这个城市，孟子的妈妈不是工作就是试一试帮助她的儿子孟子。她没有时间做她最喜欢的兴趣，比方说画画。难怪她想搬家，因为如果她搬家，她会工作少，和她也会做她最喜欢的兴趣爱好。但是孟子不想搬家。他喜欢在这个城市成为医生。他一直帮很多人，他一直跟很多人的病帮他们。不是孟子喜欢这个城市，而是他喜欢这个城市的人。他也不喜欢搬家，因为他的妈妈已经搬家很多次，差不多十次。他们在到处的中国住。搬家以后，孟子在北京长大。他从早到晚学医学。他现在是当医生，他能帮很多人。他的妈妈现在不想搬家，她很高兴，很幸福。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟子 and 孟母 living near a graveyard, and 孟子 imitating sacrificial offerings every day, are not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "verdict": "partly",
+    "evidence": [
+     "孟子的妈妈觉得她得搬家，因为现在在他们的省，在中国不太安全。",
+     "很多人死了，所以现在有很多墓地，也有很多人老是做不太好的事情。",
+     "难怪她想搬家，因为如果她搬家，她会工作少，和她也会做她最喜欢的兴趣爱好。"
+    ],
+    "missing_part": "It does not say that they lived near a graveyard or that 孟母 moved because 孟子 copying sacrificial offerings would negatively affect him.",
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "The move to a neighborhood near a market and 孟子 imitating buying and selling every day are not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "The move from the market to a neighborhood near a school and 孟子 beginning to study every day are not told.",
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟子 becoming a famous philosopher is not told.",
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "他现在是当医生，他能帮很多人。",
+    "problem": "This says that 孟子 becomes a doctor, but in the required story he becomes a famous philosopher."
+   }
+  ],
+  "feedback": [
+   "At the beginning, add that 孟子 and 孟母 lived near a graveyard and that 孟子 copied sacrificial offerings every day.",
+   "After 孟子 copies the sacrificial offerings, explain that 孟母 worries this will affect him badly, so she decides to leave the graveyard area.",
+   "After leaving the graveyard area, add that they move near a market and 孟子 copies buying and selling every day.",
+   "After the market episode, add that 孟母 moves them near a school, where 孟子 begins to study every day.",
+   "At the end, say that 孟子 becomes a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 914,
+  "completion_tokens": 1012,
+  "total_tokens": 1926,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0835c3b238"
+}

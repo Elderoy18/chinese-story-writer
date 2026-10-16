@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 一回家就写什么植物他们能和不能吃。\nquote: 一回家就写什么植物他们能和不能吃\npart p0: fix [ref p0/k0] 写下\npart p1: instruction [ref p1/k0] delete他们 ; notes: redundant\npart p2: fix [ref p2/k0-1] 什么植物能吃，什么植物不能吃",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "写",
+    "corrected": "写下",
+    "before": "一回家就",
+    "after": "什么植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 写 to 写下"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "他们",
+    "corrected": "",
+    "before": "什么植物",
+    "after": "能和不能吃",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the redundant pronoun"
+   },
+   {
+    "ref": "p2/k0-1",
+    "op": "replace",
+    "original": "能和不能吃",
+    "corrected": "能吃，什么植物不能吃",
+    "before": "什么植物他们",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "rewrites the eating contrast with repeated 什么植物"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1027,
+  "completion_tokens": 360,
+  "total_tokens": 1387,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1024,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 188,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

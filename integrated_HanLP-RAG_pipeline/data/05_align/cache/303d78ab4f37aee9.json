@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 在以前，哲学人很聪明和重要。\nquote: 在以前，哲学人很聪明和重要\npart p0: fix [ref p0/k0-1] 哲学家，很聪明也很重要 ; notes: 和cannot connect Adj.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "哲学人",
+    "corrected": "哲学家",
+    "before": "在以前，",
+    "after": "很聪明和重",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the profession noun"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "和",
+    "corrected": "也很",
+    "before": "人很聪明",
+    "after": "重要",
+    "note": "和cannot connect Adj.",
+    "confidence": "high",
+    "reason": "replaces the adjective connector"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1000,
+  "completion_tokens": 120,
+  "total_tokens": 1120,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

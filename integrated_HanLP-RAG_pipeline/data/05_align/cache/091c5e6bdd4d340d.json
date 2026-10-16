@@ -1,0 +1,47 @@
+{
+ "input": "learner text: 古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。\nquote: 古代的时候人觉得祭拜非常重要，孟子很小的时候\npart p0: fix [ref p0/k0-1] 在古代，人们 ; notes: “人“ is too general and too vague, and does not stand alone\npart p1: comment [ref p1/note] better to briefly introduce “孟子” when this character first appears",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "古代的时候人",
+    "corrected": "在古代，人们",
+    "before": "",
+    "after": "觉得祭拜非常",
+    "note": "“人“ is too general and too vague, and does not stand alone",
+    "confidence": "high",
+    "reason": "replaces the time phrase and general 人 with her wording"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "孟子",
+    "corrected": "",
+    "before": "常重要，",
+    "after": "很小的时候",
+    "note": "better to briefly introduce “孟子” when this character first appears",
+    "confidence": "high",
+    "reason": "teacher requests an introduction at Mengzi’s first appearance"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1055,
+  "completion_tokens": 244,
+  "total_tokens": 1299,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1052,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 87,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

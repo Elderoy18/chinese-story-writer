@@ -1,0 +1,80 @@
+{
+ "input": "earlier scenes (context only):\nscene 1: 古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\nscene 2: 这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\ncurrent scene: 孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "original": "找了到",
+    "corrected": "找到了",
+    "before": "孟子在那个商店也",
+    "after": "工作，可是不",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "了 must follow 到 in this result complement"
+   },
+   {
+    "original": "",
+    "corrected": "他",
+    "before": "作，而是",
+    "after": "喜欢的工作",
+    "type": "reference",
+    "confidence": "high",
+    "why": "the modifier needs a subject: the work he likes"
+   },
+   {
+    "original": "",
+    "corrected": "在",
+    "before": "孟子",
+    "after": "学习馆学",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "a location phrase needs 在"
+   },
+   {
+    "original": "学习馆",
+    "corrected": "学馆",
+    "before": "孟子在",
+    "after": "学了十五年",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "学习馆 is not a standard word; 学馆 means a school"
+   },
+   {
+    "original": "",
+    "corrected": "有",
+    "before": "重要，对他",
+    "after": "很多好处。",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "好处 needs the verb 有"
+   },
+   {
+    "original": "",
+    "corrected": "了",
+    "before": "时候，他成为",
+    "after": "很有名的哲",
+    "type": "aspect",
+    "confidence": "low",
+    "why": "a completed change of status normally takes 了"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 768,
+  "completion_tokens": 1813,
+  "total_tokens": 2581,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 有一个关于灰色的头发老老的人叫神农的故事。\nquote: 有一个关于灰色的头发老老的人叫神农的故事\npart p0: fix [ref p0/k0] 灰色头发的叫神农的老人的故事",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "关于",
+    "corrected": "",
+    "before": "有一个",
+    "after": "灰色的头",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 关于"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "的",
+    "corrected": "",
+    "before": "关于灰色",
+    "after": "头发老老的",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 的 after 灰色"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "头发老老的人叫神农",
+    "corrected": "头发的叫神农的老人",
+    "before": "于灰色的",
+    "after": "的故事",
+    "note": "",
+    "confidence": "high",
+    "reason": "reorders the hair description and name phrase"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1003,
+  "completion_tokens": 170,
+  "total_tokens": 1173,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

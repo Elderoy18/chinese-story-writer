@@ -28,6 +28,7 @@ interface SearchOpts {
     chunkTypes: string[];
     storyId?: string;
     k?: number;
+    grammarTag?: string; // only correction_items labelled with this grammar rule
 }
 
 const PROJECTION = {
@@ -53,7 +54,7 @@ const PROJECTION = {
  */
 export async function searchChunks(
     queryText: string,
-    { chunkTypes, storyId, k = 5 }: SearchOpts
+    { chunkTypes, storyId, k = 5, grammarTag }: SearchOpts
 ): Promise<RetrievedChunk[]> {
     await connectDB();
     const queryVector = await embedText(queryText);
@@ -62,6 +63,7 @@ export async function searchChunks(
         chunk_type: { $in: chunkTypes },
     };
     if (storyId) filter.story_id = storyId;
+    if (grammarTag) filter.grammar_tags = grammarTag;
 
     const rows = await RagChunk.aggregate<RetrievedChunk>([
         {

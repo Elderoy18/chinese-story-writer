@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他告诉他们，这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了。\nquote: 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了\npart p0: fix [ref p0/k0] 能不能吃 ; instruction [ref p0/k1] delete the last two植物的",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "能吃吗",
+    "corrected": "能不能吃",
+    "before": "个植物你",
+    "after": "，这就要",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the question to 能不能吃"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "植物的",
+    "corrected": "",
+    "before": "的大小、",
+    "after": "长短、植",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the second 植物的"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "植物的",
+    "corrected": "",
+    "before": "的长短、",
+    "after": "颜色了",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the third 植物的"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1027,
+  "completion_tokens": 407,
+  "total_tokens": 1434,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1024,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 236,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

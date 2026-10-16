@@ -32,13 +32,15 @@ sys.path.insert(0, str(PIPELINE / "scripts"))
 from chunk_builder import build_chunks, load_rule_labels  # noqa: E402
 from build_iteration_chunks import (  # noqa: E402
     build_ai_critique_chunks, build_ai_error_cards, build_vocab_chunks,
-    build_scene_list_chunks, build_vocab_suggestion_chunks, VOCAB_PATH, SCENES_PATH,
+    build_scene_list_chunks, build_vocab_suggestion_chunks, build_teacher_rule_chunks,
+    VOCAB_PATH, SCENES_PATH, EXTRA_RULES_PATH,
     SUGGESTION_EXAMPLES_PATH,
 )
 from parse_corpus import load_registry  # noqa: E402
 
 INPUTS = ["extracted/basic_corpus.json", "raw/stories.json", "raw/correction_rules.json",
-          str(VOCAB_PATH), str(SCENES_PATH), str(SUGGESTION_EXAMPLES_PATH)]
+          str(VOCAB_PATH), str(SCENES_PATH), str(SUGGESTION_EXAMPLES_PATH), str(EXTRA_RULES_PATH),
+          "scripts/rule_descriptions.py"]
 
 
 def sha(path):
@@ -67,7 +69,7 @@ def main():
     ai_items = build_ai_critique_chunks(registry, {s["sample_id"]: s for s in corpus["samples"]})
     scene_chunks, _ = build_scene_list_chunks(registry, corpus)
     chunks = (basic + ai_items + build_ai_error_cards(ai_items) + build_vocab_chunks(registry)
-              + build_vocab_suggestion_chunks() + scene_chunks)
+              + build_vocab_suggestion_chunks() + build_teacher_rule_chunks() + scene_chunks)
 
     ids = [c["chunk_id"] for c in chunks]
     if len(ids) != len(set(ids)):

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 孟子看别的孩子们都画画儿，孟子觉得他们画得很漂亮，所以他问他的妈妈怎么画。\nquote: 孟子看别的孩子们都画画儿，孟子觉得他们画得很漂亮，所以他问他的妈妈怎么画\npart p0: instruction [ref p0/k0] delete the second孟子 ; notes: redundant\npart p1: instruction [ref p1/k0] delete他 ; fix [ref p1/k1] 他的 ; notes: redundant",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "孟子",
+    "corrected": "",
+    "before": "都画画儿，",
+    "after": "觉得他们",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the second repeated subject"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "漂亮，所以",
+    "after": "问他的妈",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the redundant pronoun before 问"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "unplaceable",
+    "original": "他的",
+    "corrected": "他的",
+    "before": "所以他问",
+    "after": "妈妈怎么画",
+    "note": "redundant",
+    "confidence": "low",
+    "reason": "the supplied fix is identical to the learner text, so no distinct change is identifiable"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1053,
+  "completion_tokens": 696,
+  "total_tokens": 1749,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1050,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

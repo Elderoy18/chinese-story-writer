@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 在照片的历史是一个很古代的历史。\nquote: 在照片的历史是一个很古代的历史\npart p0: fix [ref p0/k0] 这是一个古代的故事",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "在照片的历史是",
+    "corrected": "这是",
+    "before": "",
+    "after": "一个很古",
+    "note": "",
+    "confidence": "high",
+    "reason": "her rewrite replaces the opening phrase with 这是"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "很",
+    "corrected": "",
+    "before": "是一个",
+    "after": "古代的历",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 很"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "历史",
+    "corrected": "故事",
+    "before": "个很古代的",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix changes the final noun to 故事"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 987,
+  "completion_tokens": 392,
+  "total_tokens": 1379,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 230,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 他一说了，就穿着蓝色的衣服的人来。\nquote: 他一说了，就穿着蓝色的衣服的人来\npart p0: comment [ref p0/note] no了for speaking word\npart p1: fix [ref p1/k0] 一个穿着蓝色衣服的人就来了 ; notes: Subj.+就",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "他一说",
+    "after": "，就穿着",
+    "note": "no了for speaking word",
+    "confidence": "high",
+    "reason": "removes 了 after 说"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "一个",
+    "before": "一说了，就",
+    "after": "穿着蓝色",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the subject classifier phrase"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "的",
+    "corrected": "",
+    "before": "穿着蓝色",
+    "after": "衣服的人",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 的 in 蓝色衣服"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "就",
+    "before": "衣服的人",
+    "after": "来",
+    "note": "Subj.+就",
+    "confidence": "high",
+    "reason": "adds 就 after the subject"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "来",
+    "corrected": "来了",
+    "before": "的衣服的人",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix adds 了 to 来"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1021,
+  "completion_tokens": 741,
+  "total_tokens": 1762,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 481,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

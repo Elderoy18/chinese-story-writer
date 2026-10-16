@@ -1,0 +1,71 @@
+{
+ "input": "current scene: 古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "original": "他们",
+    "corrected": "自己",
+    "before": "人不知道",
+    "after": "能吃什么植",
+    "type": "reference",
+    "confidence": "low",
+    "why": "generic 人 more naturally refers back with 自己"
+   },
+   {
+    "original": "试一试",
+    "corrected": "尝了",
+    "before": "神农出去",
+    "after": "很多种植",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "plants are tasted to determine whether they are safe"
+   },
+   {
+    "original": "人",
+    "corrected": "人们",
+    "before": "物，告诉",
+    "after": "什么植物",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "means telling people in general"
+   },
+   {
+    "original": "",
+    "corrected": "的",
+    "before": "物是安全",
+    "after": "什么是危",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "是安全的 needs 的 before the following phrase"
+   },
+   {
+    "original": "",
+    "corrected": "的",
+    "before": "么是危险",
+    "after": "。",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "是危险的 needs 的"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 595,
+  "completion_tokens": 3143,
+  "total_tokens": 3738,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2903,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

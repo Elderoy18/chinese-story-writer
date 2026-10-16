@@ -1,0 +1,37 @@
+{
+ "input": "CURRENT SCENE:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nFLAGGED PLACES:\n\n[P149] 所以他们常常搬【了】家\n  proposed by the AI checker: 所以他们常常搬[-了]家 (habitual action should not take completed-action 了)\n  proposed by the correction model: 所以他们常常搬[-了]家\n  her past correction (cause_result_soyi): [+所以]他们常常搬家 — her note: 无聊？add所以\n  her past correction (le_completed): 所以他们再[搬家一次→搬了一次家] — her note: 了completed\n  her past correction (addition_repetition_connectors): 所以他们[再→又]搬家一次 — her note: 又for something already occurred\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P149",
+    "decision": "keep",
+    "category": "le_completed",
+    "original": "了",
+    "before": "所以他们常常搬",
+    "after": "家",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Habitual action with 常常 does not take completed-action 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 905,
+  "completion_tokens": 110,
+  "total_tokens": 1015,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 37,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}

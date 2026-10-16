@@ -1,0 +1,80 @@
+{
+ "input": "current scene: 古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "和孟母住",
+    "after": "在靠墓地",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "住在 describes a state; 了 cannot occur before 在."
+   },
+   {
+    "original": "靠",
+    "corrected": "靠近",
+    "before": "母住了在",
+    "after": "墓地的家",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "靠近 is needed for “near the cemetery.”"
+   },
+   {
+    "original": "了",
+    "corrected": "",
+    "before": "墓地祭拜",
+    "after": "。在那个",
+    "type": "aspect",
+    "confidence": "high",
+    "why": "a habitual daily action does not take sentence-final 了 here."
+   },
+   {
+    "original": "那个城市",
+    "corrected": "他们住的城市",
+    "before": "拜了。在",
+    "after": "，孟母从",
+    "type": "reference",
+    "confidence": "low",
+    "why": "no city has been introduced for 那个城市 to refer to."
+   },
+   {
+    "original": "了",
+    "corrected": "到了",
+    "before": "他们搬",
+    "after": "别一个城",
+    "type": "grammar",
+    "confidence": "high",
+    "why": "the directional complement 到 must come before 了."
+   },
+   {
+    "original": "别",
+    "corrected": "另",
+    "before": "们搬了到",
+    "after": "一个城市",
+    "type": "word_choice",
+    "confidence": "high",
+    "why": "另一个 is the standard expression for “another.”"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 628,
+  "completion_tokens": 2282,
+  "total_tokens": 2910,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1977,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "5856d40642"
+}

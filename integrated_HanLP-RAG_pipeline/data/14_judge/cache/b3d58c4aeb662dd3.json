@@ -1,0 +1,114 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nFLAGGED PLACES:\n\n[P89] 【古代的时候】人觉得祭拜非常重要\n  proposed by the teacher's pattern/rule: [古代的时候→在古代]人觉得祭拜非常重要 (her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train))\n  proposed by the correction model: 古代的[-时候]人觉得祭拜非常重要\n  her past correction (redundant_words): 因为[-他们]觉得祭拜有很多好处 — her note: redundant\n  her past correction (redundant_words): 因为他们觉得[祭拜有很多好处，对他们的生活→对生活有很多好处]\n  her past correction (zero_redundant_pronoun): 而是[-他]祭拜\n  rule card location_with_zai: Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear. Not an error: Do not add 上 after every place word: 农村 is already a place, so use 在农村住, not 在农村上住.\n  rule card redundant_words: Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea. Not an error: Do not delete a word if it adds a different meaning, such as a different time, person, or detail. Only flag words or structures that repeat information already expressed.\n\n[P90] 【孟子】很小的时候\n  proposed by the teacher's pattern/rule: ⟦孟子⟧很小的时候 (first appearance of 孟子: briefly introduce who this is)\n  her past correction (first_mention_introduction): ⟦孟子⟧小的时候 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction (loose_clause_connection): ⟦孟子是孩子⟧ — her note: no logic relationship with the preceding or following sentences\n  her past correction (first_mention_introduction): ⟦孟子⟧出生以后 — her note: better to briefly introduce “孟子” when this character first appears\n  rule card first_mention_introduction: When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific. Not an error: After a character has already been introduced, this rule does not require another brief introduction.\n  rule card loose_clause_connection: Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.\n\n[P91] 【虽然】他没有朋友\n  proposed by the AI checker: [-虽然]他没有朋友 (虽然 cannot introduce this causal statement without a matching contrast.)\n  her past correction (ambiguous_pronoun): [他然后没有朋友→然后孟子失去了这个朋友] — her note: “他“ is ambiguous\n  her past correction (conditional_jiu): 他有的时候[-只要]跟朋友玩儿 — her note: or 他有的时候跟朋友玩儿\n  her past correction (conditional_jiu): 他[-有的时候]只要跟朋友玩儿 — her note: wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as\n  rule card conditional_jiu: Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future. Not an error: When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.\n  rule card ambiguous_pronoun: Use 他/她/它/他们 only when it is clear who or what they refer to. If more than one person or thing is possible, repeat the name or use a clear noun phrase. Not an error: A pronoun is fine when its referent is close and unambiguous. Do not use 你 for a story character when it refers to the reader instead.\n\n[P92] 因为每天只【^】祭拜\n  proposed by the correction model: 因为每天只[+是]祭拜\n  her past correction (zero_redundant_pronoun): 而是[-他]祭拜\n  her past correction (other): 他们[一起常常→常常一起]去祭拜\n  her past correction (cause_result_soyi): [-所以他们]祭拜 — her note: there is no cause-effect relationship\n  rule card zero_redundant_pronoun: When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. Not an error: Do not delete a subject when it is needed before 不是……而是……; place it before 不是 instead.\n  rule card cause_result_soyi: Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate. Not an error: Do not flag a causal 所以 when the preceding clause genuinely causes the following result. Use 结果 for an unexpected result, and do not use 所以 for sequence (后来), manner (这样), or purpose (为了…).\n\n[P93] 他的同学们老是对他开玩笑【了】\n  proposed by the AI checker: 他的同学们老是对他开玩笑[-了] (habitual action with 老是 does not take sentence-final 了.)\n  proposed by the correction model: 他的同学们老是对他开玩笑[-了]\n  her past correction (conditional_jiu): 他有的时候[-只要]跟朋友玩儿 — her note: or 他有的时候跟朋友玩儿\n  her past correction (conditional_jiu): 他[-有的时候]只要跟朋友玩儿 — her note: wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as\n  her past correction (near_synonym_precision): 可是他们[老是有问题→碰到麻烦]\n  rule card conditional_jiu: Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future. Not an error: When you mean “sometimes,” use 有的时候, not 只要……就. 会 is appropriate when you mean “will” in the future.\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.\n\n[P94] 孟子妈妈【看了】他的同学们对孟子不好的影响\n  proposed by the AI checker: 孟子妈妈[看了→看到了]他的同学们对孟子不好的影响 (看到了 means “noticed/saw” an abstract influence.)\n  proposed by the teacher's pattern/rule: 孟子妈妈[看→看到]了他的同学们对孟子不好的影响 (her pattern: 看 -> 看到 (corrected 37/71 in train))\n  proposed by the teacher's pattern/rule: 孟子妈妈[看了→看到了]他的同学们对孟子不好的影响 (her pattern: 看了 -> 看到了 (corrected 3/3 in train))\n  proposed by the correction model: 孟子妈妈看[了→到]他的同学们对孟子不好的影响\n  her past correction (missing_story_information): ⟦孟母看出来孟子老是难过，害得他不能好好学习。⟧孟母恐怕孟子住在墓地的旁边对孟子有影响 — her note: miss information: 孟子 imitated how to offer sacrifices\n  her past correction (adjective_predicate_degree): 孟母看出来孟子老是[+很]难过 — her note: usually Adj. takes 很\n  her past correction (haide_harmful_result): 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n  rule card perception_look_see: 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing. Not an error: Do not flag 看 when the meaning is only “look,” rather than successfully seeing something. 看到 does not always need 了.\n  rule card missing_story_information: Do not miss important information in a retelling: include the key scene, action, motivation, or result so the event is complete and clear. Not an error: Do not flag a sentence just because it does not include every possible detail. Flag it only when an important scene, action, motivation, or result is missing and the retelling is incomplete.\n\n[P95] 孟子妈妈看了他的同学们对孟子【^】不好的影响\n  proposed by the correction model: 孟子妈妈看了他的同学们对孟子[+有]不好的影响\n  her past correction (adjective_predicate_degree): 孟母看出来孟子老是[+很]难过 — her note: usually Adj. takes 很\n  her past correction (missing_story_information): ⟦孟母看出来孟子老是难过，害得他不能好好学习。⟧孟母恐怕孟子住在墓地的旁边对孟子有影响 — her note: miss information: 孟子 imitated how to offer sacrifices\n  her past correction (haide_harmful_result): 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n  rule card adjective_predicate_degree: An Adj. can be the predicate without 是. Usually an Adj. takes 很 for a plain description; 是Adj.的 is used to emphasize. Not an error: Do not flag 是Adj.的 when the writer intends emphasis. Do not require 很 when another degree pattern, such as 特别, is used.\n  rule card missing_story_information: Do not miss important information in a retelling: include the key scene, action, motivation, or result so the event is complete and clear. Not an error: Do not flag a sentence just because it does not include every possible detail. Flag it only when an important scene, action, motivation, or result is missing and the retelling is incomplete.\n\n[P96] 所以孟子和孟子【^】妈妈搬家了\n  proposed by the correction model: 所以孟子和孟子[+的]妈妈搬家了\n  her past correction (le_completed): 所以妈妈跟孟子一起搬家[+了] — her note: 了completed\n  her past correction (near_synonym_precision): 所以妈妈[跟孟子一起→带孟子]搬家\n  her past correction (cause_result_soyi): [-所以]妈妈跟孟子一起搬家\n  rule card le_completed: Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb. Not an error: Do not flag an action just because it has a verb: if it is not about completion, no 了. An ongoing action can use 着 instead of 了.\n  rule card near_synonym_precision: Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness. Not an error: Do not flag a word simply because it resembles another word. It is not an error when the word’s meaning fits the intended event, duration, possibility, or degree.",
+ "salt": "",
+ "output": {
+  "places": [
+   {
+    "place_id": "P89",
+    "decision": "drop",
+    "category": "other",
+    "original": "古代的时候",
+    "before": "",
+    "after": "人觉得祭拜",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Natural time expression; no correction needed."
+   },
+   {
+    "place_id": "P90",
+    "decision": "keep",
+    "category": "first_mention_introduction",
+    "original": "孟子",
+    "before": "常重要，",
+    "after": "很小的时候",
+    "corrected": "一个叫孟子的孩子",
+    "confidence": "high",
+    "reason": "First mention needs an identifying noun phrase."
+   },
+   {
+    "place_id": "P91",
+    "decision": "keep",
+    "category": "other",
+    "original": "虽然",
+    "before": "一直祭拜，",
+    "after": "他没有朋友",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "Although lacks a matching contrast."
+   },
+   {
+    "place_id": "P92",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "因为每天只",
+    "after": "祭拜。他的",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "只 can directly modify 祭拜."
+   },
+   {
+    "place_id": "P93",
+    "decision": "keep",
+    "category": "other",
+    "original": "了",
+    "before": "对他开玩笑",
+    "after": "。孟子妈",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "老是 describes a habitual action, not completion."
+   },
+   {
+    "place_id": "P94",
+    "decision": "keep",
+    "category": "perception_look_see",
+    "original": "看了",
+    "before": "孟子妈妈",
+    "after": "他的同学",
+    "corrected": "看到了",
+    "confidence": "high",
+    "reason": "The narrative means she noticed the influence."
+   },
+   {
+    "place_id": "P95",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "们对孟子",
+    "after": "不好的影响",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "The noun phrase does not require 有."
+   },
+   {
+    "place_id": "P96",
+    "decision": "drop",
+    "category": "other",
+    "original": "",
+    "before": "子和孟子",
+    "after": "妈妈搬家了",
+    "corrected": "",
+    "confidence": "high",
+    "reason": "孟子妈妈 is an acceptable kinship phrase."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 3368,
+  "completion_tokens": 1107,
+  "total_tokens": 4475,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3365,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 676,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "04f94e47e8"
+}
