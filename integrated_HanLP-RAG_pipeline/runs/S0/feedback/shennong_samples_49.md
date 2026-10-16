@@ -6,15 +6,15 @@
 
 **Grammar**
 - 古代的时候 → 在古代: 古代 is the time/location setting, so use 在+Place before the statement: 在古代。
-- (suggestion) 么 → 麼: It would be more natural to use 麼 if you are writing this word in traditional characters.
-- (suggestion) ∅ → 也: It would be more natural to add 也 to connect the two similar ideas: 不怕生病，也不怕毒。
-- (suggestion) ∅ → 到: It would be more natural to use 吃到result here, because people successfully get to eat the tasty plants.
-- 吃毒 → 吃到有毒的植物: Use 吃到result when the action reaches something. Here, say 吃到有毒的植物, not 吃毒.
-- (suggestion) ∅ → 就: It would be more natural to add 就 in this conditional pattern: 如果……，就……。
+- (suggestion) 什么植物不能吃 → 什麼植物不能吃: It would be more natural to use 麼 if you are writing this word in traditional characters.
+- (suggestion) 不怕毒 → 也不怕毒: It would be more natural to add 也 to connect the two similar ideas: 不怕生病，也不怕毒。
+- (suggestion) …别人也可以吃好吃的植物 → …别人也可以吃到好吃的植物: It would be more natural to use 吃到result here, because people successfully get to eat the tasty plants.
+- 如果他们还怕吃毒 → 如果他们还怕吃到有毒的植物: Use 吃到result when the action reaches something. Here, say 吃到有毒的植物, not 吃毒.
+- (suggestion) 不会吃他喜欢… → 就不会吃他喜欢…: It would be more natural to add 就 in this conditional pattern: 如果……，就……。
 **Vocabulary**
-- 毒 → 有毒的植物: Here you mean the plants people ate, so use the noun phrase 有毒的植物, not 毒 by itself.
+- 因为他们吃了毒 → 因为他们吃了有毒的植物: Here you mean the plants people ate, so use the noun phrase 有毒的植物, not 毒 by itself.
 **Other**
-- 什么植物都觉得 → 觉得什么植物都: 觉得 should come before the clause it describes. Say 觉得什么植物都好吃.
+- 他什么植物都觉得好吃 → 他觉得什么植物都好吃: 觉得 should come before the clause it describes. Say 觉得什么植物都好吃.
 
 **Vocabulary suggestions**
 - 很多 (“有很多人”) → 许多: A slightly more written and varied way to say “many.”; 不少: Means “quite a few” and sounds natural in a story.
@@ -33,20 +33,20 @@
 > 所以，他上山下山找植物，吃了很多样子的植物。他是第一人，找到了茶。他把所有的植物写下来了。他一直都吃了，他连毒都能吃。可是他还没吃了一个叫夹竹桃的植物。他找到了那个像星星的植物，觉得很漂亮，马上就吃下了。
 
 **Grammar**
-- 一 → 一个: Use the measure word 个 here: 第一个人. 个 is the MW for 人 in this phrase.
-- (suggestion) 人， → 个: It would be more natural to say 第一个, using 个 before the following description of the person.
-- (suggestion) 了 → (delete): It would be more natural to use 找到 before 的人 here, rather than 找到了.
-- (suggestion) ∅ → 的人: It would be more natural to add 的人: 第一个找到茶的人. This turns 找到茶 into a description of the person.
-- (suggestion) ∅ → 在: It would be more natural to use 在 for an ongoing action: 一直都在吃.
-- 了 → (delete): 一直 describes an ongoing habit, so do not use 了 here. Say 一直都在吃.
-- 个 → 种: Use 种 to count plants: 一个叫夹竹桃的植物 becomes 一种叫夹竹桃的植物.
+- 他是第一人 → 他是第一个人: Use the measure word 个 here: 第一个人. 个 is the MW for 人 in this phrase.
+- (suggestion) 他是第一人，找到了茶 → 他是第一个找到了茶: It would be more natural to say 第一个, using 个 before the following description of the person.
+- (suggestion) 找到了茶 → 找到茶: It would be more natural to use 找到 before 的人 here, rather than 找到了.
+- (suggestion) 找到了茶 → 找到了茶的人: It would be more natural to add 的人: 第一个找到茶的人. This turns 找到茶 into a description of the person.
+- (suggestion) 他一直都吃了 → 他一直都在吃了: It would be more natural to use 在 for an ongoing action: 一直都在吃.
+- 他一直都吃了 → 他一直都吃: 一直 describes an ongoing habit, so do not use 了 here. Say 一直都在吃.
+- …他还没吃了一个叫夹竹桃的植… → …他还没吃了一种叫夹竹桃的植…: Use 种 to count plants: 一个叫夹竹桃的植物 becomes 一种叫夹竹桃的植物.
 **Vocabulary**
-- 样子 → 种: Use 种 to count types of plants. Say 很多种植物, not 很多样子的植物.
-- ∅ → 的名字: Write down the plants' names, not the plants themselves. Say 把所有植物的名字写下来.
+- 吃了很多样子的植物 → 吃了很多种的植物: Use 种 to count types of plants. Say 很多种植物, not 很多样子的植物.
+- …把所有的植物写下来了 → …把所有的植物的名字写下来了: Write down the plants' names, not the plants themselves. Say 把所有植物的名字写下来.
 **Coherence: reference**
-- 他 → (delete): 他 is already clear from the previous clause, so delete it. Chinese uses zero form here to avoid too many 他.
+- 他连毒都能吃 → 连毒都能吃: 他 is already clear from the previous clause, so delete it. Chinese uses zero form here to avoid too many 他.
 **Coherence: 了 / 着 / 在**
-- 了 → (delete): This action did not happen, so use 没 + V. with no 了: 还没吃一个叫夹竹桃的植物.
+- 可是他还没吃了一个叫夹竹桃… → 可是他还没吃一个叫夹竹桃…: This action did not happen, so use 没 + V. with no 了: 还没吃一个叫夹竹桃的植物.
 
 **Vocabulary suggestions**
 - 漂亮 (“觉得很漂亮”) → 美丽: a slightly more literary word for beautiful.; 好看: a common, natural word for something that looks nice.
@@ -64,16 +64,16 @@
 > 可是夹竹桃的毒很重，让他肚子很痛。他在地上躺着，觉得他快会死了。可是正好有别人找到他了，给了他一个像伞的植物，叫灵芝。他吃灵芝以后就觉得很好，不再生病了。他测量起来了，像星星的植物是毒，像伞的植物是药。
 
 **Vocabulary**
-- (suggestion) 别人 → 人: It would be more natural to say 有人 here for an unspecified person who found him.
-- 个 → 株: Use 株 as the measure word for one individual plant, not 个.
-- (suggestion) 不再生病 → 肚子不痛: It would be clearer to say 肚子不痛, because the symptom in the story is stomach pain, not a general illness.
-- 测量起来了 → 明白了: 测量 means “to measure,” not “to realize.” Use 明白了 when he realizes which plants are poisonous or medicinal.
-- 是毒 → 有毒: Use 有毒, not 是毒, to say that a plant is poisonous.
+- (suggestion) 可是正好有别人找到他了 → 可是正好有人找到他了: It would be more natural to say 有人 here for an unspecified person who found him.
+- 给了他一个像伞的植物 → 给了他一株像伞的植物: Use 株 as the measure word for one individual plant, not 个.
+- (suggestion) 不再生病了 → 肚子不痛了: It would be clearer to say 肚子不痛, because the symptom in the story is stomach pain, not a general illness.
+- 他测量起来了 → 他明白了: 测量 means “to measure,” not “to realize.” Use 明白了 when he realizes which plants are poisonous or medicinal.
+- 像星星的植物是毒 → 像星星的植物有毒: Use 有毒, not 是毒, to say that a plant is poisonous.
 **Coherence: reference**
-- 他 → (delete): 他 is already clear from the previous clause, so delete this redundant subject. Chinese uses zero form here.
-- (suggestion) 植物 → (delete): It would be more natural to omit 植物 because it is already understood: 像伞的是药.
+- 觉得他快会死了 → 觉得快会死了: 他 is already clear from the previous clause, so delete this redundant subject. Chinese uses zero form here.
+- (suggestion) 像伞的植物是药 → 像伞的是药: It would be more natural to omit 植物 because it is already understood: 像伞的是药.
 **Coherence: 了 / 着 / 在**
-- 快会 → 快要: Use 快要 for something that is going to happen very soon: 快要死了.
+- 觉得他快会死了 → 觉得他快要死了: Use 快要 for something that is going to happen very soon: 快要死了.
 
 **Vocabulary suggestions**
 - 痛 (“让他肚子很痛”) → 疼: A very natural word for physical pain.; 难受: Shows that he feels generally uncomfortable or sick.

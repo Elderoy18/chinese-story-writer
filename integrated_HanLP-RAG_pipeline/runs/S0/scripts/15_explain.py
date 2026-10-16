@@ -104,6 +104,22 @@ def clean_corrected(s):
     return "" if s in ("(delete)", "∅", "(comment, no correction)") else s
 
 
+def in_context(it, width=6):
+    """A correction shown inside its clause, before -> after: 跟妈妈搬家 → 跟妈妈搬家了.
+    Long clauses are trimmed to `width` characters either side of the change; a
+    comment item shows its clause with the commented words marked ⟦ ⟧."""
+    m = re.search(r"【(.*?)】", it["clause"])
+    if not m:
+        return f"{it['original']} → {it['corrected']}"
+    pre, mark, post = it["clause"][:m.start()], m.group(1), it["clause"][m.end():]
+    orig = "" if mark == "^" else mark
+    pre = "…" + pre[-width:] if len(pre) > width else pre
+    post = post[:width] + "…" if len(post) > width else post
+    if it["corrected"] is None:
+        return pre + "⟦" + orig + "⟧" + post
+    return f"{pre}{orig}{post} → {pre}{it['corrected']}{post}"
+
+
 def clause_marked(text, s, t):
     lo = max(text.rfind("，", 0, s), text.rfind("。", 0, s)) + 1
     ends = [i for i in (text.find("，", t), text.find("。", t)) if i >= 0]
@@ -236,7 +252,7 @@ def render(items):
             continue
         L.append(f"**{title}**")
         for it in sorted(rows, key=lambda it: it["start"]):
-            fix = f"{it['original'] or '∅'} → {it['corrected'] or '(delete)'}" if it["corrected"] is not None else f"⟦{it['original']}⟧"
+            fix = in_context(it)
             L.append(f"- {'(suggestion) ' if it['strength'] == 'suggestion' else ''}{fix}: {it['explanation']}")
     return L
 
@@ -299,7 +315,7 @@ def write_sheet(items):
         w.writerow(COLUMNS)
         for it in sorted(sample, key=lambda it: it["item_id"]):
             k = kept.get(it["item_id"], {})
-            fix = f"{it['original'] or '∅'} → {it['corrected'] or '(delete)'}" if it["corrected"] is not None else "(comment)"
+            fix = in_context(it)
             w.writerow([it["item_id"], it["clause"], fix, it["explanation"], "suggestion" if it["strength"] == "suggestion" else "error",
                         "she corrected this place" if marked(it) else "she did not mark this place", *[k.get(h, "") for h in HUMAN]])
     INSTRUCTIONS.write_text(INSTRUCTIONS_TEXT.format(n=len(sample)), encoding="utf-8")

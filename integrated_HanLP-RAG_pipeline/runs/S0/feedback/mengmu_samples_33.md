@@ -5,14 +5,14 @@
 > 一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。
 
 **Grammar**
-- ∅ → 祖先: 祭拜 needs an object here. Add 祖先: 祭拜祖先.
-- 得 → 需要: 很多墓地需要祭拜 is more natural here. 得 is not used this way in this statement.
+- …的工作是祭拜 → …的工作是祭拜祖先: 祭拜 needs an object here. Add 祖先: 祭拜祖先.
+- 很多墓地得我祭拜 → 很多墓地需要我祭拜: 很多墓地需要祭拜 is more natural here. 得 is not used this way in this statement.
 **Vocabulary**
 - 一天，很久很久以前 → 很久很久以前的一天: use the established time expression 很久很久以前的一天, not this word order.
-- 去 → 搬到: It would be more natural to say 搬到很多不同的地方, because this means moving house rather than simply going somewhere.
+- 所以我们得去很多不同的地… → 所以我们得搬到很多不同的地…: It would be more natural to say 搬到很多不同的地方, because this means moving house rather than simply going somewhere.
 **Coherence: reference**
-- ⟦孟子⟧: 孟子 appears for the first time, so please introduce him briefly, for example as 一个叫孟子的孩子.
-- 我 → (delete): 我 is already clear from the previous clause, so delete it; Chinese uses zero form here.
+- ⟦孟子⟧和他妈妈住在…: 孟子 appears for the first time, so please introduce him briefly, for example as 一个叫孟子的孩子.
+- 很多墓地得我祭拜 → 很多墓地得祭拜: 我 is already clear from the previous clause, so delete it; Chinese uses zero form here.
 
 **Vocabulary suggestions**
 - 不高兴 (“孟子不高兴”) → 难过: This means sad or upset.; 生气: This is stronger and means angry.
@@ -31,13 +31,13 @@
 > 孟子想，难怪我们常常搬家，原来我妈妈很忙。可是常常搬家害得孟子很难找到朋友。每次搬家孟子也觉得新的地方不是太热就是太冷，不是太大就是太小。在哪的地方，他都不高兴。孟子想帮助妈妈祭拜，可是他六岁，所以不能祭拜。
 
 **Vocabulary**
-- 哪 → 哪个: 哪 does not normally collocate directly with 地方 here; use 哪个地方 instead.
+- 在哪的地方 → 在哪个的地方: 哪 does not normally collocate directly with 地方 here; use 哪个地方 instead.
 **Coherence: reference**
-- (suggestion) 也 → 都: It would be more natural to use 都 with 每次搬家 to show that this was true on every move.
-- (suggestion) 太 → (delete): It would be more natural to say 不是大就是小; the repeated 太 is unnecessary here.
-- (suggestion) 太 → (delete): It would be more natural to say 不是大就是小; the repeated 太 is unnecessary here.
+- (suggestion) 每次搬家孟子也觉得新的地方… → 每次搬家孟子都觉得新的地方…: It would be more natural to use 都 with 每次搬家 to show that this was true on every move.
+- (suggestion) 不是太大就是太小 → 不是大就是太小: It would be more natural to say 不是大就是小; the repeated 太 is unnecessary here.
+- (suggestion) 不是太大就是太小 → 不是太大就是小: It would be more natural to say 不是大就是小; the repeated 太 is unnecessary here.
 **Other**
-- (suggestion) ∅ → 只有: It would be more natural to say 只有六岁 to emphasize that he was too young to take part in the ritual.
+- (suggestion) 可是他六岁 → 可是他只有六岁: It would be more natural to say 只有六岁 to emphasize that he was too young to take part in the ritual.
 
 **Vocabulary suggestions**
 - 常常 (“我们常常搬家”) → 经常: A common alternative meaning “often,” with a slightly more neutral tone.
@@ -55,13 +55,13 @@
 > 四年后，孟子开始帮妈妈祭拜。他画画很厉害，他越来越喜欢祭拜，所以他祭拜不是想帮妈妈工作，而是他很喜欢画画。孟子成为很著名的古代画家。今天很多中国人很喜欢孟子。
 
 **Grammar**
-- (suggestion) ∅ → 了: It would be more natural to add 了 after 成为 to show that this change was completed.
+- (suggestion) 孟子成为很著名的古代… → 孟子成为了很著名的古代…: It would be more natural to add 了 after 成为 to show that this change was completed.
 **Coherence: reference**
-- 他 → (delete): 他 is already clear from the previous clause, so it is redundant. Delete it; Chinese uses zero form here.
-- 他 → (delete): 他 is already clear from the previous clause, so it is redundant. Delete it; Chinese uses zero form here.
-- 他 → (delete): In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. 他 is redundant here, so use zero form.
+- 他越来越喜欢祭… → 越来越喜欢祭…: 他 is already clear from the previous clause, so it is redundant. Delete it; Chinese uses zero form here.
+- 所以他祭拜不是想帮… → 所以祭拜不是想帮…: 他 is already clear from the previous clause, so it is redundant. Delete it; Chinese uses zero form here.
+- 而是他很喜欢画画 → 而是很喜欢画画: In 不是……而是……, put the subject before 不是 and do not repeat it after 而是. 他 is redundant here, so use zero form.
 **Content**
-- 画画 → 祭拜: The reason for 祭拜 should match the action being explained. Say 很喜欢祭拜, not 很喜欢画画.
+- 而是他很喜欢画画 → 而是他很喜欢祭拜: The reason for 祭拜 should match the action being explained. Say 很喜欢祭拜, not 很喜欢画画.
 
 **Vocabulary suggestions**
 - 厉害 (“他画画很厉害”) → 出色: It means excellent and sounds a little more formal.; 有天分: It means having natural talent.

@@ -5,19 +5,19 @@
 > 很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。
 
 **Grammar**
-- 试一试 → 试了试: This is a completed action in the past story, so use 试了试 with 了completed.
-- ∅ → 了: Knowing the benefits is a completed change in the story, so it takes 了completed.
+- 神农试一试每个植物 → 神农试了试每个植物: This is a completed action in the past story, so use 试了试 with 了completed.
+- 知道有什么好处 → 知道了有什么好处: Knowing the benefits is a completed change in the story, so it takes 了completed.
 **Vocabulary**
-- 老男人 → 老人: 老人 is the normal word for an elderly man. It also gives a brief introduction when Shennong first appears.
-- 看到了 → 看到: With 每一天, this is a habitual action, so do not use completed 了. Use 看到see because Shennong actually sees the people’s condition.
-- 小镇人 → 镇上的人: Use 镇上的人 for people who live in the town. 小镇人 is not a usual Chinese expression.
-- (suggestion) 山脉 → 山: It would be more natural to say 爬山. 山脉 is a mountain range, which people do not normally 爬 as one whole object.
-- 找了 → 找到了: He successfully finds the plants, so use 找到find, not 找look for.
-- 个 → 种: Use 种 as the measure word for types of plants. 个 is not the usual measure word here.
+- 有一个老男人叫神农 → 有一个老人叫神农: 老人 is the normal word for an elderly man. It also gives a brief introduction when Shennong first appears.
+- …在古代每一天看到了别的小镇人生… → …在古代每一天看到别的小镇人生…: With 每一天, this is a habitual action, so do not use completed 了. Use 看到see because Shennong actually sees the people’s condition.
+- …天看到了别的小镇人生病还是不舒… → …天看到了别的镇上的人生病还是不舒…: Use 镇上的人 for people who live in the town. 小镇人 is not a usual Chinese expression.
+- (suggestion) …开始爬当地的山脉 → …开始爬当地的山: It would be more natural to say 爬山. 山脉 is a mountain range, which people do not normally 爬 as one whole object.
+- 找了各种各样的植… → 找到了各种各样的植…: He successfully finds the plants, so use 找到find, not 找look for.
+- 神农试一试每个植物 → 神农试一试每种植物: Use 种 as the measure word for types of plants. 个 is not the usual measure word here.
 **Coherence: 了 / 着 / 在**
-- (suggestion) 下 → 第: It would be more natural to say 第一天 when you mean “the first day.” 第 marks the order of a day.
+- (suggestion) 他下一天开始爬当… → 他第一天开始爬当…: It would be more natural to say 第一天 when you mean “the first day.” 第 marks the order of a day.
 **Coherence: connectors**
-- 还是 → 或者: In a statement that gives alternatives, use 或者, not 还是. 还是 is usually used in questions.
+- …的小镇人生病还是不舒服 → …的小镇人生病或者不舒服: In a statement that gives alternatives, use 或者, not 还是. 还是 is usually used in questions.
 
 **Vocabulary suggestions**
 - 新的药 (“决定开始找新的药”) → 草药: This means herbal medicine and fits a story about useful plants.
@@ -36,17 +36,17 @@
 > 比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。
 
 **Grammar**
-- 试一试 → 试了试: this trying action is completed in the story, so use 了completed.
-- 吃得 → 吃起来: use 吃起来 before a description of how something tastes, such as 又新鲜又甜.
-- 的 → (delete): 很多 does not need 的 before 新的植物, so omit 的 here.
-- 是 → (delete): 特别 directly modifies 危险, so omit 是: 特别危险.
+- 他一次试一试有些植物的叶 → 他一次试了试有些植物的叶: this trying action is completed in the story, so use 了completed.
+- 吃得又新鲜又甜 → 吃起来又新鲜又甜: use 吃起来 before a description of how something tastes, such as 又新鲜又甜.
+- …他找到了很多的新的植物 → …他找到了很多新的植物: 很多 does not need 的 before 新的植物, so omit 的 here.
+- …有的时候特别是危险 → …有的时候特别危险: 特别 directly modifies 危险, so omit 是: 特别危险.
 **Vocabulary**
-- 一次 → 有一次: use 有一次 to mean “on one occasion” in the story. 一次 alone usually means “one time” as a number of times.
-- 叶 → 叶子: use 叶子 as the usual noun for leaves.
-- 叶 → 叶子: use 叶子 as the usual noun for leaves.
+- 他一次试一试有些植… → 他有一次试一试有些植…: use 有一次 to mean “on one occasion” in the story. 一次 alone usually means “one time” as a number of times.
+- …试有些植物的叶 → …试有些植物的叶子: use 叶子 as the usual noun for leaves.
+- 煮这些叶以后 → 煮这些叶子以后: use 叶子 as the usual noun for leaves.
 **Coherence: 了 / 着 / 在**
-- ∅ → 了: 煮 is completed before 以后, so it takes 了completed: 煮了……以后.
-- ∅ → 了: 发现 is a completed discovery in the story, so it takes 了completed: 发现了.
+- 煮这些叶以后 → 煮了这些叶以后: 煮 is completed before 以后, so it takes 了completed: 煮了……以后.
+- …就知道他发现新的茶叶 → …就知道他发现了新的茶叶: 发现 is a completed discovery in the story, so it takes 了completed: 发现了.
 
 **Vocabulary suggestions**
 - 甜 (“又新鲜又甜”) → 清甜: a light, fresh sweetness, often used for drinks or tea; 甘甜: a pleasant, rich sweetness
@@ -65,12 +65,12 @@
 > 一个爬山的男人正好看到神农的麻烦，然后给了他一些药。神农最终他的小镇回到，跟别的人分享他的发现。你认为神农的故事真的吗？这就要看你相信中药对身体有好处。
 
 **Grammar**
-- 他的小镇回到 → 回到他的小镇: Put the place after the directional complement: 回到他的小镇. This follows V. + directional complement + Place + 来/去.
-- ∅ → 是: Use 是 before the adjective question: 神农的故事是真的吗？
-- (suggestion) ∅ → 是否: It would be more natural to say 看你是否相信, because 是否 clearly introduces the two possibilities.
+- 神农最终他的小镇回到 → 神农最终回到他的小镇: Put the place after the directional complement: 回到他的小镇. This follows V. + directional complement + Place + 来/去.
+- …为神农的故事真的吗？这就… → …为神农的故事是真的吗？这就…: Use 是 before the adjective question: 神农的故事是真的吗？
+- (suggestion) …？这就要看你相信中药对身… → …？这就要看你是否相信中药对身…: It would be more natural to say 看你是否相信, because 是否 clearly introduces the two possibilities.
 **Vocabulary**
-- 别的人 → 别人: Use 别人 here for other people in general: 跟别人分享他的发现.
-- 看 → 看: Here 看 means “depends on,” not 看look. Keep 看; 看到see does not fit this expression.
+- 跟别的人分享他的发现 → 跟别人分享他的发现: Use 别人 here for other people in general: 跟别人分享他的发现.
+- …的吗？这就要看你相信中药对… → …的吗？这就要看你相信中药对…: Here 看 means “depends on,” not 看look. Keep 看; 看到see does not fit this expression.
 
 **Vocabulary suggestions**
 - 麻烦 (“神农的麻烦”) → 困难: a common word for a difficult situation; 困境: a stronger word for a serious difficult situation

@@ -5,21 +5,21 @@
 > 在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。
 
 **Grammar**
-- 对 → 当: Use 当药 to mean “use as medicine.” 对药 is not the expression for this meaning.
-- 对 → 当: Use 当药 to mean “use as medicine.” 对药 is not the expression for this meaning.
-- 的 → (delete): 他们 is the Subj. of 吃, so it does not need 的 here. Say 他们吃的植物.
-- 病人 → 生病: 病人 is a noun for a sick person, but this sentence needs an action. Use 让他们生病.
-- (suggestion) 对 → 这个药: After 吃, name the object being eaten: 吃这个药. 对药 is not an object here.
+- …到了很多植物对药 → …到了很多植物当药: Use 当药 to mean “use as medicine.” 对药 is not the expression for this meaning.
+- …们吃很多植物对药 → …们吃很多植物当药: Use 当药 to mean “use as medicine.” 对药 is not the expression for this meaning.
+- …是我觉得他们的吃的植物 → …是我觉得他们吃的植物: 他们 is the Subj. of 吃, so it does not need 的 here. Say 他们吃的植物.
+- 让他们病人 → 让他们生病: 病人 is a noun for a sick person, but this sentence needs an action. Use 让他们生病.
+- (suggestion) 对药 → 这个药药: After 吃, name the object being eaten: 吃这个药. 对药 is not an object here.
 **Vocabulary**
-- 是毒 → 有毒: Here the plant needs an Adj. to describe it. 有毒 means “poisonous”; 是毒 does not fit after 特别.
+- …植物可能特别是毒 → …植物可能特别有毒: Here the plant needs an Adj. to describe it. 有毒 means “poisonous”; 是毒 does not fit after 特别.
 **Coherence: reference**
-- ⟦神农⟧: 神农 appears for the first time here, so please introduce him briefly with an identifying noun phrase, not only his name.
-- 他 → (delete): 他 is already clear from the previous clause, so delete it. Chinese uses zero form here.
+- ⟦神农⟧先看到很多病…: 神农 appears for the first time here, so please introduce him briefly with an identifying noun phrase, not only his name.
+- 他想把花放在茶… → 想把花放在茶…: 他 is already clear from the previous clause, so delete it. Chinese uses zero form here.
 **Coherence: connectors**
-- 可能 → 因此: Use 因此 to show how this thought follows the previous sentence. It makes the connection between the clauses clear.
+- …觉得这个植物可能特别是毒 → …觉得这个植物因此特别是毒: Use 因此 to show how this thought follows the previous sentence. It makes the connection between the clauses clear.
 **Content**
-- (suggestion) 个 → 种: It would be more natural to say 一种植物 when you mean one kind of plant.
-- 对药 → 当药: Use 当药 after 植物 to say that the plant is used as medicine. 这个药 cannot follow 找一种植物 directly here.
+- (suggestion) 所以他想找一个植物对药 → 所以他想找一种植物对药: It would be more natural to say 一种植物 when you mean one kind of plant.
+- …想找一个植物对药 → …想找一个植物当药: Use 当药 after 植物 to say that the plant is used as medicine. 这个药 cannot follow 找一种植物 directly here.
 
 **Vocabulary suggestions**
 - 很多 (“很多植物”) → 许多: A slightly more formal way to say “many.”; 各种各样: Means “many different kinds,” and highlights variety.
@@ -38,19 +38,19 @@
 > 他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。
 
 **Grammar**
-- 了 → (delete): No sentence-final 了 is needed here because this is not a completed action or a change of state.
-- 吃不吃 → 吃的是: To identify which plant he ate, use 是: 吃的是灵芝还是夹竹桃.
+- …这把花毒不毒了 → …这把花毒不毒: No sentence-final 了 is needed here because this is not a completed action or a change of state.
+- 神农不知道他吃不吃灵芝或者夹竹… → 神农不知道他吃的是灵芝或者夹竹…: To identify which plant he ate, use 是: 吃的是灵芝还是夹竹桃.
 **Vocabulary**
-- 看 → 看到: Use 看到see when the narrative means actually seeing or finding out something, rather than 看look.
-- (suggestion) 花 → 烟: It would be more natural to say 烟 here, because it collocates better with the intended situation.
-- 别的人 → (delete): 别的人 is redundant here, so delete it and begin with 给了神农一个灵芝.
+- 这就要看如果这把花毒… → 这就要看到如果这把花毒…: Use 看到see when the narrative means actually seeing or finding out something, rather than 看look.
+- (suggestion) …要看如果这把花毒不毒了 → …要看如果这把烟毒不毒了: It would be more natural to say 烟 here, because it collocates better with the intended situation.
+- 别的人给了神农一个… → 给了神农一个…: 别的人 is redundant here, so delete it and begin with 给了神农一个灵芝.
 **Coherence: reference**
-- 你的 → 他的: This refers to Shennong’s body, so use 他的, not 你的.
+- …如果这把花对你的身体好 → …如果这把花对他的身体好: This refers to Shennong’s body, so use 他的, not 你的.
 **Coherence: connectors**
-- 如果 → (delete): After 不知道, use the question directly; do not add 如果 before an indirect question.
-- 好 → 好不好: After 不知道, a yes/no indirect question needs an alternative form: 好不好.
-- 如果 → (delete): After 看, use the question directly: 看这把花毒不毒. Do not use 如果 here.
-- 或者 → 还是: Use 还是, not 或者, for alternatives in an embedded question after 不知道.
+- 他不知道如果这把花对你的… → 他不知道这把花对你的…: After 不知道, use the question directly; do not add 如果 before an indirect question.
+- …花对你的身体好 → …花对你的身体好不好: After 不知道, a yes/no indirect question needs an alternative form: 好不好.
+- 这就要看如果这把花毒不毒… → 这就要看这把花毒不毒…: After 看, use the question directly: 看这把花毒不毒. Do not use 如果 here.
+- …他吃不吃灵芝或者夹竹桃 → …他吃不吃灵芝还是夹竹桃: Use 还是, not 或者, for alternatives in an embedded question after 不知道.
 
 **Vocabulary suggestions**
 - 麻烦 (“但是这很麻烦”) → 困难: This means difficult and focuses on the challenge of the task.; 不容易: This is a natural, gentle way to say something is not easy.
@@ -68,12 +68,12 @@
 > 别的人给了神农一个灵芝。这个植物可以让神农更好。比方说，他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。
 
 **Vocabulary**
-- 个 → 朵: 灵芝 normally uses the measure word 朵, not 个.
-- (suggestion) ∅ → 变得: It would be more natural to say 让神农变得更好 when describing a change for the better.
-- 用对药 → 用这些植物来做药: 用对药 does not mean “use plants to make medicine.” Use 用这些植物来做药 here.
+- …人给了神农一个灵芝 → …人给了神农一朵灵芝: 灵芝 normally uses the measure word 朵, not 个.
+- (suggestion) …物可以让神农更好 → …物可以让神农变得更好: It would be more natural to say 让神农变得更好 when describing a change for the better.
+- 他可以用对药 → 他可以用这些植物来做药: 用对药 does not mean “use plants to make medicine.” Use 用这些植物来做药 here.
 **Coherence: 了 / 着 / 在**
-- 吃 → 吃了: The eating is completed before the later action, so use 了completed: 吃了灵芝以后.
-- (suggestion) ∅ → 了: It would be more natural to add 了completed/change because he has now become better: 觉得更好了.
+- 吃灵芝以后 → 吃了灵芝以后: The eating is completed before the later action, so use 了completed: 吃了灵芝以后.
+- (suggestion) …在他觉得更好 → …在他觉得更好了: It would be more natural to add 了completed/change because he has now become better: 觉得更好了.
 
 **Vocabulary suggestions**
 - 健康 (“他会觉得更健康。”) → 强壮: It means physically stronger.; 有精神: It means feeling energetic and full of life.

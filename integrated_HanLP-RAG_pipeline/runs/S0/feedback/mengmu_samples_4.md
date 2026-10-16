@@ -6,21 +6,21 @@
 
 **Grammar**
 - 古代的时候 → 在古代: Use 在古代 for this time setting. Put 在 before the time/place phrase.
-- 了 → (delete): 住在 describes a state here, so do not put 了 before 在. Use 住在+Place.
-- (suggestion) ∅ → 里: It would be more natural to add 里 after 家, making the location clearer: 家里.
-- 了 → (delete): 每天 shows a habitual action, so sentence-final 了 is not needed here.
-- (suggestion) ∅ → 在: It would be more natural to use 在 for an action continuing from morning to night: 从早到晚都在找工作.
-- 了 → 到了: With 搬到, the directional complement 到 comes before 了. Use 搬到了+Place.
-- (suggestion) 到 → (delete): It would be more natural to use 搬到了+Place rather than adding a separate 到 after 搬了.
+- 孟子和孟母住了在靠墓地的家 → 孟子和孟母住在靠墓地的家: 住在 describes a state here, so do not put 了 before 在. Use 住在+Place.
+- (suggestion) …在靠墓地的家 → …在靠墓地的家里: It would be more natural to add 里 after 家, making the location clearer: 家里.
+- …天在墓地祭拜了 → …天在墓地祭拜: 每天 shows a habitual action, so sentence-final 了 is not needed here.
+- (suggestion) …母从早到晚都找工作 → …母从早到晚都在找工作: It would be more natural to use 在 for an action continuing from morning to night: 从早到晚都在找工作.
+- 他们搬了到别一个城市… → 他们搬到了到别一个城市…: With 搬到, the directional complement 到 comes before 了. Use 搬到了+Place.
+- (suggestion) 他们搬了到别一个城市找… → 他们搬了别一个城市找…: It would be more natural to use 搬到了+Place rather than adding a separate 到 after 搬了.
 **Vocabulary**
-- 靠 → 靠近: Use 靠近 to mean “near” a place. 靠近墓地 means “near the cemetery.”
-- 别 → 另: Use 另一个 for “another one.” 别一个 is not the standard expression here.
+- …和孟母住了在靠墓地的家 → …和孟母住了在靠近墓地的家: Use 靠近 to mean “near” a place. 靠近墓地 means “near the cemetery.”
+- 他们搬了到别一个城市找工… → 他们搬了到另一个城市找工…: Use 另一个 for “another one.” 别一个 is not the standard expression here.
 **Coherence: reference**
-- ⟦孟子⟧: 孟子 appears for the first time here, so please introduce him briefly, not only with his name.
-- ⟦孟母⟧: 孟母 appears for the first time here, so please introduce her briefly, for example as 孟子的妈妈.
-- (suggestion) 那个城市 → 他们住的城市: It would be clearer to say 他们住的城市 because no city has been introduced for 那个城市 to refer to.
+- ⟦孟子⟧和孟母住了在…: 孟子 appears for the first time here, so please introduce him briefly, not only with his name.
+- 孟子和⟦孟母⟧住了在靠墓地…: 孟母 appears for the first time here, so please introduce her briefly, for example as 孟子的妈妈.
+- (suggestion) 在那个城市 → 在他们住的城市: It would be clearer to say 他们住的城市 because no city has been introduced for 那个城市 to refer to.
 **Coherence: connectors**
-- (suggestion) ∅ → 是因为: It would be more natural to use 原来是因为 to clearly introduce the reason.
+- (suggestion) 原来买不了房 → 原来是因为买不了房: It would be more natural to use 原来是因为 to clearly introduce the reason.
 
 **Vocabulary suggestions**
 - 墓地 (“在墓地祭拜”) → 墓园: a slightly more formal word for a cemetery; 坟地: a common, more everyday word for a burial place
@@ -37,12 +37,12 @@
 > 这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。
 
 **Grammar**
-- 都 → 有人: 都 needs a clear plural referent. Use 有人 here to say that people are shouting.
-- 了 → (delete): After 要, do not use completed-action 了. 要搬家 describes a planned action, not a completed one.
+- 就是都叫 → 就是有人叫: 都 needs a clear plural referent. Use 有人 here to say that people are shouting.
+- …要又一个次搬了家 → …要又一个次搬家: After 要, do not use completed-action 了. 要搬家 describes a planned action, not a completed one.
 **Vocabulary**
-- (suggestion) ∅ → 了: It would be more natural to say 找到了工作, because finding the job is a completed action.
+- (suggestion) 孟母找到工作 → 孟母找到了工作: It would be more natural to say 找到了工作, because finding the job is a completed action.
 **Coherence: connectors**
-- 又一个次 → 再一次: use 再一次 here because it means “one more time.”
+- 孟子和妈妈要又一个次搬了家 → 孟子和妈妈要再一次搬了家: use 再一次 here because it means “one more time.”
 
 **Vocabulary suggestions**
 - 吵 (“这个城市老是很吵”) → 吵闹: means noisy and disorderly; it is a little more descriptive for a city or street.
@@ -59,15 +59,15 @@
 > 孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。
 
 **Grammar**
-- ，而是喜欢的工作 → (delete): The phrase 而是喜欢的工作 does not fit the meaning here, so delete it.
-- ∅ → 在: Use 在 before a place where an action happens: 在学习馆学了十五年.
-- ∅ → 有: Use 有 in 对他有很多好处 to say something has many benefits for him.
+- …做衣服的工作，而是喜欢的工作 → …做衣服的工作: The phrase 而是喜欢的工作 does not fit the meaning here, so delete it.
+- 孟子学习馆学了十… → 孟子在学习馆学了十…: Use 在 before a place where an action happens: 在学习馆学了十五年.
+- 对他很多好处 → 对他有很多好处: Use 有 in 对他有很多好处 to say something has many benefits for him.
 **Vocabulary**
-- 找了 → 找到了: The person successfully finds a job, so use 找到find, not 找look for.
-- 是大人的时候 → 长大后: Use the established time expression 长大后, not the literal combination 是大人的时候.
-- (suggestion) ∅ → 了: It would be more natural to add 了 after 成为 to show the completed change: 成为了很有名的哲人.
+- …在那个商店也找了到工作 → …在那个商店也找到了到工作: The person successfully finds a job, so use 找到find, not 找look for.
+- 他是大人的时候 → 他长大后: Use the established time expression 长大后, not the literal combination 是大人的时候.
+- (suggestion) 他成为很有名的哲人 → 他成为了很有名的哲人: It would be more natural to add 了 after 成为 to show the completed change: 成为了很有名的哲人.
 **Coherence: reference**
-- 他 → (delete): The subject is already clear from the previous clause, so delete 他. Chinese uses zero form here.
+- 他成为很有名的… → 成为很有名的…: The subject is already clear from the previous clause, so delete 他. Chinese uses zero form here.
 
 **Vocabulary suggestions**
 - 重要 (“他的学习和他的旅行经验很重要”) → 关键: This means “key” or “crucial,” stronger than important.

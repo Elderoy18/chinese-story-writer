@@ -5,11 +5,11 @@
 > 这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。
 
 **Coherence: reference**
-- ⟦孟子⟧: This character appears for the first time, so please introduce 孟子 briefly, for example with an identifying noun phrase.
+- ⟦孟子⟧小的时候: This character appears for the first time, so please introduce 孟子 briefly, for example with an identifying noun phrase.
 **Coherence: connectors**
-- (suggestion) 老是 → (delete): It would be more natural to say 每天从早到晚, because 每天 already shows that this happened repeatedly.
-- 去 → 在: From early to late, the playing takes place at the cemetery, so use 在墓地 rather than 去墓地.
-- (suggestion) 玩 → (delete): It would be more natural to say 玩儿 here. Delete the extra 玩 to avoid repetition.
+- (suggestion) 所以他每天老是从早到晚去墓… → 所以他每天从早到晚去墓…: It would be more natural to say 每天从早到晚, because 每天 already shows that this happened repeatedly.
+- …老是从早到晚去墓地跟朋友们… → …老是从早到晚在墓地跟朋友们…: From early to late, the playing takes place at the cemetery, so use 在墓地 rather than 去墓地.
+- (suggestion) …地跟朋友们玩玩儿 → …地跟朋友们玩儿: It would be more natural to say 玩儿 here. Delete the extra 玩 to avoid repetition.
 
 **Vocabulary suggestions**
 - 很近 (“到墓地很近”) → 不远: This is a natural, slightly more varied way to say that a place is close.
@@ -26,12 +26,12 @@
 > 他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。
 
 **Grammar**
-- 觉得在墓地 → 觉得在墓地玩儿: Here 在墓地 describes 玩儿, not 觉得. Say 觉得在墓地玩儿: 在+Place comes before the action it modifies.
-- 的 → (delete): Use 帮妈妈工作 here, without 的. 帮妈妈工作 means “help Mom work.”
+- 他的妈妈觉得在墓地玩儿 → 他的妈妈觉得在墓地玩儿玩儿: Here 在墓地 describes 玩儿, not 觉得. Say 觉得在墓地玩儿: 在+Place comes before the action it modifies.
+- …字就是帮妈妈的工作 → …字就是帮妈妈工作: Use 帮妈妈工作 here, without 的. 帮妈妈工作 means “help Mom work.”
 **Vocabulary**
 - 害得 → 不好: 害得 needs 害得 + N/sb. + harmful result. Here you are saying that playing in a cemetery is not good, so use 不好.
 **Coherence: connectors**
-- (suggestion) ，所以 → (delete): It would be more natural to delete 所以 here; the reason for moving is already clear from the previous words.
+- (suggestion) 害得，所以他们搬家 → 害得他们搬家: It would be more natural to delete 所以 here; the reason for moving is already clear from the previous words.
 
 **Vocabulary suggestions**
 - 妈妈 (“他的妈妈觉得在墓地玩儿”) → 母亲: A more formal word for “mother,” often used in stories.
@@ -49,9 +49,9 @@
 > 他很聪明的人，难怪他成为有名的人。
 
 **Grammar**
-- ∅ → 是个: Use 是个 before 很聪明的人 because this is a noun phrase describing what he is.
+- 他很聪明的人 → 他是个很聪明的人: Use 是个 before 很聪明的人 because this is a noun phrase describing what he is.
 **Coherence: reference**
-- 他 → (delete): 他 is already clear from the previous clause, so delete it; Chinese uses zero form here.
+- 难怪他成为有名的人 → 难怪成为有名的人: 他 is already clear from the previous clause, so delete it; Chinese uses zero form here.
 
 **Vocabulary suggestions**
 - 聪明 (“他很聪明的人”) → 优秀: means excellent; it describes someone who does very well.

@@ -5,17 +5,17 @@
 > 很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。
 
 **Grammar**
-- ∅ → 不知道: The two parts are parallel: people do not know what plants can be eaten or what plants cannot be eaten. Add 不知道 after 也.
-- (suggestion) 么 → 麼: It would be more natural to use the traditional character 麼 if you are writing in traditional Chinese.
-- 不安全 → 有毒: 有毒的植物 is the established phrase for plants that harm people when eaten, not 不安全的植物.
-- (suggestion) 植物 → 食品: It would be more natural to say 食品 for harmful things people eat in this general statement.
-- 你的 → 人的: This is a general statement, so use 人的身体, not 你的身体.
-- ∅ → 有: Use 有 to introduce a new person: 但是有一个人。
+- 也什么植物不能… → 也不知道什么植物不能…: The two parts are parallel: people do not know what plants can be eaten or what plants cannot be eaten. Add 不知道 after 也.
+- (suggestion) 也什么植物不能吃 → 也什麼植物不能吃: It would be more natural to use the traditional character 麼 if you are writing in traditional Chinese.
+- 吃不安全的植物对你的… → 吃有毒的植物对你的…: 有毒的植物 is the established phrase for plants that harm people when eaten, not 不安全的植物.
+- (suggestion) 吃不安全的植物对你的身体有… → 吃不安全的食品对你的身体有…: It would be more natural to say 食品 for harmful things people eat in this general statement.
+- …安全的植物对你的身体有坏处 → …安全的植物对人的身体有坏处: This is a general statement, so use 人的身体, not 你的身体.
+- 但是一个人 → 但是有一个人: Use 有 to introduce a new person: 但是有一个人。
 **Vocabulary**
-- 很 → (delete): 很不知道 is not an established expression. Say 不知道 here.
-- (suggestion) 不安全 → 有毒: It would be more specific to say 有毒的植物. 不安全的 is vague here.
-- (suggestion) 植 → 食: It would be more specific to say 食物 here, because this means food people eat.
-- ∅ → 这是一个: 很麻烦的情况 is only a noun phrase. Add 这是一个 to make a complete sentence: 这是一个很麻烦的情况.
+- 古代的人很不知道什么植… → 古代的人不知道什么植…: 很不知道 is not an established expression. Say 不知道 here.
+- (suggestion) …很多人常常吃不安全的植物 → …很多人常常吃有毒的植物: It would be more specific to say 有毒的植物. 不安全的 is vague here.
+- (suggestion) …常吃不安全的植物 → …常吃不安全的食物: It would be more specific to say 食物 here, because this means food people eat.
+- 很麻烦的情况 → 这是一个很麻烦的情况: 很麻烦的情况 is only a noun phrase. Add 这是一个 to make a complete sentence: 这是一个很麻烦的情况.
 **Coherence: reference**
 - ⟦神农⟧: This character appears for the first time, so please introduce 神农 briefly, for example 有一个叫神农的人.
 
@@ -35,11 +35,11 @@
 > 他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。
 
 **Grammar**
-- 找到 → 找到了: This is a completed discovery, so use 找到了 with 了.
+- 旅行很远找到很多植物 → 旅行很远找到了很多植物: This is a completed discovery, so use 找到了 with 了.
 **Vocabulary**
-- 旅行很远 → 走了很远: 旅行很远 does not normally collocate with the action of going a long distance. Use 走了很远 instead.
-- 写 → 写下了: When Shennong records his ideas, use 写下了, meaning “wrote down,” rather than just 写.
-- 个 → 朵: Use 朵 as the measure word for flowers, not 个.
+- 旅行很远找到很多植物 → 走了很远找到很多植物: 旅行很远 does not normally collocate with the action of going a long distance. Use 走了很远 instead.
+- 神农写他的主意 → 神农写下了他的主意: When Shennong records his ideas, use 写下了, meaning “wrote down,” rather than just 写.
+- 神农遇到了一个黄色的花 → 神农遇到了一朵黄色的花: Use 朵 as the measure word for flowers, not 个.
 
 **Vocabulary suggestions**
 - 聪明 (“他又聪明又努力”) → 了不起: means very admirable, and is good for praising Shennong’s work.; 勇敢: emphasizes that he is not afraid of danger.
@@ -58,13 +58,13 @@
 > 发现了夹竹桃有毒。别人看到他，很快给他吃一个灵芝。神农一吃就觉得比较好。然后，他继续写他发现的信息。会告诉他的朋友哪一个植物能不能吃。
 
 **Grammar**
-- 能不能吃 → 能吃，哪一种不能吃: Do not combine 哪一种 with the yes/no form 能不能吃. List the two Wh-questions: 哪一种能吃，哪一种不能吃.
+- …友哪一个植物能不能吃 → …友哪一个植物能吃，哪一种不能吃: Do not combine 哪一种 with the yes/no form 能不能吃. List the two Wh-questions: 哪一种能吃，哪一种不能吃.
 **Coherence: 了 / 着 / 在**
-- 了 → (delete): 发现 is a mental state verb here, so use no了.
-- (suggestion) ∅ → 了: It would be more natural to use 了 because giving him the 灵芝 is completed in the story (了completed).
-- (suggestion) ∅ → 吃: It would be more natural to say 吃了: eating the 灵芝 is completed before he feels better (了completed).
+- 发现了夹竹桃有毒 → 发现夹竹桃有毒: 发现 is a mental state verb here, so use no了.
+- (suggestion) 很快给他吃一个灵芝 → 很快给他吃了一个灵芝: It would be more natural to use 了 because giving him the 灵芝 is completed in the story (了completed).
+- (suggestion) …就觉得比较好 → …就觉得比较好吃: It would be more natural to say 吃了: eating the 灵芝 is completed before he feels better (了completed).
 **Content**
-- 个 → 种: Use 种 for a type of plant: 哪一种植物.
+- …他的朋友哪一个植物能不能吃 → …他的朋友哪一种植物能不能吃: Use 种 for a type of plant: 哪一种植物.
 
 **Vocabulary suggestions**
 - 很快 (“别人看到他，很快给他吃一个灵芝。”) → 马上: means immediately, with a stronger sense of quick action.; 立刻: means at once and sounds a little more vivid in a story.

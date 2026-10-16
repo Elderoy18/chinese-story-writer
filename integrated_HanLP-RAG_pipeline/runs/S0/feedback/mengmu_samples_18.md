@@ -7,10 +7,10 @@
 **Grammar**
 - 古代的时候 → 在古代: 古代 is the location/time setting, so use 在+Place: 在古代.
 **Vocabulary**
-- 害得 → 影响了: 害得 needs a harmful result after the person or noun. 影响了 fits here because 学习 is the noun affected.
-- (suggestion) 的 → (delete): It would be more natural to say 孟子学习 without 的 here.
+- 而且害得孟子的学习 → 而且影响了孟子的学习: 害得 needs a harmful result after the person or noun. 影响了 fits here because 学习 is the noun affected.
+- (suggestion) 而且害得孟子的学习 → 而且害得孟子学习: It would be more natural to say 孟子学习 without 的 here.
 **Coherence: connectors**
-- (suggestion) ∅ → 所以: It would be more natural to add 所以 to show that the people’s crying is the result of their worshipping.
+- (suggestion) 他们一直在哭 → 所以他们一直在哭: It would be more natural to add 所以 to show that the people’s crying is the result of their worshipping.
 
 **Vocabulary suggestions**
 - 很多 (“有很多人祭拜”) → 许多: A slightly more varied way to say “many.”; 不少: Means “quite a few” and sounds natural in narration.
@@ -29,14 +29,14 @@
 > 孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家。
 
 **Grammar**
-- (suggestion) ∅ → 不是: It would be more natural to use 不是……而是…… to contrast the two places.
-- 不是 → 没有: For a completed action that did not happen, use 没有, not 不是.
+- (suggestion) 孟子的妈妈带孟子不是搬… → 孟子的妈妈不是带孟子不是搬…: It would be more natural to use 不是……而是…… to contrast the two places.
+- …的妈妈带孟子不是搬到城市 → …的妈妈带孟子没有搬到城市: For a completed action that did not happen, use 没有, not 不是.
 **Vocabulary**
-- 取得 → 接受: 取得 does not normally collocate with 教育; use 接受 instead.
-- (suggestion) 跟 → 让: It would be more natural to use 让 when the mother makes Mengzi move. 跟 means “with,” while 让 shows that she tells him to do the action.
+- …妈妈觉得孟子取得良好的教育是… → …妈妈觉得孟子接受良好的教育是…: 取得 does not normally collocate with 教育; use 接受 instead.
+- (suggestion) 就打算跟孟子搬家 → 就打算让孟子搬家: It would be more natural to use 让 when the mother makes Mengzi move. 跟 means “with,” while 让 shows that she tells him to do the action.
 **Coherence: connectors**
-- (suggestion) 的 → (delete): It would be more natural to omit 的 here and say 孟子妈妈.
-- (suggestion) 的教育 → (delete): It would be more natural to say 这样的地方对儿子不太好; 的教育 is not needed here.
+- (suggestion) 所以孟子的妈妈认为这样… → 所以孟子妈妈认为这样…: It would be more natural to omit 的 here and say 孟子妈妈.
+- (suggestion) …的地方对儿子的教育不太好 → …的地方对儿子不太好: It would be more natural to say 这样的地方对儿子不太好; 的教育 is not needed here.
 
 **Vocabulary suggestions**
 - 重要 (“取得良好的教育是很重要的”) → 关键: This means “key” or “crucial” and makes the importance stronger.
@@ -55,9 +55,9 @@
 > 孟子跟他的老师从早到晚学习，难怪他的成绩很快就进步了很多。孟子学习的时候，孟子的妈妈不是待在家里就是编织衣服赚钱。以后孟子成为了中国有名的哲学家。
 
 **Grammar**
-- 待在家里就是 → 在家里就是待: 家里 is the location, so use 在+Place before the action: 在家里待.
+- …子的妈妈不是待在家里就是编织衣服赚钱 → …子的妈妈不是在家里就是待编织衣服赚钱: 家里 is the location, so use 在+Place before the action: 在家里待.
 **Vocabulary**
-- (suggestion) 编织衣服 → 织布: It would be more natural to say 织布 for the activity of making cloth to earn money.
+- (suggestion) …待在家里就是编织衣服赚钱 → …待在家里就是织布赚钱: It would be more natural to say 织布 for the activity of making cloth to earn money.
 
 **Vocabulary suggestions**
 - 学习 (“从早到晚学习”) → 认真学习: shows that he studies carefully and takes it seriously; 专心学习: shows that he concentrates and is not distracted

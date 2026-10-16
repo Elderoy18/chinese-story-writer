@@ -5,15 +5,15 @@
 > 古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。
 
 **Grammar**
-- 祭拜玩 → 玩祭拜的游戏: Put 玩 before the activity being played. Say 玩祭拜的游戏.
+- …常常跟朋友们祭拜玩 → …常常跟朋友们玩祭拜的游戏: Put 玩 before the activity being played. Say 玩祭拜的游戏.
 **Vocabulary**
-- (suggestion) ∅ → 会: It would be more natural to say 会影响孟子 to show that living beside a cemetery may have this result.
-- 他们会 → (delete): After 决定, use the action directly: 决定搬家. Do not add 他们会 here.
+- (suggestion) …在墓地的旁边影响孟子 → …在墓地的旁边会影响孟子: It would be more natural to say 会影响孟子 to show that living beside a cemetery may have this result.
+- 所以孟母决定他们会搬家 → 所以孟母决定搬家: After 决定, use the action directly: 决定搬家. Do not add 他们会 here.
 **Coherence: reference**
-- ⟦孟子⟧: This character appears for the first time, so please introduce 孟子 briefly with an identifying noun phrase, not only his name.
-- ⟦孟母⟧: This character appears for the first time, so please introduce 孟母 briefly, for example as 孟子的妈妈.
+- ⟦孟子⟧跟孟母住在墓…: This character appears for the first time, so please introduce 孟子 briefly with an identifying noun phrase, not only his name.
+- 孟子跟⟦孟母⟧住在墓地的旁…: This character appears for the first time, so please introduce 孟母 briefly, for example as 孟子的妈妈.
 **Coherence: connectors**
-- ∅ → 到: Use 注意到 when you mean “notice” or “realize” a fact.
+- 可是孟母注意 → 可是孟母注意到: Use 注意到 when you mean “notice” or “realize” a fact.
 
 **Vocabulary suggestions**
 - 常常 (“他常常跟朋友们祭拜玩”) → 总是: shows that he does it again and again, often with a slightly stronger feeling.; 经常: is a natural word for doing something frequently.
@@ -32,10 +32,10 @@
 > 城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。
 
 **Grammar**
-- (suggestion) ∅ → 着: It would be more natural to say 一直陪着孟子. 着 shows that 陪 is a continuing action.
+- (suggestion) …母只好一直陪孟子 → …母只好一直陪着孟子: It would be more natural to say 一直陪着孟子. 着 shows that 陪 is a continuing action.
 **Vocabulary**
-- 不是适合 → 不但不适合: this sentence needs the paired structure 不但……而且…… to add a second negative result.
-- 而是 → 而且: 不但 should pair with 而且, not 而是.
+- …在商店的旁边不是适合孟子 → …在商店的旁边不但不适合孟子: this sentence needs the paired structure 不但……而且…… to add a second negative result.
+- 而是让他觉得很伤… → 而且让他觉得很伤…: 不但 should pair with 而且, not 而是.
 
 **Vocabulary suggestions**
 - 城市 (“城市也有点儿危险。”) → 市中心: This is more precise for the busy central part of a city.
@@ -54,12 +54,12 @@
 > 所以，孟母和孟子搬到学校的旁边住。才五岁孟子开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。
 
 **Vocabulary**
-- (suggestion) ∅ → 会: It would be more natural to add 会 to show that becoming a famous philosopher was his future result. 成为 is correctly followed by the profession noun 哲学家.
+- (suggestion) 他成为中国的一… → 他会成为中国的一…: It would be more natural to add 会 to show that becoming a famous philosopher was his future result. 成为 is correctly followed by the profession noun 哲学家.
 **Coherence: 了 / 着 / 在**
 - 将来 → 后来: 将来 means “in the future,” but this is a later event in a past story. Use 后来 for the next story event.
 **Coherence: connectors**
-- ∅ → 时: Use 时 after an age phrase to show the time when an action happened: 才五岁时。
-- (suggestion) ∅ → 就: It would be more natural to use 才Num.就V. to emphasize that he started learning at the early age of five.
+- 才五岁孟子开始学哲… → 才五岁时孟子开始学哲…: Use 时 after an age phrase to show the time when an action happened: 才五岁时。
+- (suggestion) 才五岁孟子开始学哲学 → 才五岁孟子就开始学哲学: It would be more natural to use 才Num.就V. to emphasize that he started learning at the early age of five.
 
 **Vocabulary suggestions**
 - 看书 (“孟子不是看书，就是练习写字。”) → 阅读: A more formal word for reading books or written materials.

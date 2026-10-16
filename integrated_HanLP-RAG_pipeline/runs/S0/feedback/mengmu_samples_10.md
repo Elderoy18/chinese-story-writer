@@ -5,14 +5,14 @@
 > 孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。
 
 **Grammar**
-- 玩在墓地里 → 在墓地里玩: 墓地里 is the location, so use 在+Place before the action: 在墓地里玩.
-- (suggestion) 因为 → (delete): It would be more natural to say 而是妈妈认为…… because 而是 already introduces the contrasting reason, so 因为 is unnecessary.
+- …他的朋友喜欢玩在墓地里 → …他的朋友喜欢在墓地里玩: 墓地里 is the location, so use 在+Place before the action: 在墓地里玩.
+- (suggestion) 而是因为妈妈认为他们… → 而是妈妈认为他们…: It would be more natural to say 而是妈妈认为…… because 而是 already introduces the contrasting reason, so 因为 is unnecessary.
 **Vocabulary**
-- 装 → 装作: Use 装作 before a verb phrase. Here, say 装作祭拜.
+- 装祭拜 → 装作祭拜: Use 装作 before a verb phrase. Here, say 装作祭拜.
 **Coherence: reference**
-- ⟦孟子⟧: This character appears for the first time, so please introduce 孟子 briefly with an identifying noun phrase, not only his name.
+- ⟦孟子⟧小的时候: This character appears for the first time, so please introduce 孟子 briefly with an identifying noun phrase, not only his name.
 **Other**
-- (suggestion) ∅ → 了: It would be more natural to add 了 after 搬家 to show the move was completed.
+- (suggestion) 跟妈妈搬家 → 跟妈妈搬家了: It would be more natural to add 了 after 搬家 to show the move was completed.
 
 **Vocabulary suggestions**
 - 玩 (“从早到晚都跟朋友玩”) → 玩耍: A slightly more story-like word for children playing.; 嬉戏: Means playing happily and noisily; it is more vivid.
@@ -31,14 +31,14 @@
 > 妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。
 
 **Grammar**
-- ∅ → 得: Use 得 after 住 to introduce the degree result: 住得离墓地太近.
-- (suggestion) ，跟子思老师 → (delete): It would be more natural to delete 跟子思老师 because 搬到子思老师的家 already shows where they will live.
+- 住离墓地太近 → 住得离墓地太近: Use 得 after 住 to introduce the degree result: 住得离墓地太近.
+- (suggestion) …子思老师的家，跟子思老师住 → …子思老师的家住: It would be more natural to delete 跟子思老师 because 搬到子思老师的家 already shows where they will live.
 **Vocabulary**
-- 害得 → 伤了: 害得 needs a harmful result after 孟子的心气. Here, 伤了孟子的心气 is the natural expression.
+- 害得孟子的心气 → 伤了孟子的心气: 害得 needs a harmful result after 孟子的心气. Here, 伤了孟子的心气 is the natural expression.
 **Coherence: reference**
-- ⟦孟母⟧: 孟母 appears for the first time, so please introduce her briefly, for example 孟子的妈妈孟母.
+- 孟子和⟦孟母⟧搬到子思老师…: 孟母 appears for the first time, so please introduce her briefly, for example 孟子的妈妈孟母.
 **Coherence: connectors**
-- (suggestion) ∅ → 所以: It would be more natural to add 所以 to show that having no friends is the reason for reading books often.
+- (suggestion) 他老是读书 → 所以他老是读书: It would be more natural to add 所以 to show that having no friends is the reason for reading books often.
 
 **Vocabulary suggestions**
 - 打扫 (“孟母帮子思打扫房间”) → 收拾: This means to tidy up and put things in order.
@@ -57,12 +57,12 @@
 > 子思认为，对孩子来说，读书最重要，特别是学哲学。孟子不是练习写文章，就是看哲学书。孟子从五岁一直学哲学。他才五岁就学哲学，难怪他成为很有名的哲学家。
 
 **Grammar**
-- ∅ → 起: After 从五岁, add 起 to show the starting point: 从五岁起一直学哲学.
-- ∅ → 了: Becoming a famous philosopher is a completed event, so use 了 after 成为.
+- 孟子从五岁一直学哲学 → 孟子从五岁起一直学哲学: After 从五岁, add 起 to show the starting point: 从五岁起一直学哲学.
+- 难怪他成为很有名的哲学… → 难怪他成为了很有名的哲学…: Becoming a famous philosopher is a completed event, so use 了 after 成为.
 **Vocabulary**
-- 看 → 看到: The person actually sees the philosophy books, so use 看到see, not 看look.
+- 就是看哲学书 → 就是看到哲学书: The person actually sees the philosophy books, so use 看到see, not 看look.
 **Coherence: reference**
-- 他 → (delete): 孟子 is already clear from the previous sentence, so 他 is redundant. Chinese uses zero form here.
+- 难怪他成为很有名的… → 难怪成为很有名的…: 孟子 is already clear from the previous sentence, so 他 is redundant. Chinese uses zero form here.
 
 **Vocabulary suggestions**
 - 有名 (“成为很有名的哲学家”) → 著名: Means “well-known” and is a little more formal.; 出名: Means “famous” and is common in everyday speech.

@@ -5,7 +5,7 @@
 > 这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。
 
 **Grammar**
-- 了 → (delete): 常常 shows a habitual action, so do not use completed-action 了. Say 常常搬家.
+- …以他们常常搬了家 → …以他们常常搬家: 常常 shows a habitual action, so do not use completed-action 了. Say 常常搬家.
 
 **Vocabulary suggestions**
 - 重要 (“对童年很重要”) → 关键: This means especially important or decisive.; 有影响: This focuses on how a place can affect a child.
@@ -24,14 +24,14 @@
 > 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。
 
 **Grammar**
-- 了 → (delete): With 常常, this is a habitual action, so do not use 了completed.
-- 先她 → 她先: Put the subject before 先: 她先让孟子跟朋友玩儿.
-- 好质量 → 质量好: Say 质量好, with the noun 质量 before 好.
+- …为他们常常搬了家 → …为他们常常搬家: With 常常, this is a habitual action, so do not use 了completed.
+- 先她让孟子跟朋友… → 她先让孟子跟朋友…: Put the subject before 先: 她先让孟子跟朋友玩儿.
+- …么买又便宜又好质量的东西 → …么买又便宜又质量好的东西: Say 质量好, with the noun 质量 before 好.
 **Vocabulary**
-- (suggestion) 技能 → 东西: It would be more natural to say 东西 here. 技能 is less natural for the things a mother teaches him to buy.
-- (suggestion) ∅ → 质量: It would be more natural to add 质量: 又便宜又质量好 describes both the price and the quality.
+- (suggestion) …妈教孟子很多技能 → …妈教孟子很多东西: It would be more natural to say 东西 here. 技能 is less natural for the things a mother teaches him to buy.
+- (suggestion) …怎么买又便宜又好质量的东… → …怎么买又便宜质量又好质量的东…: It would be more natural to add 质量: 又便宜又质量好 describes both the price and the quality.
 **Coherence: reference**
-- ⟦孟母⟧: 孟母 appears for the first time here, so please briefly introduce her, for example as 孟子的妈妈.
+- ⟦孟母⟧三迁: 孟母 appears for the first time here, so please briefly introduce her, for example as 孟子的妈妈.
 
 **Vocabulary suggestions**
 - 重要 (“妈妈更重要”) → 关键: means “key” or “crucial”; it gives stronger emphasis.
@@ -49,7 +49,7 @@
 > 最后，她让孟子学写作。他不是写作就是看书，难怪他很聪明。现在在中国，孟子很有名。
 
 **Coherence: reference**
-- 他 → (delete): 孟子 is already clear from the previous clause, so 他 is redundant. Delete it; Chinese uses zero form here.
+- 难怪他很聪明 → 难怪很聪明: 孟子 is already clear from the previous clause, so 他 is redundant. Delete it; Chinese uses zero form here.
 
 **Vocabulary suggestions**
 - 聪明 (“他很聪明”) → 聪慧: A slightly more literary word for intelligent and wise.; 优秀: Means excellent; it can describe his strong ability as a student.

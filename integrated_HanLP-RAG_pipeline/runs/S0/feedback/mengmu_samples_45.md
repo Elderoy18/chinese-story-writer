@@ -7,13 +7,13 @@
 **Grammar**
 - 古代的时候 → 在古代: 古代 is the time/location setting, so use 在+Place before the action: 在古代。
 **Vocabulary**
-- (suggestion) ∅ → 只: It would be more natural to use 只 to mean “only” for the small number of schools.
-- (suggestion) 才 → (delete): It would be more natural to delete 才 here; 只 already expresses “only.”
+- (suggestion) 但是城市有才两个学校 → 但是城市只有才两个学校: It would be more natural to use 只 to mean “only” for the small number of schools.
+- (suggestion) 但是城市有才两个学校 → 但是城市有两个学校: It would be more natural to delete 才 here; 只 already expresses “only.”
 **Coherence: reference**
-- ⟦他⟧: This character appears for the first time, so please introduce the boy briefly with a noun phrase before using 他.
+- 一个男孩子跟⟦他⟧的妈妈住在中…: This character appears for the first time, so please introduce the boy briefly with a noun phrase before using 他.
 **Content**
-- 祭拜 → 模仿别人办丧事: Here, 孟子 is copying funeral rituals, not actually worshipping. Use 模仿别人办丧事.
-- 祭拜 → 模仿别人办丧事: Here, 孟子 is copying funeral rituals, not actually worshipping. Use 模仿别人办丧事.
+- 所以孟子老是祭拜 → 所以孟子老是模仿别人办丧事: Here, 孟子 is copying funeral rituals, not actually worshipping. Use 模仿别人办丧事.
+- 孟子不是祭拜 → 孟子不是模仿别人办丧事: Here, 孟子 is copying funeral rituals, not actually worshipping. Use 模仿别人办丧事.
 
 **Vocabulary suggestions**
 - 喜欢 (“他很喜欢他的城市”) → 喜爱: A slightly more literary word for liking something very much.
@@ -31,12 +31,12 @@
 > 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。
 
 **Vocabulary**
-- ∅ → 让: 想 cannot be followed directly by a new subject and verb. Use 想让孟子… to show what the mother wants him to do.
-- 有 → 接受: 接受 normally collocates with 教育. Say 让孟子接受很好的教育.
-- 他难怪 → 难怪他: 难怪 comes before the subject. Say 难怪他抱怨.
+- 而是想孟子有很好的… → 而是想让孟子有很好的…: 想 cannot be followed directly by a new subject and verb. Use 想让孟子… to show what the mother wants him to do.
+- 而是想孟子有很好的教育 → 而是想孟子接受很好的教育: 接受 normally collocates with 教育. Say 让孟子接受很好的教育.
+- 他难怪抱怨 → 难怪他抱怨: 难怪 comes before the subject. Say 难怪他抱怨.
 **Coherence: 了 / 着 / 在**
-- (suggestion) 家 → (delete): It would be more natural to say 搬到…, not 搬家到…. Here 搬 already means “move house.”
-- (suggestion) ∅ → 了: It would be more natural to add 了completed because moving to the city is a completed action in the story: 搬到了….
+- (suggestion) 他们搬家到有很多学校… → 他们搬到有很多学校…: It would be more natural to say 搬到…, not 搬家到…. Here 搬 already means “move house.”
+- (suggestion) 他们搬家到有很多学校的… → 他们搬家到了有很多学校的…: It would be more natural to add 了completed because moving to the city is a completed action in the story: 搬到了….
 
 **Vocabulary suggestions**
 - 很多 (“有很多学校的城市”) → 许多: A slightly more formal way to say “many.”
@@ -55,17 +55,17 @@
 > 他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。
 
 **Grammar**
-- 不要 → 不想: 不想 means “does not want to.” Use 不想离开他的城市 here.
-- (suggestion) 一个 → 的: It would be more natural to use 的 because 孟子 describes the noun 老师: 孟子的老师.
+- 因为他不要离开他的城市 → 因为他不想离开他的城市: 不想 means “does not want to.” Use 不想离开他的城市 here.
+- (suggestion) …妈妈找到孟子一个老师 → …妈妈找到孟子的老师: It would be more natural to use 的 because 孟子 describes the noun 老师: 孟子的老师.
 **Vocabulary**
-- 跟老师孟子 → 孟子跟老师: Put the subject 孟子 before 跟老师. Say 孟子跟老师学最重要的文学.
+- 跟老师孟子学最重要的文… → 孟子跟老师学最重要的文…: Put the subject 孟子 before 跟老师. Say 孟子跟老师学最重要的文学.
 **Coherence: reference**
-- 他 → (delete): 他 is already clear from the close continuation, so delete it; Chinese uses zero form here.
-- 他 → (delete): 他 is already clear from the previous clause, so it is redundant. Chinese uses zero form here.
+- 他想他的朋友 → 想他的朋友: 他 is already clear from the close continuation, so delete it; Chinese uses zero form here.
+- 因为他不要离开他的… → 因为不要离开他的…: 他 is already clear from the previous clause, so it is redundant. Chinese uses zero form here.
 **Coherence: 了 / 着 / 在**
-- (suggestion) ∅ → 了: Becoming a philosopher is a completed change in the story, so use 了completed: 成为了哲学家.
+- (suggestion) 所以他成为哲学家 → 所以他成为了哲学家: Becoming a philosopher is a completed change in the story, so use 了completed: 成为了哲学家.
 **Other**
-- ∅ → 给孟子找了一个老师: Use 给 to mark 孟子 as the person receiving the teacher. Say 给孟子找了一个老师.
+- 他的妈妈找到孟子一个老师 → 他的妈妈找到给孟子找了一个老师孟子一个老师: Use 给 to mark 孟子 as the person receiving the teacher. Say 给孟子找了一个老师.
 
 **Vocabulary suggestions**
 - 抱怨 (“他难怪抱怨”) → 埋怨: This means to complain with a slightly stronger sense of dissatisfaction.

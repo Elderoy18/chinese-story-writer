@@ -5,21 +5,21 @@
 > 古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。
 
 **Grammar**
-- 古代的时候 → 在古代: 古代 is the location/time setting, so use 在+Place before the action: 在古代有一个人叫神农。
-- (suggestion) ∅ → 在: It would be more natural to say 在一个很远的地方有一种植物, using 在+Place for the location.
+- 古代的时候有一个人叫神… → 在古代有一个人叫神…: 古代 is the location/time setting, so use 在+Place before the action: 在古代有一个人叫神农。
+- (suggestion) 神农听说一个远远的地… → 神农听说在一个远远的地…: It would be more natural to say 在一个很远的地方有一种植物, using 在+Place for the location.
 **Vocabulary**
-- 一看 → 一看到: He actually sees the other people, so use 看到see, not 看look.
-- (suggestion) 远远 → 很远: It would be more natural to say 很远的地方. 很远 is the standard expression here.
-- 个 → 株: Use 株 as the measure word for plants.
+- 一看别的人就想帮… → 一看到别的人就想帮…: He actually sees the other people, so use 看到see, not 看look.
+- (suggestion) 神农听说一个远远的地方有一种… → 神农听说一个很远的地方有一种…: It would be more natural to say 很远的地方. 很远 is the standard expression here.
+- 他看到一个很漂亮的植物 → 他看到一株很漂亮的植物: Use 株 as the measure word for plants.
 **Coherence: reference**
-- 他 → (delete): 他 is already clear from the close continuation, so delete it; Chinese uses zero form here.
-- ∅ → 这种: This refers to the specific plant mentioned earlier, so add 这种: 有这种植物的地方。
+- 他不知道什么东… → 不知道什么东…: 他 is already clear from the close continuation, so delete it; Chinese uses zero form here.
+- 找到有植物的地方 → 找到有这种植物的地方: This refers to the specific plant mentioned earlier, so add 这种: 有这种植物的地方。
 **Coherence: 了 / 着 / 在**
-- (suggestion) ∅ → 了: It would be more natural to add 了: 吃了都会觉得身体更好. 了 shows the eating action is completed before they feel better.
-- 走去 → 走着: Walking is a durative action while he finds the place, so use 着durative: 走着。
+- (suggestion) 什么病人吃都会觉得身体… → 什么病人吃了都会觉得身体…: It would be more natural to add 了: 吃了都会觉得身体更好. 了 shows the eating action is completed before they feel better.
+- 神农三个月走去 → 神农三个月走着: Walking is a durative action while he finds the place, so use 着durative: 走着。
 **Other**
-- (suggestion) 上 → (delete): It would be more natural to delete 上. 当 already expresses becoming a doctor here.
-- 医 → 医生: Use 医生 for “doctor”; 医 alone is not the usual word for a doctor here.
+- (suggestion) 他需要当上医 → 他需要当医: It would be more natural to delete 上. 当 already expresses becoming a doctor here.
+- 他需要当上医 → 他需要当上医生: Use 医生 for “doctor”; 医 alone is not the usual word for a doctor here.
 
 **Vocabulary suggestions**
 - 漂亮 (“一个很漂亮的植物”) → 美丽: A slightly more literary word for “beautiful.”; 艳丽: Describes flowers with especially bright, striking beauty.
@@ -36,14 +36,14 @@
 > 他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。
 
 **Vocabulary**
-- (suggestion) ∅ → 花: It would be more natural to say 这种花一定是做药的花. 这种 needs a noun here.
-- ∅ → 很: 快 alone is not natural before 生病 here; use 很快 to mean “soon.”
-- 快 → 赶快: Use 赶快 here to mean “quickly” or “hurriedly.”
-- (suggestion) 一种 → 一朵: It would be more natural to say 一朵红的灵芝. 一种 means a type, while 一朵 counts one individual lingzhi.
+- (suggestion) 这种一定是做药的… → 这种花一定是做药的…: It would be more natural to say 这种花一定是做药的花. 这种 needs a noun here.
+- 神农快生病 → 神农很快生病: 快 alone is not natural before 生病 here; use 很快 to mean “soon.”
+- 快给他一种红的… → 赶快给他一种红的…: Use 赶快 here to mean “quickly” or “hurriedly.”
+- (suggestion) 快给他一种红的灵芝 → 快给他一朵红的灵芝: It would be more natural to say 一朵红的灵芝. 一种 means a type, while 一朵 counts one individual lingzhi.
 **Coherence: 了 / 着 / 在**
-- ∅ → 了: The change to being ill is completed in the story, so it takes 了 (了completed).
-- ∅ → 了: Giving the lingzhi is a completed action in the story, so it takes 了 (了completed).
-- 没有病 → 的病好了: Here Shennong was ill and then recovered, so say 他的病好了, not 他没有病.
+- 神农快生病 → 神农快生病了: The change to being ill is completed in the story, so it takes 了 (了completed).
+- 快给他一种红的灵… → 快给了他一种红的灵…: Giving the lingzhi is a completed action in the story, so it takes 了 (了completed).
+- 他没有病 → 他的病好了: Here Shennong was ill and then recovered, so say 他的病好了, not 他没有病.
 
 **Vocabulary suggestions**
 - 帮 (“人帮神农”) → 救: This is stronger: it shows that the person helps Shennong in a dangerous situation.
@@ -61,13 +61,13 @@
 > 啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。
 
 **Grammar**
-- 写下怎么做药在书上 → 在书上写下怎么做药: Put the location phrase 在书上 before the action 写下.
-- ∅ → 有: Use the fixed phrase 对身体有好处. 有 is needed before 好处.
+- …找到药以后他写下怎么做药在书上 → …找到药以后他在书上写下怎么做药: Put the location phrase 在书上 before the action 写下.
+- …红灵芝对身体好处 → …红灵芝对身体有好处: Use the fixed phrase 对身体有好处. 有 is needed before 好处.
 **Coherence: reference**
-- (suggestion) ∅ → 了: It would be more natural to use 了completed because telling the other people is a specific completed action in the story.
-- ∅ → 种: Use a classifier after 那 when you mean one type: 那种红灵芝.
+- (suggestion) 一回家就告诉别人 → 一回家就告诉了别人: It would be more natural to use 了completed because telling the other people is a specific completed action in the story.
+- 那红灵芝对身体… → 那种红灵芝对身体…: Use a classifier after 那 when you mean one type: 那种红灵芝.
 **Coherence: 了 / 着 / 在**
-- (suggestion) ∅ → 把灵芝放在包里了: It would be more natural to use 了completed because putting the 灵芝 in the bag is a completed action in the story.
+- (suggestion) …？他把灵芝放在包里 → …？他把灵芝放把灵芝放在包里了在包里: It would be more natural to use 了completed because putting the 灵芝 in the bag is a completed action in the story.
 
 **Vocabulary suggestions**
 - 包 (“他把灵芝放在包里。”) → 背包: a more specific word for a bag carried on a journey.

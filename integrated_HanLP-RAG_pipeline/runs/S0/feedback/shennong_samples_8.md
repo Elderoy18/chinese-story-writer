@@ -6,11 +6,11 @@
 
 **Grammar**
 - 古代的时候 → 在古代: 古代 is the location/time setting, so use 在+Place before the action: 在古代。
-- (suggestion) 植物 → (delete): It would be more natural to omit the repeated 植物: 哪些植物能吃，哪些不能吃。
+- (suggestion) 哪些植物不能吃 → 哪些不能吃: It would be more natural to omit the repeated 植物: 哪些植物能吃，哪些不能吃。
 **Vocabulary**
-- 一看 → 一看到: Shennong actually sees the people eating plants, so use 看到see, not 看look.
+- 一看很多人正在吃… → 一看到很多人正在吃…: Shennong actually sees the people eating plants, so use 看到see, not 看look.
 **Coherence: 了 / 着 / 在**
-- (suggestion) ∅ → 助: It would be more natural to say 帮助别人 here.
+- (suggestion) 神农想帮别人 → 神农想帮助别人: It would be more natural to say 帮助别人 here.
 
 **Vocabulary suggestions**
 - 路上 (“神农正在路上走”) → 山路: a mountain path; it gives a clearer picture of where he is walking.
@@ -29,10 +29,10 @@
 > 然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。
 
 **Grammar**
-- 吃真好 → 真好吃: Use 真好吃, with 真 before the adjective 好吃. It describes how the plants taste.
+- 一些植物吃真好 → 一些植物真好吃: Use 真好吃, with 真 before the adjective 好吃. It describes how the plants taste.
 **Vocabulary**
-- (suggestion) ∅ → 有: It would be more natural to say 有毒. Here you need the adjective form 有毒 to describe the plants.
-- (suggestion) 得很 → (delete): It would be more natural to say 有毒 without 得很. 有毒 is already the adjective that describes the plants.
+- (suggestion) 一些植物毒得很 → 一些植物有毒得很: It would be more natural to say 有毒. Here you need the adjective form 有毒 to describe the plants.
+- (suggestion) 一些植物毒得很 → 一些植物毒: It would be more natural to say 有毒 without 得很. 有毒 is already the adjective that describes the plants.
 
 **Vocabulary suggestions**
 - 尝 (“神农开始尝很多植物”) → 品尝: This means to taste or try food, with a slightly more careful tone.; 试吃: This means to try eating something to see what it is like.
@@ -50,11 +50,11 @@
 > 一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。
 
 **Grammar**
-- (suggestion) 植物 → (delete): It would be more natural to omit the second 植物 because it is already understood from the first phrase.
+- (suggestion) 一些植物不能吃 → 一些不能吃: It would be more natural to omit the second 植物 because it is already understood from the first phrase.
 **Vocabulary**
-- 看 → 看: Here 看 means “depends on” in 要看……, so do not change it to 看到.
+- 这就要看你想不想生病… → 这就要看你想不想生病…: Here 看 means “depends on” in 要看……, so do not change it to 看到.
 **Other**
-- 麻烦 → 请问: Use 请问 to politely introduce a question. 麻烦 cannot directly introduce this question.
+- 麻烦我们可以吃什… → 请问我们可以吃什…: Use 请问 to politely introduce a question. 麻烦 cannot directly introduce this question.
 
 **Vocabulary suggestions**
 - 一个人 (“一个人对神农说”) → 男人: This is more specific when the person is male.; 胖男人: This adds a simple visual detail about the character.

@@ -5,18 +5,18 @@
 > 古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。
 
 **Grammar**
-- 古代的时候 → 在古代: 古代 is the setting, so use 在+Place before the action: 在古代人觉得祭拜非常重要。
-- (suggestion) ∅ → 有: It would be more natural to say 对孟子有不好的影响. Use 有 to show that the classmates caused a bad influence.
+- 古代的时候人觉得祭拜非… → 在古代人觉得祭拜非…: 古代 is the setting, so use 在+Place before the action: 在古代人觉得祭拜非常重要。
+- (suggestion) …同学们对孟子不好的影响 → …同学们对孟子有不好的影响: It would be more natural to say 对孟子有不好的影响. Use 有 to show that the classmates caused a bad influence.
 **Vocabulary**
-- 看 → 看到: 孟子妈妈 actually sees the bad influence, so use 看到see, not 看look.
+- 孟子妈妈看了他的同学们… → 孟子妈妈看到了他的同学们…: 孟子妈妈 actually sees the bad influence, so use 看到see, not 看look.
 **Coherence: reference**
-- ⟦孟子⟧: This character appears for the first time, so please introduce 孟子 briefly, for example 孟子是一个小男孩。
-- (suggestion) ∅ → 是: It would be more natural to say 因为每天只是祭拜. 是 emphasizes that worshipping was the only activity.
+- ⟦孟子⟧很小的时候: This character appears for the first time, so please introduce 孟子 briefly, for example 孟子是一个小男孩。
+- (suggestion) 因为每天只祭拜 → 因为每天只是祭拜: It would be more natural to say 因为每天只是祭拜. 是 emphasizes that worshipping was the only activity.
 **Coherence: 了 / 着 / 在**
-- (suggestion) ∅ → 的: It would be more natural to say 孟子和孟子的妈妈. Use 的 to show that the mother is Mengzi's mother.
+- (suggestion) …以孟子和孟子妈妈搬家了 → …以孟子和孟子的妈妈搬家了: It would be more natural to say 孟子和孟子的妈妈. Use 的 to show that the mother is Mengzi's mother.
 **Coherence: connectors**
-- 虽然 → (delete): 虽然 needs a matching contrast, such as 但是. There is no contrast here, so delete 虽然.
-- 了 → (delete): 老是 describes a habitual action, so do not use sentence-final 了 here.
+- 虽然他没有朋友 → 他没有朋友: 虽然 needs a matching contrast, such as 但是. There is no contrast here, so delete 虽然.
+- …是对他开玩笑了 → …是对他开玩笑: 老是 describes a habitual action, so do not use sentence-final 了 here.
 
 **Vocabulary suggestions**
 - 重要 (“祭拜非常重要”) → 神圣: This describes something solemn and worthy of deep respect.; 格外重要: This means especially important and adds a little emphasis.
@@ -35,10 +35,10 @@
 > 孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。
 
 **Vocabulary**
-- 看 → 看到: 孟子 actually sees the political articles here, so use 看到see, not 看look.
-- 害得 → 有害: Use 对他有害 for something that is harmful to him. 害得 needs a person plus a following result or action.
+- 而是看政治文章 → 而是看到政治文章: 孟子 actually sees the political articles here, so use 看到see, not 看look.
+- …政治文章对他害得 → …政治文章对他有害: Use 对他有害 for something that is harmful to him. 害得 needs a person plus a following result or action.
 **Coherence: 了 / 着 / 在**
-- ∅ → 了: 成为 is a change of state completed in the story, so it takes 了completed: 成为了。
+- 成为一个哲学家 → 成为了一个哲学家: 成为 is a change of state completed in the story, so it takes 了completed: 成为了。
 
 **Vocabulary suggestions**
 - 成为 (“成为一个哲学家”) → 成长为: means to grow up and become someone over time.
@@ -57,15 +57,15 @@
 > 他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。
 
 **Grammar**
-- ∅ → 了: Add 了 after 长大 because this is a completed change of state.
+- 孟子长大 → 孟子长大了: Add 了 after 长大 because this is a completed change of state.
 **Vocabulary**
-- 不是 → 不要: use 不要 for a recommendation not to do something; 不是 is used to say something is not the case.
-- 而是 → 而要: with 不要, use 而要 to contrast the recommended action.
-- (suggestion) ∅ → 的话: It would be more natural to add 的话 after 如果你懂政治 to mark the condition clearly.
-- 成为 → 获得: use 获得 because a salary is received; 成为 is used for becoming a person or identity.
+- 他常常建议你不是学金融 → 他常常建议你不要学金融: use 不要 for a recommendation not to do something; 不是 is used to say something is not the case.
+- 而是学政治 → 而要学政治: with 不要, use 而要 to contrast the recommended action.
+- (suggestion) …如果你懂政治 → …如果你懂政治的话: It would be more natural to add 的话 after 如果你懂政治 to mark the condition clearly.
+- 你会成为高薪 → 你会获得高薪: use 获得 because a salary is received; 成为 is used for becoming a person or identity.
 **Coherence: reference**
-- (suggestion) 你 → 人们: It would be more natural to say 人们 because 你 has no clear referent in this narrative.
-- 你 → (delete): 你 is already clear from the previous clause, so delete it; Chinese uses zero form here.
+- (suggestion) 他常常建议你不是学金融 → 他常常建议人们不是学金融: It would be more natural to say 人们 because 你 has no clear referent in this narrative.
+- 你会成为高薪 → 会成为高薪: 你 is already clear from the previous clause, so delete it; Chinese uses zero form here.
 
 **Vocabulary suggestions**
 - 问题 (“一直问问题”) → 疑问: This means a question or doubt in the mind, and sounds a little more thoughtful.; 难题: This means a difficult problem that needs careful thinking to solve.

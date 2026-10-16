@@ -5,12 +5,12 @@
 > 神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。
 
 **Grammar**
-- 住 → 生活: 住 is used for living in a specific home or place. For living in a historical era, say 生活在古代.
-- ∅ → 了: This is a completed action in the narrative, so add 了 after 去.
+- …农和他的家人住在古代 → …农和他的家人生活在古代: 住 is used for living in a specific home or place. For living in a historical era, say 生活在古代.
+- 他们去很多不一样的… → 他们去了很多不一样的…: This is a completed action in the narrative, so add 了 after 去.
 **Coherence: reference**
-- ⟦神农⟧: This character appears for the first time, so please introduce 神农 briefly, for example with an identifying noun phrase such as 一个叫神农的人.
+- ⟦神农⟧和他的家人住…: This character appears for the first time, so please introduce 神农 briefly, for example with an identifying noun phrase such as 一个叫神农的人.
 **Coherence: 了 / 着 / 在**
-- 了 → (delete): This describes a repeated condition with 常常, so use no 了 for routine/habit.
+- …家人常常生病了 → …家人常常生病: This describes a repeated condition with 常常, so use no 了 for routine/habit.
 
 **Vocabulary suggestions**
 - 不一样 (“很多不一样的地方”) → 不同: This is a slightly more formal way to say “not the same.”; 各种各样: This emphasizes that there are many varied kinds of places.
@@ -29,12 +29,12 @@
 > 他们在很漂亮的河找夹竹桃。神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要看你想要安全还是接近知道了。“神农一吃夹竹桃就生病了。哥哥说：“太麻烦了。
 
 **Vocabulary**
-- 看 → 看到: Use 看到, not 看, because this refers to seeing the situation or result.
+- …说：“这就要看你想要安全还… → …说：“这就要看到你想要安全还…: Use 看到, not 看, because this refers to seeing the situation or result.
 **Coherence: reference**
-- 接近 → 想: 接近 cannot modify 知道. Use 想知道 to mean “want to know.”
-- (suggestion) 知道了 → 知道: It would be more natural to say 想知道 without 了, because this is a general choice, not a completed action.
+- …想要安全还是接近知道了 → …想要安全还是想知道了: 接近 cannot modify 知道. Use 想知道 to mean “want to know.”
+- (suggestion) …安全还是接近知道了 → …安全还是接近知道: It would be more natural to say 想知道 without 了, because this is a general choice, not a completed action.
 **Content**
-- ∅ → 边: Use 河边 here: a river needs a locative word when it is the place where the action happens.
+- …在很漂亮的河找夹竹桃 → …在很漂亮的河边找夹竹桃: Use 河边 here: a river needs a locative word when it is the place where the action happens.
 
 **Vocabulary suggestions**
 - 漂亮 (“很漂亮的河”) → 美丽: A slightly more literary way to say “beautiful.”; 清澈: Means “clear” and is especially useful for describing river water.
@@ -51,15 +51,15 @@
 > 夹竹桃是毒的，我想知道灵芝会帮他。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你帮得真好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“
 
 **Vocabulary**
-- 是毒 → 有毒: Here the structure needs an Adj., but 毒 is a noun. Use 有毒 to mean “poisonous.”
-- 知道 → (delete): 知道 means “know,” but here you are stating what you think will happen. Delete it: 想灵芝会帮他 means “think Lingzhi will help him.”
-- (suggestion) ∅ → 不会: It would be more natural to say 不会帮他 if you mean that Lingzhi will not help him.
+- 夹竹桃是毒的 → 夹竹桃有毒的: Here the structure needs an Adj., but 毒 is a noun. Use 有毒 to mean “poisonous.”
+- 我想知道灵芝会帮他 → 我想灵芝会帮他: 知道 means “know,” but here you are stating what you think will happen. Delete it: 想灵芝会帮他 means “think Lingzhi will help him.”
+- (suggestion) …想知道灵芝会帮他 → …想知道灵芝会不会帮他: It would be more natural to say 不会帮他 if you mean that Lingzhi will not help him.
 **Coherence: reference**
-- 我们 → (delete): 我们 is already clear from the previous clause, so delete it; Chinese uses zero form here.
+- 特别是如果我们已经吃了夹竹… → 特别是如果已经吃了夹竹…: 我们 is already clear from the previous clause, so delete it; Chinese uses zero form here.
 **Coherence: 了 / 着 / 在**
-- ∅ → 了: Giving the 灵芝 is completed in the story, so it takes 了completed: 给了.
+- ”哥哥给神农灵芝 → ”哥哥给了神农灵芝: Giving the 灵芝 is completed in the story, so it takes 了completed: 给了.
 **Other**
-- (suggestion) 已经 → (delete): It would be more natural to delete 已经 because 吃了 already shows the completed action.
+- (suggestion) …别是如果我们已经吃了夹竹桃 → …别是如果我们吃了夹竹桃: It would be more natural to delete 已经 because 吃了 already shows the completed action.
 
 **Vocabulary suggestions**
 - 给 (“哥哥给神农灵芝。”) → 递给: means to hand something to someone, so it shows the action more clearly.

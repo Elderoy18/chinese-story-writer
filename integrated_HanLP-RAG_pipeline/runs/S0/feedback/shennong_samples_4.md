@@ -6,19 +6,19 @@
 
 **Grammar**
 - 古代的时候 → 在古代: 古代 is the location/time setting, so use 在+Place before the action: 在古代。
-- (suggestion) 知道 → 了解: It would be more natural to say 了解什么植物对人的身体有好处.
-- 你 → 人: This means people in general, not the listener. Use 人 instead of 你.
-- 你 → 人: This refers to people in general, not the listener. Use 人 instead of 你.
+- (suggestion) 也不知道什么植物对你… → 也不了解什么植物对你…: It would be more natural to say 了解什么植物对人的身体有好处.
+- …道什么植物对你的身体有好处 → …道什么植物对人的身体有好处: This means people in general, not the listener. Use 人 instead of 你.
+- …了这个植物对你有没有好处 → …了这个植物对人有没有好处: This refers to people in general, not the listener. Use 人 instead of 你.
 **Vocabulary**
-- 了 → (delete): 了 does not go between 去 and 吃. Use 去吃, without 了 in the middle.
-- (suggestion) 吃 → (delete): It would be more natural to omit 吃 here.
+- 所以神农去了吃每种植物 → 所以神农去吃每种植物: 了 does not go between 去 and 吃. Use 去吃, without 了 in the middle.
+- (suggestion) 所以神农去了吃每种植物 → 所以神农去了每种植物: It would be more natural to omit 吃 here.
 **Coherence: reference**
-- ⟦他⟧: 神农 appears for the first time here, so please introduce him briefly with an identifying noun phrase before using his name or a pronoun.
-- 神农 → (delete): 神农 is already clear from the previous clause, so delete it; Chinese uses zero form here.
-- 到 → (delete): 聊 takes its topic directly. Use 聊他吃的植物, without 到.
-- 了 → (delete): 会 already describes a future or habitual action here, so do not add 了 at the end.
+- ⟦他⟧的名字是神农: 神农 appears for the first time here, so please introduce him briefly with an identifying noun phrase before using his name or a pronoun.
+- 所以神农去了吃每种植… → 所以去了吃每种植…: 神农 is already clear from the previous clause, so delete it; Chinese uses zero form here.
+- …跟他的朋友聊到他吃的植物了 → …跟他的朋友聊他吃的植物了: 聊 takes its topic directly. Use 聊他吃的植物, without 到.
+- …到他吃的植物了 → …到他吃的植物: 会 already describes a future or habitual action here, so do not add 了 at the end.
 **Content**
-- 个 → 种: Use 种 for kinds of plants. 个 does not classify plants naturally here.
+- …多人不知道哪个植物好吃 → …多人不知道哪种植物好吃: Use 种 for kinds of plants. 个 does not classify plants naturally here.
 
 **Vocabulary suggestions**
 - 好吃 (“很好吃的植物”) → 可口: means tasty and pleasant to eat; it is a little more descriptive.; 美味: means delicious; it gives stronger praise for food.
@@ -37,12 +37,12 @@
 > 一个人问神农，哪个植物好吃。神农说，这就要看你的口味了。要是你喜欢吃甜的，有很多甜的水果，比方说苹果、西瓜和梨。一个别的人问神农，哪个植物对你的身体有好处。神农说，有很多种植物对你的身体有好处，比方说小白菜、黄瓜、茶和菠菜。一个别的人问神农，哪个植物对你的身体有坏处。
 
 **Vocabulary**
-- 个 → 种: Use 种 when asking about kinds of plants: 哪种植物好吃?
-- 看 → 看: 看 means “look,” while 看到 means “see.” Here you are asking what the taste depends on, not describing a result of seeing, so use 看, not 看到.
-- 别的人 → 另外一个人: This means an additional person, so use 另外, not 别的: 另外一个人。
-- 个 → 种: Use 种 when asking about kinds of plants: 哪种植物对你的身体有好处?
-- 别的人 → 另外一个人: This means an additional person, so use 另外, not 别的: 另外一个人。
-- (suggestion) 个 → 种: It would be more natural to use 种 when asking about kinds of plants: 哪种植物对你的身体有坏处?
+- 哪个植物好吃 → 哪种植物好吃: Use 种 when asking about kinds of plants: 哪种植物好吃?
+- 这就要看你的口味了 → 这就要看你的口味了: 看 means “look,” while 看到 means “see.” Here you are asking what the taste depends on, not describing a result of seeing, so use 看, not 看到.
+- 一个别的人问神农 → 一个另外一个人问神农: This means an additional person, so use 另外, not 别的: 另外一个人。
+- 哪个植物对你的身… → 哪种植物对你的身…: Use 种 when asking about kinds of plants: 哪种植物对你的身体有好处?
+- 一个别的人问神农 → 一个另外一个人问神农: This means an additional person, so use 另外, not 别的: 另外一个人。
+- (suggestion) 哪个植物对你的身… → 哪种植物对你的身…: It would be more natural to use 种 when asking about kinds of plants: 哪种植物对你的身体有坏处?
 
 **Vocabulary suggestions**
 - 好吃 (“哪个植物好吃”) → 美味: means delicious; it is a slightly more vivid and formal way to describe food.; 可口: means tasty and pleasant to eat; it often describes food or fruit.
@@ -61,12 +61,12 @@
 > 神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。
 
 **Vocabulary**
-- 个 → 朵: Use the classifier 朵 for flowers: 一朵黄色的花.
-- ∅ → 它的: 名字 needs a possessive subject here. Use 它的名字是夹竹桃.
-- 脑 → 大脑: Use 大脑, not 脑 alone, when you mean the brain.
-- 个 → 株: Use the classifier 株 for 灵芝: 一株灵芝.
+- 我吃了一个黄色的花 → 我吃了一朵黄色的花: Use the classifier 朵 for flowers: 一朵黄色的花.
+- 名字是夹竹桃 → 它的名字是夹竹桃: 名字 needs a possessive subject here. Use 它的名字是夹竹桃.
+- …种植物对我的脑有坏处 → …种植物对我的大脑有坏处: Use 大脑, not 脑 alone, when you mean the brain.
+- 一个灵芝和一个男… → 一株灵芝和一个男…: Use the classifier 株 for 灵芝: 一株灵芝.
 **Other**
-- 因为 → (delete): 因为 is redundant here because this is a separate statement, not a full reason clause. Say 夹竹桃有毒.
+- 因为夹竹桃有毒 → 夹竹桃有毒: 因为 is redundant here because this is a separate statement, not a full reason clause. Say 夹竹桃有毒.
 
 **Vocabulary suggestions**
 - 黄色 (“黄色的花”) → 金黄色: a bright, golden yellow; 淡黄色: a light, pale yellow

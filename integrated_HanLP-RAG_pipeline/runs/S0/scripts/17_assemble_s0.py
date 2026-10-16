@@ -52,11 +52,27 @@ SECTIONS = {"grammar": "Grammar", "word_choice": "Vocabulary", "coherence_refere
 clean = lambda s: re.sub(r'["}\]\[,]{3,}', "", s or "").strip()
 
 
+def in_context(it, width=6):
+    """A correction shown inside its clause, before -> after: 跟妈妈搬家 → 跟妈妈搬家了.
+    Long clauses are trimmed to `width` characters either side of the change; a
+    comment item shows its clause with the commented words marked ⟦ ⟧."""
+    m = re.search(r"【(.*?)】", it["clause"])
+    if not m:
+        return f"{it['original']} → {it['corrected']}"
+    pre, mark, post = it["clause"][:m.start()], m.group(1), it["clause"][m.end():]
+    orig = "" if mark == "^" else mark
+    pre = "…" + pre[-width:] if len(pre) > width else pre
+    post = post[:width] + "…" if len(post) > width else post
+    if it["corrected"] is None:
+        return pre + "⟦" + orig + "⟧" + post
+    return f"{pre}{orig}{post} → {pre}{it['corrected']}{post}"
+
+
 def scene_feedback(items, enrich):
     out = {"corrections": [], "vocabulary_suggestions": [], "expressiveness": [], "encouragement": ""}
     for dim in SECTIONS:
         for it in sorted([it for it in items if it["dimension"] == dim], key=lambda it: it["start"]):
-            fix = f"{it['original'] or '∅'} → {it['corrected'] or '(delete)'}" if it["corrected"] is not None else f"⟦{it['original']}⟧"
+            fix = in_context(it)
             out["corrections"].append({"section": SECTIONS[dim], "strength": it["strength"], "correction": fix,
                                        "explanation": clean(it["explanation"]), "item_id": it["item_id"]})
     if enrich:
@@ -197,7 +213,8 @@ def write_teacher_doc(stories):
          "Per scene the feedback has four parts:", "",
          "- **Corrections**, grouped as Grammar, Vocabulary, Coherence (reference; 了/着/在; connectors), Content.",
          "  Items marked *(suggestion)* are less certain and are worded as a possible improvement.",
-         "  [∅ → X] means X is added; [X → (delete)] means X is removed; ⟦X⟧ is a comment on X.",
+         "  Each correction shows the student's words before → after the change (… marks a trimmed clause);",
+         "  ⟦X⟧ marks words a comment is about.",
          "- **Vocabulary suggestions**: words used correctly, with richer alternatives.",
          "- **Expressiveness**: ideas for going beyond recounting events (feelings, speech, detail).",
          "- **Encouragement**.", "",
