@@ -31,7 +31,7 @@ const sIdx = args.indexOf("--samples");
 const only = sIdx > -1 ? new Set(args[sIdx + 1].split(",")) : null;
 
 const stage = resolveStage(stageId);
-const testSet = readJson(path.join(EVAL_DIR, "test_set.json"));
+const testSet = readJson(path.join(EVAL_DIR, stage.testSet));
 const snap = await loadSnapshot(stage.snapshot);
 const retriever = makeRetriever(snap);
 const commit = gitCommit();
@@ -129,7 +129,7 @@ async function runSample(sample) {
 }
 
 const samples = testSet.samples.filter((s) => !only || only.has(s.sample_id));
-console.log(`Stage ${stageId} (${stage.label}) on ${samples.length} samples, snapshot ${stage.snapshot}, model ${FEEDBACK_MODEL}`);
+console.log(`Stage ${stageId} (${stage.label}) on ${samples.length} samples from ${stage.testSet}, snapshot ${stage.snapshot}, model ${FEEDBACK_MODEL}`);
 const results = await Promise.allSettled(samples.map(runSample));
 const failed = results.filter((r) => r.status === "rejected");
 for (const f of failed) console.error("FAILED:", f.reason?.message ?? f.reason);

@@ -179,7 +179,7 @@ export function resolveStage(id, stages = readJson(path.join(EVAL_DIR, "stages.j
     if (!def) throw new Error(`unknown stage ${id} (known: ${Object.keys(stages).join(", ")})`);
     const base = def.extends
         ? resolveStage(def.extends, stages)
-        : { flags: NO_FLAGS, snapshot: "base", overrides: { fragments: {}, extraRules: [] }, chain: [] };
+        : { flags: NO_FLAGS, snapshot: "base", testSet: "test_set.json", overrides: { fragments: {}, extraRules: [] }, chain: [] };
     const fragments = { ...base.overrides.fragments };
     for (const [name, value] of Object.entries(def.fragments ?? {})) {
         const file = path.join(EVAL_DIR, value);
@@ -193,6 +193,8 @@ export function resolveStage(id, stages = readJson(path.join(EVAL_DIR, "stages.j
         chain: [...base.chain, id],
         flags: { ...base.flags, ...(def.flags ?? {}) },
         snapshot: def.snapshot ?? base.snapshot,
+        // Which held-out stories the stage runs on (file in eval/); inherited like snapshot.
+        testSet: def.testSet ?? base.testSet,
         overrides: { fragments, extraRules: [...base.overrides.extraRules, ...(def.extraRules ?? [])] },
         note: def.note ?? "",
     };

@@ -182,6 +182,19 @@ are used to re-check the judge (how often the judge agrees with her).
   manifest). Docs: `eval/README.md` (guard section), `run_pipeline.py` docstring, `design.md`
   §10. Result: S6 is reproducible from source and guarded; the v1 pipeline builds again.
 
+- **18 Oct -- Phase 1 prerequisites.** Added `eval/make_test_set_h20.py` -> `eval/test_set_h20.json`
+  (20 stories, 60 scenes; 184 correction lines with rule labels; 288 aligned edits, 286 approved
+  by her, 1 rejected, 1 undecided; 64 review notes: 46 rule explanations, 11 missed errors,
+  2 alternatives, 4 comments, 1 rejected fix). `eval/make_snapshot.py`: `--test-set`; stops if a
+  held-out sentence is in any chunk's text; drops (and records) hand-made list entries quoting
+  phrases found only in held-out stories -- this caught her vocabulary-suggestion example 1,
+  which quotes shennong_samples#4. Built `base-v4-h20` (S6's sources, 20 held out: 1,084
+  chunks). `eval/lib.mjs` / `run_stage.mjs`: per-stage `testSet`. Stages `S6-h20` (+ `-r2`,
+  `-r3`) = S6 unchanged on `base-v4-h20` and the 20 stories: the S7 baseline. Check: S6 still
+  identical. Note: `base-v4-h20`'s manifest hashes differ from `base-v4` for
+  `story_scenes.md` (Windows line endings from git; same bytes otherwise) and
+  `extra_rules.json` (rebuilt file) -- the chunks they produce are identical.
+
 ## Decisions
 
 - **D1 (18 Oct): 20 held-out stories.** S6 re-baselined on `base-v4-h20`.

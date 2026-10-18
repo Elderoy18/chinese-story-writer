@@ -19,10 +19,28 @@ the app uses.
 - `test_set.json` -- 6 held-out graded samples (3 孟母, 3 神农), each split
   into 3 scenes, with the teacher's corrections and content flags as gold.
   Made once by `make_test_set.py`.
+- `test_set_h20.json` -- the S7 test set: the 20 stories the teacher reviewed
+  in the alignment check (`align test.xlsx`; v2's test split), 60 scenes. It
+  includes the 6 stories above with the same scenes. Gold adds her corrections
+  as exact edits with her review decision, and her review notes (missed errors,
+  alternative fixes, rule explanations). Made by `make_test_set_h20.py`; known
+  issues in her review are listed in the file's `_known_issues`.
 - `snapshots/<name>/` -- the retrieval corpus, frozen: built by
   `make_snapshot.py` from the current pipeline sources **with the held-out
   samples removed**, searched locally (exact cosine), never touching the live
   database. Vectors live in `cache/` (not committed; rebuilt on demand).
+  `--test-set` chooses which stories are held out (default `test_set.json`).
+  The build also stops if a held-out sentence appears in any chunk's text; an
+  entry of her hand-made lists (vocabulary errors / suggestion examples /
+  teacher rules) quoting a phrase found only in held-out stories is dropped
+  instead and listed in the manifest (`dropped_for_held_out`).
+- A stage runs on the test set named by its `testSet` field in `stages.json`
+  (default `test_set.json`; inherited like `snapshot`).
+
+| Snapshot | Sources | Held out |
+|---|---|---|
+| `base-v4` | S6's | 6 (`test_set.json`) |
+| `base-v4-h20` | S6's, exactly (chunks verified identical) | 20 (`test_set_h20.json`); her suggestion example 1 dropped (quotes shennong_samples#4) |
 
 ## Running
 
