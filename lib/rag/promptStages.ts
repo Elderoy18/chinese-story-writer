@@ -52,6 +52,21 @@ export interface StageFlags {
      *  required scene (told / partly told / missing / wrong) in a "Scene check" section, and
      *  the content notes follow from those verdicts ("Missing scene: ..." / "You need to ..."). */
     sceneVerdicts?: boolean;
+    /** S7-4: rule cards with regex triggers (rule_card_triggers.json) are added to the prompt
+     *  when a trigger matches the scene, with the matched places listed as places to check;
+     *  and for each such card one past correction labelled with that rule is added, found by
+     *  similarity to the sentence that matched. */
+    ruleCardTriggers?: boolean;
+    /** S7-5: each sentence of the scene is searched against the student sentences she
+     *  corrected (rule_example chunks); the rule cards of the closest matches are added
+     *  (RULE_EXAMPLE_K per sentence, at most RULE_EXAMPLE_MAX_CARDS new cards), each shown
+     *  with the closest of her corrected sentences. */
+    ruleExamples?: boolean;
+    /** S7-6: the rule cards normally found by whole-scene similarity (topRules) are found
+     *  instead through per-sentence matches against her corrected sentences (rule_example),
+     *  as in S7-5 but REPLACING those cards rather than adding to them, and without showing
+     *  the matched sentences -- the prompt keeps S7-4's size. */
+    sentenceCards?: boolean;
 }
 
 export const PRODUCTION_FLAGS: StageFlags = {
@@ -91,6 +106,9 @@ export interface RetrievedChunk {
         signatures: { fix: string; count: number }[];
         examples: { before: string; after: string; note: string }[];
     };
+    /** rule_example: its rule card, and the student sentence after her fix. */
+    parent_id?: string;
+    clause_after?: string;
 }
 
 /** The three lookups the assembler needs; production backs them with Atlas.
@@ -407,9 +425,25 @@ function describeFix(fix: string): string {
     return fix.replace("→", " → ");
 }
 
-/** A rule card; with showStandardFix, also the teacher's standard fix for it (S7-2). */
-export function formatRuleCard(hit: RetrievedChunk, showStandardFix = false): string {
+/** S7-5: rule_example matches per sentence, and how many new cards they may add. */
+const RULE_EXAMPLE_K = 2;
+const RULE_EXAMPLE_MAX_CARDS = 4;
+
+/** A rule card; with showStandardFix, also the teacher's standard fix for it (S7-2);
+ *  with places, the spots in the scene where its trigger matched (S7-4); with example,
+ *  the past student sentence most like this scene that she corrected under it (S7-5). */
+export function formatRuleCard(hit: RetrievedChunk, showStandardFix = false, places: string[] = [],
+    example?: RetrievedChunk): string {
     const lines = [`### Rule: ${hit.grammar_tag ?? hit.chunk_id}`, hit.text];
+    if (example) {
+        lines.push("A past student sentence similar to one in this scene, which she corrected under this rule " +
+            "(check whether the scene really has the same error before flagging anything): " +
+            `${example.text} -> ${example.clause_after ?? ""}`);
+    }
+    if (places.length) {
+        lines.push("Places in this scene that MAY break this rule (check each one; flag it only if it really is an error): " +
+            places.map((p) => `“${p}”`).join("; "));
+    }
     const sf = showStandardFix ? hit.standard_fix : undefined;
     if (sf?.signatures.length) {
         lines.push("The teacher's standard fix for this rule (how she usually corrects it, with how often): " +
@@ -471,6 +505,17 @@ export function matchVocabTriggers(studentText: string, entries: RetrievedChunk[
 
 const none = Promise.resolve([] as RetrievedChunk[]);
 
+/** The sentences of a scene (split after 。！？). */
+function sentencesOf(text: string): string[] {
+    return (text.match(/[^。！？!?]+[。！？!?]*/gu) ?? [text]).map((s) => s.trim()).filter(Boolean);
+}
+
+/** The sentence of `text` that contains `fragment` (a trigger match with context). */
+function sentenceAround(text: string, fragment: string): string {
+    const sentences = text.match(/[^。！？!?]+[。！？!?]*/gu) ?? [text];
+    return sentences.find((s) => s.includes(fragment)) ?? sentences.find((s) => fragment.includes(s.trim())) ?? fragment;
+}
+
 /**
  * Given one student scene, retrieve what the enabled stages use and assemble
  * the feedback prompt. Basic data (every stage): similar rule cards + nearby
@@ -493,7 +538,7 @@ export async function assembleStagePrompt(
     const [pinnedRules, similarRules, storyExamples, calibrationHits, vocabSemantic, vocabAll, modelStory, critiqueHits, suggestionExamples, teacherRules] =
         await Promise.all([
             f.coherence ? r.byIds(PRIORITY_RULE_CARD_IDS) : none,
-            r.search(studentText, { chunkTypes: ["rule_card"], k: topRules }),
+            f.sentenceCards ? none : r.search(studentText, { chunkTypes: ["rule_card"], k: topRules }),
             r.search(studentText, { chunkTypes: ["correction_item"], k: topExamples, storyId: storyId || undefined }),
             f.critique
                 ? r.byIds(f.revisedCritiqueCards ? [...PRIORITY_EVAL_CARD_IDS, ...REVISED_EVAL_CARD_IDS] : PRIORITY_EVAL_CARD_IDS)
@@ -508,9 +553,49 @@ export async function assembleStagePrompt(
             f.vocabExamples ? r.byType("vocab_suggestion_example") : none,
             f.teacherRules ? r.byType("teacher_rule") : none,
         ]);
+    const allRuleCards = f.ruleCardTriggers ? await r.byType("rule_card") : [];
 
     const pinnedIds = pinnedRules.map((h) => h.chunk_id);
     const ruleHits = [...pinnedRules, ...similarRules.filter((h) => !pinnedIds.includes(h.chunk_id))];
+
+    // S7-4: rule cards whose trigger matches this scene, wherever similarity ranked them.
+    const cardTriggerHits = findTeacherRuleHits(studentText, allRuleCards.filter((c) => c.triggers?.length));
+    const placesByCard = new Map<string, string[]>();
+    for (const h of cardTriggerHits) {
+        placesByCard.set(h.rule.chunk_id, [...(placesByCard.get(h.rule.chunk_id) ?? []), h.match]);
+        if (!ruleHits.some((x) => x.chunk_id === h.rule.chunk_id)) ruleHits.push(h.rule);
+    }
+    // S7-5: the student sentences she corrected that are closest to each sentence of the scene
+    // bring their rule cards (best match first, at most RULE_EXAMPLE_MAX_CARDS new cards).
+    const exampleByCard = new Map<string, RetrievedChunk>();
+    const ruleExampleHits: RetrievedChunk[] = [];
+    if (f.ruleExamples || f.sentenceCards) {
+        const best = new Map<string, RetrievedChunk>();
+        for (const sentence of sentencesOf(studentText)) {
+            for (const ex of await r.search(sentence, { chunkTypes: ["rule_example"], k: RULE_EXAMPLE_K })) {
+                const card = ex.parent_id;
+                if (card && (!best.has(card) || (ex.score ?? 0) > (best.get(card)!.score ?? 0))) best.set(card, ex);
+            }
+        }
+        const ranked = [...best.entries()].sort((a, b) => (b[1].score ?? 0) - (a[1].score ?? 0));
+        const cap = f.sentenceCards ? topRules : RULE_EXAMPLE_MAX_CARDS;
+        const newCards = ranked.filter(([card]) => !ruleHits.some((h) => h.chunk_id === card)).slice(0, cap);
+        const fetched = await r.byIds(newCards.map(([card]) => card));
+        for (const card of fetched) ruleHits.push(card);
+        for (const [card, ex] of newCards) {
+            if (f.ruleExamples) exampleByCard.set(card, ex); // S7-6 shows no example sentences
+            ruleExampleHits.push(ex);
+        }
+    }
+
+    // ... and one past correction labelled with that rule, nearest to the sentence that matched.
+    const triggeredExamples: RetrievedChunk[] = [];
+    for (const [cardId, places] of placesByCard) {
+        const tag = cardId.replace(/^rule_card:/, "");
+        const sentence = sentenceAround(studentText, places[0]);
+        const [ex] = await r.search(sentence, { chunkTypes: ["correction_item"], k: 1, grammarTag: tag });
+        if (ex && !triggeredExamples.some((x) => x.chunk_id === ex.chunk_id)) triggeredExamples.push(ex);
+    }
 
     // Retellings of stories with no graded samples (嫦娥奔月, 张骞出使西域) have no
     // story-scoped corrections, so fall back to the whole corpus.
@@ -532,7 +617,9 @@ export async function assembleStagePrompt(
                 ? "## Relevant grammar rule cards (ground your explanations in these; the first are the teacher's reference and 了 corrections, always included)"
                 : "## Relevant grammar rule cards (ground your explanations in these)"
         );
-        for (const hit of ruleHits) parts.push(formatRuleCard(hit, Boolean(f.citeRules)));
+        for (const hit of ruleHits) {
+            parts.push(formatRuleCard(hit, Boolean(f.citeRules), placesByCard.get(hit.chunk_id) ?? [], exampleByCard.get(hit.chunk_id)));
+        }
     }
 
     if (calibrationHits.length) {
@@ -564,9 +651,10 @@ export async function assembleStagePrompt(
         for (const hit of suggestionExamples) parts.push(`- ${hit.text}`);
     }
 
-    if (exampleHits.length) {
+    const examplesShown = [...exampleHits, ...triggeredExamples.filter((x) => !exampleHits.some((e) => e.chunk_id === x.chunk_id))];
+    if (examplesShown.length) {
         parts.push("## Nearby real correction exemplars (style reference for how to phrase corrections)");
-        for (const hit of exampleHits) parts.push(`- ${hit.text}`);
+        for (const hit of examplesShown) parts.push(`- ${hit.text}`);
     }
 
     if (modelStory.length) {
@@ -587,12 +675,13 @@ export async function assembleStagePrompt(
 
     const retrievedChunkIds = [
         ...ruleHits.map((h) => h.chunk_id),
+        ...ruleExampleHits.map((h) => h.chunk_id),
         ...calibrationHits.map((h) => h.chunk_id),
         ...critiqueHits.map((h) => h.chunk_id),
         ...vocabHits.map((h) => h.chunk_id),
         ...teacherRules.map((h) => h.chunk_id),
         ...suggestionExamples.map((h) => h.chunk_id),
-        ...exampleHits.map((h) => h.chunk_id),
+        ...examplesShown.map((h) => h.chunk_id),
         ...modelStory.map((h) => h.chunk_id),
     ];
 

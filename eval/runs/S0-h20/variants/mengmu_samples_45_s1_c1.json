@@ -1,0 +1,122 @@
+{
+ "variant_id": "mengmu_samples_45_s1_c1",
+ "sample_id": "mengmu_samples#45",
+ "story_id": "mengmu_san_qian",
+ "scene": 1,
+ "her_line": "但是城市有才两个学校：这个城市，只有",
+ "rules": [
+  "word_choice"
+ ],
+ "original_scene": "古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。",
+ "variant_scene": "在古代，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 69,
+  "end": 75
+ },
+ "target_variant": {
+  "start": 67,
+  "end": 73
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#45/f1/p0/k0-1/e0",
+   "op": "replace",
+   "start": 67,
+   "end": 69,
+   "original": "但是",
+   "corrected": "这个",
+   "her_line": "但是城市有才两个学校：这个城市，只有",
+   "her_piece": "这个城市，只有",
+   "her_note": "",
+   "review_row": "mengmu_samples#45/f1/p0/k0-1",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#45/f1/p0/k0-1/e1",
+   "op": "replace",
+   "start": 71,
+   "end": 73,
+   "original": "有才",
+   "corrected": "，只有",
+   "her_line": "但是城市有才两个学校：这个城市，只有",
+   "her_piece": "这个城市，只有",
+   "her_note": "",
+   "review_row": "mengmu_samples#45/f1/p0/k0-1",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:time_expression",
+  "rule_card:character_introduction_first_mention",
+  "rule_card:attributive_modifier_de",
+  "rule_card:laoshi_negative_connotation",
+  "correction_item:mengmu_samples#14::c0",
+  "correction_item:mengmu_samples#34::c0",
+  "correction_item:mengmu_samples#27::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:character_introduction_first_mention",
+   "rule_card:attributive_modifier_de",
+   "rule_card:location_zai_place",
+   "correction_item:mengmu_samples#14::c0",
+   "correction_item:mengmu_samples#34::c0",
+   "correction_item:mengmu_samples#27::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候，有一个男孩子叫孟子和他的妈妈：在古代，有一个叫孟子的男孩子和他的妈妈住在一起\n\n- 古代的时候住了孟子和孟母：在古代，孟子和孟母住在墓地边，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，孟子的妈妈跟孟子一起住在中国：在古代，better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n在古代，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “在古代，一个男孩子跟他的妈妈住在中国。他叫孟子。”  \nFormula: 在古代，+ 一个叫 + 名字 + 的 + 人 + ……  \nCorrect: “在古代，有一个叫孟子的男孩子和他的妈妈住在中国。”  \nThis introduces the character more naturally when he first appears.\n\nIncorrect phrase: “他们住在墓地的旁边”  \nFormula: 住在 + place phrase；simple location nouns can directly modify the location word.  \nCorrect: “他们住在墓地旁边。”  \n“墓地的旁边” is understandable, but “墓地旁边” is more natural.\n\nIncorrect phrase: “所以孟子老是祭拜。”  \nFormula: 主语 + 常常/老是 + 祭拜 + 人/对象；or 主语 + 模仿别人 + 动词。  \nCorrect: “所以孟子老是模仿别人祭拜。”  \n“祭拜” usually needs an object, such as 祭拜祖先. In this story, Mencius is probably copying the people near the cemetery.\n\nIncorrect phrase: “城市有才两个学校”  \nFormula: Place + 才 + 有 + number + measure word + noun  \nCorrect: “城市里才有两所学校。”  \nUse “才” before “有,” and use the measure word “所” for schools.\n\n**Vocabulary Suggestions**\n\nWord: “男孩子”  \nContext: “一个男孩子跟他的妈妈住在中国。”  \nAlternatives: “小男孩” or “孩子.” “男孩子” is correct and neutral, while “小男孩” sounds more natural for a young child in a story. “孩子” is broader and does not specify gender.\n\nWord: “老是”  \nContext: “孟子老是祭拜。”  \nAlternatives: “常常” or “总是.” “老是” can suggest that something happens too often and may carry a slightly negative or complaining tone. “常常” is more neutral, while “总是” emphasizes that it happens repeatedly.\n\nWord: “跟朋友聊天”  \nContext: “孟子不是祭拜，就是跟朋友聊天。”  \nAlternatives: “和朋友玩耍” or “和朋友说说笑笑.” “聊天” focuses on talking. “玩耍” is more natural for young children, while “说说笑笑” creates a lively, vivid image of children happily talking and laughing.\n\nWord: “喜欢”  \nContext: “他很喜欢他的城市。”  \nAlternatives: “喜爱” or “留恋.” “喜欢” is common and simple. “喜爱” is a little more literary and stronger. “留恋” means feeling attached and unwilling to leave, so it is useful if you want to emphasize his emotional connection to the city.\n\nWord: “小”  \nContext: “两个学校，都很小。”  \nAlternatives: “规模很小” or “简陋.” “小” describes physical size in a simple way. “规模很小” emphasizes that the schools have few students, teachers, or facilities. “简陋” means basic or poorly equipped, and gives a more negative description.\n\n**Encouragement and Next Steps**\n\nYou did well creating a clear little story with logical connections, especially using “所以” and “不是……就是……”.  \nNext time, focus on introducing characters naturally and checking whether verbs such as “祭拜” need an object.",
+  "usage": {
+   "prompt_tokens": 2213,
+   "completion_tokens": 888,
+   "total_tokens": 3101,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2210,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 150,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7492
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:character_introduction_first_mention",
+   "rule_card:attributive_modifier_de",
+   "rule_card:laoshi_negative_connotation",
+   "correction_item:mengmu_samples#14::c0",
+   "correction_item:mengmu_samples#34::c0",
+   "correction_item:mengmu_samples#27::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候，有一个男孩子叫孟子和他的妈妈：在古代，有一个叫孟子的男孩子和他的妈妈住在一起\n\n- 古代的时候住了孟子和孟母：在古代，孟子和孟母住在墓地边，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，孟子的妈妈跟孟子一起住在中国：在古代，better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n在古代，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “在古代，一个男孩子跟他的妈妈住在中国。他叫孟子。”  \nFormula: 在古代 + 有一个叫 + 名字 + 的 + 人 + …  \nCorrect: “在古代，有一个叫孟子的男孩子和他的妈妈住在中国。”  \nThis introduces the character’s name and identity naturally on the first mention.\n\nIncorrect phrase: “孟子老是祭拜。”  \nFormula: Subject + 常常/一直 + verb + object  \nCorrect: “孟子常常祭拜祖先。”  \n“老是” often sounds like a complaint, so use “常常” for a neutral habit. Also, “祭拜” usually needs an object, such as “祖先.”\n\nIncorrect phrase: “孟子不是祭拜，就是跟朋友聊天。”  \nFormula: 不是 + 在 + verb phrase， 就是 + 在 + verb phrase  \nCorrect: “孟子不是在祭拜祖先，就是在跟朋友聊天。”  \nAdding “在” makes the two actions parallel and more natural.\n\nIncorrect phrase: “城市有才两个学校”  \nFormula: Place + 才 + 有 + number + measure word + noun  \nCorrect: “城市里才有两所学校。”  \nUse “才有,” not “有才,” and the measure word for schools is “所.”\n\n**Vocabulary Suggestions**\n\nWord: “男孩子”  \nContext: “一个男孩子”  \nAlternatives: “男孩” is shorter and more natural in narration. “孩子” is broader and can sound warmer or more childlike. “男孩子” is correct, but slightly more conversational.\n\nWord: “墓地的旁边”  \nContext: “他们住在墓地的旁边”  \nAlternatives: “墓地旁边” is more concise and natural. “墓地附近” means “near the cemetery” and is less exact than “旁边,” which means directly beside it.\n\nWord: “祭拜”  \nContext: “孟子常常祭拜祖先”  \nAlternatives: “祭奠祖先” has a more solemn tone and emphasizes commemorating deceased relatives. “祭拜” emphasizes performing a traditional worship ritual.\n\nWord: “聊天”  \nContext: “跟朋友聊天”  \nAlternatives: “闲聊” means chatting casually, often without a serious topic. “交谈” is more formal and can suggest a more meaningful conversation. “聊天” is the most everyday choice.\n\nWord: “很小”  \nContext: “两个学校，都很小”  \nAlternatives: “规模很小” specifically describes the size or capacity of an institution, so it is more precise for schools. “小型的学校” is also natural and describes the schools as small-scale.\n\n**Encouragement and Next Steps**\n\nYou created a clear little story with logical connections, especially using “所以” to explain why Mencius often visited the cemetery.  \nNext time, focus on word order with “才有” and on choosing “常常” instead of “老是” for neutral repeated actions.",
+  "usage": {
+   "prompt_tokens": 2194,
+   "completion_tokens": 1158,
+   "total_tokens": 3352,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2191,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 512,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 11061
+ }
+}

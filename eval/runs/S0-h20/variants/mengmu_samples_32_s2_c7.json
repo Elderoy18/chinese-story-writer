@@ -1,0 +1,111 @@
+{
+ "variant_id": "mengmu_samples_32_s2_c7",
+ "sample_id": "mengmu_samples#32",
+ "story_id": "mengmu_san_qian",
+ "scene": 2,
+ "her_line": "但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是",
+ "rules": [
+  "redundancy_delete"
+ ],
+ "original_scene": "他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。",
+ "variant_scene": "他们才住了一个月就又搬家。那时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她怕儿子会成为跟他们很像的人。她告诉孟子：他们不是朋友，而是不好的人。",
+ "previous_scenes": [
+  "有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。"
+ ],
+ "target_original": {
+  "start": 43,
+  "end": 45
+ },
+ "target_variant": {
+  "start": 43,
+  "end": 45
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#32/f7/p0/k0/e0",
+   "op": "delete",
+   "start": 43,
+   "end": 45,
+   "original": "常常",
+   "corrected": "",
+   "her_line": "但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是",
+   "her_piece": "delete常常",
+   "her_note": "redundant with老是",
+   "review_row": "mengmu_samples#32/f7/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 5,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:cai_jiu_construction",
+  "rule_card:time_expression",
+  "rule_card:attributive_modifier_de",
+  "rule_card:ambiguous_reference",
+  "correction_item:mengmu_samples#5::c0",
+  "correction_item:mengmu_samples#9::c7",
+  "correction_item:mengmu_samples#11::c4"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:cai_jiu_construction",
+   "rule_card:attributive_modifier_de",
+   "rule_card:ambiguous_reference",
+   "rule_card:time_expression",
+   "correction_item:mengmu_samples#11::c4",
+   "correction_item:mengmu_samples#9::c7",
+   "correction_item:mengmu_samples#5::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了：他们才在那儿住了一个星期，就又搬家了；在Place住，delete孟子跟他的妈妈\n\n- 孟母看孟子老是做他们住很近的人做的事情：学做住在他们附近的人做的事情\n\n- 在古代时候，孟子跟他妈妈常常搬家：在古代，better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n他们才住了一个月就又搬家。那时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她怕儿子会成为跟他们很像的人。她告诉孟子：他们不是朋友，而是不好的人。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “他们才住了一个月就又搬家。”  \nFormula: Subject + 才 + V. + 了 + duration + 就 + V. + 了.  \nCorrect: “他们才住了一个月，就又搬家了。”  \nAdding 了 after 搬家 makes the completed action clear.\n\nIncorrect phrase: “孟子老是跟这些卖东西的人常常玩儿”  \nFormula: Subject + 老是/常常 + 跟 + person + 一起 + V.  \nCorrect: “孟子老是跟这些卖东西的人一起玩儿。”  \n老是 and 常常 both express frequency, so using both together is redundant.\n\nIncorrect phrase: “害得妈妈着急得很”  \nFormula: Subject + V. + 得 + person + adjective; use a specific person when the reference could be unclear.  \nCorrect: “害得孟母着急得很。”  \n“妈妈” can be unclear outside direct speech; “孟母” clearly identifies Mencius’s mother.\n\nIncorrect phrase: “她怕儿子会成为跟他们很像的人”  \nFormula: Subject + 怕 + person + 会 + 成为 + 一个 + 跟……很像的 + noun.  \nCorrect: “她怕儿子会成为一个跟他们很像的人。”  \nA measure word, such as 一个, is needed before 人 here.\n\n**Vocabulary Suggestions**\n\nWord: “一般人”  \nContext: “那时候，一般人不喜欢卖东西的人。”  \nAlternatives: “当地人” means the people who lived in that particular area, so it fits the story’s setting more precisely. “附近的居民” means local residents and sounds slightly more formal. “一般人” means ordinary people in general, which is broad and may not clearly refer to the people around Mengzi.\n\nWord: “卖东西的人”  \nContext: “这些卖东西的人”  \nAlternatives: “商贩” refers to vendors or peddlers, often people selling goods in a market or on the street. “小贩” specifically suggests small-scale street vendors. “卖东西的人” is understandable and neutral, but less concise and less story-like.\n\nWord: “玩儿”  \nContext: “跟这些卖东西的人一起玩儿”  \nAlternatives: “玩耍” is a more written and narrative-friendly word for children playing. “混在一起” suggests spending lots of time with a group and can carry a slightly negative tone, which may match the mother’s concern. “玩儿” is natural in speech but more casual.\n\nWord: “着急得很”  \nContext: “害得孟母着急得很”  \nAlternatives: “焦虑” emphasizes ongoing worry and inner unease. “担心” is neutral and directly expresses concern. “着急得很” means very anxious or impatient, often because someone wants a situation to change quickly.\n\nWord: “不好的人”  \nContext: “他们不是朋友，而是不好的人。”  \nAlternatives: “不三不四的人” describes people considered improper or of questionable character; it has a strongly negative judgment. “品行不好的人” means people with poor moral conduct and sounds clearer and more formal. “不好的人” is understandable, but it is vague and childlike.\n\n**Encouragement and Next Steps**\n\nYou used the “才……就……” structure well to show that the family moved again after only one month, and the mother’s concern is communicated clearly.  \nNext time, focus on avoiding repeated frequency adverbs (such as 老是 and 常常) and making references to people as specific as possible.",
+  "usage": {
+   "prompt_tokens": 2165,
+   "completion_tokens": 763,
+   "total_tokens": 2928,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2162,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6780
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:cai_jiu_construction",
+   "rule_card:time_expression",
+   "rule_card:attributive_modifier_de",
+   "rule_card:ambiguous_reference",
+   "correction_item:mengmu_samples#5::c0",
+   "correction_item:mengmu_samples#9::c7",
+   "correction_item:mengmu_samples#11::c4"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 在古代时候，孟子跟他妈妈常常搬家：在古代，better to briefly introduce “孟子” when this character first appears\n\n- 孟母看孟子老是做他们住很近的人做的事情：学做住在他们附近的人做的事情\n\n- 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了：他们才在那儿住了一个星期，就又搬家了；在Place住，delete孟子跟他的妈妈\n\n## Student's scene to review\n他们才住了一个月就又搬家。那时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她怕儿子会成为跟他们很像的人。她告诉孟子：他们不是朋友，而是不好的人。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “他们才住了一个月就又搬家。” / Formula: Subject + 才 + Verb + 了 + duration + 就 + Verb + 了 / Correct: “他们才住了一个月，就又搬家了。”  \nAdd 了 after 搬家 to show that the move was completed.\n\nIncorrect phrase: “一般人不喜欢卖东西的人” / Formula: modifier + 的 + noun / Correct: “一般人不喜欢卖东西的人。”  \nThis sentence is grammatically correct. However, “一般人” is slightly vague; see the vocabulary suggestions below.\n\nIncorrect phrase: “孟子老是跟这些卖东西的人常常玩儿” / Formula: Subject + frequency adverb + 跟 + person + Verb; use one frequency adverb, not two / Correct: “孟子老是跟这些卖东西的人玩儿。” or “孟子常常跟这些卖东西的人玩儿。”  \n“老是” and “常常” both mean “often,” so using both is repetitive.\n\nIncorrect phrase: “害得妈妈着急得很” / Formula: Subject + 害得 + specific person + adjective + 得很 / Correct: “害得孟母着急得很。”  \nSince the story has more than one possible mother in a general context, using “孟母” is clearer than “妈妈.”\n\nIncorrect phrase: “她怕儿子会成为跟他们很像的人” / Formula: Subject + 怕 + person + 会成为 + 一个 + 跟……很像的 + noun / Correct: “她怕儿子会成为一个跟他们很像的人。”  \nAdd “一个” before the modified noun phrase. “他们” is also a little unclear; “那些商人” or “那些卖东西的人” is clearer.\n\nIncorrect phrase: “他们不是朋友，而是不好的人。” / Formula: A 不是 B，而是 C; use a specific adjective before 人 / Correct: “他们不是好朋友，而是不太好的人。”  \nGrammatically, the original is possible, but “不好的人” sounds unnatural and too general. A clearer version depends on what you mean—for example, “不是值得学习的人” if the mother means they are not good role models.\n\n**Vocabulary Suggestions**\n\nWord: “一般人” / Context: “那时候，一般人不喜欢卖东西的人。” / Alternatives: “很多人” or “当地人.” “一般人” means ordinary people in general, but it can sound broad and slightly vague here. “很多人” simply means “many people,” while “当地人” means local people and makes the setting more specific.\n\nWord: “卖东西的人” / Context: “不喜欢卖东西的人” / Alternatives: “商人,” “小贩,” or “摊贩.” “卖东西的人” is simple and understandable, but “商人” is a general term for businesspeople. “小贩” and “摊贩” usually refer to street vendors or people selling goods at stalls, which may fit the story scene better.\n\nWord: “玩儿” / Context: “跟这些卖东西的人……玩儿” / Alternatives: “来往” or “混在一起.” “玩儿” is natural for children, but it emphasizes playing. “来往” means to associate or have contact with someone and is more neutral. “混在一起” suggests spending a lot of time with a group and can carry a mildly negative tone, fitting the mother’s concern.\n\nWord: “着急得很” / Context: “害得妈妈着急得很” / Alternatives: “十分担心” or “忧心忡忡.” “着急” often emphasizes immediate anxiety or impatience. “担心” focuses more on concern about a future outcome. “忧心忡忡” is more literary and means deeply worried.\n\nWord: “不好的人” / Context: “而是不好的人” / Alternatives: “不值得学习的人,” “品行不好的人,” or “不务正业的人.” “不好的人” is very broad and childlike. “不值得学习的人” means people who are not good examples. “品行不好的人” specifically criticizes their character, while “不务正业的人” describes people who do not have a proper or stable occupation; use it only if that is what the story means.\n\n**Encouragement and Next Steps**\n\nYou used the “才……就……” pattern well to show that the family moved again after only one month, and the cause-and-effect connection with “害得” is also effective.  \nNext time, focus on avoiding repeated frequency words and making pronouns or nouns more specific.",
+  "usage": {
+   "prompt_tokens": 2165,
+   "completion_tokens": 987,
+   "total_tokens": 3152,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2162,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 8010
+ }
+}

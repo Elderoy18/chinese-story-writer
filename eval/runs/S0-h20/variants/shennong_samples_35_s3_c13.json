@@ -1,0 +1,126 @@
+{
+ "variant_id": "shennong_samples_35_s3_c13",
+ "sample_id": "shennong_samples#35",
+ "story_id": "shennong_chang_baicao",
+ "scene": 3,
+ "her_line": "吃灵芝以后，他可以再走：吃了，了completed; 又可以走了",
+ "rules": [
+  "aspect_le_completed",
+  "you_zai_distinction"
+ ],
+ "original_scene": "别的人给了神农一个灵芝。这个植物可以让神农更好。比方说，他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。",
+ "variant_scene": "另外一个人给了神农一个灵芝。这个植物可以让身体更好。他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。",
+ "previous_scenes": [
+  "在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。",
+  "他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。"
+ ],
+ "target_original": {
+  "start": 36,
+  "end": 47
+ },
+ "target_variant": {
+  "start": 34,
+  "end": 45
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#35/f13/p0/k0/e0",
+   "op": "replace",
+   "start": 34,
+   "end": 39,
+   "original": "吃灵芝以后",
+   "corrected": "吃了灵芝以后",
+   "her_line": "吃灵芝以后，他可以再走：吃了，了completed; 又可以走了",
+   "her_piece": "吃了",
+   "her_note": "了completed",
+   "review_row": "shennong_samples#35/f13/p0/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "shennong_samples#35/f13/p1/k0/e0",
+   "op": "replace",
+   "start": 41,
+   "end": 45,
+   "original": "可以再走",
+   "corrected": "又可以走了",
+   "her_line": "吃灵芝以后，他可以再走：吃了，了completed; 又可以走了",
+   "her_piece": "又可以走了",
+   "her_note": "",
+   "review_row": "shennong_samples#35/f13/p1/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 3,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:coherence_connectives",
+  "rule_card:redundancy_delete",
+  "rule_card:ambiguous_reference",
+  "rule_card:verb_object_collocation",
+  "correction_item:shennong_samples#46::c5",
+  "correction_item:shennong_samples#32::c2",
+  "correction_item:shennong_samples#15::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:redundancy_delete",
+   "rule_card:coherence_connectives",
+   "rule_card:ambiguous_reference",
+   "rule_card:verb_object_collocation",
+   "correction_item:shennong_samples#46::c5",
+   "correction_item:shennong_samples#15::c0",
+   "correction_item:shennong_samples#32::c2"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: verb_object_collocation\nGrammar/linguistic point: verb_object_collocation\nCollocation/valence errors: the verb cannot take that object or complement (想 + V. not N., 想让 Sb. V., 成为 + N.), an adjective does not go with that noun (良好 + 生活), or a verb conflicts with an adjacent verb.\nExamples (original -> corrected, why):\n  - 我现在有良好的教育和生活 -> 幸福的生活  [良好 is usually not with生活]\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 所以他偷走一筐的梨，骑自行车走去 -> 一筐梨  [num. + MW. + noun, no的；骑自行车离开，“骑自行车“ conflicts with ”走“]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 这些植物对身体好处 -> delete这些植物，对身体有好处\n  - 看到我们糟糕的状态，用心得来帮忙整理梨子，拿起骑车 -> 他们过来用心地帮忙整理梨子，扶起自行车  [since the preceding phrase has “我们”, the Subj. 他们 should be stated, adv.地V，“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.]\n  - 他成为有名的 -> 有名的哲学家  [成为+N]\n  - 我觉得神农很有名的人，因为他作用这个时代的医学 -> 是很有名的人，对这个时代的医学有贡献\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 一个农民帮神农吃灵芝：给神农吃灵芝\n\n- 所以神农去找一些植物，对身体有好处：找一些对身体有好处的植物\n\n- 所以神农走了很长的时间找到植物药：能做药的植物\n\n## Student's scene to review\n另外一个人给了神农一个灵芝。这个植物可以让身体更好。他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “另外一个人给了神农一个灵芝” / Formula: 另 + classifier/number + noun; verb + recipient + object / Correct: “另一个人给了神农一株灵芝。”  \n“另外” usually means “in addition” or “besides”; use “另一个人” for “another person.” “一株” is a more suitable measure word for a mushroom/herb such as 灵芝.\n\nIncorrect phrase: “这个植物可以让身体更好。他会觉得更健康。” / Formula: Subject + 让/使 + person’s + 身体 + 变得 + adjective / Correct: “灵芝可以让神农的身体变得更好，他会觉得更健康。”  \n“身体更好” needs a clearer structure, and “他” could refer to the other person or 神农, so name 神农 directly.\n\nIncorrect phrase: “吃灵芝以后，他可以再走。” / Formula: Subject + 吃了……以后 + 可以/能够 + 继续 + verb / Correct: “吃了灵芝以后，神农可以继续赶路。”  \n“再走” is understandable, but “继续赶路” is more natural when someone resumes a journey.\n\nIncorrect phrase: “最后，神农找到了很多植物，他可以用对药。” / Formula: 找到 + [能/可以 + 用来 + verb] + 的 + noun / Correct: “最后，神农找到了很多可以用来做药的植物。”  \n“用对药” is not a natural verb-object combination. Say that the plants “can be used to make medicine.”\n\n**Vocabulary Suggestions**\n\nWord: “更好” / Context: “让身体更好” / Alternatives: “恢复健康” or “身体好转.” “更好” is simple and general; “恢复健康” emphasizes returning to a healthy condition after illness, while “好转” emphasizes a gradual improvement.\n\nWord: “再走” / Context: “他可以再走” / Alternatives: “继续赶路” or “继续前行.” “再走” simply means to walk again. “继续赶路” specifically describes continuing a journey, while “继续前行” is slightly more literary.\n\nWord: “很多植物” / Context: “找到了很多植物” / Alternatives: “许多草药” or “药用植物.” “植物” is broad and includes all plants. “草药” refers to medicinal herbs, and “药用植物” is more precise and formal.\n\nWord: “新药” / Context: “分享他的新药” / Alternatives: “新发现的草药” or “药方.” “新药” usually refers to a newly developed medicine. “新发现的草药” fits plants that Shennong has discovered, while “药方” means a medicinal prescription or remedy.\n\nWord: “很高兴” / Context: “这些植物让神农很高兴” / Alternatives: “非常欣喜” or “感到欣慰.” “很高兴” is common and neutral. “欣喜” expresses strong delight, while “欣慰” suggests happiness and relief because something meaningful has succeeded.\n\n**Encouragement and Next Steps**\n\nYou created a clear sequence of events—from receiving lingzhi, recovering, and finding plants to sharing medicine—and your ideas fit Shennong’s story well.  \nNext time, focus on making pronoun references clear and using more precise phrases for medicinal plants and traveling.",
+  "usage": {
+   "prompt_tokens": 2266,
+   "completion_tokens": 906,
+   "total_tokens": 3172,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2263,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 167,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 8531
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:coherence_connectives",
+   "rule_card:redundancy_delete",
+   "rule_card:ambiguous_reference",
+   "rule_card:verb_object_collocation",
+   "correction_item:shennong_samples#46::c5",
+   "correction_item:shennong_samples#32::c2",
+   "correction_item:shennong_samples#15::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: verb_object_collocation\nGrammar/linguistic point: verb_object_collocation\nCollocation/valence errors: the verb cannot take that object or complement (想 + V. not N., 想让 Sb. V., 成为 + N.), an adjective does not go with that noun (良好 + 生活), or a verb conflicts with an adjacent verb.\nExamples (original -> corrected, why):\n  - 我现在有良好的教育和生活 -> 幸福的生活  [良好 is usually not with生活]\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 所以他偷走一筐的梨，骑自行车走去 -> 一筐梨  [num. + MW. + noun, no的；骑自行车离开，“骑自行车“ conflicts with ”走“]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 这些植物对身体好处 -> delete这些植物，对身体有好处\n  - 看到我们糟糕的状态，用心得来帮忙整理梨子，拿起骑车 -> 他们过来用心地帮忙整理梨子，扶起自行车  [since the preceding phrase has “我们”, the Subj. 他们 should be stated, adv.地V，“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.]\n  - 他成为有名的 -> 有名的哲学家  [成为+N]\n  - 我觉得神农很有名的人，因为他作用这个时代的医学 -> 是很有名的人，对这个时代的医学有贡献\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 一个农民帮神农吃灵芝：给神农吃灵芝\n\n- 所以神农走了很长的时间找到植物药：能做药的植物\n\n- 所以神农去找一些植物，对身体有好处：找一些对身体有好处的植物\n\n## Student's scene to review\n另外一个人给了神农一个灵芝。这个植物可以让身体更好。他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “另外一个人给了神农一个灵芝”  \nFormula: When introducing a new person, use **有 + 一个 + noun**; for 灵芝, use the measure word **朵**.  \nCorrect: “有一个人给了神农一朵灵芝。”\n\nIncorrect phrase: “这个植物可以让身体更好。”  \nFormula: **A + 对 + 身体 + 有好处** / **A + 让 + 人 + 身体 + 更 + adjective**  \nCorrect: “灵芝对身体有好处。” / “灵芝可以让人的身体更健康。”\n\nIncorrect phrase: “他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。”  \nFormula: When two people have appeared, use the person’s name instead of an unclear pronoun: **神农 + …**; after an action, use **…以后，+ 就 + result**.  \nCorrect: “吃了灵芝以后，神农觉得更健康了，也可以继续赶路了。”\n\nIncorrect phrase: “神农找到了很多植物，他可以用对药。”  \nFormula: **植物 + 可以用来做药** / **用 + 植物 + 制药**  \nCorrect: “最后，神农找到了很多可以用来做药的植物。”\n\n\n**Vocabulary Suggestions**\n\nWord: “另外一个人”  \nContext: “另外一个人给了神农一朵灵芝。”  \nAlternatives: “有一个人” or “一个陌生人.” “另外一个人” usually means “another person” after a first person has already been mentioned. “有一个人” naturally introduces a new character, while “一个陌生人” emphasizes that the person is unknown to Shennong.\n\nWord: “给了”  \nContext: “有一个人给了神农一朵灵芝。”  \nAlternatives: “送给了” or “递给了.” “给了” is neutral and common. “送给了” emphasizes that the lingzhi was a gift, while “递给了” describes the physical action of handing it to Shennong.\n\nWord: “更好”  \nContext: “让身体更好。”  \nAlternatives: “更健康” or “康复.” “更好” is very general. “更健康” is more precise for physical health, while “康复” means to recover from an illness or injury.\n\nWord: “再走”  \nContext: “他可以再走。”  \nAlternatives: “继续赶路” or “继续前进.” “再走” means to walk again, but it sounds slightly incomplete here. “继续赶路” emphasizes continuing a journey, and “继续前进” is broader and more narrative.\n\nWord: “新药”  \nContext: “分享他的新药。”  \nAlternatives: “草药” or “药材.” “新药” usually refers to a newly developed modern medicine. “草药” refers to medicinal herbs, while “药材” refers to natural materials that can be used to make medicine.\n\n**Encouragement and Next Steps**\n\nYou clearly described a logical healing sequence: Shennong receives lingzhi, feels better, continues travelling, and finds more medicinal plants.  \nNext time, focus on making pronouns clear by repeating “神农” when more than one person appears.",
+  "usage": {
+   "prompt_tokens": 2266,
+   "completion_tokens": 1750,
+   "total_tokens": 4016,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2263,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1024,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 16333
+ }
+}

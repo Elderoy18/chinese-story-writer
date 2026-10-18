@@ -51,7 +51,8 @@ from parse_corpus import load_registry  # noqa: E402
 INPUTS = ["extracted/basic_corpus.json", "raw/stories.json", "raw/correction_rules.json",
           str(VOCAB_PATH), str(SCENES_PATH), str(SUGGESTION_EXAMPLES_PATH), str(EXTRA_RULES_PATH),
           str(CRITIQUE_LABELS_PATH), str(CRITIQUE_REVISIONS_PATH), *(str(ITERATION_DIR / d) for d in CRITIQUE_DOCS),
-          "raw/aligned_edits_train.jsonl", "scripts/rule_descriptions.py"]
+          "raw/aligned_edits_train.jsonl", "scripts/rule_descriptions.py",
+          "raw/iteration data/rule_card_triggers.json"]
 
 
 def sha(path):

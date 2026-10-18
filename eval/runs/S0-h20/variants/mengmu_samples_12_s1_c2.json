@@ -1,0 +1,109 @@
+{
+ "variant_id": "mengmu_samples_12_s1_c2",
+ "sample_id": "mengmu_samples#12",
+ "story_id": "mengmu_san_qian",
+ "scene": 1,
+ "her_line": "他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun",
+ "rules": [
+  "aspect_zhe_durative"
+ ],
+ "original_scene": "古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。",
+ "variant_scene": "在古代，孟子跟孟母住在墓地的旁边。可是孟母注意到，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定搬家。这次，他们住在城市里的商店的旁边，都很吵。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 42,
+  "end": 45
+ },
+ "target_variant": {
+  "start": 44,
+  "end": 47
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#12/f2/p0/k0/e0",
+   "op": "replace",
+   "start": 44,
+   "end": 47,
+   "original": "祭拜玩",
+   "corrected": "祭拜着玩儿",
+   "her_line": "他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun",
+   "her_piece": "祭拜着玩儿",
+   "her_note": "V.着玩儿 do something just for fun",
+   "review_row": "mengmu_samples#12/f2/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 4,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:preposition_dao_place",
+  "rule_card:time_expression",
+  "rule_card:location_zai_place",
+  "rule_card:cai_jiu_construction",
+  "correction_item:mengmu_samples#34::c0",
+  "correction_item:mengmu_samples#13::c0",
+  "correction_item:mengmu_samples#37::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:time_expression",
+   "rule_card:location_zai_place",
+   "rule_card:cai_jiu_construction",
+   "correction_item:mengmu_samples#34::c0",
+   "correction_item:mengmu_samples#13::c0",
+   "correction_item:mengmu_samples#37::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候住了孟子和孟母：在古代，孟子和孟母住在墓地边，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，孟子和他的妈妈住在离墓地很近：在古代，better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place\n\n- 孟子和他的妈妈原来住在墓地的旁边：better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n在古代，孟子跟孟母住在墓地的旁边。可是孟母注意到，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定搬家。这次，他们住在城市里的商店的旁边，都很吵。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “他常常跟朋友们祭拜玩” / Formula: 跟 + 人 + 玩 + 活动；or 模仿 + 动作 + 玩 / Correct: “他常常跟朋友们玩祭拜。”  \n“祭拜玩” is not a natural verb order. In this context, 孟子 is playing a game that imitates worship rituals.\n\nIncorrect phrase: “这次，他们住在城市里的商店的旁边，都很吵” / Formula: Place + 很 + adjective；people cannot be “吵” unless they themselves are making noise / Correct: “这次，他们住在城市里一家商店的旁边，那里很吵。”  \nUse 那里 to refer to the location, because the noisy thing is the environment, not 孟子 and 孟母.\n\n**Vocabulary Suggestions**\n\nWord: “墓地的旁边” / Context: “住在墓地的旁边” / Alternatives: “墓地附近” sounds more concise and natural for “near a cemetery.” “旁边” means directly next to something, while “附近” means in the general surrounding area.\n\nWord: “注意到” / Context: “孟母注意到……” / Alternatives: “发现” is more natural here because Meng Mu realizes or discovers that the environment is affecting Mengzi. “注意到” emphasizes noticing something with attention; “发现” emphasizes coming to realize a fact.\n\nWord: “影响” / Context: “住在墓地的旁边影响孟子” / Alternatives: “对孟子有不好的影响” makes the negative meaning clearer. “影响” is neutral and can be positive or negative, while “不好的影响” specifically emphasizes harm.\n\nWord: “商店” / Context: “城市里的商店的旁边” / Alternatives: “市场” may fit the story better if you mean a busy marketplace. “商店” is one individual shop, while “市场” suggests a lively commercial area with many vendors and people.\n\nWord: “吵” / Context: “那里很吵” / Alternatives: “嘈杂” is a more advanced word for a noisy, busy environment. “吵” is common and simple; “嘈杂” describes mixed, continuous noise from many people or activities.\n\n**Encouragement and Next Steps**\n\nYou did well using a clear narrative sequence: the cemetery environment affects Mengzi, so Meng Mu decides to move.  \nNext time, focus on making sure adjectives such as “吵” clearly describe the correct subject or place.",
+  "usage": {
+   "prompt_tokens": 2103,
+   "completion_tokens": 706,
+   "total_tokens": 2809,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2100,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 161,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6419
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:time_expression",
+   "rule_card:location_zai_place",
+   "rule_card:cai_jiu_construction",
+   "correction_item:mengmu_samples#34::c0",
+   "correction_item:mengmu_samples#13::c0",
+   "correction_item:mengmu_samples#37::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候住了孟子和孟母：在古代，孟子和孟母住在墓地边，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，孟子和他的妈妈住在离墓地很近：在古代，better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place\n\n- 孟子和他的妈妈原来住在墓地的旁边：better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n在古代，孟子跟孟母住在墓地的旁边。可是孟母注意到，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定搬家。这次，他们住在城市里的商店的旁边，都很吵。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “他常常跟朋友们祭拜玩”  \nFormula: 跟 + 人 + 玩 + noun/game；or 主语 + 模仿 + 人 + 动作  \nCorrect: “他常常跟朋友们模仿大人祭拜。”  \n“祭拜玩” has the wrong word order. Here, he is imitating the adults’ funeral rituals, not simply “playing worship.”\n\nIncorrect phrase: “这次，他们住在城市里的商店的旁边，都很吵。”  \nFormula: Place + 很 + adjective；“都” is used with a plural subject, e.g. 人们都很吵  \nCorrect: “这次，他们住在城里商店旁边，那里很吵。”  \nIn the original sentence, “都很吵” could sound as if both Mencius and his mother are noisy. Use “那里很吵” to describe the environment.\n\n**Vocabulary Suggestions**\n\nWord: “可是”  \nContext: “可是孟母注意到……”  \nAlternatives: “但是” is a very common and neutral transition in spoken and written Chinese. “然而” is more formal and literary, suitable for storytelling or essays. “可是” is natural, but it has a slightly more conversational tone.\n\nWord: “注意到”  \nContext: “孟母注意到，住在墓地的旁边影响孟子。”  \nAlternatives: “发现” means “to discover/notice” a fact and is very natural here. “意识到” means “to realize” after thinking about something, so it emphasizes Meng Mu’s understanding of the problem.\n\nWord: “影响”  \nContext: “住在墓地的旁边影响孟子。”  \nAlternatives: “对孟子的成长不利” means “is harmful to Mencius’s development” and is more specific. “带来不好的影响” clearly emphasizes that the influence is negative, while “影响” alone can be either positive or negative.\n\nWord: “祭拜”  \nContext: “跟朋友们模仿大人祭拜。”  \nAlternatives: “办丧事” means “to hold a funeral” and is closely connected to the cemetery setting. “举行葬礼” means “to hold a funeral ceremony” and is more formal. “祭拜” focuses specifically on worshipping or paying respects to the dead.\n\nWord: “吵”  \nContext: “那里很吵。”  \nAlternatives: “嘈杂” describes a place with many mixed, unpleasant sounds and is more suitable for a city or market area. “喧闹” emphasizes that a place is lively and noisy, often because there are many people. “吵” is simple and common, while these alternatives are more descriptive.\n\n**Encouragement and Next Steps**\n\nYou did a good job creating a clear contrast between the quiet cemetery setting and the noisy shop area, which makes the story easy to follow.  \nNext time, focus on word order in verb phrases and on making sure adjectives clearly describe the correct person or place.",
+  "usage": {
+   "prompt_tokens": 2103,
+   "completion_tokens": 1162,
+   "total_tokens": 3265,
+   "prompt_tokens_details": {
+    "cached_tokens": 2100,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 512,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 10577
+ }
+}

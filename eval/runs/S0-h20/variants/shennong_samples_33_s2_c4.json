@@ -1,0 +1,111 @@
+{
+ "variant_id": "shennong_samples_33_s2_c4",
+ "sample_id": "shennong_samples#33",
+ "story_id": "shennong_chang_baicao",
+ "scene": 2,
+ "her_line": "这就要看你的口味：这就要看……了",
+ "rules": [
+  "zhe_jiu_yao_kan"
+ ],
+ "original_scene": "发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。",
+ "variant_scene": "他发现有的植物对身体非常好，特别是茶，让肚子又暖和又舒服。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么花都想吃。",
+ "previous_scenes": [
+  "古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。"
+ ],
+ "target_original": {
+  "start": 52,
+  "end": 52
+ },
+ "target_variant": {
+  "start": 51,
+  "end": 51
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#33/f4/p0/k0/e0",
+   "op": "insert",
+   "start": 51,
+   "end": 51,
+   "original": "",
+   "corrected": "了",
+   "her_line": "这就要看你的口味：这就要看……了",
+   "her_piece": "这就要看……了",
+   "her_note": "",
+   "review_row": "shennong_samples#33/f4/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 4,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:ambiguous_reference",
+  "rule_card:example_marker_tebie_bifang",
+  "rule_card:reference_form",
+  "correction_item:shennong_samples#24::c3",
+  "correction_item:shennong_samples#7::c1",
+  "correction_item:shennong_samples#29::c1"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:example_marker_tebie_bifang",
+   "rule_card:reference_form",
+   "correction_item:shennong_samples#44::c4",
+   "correction_item:shennong_samples#24::c3",
+   "correction_item:shennong_samples#30::c6"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: example_marker_tebie_bifang\nGrammar/linguistic point: example_marker_tebie_bifang\n特别是 + N./clause singles out a typical example of what was just said; 比方说 introduces an example. Neither can replace 特别 (very) or stand without the general statement.\nExamples (original -> corrected, why):\n  - 灵芝特别是帮忙 -> 特别有用  [”特别是+N, + Clause” is used to single out a typical example]\n  - 吃不知名的植物是特别是危险的 -> 特别危险的  [”特别是+N, + Clause” is used to single out a typical example]\n  - 夹竹桃是特别是毒 -> 夹竹桃的毒特别厉害  [”特别是+N, + Clause” is used to single out a typical example]\n  - 这个大山特别是的 -> 特别是+N, + clause\n  - 特别是夹竹桃对身体更不好 -> 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n  - 比方说，他又不能思考清楚又不能问帮忙 -> 比方说is used to express “for example”, delete it; 又想不清楚又不能找别人帮忙，the “ask” in “ask for help” is not问\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 这就要看灵芝是不是特别了。比方说，可能是毒的 -> 是不是有用了。比方说is used to express “for example”, delete it；可能有毒\n\n### Rule: reference_form\nGrammar/linguistic point: reference_form\nChoosing the referring form: within one clause, use the zero form; close by in a different clause, with no other character in between, use a pronoun; restore the name when the pronoun would be ambiguous; and use 我/我们/你们 correctly inside quoted speech.\nExamples (original -> corrected, why):\n  - 搬家十年，孟子一直学了很多东西，孟子每个地方才住了一年 -> 在搬家的十年里；一直在学习  [一直在+V., emphasizing always ongoing；replace the second孟子with他]\n  - 他问了，人正好生病还是百草让他们生病了 -> 他问  [no了for speaking word introducing quoted speech; 你们是正好生病还是吃了这些植物所以生病]\n  - 但人类连人类划定的规定也不尊重 -> 连自己制定的规定  [do not repeat “人类” twice, 制定规定 as a fixed expression.]\n  - 所以他们要搬家 -> 我们  [in quoted speech]\n  - 比方说，喝茶对你的身体有好处，可是吃夹竹桃有毒 -> delete你的，delete吃\n  - 所以她问了，他们为什么拿水果 -> 问  [no 了for speaking word; 你们，in quoted speech]\n  - 但是你也吃过有毒的植物 -> 他\n  - 孟母爱你 -> 很爱他  [“你” refers to the reader of this story]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 于是他记下了哪些植物和茶叶很合，在一起味道最好的食谱：哪些植物适合和茶叶放在一起，能做成味道最好的食谱\n\n- 植物他觉得好吃得很：什么植物？一种绿色的植物\n\n- 然后神农回家告诉他的人民什么植物能吃：朋友邻居\n\n## Student's scene to review\n他发现有的植物对身体非常好，特别是茶，让肚子又暖和又舒服。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么花都想吃。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “你吃哪种植物，这就要看你的口味。”  \nFormula: 不确定的问题 + 这就要看 + question form (e.g. 怎么样 / A不A / 是不是) + 了  \nCorrect: “你应该吃哪种植物？这就要看你的口味怎么样了。”  \n“这就要看……” needs to follow an uncertain question, and the part after 看 should be a question form.\n\nIncorrect phrase: “除了夹竹桃以外，什么花都想吃。”  \nFormula: In a new nearby clause, use a pronoun to refer back to the subject: 除了……以外，+ 他/她 + …  \nCorrect: “除了夹竹桃以外，他什么花都想吃。”  \nAdding 他 makes the subject clear and the sentence flow more naturally.\n\n**Vocabulary Suggestions**\n\nWord: “非常好”  \nContext: “有的植物对身体非常好”  \nAlternatives: “很有益健康” or “对身体很有好处.” “非常好” is understandable but general. “有益健康” sounds more precise and is commonly used when discussing food, plants, or health.\n\nWord: “暖和”  \nContext: “让肚子又暖和又舒服”  \nAlternatives: “暖胃” or “舒服.” “暖和” usually describes weather, clothes, or body temperature. “暖胃” specifically describes food or drinks that make the stomach feel warm and comfortable.\n\nWord: “口味”  \nContext: “这就要看你的口味怎么样了”  \nAlternatives: “饮食偏好” or “喜好.” “口味” often refers to preferred flavors, such as sweet, spicy, or salty. “饮食偏好” is more formal and can include the kinds of food someone prefers.\n\nWord: “糖”  \nContext: “可能喜欢糖”  \nAlternatives: “甜食” or “蜂蜜.” “糖” is a specific ingredient and is not a plant. “甜食” refers to sweet foods in general, while “蜂蜜” is a more natural example when discussing things people may eat.\n\nWord: “花”  \nContext: “什么花都想吃”  \nAlternatives: “可食用的花” or “花瓣.” “花” is very broad, and many flowers are not safe to eat. “可食用的花” clearly means edible flowers, while “花瓣” specifically refers to the petals that may be used in food.\n\n**Encouragement and Next Steps**\n\nYou used “特别是” correctly to introduce tea as a specific example of a healthy plant, and your ideas connect smoothly.  \nNext time, focus on using the full pattern “这就要看……了” with a question form after 看.",
+  "usage": {
+   "prompt_tokens": 2241,
+   "completion_tokens": 1111,
+   "total_tokens": 3352,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2238,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 512,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 9886
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:example_marker_tebie_bifang",
+   "rule_card:reference_form",
+   "correction_item:shennong_samples#24::c3",
+   "correction_item:shennong_samples#7::c1",
+   "correction_item:shennong_samples#29::c1"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: example_marker_tebie_bifang\nGrammar/linguistic point: example_marker_tebie_bifang\n特别是 + N./clause singles out a typical example of what was just said; 比方说 introduces an example. Neither can replace 特别 (very) or stand without the general statement.\nExamples (original -> corrected, why):\n  - 灵芝特别是帮忙 -> 特别有用  [”特别是+N, + Clause” is used to single out a typical example]\n  - 吃不知名的植物是特别是危险的 -> 特别危险的  [”特别是+N, + Clause” is used to single out a typical example]\n  - 夹竹桃是特别是毒 -> 夹竹桃的毒特别厉害  [”特别是+N, + Clause” is used to single out a typical example]\n  - 这个大山特别是的 -> 特别是+N, + clause\n  - 特别是夹竹桃对身体更不好 -> 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n  - 比方说，他又不能思考清楚又不能问帮忙 -> 比方说is used to express “for example”, delete it; 又想不清楚又不能找别人帮忙，the “ask” in “ask for help” is not问\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 这就要看灵芝是不是特别了。比方说，可能是毒的 -> 是不是有用了。比方说is used to express “for example”, delete it；可能有毒\n\n### Rule: reference_form\nGrammar/linguistic point: reference_form\nChoosing the referring form: within one clause, use the zero form; close by in a different clause, with no other character in between, use a pronoun; restore the name when the pronoun would be ambiguous; and use 我/我们/你们 correctly inside quoted speech.\nExamples (original -> corrected, why):\n  - 搬家十年，孟子一直学了很多东西，孟子每个地方才住了一年 -> 在搬家的十年里；一直在学习  [一直在+V., emphasizing always ongoing；replace the second孟子with他]\n  - 他问了，人正好生病还是百草让他们生病了 -> 他问  [no了for speaking word introducing quoted speech; 你们是正好生病还是吃了这些植物所以生病]\n  - 但人类连人类划定的规定也不尊重 -> 连自己制定的规定  [do not repeat “人类” twice, 制定规定 as a fixed expression.]\n  - 所以他们要搬家 -> 我们  [in quoted speech]\n  - 比方说，喝茶对你的身体有好处，可是吃夹竹桃有毒 -> delete你的，delete吃\n  - 所以她问了，他们为什么拿水果 -> 问  [no 了for speaking word; 你们，in quoted speech]\n  - 但是你也吃过有毒的植物 -> 他\n  - 孟母爱你 -> 很爱他  [“你” refers to the reader of this story]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 植物他觉得好吃得很：什么植物？一种绿色的植物\n\n- 比方说，喝茶对你的身体有好处，可是吃夹竹桃有毒：delete你的，delete吃\n\n- 有的人吃很好吃的植物，有的人吃的生病：吃到很好吃的植物，吃了以后生病了\n\n## Student's scene to review\n他发现有的植物对身体非常好，特别是茶，让肚子又暖和又舒服。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么花都想吃。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “你吃哪种植物，这就要看你的口味。” / Formula: (结果/选择) + 这就要看 + question form (A-not-A / wh-word / A还是B) + 了 / Correct: “你吃哪种植物，这就要看你喜欢不喜欢这种植物了。”  \n“这就要看……” must be followed by a question form, not just a noun phrase such as “你的口味.”\n\nIncorrect phrase: “特别是茶，让肚子又暖和又舒服。” / Formula: General statement + 特别是 + typical example + clause / Correct: “有的植物对身体非常好，特别是茶，喝了以后让人觉得肚子又暖和又舒服。”  \n“特别是茶” correctly gives tea as an example, but adding “喝了以后” and “让人觉得” makes the meaning and subject clearer.\n\nIncorrect phrase: “他最喜欢吃花，除了夹竹桃以外，什么花都想吃。” / Formula: Subject + 最喜欢 + V. + object; 除了 + exception + 以外，+ 都… / Correct: “他最喜欢吃花，除了夹竹桃以外，什么花都想吃。”  \nThis sentence is grammatically correct. However, “花” is broad; if you mean edible flowers, say “可食用的花.”\n\n**Vocabulary Suggestions**\n\nWord: “对身体非常好” / Context: “有的植物对身体非常好” / Alternatives: “对身体很有益” or “有益健康.” “非常好” is simple and understandable; “有益健康” is more natural and concise when discussing food, tea, or plants’ health effects.\n\nWord: “暖和” / Context: “让肚子又暖和又舒服” / Alternatives: “暖暖的” or “温暖.” “暖和” often describes weather, rooms, or clothes; “暖暖的” sounds more natural for the pleasant physical feeling in one’s stomach after drinking tea.\n\nWord: “口味” / Context: “这就要看你的口味” / Alternatives: “喜好” or “饮食习惯.” “口味” usually refers to preferred flavors, such as sweet, spicy, or salty. “喜好” is broader and can refer to what kinds of food or plants someone likes.\n\nWord: “糖” / Context: “可能喜欢糖” / Alternatives: “甜食” or “甜点.” “糖” specifically means sugar or candy, while “甜食” means sweet foods in general and fits better after “爱吃甜的.”\n\nWord: “什么花都想吃” / Context: “除了夹竹桃以外，什么花都想吃” / Alternatives: “各种花都想尝一尝” or “所有可食用的花都想试试.” “吃” is direct and neutral; “尝一尝” emphasizes curiosity and trying a small amount, while “可食用的花” makes the sentence more realistic and precise.\n\n**Encouragement and Next Steps**\n\nYou did especially well using “特别是” to introduce tea as a specific example and using “除了……以外，……都……” to show an exception clearly.  \nNext time, focus on making sure that “这就要看……” is followed by a question form, such as “喜不喜欢” or “能不能吃.”",
+  "usage": {
+   "prompt_tokens": 2234,
+   "completion_tokens": 728,
+   "total_tokens": 2962,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2231,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6864
+ }
+}

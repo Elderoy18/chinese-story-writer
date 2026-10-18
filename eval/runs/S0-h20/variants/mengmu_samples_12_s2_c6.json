@@ -1,0 +1,111 @@
+{
+ "variant_id": "mengmu_samples_12_s2_c6",
+ "sample_id": "mengmu_samples#12",
+ "story_id": "mengmu_san_qian",
+ "scene": 2,
+ "her_line": "住在商店的旁边不是适合孟子，而是让他觉得很伤心：不是适合孟子的环境",
+ "rules": [
+  "bushi_ershi_construction"
+ ],
+ "original_scene": "城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。",
+ "variant_scene": "城市也有点儿危险。害得孟母不能出去工作，只好只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。",
+ "previous_scenes": [
+  "古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。"
+ ],
+ "target_original": {
+  "start": 54,
+  "end": 54
+ },
+ "target_variant": {
+  "start": 63,
+  "end": 63
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#12/f6/p0/k0/e0",
+   "op": "insert",
+   "start": 63,
+   "end": 63,
+   "original": "",
+   "corrected": "的环境",
+   "her_line": "住在商店的旁边不是适合孟子，而是让他觉得很伤心：不是适合孟子的环境",
+   "her_piece": "不是适合孟子的环境",
+   "her_note": "",
+   "review_row": "mengmu_samples#12/f6/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:haide_harmful_result",
+  "rule_card:coherence_connectives",
+  "rule_card:attributive_modifier_de",
+  "rule_card:time_expression",
+  "correction_item:mengmu_samples#26::c0",
+  "correction_item:mengmu_samples#9::c6",
+  "correction_item:mengmu_samples#26::c11"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:haide_harmful_result",
+   "rule_card:coherence_connectives",
+   "rule_card:attributive_modifier_de",
+   "rule_card:ambiguous_reference",
+   "correction_item:mengmu_samples#9::c6",
+   "correction_item:mengmu_samples#26::c0",
+   "correction_item:mengmu_samples#41::c6"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: haide_harmful_result\nGrammar/linguistic point: haide_harmful_result\n害得 must be followed by the person affected and then the harmful result: ……害得 + someone + VP/clause (害得孟子学习不好). The result must be clearly harmful, not neutral.\nExamples (original -> corrected, why):\n  - 有的人觉得常常搬家害得孩子的生活 -> 害得孩子的生活不稳定  [害得 + harmful result]\n  - 害得她很不高兴 -> 让她……  [害得 + harmful result，不高兴is not that “harmful”]\n  - 他在这个地方学到了害得习惯 -> 坏习馆  [害得 + clause (harmful result)]\n  - 当商人会害得他的价值观 -> 害得他的价值观出现问题  [害得+ N. + Harmful result]\n  - 孟母害得孟子玩儿 -> 害得孟子整天都很郁闷  [害得 + N/sb. + Harmful result, 玩儿is not harmful]\n  - 觉得交新朋友老是害得 -> 觉得常常搬家害得他老是交不到新朋友  [害得 + N/sb. + Harmful result]\n  - 觉得害得孟子的身体 -> delete觉得；害得孟子的身体不好，害得+harmful result\n  - 这个想法害得她跟孟子搬家 -> 害得+harmful result, 搬家itself is not harmful\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 孟母也觉得在市场的旁边对孟子不合适的地方长大：又觉得，“又“ emphasizes repeating vs. ”也“ emphasizes similarity; 不适合孟子成长\n\n- 孟子和孟母住在小的城：一个小城市，better to briefly introduce “孟子” when this character first appears\n\n- 在第二个城市，孟母发现孩子们老是用功工作，但没有道德：孟子，“孩子们” is ambiguous\n\n## Student's scene to review\n城市也有点儿危险。害得孟母不能出去工作，只好只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “城市也有点儿危险。害得孟母不能出去工作” / Formula: Cause + 害得 + person affected + clearly harmful result / Correct: “城市也有点儿危险，这害得孟母不能出去工作。”  \n“这” clearly refers to the dangerous situation in the city and connects the two sentences.\n\nIncorrect phrase: “只好只好一直陪孟子” / Formula: Subject + 只好 + verb phrase / Correct: “只好一直陪着孟子。”  \nUse only one “只好.” “陪着” emphasizes that she continuously stays with him.\n\nIncorrect phrase: “住在商店的旁边不是适合孟子” / Formula: Place + 不适合 + someone + verb / Correct: “住在商店旁边不适合孟子成长。”  \n“适合” needs an object and is more natural with an action such as “成长” here. Also, “商店旁边” does not need 的.\n\nIncorrect phrase: “不是适合孟子，而是让他觉得很伤心” / Formula: Although/Because + situation, + it + 不仅/不但…，还… / Correct: “住在商店旁边不但不适合孟子成长，还让他觉得很伤心。”  \n“不是……而是……” contrasts two nouns, actions, or descriptions; here, “不但……还……” better shows two negative effects.\n\n**Vocabulary Suggestions**\n\nWord: “危险” / Context: “城市也有点儿危险。” / Alternatives: “不安全” is more natural when describing a place where people may face danger. “治安不好” is more specific and means that public security/crime conditions are poor. For example: “这个城市的治安不太好。”\n\nWord: “一直陪孟子” / Context: “只好一直陪孟子。” / Alternatives: “陪伴孟子” is more formal and emphasizes caring for someone over a period of time. “照顾孟子” suggests that Meng’s mother is responsible for his daily needs as well as his company.\n\nWord: “没有朋友” / Context: “孟子也没有朋友。” / Alternatives: “交不到朋友” emphasizes that he wants to make friends but is unable to do so. “缺少玩伴” is especially suitable for a child and means he has few companions to play with.\n\nWord: “看起来不高兴” / Context: “难怪他老是看起来不高兴。” / Alternatives: “闷闷不乐” means quietly unhappy and is more expressive. “郁闷” describes feeling frustrated, depressed, or emotionally stifled. For this context, “孟子常常闷闷不乐” is very natural.\n\nWord: “很伤心” / Context: “让他觉得很伤心。” / Alternatives: “孤单” emphasizes loneliness because he has no friends. “失落” emphasizes disappointment and emotional emptiness. Since Mengzi lacks friends, “让他感到很孤单” fits especially well.\n\n**Encouragement and Next Steps**\n\nYou clearly explained the negative effects of the dangerous environment on both Meng’s mother and Mengzi, and your ideas follow a logical sequence.  \nNext time, focus on using connectors such as “这,” “因此,” and “不但……还……” to make the relationships between sentences smoother.",
+  "usage": {
+   "prompt_tokens": 2175,
+   "completion_tokens": 719,
+   "total_tokens": 2894,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2172,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6417
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:haide_harmful_result",
+   "rule_card:coherence_connectives",
+   "rule_card:attributive_modifier_de",
+   "rule_card:time_expression",
+   "correction_item:mengmu_samples#26::c0",
+   "correction_item:mengmu_samples#9::c6",
+   "correction_item:mengmu_samples#26::c11"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: haide_harmful_result\nGrammar/linguistic point: haide_harmful_result\n害得 must be followed by the person affected and then the harmful result: ……害得 + someone + VP/clause (害得孟子学习不好). The result must be clearly harmful, not neutral.\nExamples (original -> corrected, why):\n  - 有的人觉得常常搬家害得孩子的生活 -> 害得孩子的生活不稳定  [害得 + harmful result]\n  - 害得她很不高兴 -> 让她……  [害得 + harmful result，不高兴is not that “harmful”]\n  - 他在这个地方学到了害得习惯 -> 坏习馆  [害得 + clause (harmful result)]\n  - 当商人会害得他的价值观 -> 害得他的价值观出现问题  [害得+ N. + Harmful result]\n  - 孟母害得孟子玩儿 -> 害得孟子整天都很郁闷  [害得 + N/sb. + Harmful result, 玩儿is not harmful]\n  - 觉得交新朋友老是害得 -> 觉得常常搬家害得他老是交不到新朋友  [害得 + N/sb. + Harmful result]\n  - 觉得害得孟子的身体 -> delete觉得；害得孟子的身体不好，害得+harmful result\n  - 这个想法害得她跟孟子搬家 -> 害得+harmful result, 搬家itself is not harmful\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 孟子和孟母住在小的城：一个小城市，better to briefly introduce “孟子” when this character first appears\n\n- 孟母也觉得在市场的旁边对孟子不合适的地方长大：又觉得，“又“ emphasizes repeating vs. ”也“ emphasizes similarity; 不适合孟子成长\n\n- 孟母和孟子住了很高兴：住在那儿很高兴\n\n## Student's scene to review\n城市也有点儿危险。害得孟母不能出去工作，只好只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “害得孟母不能出去工作” / Formula: cause + 害得 + someone + clearly harmful result / Correct: “这害得孟母不能出去工作。”  \n“不能出去工作” can be a harmful result, but adding “这” makes the cause clearer.\n\nIncorrect phrase: “只好只好一直陪孟子” / Formula: subject + 只好 + verb phrase / Correct: “只好一直陪着孟子。”  \n“只好” should not be repeated here. “陪着” emphasizes continuously staying with him.\n\nIncorrect phrase: “孟子也没有朋友” / Formula: previous situation + 因此/所以 + result / Correct: “因此，孟子没有朋友，难怪他老是看起来不高兴。”  \n“也” means “also,” but there is no parallel item here. “因此” makes the cause-and-effect relationship clearer.\n\nIncorrect phrase: “住在商店的旁边不是适合孟子” / Formula: place/situation + 不适合 + someone + verb / Correct: “住在商店旁边不适合孟子成长。”  \nUse “不适合 + someone + verb” to say that an environment is unsuitable for someone. “商店旁边” is also more natural than “商店的旁边.”\n\nIncorrect phrase: “而是让他觉得很伤心” / Formula: 不但/不仅 + ……, 而且/还 + ……; or simply use a result clause / Correct: “而且让他感到很伤心。”  \n“不是……而是……” contrasts two alternatives, but the first clause here is not structured as an alternative. “而且” works better to add another negative result.\n\n**Vocabulary Suggestions**\n\nWord: “危险” / Context: “城市也有点儿危险。” / Alternatives: “复杂” or “混乱.” “危险” focuses on physical danger, such as crime or traffic accidents. “复杂” suggests that the city environment has many difficult social influences, while “混乱” emphasizes disorder and a lack of safety or stability.\n\nWord: “一直陪孟子” / Context: “只好一直陪孟子。” / Alternatives: “照顾孟子” or “陪伴孟子.” “陪” is common and simple. “照顾” emphasizes caring for his daily needs, while “陪伴” is more natural and emotionally warm when describing a mother staying with her child.\n\nWord: “没有朋友” / Context: “孟子没有朋友。” / Alternatives: “交不到朋友” or “缺少玩伴.” “没有朋友” states the situation. “交不到朋友” emphasizes that he is unable to make friends, and “缺少玩伴” is especially suitable for a child who has nobody to play with.\n\nWord: “看起来不高兴” / Context: “他老是看起来不高兴。” / Alternatives: “闷闷不乐” or “情绪低落.” “看起来不高兴” is clear but basic. “闷闷不乐” means quietly unhappy and is very natural in narratives; “情绪低落” is more formal and emphasizes a low mood.\n\nWord: “很伤心” / Context: “让他觉得很伤心。” / Alternatives: “难过” or “孤单.” “伤心” often describes sadness caused by a specific painful event. “难过” is a broader, everyday word for feeling bad, while “孤单” specifically expresses loneliness, which fits well because Mencius has no friends.\n\n**Encouragement and Next Steps**\n\nYou did well connecting the unsafe environment, Meng Mu’s difficulty working, and Mencius’s loneliness into a clear chain of causes and results.  \nNext time, focus on choosing connectives such as “因此” and “而且,” and on using the pattern “不适合某人做某事.”",
+  "usage": {
+   "prompt_tokens": 2284,
+   "completion_tokens": 826,
+   "total_tokens": 3110,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2281,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7324
+ }
+}

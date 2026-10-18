@@ -1,0 +1,142 @@
+{
+ "stage": "S0-h20-r2",
+ "sample_id": "mengmu_samples#47",
+ "story_id": "mengmu_san_qian",
+ "created": "2026-10-18T18:11:23.870Z",
+ "git_commit": "3b72f20+uncommitted",
+ "snapshot": "base-v4-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "scenes": [
+  {
+   "scene": 1,
+   "text": "这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候，有一个男孩子叫孟子和他的妈妈：在古代，有一个叫孟子的男孩子和他的妈妈住在一起\n\n- 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子：在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子，“这个小孩子” is unclear and ambiguous\n\n- 在古代时候，孟子跟他妈妈常常搬家：在古代，better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。"
+   },
+   "retrieved": [
+    "rule_card:time_expression",
+    "rule_card:character_introduction_first_mention",
+    "rule_card:cai_jiu_construction",
+    "rule_card:attributive_modifier_de",
+    "correction_item:mengmu_samples#14::c0",
+    "correction_item:mengmu_samples#19::c0",
+    "correction_item:mengmu_samples#5::c0"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “孟子是古代的人” / Formula: 在 + historical time period，+ person + lived/was active / Correct: “孟子是古代人” or, more naturally in this story, “在古代，有一个叫孟子的男孩子。”\n\nIncorrect phrase: “他们常常搬了家” / Formula: Subject + 常常/经常 + Verb + Object; use 了 for a completed event, not a habitual action / Correct: “他们常常搬家。”\n\nIncorrect phrase: “她望子成龙，所以孟子的妈妈安排他的生活” / Formula: Subject + 希望/希望孩子 + 成为…；use the same subject clearly in a connected sentence / Correct: “孟子的妈妈望子成龙，所以她安排孟子的生活。”  \n“望子成龙” is correct, but repeating “孟子的妈妈” after “她” makes the sentence less smooth.\n\n**Vocabulary Suggestions**\n\nWord: “觉得” / Context: “孟子的妈妈觉得住在哪儿对童年很重要” / Alternatives: “认为” is more formal and suits expressing an opinion or belief. “意识到” means “realize” and emphasizes that she came to understand this importance. “觉得” is natural and conversational, but “认为” fits narrative writing especially well.\n\nWord: “住在哪儿” / Context: “住在哪儿对童年很重要” / Alternatives: “居住环境” means “living environment” and is more concise and advanced: “孟子的妈妈认为居住环境对孩子的成长很重要。” It focuses not only on the location, but also on the surroundings and atmosphere.\n\nWord: “童年” / Context: “对童年很重要” / Alternatives: “成长” means a child’s overall development, including education, character, and experience. “童年” specifically refers to childhood as a period of life; “成长” is more natural when discussing parenting decisions.\n\nWord: “安排他的生活” / Context: “孟子的妈妈安排他的生活” / Alternatives: “规划他的成长” means to plan for his development and has a positive, thoughtful tone. “教育他” means to teach and guide him, while “照顾他的生活” specifically emphasizes daily care. “安排他的生活” can sound a little controlling or overly broad.\n\nWord: “常常” / Context: “他们常常搬家” / Alternatives: “多次” means “many times” and is useful when emphasizing the number of moves: “他们多次搬家。” “频繁地” means “frequently” and highlights that the moves happened very often: “他们频繁地搬家。” “常常” is simple and natural, while these alternatives are more precise.\n\n**Encouragement and Next Steps**\n\nYou clearly expressed the connection between Mencius’s mother’s concern for his upbringing and the family’s repeated moves, so the ideas flow logically.  \nNext time, focus on choosing between habitual actions (“常常搬家”) and completed actions (“搬了家”).",
+   "usage": {
+    "prompt_tokens": 2187,
+    "completion_tokens": 639,
+    "total_tokens": 2826,
+    "prompt_tokens_details": {
+     "cached_tokens": 2184,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 6333
+  },
+  {
+   "scene": 2,
+   "text": "因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 在古代时候，孟子跟他妈妈常常搬家：在古代，better to briefly introduce “孟子” when this character first appears\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n- 孟母看孟子老是做他们住很近的人做的事情：学做住在他们附近的人做的事情\n\n## Student's scene to review\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。"
+   },
+   "retrieved": [
+    "rule_card:cai_jiu_construction",
+    "rule_card:ambiguous_reference",
+    "rule_card:time_expression",
+    "rule_card:coherence_connectives",
+    "correction_item:mengmu_samples#5::c0",
+    "correction_item:mengmu_samples#20::c0",
+    "correction_item:mengmu_samples#9::c7"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “因为他们常常搬了家” / Formula: Subject + 常常 + Verb; use 了 for a completed event, not a repeated habit / Correct: “因为他们常常搬家” or, more naturally, “因为孟母带着孟子搬了三次家”\n\nIncorrect phrase: “中国人说，孟母三迁” / Formula: “孟母三迁” is a fixed idiom; introduce it with the subject + 把/称这种事为… / Correct: “中国人把这件事称为‘孟母三迁’。”\n\nIncorrect phrase: “孟子没有爸爸” / Formula: Subject + 没有 + Noun is grammatically possible, but the reference should be specific and accurate / Correct: “孟子的爸爸去世得很早。” (if that is what you mean)\n\nIncorrect phrase: “从这儿到那儿” / Formula: 从 + place A + 到 + place B; use clear, specific place names when possible / Correct: “孟母带着孟子从一个地方搬到另一个地方。”\n\nIncorrect phrase: “先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西” / Formula: 先 + Subject + Verb…, 然后 + Subject + Verb…; 又 + Adj. + 又 + Adj. + 的 + Noun / Correct: “她先让孟子跟朋友玩儿，然后教他怎么买又便宜又质量好的东西。”\n\n**Vocabulary Suggestions**\n\nWord: “重要” / Context: “他的妈妈更重要” / Alternatives: “更有影响力” or “起着更重要的作用.” “重要” simply means “important,” while “有影响力” emphasizes that Meng Mu strongly shaped Mencius’s development. “起着重要的作用” is more natural in an explanatory narrative.\n\nWord: “技能” / Context: “妈妈教孟子很多技能” / Alternatives: “生活技能” or “道理.” “技能” often refers to practical abilities, such as computer or sports skills. “生活技能” is more specific for shopping and daily life, while “道理” emphasizes moral lessons and principles.\n\nWord: “从这儿到那儿” / Context: “从这儿到那儿” / Alternatives: “从一个地方到另一个地方” or “四处搬家.” “从这儿到那儿” is conversational and vague. “四处搬家” is concise and vividly conveys moving around many times.\n\nWord: “朋友” / Context: “跟朋友玩儿” / Alternatives: “邻居家的孩子” or “附近的孩子.” “朋友” is fine, but “邻居家的孩子” fits the story of Meng Mu better because the people around him influenced his behavior.\n\nWord: “好质量的东西” / Context: “又便宜又好质量的东西” / Alternatives: “物美价廉的东西” or “质量好的东西.” “质量好的东西” is natural but basic. “物美价廉” is an idiomatic, more advanced expression for products that are both good quality and inexpensive.\n\n**Encouragement and Next Steps**\n\nYou clearly organized the passage around Meng Mu’s influence on Mencius, and your use of “先……然后……” shows a good sense of sequence.  \nNext time, focus on using more specific expressions for places, people, and the reasons behind events.",
+   "usage": {
+    "prompt_tokens": 2275,
+    "completion_tokens": 726,
+    "total_tokens": 3001,
+    "prompt_tokens_details": {
+     "cached_tokens": 2272,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 6751
+  },
+  {
+   "scene": 3,
+   "text": "最后，她让孟子学写作。他不是写作就是看书，难怪他很聪明。现在在中国，孟子很有名。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: reference_form\nGrammar/linguistic point: reference_form\nChoosing the referring form: within one clause, use the zero form; close by in a different clause, with no other character in between, use a pronoun; restore the name when the pronoun would be ambiguous; and use 我/我们/你们 correctly inside quoted speech.\nExamples (original -> corrected, why):\n  - 搬家十年，孟子一直学了很多东西，孟子每个地方才住了一年 -> 在搬家的十年里；一直在学习  [一直在+V., emphasizing always ongoing；replace the second孟子with他]\n  - 他问了，人正好生病还是百草让他们生病了 -> 他问  [no了for speaking word introducing quoted speech; 你们是正好生病还是吃了这些植物所以生病]\n  - 但人类连人类划定的规定也不尊重 -> 连自己制定的规定  [do not repeat “人类” twice, 制定规定 as a fixed expression.]\n  - 所以他们要搬家 -> 我们  [in quoted speech]\n  - 比方说，喝茶对你的身体有好处，可是吃夹竹桃有毒 -> delete你的，delete吃\n  - 所以她问了，他们为什么拿水果 -> 问  [no 了for speaking word; 你们，in quoted speech]\n  - 但是你也吃过有毒的植物 -> 他\n  - 孟母爱你 -> 很爱他  [“你” refers to the reader of this story]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 难怪孟子成为一个大好聪明哲学：聪明的哲学家\n\n- 孟子从早到晚学了新的东西，难怪他成为很聪明：学习新知识，很聪明的人\n\n- 长大的时候，孟子成为中国最重要的哲学人：长大以后，哲学家\n\n## Student's scene to review\n最后，她让孟子学写作。他不是写作就是看书，难怪他很聪明。现在在中国，孟子很有名。"
+   },
+   "retrieved": [
+    "rule_card:time_expression",
+    "rule_card:attributive_modifier_de",
+    "rule_card:coherence_connectives",
+    "rule_card:reference_form",
+    "correction_item:mengmu_samples#41::c12",
+    "correction_item:mengmu_samples#17::c4",
+    "correction_item:mengmu_samples#49::c8"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “她让孟子学写作” / Formula: 让 + someone + 学习/练习 + noun or verb phrase / Correct: “她让孟子学习写作。”  \n“学写作” is understandable, but “学习写作” is more natural in a narrative.\n\nIncorrect phrase: “他不是写作就是看书” / Formula: 不是 + verb phrase + 就是 + verb phrase; use parallel verb phrases / Correct: “他不是在写作，就是在看书。”  \n“写作” can be a noun (“writing”) or a verb, but “在写作” makes it clearly parallel with “在看书.”\n\nIncorrect phrase: “难怪他很聪明” / Formula: 难怪 + subject + adjective/noun phrase; use a noun phrase when describing a person’s identity or quality / Correct: “难怪他是个很聪明的人。”  \n“很聪明” is not wrong, but “是个很聪明的人” sounds more complete and natural here.\n\nIncorrect phrase: “现在在中国，孟子很有名” / Formula: 在 + place + time, subject + predicate; or time + subject + 在 + place + predicate / Correct: “现在，孟子在中国很有名。”  \nThis version makes it clear that Mencius is famous *in China today*.\n\n**Vocabulary Suggestions**\n\nWord: “让” / Context: “她让孟子学习写作。” / Alternatives: “要求” or “鼓励.” “让” is neutral and simply means “make/let someone do something.” “要求” means “require” and sounds stricter, while “鼓励” means “encourage” and gives the mother a more supportive image.\n\nWord: “学写作” / Context: “孟子学习写作。” / Alternatives: “练习写文章” or “学习写作技巧.” “学写作” is simple and broad. “练习写文章” emphasizes regular practice, while “学习写作技巧” emphasizes learning specific writing skills.\n\nWord: “看书” / Context: “他不是在写作，就是在看书。” / Alternatives: “读书” or “阅读.” “看书” is common in spoken Chinese. “读书” is slightly more literary and can suggest studying, while “阅读” is more formal and is often used for reading materials such as books or articles.\n\nWord: “聪明” / Context: “他是个很聪明的人。” / Alternatives: “智慧” or “博学.” “聪明” means quick-minded and intelligent. “智慧” emphasizes deep judgment and life knowledge, while “博学” means highly learned and knowledgeable—both suit Mengzi especially well.\n\nWord: “有名” / Context: “孟子在中国很有名。” / Alternatives: “著名” or “家喻户晓.” “有名” is a basic, everyday word meaning “well-known.” “著名” is more formal and means “famous,” while “家喻户晓” means “known to every household,” emphasizing extremely widespread fame.\n\n**Encouragement and Next Steps**\n\nYou clearly expressed how Mengzi’s daily habits—writing and reading—helped him become intelligent, and your ending connects his childhood to his later fame well.  \n\nNext time, focus on making parallel structures match, such as “在写作 / 在看书,” and try using a few more precise vocabulary words.",
+   "usage": {
+    "prompt_tokens": 2235,
+    "completion_tokens": 734,
+    "total_tokens": 2969,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 2232,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 6463
+  }
+ ],
+ "content": {
+  "prompt": {
+   "system": "You are a Chinese-language writing tutor giving end-of-story feedback to an early learner who has just finished writing a short narrative scene by scene. Grammar, vocabulary, and coherence have ALREADY been covered scene by scene -- do NOT comment on them here. Assess only the overall CONTENT and COMPLETENESS of the story as a whole.\n\nRules:\n1. Judge the whole story: does it have enough scenes and events to be a complete story -- a beginning that introduces the characters and setting, a middle with the main events, and an ending that resolves them? Are there gaps where a reader would not understand what happened or why?\n2. Only flag real gaps. Do not invent problems; if a part is already complete, do not list it as an item.\n3. Point to specific scenes (\"Scene 2\") when you flag a gap, and say concretely what is missing.\n4. Write ALL prose in English. Chinese appears only in short quoted spans or small example phrases at the student's own level.\n5. Be encouraging and concise -- this is an early learner.\n\nOutput format -- Markdown, exactly this structure:\n\n## Content & Completeness\n- one missing, unclear, or underdeveloped part of the story per line, naming the scene and what the story needs\n- (if the story is complete, write exactly \"- Nothing to flag.\")\n\n## Overall Encouragement\nOne or two sentences on what the student did well across the whole story.\n\nKeep each \"## \" heading on its own line exactly as written, and put every item on its own line beginning with \"- \".",
+   "user": "## Student's complete story to review (3 scenes)\nScene 1: 这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\nScene 2: 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\nScene 3: 最后，她让孟子学写作。他不是写作就是看书，难怪他很聪明。现在在中国，孟子很有名。"
+  },
+  "retrieved": [],
+  "feedback": "## Content & Completeness\n- Scene 2 needs one or two specific reasons why Mengzi’s mother moved each time, so readers can understand how the different places helped her choose a better environment for him.\n- Scene 3 could briefly explain how Mengzi became famous after studying, such as what he did or taught as an adult.\n\n## Overall Encouragement\nYou clearly introduce Mengzi and his mother, show her important role in his childhood, and end by showing that he became well known. The story has a clear beginning, middle, and ending.",
+  "usage": {
+   "prompt_tokens": 496,
+   "completion_tokens": 115,
+   "total_tokens": 611,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 1930
+ }
+}

@@ -1,0 +1,109 @@
+{
+ "variant_id": "mengmu_samples_25_s1_c2",
+ "sample_id": "mengmu_samples#25",
+ "story_id": "mengmu_san_qian",
+ "scene": 1,
+ "her_line": "从他的家到墓地很近：他的家离墓地很近",
+ "rules": [
+  "verb_object_collocation"
+ ],
+ "original_scene": "这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。",
+ "variant_scene": "这是一个古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天从早到晚去墓地跟朋友们玩儿。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 26,
+  "end": 31
+ },
+ "target_variant": {
+  "start": 28,
+  "end": 33
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#25/f2/p0/k0/e0",
+   "op": "replace",
+   "start": 28,
+   "end": 33,
+   "original": "从他的家到",
+   "corrected": "他的家离",
+   "her_line": "从他的家到墓地很近：他的家离墓地很近",
+   "her_piece": "他的家离墓地很近",
+   "her_note": "",
+   "review_row": "mengmu_samples#25/f2/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 3,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:time_expression",
+  "rule_card:character_introduction_first_mention",
+  "rule_card:attributive_modifier_de",
+  "rule_card:ambiguous_reference",
+  "correction_item:mengmu_samples#34::c0",
+  "correction_item:mengmu_samples#30::c0",
+  "correction_item:mengmu_samples#11::c2"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:character_introduction_first_mention",
+   "rule_card:attributive_modifier_de",
+   "rule_card:ambiguous_reference",
+   "correction_item:mengmu_samples#34::c0",
+   "correction_item:mengmu_samples#11::c2",
+   "correction_item:mengmu_samples#13::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候住了孟子和孟母：在古代，孟子和孟母住在墓地边，better to briefly introduce “孟子” when this character first appears\n\n- 孟子一直跟他的朋友去了墓地祭拜：no了for routine/habit\n\n- 古代的时候，孟子和他的妈妈住在离墓地很近：在古代，better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place\n\n## Student's scene to review\n这是一个古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天从早到晚去墓地跟朋友们玩儿。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “这是一个古代的故事。”  \nFormula: 这是一个 + 关于 + 人物/主题 + 的故事  \nCorrect: “这是一个关于孟子的古代故事。”  \n“古代的故事” is understandable, but adding “关于孟子” introduces the topic more clearly.\n\nIncorrect phrase: “孟子小的时候，他的爸爸很早就去世了。”  \nFormula: 人物 + 小的时候，+ 家人 + 就/已经 + 去世了  \nCorrect: “孟子小的时候，他的爸爸就去世了。”  \n“很早” is not wrong, but “就” more naturally emphasizes that his father died when Mencius was still young.\n\nIncorrect phrase: “从他的家到墓地很近”  \nFormula: 从 + 地点A + 到 + 地点B + 很近 / 地点A + 离 + 地点B + 很近  \nCorrect: “他家离墓地很近” or “从他家到墓地很近。”  \nThe original is grammatical, but “他家离墓地很近” is more concise and natural in a story.\n\nIncorrect phrase: “所以他每天从早到晚去墓地跟朋友们玩儿。”  \nFormula: 人 + 每天 + 去 + 地点 + 跟 + 人 + 玩儿  \nCorrect: “所以他每天都去墓地，跟朋友们玩儿。”  \n“从早到晚” means “all day long,” which sounds too strong here unless he really stays at the cemetery the entire day. Adding “都” makes the habitual action natural.\n\n**Vocabulary Suggestions**\n\nWord: “古代”  \nContext: “这是一个古代的故事。”  \nAlternatives: “古时候” is more conversational and story-like, while “古代” is more formal and is often used in historical descriptions. For a children’s-style story opening, “古时候” can sound warmer: “古时候，有一个叫孟子的小孩子。”\n\nWord: “爸爸”  \nContext: “他的爸爸很早就去世了。”  \nAlternatives: “父亲” is more formal and literary than “爸爸.” In a historical story about Mencius, “父亲” fits the tone better: “他的父亲很早就去世了。”\n\nWord: “去世”  \nContext: “他的爸爸很早就去世了。”  \nAlternatives: “过世” is also a respectful way to say someone died and can sound slightly gentler in everyday narration. “去世” is neutral and formal; “过世” feels softer.\n\nWord: “墓地”  \nContext: “他每天从早到晚去墓地……”  \nAlternatives: “坟地” is more common in everyday speech, while “墓地” is more neutral/formal and can refer to a larger cemetery. For this traditional story, “坟地” may create a more vivid rural setting.\n\nWord: “玩儿”  \nContext: “跟朋友们玩儿。”  \nAlternatives: “玩耍” is more written and literary, while “玩儿” is casual spoken Chinese. Since this is a written story, “和朋友们玩耍” is a slightly more polished choice.\n\n**Encouragement and Next Steps**\n\nYou clearly connected the events with “所以,” and your story has a logical flow from the father’s death to Mencius living near the cemetery.  \nNext time, focus on choosing story-like vocabulary and on distinguishing “every day” from “all day long.”",
+  "usage": {
+   "prompt_tokens": 2172,
+   "completion_tokens": 743,
+   "total_tokens": 2915,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2169,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 5933
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:character_introduction_first_mention",
+   "rule_card:attributive_modifier_de",
+   "rule_card:ambiguous_reference",
+   "correction_item:mengmu_samples#34::c0",
+   "correction_item:mengmu_samples#30::c0",
+   "correction_item:mengmu_samples#11::c2"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候住了孟子和孟母：在古代，孟子和孟母住在墓地边，better to briefly introduce “孟子” when this character first appears\n\n- 在古代的时候，孟子不是跟朋友玩，就是在家学习：在古代，better to briefly introduce “孟子” when this character first appears\n\n- 孟子一直跟他的朋友去了墓地祭拜：no了for routine/habit\n\n## Student's scene to review\n这是一个古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天从早到晚去墓地跟朋友们玩儿。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “这是一个古代的故事。” / Formula: 这是一个 + 关于 + 人物 + 的 + 故事 / Correct: “这是一个关于孟子的古代故事。”  \nThis introduces both the topic and the main character more clearly.\n\nIncorrect phrase: “孟子小的时候” / Formula: 人物 + 小的时候 / Correct: “孟子小的时候”  \nThis phrase is grammatically correct. However, since this is Mengzi’s first mention, introduce him first: “孟子是中国古代的一位思想家。孟子小的时候，……” \n\nIncorrect phrase: “从他的家到墓地很近” / Formula: 从 + Place A + 到 + Place B + 很近 / Correct: “从他家到墓地很近。”  \n“他的家” is understandable, but “他家” is more natural here. Also, “他” could be slightly unclear; using “孟子家” is clearest: “从孟子家到墓地很近。”\n\nIncorrect phrase: “所以他每天从早到晚去墓地跟朋友们玩儿。” / Formula: Subject + 每天 + 去 + Place + 跟 + Person + 玩儿 / Correct: “所以孟子每天都去墓地，跟朋友们玩儿。”  \n“从早到晚” means he played there all day, which may be stronger than you intend. Add “都” to emphasize this daily habit, and use “孟子” again to avoid an unclear pronoun.\n\n**Vocabulary Suggestions**\n\nWord: “古代” / Context: “这是一个古代的故事。” / Alternatives: “古时候” is more natural in a simple story opening and has a narrative, fairy-tale-like feeling. “战国时期” is more precise historically, because Mencius lived during that period. “古代” is correct but broad.\n\nWord: “很早就去世了” / Context: “他的爸爸很早就去世了。” / Alternatives: “早逝” is more concise and literary, as in “他的父亲早逝。” “去世” is a respectful and common word, while “早逝” emphasizes that someone died at a young age or earlier than expected.\n\nWord: “爸爸” / Context: “他的爸爸很早就去世了。” / Alternatives: “父亲” is more formal and suits a historical story better. “爸爸” sounds warmer and more conversational, while “父亲” gives the writing a more serious narrative tone.\n\nWord: “墓地” / Context: “从他的家到墓地很近。” / Alternatives: “坟地” is a more everyday word for a burial ground. “墓地” is neutral and standard, while “坟地” can sound more vivid and concrete in a story.\n\nWord: “玩儿” / Context: “去墓地跟朋友们玩儿。” / Alternatives: “玩耍” is slightly more written and fits narrative writing well: “跟朋友们玩耍。” “嬉戏” is more literary and suggests children playing happily and noisily. “玩儿” is natural in speech, but “玩耍” is often better in writing.\n\n**Encouragement and Next Steps**\n\nYou clearly expressed the cause-and-result relationship between Mengzi’s home being near the cemetery and his daily activities, and your story has a logical flow.  \nNext time, focus on introducing the main character clearly at the beginning and using names instead of pronouns when a reference could be unclear.",
+  "usage": {
+   "prompt_tokens": 2156,
+   "completion_tokens": 744,
+   "total_tokens": 2900,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2153,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6803
+ }
+}

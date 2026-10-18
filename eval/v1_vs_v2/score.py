@@ -121,7 +121,24 @@ def parse_v1_scene(md, scene_text):
                           "before": before, "after": after, "explanation": expl, "shown": b})
         elif b.lower().startswith("expressiveness"):
             expr.append(re.sub(r"^Expressiveness\s*[:：]\s*", "", b))
+    if not items and "Incorrect phrase" in md:
+        items = parse_s0_blocks(md)
     return {"items": items, "expressiveness": expr}
+
+
+def parse_s0_blocks(md):
+    """Stage S0's original format: blocks of 'Incorrect phrase: “X”' / 'Formula: ...' /
+    'Correct: “Y”' / explanation, before '**Vocabulary Suggestions**'."""
+    items = []
+    for blk in re.split(r"\n\s*\n", md.split("Vocabulary Suggestions")[0]):
+        m1 = re.search(r"Incorrect phrase:\s*“(.*?)”", blk)
+        if not m1:
+            continue
+        m2 = re.search(r"Correct:\s*“(.*?)”", blk)
+        items.append({"section": "Grammar & Vocabulary", "strength": "error", "before": m1.group(1).strip("。"),
+                      "after": m2.group(1).strip("。") if m2 else None,
+                      "explanation": blk[m2.end():].strip() if m2 else "", "shown": " ".join(blk.split())})
+    return items
 
 
 def load_v2(story):

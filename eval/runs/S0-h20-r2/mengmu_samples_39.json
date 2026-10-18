@@ -1,0 +1,142 @@
+{
+ "stage": "S0-h20-r2",
+ "sample_id": "mengmu_samples#39",
+ "story_id": "mengmu_san_qian",
+ "created": "2026-10-18T18:11:31.358Z",
+ "git_commit": "3b72f20+uncommitted",
+ "snapshot": "base-v4-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "scenes": [
+  {
+   "scene": 1,
+   "text": "古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 在古代时候，孟子跟他妈妈常常搬家：在古代，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，有一个男孩子叫孟子和他的妈妈：在古代，有一个叫孟子的男孩子和他的妈妈住在一起\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。"
+   },
+   "retrieved": [
+    "rule_card:time_expression",
+    "rule_card:character_introduction_first_mention",
+    "rule_card:cai_jiu_construction",
+    "rule_card:laoshi_negative_connotation",
+    "correction_item:mengmu_samples#5::c0",
+    "correction_item:mengmu_samples#14::c0",
+    "correction_item:mengmu_samples#20::c0"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “古代的时候人觉得祭拜非常重要” / Formula: 在 + historical time, + 人们 + 认为/觉得 + statement / Correct: “在古代，人们认为祭拜非常重要。”\n\nIncorrect phrase: “孟子很小的时候” (first mention of 孟子) / Formula: First mention = 有一个 + identity + 叫 + name; later use the name / Correct: “有一个男孩叫孟子。孟子小时候，……”  \nThis introduces the character clearly before using his name.\n\nIncorrect phrase: “虽然他没有朋友，因为每天只祭拜” / Formula: 因为 + reason， 所以 + result / Correct: “因为他每天只祭拜，所以他没有朋友。”  \n“虽然” needs a contrasting result, usually with “但是/可是,” so it does not fit this sentence.\n\nIncorrect phrase: “他的同学们老是对他开玩笑了” / Formula: Subject + 老是 + verb phrase (for repeated negative actions); no 了 for a habitual action / Correct: “他的同学们老是跟他开玩笑。”  \nHere, “老是” is appropriate because the classmates’ behavior is negative and repeated.\n\nIncorrect phrase: “孟子妈妈看了他的同学们对孟子不好的影响” / Formula: Subject + 看到 + someone/something + 带来的 + 影响 / Correct: “孟子的妈妈看到了同学们给孟子带来的不良影响。”  \n“看了影响” is not natural; she “saw/noticed the negative influence” that the classmates had on him.\n\n**Vocabulary Suggestions**\n\nWord: “觉得” / Context: “人觉得祭拜非常重要” / Alternatives: “认为” is more formal and natural for stating a general belief held by many people. “觉得” is more conversational and often expresses a personal feeling or opinion.\n\nWord: “祭拜” / Context: “从早到晚一直祭拜” / Alternatives: “祭祀” is more formal and historical, especially for worshipping ancestors or gods in an ancient setting. “祭拜” is still correct, but “祭祀” better matches the historical tone.\n\nWord: “很小的时候” / Context: “孟子很小的时候” / Alternatives: “小时候” is shorter and more natural. “年幼时” is more literary and emphasizes that he was very young.\n\nWord: “对他开玩笑” / Context: “他的同学们老是对他开玩笑” / Alternatives: “取笑他” means to make fun of him and clearly suggests unkind behavior. “嘲笑他” is even stronger and means to ridicule him. “开玩笑” can sometimes be friendly, so it is less clear here.\n\nWord: “不好的影响” / Context: “同学们对孟子不好的影响” / Alternatives: “不良影响” is a formal, concise expression for a harmful effect. “负面影响” is also natural and emphasizes that the effect was negative.\n\n**Encouragement and Next Steps**\n\nYou created a clear cause-and-effect story: Mengzi’s daily behavior leads to his classmates’ reactions and then to the family’s move.  \nNext time, focus on introducing characters clearly and using complete linking patterns such as “因为……所以……”.",
+   "usage": {
+    "prompt_tokens": 2212,
+    "completion_tokens": 1225,
+    "total_tokens": 3437,
+    "prompt_tokens_details": {
+     "cached_tokens": 2209,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 512,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 12124
+  },
+  {
+   "scene": 2,
+   "text": "孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: bushi_jiushi_construction\nGrammar/linguistic point: bushi_jiushi_construction\n不是……就是…… means 'either ... or ...' (two alternatives that both happen); it is not 'not X but Y' (that is 不是……而是……). The subject goes before 不是.\nExamples (original -> corrected, why):\n  - 不是学习中文，他就是跟老师说中文 -> 他不是……，就是……  [Subj. at the beginning of 不是……就是……]\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 那里孟子会不是画画，祭拜，就是做冬天衣服 -> 在那儿  [delete会，会will; 冬天的衣服]\n  - 在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方 -> 孟母搬家是为了让孟子接受良好的教育  [不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education]\n  - 难怪孟子不是高兴的孩子，就是安静的孩子 -> 每天都不高兴  [不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship]\n  - 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜 -> 不是在画画儿  [而是在祭拜；不是……就是…… is “either…or…”]\n  - 从早到晚他学习不是历史，就是哲学 -> 不是学习历史，就是学习哲学\n  - 教育做完以后孟子考虑，不是当哲学家就是当商家 -> 学完以后，商人\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 很多人想孟子做哲学家是本质的：很多人认为，想 + V., cannot be followed by N.; 孟子成为哲学家是有天赋；better to briefly introduce “孟子” when this character first appears\n\n- 才二十岁，孟子成为很厉害的哲学家：就成为，才Num.就V.\n\n- 长大的时候，孟子成为中国最重要的哲学人：长大以后，哲学家\n\n## Student's scene to review\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。"
+   },
+   "retrieved": [
+    "rule_card:bushi_jiushi_construction",
+    "rule_card:cai_jiu_construction",
+    "rule_card:attributive_modifier_de",
+    "rule_card:coherence_connectives",
+    "correction_item:mengmu_samples#21::c0",
+    "correction_item:mengmu_samples#40::c6",
+    "correction_item:mengmu_samples#49::c8"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “孟子才十一岁，成为一个哲学家。” / Formula: 谁 + 才 + 年龄 + 就 + 动词 + 了 / Correct: “孟子才十一岁就成为了一位哲学家。”  \n“才……就……” emphasizes that he became a philosopher at a very young age.\n\nIncorrect phrase: “孟子不是祭拜，而是看政治文章” / Formula: 谁 + 不是 + 动作A +，而是 + 动作B / Correct: “孟子不是在祭拜，而是在看政治文章。”  \nUse 在 with ongoing actions here. Also, “祭拜” is usually something one does *to* an ancestor, god, or grave, so the meaning should be clear from the context.\n\nIncorrect phrase: “难怪他成为了哲学家。” / Formula: 难怪 + result / Correct: “难怪他后来成为了一位哲学家。”  \nAdding “后来” makes the timeline more coherent: first he read political articles, and later he became a philosopher.\n\nIncorrect phrase: “看过很多政治文章对他害得” / Formula: 做某事 + 对 + 某人 + 有害 / Correct: “看了很多政治文章对他有害。”  \n“害得” needs a result after it, such as “害得他有很多问题.” However, the intended meaning seems to be that reading gave him many questions, which is not necessarily harmful.\n\nIncorrect phrase: “他有很多问题。” / Formula: 因为/所以 + 谁 + 对 + 什么 + 有很多问题 / Correct: “所以他对政治有很多问题。”  \n“有很多问题” can mean “has many problems.” To say that he has many questions about a topic, use “对……有很多问题.”\n\n**Vocabulary Suggestions**\n\nWord: “政治文章” / Context: “看政治文章” / Alternatives: “政治方面的文章” is more natural for articles about politics in general. “政论文章” is more advanced and refers specifically to opinion or commentary writing about political or public affairs.\n\nWord: “哲学家” / Context: “成为一个哲学家” / Alternatives: “思想家” is especially suitable for Mencius, because it emphasizes his influential ideas and theories. “哲学家” is still correct, but “思想家” is a broader and more culturally natural description of him.\n\nWord: “看” / Context: “看政治文章” / Alternatives: “阅读” is more formal and fits written articles well. “研读” means to study a text carefully and deeply, which better shows that Mencius was seriously engaging with difficult ideas.\n\nWord: “问题” / Context: “他对政治有很多问题” / Alternatives: “疑问” specifically means questions or uncertainties, so it is clearer here. “思考” emphasizes the intellectual reflection that reading inspired, and it gives the sentence a more positive tone.\n\nWord: “害” / Context: “对他有害” / Alternatives: “影响” is neutral and means “influence.” “启发” is positive and means “inspire” or “enlighten.” Since reading political articles likely helped Mencius think deeply, “给了他很多启发” is probably the best choice.\n\n**Encouragement and Next Steps**\n\nYou used “不是……而是……” correctly to contrast two actions, and your ideas have a clear connection between reading and becoming a philosopher.  \nNext time, focus on using “才……就……” together and choosing words that show whether an effect is negative (“有害”) or positive (“启发”).",
+   "usage": {
+    "prompt_tokens": 2252,
+    "completion_tokens": 761,
+    "total_tokens": 3013,
+    "prompt_tokens_details": {
+     "cached_tokens": 2249,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 6822
+  },
+  {
+   "scene": 3,
+   "text": "他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: bushi_jiushi_construction\nGrammar/linguistic point: bushi_jiushi_construction\n不是……就是…… means 'either ... or ...' (two alternatives that both happen); it is not 'not X but Y' (that is 不是……而是……). The subject goes before 不是.\nExamples (original -> corrected, why):\n  - 不是学习中文，他就是跟老师说中文 -> 他不是……，就是……  [Subj. at the beginning of 不是……就是……]\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 那里孟子会不是画画，祭拜，就是做冬天衣服 -> 在那儿  [delete会，会will; 冬天的衣服]\n  - 在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方 -> 孟母搬家是为了让孟子接受良好的教育  [不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education]\n  - 难怪孟子不是高兴的孩子，就是安静的孩子 -> 每天都不高兴  [不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship]\n  - 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜 -> 不是在画画儿  [而是在祭拜；不是……就是…… is “either…or…”]\n  - 从早到晚他学习不是历史，就是哲学 -> 不是学习历史，就是学习哲学\n  - 教育做完以后孟子考虑，不是当哲学家就是当商家 -> 学完以后，商人\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 难怪孟子成为一个大好聪明哲学：聪明的哲学家\n\n- 教育做完以后孟子考虑，不是当哲学家就是当商家：学完以后，商人\n\n- 妈妈让孟子每天上课，孟子长得很乖，很聪明：loosely connected, unclear between-sentence relationship\n\n## Student's scene to review\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。"
+   },
+   "retrieved": [
+    "rule_card:coherence_connectives",
+    "rule_card:bushi_jiushi_construction",
+    "rule_card:cai_jiu_construction",
+    "rule_card:time_expression",
+    "correction_item:mengmu_samples#41::c12",
+    "correction_item:mengmu_samples#42::c8",
+    "correction_item:mengmu_samples#24::c5"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “孟子长大，他开始能解决问题。”  \nFormula: Subject + 长大以后/后来 + 就/开始 + 能 + Verb + Object  \nCorrect: “孟子长大以后，就开始能解决这些问题了。”  \n“长大” needs a time connector such as “以后,” and “这些问题” clearly refers back to the earlier problems.\n\nIncorrect phrase: “他常常建议你不是学金融，而是学政治。”  \nFormula: Subject + 建议 + Person + 不要/别 + Verb A，(而) + Verb B / 建议 + Person + Verb B  \nCorrect: “他常常建议你不要学金融，而要学政治。”  \nAfter “建议你,” use “不要” to advise against an action. “不是……而是……” can contrast two nouns or statements, but it is less natural here without “不要.”\n\nIncorrect phrase: “因为如果你懂政治”  \nFormula: 如果……，就…… / 因为……，所以……  \nCorrect: “因为他认为，如果你懂政治，你就会……”  \nDo not usually combine “因为” and “如果” directly without completing both relationships. Adding “他认为” also makes the logic clearer.\n\nIncorrect phrase: “你会成为高薪。”  \nFormula: Subject + 成为 + Noun/identity; Subject + 获得/有 + 高薪  \nCorrect: “你会获得高薪。” / “你会成为高薪人才。”  \n“高薪” is a salary, not a person or identity, so it cannot directly follow “成为.”\n\nIncorrect phrase: “后来孟子成为教授，他教学生很厉害。”  \nFormula: 后来，Subject + 成为 + Profession，(并且/而且) + 很会/擅长 + Verb  \nCorrect: “后来，孟子成为了一名教授，而且很会教学生。”  \nAdding “一名” makes “教授” sound more natural as a profession, and “很会教学生” is a more natural way to say he teaches well.\n\n**Vocabulary Suggestions**\n\nWord: “问问题”  \nContext: “他一直问问题。”  \nAlternatives: “提出问题” is more formal and is often used when someone raises thoughtful questions in class or discussion. “不断提问” emphasizes that he keeps asking questions repeatedly. “问问题” is correct but more basic and conversational.\n\nWord: “解决问题”  \nContext: “不能解决那些问题。”  \nAlternatives: “解答这些问题” is especially suitable for answering questions, while “解决问题” is broader and can include practical difficulties. “攻克难题” is more advanced and emphasizes overcoming particularly difficult problems.\n\nWord: “建议”  \nContext: “他常常建议你……”  \nAlternatives: “劝你” is more personal and conversational, often used when encouraging someone to make a choice. “主张” is more formal and means to advocate for an idea or position, so it fits well with political or academic discussions.\n\nWord: “懂政治”  \nContext: “如果你懂政治……”  \nAlternatives: “了解政治” means to have general knowledge of politics and is more natural for beginners. “精通政治” means to have deep, expert-level knowledge, so it is much stronger than “懂政治.”\n\nWord: “教学生很厉害”  \nContext: “他教学生很厉害。”  \nAlternatives: “教学能力很强” is formal and emphasizes professional teaching ability. “很擅长教书” is natural and means he is skilled at teaching. “很厉害” is common in speech, but it is vague and less precise.\n\n**Encouragement and Next Steps**\n\nYou clearly show Mengzi’s development from someone who asks questions to a successful professor, which gives your short paragraph a strong, logical storyline.  \nNext time, focus on using connectors such as “长大以后,” “如果……就……,” and “后来” to make the relationships between ideas even clearer.",
+   "usage": {
+    "prompt_tokens": 2350,
+    "completion_tokens": 833,
+    "total_tokens": 3183,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 2347,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 7599
+  }
+ ],
+ "content": {
+  "prompt": {
+   "system": "You are a Chinese-language writing tutor giving end-of-story feedback to an early learner who has just finished writing a short narrative scene by scene. Grammar, vocabulary, and coherence have ALREADY been covered scene by scene -- do NOT comment on them here. Assess only the overall CONTENT and COMPLETENESS of the story as a whole.\n\nRules:\n1. Judge the whole story: does it have enough scenes and events to be a complete story -- a beginning that introduces the characters and setting, a middle with the main events, and an ending that resolves them? Are there gaps where a reader would not understand what happened or why?\n2. Only flag real gaps. Do not invent problems; if a part is already complete, do not list it as an item.\n3. Point to specific scenes (\"Scene 2\") when you flag a gap, and say concretely what is missing.\n4. Write ALL prose in English. Chinese appears only in short quoted spans or small example phrases at the student's own level.\n5. Be encouraging and concise -- this is an early learner.\n\nOutput format -- Markdown, exactly this structure:\n\n## Content & Completeness\n- one missing, unclear, or underdeveloped part of the story per line, naming the scene and what the story needs\n- (if the story is complete, write exactly \"- Nothing to flag.\")\n\n## Overall Encouragement\nOne or two sentences on what the student did well across the whole story.\n\nKeep each \"## \" heading on its own line exactly as written, and put every item on its own line beginning with \"- \".",
+   "user": "## Student's complete story to review (3 scenes)\nScene 1: 古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\nScene 2: 孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\nScene 3: 他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。"
+  },
+  "retrieved": [],
+  "feedback": "## Content & Completeness\n- Scene 2 needs to explain what happens after Mencius and his mother move: why does he stop focusing on worship and start reading political articles?\n- Scene 2–3 need a clearer main problem or example of the questions Mencius cannot solve, so readers can understand how he later learns to solve them.\n- Scene 3 needs an ending event that shows the result of Mencius’s teaching or advice, such as how his students respond or what Mencius achieves as a professor.\n\n## Overall Encouragement\n- You have a clear life story for Mencius, from childhood to becoming a teacher. You also show an important change: he moves from being isolated to learning, thinking, and helping students.",
+  "usage": {
+   "prompt_tokens": 531,
+   "completion_tokens": 156,
+   "total_tokens": 687,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 2420
+ }
+}

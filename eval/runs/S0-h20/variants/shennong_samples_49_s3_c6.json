@@ -1,0 +1,112 @@
+{
+ "variant_id": "shennong_samples_49_s3_c6",
+ "sample_id": "shennong_samples#49",
+ "story_id": "shennong_chang_baicao",
+ "scene": 3,
+ "her_line": "可是夹竹桃的毒很重：很强",
+ "rules": [
+  "verb_object_collocation"
+ ],
+ "original_scene": "可是夹竹桃的毒很重，让他肚子很痛。他在地上躺着，觉得他快会死了。可是正好有别人找到他了，给了他一个像伞的植物，叫灵芝。他吃灵芝以后就觉得很好，不再生病了。他测量起来了，像星星的植物是毒，像伞的植物是药。",
+ "variant_scene": "可是夹竹桃的毒很重，让他肚子很痛。他在地上躺着，觉得他快死了。可是正好有人找到他了，给了他一个像伞的植物，叫灵芝。他吃了灵芝以后就觉得很好，不再生病了。他写下来了，像星星的植物是毒，像伞的植物是药。",
+ "previous_scenes": [
+  "古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。",
+  "所以，他上山下山找植物，吃了很多样子的植物。他是第一人，找到了茶。他把所有的植物写下来了。他一直都吃了，他连毒都能吃。可是他还没吃了一个叫夹竹桃的植物。他找到了那个像星星的植物，觉得很漂亮，马上就吃下了。"
+ ],
+ "target_original": {
+  "start": 7,
+  "end": 9
+ },
+ "target_variant": {
+  "start": 7,
+  "end": 9
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#49/f6/p0/k0/e0",
+   "op": "replace",
+   "start": 7,
+   "end": 9,
+   "original": "很重",
+   "corrected": "很强",
+   "her_line": "可是夹竹桃的毒很重：很强",
+   "her_piece": "很强",
+   "her_note": "",
+   "review_row": "shennong_samples#49/f6/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 4,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:ambiguous_reference",
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:wrong_information_content",
+  "rule_card:example_marker_tebie_bifang",
+  "correction_item:shennong_samples#24::c6",
+  "correction_item:shennong_samples#32::c4",
+  "correction_item:shennong_samples#36::c2"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:wrong_information_content",
+   "rule_card:ambiguous_reference",
+   "rule_card:example_marker_tebie_bifang",
+   "rule_card:missing_subject",
+   "correction_item:shennong_samples#24::c6",
+   "correction_item:shennong_samples#10::c3",
+   "correction_item:shennong_samples#46::c6"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: wrong_information_content\nGrammar/linguistic point: wrong_information_content\nFactual/content error: the sentence states something that contradicts the story's actual plot.\nExamples (original -> corrected, why):\n  - 不是他喜欢学习写文字，而是他的爸爸喜欢他练习 -> 写字  [想要他练习；wrong information, his father did not appear in this story]\n  - 那杯茶他放多的夹竹桃 -> 放了很多夹竹桃  [wrong information, he directly ate夹竹桃]\n  - 他爸爸说 -> wrong information, his father did not appear in this story\n  - 一个人一吃灵芝就死了 -> wrong information, 灵芝is medicine\n  - 难怪我们没有钱 -> wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n  - 夹竹桃很好吃，也对你的健康有好处 -> wrong information, 夹竹桃 is a poison\n  - 他今年才九岁，可是搬了十次家 -> wrong information, 搬了三次家\n  - 但如果灵芝和夹竹桃一起吃，那就是药了 -> delete但，wrong information, 灵芝is a medicine\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: example_marker_tebie_bifang\nGrammar/linguistic point: example_marker_tebie_bifang\n特别是 + N./clause singles out a typical example of what was just said; 比方说 introduces an example. Neither can replace 特别 (very) or stand without the general statement.\nExamples (original -> corrected, why):\n  - 灵芝特别是帮忙 -> 特别有用  [”特别是+N, + Clause” is used to single out a typical example]\n  - 吃不知名的植物是特别是危险的 -> 特别危险的  [”特别是+N, + Clause” is used to single out a typical example]\n  - 夹竹桃是特别是毒 -> 夹竹桃的毒特别厉害  [”特别是+N, + Clause” is used to single out a typical example]\n  - 这个大山特别是的 -> 特别是+N, + clause\n  - 特别是夹竹桃对身体更不好 -> 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n  - 比方说，他又不能思考清楚又不能问帮忙 -> 比方说is used to express “for example”, delete it; 又想不清楚又不能找别人帮忙，the “ask” in “ask for help” is not问\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 这就要看灵芝是不是特别了。比方说，可能是毒的 -> 是不是有用了。比方说is used to express “for example”, delete it；可能有毒\n\n### Rule: missing_subject\nGrammar/linguistic point: missing_subject\nA required subject is missing (or must be restated after an aside), so the reader cannot tell who acts.\nExamples (original -> corrected, why):\n  - 后来，练习写文字 -> miss a Subj.，孟子练习写字，文字 is a general term, not for specific individual characters\n  - 漂亮是漂亮，可是他马上生病了，然后下躺了 -> 这朵花漂亮是漂亮  [here needs a subject; delete然后；躺下]\n  - 看到我们糟糕的状态，用心得来帮忙整理梨子，拿起骑车 -> 他们过来用心地帮忙整理梨子，扶起自行车  [since the preceding phrase has “我们”, the Subj. 他们 should be stated, adv.地V，“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.]\n  - 因为老是去墓地吃祭品 -> add他, wrong information, not “eating the sacrifices”\n  - 他一喝那杯茶，就疼死了 -> 肚子/头就疼死了\n  - 下午就继续爬上树 -> 下午他还继续爬上树；miss the Subj., otherwise readers will understand the Subj. here as “我”, which is incorrect. “还“ indicates “surprising, anger” tone, as opposed to “就” with the natural continuation tone.\n  - 在新家，一直去墓地吃祭品 -> add a Subj., wrong information, not “eating the sacrifices”\n  - 除了吃灵芝，还吃夹竹桃 -> add a subject\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n- 他吃花的时候生病了。夹竹桃有毒，但是他们不知道这个花有毒：it is confusing to have花，夹竹桃，这个花，it looks like they refer to two different flowers, but actually the same. 吃一种叫夹竹桃的花的时候\n\n- 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药：后来，Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine\n\n## Student's scene to review\n可是夹竹桃的毒很重，让他肚子很痛。他在地上躺着，觉得他快死了。可是正好有人找到他了，给了他一个像伞的植物，叫灵芝。他吃了灵芝以后就觉得很好，不再生病了。他写下来了，像星星的植物是毒，像伞的植物是药。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “夹竹桃的毒很重” / Formula: N. + 的毒性 + 很强/很大，or N. + 很毒 / Correct: “夹竹桃的毒性很强。”  \n“毒很重” is understandable, but 毒性很强 is the more natural collocation.\n\nIncorrect phrase: “他在地上躺着” / Formula: Subject + 躺在 + place / Correct: “他躺在地上。”  \nUse 躺在地上 to express the location where someone is lying.\n\nIncorrect phrase: “觉得他快死了” / Formula: Subject + 觉得 + 自己 + … / Correct: “觉得自己快死了。”  \n他 could refer to another person; 自己 clearly refers back to the subject.\n\nIncorrect phrase: “给了他一个像伞的植物” / Formula: 给 + person + 一株 + plant / Correct: “给了他一株像伞一样的植物。”  \nUse the measure word 株 for plants. 像伞一样的 is also more complete than 像伞的.\n\nIncorrect phrase: “他吃了灵芝以后就觉得很好” / Formula: Subject + 吃了……以后 + 觉得/感觉 + 好多了 / Correct: “他吃了灵芝以后，觉得好多了。”  \n很好 usually means “very good,” while 好多了 means “much better,” which fits recovering from pain.\n\nIncorrect phrase: “像星星的植物是毒” / Formula: N. + 有毒 / Correct: “像星星一样的植物有毒。”  \n有毒 means “to be poisonous.” Saying 是毒 is less natural here.\n\n**Vocabulary Suggestions**\n\nWord: “毒很重” / Context: “夹竹桃的毒很重” / Alternatives: 毒性很强 emphasizes that the plant’s poisonous effect is powerful; 剧毒 is a more advanced and concise word meaning “highly poisonous.” 毒很重 is understandable but not a natural collocation.\n\nWord: “肚子很痛” / Context: “让他肚子很痛” / Alternatives: 肚子疼得厉害 emphasizes severe pain; 腹痛 is a more formal written word for stomachache. 肚子很痛 is correct but more basic.\n\nWord: “正好” / Context: “正好有人找到他了” / Alternatives: 恰好 means “just by chance” and is slightly more literary; 幸好 means “fortunately” and emphasizes that being found was lucky. 正好 mainly means “just/precisely,” without strongly showing the sense of relief.\n\nWord: “很好” / Context: “觉得很好” / Alternatives: 好多了 means “much better” after an illness or injury; 恢复过来了 means “has recovered.” 很好 is broad and can describe many things, while these alternatives are more precise for health.\n\nWord: “写下来” / Context: “他写下来了” / Alternatives: 记下来 means “write down and remember/record”; 记录下来 is more formal and emphasizes documenting information. 写下来 simply focuses on the physical action of writing.\n\n**Encouragement and Next Steps**\n\nYou told the sequence of poisoning, receiving lingzhi, recovering, and recording the lesson very clearly, so the story has a strong flow.  \nNext time, focus on using precise health expressions, such as “觉得好多了” and “肚子疼得厉害,” and on making pronoun references clear with “自己.”",
+  "usage": {
+   "prompt_tokens": 2123,
+   "completion_tokens": 1269,
+   "total_tokens": 3392,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2120,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 512,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 12339
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:ambiguous_reference",
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:wrong_information_content",
+   "rule_card:example_marker_tebie_bifang",
+   "correction_item:shennong_samples#24::c6",
+   "correction_item:shennong_samples#32::c4",
+   "correction_item:shennong_samples#36::c2"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: wrong_information_content\nGrammar/linguistic point: wrong_information_content\nFactual/content error: the sentence states something that contradicts the story's actual plot.\nExamples (original -> corrected, why):\n  - 不是他喜欢学习写文字，而是他的爸爸喜欢他练习 -> 写字  [想要他练习；wrong information, his father did not appear in this story]\n  - 那杯茶他放多的夹竹桃 -> 放了很多夹竹桃  [wrong information, he directly ate夹竹桃]\n  - 他爸爸说 -> wrong information, his father did not appear in this story\n  - 一个人一吃灵芝就死了 -> wrong information, 灵芝is medicine\n  - 难怪我们没有钱 -> wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n  - 夹竹桃很好吃，也对你的健康有好处 -> wrong information, 夹竹桃 is a poison\n  - 他今年才九岁，可是搬了十次家 -> wrong information, 搬了三次家\n  - 但如果灵芝和夹竹桃一起吃，那就是药了 -> delete但，wrong information, 灵芝is a medicine\n\n### Rule: example_marker_tebie_bifang\nGrammar/linguistic point: example_marker_tebie_bifang\n特别是 + N./clause singles out a typical example of what was just said; 比方说 introduces an example. Neither can replace 特别 (very) or stand without the general statement.\nExamples (original -> corrected, why):\n  - 灵芝特别是帮忙 -> 特别有用  [”特别是+N, + Clause” is used to single out a typical example]\n  - 吃不知名的植物是特别是危险的 -> 特别危险的  [”特别是+N, + Clause” is used to single out a typical example]\n  - 夹竹桃是特别是毒 -> 夹竹桃的毒特别厉害  [”特别是+N, + Clause” is used to single out a typical example]\n  - 这个大山特别是的 -> 特别是+N, + clause\n  - 特别是夹竹桃对身体更不好 -> 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n  - 比方说，他又不能思考清楚又不能问帮忙 -> 比方说is used to express “for example”, delete it; 又想不清楚又不能找别人帮忙，the “ask” in “ask for help” is not问\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 这就要看灵芝是不是特别了。比方说，可能是毒的 -> 是不是有用了。比方说is used to express “for example”, delete it；可能有毒\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n- 夹竹桃是毒的：是有毒的\n\n- 夹竹桃很毒：有毒\n\n## Student's scene to review\n可是夹竹桃的毒很重，让他肚子很痛。他在地上躺着，觉得他快死了。可是正好有人找到他了，给了他一个像伞的植物，叫灵芝。他吃了灵芝以后就觉得很好，不再生病了。他写下来了，像星星的植物是毒，像伞的植物是药。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “夹竹桃的毒很重” / Formula: N. + 很 + adjective, or N. + 有 + adjective + 的 + N. / Correct: “夹竹桃很毒” or “夹竹桃是有毒的。”  \n“毒很重” is understandable, but “很毒” or “有毒” is more natural for describing a poisonous plant.\n\nIncorrect phrase: “他在地上躺着，觉得他快死了” / Formula: Subject + 觉得 + 自己 + 快要 + verb / Correct: “他躺在地上，觉得自己快要死了。”  \nThe second “他” could refer to another person, so use “自己” to make the reference clear. “躺在地上” is also the more usual word order.\n\nIncorrect phrase: “他吃了灵芝以后就觉得很好” / Formula: Subject + 吃了……以后 + 就 + 觉得 + 身体/精神 + 很好 / Correct: “他吃了灵芝以后，就觉得身体好多了。”  \n“觉得很好” is vague here. “身体好多了” clearly says that his physical condition improved.\n\nIncorrect phrase: “不再生病了” / Formula: Subject + 不再 + verb + 了 / Correct: “不再觉得肚子痛了。”  \n“生病” refers to becoming ill in general. In this scene, his specific symptom is stomach pain, so “不再觉得肚子痛了” fits the story better.\n\nIncorrect phrase: “他写下来了” / Formula: Subject + 把 + information + 写下来 / Correct: “他把这些发现写下来了。”  \nWith 写下来, adding what he wrote makes the sentence complete and clearer.\n\nIncorrect phrase: “像星星的植物是毒，像伞的植物是药” / Formula: 像……的 + N. + 有毒 / 是 + 药 / Correct: “像星星的植物有毒，像伞的植物是药。”  \nWe normally say a plant “有毒,” rather than “是毒.” Also, this conclusion is too broad: not every star-shaped plant is poisonous or every umbrella-shaped plant is medicine.\n\n**Vocabulary Suggestions**\n\nWord: “毒很重” / Context: “夹竹桃的毒很重” / Alternatives: “毒性很强” is a more precise, formal way to describe the strength of a poison. “有剧毒” means extremely poisonous and is stronger than “很毒.”\n\nWord: “肚子很痛” / Context: “让他肚子很痛” / Alternatives: “肚子疼得厉害” emphasizes severe pain. “腹痛” is more formal and is often used in medical contexts.\n\nWord: “正好” / Context: “可是正好有人找到他了” / Alternatives: “恰好” has a similar meaning but sounds slightly more written and literary. “幸好” emphasizes that it was fortunate someone found him in time.\n\nWord: “觉得很好” / Context: “就觉得很好” / Alternatives: “感觉好多了” is natural for saying symptoms have improved. “恢复了精神” means he regained energy and is useful when medicine makes someone feel stronger.\n\nWord: “植物” / Context: “一个像伞的植物” / Alternatives: “药材” means medicinal material and highlights that 灵芝 can be used as medicine. “草药” refers to herbal medicine, though it is less precise for 灵芝 specifically.\n\n**Encouragement and Next Steps**\n\nYou told the event sequence clearly—from Shennong’s pain to someone giving him lingzhi—and used several useful connectors such as “可是,” “以后,” and “不再.”  \nNext time, focus on making pronoun references clear and choosing precise expressions for physical symptoms and recovery.",
+  "usage": {
+   "prompt_tokens": 2140,
+   "completion_tokens": 813,
+   "total_tokens": 2953,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2137,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7161
+ }
+}

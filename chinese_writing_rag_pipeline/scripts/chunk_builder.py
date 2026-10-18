@@ -47,6 +47,9 @@ from aligned_edits import load_aligned_edits, before_after, standard_fix
 CORPUS_PATH = "extracted/basic_corpus.json"
 RULE_LABELS_PATH = "raw/correction_rules.json"
 UNLABELLED_PATH = "extracted/unlabelled_corrections.json"
+# Regex triggers per rule card (S7-4): a match in the student's scene brings the card
+# into the prompt. Optional: the file is new, and snapshots built before it have none.
+RULE_CARD_TRIGGERS_PATH = "raw/iteration data/rule_card_triggers.json"
 OUT_PATH = "chunks/basic_chunks.jsonl"
 MAX_RULE_CARD_EXAMPLES = 8
 
@@ -123,6 +126,21 @@ def build_scene_checklists(corpus):
             for key, cnt in counter.most_common()
         ]
     return checklists
+
+
+def load_rule_card_triggers():
+    """{rule name: [regex, ...]} from rule_card_triggers.json; {} if the file is absent."""
+    if not os.path.exists(RULE_CARD_TRIGGERS_PATH):
+        return {}
+    rules = json.load(open(RULE_CARD_TRIGGERS_PATH, encoding="utf-8"))["rules"]
+    out = {}
+    for tag, trigs in rules.items():
+        if tag not in GRAMMAR_RULE_DESC:
+            sys.exit(f"{RULE_CARD_TRIGGERS_PATH}: {tag} is not a rule in rule_descriptions.py")
+        out[tag] = [t["regex"] for t in trigs]
+        for t in out[tag]:
+            re.compile(t)  # fail loudly on a malformed trigger
+    return out
 
 
 def make_chunk(chunk_id, chunk_type, text, **meta):
@@ -218,6 +236,7 @@ def build_chunks(corpus, rule_labels, aligned=None):
         ))
 
     # ---- rule_card chunks (aggregate grammar tags across whole corpus) -----
+    card_triggers = load_rule_card_triggers()
     grammar_examples = defaultdict(list)
     for ch in chunks:
         if ch["chunk_type"] == "correction_item":
@@ -251,6 +270,7 @@ def build_chunks(corpus, rule_labels, aligned=None):
             example_sample_ids=[e["metadata"]["sample_id"] for e in picked],
             story_ids=sorted(story_ids),
             **({"standard_fix": fix} if (fix := standard_fix(single)) else {}),
+            **({"triggers": card_triggers[tag]} if tag in card_triggers else {}),
         ))
 
     # ---- rule_example chunks (index rule cards by the student sentences she corrected) --

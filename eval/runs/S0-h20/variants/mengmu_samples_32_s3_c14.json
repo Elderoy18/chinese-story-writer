@@ -1,0 +1,112 @@
+{
+ "variant_id": "mengmu_samples_32_s3_c14",
+ "sample_id": "mengmu_samples#32",
+ "story_id": "mengmu_san_qian",
+ "scene": 3,
+ "her_line": "他难怪成为有名的哲学家：难怪后来他成为……",
+ "rules": [
+  "adverbial_word_order"
+ ],
+ "original_scene": "你不是当数学家，而是当哲学家，不能当卖东西的人。所以他们又搬家。在他们第三个家，孟子学了怎么祭拜。妈妈感觉这个地方适合他们，告诉了孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。",
+ "variant_scene": "你不是要当商人，而是要当哲学家。所以他们又搬家了。在他们的第三个家，孟子学会了。妈妈感觉这个地方适合他们，告诉孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。",
+ "previous_scenes": [
+  "有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+  "他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。"
+ ],
+ "target_original": {
+  "start": 93,
+  "end": 96
+ },
+ "target_variant": {
+  "start": 83,
+  "end": 86
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#32/f14/p0/k0/e0",
+   "op": "replace",
+   "start": 83,
+   "end": 86,
+   "original": "他难怪",
+   "corrected": "难怪后来他",
+   "her_line": "他难怪成为有名的哲学家：难怪后来他成为……",
+   "her_piece": "难怪后来他成为……",
+   "her_note": "",
+   "review_row": "mengmu_samples#32/f14/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 9,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:cai_jiu_construction",
+  "rule_card:preposition_dao_place",
+  "rule_card:time_expression",
+  "rule_card:bushi_jiushi_construction",
+  "correction_item:mengmu_samples#43::c5",
+  "correction_item:mengmu_samples#36::c4",
+  "correction_item:mengmu_samples#41::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:cai_jiu_construction",
+   "rule_card:time_expression",
+   "rule_card:bushi_jiushi_construction",
+   "correction_item:mengmu_samples#42::c8",
+   "correction_item:mengmu_samples#43::c5",
+   "correction_item:mengmu_samples#36::c4"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: bushi_jiushi_construction\nGrammar/linguistic point: bushi_jiushi_construction\n不是……就是…… means 'either ... or ...' (two alternatives that both happen); it is not 'not X but Y' (that is 不是……而是……). The subject goes before 不是.\nExamples (original -> corrected, why):\n  - 不是学习中文，他就是跟老师说中文 -> 他不是……，就是……  [Subj. at the beginning of 不是……就是……]\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 那里孟子会不是画画，祭拜，就是做冬天衣服 -> 在那儿  [delete会，会will; 冬天的衣服]\n  - 在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方 -> 孟母搬家是为了让孟子接受良好的教育  [不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education]\n  - 难怪孟子不是高兴的孩子，就是安静的孩子 -> 每天都不高兴  [不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship]\n  - 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜 -> 不是在画画儿  [而是在祭拜；不是……就是…… is “either…or…”]\n  - 从早到晚他学习不是历史，就是哲学 -> 不是学习历史，就是学习哲学\n  - 教育做完以后孟子考虑，不是当哲学家就是当商家 -> 学完以后，商人\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 教育做完以后孟子考虑，不是当哲学家就是当商家：学完以后，商人\n\n- 她跟孟子搬家去墓地做祭拜，他成为一个有名的哲学家：孟母，“她” is ambiguous; 孟子，“他” is ambiguous, 后来成为\n\n- 孟子跟他的妈妈搬家，去一个最好的学校：去了，了completed\n\n## Student's scene to review\n你不是要当商人，而是要当哲学家。所以他们又搬家了。在他们的第三个家，孟子学会了。妈妈感觉这个地方适合他们，告诉孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “所以他们又搬家了” / Formula: Subject + 搬到 + Place; use 又 when returning to a previous situation, and use 再/another expression for an additional move / Correct: “所以他们又搬到了一个新地方。”  \n*Note: “又搬家了” is understandable, but “搬到……” makes the destination and movement clearer.*\n\nIncorrect phrase: “在他们的第三个家” / Formula: 在 + Place + (里/住处) / Correct: “在他们的第三个家里” or, more naturally, “在他们第三次搬去的地方”。\n\nIncorrect phrase: “孟子学会了” / Formula: Subject + 学会 + Object / Correct: “孟子学会了很多知识。”  \n“学会” needs an object: what did Mencius learn?\n\nIncorrect phrase: “妈妈感觉这个地方适合他们” / Formula: Subject + 觉得/认为 + Place + 适合 + Person / Correct: “妈妈觉得这个地方很适合他们。”  \n“觉得” is more natural than “感觉” when giving an opinion or judgment.\n\nIncorrect phrase: “在这儿妈妈让儿子从早到晚学习” / Formula: Subject + 让 + Person + 从早到晚 + 学习 + Object / Correct: “在这儿，妈妈让儿子从早到晚学习。”  \nAdd a comma after the place expression. You could also specify what he studied: “……学习儒家思想。”\n\nIncorrect phrase: “他难怪成为有名的哲学家” / Formula: 难怪 + Result/statement; Subject + 后来 + became… / Correct: “难怪他后来成为了有名的哲学家。”  \n“难怪” introduces a conclusion, so it should come before the whole statement.\n\n**Vocabulary Suggestions**\n\nWord: “最后的家” / Context: “我们找到了最后的家。” / Alternatives: “合适的住处” means a suitable place to live and sounds natural in this story. “理想的居住环境” is more advanced and emphasizes that the environment is ideal for Mencius’s education. “最后的家” can sound as if it means a final home in a very literal or even dramatic sense.\n\nWord: “感觉” / Context: “妈妈感觉这个地方适合他们。” / Alternatives: “觉得” is the most natural word for a personal opinion. “认为” is slightly more formal and emphasizes a considered judgment. “感觉” often describes physical sensations or an immediate impression.\n\nWord: “学会了” / Context: “孟子学会了。” / Alternatives: “开始认真学习” emphasizes that he began to study seriously. “受到良好的教育” means that he received a good education and fits the theme of 孟母三迁. “学会” focuses on mastering a specific skill or piece of knowledge, so it needs an object.\n\nWord: “有名的” / Context: “有名的哲学家” / Alternatives: “著名的哲学家” is more formal and common in historical writing. “杰出的哲学家” means an outstanding philosopher and emphasizes his achievements, not only his fame.\n\nWord: “这个地方” / Context: “这个地方适合他们” / Alternatives: “这里的环境” emphasizes the surroundings, such as the neighbors and educational atmosphere. “居住环境” is more advanced and specifically refers to the living environment. In this story, the environment is important because it influences Mencius’s learning.\n\n**Encouragement and Next Steps**\n\nYou used “不是……而是……” correctly at the beginning, and your story has a clear cause-and-result flow from moving house to Mencius becoming a philosopher.  \nNext time, focus on adding objects after verbs such as “学会” and placing connectors such as “难怪” in the right position.",
+  "usage": {
+   "prompt_tokens": 2144,
+   "completion_tokens": 822,
+   "total_tokens": 2966,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2141,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7101
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:cai_jiu_construction",
+   "rule_card:preposition_dao_place",
+   "rule_card:time_expression",
+   "rule_card:bushi_jiushi_construction",
+   "correction_item:mengmu_samples#43::c5",
+   "correction_item:mengmu_samples#36::c4",
+   "correction_item:mengmu_samples#41::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: bushi_jiushi_construction\nGrammar/linguistic point: bushi_jiushi_construction\n不是……就是…… means 'either ... or ...' (two alternatives that both happen); it is not 'not X but Y' (that is 不是……而是……). The subject goes before 不是.\nExamples (original -> corrected, why):\n  - 不是学习中文，他就是跟老师说中文 -> 他不是……，就是……  [Subj. at the beginning of 不是……就是……]\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 那里孟子会不是画画，祭拜，就是做冬天衣服 -> 在那儿  [delete会，会will; 冬天的衣服]\n  - 在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方 -> 孟母搬家是为了让孟子接受良好的教育  [不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education]\n  - 难怪孟子不是高兴的孩子，就是安静的孩子 -> 每天都不高兴  [不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship]\n  - 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜 -> 不是在画画儿  [而是在祭拜；不是……就是…… is “either…or…”]\n  - 从早到晚他学习不是历史，就是哲学 -> 不是学习历史，就是学习哲学\n  - 教育做完以后孟子考虑，不是当哲学家就是当商家 -> 学完以后，商人\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 她跟孟子搬家去墓地做祭拜，他成为一个有名的哲学家：孟母，“她” is ambiguous; 孟子，“他” is ambiguous, 后来成为\n\n- 孟子跟他的妈妈搬家，去一个最好的学校：去了，了completed\n\n- 古代时候有一个男孩名叫孟子，他成为哲学家：在古代，better to briefly introduce “孟子” when this character first appears; 他后来成为了哲学家\n\n## Student's scene to review\n你不是要当商人，而是要当哲学家。所以他们又搬家了。在他们的第三个家，孟子学会了。妈妈感觉这个地方适合他们，告诉孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “在他们的第三个家，孟子学会了。” / Formula: Subject + 学会 + Object; if you mean “study,” use Subject + 学习 + Object / Correct: “在他们的第三个家，孟子学会了很多知识。” or, more naturally in this context, “在他们的第三个家，孟子开始认真学习了。”\n\nIncorrect phrase: “妈妈感觉这个地方适合他们，告诉孟子……” / Formula: Subject + 觉得/认为 + clause; Subject + 告诉 + Person + content / Correct: “妈妈觉得这个地方很适合他们，就告诉孟子：‘我们找到了最后的家。’”\n\nIncorrect phrase: “在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。” / Formula: 因为 + reason, 所以 + result; or 难怪 + result / Correct: “在这儿，妈妈让儿子从早到晚学习，所以他后来成为了一位有名的哲学家。”  \n“难怪” means “no wonder,” so it usually introduces a conclusion based on a reason that is already known: “他从早到晚学习，难怪他后来成为了有名的哲学家。”\n\n**Vocabulary Suggestions**\n\nWord: “当” / Context: “你不是要当商人，而是要当哲学家。” / Alternatives: “成为” sounds more formal and emphasizes achieving an identity or status. You could say: “你不是要成为商人，而是要成为哲学家。” “当” is common and natural in everyday speech, while “成为” is better for a life goal or historical narrative.\n\nWord: “最后的家” / Context: “我们找到了最后的家。” / Alternatives: “合适的家” means a home that suits their needs; “安定的家” emphasizes a stable home where they will no longer need to move. “最后的家” can sound like one’s final home in life, so “我们终于找到了一个安定的家” is more natural here.\n\nWord: “感觉” / Context: “妈妈感觉这个地方适合他们。” / Alternatives: “觉得” is the most natural verb for an opinion or judgment. “认为” is more formal and confident. In this sentence, “妈妈觉得这个地方很适合他们” is the best choice.\n\nWord: “有名的” / Context: “成为有名的哲学家。” / Alternatives: “著名的” is more formal and often used for important historical figures; “伟大的” emphasizes major achievements and influence, not only fame. For Mencius, “成为一位著名的哲学家” is especially suitable.\n\nWord: “又搬家了” / Context: “所以他们又搬家了。” / Alternatives: “再次搬家” is more formal and narrative-like; “继续搬家” emphasizes that the moving process continued. “又” is simple and clear, while “再次” makes the historical storytelling style sound smoother.\n\n**Encouragement and Next Steps**\n\nYou clearly expressed the main idea of the story: Mencius’s mother moved so that he could study in a better environment.  \nNext time, focus on completing verbs such as “学会” with an object and connecting reasons and results with “所以” or “难怪.”",
+  "usage": {
+   "prompt_tokens": 2161,
+   "completion_tokens": 716,
+   "total_tokens": 2877,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2158,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6156
+ }
+}

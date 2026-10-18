@@ -1,0 +1,112 @@
+{
+ "variant_id": "shennong_samples_26_s3_c11",
+ "sample_id": "shennong_samples#26",
+ "story_id": "shennong_chang_baicao",
+ "scene": 3,
+ "her_line": "你认为神农的故事真的吗：是真的吗",
+ "rules": [
+  "adjective_predicate"
+ ],
+ "original_scene": "一个爬山的男人正好看到神农的麻烦，然后给了他一些药。神农最终他的小镇回到，跟别的人分享他的发现。你认为神农的故事真的吗？这就要看你相信中药对身体有好处。",
+ "variant_scene": "一个爬山的男人正好看到神农，然后给了他一些药。神农最终回到小镇，跟其他人分享他的发现。你认为神农的故事真的吗？这就要看你相信不相信中药对身体有好处了。",
+ "previous_scenes": [
+  "很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。",
+  "比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。"
+ ],
+ "target_original": {
+  "start": 56,
+  "end": 56
+ },
+ "target_variant": {
+  "start": 51,
+  "end": 51
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#26/f11/p0/k0/e0",
+   "op": "insert",
+   "start": 51,
+   "end": 51,
+   "original": "",
+   "corrected": "是",
+   "her_line": "你认为神农的故事真的吗：是真的吗",
+   "her_piece": "是真的吗",
+   "her_note": "",
+   "review_row": "shennong_samples#26/f11/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 6,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:redundancy_delete",
+  "rule_card:ambiguous_reference",
+  "rule_card:attributive_modifier_de",
+  "rule_card:character_introduction_first_mention",
+  "correction_item:shennong_samples#1::c1",
+  "correction_item:shennong_samples#46::c5",
+  "correction_item:shennong_samples#6::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:redundancy_delete",
+   "rule_card:ambiguous_reference",
+   "rule_card:location_zai_place",
+   "rule_card:character_introduction_first_mention",
+   "correction_item:shennong_samples#46::c5",
+   "correction_item:shennong_samples#6::c0",
+   "correction_item:shennong_samples#3::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 一个农民帮神农吃灵芝：给神农吃灵芝\n\n- 神农看到很多人随便吃各种植物：better to briefly introduce “神农” when this character first appears\n\n- 神农爬山：神农去爬山\n\n## Student's scene to review\n一个爬山的男人正好看到神农，然后给了他一些药。神农最终回到小镇，跟其他人分享他的发现。你认为神农的故事真的吗？这就要看你相信不相信中药对身体有好处了。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “一个爬山的男人正好看到神农” / Formula: First mention: 一个 + description + 的 + noun; character introduction should identify who the main character is / Correct: “一个正在爬山的男人正好看到了神农，神农是一位正在寻找草药的人。”  \n“神农” is introduced without context, so briefly explain who he is when he first appears. Also, 正在爬山 sounds more natural for an action in progress.\n\nIncorrect phrase: “然后给了他一些药” / Formula: Subject + 给 + person + 了 + object; use a clear noun instead of an unclear pronoun / Correct: “然后那个男人给了神农一些药。”  \n“他” could refer to either the man or Shennong, so repeating “那个男人” and “神农” makes the meaning clear.\n\nIncorrect phrase: “神农最终回到小镇” / Formula: Subject + 最终 + 回到 + place / Correct: “神农最终回到了小镇。”  \nAdd 了 because returning to the town is a completed event in the story.\n\nIncorrect phrase: “你认为神农的故事真的吗？” / Formula: Subject + 认为 + clause/question word + adjective / Correct: “你认为神农的故事是真的吗？”  \nThe word order should be “故事是真的吗,” not “故事真的吗.”\n\nIncorrect phrase: “这就要看你相信不相信中药对身体有好处了” / Formula: 这要看 + subject + 相不相信 + clause / Correct: “这就要看你相不相信中药对身体有没有好处。”  \n“有没有好处” is a more balanced and natural yes/no question structure than “有好处了.”\n\n**Vocabulary Suggestions**\n\nWord: “爬山的男人” / Context: “一个爬山的男人” / Alternatives: “登山者” or “登山人.” “男人” simply identifies an adult male, while “登山者” is more precise and natural for someone who is climbing a mountain.\n\nWord: “正好” / Context: “正好看到神农” / Alternatives: “恰好” or “偶然.” “正好” means “just at the right time/by coincidence” and is common in speech. “恰好” is slightly more formal, while “偶然” emphasizes that the meeting was accidental.\n\nWord: “药” / Context: “给了他一些药” / Alternatives: “草药” or “药材.” “药” is a general word for medicine. “草药” specifically means herbal medicine, which fits Shennong’s story well; “药材” refers to medicinal ingredients or materials.\n\nWord: “发现” / Context: “分享他的发现” / Alternatives: “研究成果” or “发现的草药.” “发现” is broad and neutral. “研究成果” emphasizes the results of careful study, while “发现的草药” is clearer if he specifically discovered useful herbs.\n\nWord: “对身体有好处” / Context: “中药对身体有好处” / Alternatives: “有益健康” or “有保健作用.” “对身体有好处” is simple and conversational. “有益健康” is more concise and formal, while “有保健作用” emphasizes a health-maintaining benefit rather than treating illness.\n\n**Encouragement and Next Steps**\n\nYou created a clear ending that connects Shennong’s story to a thoughtful modern question about traditional Chinese medicine.  \nNext time, focus on introducing characters clearly and checking pronoun references such as 他 so your reader always knows who is acting.",
+  "usage": {
+   "prompt_tokens": 2095,
+   "completion_tokens": 774,
+   "total_tokens": 2869,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2092,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6702
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:redundancy_delete",
+   "rule_card:ambiguous_reference",
+   "rule_card:attributive_modifier_de",
+   "rule_card:character_introduction_first_mention",
+   "correction_item:shennong_samples#1::c1",
+   "correction_item:shennong_samples#46::c5",
+   "correction_item:shennong_samples#6::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 神农看到很多人吃了麻烦的植物：better to briefly introduce “神农” when this character first appears; 有害的植物\n\n- 一个农民帮神农吃灵芝：给神农吃灵芝\n\n- 神农看到很多人随便吃各种植物：better to briefly introduce “神农” when this character first appears\n\n## Student's scene to review\n一个爬山的男人正好看到神农，然后给了他一些药。神农最终回到小镇，跟其他人分享他的发现。你认为神农的故事真的吗？这就要看你相信不相信中药对身体有好处了。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “一个爬山的男人” / Formula: Verb + object + 的 + noun / Correct: “一个正在爬山的男人” or “一个爬山的男人” is understandable, but “正在爬山的男人” more clearly shows that he is climbing at that moment.\n\nIncorrect phrase: “一个爬山的男人正好看到神农” / Formula: When a character first appears, introduce them as name + identity / Correct: “一个正在爬山的男人正好看到了神农，这位尝遍各种植物的古代医药传说人物。”  \n“神农” needs a brief introduction because he is mentioned for the first time.\n\nIncorrect phrase: “然后给了他一些药” / Formula: Subject + 给 + person + verb + 了 + object / Correct: “然后给神农吃了一些药。”  \n“给了他一些药” can mean he simply handed medicine to Shennong; “给神农吃药” clearly means he gave Shennong medicine to take.\n\nIncorrect phrase: “神农最终回到小镇” / Formula: Subject + 最终/终于 + 回到 + place / Correct: “神农最后回到了小镇。”  \n“最终” is possible, but “最后” or “终于” is more natural in this short story context. Add 了 because the return is completed.\n\nIncorrect phrase: “你认为神农的故事真的吗？” / Formula: Subject + 认为 + statement/question clause + 吗？ / Correct: “你认为神农的故事是真的吗？”  \nThe adjective “真的” needs 是 before it: “故事是真的吗？”\n\n**Vocabulary Suggestions**\n\nWord: “正好” / Context: “一个正在爬山的男人正好看到了神农” / Alternatives: “碰巧” emphasizes that the meeting happened by chance; “恰好” is slightly more formal and means “exactly / just at that time.” “正好” is natural, but it can also mean “just enough” or “exactly right,” so “碰巧” makes the accidental encounter clearer.\n\nWord: “一些药” / Context: “给神农吃了一些药” / Alternatives: “草药” means medicinal herbs and fits the ancient Shennong setting especially well; “药材” refers to ingredients used to make medicine. “药” is broad and neutral, while “草药” creates a more vivid historical image.\n\nWord: “发现” / Context: “跟其他人分享他的发现” / Alternatives: “研究成果” emphasizes the results of systematic research; “发现的草药知识” is more specific and directly connects to Shennong’s work. “发现” is correct but general.\n\nWord: “其他人” / Context: “跟其他人分享” / Alternatives: “镇上的人” makes the audience specific; “村民” gives the story a more traditional rural setting. “其他人” simply means “other people,” whereas these alternatives create a clearer scene.\n\nWord: “对身体有好处” / Context: “中药对身体有好处” / Alternatives: “有益于身体健康” is more formal and written; “有养生效果” emphasizes health maintenance and wellness. “对身体有好处” is common and conversational, while the alternatives sound more precise or advanced.\n\n**Encouragement and Next Steps**\n\nYou created a clear mini-story with a logical ending that connects Shennong’s discovery to a thoughtful question about traditional Chinese medicine.  \nNext time, focus on introducing new characters clearly and using “是……的吗？” when asking whether something is true.",
+  "usage": {
+   "prompt_tokens": 2081,
+   "completion_tokens": 767,
+   "total_tokens": 2848,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2078,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7175
+ }
+}

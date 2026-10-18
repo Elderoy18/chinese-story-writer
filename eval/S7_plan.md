@@ -301,6 +301,61 @@ are used to re-check the judge (how often the judge agrees with her).
   what S7-2 alone suggested. From here, judge a stage on its pooled runs where prompts repeat, and
   treat differences under ~6 points as noise.
 
+- **18 Oct -- S7-4 built** (extends S7-3). Data: `raw/iteration data/rule_card_triggers.json` -- 14
+  regex triggers on 5 rule cards (word_choice, resultative_complement, verb_object_collocation,
+  word_class_misuse, time_expression), the `suggested_keep=yes` rows of `review/triggers/` (>=50% of
+  training matches at her corrections), taken over **provisionally, unreviewed**; `chunk_builder.py`
+  attaches them as rule-card metadata `triggers`; snapshot `base-v6` = base-v5 + those triggers (no
+  text change, embeddings reused). Code: flag `ruleCardTriggers` -- a matching trigger adds its card
+  (with the matched places listed) and one past correction labelled with that rule, nearest to the
+  matched sentence (`grammarTag` filter). Offline check (no LLM): card reach 35% -> 43%
+  (word_choice 0 -> 6/48, resultative_complement 0 -> 4/15, word_class_misuse 0 -> 3/7), +0.2 cards
+  per scene. Production's `getChunksByType` does not return `grammar_tag` -- Phase 5.
+
+- **18 Oct -- S7-4 measured** (`eval/reports/S7_S7-4.md`). Whole set: FP 0.43 (0.37-0.48), the lowest of
+  any stage; incorrect 0.42; fully right 72%; recall 72%; card reach 43% (35%); information consistency
+  67%, same error 74% (down). **Split by scene** (S7-4's prompt differs from S7-3's only in the 18 scenes
+  where a trigger fired; the other 42 are byte-identical): in triggered scenes FP fell 0.81 (S7-2) /
+  0.61 (S7-3) -> 0.43 and consistency held (information 75% vs 77/72%); in identical scenes FP was
+  flat (0.45/0.44/0.43) and information consistency fell 78/71 -> 62% -- pure noise, since nothing
+  changed there. So the triggers cut false positives where they apply and did not hurt consistency;
+  the overall consistency drop is noise (larger than estimated: up to 16 points on 42 scenes).
+  **Verdict: accepted.** Lesson for the harness: report effects on the scenes a stage changed,
+  against the same scenes in the previous stage (`--changed-only`, to add).
+
+- **18 Oct -- harness: accuracy split + variant consistency.** `eval/s7/evaluate.py` adds "Accuracy split":
+  lexical accuracy (corrected text is hers, any alternative) and information accuracy (right fix, clean
+  text) at her corrections; retrieval accuracy (card reach) x generation accuracy given the card / without
+  it. S6-h20 vs S7-4: reach 34% -> 43%; caught-and-right given the card ~70% both, without it ~60%;
+  information accuracy 72-76% -> 76-78%; lexical 26-29% -> 32%. New `eval/s7/variants.mjs` +
+  `variants_score.py` (Phase 2's deferred variant inputs): per target error, the scene with her other
+  corrections applied (target kept verbatim), run once with the original's retrieval (fixed:
+  generation only) and with its own (end-to-end); scored against original run 1, with run 2 as the
+  noise floor -> `eval/reports/S7_variants_<stage>.md` (a. retrieval Jaccard + card reach, b. generation,
+  c. end-to-end; lexical + information; accuracy at the target). Running for S7-4 and S6-h20.
+
+- **18 Oct -- S7-5 built** (extends S7-4, snapshot base-v6). Flag `ruleExamples`: each sentence of the scene
+  is searched against the 920 `rule_example` chunks (student sentences she corrected, `parent_id` = their
+  rule card); the cards of the top 2 matches per sentence are added (at most 4 new cards per scene), each
+  shown with the closest corrected sentence and "check whether the scene really has the same error".
+  Offline, card reach: S7-4 43% -> **72%** (+3.4 cards/scene, prompt +17%); for comparison, more
+  whole-scene similarity slots give 48% (+4 cards) / 60% (+8 cards) -- per-sentence matching on her
+  corrected sentences is ~3x more efficient per added card. Settings chosen from a no-LLM sweep
+  (top 1/2/3 per sentence x cap 2/4/6/all: 57-82%). Also added: stage `S0-h20` (+r2, r3) -- the floor,
+  S0's prompt and flags on base-v4-h20 and the 20 stories; `score.py` parses S0's original output format.
+  Variant runs queued for S0-h20, S6-h20, S7-0, S7-0b, S7-1, S7-2, S7-4 (S7-3 skipped: scene prompts
+  identical to S7-2's).
+
+- **18 Oct -- S7-5 measured** (`eval/reports/S7_S7-5.md`): card reach 72% (S7-4 43%); recall 75% (72%);
+  information accuracy at her corrections 76-81% (76-78%); same error identified 79% (75%); but **false
+  positives 0.53/scene (0.47-0.62) vs S7-4's 0.43 (0.37-0.48)** -- back to S6's level -- with incorrect
+  corrections and items fully right unchanged. **Verdict: rejected** (false positives are her top priority).
+  S7-4 remains the accepted configuration; flag `ruleExamples` kept, off. Likely cause: the extra
+  material (+3.4 cards per scene, and near-identical corrected sentences shown on the cards) invites
+  flagging. Next (S7-6, redefined): keep the prompt size constant -- per-sentence rule_example
+  matches REPLACE the 4 whole-scene similarity cards instead of adding cards, and no example
+  sentences are shown -- to test whether better-targeted retrieval helps without the extra material.
+
 ## Decisions
 
 - **D1 (18 Oct): 20 held-out stories.** S6 re-baselined on `base-v4-h20`.
@@ -316,3 +371,6 @@ are used to re-check the judge (how often the judge agrees with her).
   events (already required by `noSceneNumbers`, inherited by every S7 stage). Phase 5: the content route
   streams the model's text straight to the learner, so hiding the Scene check means buffering until
   "## Content & Completeness" starts, or producing the verdicts in a separate call.
+- **D5 (18 Oct): consistency vs accuracy.** A consistency drop is acceptable when accuracy rose,
+  especially when the stage changed nothing the measure depends on (e.g. S7-3 changed only the
+  end-of-story prompt). Accuracy (her priority: no false positives / incorrect corrections) wins.

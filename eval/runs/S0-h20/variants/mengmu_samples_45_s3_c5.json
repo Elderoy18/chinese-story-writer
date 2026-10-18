@@ -1,0 +1,112 @@
+{
+ "variant_id": "mengmu_samples_45_s3_c5",
+ "sample_id": "mengmu_samples#45",
+ "story_id": "mengmu_san_qian",
+ "scene": 3,
+ "her_line": "他的妈妈找到孟子一个老师：给孟子找到……",
+ "rules": [
+  "verb_object_collocation"
+ ],
+ "original_scene": "他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。",
+ "variant_scene": "难怪他抱怨，原来他想他的朋友，不想离开他的城市。他的妈妈找到孟子一个老师。孟子跟老师学习文学，所以他成为哲学家。",
+ "previous_scenes": [
+  "古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。",
+  "他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。"
+ ],
+ "target_original": {
+  "start": 29,
+  "end": 33
+ },
+ "target_variant": {
+  "start": 28,
+  "end": 32
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#45/f5/p0/k0/e0",
+   "op": "replace",
+   "start": 28,
+   "end": 32,
+   "original": "找到孟子",
+   "corrected": "给孟子找到",
+   "her_line": "他的妈妈找到孟子一个老师：给孟子找到……",
+   "her_piece": "给孟子找到……",
+   "her_note": "",
+   "review_row": "mengmu_samples#45/f5/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 6,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:coherence_connectives",
+  "rule_card:bushi_ershi_construction",
+  "rule_card:time_expression",
+  "rule_card:laoshi_negative_connotation",
+  "correction_item:mengmu_samples#43::c5",
+  "correction_item:mengmu_samples#41::c0",
+  "correction_item:mengmu_samples#49::c8"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:bushi_ershi_construction",
+   "rule_card:coherence_connectives",
+   "rule_card:time_expression",
+   "rule_card:laoshi_negative_connotation",
+   "correction_item:mengmu_samples#43::c5",
+   "correction_item:mengmu_samples#41::c0",
+   "correction_item:mengmu_samples#41::c12"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: bushi_ershi_construction\nGrammar/linguistic point: bushi_ershi_construction\n不是……而是…… ('not X but Y') refutes something conventional or wrong and affirms the correct, often unexpected, fact. When both parts share one subject, the subject comes before 不是 (他不是……，而是……).\nExamples (original -> corrected, why):\n  - 他们不是住在购物中心的旁边，而是住在学校的旁边 -> 搬到了学校旁边  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 可是他不是在家读书，而是老是出去玩 -> 不在家读书，老是出去玩  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他那不是成为医生，而是成为哲学人 -> 他没有当医生，而是成为哲学家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟母不是孟子的爸爸，而是孟子的妈妈 -> 孟母是孟子的妈妈  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 现在孟子和孟母不是打算搬家，而是打算待在这个小镇 -> 不打算搬家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟子的妈妈不是轻松的妈妈，而且她是厉害的妈妈 -> 在教育方面很厉害  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他不是在搬家，而是学多文章，成为很聪明 -> 不再搬家，而是待在这儿学习很多文章  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章；成为很聪明的哲学家]\n  - 不是孟子喜欢这个城市，而是他喜欢这个城市的人 -> 孟子不是喜欢这个城市，而是喜欢这个城市的人  [Subj. before “不是……而是……”]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 她跟孟子搬家去墓地做祭拜，他成为一个有名的哲学家：孟母，“她” is ambiguous; 孟子，“他” is ambiguous, 后来成为\n\n- 古代时候有一个男孩名叫孟子，他成为哲学家：在古代，better to briefly introduce “孟子” when this character first appears; 他后来成为了哲学家\n\n- 难怪孟子成为一个大好聪明哲学：聪明的哲学家\n\n## Student's scene to review\n难怪他抱怨，原来他想他的朋友，不想离开他的城市。他的妈妈找到孟子一个老师。孟子跟老师学习文学，所以他成为哲学家。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “他的妈妈找到孟子一个老师。” / Formula: Subject + 给/为 + person + 找 + a person/thing / Correct: “他的妈妈给孟子找了一位老师。”\n\nIncorrect phrase: “孟子跟老师学习文学，所以他成为哲学家。” / Formula: Subject + 跟/向 + person + 学习 + content；后来 + result / Correct: “孟子跟老师学习文学，后来成为了哲学家。”  \n“所以” suggests that studying literature directly caused him to become a philosopher; “后来” is more natural for a story sequence.\n\n**Vocabulary Suggestions**\n\nWord: “抱怨” / Context: “难怪他抱怨” / Alternatives: “不高兴” is softer and simply means “to be unhappy.” “埋怨” means to complain while blaming someone or something, so it is slightly stronger and more emotional than “抱怨.”\n\nWord: “想” / Context: “他想他的朋友” / Alternatives: “想念” specifically means “to miss someone” and is more natural here. “怀念” is more literary and usually refers to missing a past time, place, or someone from the past.\n\nWord: “离开” / Context: “不想离开他的城市” / Alternatives: “搬离” means “to move away from” a place, so it is especially suitable if the family is changing where they live. “告别” means “to say goodbye to” and has a more emotional, literary tone.\n\nWord: “找到” / Context: “妈妈找到孟子一个老师” / Alternatives: “给孟子找” is the most natural everyday expression for finding a teacher for someone. “请” means “to invite/hire,” so “请了一位老师” suggests that the mother formally hired the teacher.\n\nWord: “文学” / Context: “跟老师学习文学” / Alternatives: “知识” means general knowledge and is broader than “文学.” “学问” refers to deep learning or scholarship and sounds more formal; it fits well when describing the education of a future philosopher.\n\n**Encouragement and Next Steps**\n\nYou clearly explained the character’s feelings first and then connected his education to his later achievement, which gives the short passage a good story flow.  \nNext time, focus on using “给 + someone + 找 + noun” and choosing transitions such as “后来” for narrative events.",
+  "usage": {
+   "prompt_tokens": 2464,
+   "completion_tokens": 513,
+   "total_tokens": 2977,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2461,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 4936
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:coherence_connectives",
+   "rule_card:bushi_ershi_construction",
+   "rule_card:time_expression",
+   "rule_card:laoshi_negative_connotation",
+   "correction_item:mengmu_samples#43::c5",
+   "correction_item:mengmu_samples#41::c0",
+   "correction_item:mengmu_samples#49::c8"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: bushi_ershi_construction\nGrammar/linguistic point: bushi_ershi_construction\n不是……而是…… ('not X but Y') refutes something conventional or wrong and affirms the correct, often unexpected, fact. When both parts share one subject, the subject comes before 不是 (他不是……，而是……).\nExamples (original -> corrected, why):\n  - 他们不是住在购物中心的旁边，而是住在学校的旁边 -> 搬到了学校旁边  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 可是他不是在家读书，而是老是出去玩 -> 不在家读书，老是出去玩  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他那不是成为医生，而是成为哲学人 -> 他没有当医生，而是成为哲学家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟母不是孟子的爸爸，而是孟子的妈妈 -> 孟母是孟子的妈妈  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 现在孟子和孟母不是打算搬家，而是打算待在这个小镇 -> 不打算搬家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟子的妈妈不是轻松的妈妈，而且她是厉害的妈妈 -> 在教育方面很厉害  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他不是在搬家，而是学多文章，成为很聪明 -> 不再搬家，而是待在这儿学习很多文章  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章；成为很聪明的哲学家]\n  - 不是孟子喜欢这个城市，而是他喜欢这个城市的人 -> 孟子不是喜欢这个城市，而是喜欢这个城市的人  [Subj. before “不是……而是……”]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 她跟孟子搬家去墓地做祭拜，他成为一个有名的哲学家：孟母，“她” is ambiguous; 孟子，“他” is ambiguous, 后来成为\n\n- 古代时候有一个男孩名叫孟子，他成为哲学家：在古代，better to briefly introduce “孟子” when this character first appears; 他后来成为了哲学家\n\n- 长大的时候，孟子成为中国最重要的哲学人：长大以后，哲学家\n\n## Student's scene to review\n难怪他抱怨，原来他想他的朋友，不想离开他的城市。他的妈妈找到孟子一个老师。孟子跟老师学习文学，所以他成为哲学家。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “他的妈妈找到孟子一个老师” / Formula: Subject + 给/为 + someone + 找 + a person/thing / Correct: “他的妈妈给孟子找了一个老师。”\n\nIncorrect phrase: “孟子跟老师学习文学，所以他成为哲学家。” / Formula: Subject + 跟 + person + 学习 + subject; later + become + profession / Correct: “孟子跟老师学习文学，后来成为了哲学家。” “所以” suggests that studying literature directly caused him to become a philosopher; “后来” gives a more natural narrative sequence.\n\n**Vocabulary Suggestions**\n\nWord: “想” / Context: “他想他的朋友” / Alternatives: “想念他的朋友” is more natural when you mean that he misses friends who are far away. “想” can mean “to think” or “to want,” while “想念” specifically conveys missing someone emotionally.\n\nWord: “离开” / Context: “不想离开他的城市” / Alternatives: “不愿离开这座城市” sounds more natural and slightly more formal. “不想” simply expresses that he does not want to do something; “不愿” emphasizes reluctance.\n\nWord: “找到” / Context: “他的妈妈找到孟子一个老师” / Alternatives: “给孟子请了一位老师” is especially natural when a parent hires a teacher or tutor. “找到” means “find,” while “请” here means to invite or hire someone respectfully.\n\nWord: “学习” / Context: “孟子跟老师学习文学” / Alternatives: “向老师学习文学” is more idiomatic for learning from a teacher. “跟老师学习” is understandable and conversational; “向老师学习” emphasizes the teacher as the source of learning.\n\nWord: “成为” / Context: “他成为哲学家” / Alternatives: “后来成了一位哲学家” is smoother in a story. “成为” is neutral and somewhat formal; “成了” is more concise and natural in narration.\n\n**Encouragement and Next Steps**\n\nYou clearly expressed Mengzi’s feelings about missing his friends and not wanting to leave his city, which gives the short story a good emotional reason for his complaint.  \nNext time, focus on using 给 + someone + 找/请 + a person and choosing transitions such as 后来 to connect events naturally.",
+  "usage": {
+   "prompt_tokens": 2466,
+   "completion_tokens": 501,
+   "total_tokens": 2967,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2463,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 4819
+ }
+}

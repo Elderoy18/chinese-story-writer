@@ -1,0 +1,112 @@
+{
+ "variant_id": "mengmu_samples_12_s3_c8",
+ "sample_id": "mengmu_samples#12",
+ "story_id": "mengmu_san_qian",
+ "scene": 3,
+ "her_line": "将来，他成为中国的一个非常有名的哲学家：后来，“将来“ refers to the absolute future",
+ "rules": [
+  "time_expression"
+ ],
+ "original_scene": "所以，孟母和孟子搬到学校的旁边住。才五岁孟子开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。",
+ "variant_scene": "所以，孟母和孟子搬到学校的旁边住。才五岁孟子就开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。",
+ "previous_scenes": [
+  "古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。",
+  "城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。"
+ ],
+ "target_original": {
+  "start": 46,
+  "end": 48
+ },
+ "target_variant": {
+  "start": 47,
+  "end": 49
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#12/f8/p0/k0/e0",
+   "op": "replace",
+   "start": 47,
+   "end": 49,
+   "original": "将来",
+   "corrected": "后来",
+   "her_line": "将来，他成为中国的一个非常有名的哲学家：后来，“将来“ refers to the absolute future",
+   "her_piece": "后来",
+   "her_note": "“将来“ refers to the absolute future",
+   "review_row": "mengmu_samples#12/f8/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:cai_jiu_construction",
+  "rule_card:time_expression",
+  "rule_card:preposition_dao_place",
+  "rule_card:attributive_modifier_de",
+  "correction_item:mengmu_samples#41::c0",
+  "correction_item:mengmu_samples#43::c5",
+  "correction_item:mengmu_samples#49::c8"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:cai_jiu_construction",
+   "rule_card:time_expression",
+   "rule_card:preposition_dao_place",
+   "rule_card:attributive_modifier_de",
+   "correction_item:mengmu_samples#41::c0",
+   "correction_item:mengmu_samples#49::c8",
+   "correction_item:mengmu_samples#43::c5"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代时候有一个男孩名叫孟子，他成为哲学家：在古代，better to briefly introduce “孟子” when this character first appears; 他后来成为了哲学家\n\n- 长大的时候，孟子成为中国最重要的哲学人：长大以后，哲学家\n\n- 她跟孟子搬家去墓地做祭拜，他成为一个有名的哲学家：孟母，“她” is ambiguous; 孟子，“他” is ambiguous, 后来成为\n\n## Student's scene to review\n所以，孟母和孟子搬到学校的旁边住。才五岁孟子就开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “孟母和孟子搬到学校的旁边住” / Formula: Subject + 搬到 + Place + 住 / Correct: “孟母和孟子搬到学校旁边住。”  \n“学校旁边” is more natural than “学校的旁边” here.\n\nIncorrect phrase: “才五岁孟子就开始学哲学” / Formula: Subject + 才 + Num. + 岁 + 就 + Verb / Correct: “孟子才五岁就开始学哲学。”  \nPut the subject before 才 for a clearer and more natural sentence.\n\nIncorrect phrase: “将来，他成为中国的一个非常有名的哲学家” / Formula: In a past narrative, Subject + 后来 + 成为 + Noun / Correct: “后来，他成为了中国一位非常有名的哲学家。”  \n将来 refers to the future from the present. Since this is a story about Mencius in the past, 后来 is the appropriate narrative time word.\n\n**Vocabulary Suggestions**\n\nWord: “学校的旁边” / Context: “搬到学校的旁边住” / Alternatives: “学校附近” or “学校旁边.” 学校旁边 means directly next to the school, while 学校附近 means in the area near the school and does not need to be immediately beside it.\n\nWord: “学哲学” / Context: “开始学哲学” / Alternatives: “学习儒家思想” or “研究哲学.” 学哲学 is simple and understandable. 学习儒家思想 is more specific to Mencius, while 研究哲学 suggests deeper, more academic study.\n\nWord: “看书” / Context: “孟子不是看书，就是练习写字” / Alternatives: “读书” or “阅读.” 看书 is common in everyday speech. 读书 is especially natural for studying and learning, while 阅读 is more formal and emphasizes the activity of reading.\n\nWord: “练习写字” / Context: “就是练习写字” / Alternatives: “练字” or “练习书法.” 练习写字 is clear but a little long. 练字 is concise and natural; 练习书法 specifically means practising calligraphy.\n\nWord: “非常有名” / Context: “一个非常有名的哲学家” / Alternatives: “著名的” or “杰出的.” 非常有名 simply means “very famous.” 著名的 is more formal, and 杰出的 means “outstanding,” emphasizing his achievements rather than only his fame.\n\n**Encouragement and Next Steps**\n\nYou used the “才……就……” structure correctly and created a clear progression from moving near the school to Mencius’s later success.  \nNext time, focus on choosing narrative time words such as 后来 instead of 将来 when telling a historical story.",
+  "usage": {
+   "prompt_tokens": 2050,
+   "completion_tokens": 613,
+   "total_tokens": 2663,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2047,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 5155
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:cai_jiu_construction",
+   "rule_card:time_expression",
+   "rule_card:preposition_dao_place",
+   "rule_card:attributive_modifier_de",
+   "correction_item:mengmu_samples#41::c0",
+   "correction_item:mengmu_samples#43::c5",
+   "correction_item:mengmu_samples#49::c8"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代时候有一个男孩名叫孟子，他成为哲学家：在古代，better to briefly introduce “孟子” when this character first appears; 他后来成为了哲学家\n\n- 她跟孟子搬家去墓地做祭拜，他成为一个有名的哲学家：孟母，“她” is ambiguous; 孟子，“他” is ambiguous, 后来成为\n\n- 长大的时候，孟子成为中国最重要的哲学人：长大以后，哲学家\n\n## Student's scene to review\n所以，孟母和孟子搬到学校的旁边住。才五岁孟子就开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “孟母和孟子搬到学校的旁边住” / Formula: Subject + 搬到 + Place + （去）住 / Correct: “孟母和孟子搬到学校旁边去住。”  \n“学校旁边” is more natural than “学校的旁边” here.\n\nIncorrect phrase: “才五岁孟子就开始学哲学” / Formula: Subject + 才 + Num. + 岁 + 就 + V. / Correct: “孟子才五岁就开始学哲学。”  \nPut the subject before the 才…就… structure.\n\nIncorrect phrase: “将来，他成为中国的一个非常有名的哲学家” / Formula: In a past narrative, Subject + 后来 + 成为（了）+ Noun / Correct: “后来，他成为了中国非常有名的哲学家。”  \n“将来” refers to the future from the present. For the next event in a historical story, use “后来.”\n\n**Vocabulary Suggestions**\n\nWord: “学校的旁边” / Context: “搬到学校的旁边住” / Alternatives: “学校附近” or “学校旁边.” “学校旁边” is simple and natural; “学校附近” means “near the school” and sounds slightly broader, not necessarily directly next to it.\n\nWord: “学哲学” / Context: “开始学哲学” / Alternatives: “学习哲学” or “研读哲学.” “学习哲学” is a more complete and neutral expression. “研读哲学” means to study philosophy deeply and seriously, so it is more advanced and formal.\n\nWord: “看书” / Context: “孟子不是看书，就是练习写字” / Alternatives: “读书” or “阅读.” “看书” is common in everyday speech. “读书” sounds more literary and fits a story about a scholar; “阅读” is more formal.\n\nWord: “练习写字” / Context: “练习写字” / Alternatives: “练字” or “练习书法.” “练字” is a concise, natural way to say practising handwriting. “练习书法” specifically means practising Chinese calligraphy and gives the sentence a more cultural feeling.\n\nWord: “非常有名” / Context: “一个非常有名的哲学家” / Alternatives: “著名的” or “享有盛名的.” “非常有名” is clear but basic. “著名的” is concise and formal; “享有盛名的” means highly renowned and is more advanced.\n\n**Encouragement and Next Steps**\n\nYou used the “才五岁就开始……” structure well and created a clear sequence from moving house to studying and becoming a philosopher.  \nNext time, focus on choosing narrative time words such as “后来” rather than “将来” when telling a story from the past.",
+  "usage": {
+   "prompt_tokens": 2050,
+   "completion_tokens": 620,
+   "total_tokens": 2670,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2047,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 5083
+ }
+}

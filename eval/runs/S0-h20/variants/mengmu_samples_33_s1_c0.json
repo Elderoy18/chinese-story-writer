@@ -1,0 +1,110 @@
+{
+ "variant_id": "mengmu_samples_33_s1_c0",
+ "sample_id": "mengmu_samples#33",
+ "story_id": "mengmu_san_qian",
+ "scene": 1,
+ "her_line": "一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears",
+ "rules": [
+  "redundancy_delete",
+  "character_introduction_first_mention"
+ ],
+ "original_scene": "一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。",
+ "variant_scene": "一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 0,
+  "end": 3
+ },
+ "target_variant": {
+  "start": 0,
+  "end": 3
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#33/f0/p0/k0/e0",
+   "op": "delete",
+   "start": 0,
+   "end": 3,
+   "original": "一天，",
+   "corrected": "",
+   "her_line": "一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears",
+   "her_piece": "delete一天",
+   "her_note": "",
+   "review_row": "mengmu_samples#33/f0/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:time_expression",
+  "rule_card:laoshi_negative_connotation",
+  "rule_card:cai_jiu_construction",
+  "rule_card:location_zai_place",
+  "correction_item:mengmu_samples#27::c0",
+  "correction_item:mengmu_samples#13::c0",
+  "correction_item:mengmu_samples#37::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:cai_jiu_construction",
+   "rule_card:laoshi_negative_connotation",
+   "rule_card:preposition_dao_place",
+   "correction_item:mengmu_samples#27::c0",
+   "correction_item:mengmu_samples#13::c0",
+   "correction_item:mengmu_samples#5::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候，孟子的妈妈跟孟子一起住在中国：在古代，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，孟子和他的妈妈住在离墓地很近：在古代，better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place\n\n- 在古代时候，孟子跟他妈妈常常搬家：在古代，better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “一天，很久很久以前” / Formula: Time expression + complete sentence; use “有一天” to introduce an event in a story / Correct: “很久很久以前，有一天，孟子和他妈妈住在中国。”\n\nIncorrect phrase: “孟子妈妈的工作是祭拜” / Formula: Subject + 的工作是 + Verb + Object; 祭拜 usually needs an object / Correct: “孟子妈妈的工作是祭拜祖先。”  \n(If you mean she worked at graves, you could also say: “孟子妈妈的工作是扫墓。”)\n\nIncorrect phrase: “他妈妈说，从早到晚，我一直祭拜” / Formula: Subject + 从早到晚 + 一直 + Verb + Object; include the speaker before the time phrase / Correct: “他妈妈说：‘我从早到晚一直祭拜祖先。’”\n\nIncorrect phrase: “很多墓地得我祭拜” / Formula: Place/thing + 需要 + Person + Verb, or Person + 得/必须 + Verb + Object; “得” cannot directly connect the object and person this way / Correct: “很多墓地都需要我去祭拜。”  \nYou could also say: “我得去很多墓地祭拜。”\n\nIncorrect phrase: “所以我们得去很多不同的地方” / Formula: 去 + Place; use a more specific place when referring to graves / Correct: “所以我们得去很多不同的墓地。”  \nIf they are moving house, say: “所以我们得搬到很多不同的地方。”\n\n**Vocabulary Suggestions**\n\nWord: “住在中国” / Context: “孟子和他妈妈住在中国” / Alternatives: “生活在中国” sounds more natural when describing someone’s life in a broad historical setting. “住在中国” focuses more specifically on their place of residence.\n\nWord: “工作” / Context: “孟子妈妈的工作是祭拜” / Alternatives: “职责” means duty or responsibility and is especially suitable if the mother’s role is connected to family traditions or rituals. “职业” means a formal occupation. “工作” is a general, neutral word for work.\n\nWord: “不高兴” / Context: “孟子不高兴” / Alternatives: “不满” means dissatisfied and fits well because Mengzi is unhappy about moving repeatedly. “抱怨” means to complain and describes what he does when he asks “为什么？” “不高兴” is simpler and more general.\n\nWord: “老是” / Context: “我们老是搬家” / Alternatives: “总是” is more neutral and means “always.” “老是” also means “always,” but it often conveys annoyance or complaint. Here, because Mengzi is unhappy, “老是” is actually a good choice.\n\nWord: “很多不同的地方” / Context: “去很多不同的地方” / Alternatives: “到处” means “everywhere” and makes the sentence shorter: “所以我们得到处去祭拜。” “各地” means various regions/places and sounds slightly more formal: “所以我们得去各地祭拜。” “很多不同的地方” is clear but less concise.\n\n**Encouragement and Next Steps**\n\nYou created a clear mini-story with natural dialogue, and “我们老是搬家，为什么？” effectively shows Mengzi’s frustration.  \nNext time, focus on adding objects after verbs such as “祭拜” and making the relationship between moving and visiting graves more precise.",
+  "usage": {
+   "prompt_tokens": 2083,
+   "completion_tokens": 743,
+   "total_tokens": 2826,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2080,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6730
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:laoshi_negative_connotation",
+   "rule_card:cai_jiu_construction",
+   "rule_card:location_zai_place",
+   "correction_item:mengmu_samples#27::c0",
+   "correction_item:mengmu_samples#13::c0",
+   "correction_item:mengmu_samples#37::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候，孟子的妈妈跟孟子一起住在中国：在古代，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，孟子和他的妈妈住在离墓地很近：在古代，better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place\n\n- 孟子和他的妈妈原来住在墓地的旁边：better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “一天，很久很久以前” / Formula: Time phrase + 的 + 一天 / Correct: “很久很久以前的一天”  \n“ 一天” and “很久很久以前” should be combined into one natural time expression.\n\nIncorrect phrase: “孟子和他妈妈住在中国” / Formula: Person + 和 + possessive phrase（他的妈妈）+ verb / Correct: “孟子和他的妈妈住在中国”  \n“他妈妈” is understandable in spoken Chinese, but “他的妈妈” is more complete and natural in writing. You can also call her “孟母.”\n\nIncorrect phrase: “孟子妈妈的工作是祭拜” / Formula: Subject + 的工作是 + verb phrase; or Subject + 负责 + verb phrase / Correct: “孟子的妈妈的工作是祭拜祖先。” / “孟子的妈妈负责祭拜祖先。”  \n“祭拜” usually needs an object, such as “祖先” (ancestors).\n\nIncorrect phrase: “很多墓地得我祭拜” / Formula: Place/thing + 需要 + person + verb / Correct: “很多墓地需要我去祭拜。”  \n“得” can mean “must,” but it does not work naturally before a person in this sentence. Use “需要我……” instead.\n\n**Vocabulary Suggestions**\n\nWord: “很久很久以前” / Context: “很久很久以前的一天” / Alternatives: “古代” or “从前”  \n“很久很久以前” creates a fairy-tale feeling and emphasizes a very distant time. “古代” is more precise for Mencius’s historical setting, while “从前” is a simple, natural storytelling opening.\n\nWord: “工作” / Context: “孟子的妈妈的工作是祭拜祖先” / Alternatives: “职责” or “负责”  \n“工作” means a job in general. “职责” means a person’s duty or responsibility and sounds more formal. “负责祭拜祖先” is especially natural because it directly describes what her role involves.\n\nWord: “不高兴” / Context: “孟子不高兴” / Alternatives: “不满” or “抱怨”  \n“不高兴” is a general expression for being unhappy. “不满” emphasizes dissatisfaction with a situation, while “抱怨” means to complain aloud—appropriate because Mengzi asks why they keep moving.\n\nWord: “祭拜” / Context: “我一直祭拜” / Alternatives: “祭祖” or “祭祀”  \n“祭拜” means to worship or pay respects, often to ancestors or deities. “祭祖” specifically means worshipping ancestors and is very clear here. “祭祀” is more formal and is often used for traditional or religious ceremonies.\n\nWord: “很多不同的地方” / Context: “我们得去很多不同的地方” / Alternatives: “各地” or “不同的墓地”  \n“很多不同的地方” is understandable but slightly repetitive. “各地” means many places in different regions and is more concise. “不同的墓地” is more specific because the reason for moving is connected to graveyards.\n\n**Encouragement and Next Steps**\n\nYou created a clear little dialogue, and using “老是搬家” effectively shows Mengzi’s frustration.  \nNext time, focus on adding objects after verbs like “祭拜” and using “需要” to express that someone needs to do something.",
+  "usage": {
+   "prompt_tokens": 2216,
+   "completion_tokens": 953,
+   "total_tokens": 3169,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2213,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 208,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 9383
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "variant_id": "shennong_samples_18_s3_c7",
+ "sample_id": "shennong_samples#18",
+ "story_id": "shennong_chang_baicao",
+ "scene": 3,
+ "her_line": "哥哥给神农灵芝：给了，了completed",
+ "rules": [
+  "aspect_le_completed"
+ ],
+ "original_scene": "夹竹桃是毒的，我想知道灵芝会帮他。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你帮得真好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“",
+ "variant_scene": "夹竹桃有毒的，我想知道灵芝有没有用。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你做得很好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“",
+ "previous_scenes": [
+  "神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。",
+  "他们在很漂亮的河找夹竹桃。神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要看你想要安全还是接近知道了。“神农一吃夹竹桃就生病了。哥哥说：“太麻烦了。"
+ ],
+ "target_original": {
+  "start": 21,
+  "end": 21
+ },
+ "target_variant": {
+  "start": 22,
+  "end": 22
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#18/f7/p0/k0/e0",
+   "op": "insert",
+   "start": 22,
+   "end": 22,
+   "original": "",
+   "corrected": "了",
+   "her_line": "哥哥给神农灵芝：给了，了completed",
+   "her_piece": "给了",
+   "her_note": "了completed",
+   "review_row": "shennong_samples#18/f7/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 5,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:coherence_connectives",
+  "rule_card:example_marker_tebie_bifang",
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:ambiguous_reference",
+  "correction_item:shennong_samples#24::c6",
+  "correction_item:shennong_samples#46::c5",
+  "correction_item:shennong_samples#22::c5"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:coherence_connectives",
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:example_marker_tebie_bifang",
+   "rule_card:ambiguous_reference",
+   "correction_item:shennong_samples#46::c5",
+   "correction_item:shennong_samples#24::c6",
+   "correction_item:shennong_samples#51::c5"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: example_marker_tebie_bifang\nGrammar/linguistic point: example_marker_tebie_bifang\n特别是 + N./clause singles out a typical example of what was just said; 比方说 introduces an example. Neither can replace 特别 (very) or stand without the general statement.\nExamples (original -> corrected, why):\n  - 灵芝特别是帮忙 -> 特别有用  [”特别是+N, + Clause” is used to single out a typical example]\n  - 吃不知名的植物是特别是危险的 -> 特别危险的  [”特别是+N, + Clause” is used to single out a typical example]\n  - 夹竹桃是特别是毒 -> 夹竹桃的毒特别厉害  [”特别是+N, + Clause” is used to single out a typical example]\n  - 这个大山特别是的 -> 特别是+N, + clause\n  - 特别是夹竹桃对身体更不好 -> 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n  - 比方说，他又不能思考清楚又不能问帮忙 -> 比方说is used to express “for example”, delete it; 又想不清楚又不能找别人帮忙，the “ask” in “ask for help” is not问\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 这就要看灵芝是不是特别了。比方说，可能是毒的 -> 是不是有用了。比方说is used to express “for example”, delete it；可能有毒\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 一个农民帮神农吃灵芝：给神农吃灵芝\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n- 神农吃灵芝以后：吃了，了completed\n\n## Student's scene to review\n夹竹桃有毒的，我想知道灵芝有没有用。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你做得很好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “夹竹桃有毒的” / Formula: N. + 有毒 / Correct: “夹竹桃有毒。”\n\nIncorrect phrase: “哥哥给神农灵芝” / Formula: A + 给 + B + V. + O. / Correct: “哥哥给神农吃了灵芝。”  \nHere, **给** alone is incomplete because the sentence needs an action, such as 吃了 (“gave [him] some lingzhi to eat”).\n\nIncorrect phrase: “神农吃完了以后开始痊愈了” / Formula: S. + V.完 + O. + 以后，+ 开始 + V. / Correct: “神农吃完灵芝以后，开始痊愈了。”  \nPut the object 灵芝 after 吃完 to make clear what he finished eating.\n\nIncorrect phrase: “灵芝我们可以吃” / Formula: O. + S. + 可以 + V. / Correct: “灵芝我们可以吃。”  \nThis is understandable, but a more natural word order is: “我们可以吃灵芝。”\n\nIncorrect phrase: “特别是如果我们已经吃了夹竹桃” / Formula: General statement + 特别是 + N./clause; or 如果……，就…… / Correct: “特别是已经吃了夹竹桃的人，可以吃灵芝。”  \n特别是 should introduce a specific example within a general statement. Alternatively: “如果我们已经吃了夹竹桃，就可以吃灵芝。”\n\n\n**Vocabulary Suggestions**\n\nWord: “有毒的” / Context: “夹竹桃有毒的” / Alternatives: “有毒” is the natural basic expression for “poisonous.” “含有毒性” is more formal and scientific, while “剧毒” means “highly poisonous” and is stronger.\n\nWord: “有没有用” / Context: “我想知道灵芝有没有用” / Alternatives: “有没有效果” is more natural when discussing medicine or treatment. “是否有效” is more formal and suitable for scientific or medical contexts.\n\nWord: “哥哥” / Context: “哥哥给神农吃了灵芝” / Alternatives: If he is not actually Shennong’s older brother, use “一位农民” or “一个人.” 哥哥 specifically means an older brother or a friendly way to address a young man; “一位农民” makes the character’s identity clearer.\n\nWord: “开始痊愈” / Context: “开始痊愈了” / Alternatives: “逐渐康复” means “gradually recover” and sounds natural for illness. “病情好转” means “the condition improves” and is more medical and formal.\n\nWord: “做得很好” / Context: “你做得很好” / Alternatives: “你帮了我大忙” emphasizes that the person’s help was very important. “多亏了你” means “thanks to you” and expresses stronger gratitude.\n\n**Encouragement and Next Steps**\n\nYou used a clear sequence of events and included dialogue, which makes your short story easy and enjoyable to follow.  \nNext time, focus on completing sentences with clear actions and using “特别是” only to introduce a specific example.",
+  "usage": {
+   "prompt_tokens": 2324,
+   "completion_tokens": 681,
+   "total_tokens": 3005,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2321,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 5741
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:coherence_connectives",
+   "rule_card:example_marker_tebie_bifang",
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "correction_item:shennong_samples#24::c6",
+   "correction_item:shennong_samples#46::c5",
+   "correction_item:shennong_samples#22::c5"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: example_marker_tebie_bifang\nGrammar/linguistic point: example_marker_tebie_bifang\n特别是 + N./clause singles out a typical example of what was just said; 比方说 introduces an example. Neither can replace 特别 (very) or stand without the general statement.\nExamples (original -> corrected, why):\n  - 灵芝特别是帮忙 -> 特别有用  [”特别是+N, + Clause” is used to single out a typical example]\n  - 吃不知名的植物是特别是危险的 -> 特别危险的  [”特别是+N, + Clause” is used to single out a typical example]\n  - 夹竹桃是特别是毒 -> 夹竹桃的毒特别厉害  [”特别是+N, + Clause” is used to single out a typical example]\n  - 这个大山特别是的 -> 特别是+N, + clause\n  - 特别是夹竹桃对身体更不好 -> 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n  - 比方说，他又不能思考清楚又不能问帮忙 -> 比方说is used to express “for example”, delete it; 又想不清楚又不能找别人帮忙，the “ask” in “ask for help” is not问\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 这就要看灵芝是不是特别了。比方说，可能是毒的 -> 是不是有用了。比方说is used to express “for example”, delete it；可能有毒\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n- 一个农民帮神农吃灵芝：给神农吃灵芝\n\n- 但如果灵芝和夹竹桃一起吃，那就是药了：delete但，wrong information, 灵芝is a medicine\n\n## Student's scene to review\n夹竹桃有毒的，我想知道灵芝有没有用。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你做得很好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “夹竹桃有毒的”  \nFormula: N. + 有/是 + adjective / property  \nCorrect: “夹竹桃有毒。”  \n“有毒的” usually needs to modify a noun, such as “有毒的植物.”\n\nIncorrect phrase: “我想知道灵芝有没有用。”  \nFormula: Person + 说：“……” (make the speaker clear)  \nCorrect: “神农说：‘夹竹桃有毒，我想知道灵芝有没有用。’”  \nAt the beginning, it is unclear who “我” refers to, so name the speaker.\n\nIncorrect phrase: “哥哥给神农灵芝。”  \nFormula: Subject + 给 + person + 吃/服用 + medicine/food  \nCorrect: “哥哥给神农吃了灵芝。”  \n“给神农灵芝” is understandable, but “给神农吃了灵芝” clearly shows that the brother gave Shennong lingzhi to take.\n\nIncorrect phrase: “神农吃完了以后开始痊愈了。”  \nFormula: Subject + V.完 + 以后/后，+ 就 + 开始 + V.  \nCorrect: “神农吃完以后，就开始痊愈了。”  \n“就” makes the sequence of events smoother.\n\nIncorrect phrase: “灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。”  \nFormula: General statement + 特别是 + typical example/person/situation  \nCorrect: “灵芝很有用，特别是对已经吃了夹竹桃的人来说。”  \n“特别是” introduces a typical example; it should not directly be followed by “如果.”\n\n**Vocabulary Suggestions**\n\nWord: “有没有用”  \nContext: “我想知道灵芝有没有用。”  \nAlternatives: “是否有效” or “有没有疗效.” “有没有用” is common and simple. “是否有效” is more formal, while “有没有疗效” is especially suitable when discussing medicine or healing.\n\nWord: “哥哥”  \nContext: “哥哥给神农吃了灵芝。”  \nAlternative: “兄长.” “哥哥” is natural in everyday speech. “兄长” is more literary and fits an ancient story about 神农.\n\nWord: “痊愈”  \nContext: “神农开始痊愈了。”  \nAlternative: “康复.” Both mean to recover from illness. “痊愈” emphasizes being completely cured, while “康复” emphasizes gradually returning to health.\n\nWord: “做得很好”  \nContext: “谢谢哥哥，你做得很好。”  \nAlternatives: “你帮了大忙” or “你救了我.” “做得很好” is a general compliment. “帮了大忙” more clearly expresses gratitude, and “救了我” is stronger and more dramatic.\n\nWord: “吃灵芝”  \nContext: “灵芝我们可以吃。”  \nAlternative: “服用灵芝.” “吃” is natural for ordinary food, but “服用” is more appropriate when lingzhi is treated as medicine.\n\n**Encouragement and Next Steps**\n\nYou created a clear little story with a problem, a treatment, and a grateful ending, and your use of “吃完以后” shows a good sense of event order.  \nNext time, focus on making the speaker and pronouns clear and using “特别是” only to introduce an example or a specific group.",
+  "usage": {
+   "prompt_tokens": 2339,
+   "completion_tokens": 1241,
+   "total_tokens": 3580,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2336,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 512,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 10107
+ }
+}

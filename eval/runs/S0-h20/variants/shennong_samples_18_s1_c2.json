@@ -1,0 +1,109 @@
+{
+ "variant_id": "shennong_samples_18_s1_c2",
+ "sample_id": "shennong_samples#18",
+ "story_id": "shennong_chang_baicao",
+ "scene": 1,
+ "her_line": "他们去很多不一样的地方：去了，了completed",
+ "rules": [
+  "aspect_le_completed"
+ ],
+ "original_scene": "神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。",
+ "variant_scene": "神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 61,
+  "end": 61
+ },
+ "target_variant": {
+  "start": 60,
+  "end": 60
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#18/f2/p0/k0/e0",
+   "op": "insert",
+   "start": 60,
+   "end": 60,
+   "original": "",
+   "corrected": "了",
+   "her_line": "他们去很多不一样的地方：去了，了completed",
+   "her_piece": "去了",
+   "her_note": "了completed",
+   "review_row": "shennong_samples#18/f2/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:character_introduction_first_mention",
+  "rule_card:ambiguous_reference",
+  "rule_card:time_expression",
+  "rule_card:location_zai_place",
+  "correction_item:shennong_samples#11::c0",
+  "correction_item:shennong_samples#6::c0",
+  "correction_item:shennong_samples#24::c1"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:character_introduction_first_mention",
+   "rule_card:ambiguous_reference",
+   "rule_card:time_expression",
+   "rule_card:location_zai_place",
+   "correction_item:shennong_samples#11::c0",
+   "correction_item:shennong_samples#24::c1",
+   "correction_item:shennong_samples#6::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 神农和他的城市不知道什么植物他们可以吃：人们不知道什么植物可以吃，delete他们；better to briefly introduce “神农” when this character first appears\n\n- 神农想帮大家找到好吃的菜：植物，better to briefly introduce “神农” when this character first appears\n\n- 神农看到很多人随便吃各种植物：better to briefly introduce “神农” when this character first appears\n\n## Student's scene to review\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “神农和他的家人住在古代”  \nFormula: 在 + time period，+ subject + verb phrase  \nCorrect: “在古代，神农和他的家人生活在一起。”  \n“古代” is a time period, not a place where someone can “住.” Also, introduce Shennong briefly when he first appears: “传说中有一位叫神农的人。”\n\nIncorrect phrase: “所以不知道什么植物能吃”  \nFormula: subject + 不知道 + 哪些/什么 + noun + 可以 + verb  \nCorrect: “当时人们不知道哪些植物可以吃。”  \nThe subject is unclear: does “不知道” refer to Shennong, his family, or everyone? “人们” makes the meaning clear.\n\nIncorrect phrase: “神农和他的哥哥一起去旅行找可以吃的植物”  \nFormula: subject + 一起 + 去 + place / 去旅行，+ verb  \nCorrect: “神农和他的哥哥一起去旅行，寻找可以吃的植物。”  \n“找” is understandable, but “寻找” is more natural for a purposeful journey. Also, “他的哥哥” appears for the first time, so you could introduce him more clearly as “神农的哥哥.”\n\nIncorrect phrase: “他们去很多不一样的地方”  \nFormula: subject + 去了 + 很多/各种 + place  \nCorrect: “他们去了很多不同的地方。”  \nUse “去了” for a completed action in a past narrative. “不同的地方” or “各种地方” is more natural than “不一样的地方” here.\n\n**Vocabulary Suggestions**\n\nWord: “住在古代”  \nContext: “神农和他的家人住在古代”  \nAlternatives: “生活在远古时代” or “生活在上古时期.” “住” emphasizes living in a physical location, while “生活在” works naturally with a historical period. “远古时代” gives the story a more legendary feeling.\n\nWord: “不知道”  \nContext: “不知道什么植物能吃”  \nAlternatives: “不清楚” and “不了解.” “不知道” is simple and direct. “不清楚” emphasizes uncertainty, while “不了解” suggests lacking knowledge about a topic.\n\nWord: “能吃”  \nContext: “什么植物能吃”  \nAlternatives: “可以食用” or “能够食用.” “能吃” is very common in daily speech. “可以食用” is more precise and formal, especially when discussing plants or food safety.\n\nWord: “生病”  \nContext: “他的家人常常生病”  \nAlternatives: “患病” or “身体不适.” “生病” is natural and suitable for beginner writing. “患病” is more formal and often used in written descriptions; “身体不适” is softer and can mean feeling unwell without a serious illness.\n\nWord: “找”  \nContext: “找可以吃的植物”  \nAlternatives: “寻找” or “探寻.” “找” is simple and everyday. “寻找” is more appropriate for a long, intentional search, while “探寻” sounds more adventurous and fits a legendary journey.\n\n**Encouragement and Next Steps**\n\nYou created a clear cause-and-effect story: the family gets sick, so Shennong begins a journey to find edible plants.  \nNext time, focus on using clear subjects and past-action markers such as “了” when telling a story.",
+  "usage": {
+   "prompt_tokens": 2199,
+   "completion_tokens": 1190,
+   "total_tokens": 3389,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2196,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 448,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 10061
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:character_introduction_first_mention",
+   "rule_card:ambiguous_reference",
+   "rule_card:time_expression",
+   "rule_card:location_zai_place",
+   "correction_item:shennong_samples#11::c0",
+   "correction_item:shennong_samples#6::c0",
+   "correction_item:shennong_samples#24::c1"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 神农和他的城市不知道什么植物他们可以吃：人们不知道什么植物可以吃，delete他们；better to briefly introduce “神农” when this character first appears\n\n- 神农看到很多人随便吃各种植物：better to briefly introduce “神农” when this character first appears\n\n- 神农想帮大家找到好吃的菜：植物，better to briefly introduce “神农” when this character first appears\n\n## Student's scene to review\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “神农和他的家人住在古代” / Formula: 在古代，+ character introduction (name + identity/background) + verb / Correct: “在古代，神农和家人住在一起。”  \n“住在古代” is not natural because 古代 is a time, not a place. Also, introduce 神农 briefly on first mention if the reader may not know him, for example: “在古代，有一个人叫神农，他和家人住在一起。”\n\n\nIncorrect phrase: “所以不知道什么植物能吃” / Formula: 因为 + reason，+ subject + 不知道 + what/how… / Correct: “所以他们不知道什么植物可以吃。”  \nThe subject is missing. Use “他们” to clearly refer to 神农和他的家人.\n\n\nIncorrect phrase: “神农和他的哥哥一起去旅行找可以吃的植物” / Formula: subject + 一起 + 去 + place/verb phrase + 寻找 + object / Correct: “神农和哥哥一起去各地寻找可以吃的植物。”  \n“去旅行找……” is understandable, but “去各地寻找” is more natural for a journey with a clear purpose.\n\n**Vocabulary Suggestions**\n\nWord: “不一样的地方” / Context: “他们去很多不一样的地方” / Alternatives: “不同的地方” is the most natural neutral choice in this context. “各地” is more concise and means many places or regions, especially when traveling. “不一样” is common in spoken Chinese and emphasizes that things are not the same.\n\nWord: “比方说” / Context: “比方说高山、山谷和沙漠” / Alternatives: “比如” is shorter and very natural in both speech and writing. “例如” is more formal and is useful in written narratives or essays. “比方说” is conversational and slightly less concise here.\n\nWord: “找” / Context: “找可以吃的植物” / Alternatives: “寻找” is more formal and better suited to a purposeful, difficult search. “发现” means “discover,” so use it when they successfully find a new edible plant. “找” is simple and general.\n\nWord: “常常” / Context: “他的家人常常生病” / Alternatives: “经常” is a very common, neutral word for something that happens repeatedly. “总是” emphasizes that it happens extremely often and can suggest frustration or concern. “常常” is correct, but “经常生病” is especially natural.\n\nWord: “高山” / Context: “高山、山谷和沙漠” / Alternatives: “深山” emphasizes remote, deep mountains and creates a more adventurous story atmosphere. “山区” refers to a mountainous region rather than one particular mountain. “高山” simply means a tall mountain.\n\n**Encouragement and Next Steps**\n\nYou did well using clear cause-and-effect connections (“因为……所以……”) and giving vivid examples of the places they visited.  \nNext time, focus on separating time expressions from location expressions and making every sentence’s subject explicit.",
+  "usage": {
+   "prompt_tokens": 2199,
+   "completion_tokens": 661,
+   "total_tokens": 2860,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2196,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6118
+ }
+}

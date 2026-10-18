@@ -1,0 +1,111 @@
+{
+ "variant_id": "mengmu_samples_25_s2_c5",
+ "sample_id": "mengmu_samples#25",
+ "story_id": "mengmu_san_qian",
+ "scene": 2,
+ "her_line": "可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.",
+ "rules": [
+  "verb_object_collocation"
+ ],
+ "original_scene": "他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。",
+ "variant_scene": "他的妈妈觉得在墓地玩儿，害得孟子学习不好，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。",
+ "previous_scenes": [
+  "这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。"
+ ],
+ "target_original": {
+  "start": 51,
+  "end": 52
+ },
+ "target_variant": {
+  "start": 57,
+  "end": 58
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#25/f5/p0/k0/e0",
+   "op": "delete",
+   "start": 57,
+   "end": 58,
+   "original": "的",
+   "corrected": "",
+   "her_line": "可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.",
+   "her_piece": "帮妈妈工作",
+   "her_note": "帮sb. do sth.",
+   "review_row": "mengmu_samples#25/f5/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:cai_jiu_construction",
+  "rule_card:coherence_connectives",
+  "rule_card:time_expression",
+  "rule_card:attributive_modifier_de",
+  "correction_item:mengmu_samples#20::c0",
+  "correction_item:mengmu_samples#37::c2",
+  "correction_item:mengmu_samples#5::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:cai_jiu_construction",
+   "rule_card:preposition_dao_place",
+   "rule_card:coherence_connectives",
+   "rule_card:laoshi_negative_connotation",
+   "correction_item:mengmu_samples#20::c0",
+   "correction_item:mengmu_samples#37::c2",
+   "correction_item:mengmu_samples#5::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n- 她认为搬家对孟子有好处：他的妈妈，“她” is ambiguous\n\n- 在古代时候，孟子跟他妈妈常常搬家：在古代，better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n他的妈妈觉得在墓地玩儿，害得孟子学习不好，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “他的妈妈觉得在墓地玩儿，害得孟子学习不好” / Formula: Subject + 觉得 + [doing something] + 会/让 + Object + Verb phrase / Correct: “孟子的妈妈觉得在墓地玩儿会让孟子学习不好。”  \n“害得” is usually used when an actual negative result has already happened; here, the mother is expressing a concern, so “会让” is more natural.\n\nIncorrect phrase: “所以他们搬家” / Formula: Subject + 搬到 + Place / Correct: “所以他们搬到了别的地方。”  \n“搬家” is understandable, but when describing the result of moving, “搬到 + place” is more complete. Add “了” to show the move was completed.\n\nIncorrect phrase: “搬家对孟子有好的影响” / Formula: 搬家 + 对 + Person + 有 + adjective + 的 + 影响 / Correct: “搬家对孟子有好的影响。”  \nThis sentence is grammatically acceptable. A more natural phrasing is “搬家对孟子有积极的影响。”\n\nIncorrect phrase: “他才五岁，可是每天不是写字就是帮妈妈的工作” / Formula: Subject + 才 + Age + 就 + Verb; 不是 + Verb phrase A + 就是 + Verb phrase B / Correct: “他才五岁，就每天不是写字，就是帮妈妈工作。”  \nUse “才……就……” to emphasize that he was very young but already did these things. Also, “帮妈妈的工作” should be “帮妈妈工作” or “帮妈妈做家务.”\n\n**Vocabulary Suggestions**\n\nWord: “觉得” / Context: “孟子的妈妈觉得在墓地玩儿……” / Alternatives: “认为” or “担心.” “觉得” is a common, neutral word for an opinion. “认为” is slightly more formal and suitable for explaining a reason. “担心” emphasizes that the mother is worried about a possible negative result.\n\nWord: “学习不好” / Context: “害得孟子学习不好” / Alternatives: “影响孟子的学习” or “让孟子无法专心学习.” “学习不好” is understandable but general. “影响学习” is more natural when discussing an environment’s effect, while “无法专心学习” specifically emphasizes difficulty concentrating.\n\nWord: “好的影响” / Context: “搬家对孟子有好的影响” / Alternatives: “积极的影响” or “好处.” “好的影响” is correct but basic. “积极的影响” is more formal and natural in writing; “好处” is simple and conversational.\n\nWord: “写字” / Context: “每天不是写字就是……” / Alternatives: “练习写字” or “练习书法.” “写字” simply means writing characters. “练习写字” emphasizes regular practice, while “练习书法” means practising calligraphy and gives the sentence a more traditional historical feeling.\n\nWord: “帮妈妈工作” / Context: “帮妈妈的工作” / Alternatives: “帮妈妈做家务” or “帮妈妈干活.” “帮妈妈工作” can sound like helping with her job. “做家务” specifically means doing household chores; “干活” is more informal and means doing physical work or chores.\n\n**Encouragement and Next Steps**\n\nYou clearly expressed the cause-and-effect relationship between the cemetery environment, moving, and Mengzi’s education.  \nNext time, focus on using “才……就……” and choosing more specific verbs such as “担心” and “影响.”",
+  "usage": {
+   "prompt_tokens": 2043,
+   "completion_tokens": 761,
+   "total_tokens": 2804,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2040,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6674
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:cai_jiu_construction",
+   "rule_card:coherence_connectives",
+   "rule_card:time_expression",
+   "rule_card:attributive_modifier_de",
+   "correction_item:mengmu_samples#20::c0",
+   "correction_item:mengmu_samples#37::c2",
+   "correction_item:mengmu_samples#5::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n- 她认为搬家对孟子有好处：他的妈妈，“她” is ambiguous\n\n- 在古代时候，孟子跟他妈妈常常搬家：在古代，better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n他的妈妈觉得在墓地玩儿，害得孟子学习不好，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “害得孟子学习不好” / Formula: cause + someone + result; use **使 / 让 + 人 + V. 得不好** for a more neutral written expression / Correct: “让孟子学习得不好” or “使孟子学习不好”\n\nIncorrect phrase: “他们搬家” / Formula: Subject + 搬了 + number + measure word + 家; use **了** when referring to a completed move / Correct: “所以他们搬了家。”  \n*Note: “搬家” is also acceptable as a general action, but “搬了家” fits this completed event better.*\n\nIncorrect phrase: “搬家对孟子有好的影响” / Formula: **搬家对 + someone + 有 + positive/negative + 的 + influence** / Correct: “搬家对孟子有积极的影响。”  \n“好的影响” is understandable, but “积极的影响” is more natural and precise.\n\nIncorrect phrase: “他才五岁，可是每天不是写字就是帮妈妈的工作” / Formula: **才 + age + 就 + V.**; **不是 + V1 + 就是 + V2** / Correct: “他才五岁，就每天不是写字，就是帮妈妈工作。”  \nUse **就**, not **可是**, to emphasize that he began doing these things at a very young age. Also, say “帮妈妈工作” rather than “帮妈妈的工作.”\n\n**Vocabulary Suggestions**\n\nWord: “觉得” / Context: “他的妈妈觉得在墓地玩儿……” / Alternatives: **认为** is more formal and is especially natural when expressing an opinion or judgment. **担心** is even better if the mother is worried about a negative result: “他的妈妈担心在墓地玩儿会影响孟子的学习。”\n\nWord: “玩儿” / Context: “在墓地玩儿” / Alternatives: **玩耍** is slightly more formal and suitable for storytelling. **玩闹** suggests noisy or unruly play, which may fit if the mother disapproves of the children’s behavior.\n\nWord: “好的影响” / Context: “搬家对孟子有好的影响” / Alternatives: **积极的影响** means a positive and beneficial effect and is more natural in formal writing. **有益的影响** emphasizes that something is helpful to a person’s development.\n\nWord: “写字” / Context: “每天不是写字就是帮妈妈工作” / Alternatives: **练字** specifically means practicing handwriting or calligraphy. **读书学习** has a broader meaning and emphasizes academic study rather than only writing characters.\n\nWord: “帮妈妈工作” / Context: “帮妈妈工作” / Alternatives: **帮妈妈做家务** means helping with household chores, such as cleaning or cooking. **帮妈妈干活** is more general and colloquial, meaning helping her with work or tasks.\n\n**Encouragement and Next Steps**\n\nYou expressed a clear cause-and-effect relationship—living near the cemetery affected Mengzi’s learning, so the family moved—and your final sentence shows his diligence at a young age well.  \nNext time, focus on using **才……就……** to describe something that happened surprisingly early.",
+  "usage": {
+   "prompt_tokens": 2250,
+   "completion_tokens": 678,
+   "total_tokens": 2928,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2247,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 5974
+ }
+}

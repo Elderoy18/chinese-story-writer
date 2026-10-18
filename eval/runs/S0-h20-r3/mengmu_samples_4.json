@@ -1,0 +1,142 @@
+{
+ "stage": "S0-h20-r3",
+ "sample_id": "mengmu_samples#4",
+ "story_id": "mengmu_san_qian",
+ "created": "2026-10-18T18:11:36.207Z",
+ "git_commit": "3b72f20+uncommitted",
+ "snapshot": "base-v4-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "scenes": [
+  {
+   "scene": 1,
+   "text": "古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候住了孟子和孟母：在古代，孟子和孟母住在墓地边，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，孟子和他的妈妈住在离墓地很近：在古代，better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place\n\n- 古代的时候，有一个男孩子叫孟子和他的妈妈：在古代，有一个叫孟子的男孩子和他的妈妈住在一起\n\n## Student's scene to review\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。"
+   },
+   "retrieved": [
+    "rule_card:cai_jiu_construction",
+    "rule_card:time_expression",
+    "rule_card:preposition_dao_place",
+    "rule_card:location_zai_place",
+    "correction_item:mengmu_samples#34::c0",
+    "correction_item:mengmu_samples#13::c0",
+    "correction_item:mengmu_samples#14::c0"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “古代的时候”  \nFormula: 在 + historical time period  \nCorrect: “在古代”  \n“古代的时候” is understandable, but “在古代” is more natural and concise.\n\nIncorrect phrase: “孟子和孟母住了在靠墓地的家”  \nFormula: Subject + 住在 + Place  \nCorrect: “孟子和孟母住在靠近墓地的房子里。”  \nUse “住在” before a location. Also, “靠近墓地的房子里” is a clearer place phrase.\n\nIncorrect phrase: “孩子才五岁就每天在墓地祭拜了”  \nFormula: Subject + 才 + age/number + 就 + Verb  \nCorrect: “孟子才五岁，就每天在墓地祭拜祖先。”  \nUse “才五岁就……” to show that he was very young when he began doing this. Do not use “了” for a habitual action such as “每天祭拜.”\n\nIncorrect phrase: “他们搬了到别一个城市找工作”  \nFormula: Subject + 搬到 + Place + 去 + Verb  \nCorrect: “他们搬到了另一个城市去找工作。”  \nUse “搬到” before the destination, and say “另一个城市,” not “别一个城市.”\n\n**Vocabulary Suggestions**\n\nWord: “靠”  \nContext: “靠墓地的家”  \nAlternatives: “靠近” or “紧挨着”  \n“靠” by itself can sound incomplete here. “靠近墓地” means “near a cemetery” and is neutral. “紧挨着墓地” means “right next to a cemetery,” so it creates a stronger and more vivid image.\n\nWord: “家”  \nContext: “靠墓地的家”  \nAlternatives: “房子” or “住处”  \n“家” often emphasizes family and the feeling of home. “房子” refers to the physical building, so it fits well when describing its location. “住处” means residence or lodging and sounds slightly more formal.\n\nWord: “祭拜”  \nContext: “在墓地祭拜”  \nAlternatives: “祭祀” or “扫墓”  \n“祭拜” means worshipping ancestors or gods. “祭祀” is more formal and literary, often referring to traditional rituals. “扫墓” specifically means visiting and cleaning ancestors’ graves, so use it if that is what Mengzi is doing.\n\nWord: “没有钱”  \nContext: “害得孟母没有钱”  \nAlternatives: “没有收入” or “经济拮据”  \n“没有钱” is simple and clear. “没有收入” specifically means having no income, which fits the situation of not finding work. “经济拮据” means being in financial difficulty and is more advanced and formal.\n\nWord: “另一个城市”  \nContext: “别一个城市”  \nAlternative: “另一个城市”  \n“别一个” is not a natural Chinese expression. “另一个” is the standard way to say “another one,” while “别的城市” means “other cities” in a more general sense.\n\n**Encouragement and Next Steps**\n\nYou did well connecting the events logically: living near the cemetery, not finding work, and moving to another city creates a clear story flow.  \n\nNext time, focus on using location patterns such as “住在 + place” and “搬到 + place.”",
+   "usage": {
+    "prompt_tokens": 2118,
+    "completion_tokens": 1931,
+    "total_tokens": 4049,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 2115,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 1180,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 17318
+  },
+  {
+   "scene": 2,
+   "text": "这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 在第二个城市，孟母发现孩子们老是用功工作，但没有道德：孟子，“孩子们” is ambiguous\n\n- 孟子和孟母住在小的城：一个小城市，better to briefly introduce “孟子” when this character first appears\n\n- 所以她带孟子到一个城市搬家了：带孟子搬到城市了\n\n## Student's scene to review\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。"
+   },
+   "retrieved": [
+    "rule_card:cai_jiu_construction",
+    "rule_card:preposition_dao_place",
+    "rule_card:ambiguous_reference",
+    "rule_card:location_zai_place",
+    "correction_item:mengmu_samples#41::c6",
+    "correction_item:mengmu_samples#26::c0",
+    "correction_item:mengmu_samples#19::c1"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “这个城市老是很吵” / Formula: Place + 总是/一直 + adjective; “老是” often expresses annoyance about repeated actions / Correct: “这个城市总是很吵” or “这个城市一直很吵。”\n\nIncorrect phrase: “不是人吵架，就是都叫” / Formula: 不是 + A +，就是 + B; both parts should have clear, parallel subjects / Correct: “不是有人在吵架，就是有人在大叫。”\n\nIncorrect phrase: “孟子和妈妈要又一个次搬了家” / Formula: Subject + 又 + V. + 了 + Num. + MW. + Object; for moving house, use “搬家” or “搬到 + place” / Correct: “孟子和妈妈又搬了一次家。”  \nIf you mean they *were going to* move: “孟子和妈妈又要搬家了。”\n\nIncorrect phrase: “在第三个城市，孟母找到工作，在商店做衣服。” / Formula: 在 + Place + verb; use “找到了” for a completed result, and connect related actions clearly / Correct: “在第三个城市，孟母找到了工作，在一家商店里做衣服。”\n\n\n**Vocabulary Suggestions**\n\nWord: “很吵” / Context: “这个城市老是很吵” / Alternatives: “嘈杂” is a more advanced word for a place full of mixed, unpleasant noises, such as traffic and crowds. “喧闹” describes a lively, noisy atmosphere and can sometimes sound less negative than “嘈杂.” “很吵” is simple and natural, but less descriptive.\n\nWord: “都叫” / Context: “就是都叫” / Alternatives: “大叫” means to shout loudly, often because of anger, fear, or excitement. “吵闹” means to make noise or create a disturbance, especially in a group. Both are more natural and specific than “叫” here.\n\nWord: “害得” / Context: “害得孟子一直不能睡觉” / Alternatives: “导致” means “lead to” and is more neutral and formal: “导致孟子无法入睡。” “使得” is also neutral and works well in writing. “害得” strongly emphasizes a negative consequence and is very suitable in this context.\n\nWord: “找不到工作” / Context: “孟母也找不到工作” / Alternatives: “一直没找到工作” emphasizes that she has searched for some time without success. “很难找到工作” emphasizes that the job market or situation is difficult. “找不到工作” is correct, but these options add more detail.\n\nWord: “做衣服” / Context: “在商店做衣服” / Alternatives: “做裁缝” means to work as a tailor, often making or altering clothes. “缝制衣服” specifically means sewing clothes and sounds more precise in writing. “做衣服” is understandable, but it is more general and conversational.\n\n**Encouragement and Next Steps**\n\nYou did well using “不是……就是……” and “害得……” to show the city’s noise and its negative effect on Mencius clearly.  \nNext time, focus on word order with 又、要、了 and on making the subject of each action explicit.",
+   "usage": {
+    "prompt_tokens": 1943,
+    "completion_tokens": 709,
+    "total_tokens": 2652,
+    "prompt_tokens_details": {
+     "cached_tokens": 1940,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 6501
+  },
+  {
+   "scene": 3,
+   "text": "孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: aspect_zai_progressive\nGrammar/linguistic point: aspect_zai_progressive\n在/正在 + V. marks the ongoing foreground action in focus (一直在学习), in contrast to 着, which marks a background state; do not add 在 when the action is not ongoing.\nExamples (original -> corrected, why):\n  - 搬家十年，孟子一直学了很多东西，孟子每个地方才住了一年 -> 在搬家的十年里；一直在学习  [一直在+V., emphasizing always ongoing；replace the second孟子with他]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n  - 而是因为住在那里以后孟子一直在没读书 -> 一直没在读书\n  - 孟子不是在看商店的员工，就是在跟其他的孩子玩商店的游戏 -> delete the two在，here is not emphasizing “ongoing”\n\n### Rule: bushi_jiushi_construction\nGrammar/linguistic point: bushi_jiushi_construction\n不是……就是…… means 'either ... or ...' (two alternatives that both happen); it is not 'not X but Y' (that is 不是……而是……). The subject goes before 不是.\nExamples (original -> corrected, why):\n  - 不是学习中文，他就是跟老师说中文 -> 他不是……，就是……  [Subj. at the beginning of 不是……就是……]\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 那里孟子会不是画画，祭拜，就是做冬天衣服 -> 在那儿  [delete会，会will; 冬天的衣服]\n  - 在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方 -> 孟母搬家是为了让孟子接受良好的教育  [不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education]\n  - 难怪孟子不是高兴的孩子，就是安静的孩子 -> 每天都不高兴  [不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship]\n  - 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜 -> 不是在画画儿  [而是在祭拜；不是……就是…… is “either…or…”]\n  - 从早到晚他学习不是历史，就是哲学 -> 不是学习历史，就是学习哲学\n  - 教育做完以后孟子考虑，不是当哲学家就是当商家 -> 学完以后，商人\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 教育做完以后孟子考虑，不是当哲学家就是当商家：学完以后，商人\n\n- 古代时候有一个男孩名叫孟子，他成为哲学家：在古代，better to briefly introduce “孟子” when this character first appears; 他后来成为了哲学家\n\n- 孟子长大了以后成为一名画家：wrong information, 哲学家\n\n## Student's scene to review\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。"
+   },
+   "retrieved": [
+    "rule_card:time_expression",
+    "rule_card:cai_jiu_construction",
+    "rule_card:aspect_zai_progressive",
+    "rule_card:bushi_jiushi_construction",
+    "correction_item:mengmu_samples#42::c8",
+    "correction_item:mengmu_samples#41::c0",
+    "correction_item:mengmu_samples#34::c5"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “孟子在那个商店也找了到工作” / Formula: Subject + 在 + place + 找到 + object / Correct: “孟子也在那家商店找到了工作。”\n\nIncorrect phrase: “不是做衣服的工作，而是喜欢的工作” / Formula: 不是 + noun phrase， 而是 + noun phrase; use a modifier before 工作 / Correct: “不是做衣服的工作，而是他喜欢的工作。”\n\nIncorrect phrase: “孟子学习馆学了十五年” / Formula: Subject + 在 + place + 学习了 + duration / Correct: “孟子在学校学习了十五年。”  \n“学习馆” is not a natural word for a school in this context.\n\nIncorrect phrase: “他的学习和他的旅行经验很重要，对他很多好处” / Formula: A + 对 + someone + 有 + benefit / Correct: “他的学习和旅行经验对他很有帮助。”  \nAlternatively: “他的学习和旅行经验给他带来了很多好处。”\n\nIncorrect phrase: “他是大人的时候” / Formula: Subject + 长大以后 / Correct: “他长大以后……”\n\nIncorrect phrase: “他成为很有名的哲人” / Formula: Subject + 成为了 + description + profession / Correct: “他成为了一位很有名的哲学家。”\n\n**Vocabulary Suggestions**\n\nWord: “那个商店” / Context: “孟子在那个商店……” / Alternatives: “那家店” is more natural in everyday Chinese. “那间店铺” sounds slightly more descriptive and is useful when emphasizing the physical shop.\n\nWord: “工作” / Context: “找到了工作” / Alternatives: “职位” emphasizes a specific position or post, while “职业” refers to a long-term profession or career. “工作” is the most general word and can mean either a job or work itself.\n\nWord: “喜欢的工作” / Context: “而是他喜欢的工作” / Alternatives: “感兴趣的工作” means work that interests him, while “理想的工作” means an ideal or dream job. “喜欢” is simple and direct; these alternatives are more precise.\n\nWord: “旅行经验” / Context: “他的学习和旅行经验” / Alternatives: “游历经历” is especially suitable for historical figures and suggests traveling to many places to learn from the world. “旅行经验” is more modern and usually refers to practical travel experience.\n\nWord: “很有名的哲人” / Context: “成为了一位很有名的哲学家” / Alternatives: “著名的哲学家” is concise and natural in writing. “伟大的哲学家” gives stronger praise, suggesting that the person made an important contribution. “哲人” is literary and can mean a wise thinker, but “哲学家” is more specific.\n\n**Encouragement and Next Steps**\n\nYou did well connecting Mengzi’s job, education, life experience, and later achievement into a clear short narrative.  \nNext time, focus on using natural time expressions such as “长大以后” and complete patterns such as “对……有帮助.”",
+   "usage": {
+    "prompt_tokens": 2135,
+    "completion_tokens": 884,
+    "total_tokens": 3019,
+    "prompt_tokens_details": {
+     "cached_tokens": 2132,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 209,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 8046
+  }
+ ],
+ "content": {
+  "prompt": {
+   "system": "You are a Chinese-language writing tutor giving end-of-story feedback to an early learner who has just finished writing a short narrative scene by scene. Grammar, vocabulary, and coherence have ALREADY been covered scene by scene -- do NOT comment on them here. Assess only the overall CONTENT and COMPLETENESS of the story as a whole.\n\nRules:\n1. Judge the whole story: does it have enough scenes and events to be a complete story -- a beginning that introduces the characters and setting, a middle with the main events, and an ending that resolves them? Are there gaps where a reader would not understand what happened or why?\n2. Only flag real gaps. Do not invent problems; if a part is already complete, do not list it as an item.\n3. Point to specific scenes (\"Scene 2\") when you flag a gap, and say concretely what is missing.\n4. Write ALL prose in English. Chinese appears only in short quoted spans or small example phrases at the student's own level.\n5. Be encouraging and concise -- this is an early learner.\n\nOutput format -- Markdown, exactly this structure:\n\n## Content & Completeness\n- one missing, unclear, or underdeveloped part of the story per line, naming the scene and what the story needs\n- (if the story is complete, write exactly \"- Nothing to flag.\")\n\n## Overall Encouragement\nOne or two sentences on what the student did well across the whole story.\n\nKeep each \"## \" heading on its own line exactly as written, and put every item on its own line beginning with \"- \".",
+   "user": "## Student's complete story to review (3 scenes)\nScene 1: 古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\nScene 2: 这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\nScene 3: 孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。"
+  },
+  "retrieved": [],
+  "feedback": "## Content & Completeness\n- Scene 3 needs one short explanation of what kind of work Mengzi likes and how his years of study lead to becoming a famous philosopher. This will make the ending feel more connected and complete.\n\n## Overall Encouragement\nYou created a clear life journey: the family faces difficulties, keeps moving, finds work, and Mengzi grows up successfully. The story has a beginning, middle, and ending, and Mengmu’s support is an important part of the whole story.",
+  "usage": {
+   "prompt_tokens": 554,
+   "completion_tokens": 104,
+   "total_tokens": 658,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 1953
+ }
+}

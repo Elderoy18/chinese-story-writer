@@ -1,0 +1,151 @@
+{
+ "variant_id": "shennong_samples_19_s2_c1",
+ "sample_id": "shennong_samples#19",
+ "story_id": "shennong_chang_baicao",
+ "scene": 2,
+ "her_line": "凉山很大的山，这也找植物：很大，在这儿也能找到植物",
+ "rules": [
+  "adjective_predicate",
+  "resultative_complement"
+ ],
+ "original_scene": "凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。",
+ "variant_scene": "凉山很大的山，这也找植物。一天，他找到一种黄色的花。他听说用黄色的花做茶很有用。比方说，头很疼，这种冰茶是药。他一喝茶就很不舒服。",
+ "previous_scenes": [
+  "古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。"
+ ],
+ "target_original": {
+  "start": 4,
+  "end": 10
+ },
+ "target_variant": {
+  "start": 4,
+  "end": 10
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#19/f1/p0/k0-1/e0",
+   "op": "delete",
+   "start": 4,
+   "end": 6,
+   "original": "的山",
+   "corrected": "",
+   "her_line": "凉山很大的山，这也找植物：很大，在这儿也能找到植物",
+   "her_piece": "很大，在这儿也能找到植物",
+   "her_note": "",
+   "review_row": "shennong_samples#19/f1/p0/k0-1",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "shennong_samples#19/f1/p0/k0-1/e1",
+   "op": "replace",
+   "start": 7,
+   "end": 8,
+   "original": "这",
+   "corrected": "在这儿",
+   "her_line": "凉山很大的山，这也找植物：很大，在这儿也能找到植物",
+   "her_piece": "很大，在这儿也能找到植物",
+   "her_note": "",
+   "review_row": "shennong_samples#19/f1/p0/k0-1",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "shennong_samples#19/f1/p0/k0-1/e2",
+   "op": "insert",
+   "start": 9,
+   "end": 9,
+   "original": "",
+   "corrected": "能",
+   "her_line": "凉山很大的山，这也找植物：很大，在这儿也能找到植物",
+   "her_piece": "很大，在这儿也能找到植物",
+   "her_note": "",
+   "review_row": "shennong_samples#19/f1/p0/k0-1",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "shennong_samples#19/f1/p0/k0-1/e3",
+   "op": "insert",
+   "start": 10,
+   "end": 10,
+   "original": "",
+   "corrected": "到",
+   "her_line": "凉山很大的山，这也找植物：很大，在这儿也能找到植物",
+   "her_piece": "很大，在这儿也能找到植物",
+   "her_note": "",
+   "review_row": "shennong_samples#19/f1/p0/k0-1",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 6,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:ambiguous_reference",
+  "rule_card:example_marker_tebie_bifang",
+  "rule_card:missing_subject",
+  "correction_item:shennong_samples#20::c2",
+  "correction_item:shennong_samples#47::c2",
+  "correction_item:shennong_samples#23::c4"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:example_marker_tebie_bifang",
+   "rule_card:verb_object_collocation",
+   "correction_item:shennong_samples#47::c2",
+   "correction_item:shennong_samples#23::c6",
+   "correction_item:shennong_samples#20::c2"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: example_marker_tebie_bifang\nGrammar/linguistic point: example_marker_tebie_bifang\n特别是 + N./clause singles out a typical example of what was just said; 比方说 introduces an example. Neither can replace 特别 (very) or stand without the general statement.\nExamples (original -> corrected, why):\n  - 灵芝特别是帮忙 -> 特别有用  [”特别是+N, + Clause” is used to single out a typical example]\n  - 吃不知名的植物是特别是危险的 -> 特别危险的  [”特别是+N, + Clause” is used to single out a typical example]\n  - 夹竹桃是特别是毒 -> 夹竹桃的毒特别厉害  [”特别是+N, + Clause” is used to single out a typical example]\n  - 这个大山特别是的 -> 特别是+N, + clause\n  - 特别是夹竹桃对身体更不好 -> 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n  - 比方说，他又不能思考清楚又不能问帮忙 -> 比方说is used to express “for example”, delete it; 又想不清楚又不能找别人帮忙，the “ask” in “ask for help” is not问\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 这就要看灵芝是不是特别了。比方说，可能是毒的 -> 是不是有用了。比方说is used to express “for example”, delete it；可能有毒\n\n### Rule: verb_object_collocation\nGrammar/linguistic point: verb_object_collocation\nCollocation/valence errors: the verb cannot take that object or complement (想 + V. not N., 想让 Sb. V., 成为 + N.), an adjective does not go with that noun (良好 + 生活), or a verb conflicts with an adjacent verb.\nExamples (original -> corrected, why):\n  - 我现在有良好的教育和生活 -> 幸福的生活  [良好 is usually not with生活]\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 所以他偷走一筐的梨，骑自行车走去 -> 一筐梨  [num. + MW. + noun, no的；骑自行车离开，“骑自行车“ conflicts with ”走“]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 这些植物对身体好处 -> delete这些植物，对身体有好处\n  - 看到我们糟糕的状态，用心得来帮忙整理梨子，拿起骑车 -> 他们过来用心地帮忙整理梨子，扶起自行车  [since the preceding phrase has “我们”, the Subj. 他们 should be stated, adv.地V，“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.]\n  - 他成为有名的 -> 有名的哲学家  [成为+N]\n  - 我觉得神农很有名的人，因为他作用这个时代的医学 -> 是很有名的人，对这个时代的医学有贡献\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 他走过有大有小山，找到了很多对做好饭的植物：大山小山，能做饭的\n\n- 他一喝那杯茶，就疼死了：肚子/头就疼死了\n\n- 他一爬山就找到花：一爬上山\n\n## Student's scene to review\n凉山很大的山，这也找植物。一天，他找到一种黄色的花。他听说用黄色的花做茶很有用。比方说，头很疼，这种冰茶是药。他一喝茶就很不舒服。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “凉山很大的山” / Formula: Place + 是 + number + measure word + adjective + noun / Correct: “凉山是一座很大的山。”\n\nIncorrect phrase: “这也找植物” / Formula: Subject + 在 + place + verb + object; or Place + 有 + noun / Correct: “他在这里找植物。” / “这里也有很多植物。”  \n“这” should be “这里” when referring to a location. Also, introduce who “他” is before using the pronoun.\n\nIncorrect phrase: “用黄色的花做茶很有用” / Formula: 用 + material + 做成/泡 + object; something + 对 + purpose + 有用 / Correct: “用这种黄色的花泡茶，对治头疼很有用。”  \n“有用” needs a clearer purpose here.\n\nIncorrect phrase: “比方说，头很疼，这种冰茶是药” / Formula: 比如/比方说 + example; …的时候，…可以/能… / Correct: “比如，头疼的时候，这种花茶可以当药。”  \n“比方说” should introduce a complete example. “冰茶” means iced tea; if you mean tea made from flowers, use “花茶.”\n\nIncorrect phrase: “他一喝茶就很不舒服” / Formula: Subject + 一 + verb phrase + 就 + result / Correct: “他一喝这种茶，就觉得很不舒服。”  \nThis structure is good, but specify “这种茶” so the reference is clear.\n\n**Vocabulary Suggestions**\n\nWord: “很大的山” / Context: “凉山是一座很大的山。” / Alternatives: “一座雄伟的大山” or “一座高大的山。” “很大” is simple and understandable; “雄伟” describes a grand, majestic mountain and creates a more vivid image, while “高大” emphasizes its height and size.\n\nWord: “找植物” / Context: “他在这里找植物。” / Alternatives: “寻找植物” or “采集植物.” “找” is a basic everyday verb. “寻找” is more formal and purposeful, while “采集” means collecting plants, especially for medicine or research.\n\nWord: “黄色的花” / Context: “他找到一种黄色的花。” / Alternatives: “黄花” or “一种开着黄花的植物.” “黄色的花” is clear, but “黄花” is more concise. “开着黄花的植物” focuses on the whole plant rather than only the flower.\n\nWord: “很有用” / Context: “对治头疼很有用。” / Alternatives: “很有效” or “有疗效.” “有用” is broad and general. “有效” means it works effectively for a specific problem, and “有疗效” is more medical, meaning it has a healing effect.\n\nWord: “很不舒服” / Context: “他觉得很不舒服。” / Alternatives: “感到不适” or “身体不适.” “很不舒服” is natural in conversation but nonspecific. “感到不适” is more concise and formal, while “身体不适” specifically indicates physical discomfort.\n\n**Encouragement and Next Steps**\n\nYou did well using a clear sequence of events and the useful pattern “一……就……,” which makes the final action easy to understand.  \nNext time, focus on introducing the person first and making pronouns such as “他” refer clearly to someone.",
+  "usage": {
+   "prompt_tokens": 2277,
+   "completion_tokens": 931,
+   "total_tokens": 3208,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2274,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 182,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7786
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:example_marker_tebie_bifang",
+   "rule_card:missing_subject",
+   "correction_item:shennong_samples#20::c2",
+   "correction_item:shennong_samples#47::c2",
+   "correction_item:shennong_samples#23::c4"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: example_marker_tebie_bifang\nGrammar/linguistic point: example_marker_tebie_bifang\n特别是 + N./clause singles out a typical example of what was just said; 比方说 introduces an example. Neither can replace 特别 (very) or stand without the general statement.\nExamples (original -> corrected, why):\n  - 灵芝特别是帮忙 -> 特别有用  [”特别是+N, + Clause” is used to single out a typical example]\n  - 吃不知名的植物是特别是危险的 -> 特别危险的  [”特别是+N, + Clause” is used to single out a typical example]\n  - 夹竹桃是特别是毒 -> 夹竹桃的毒特别厉害  [”特别是+N, + Clause” is used to single out a typical example]\n  - 这个大山特别是的 -> 特别是+N, + clause\n  - 特别是夹竹桃对身体更不好 -> 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n  - 比方说，他又不能思考清楚又不能问帮忙 -> 比方说is used to express “for example”, delete it; 又想不清楚又不能找别人帮忙，the “ask” in “ask for help” is not问\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 这就要看灵芝是不是特别了。比方说，可能是毒的 -> 是不是有用了。比方说is used to express “for example”, delete it；可能有毒\n\n### Rule: missing_subject\nGrammar/linguistic point: missing_subject\nA required subject is missing (or must be restated after an aside), so the reader cannot tell who acts.\nExamples (original -> corrected, why):\n  - 后来，练习写文字 -> miss a Subj.，孟子练习写字，文字 is a general term, not for specific individual characters\n  - 漂亮是漂亮，可是他马上生病了，然后下躺了 -> 这朵花漂亮是漂亮  [here needs a subject; delete然后；躺下]\n  - 看到我们糟糕的状态，用心得来帮忙整理梨子，拿起骑车 -> 他们过来用心地帮忙整理梨子，扶起自行车  [since the preceding phrase has “我们”, the Subj. 他们 should be stated, adv.地V，“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.]\n  - 因为老是去墓地吃祭品 -> add他, wrong information, not “eating the sacrifices”\n  - 他一喝那杯茶，就疼死了 -> 肚子/头就疼死了\n  - 下午就继续爬上树 -> 下午他还继续爬上树；miss the Subj., otherwise readers will understand the Subj. here as “我”, which is incorrect. “还“ indicates “surprising, anger” tone, as opposed to “就” with the natural continuation tone.\n  - 在新家，一直去墓地吃祭品 -> add a Subj., wrong information, not “eating the sacrifices”\n  - 除了吃灵芝，还吃夹竹桃 -> add a subject\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 他一爬山就找到花：一爬上山\n\n- 他走过有大有小山，找到了很多对做好饭的植物：大山小山，能做饭的\n\n- 他到山以后，他喝了茶：到了山上，了completed, 山上is a place; delete the second他, redundant\n\n## Student's scene to review\n凉山很大的山，这也找植物。一天，他找到一种黄色的花。他听说用黄色的花做茶很有用。比方说，头很疼，这种冰茶是药。他一喝茶就很不舒服。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “凉山很大的山” / Formula: Place/name + 是 + 一座/一座很 + adjective + 的 + noun / Correct: “凉山是一座很大的山。”\n\nIncorrect phrase: “这也找植物” / Formula: Subject + 也 + 在/到 + place + verb + object. A clear subject is needed here. / Correct: “他也在那里找植物。”\n\nIncorrect phrase: “一天，他找到一种黄色的花。” / Formula: 有一天，+ subject + verb + object. “有一天” introduces an event in a story. / Correct: “有一天，他找到了一种黄色的花。”\n\nIncorrect phrase: “比方说，头很疼，这种冰茶是药。” / Formula: General statement + 比方说 + specific example. Do not use 比方说 when you are directly describing a situation. / Correct: “头疼的时候，这种凉茶可以当药喝。”  \nHere, “比方说” is not needed because you are not giving an example of a general statement.\n\nIncorrect phrase: “他一喝茶就很不舒服。” / Formula: Subject + 一 + verb + specific object + 就 + result/feeling. Use a specific noun so the reference is clear. / Correct: “他一喝这种茶，就觉得很不舒服。”\n\n**Vocabulary Suggestions**\n\nWord: “很大” / Context: “凉山是一座很大的山。” / Alternatives: “高大” emphasizes the mountain’s physical height and size. “雄伟” is more descriptive and literary; it suggests that the mountain looks grand and impressive.\n\nWord: “找到” / Context: “他找到了一种黄色的花。” / Alternatives: “发现” means “to discover” and suggests that he noticed something interesting or previously unknown. “采到” means “to pick/gather,” so use it if he actually takes the flower.\n\nWord: “黄色的花” / Context: “一种黄色的花” / Alternatives: “金黄色的花” gives a brighter, more vivid golden-yellow image. “黄花” is shorter and natural when the exact type of flower is not important.\n\nWord: “有用” / Context: “做茶很有用” / Alternatives: “有疗效” means “has medicinal effects” and is more precise for tea that helps headaches. “能缓解头疼” is very clear and directly means “can relieve a headache.”\n\nWord: “冰茶” / Context: “这种冰茶是药” / Alternatives: “凉茶” usually refers to a herbal drink believed to help with heatiness or minor discomforts in Chinese culture. “冰茶” means iced tea—a cold tea drink—and does not usually sound medicinal.\n\n**Encouragement and Next Steps**\n\nYou did well creating a clear mini-story with a setting, a discovery, and an unexpected result after drinking the tea.\n\nNext time, focus on adding clear subjects and using specific nouns such as “这种茶” so the reader always knows who is doing the action and what you are referring to.",
+  "usage": {
+   "prompt_tokens": 2250,
+   "completion_tokens": 1260,
+   "total_tokens": 3510,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2247,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 605,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 12278
+ }
+}

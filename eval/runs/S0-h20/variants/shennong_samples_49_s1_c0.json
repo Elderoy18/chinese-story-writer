@@ -1,0 +1,123 @@
+{
+ "variant_id": "shennong_samples_49_s1_c0",
+ "sample_id": "shennong_samples#49",
+ "story_id": "shennong_chang_baicao",
+ "scene": 1,
+ "her_line": "有很多人吃植物以后就吃坏肚子了，因为他们吃了毒：吃了植物以后，了completed; 吃了有毒的植物",
+ "rules": [
+  "aspect_le_completed",
+  "word_class_misuse"
+ ],
+ "original_scene": "古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。",
+ "variant_scene": "古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃到好吃的植物。可是他知道，如果他们吃到有毒的植物，就不会吃到好吃的植物。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 32,
+  "end": 51
+ },
+ "target_variant": {
+  "start": 32,
+  "end": 51
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#49/f0/p0/k0/e0",
+   "op": "replace",
+   "start": 32,
+   "end": 37,
+   "original": "吃植物以后",
+   "corrected": "吃了植物以后",
+   "her_line": "有很多人吃植物以后就吃坏肚子了，因为他们吃了毒：吃了植物以后，了completed; 吃了有毒的植物",
+   "her_piece": "吃了植物以后",
+   "her_note": "了completed",
+   "review_row": "shennong_samples#49/f0/p0/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "shennong_samples#49/f0/p1/k0/e0",
+   "op": "replace",
+   "start": 48,
+   "end": 51,
+   "original": "吃了毒",
+   "corrected": "吃了有毒的植物",
+   "her_line": "有很多人吃植物以后就吃坏肚子了，因为他们吃了毒：吃了植物以后，了completed; 吃了有毒的植物",
+   "her_piece": "吃了有毒的植物",
+   "her_note": "",
+   "review_row": "shennong_samples#49/f0/p1/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 5,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:a_not_a_question",
+  "rule_card:ambiguous_reference",
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:time_expression",
+  "correction_item:shennong_samples#29::c1",
+  "correction_item:shennong_samples#43::c0",
+  "correction_item:shennong_samples#11::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:a_not_a_question",
+   "rule_card:ambiguous_reference",
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:time_expression",
+   "correction_item:shennong_samples#29::c1",
+   "correction_item:shennong_samples#43::c0",
+   "correction_item:shennong_samples#11::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: a_not_a_question\nGrammar/linguistic point: a_not_a_question\nEmbedded yes/no questions use A-not-A (有没有毒, 能不能吃, 知不知道) or 是……还是……; 'whether/if' in 'know if' is not 如果.\nExamples (original -> corrected, why):\n  - 不知道如果有毒 -> 有没有毒  [the “if” in “not know if + clause” is not 如果]\n  - 神农加下去很多的植物，看看如果毒还是药 -> 吃下去很多植物；看看是毒还是药  [the “if” in “see if + clause” is not 如果]\n  - 我们也不在乎植物是毒 -> 有没有毒\n  - 但是如果他想知道这些植物有毒或有药性 -> 有毒还是有药性\n  - 这就要看你知道该吃哪一个了 -> 知不知道\n  - 人们不知道什么植物是不是能吃的 -> 什么植物是能吃的，什么植物是不能吃的\n  - 看看如果能吃还是不能吃，药还是毒 -> delete如果，the “if” in “see if + clause” is not 如果；是药还是毒\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 有的人吃很好吃的植物，有的人吃的生病：吃到很好吃的植物，吃了以后生病了\n\n- 人们不知道什么植物是不是能吃的：什么植物是能吃的，什么植物是不能吃的\n\n- 神农和他的城市不知道什么植物他们可以吃：人们不知道什么植物可以吃，delete他们；better to briefly introduce “神农” when this character first appears\n\n## Student's scene to review\n古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃到好吃的植物。可是他知道，如果他们吃到有毒的植物，就不会吃到好吃的植物。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “古代的时候”  \nFormula: 在 + historical time period  \nCorrect: “在古代，有很多人不知道什么植物能吃，什么植物不能吃。”\n\nIncorrect phrase: “吃植物以后就吃坏肚子了”  \nFormula: Subject + 吃坏了 + body part  \nCorrect: “有很多人吃了植物以后就吃坏了肚子。”  \n“吃坏了肚子” means that eating something caused a stomach problem.\n\nIncorrect phrase: “因为他们吃了毒”  \nFormula: Subject + 吃了 + 有毒的植物 / Subject + 中了毒  \nCorrect: “因为他们吃了有毒的植物。”  \nOr: “因为他们中毒了。”\n\nIncorrect phrase: “他什么植物都觉得好吃”  \nFormula: Subject + 觉得 + question word + 都 + adjective  \nCorrect: “他觉得什么植物都好吃。”  \nThis word order more clearly means that Shennong thinks every kind of plant tastes good.\n\nIncorrect phrase: “不怕毒”  \nFormula: 不怕 + 中毒 / 不怕 + 有毒的东西  \nCorrect: “不怕中毒，也不怕吃有毒的植物。”  \n“不怕毒” is understandable, but it is less specific: it could mean he is not afraid of poison itself rather than the result of eating it.\n\n**Vocabulary Suggestions**\n\nWord: “很多人”  \nContext: “有很多人不知道什么植物能吃……”  \nAlternatives: “许多人” and “不少人.” “很多人” is very common and neutral. “许多人” is slightly more formal and works well in written stories. “不少人” means “quite a few people” and suggests a significant number, without saying it is extremely large.\n\nWord: “吃坏了肚子”  \nContext: “吃了植物以后就吃坏了肚子。”  \nAlternatives: “肠胃不适” or “腹泻.” “吃坏了肚子” is natural everyday language. “肠胃不适” is more formal and broad, meaning stomach or digestive discomfort. “腹泻” specifically means diarrhea.\n\nWord: “毒”  \nContext: “因为他们吃了毒。”  \nAlternatives: “有毒的植物” and “毒性.” “毒” is a noun meaning poison. “有毒的植物” clearly describes poisonous plants, while “毒性” means “toxicity” and is more scientific, for example: “这种植物的毒性很强。”\n\nWord: “老人”  \nContext: “有一个老人叫神农。”  \nAlternatives: “老者” or “神农氏.” “老人” simply means an elderly person. “老者” is more literary and suits a traditional story. Since Shennong is a legendary historical figure, “神农氏” sounds especially appropriate and respectful.\n\nWord: “好吃”  \nContext: “他希望别人也可以吃到好吃的植物。”  \nAlternatives: “美味” and “可口.” “好吃” is common spoken Chinese. “美味” is more descriptive and emphasizes excellent flavor; “可口” means tasty and pleasant to eat, with a slightly more refined written tone.\n\n**Encouragement and Next Steps**\n\nYou clearly explained the problem people faced and introduced Shennong’s personality in a logical, easy-to-follow way.  \nNext time, focus on natural word order and on using specific expressions for illness or poisoning.",
+  "usage": {
+   "prompt_tokens": 2246,
+   "completion_tokens": 1205,
+   "total_tokens": 3451,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2243,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 464,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 11069
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:a_not_a_question",
+   "rule_card:ambiguous_reference",
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:time_expression",
+   "correction_item:shennong_samples#29::c1",
+   "correction_item:shennong_samples#43::c0",
+   "correction_item:shennong_samples#11::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: a_not_a_question\nGrammar/linguistic point: a_not_a_question\nEmbedded yes/no questions use A-not-A (有没有毒, 能不能吃, 知不知道) or 是……还是……; 'whether/if' in 'know if' is not 如果.\nExamples (original -> corrected, why):\n  - 不知道如果有毒 -> 有没有毒  [the “if” in “not know if + clause” is not 如果]\n  - 神农加下去很多的植物，看看如果毒还是药 -> 吃下去很多植物；看看是毒还是药  [the “if” in “see if + clause” is not 如果]\n  - 我们也不在乎植物是毒 -> 有没有毒\n  - 但是如果他想知道这些植物有毒或有药性 -> 有毒还是有药性\n  - 这就要看你知道该吃哪一个了 -> 知不知道\n  - 人们不知道什么植物是不是能吃的 -> 什么植物是能吃的，什么植物是不能吃的\n  - 看看如果能吃还是不能吃，药还是毒 -> delete如果，the “if” in “see if + clause” is not 如果；是药还是毒\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 有的人吃很好吃的植物，有的人吃的生病：吃到很好吃的植物，吃了以后生病了\n\n- 人们不知道什么植物是不是能吃的：什么植物是能吃的，什么植物是不能吃的\n\n- 神农和他的城市不知道什么植物他们可以吃：人们不知道什么植物可以吃，delete他们；better to briefly introduce “神农” when this character first appears\n\n## Student's scene to review\n古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃到好吃的植物。可是他知道，如果他们吃到有毒的植物，就不会吃到好吃的植物。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “古代的时候”  \nFormula: 在 + historical time period  \nCorrect: “在古代”  \n“在古代” is the more natural way to introduce a historical setting.\n\nIncorrect phrase: “有很多人吃植物以后就吃坏肚子了”  \nFormula: 谁 + 吃了 + 东西 + 以后 + 就 + 吃坏了 + 身体部位  \nCorrect: “有很多人吃了植物以后就吃坏了肚子。”  \nUse 了 after 吃 to show the eating happened, and say 吃坏了肚子 rather than 吃坏肚子.\n\nIncorrect phrase: “因为他们吃了毒”  \nFormula: 因为 + 谁 + 吃了 + 有毒的植物 / 毒药  \nCorrect: “因为他们吃了有毒的植物。”  \n毒 by itself is vague here. 有毒的植物 clearly explains what they ate.\n\nIncorrect phrase: “他什么植物都觉得好吃”  \nFormula: 谁 + 觉得 + 什么 + 名词 + 都 + 形容词  \nCorrect: “他觉得什么植物都好吃。”  \nThis word order is more natural when expressing “he thinks every kind of plant is tasty.”\n\nIncorrect phrase: “不怕毒”  \nFormula: 不怕 + 动作/结果  \nCorrect: “不怕中毒。”  \n不怕毒 is understandable, but 不怕中毒 is clearer: he is not afraid of being poisoned.\n\n**Vocabulary Suggestions**\n\nWord: “有很多人”  \nContext: “有很多人不知道什么植物能吃……”  \nAlternatives: “许多人” or “不少人” are more concise and natural in narration. 有很多人 simply emphasizes a large number, while 许多人 is slightly more written and smooth; 不少人 means “quite a few people” and sounds less absolute.\n\nWord: “吃坏了肚子”  \nContext: “吃了植物以后就吃坏了肚子。”  \nAlternatives: “肚子疼” or “生病了.” 肚子疼 describes the specific symptom of stomach pain, while 生病了 is broader and can describe becoming ill in general. 吃坏了肚子 emphasizes that eating something caused the stomach problem.\n\nWord: “毒”  \nContext: “因为他们吃了毒。”  \nAlternatives: “有毒的植物” or “毒草.” 有毒的植物 is clear and neutral; 毒草 is shorter and more story-like, referring specifically to poisonous wild plants.\n\nWord: “老人”  \nContext: “有一个老人叫神农。”  \nAlternatives: “一位老人” or “一位尝遍百草的老人.” 一位 is more polite and natural when introducing a person in a story. The longer phrase is more vivid and foreshadows Shennong’s role, but it may be too advanced for a simple introduction.\n\nWord: “好吃”  \nContext: “他希望别人也可以吃到好吃的植物。”  \nAlternatives: “美味的” or “可口的.” 好吃 is very common and conversational; 美味的 is more descriptive and literary, while 可口的 means pleasant in taste and often sounds slightly more formal.\n\n**Encouragement and Next Steps**\n\nYou clearly explained the problem people faced and introduced Shennong in a logical, easy-to-follow way.  \nNext time, focus on using more precise expressions for illness and poisonous plants, such as 中毒, 肚子疼, and 有毒的植物.",
+  "usage": {
+   "prompt_tokens": 2246,
+   "completion_tokens": 1263,
+   "total_tokens": 3509,
+   "prompt_tokens_details": {
+    "cached_tokens": 2243,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 512,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 11622
+ }
+}

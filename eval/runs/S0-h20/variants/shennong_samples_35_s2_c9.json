@@ -1,0 +1,111 @@
+{
+ "variant_id": "shennong_samples_35_s2_c9",
+ "sample_id": "shennong_samples#35",
+ "story_id": "shennong_chang_baicao",
+ "scene": 2,
+ "her_line": "神农不知道他吃不吃灵芝或者夹竹桃：要不要吃……",
+ "rules": [
+  "a_not_a_question"
+ ],
+ "original_scene": "他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。",
+ "variant_scene": "他不知道这种花对身体好不好，这就要看这把花有没有毒。神农想找别的植物，但是这很麻烦。正好，他找到了另外一种花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。",
+ "previous_scenes": [
+  "在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。"
+ ],
+ "target_original": {
+  "start": 83,
+  "end": 86
+ },
+ "target_variant": {
+  "start": 81,
+  "end": 84
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#35/f9/p0/k0/e0",
+   "op": "replace",
+   "start": 81,
+   "end": 84,
+   "original": "吃不吃",
+   "corrected": "要不要吃",
+   "her_line": "神农不知道他吃不吃灵芝或者夹竹桃：要不要吃……",
+   "her_piece": "要不要吃……",
+   "her_note": "",
+   "review_row": "shennong_samples#35/f9/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 7,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:ambiguous_reference",
+  "rule_card:a_not_a_question",
+  "rule_card:coherence_connectives",
+  "correction_item:shennong_samples#24::c6",
+  "correction_item:shennong_samples#10::c3",
+  "correction_item:shennong_samples#11::c4"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:coherence_connectives",
+   "rule_card:wrong_information_content",
+   "correction_item:shennong_samples#24::c6",
+   "correction_item:shennong_samples#10::c3",
+   "correction_item:shennong_samples#11::c4"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: wrong_information_content\nGrammar/linguistic point: wrong_information_content\nFactual/content error: the sentence states something that contradicts the story's actual plot.\nExamples (original -> corrected, why):\n  - 不是他喜欢学习写文字，而是他的爸爸喜欢他练习 -> 写字  [想要他练习；wrong information, his father did not appear in this story]\n  - 那杯茶他放多的夹竹桃 -> 放了很多夹竹桃  [wrong information, he directly ate夹竹桃]\n  - 他爸爸说 -> wrong information, his father did not appear in this story\n  - 一个人一吃灵芝就死了 -> wrong information, 灵芝is medicine\n  - 难怪我们没有钱 -> wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n  - 夹竹桃很好吃，也对你的健康有好处 -> wrong information, 夹竹桃 is a poison\n  - 他今年才九岁，可是搬了十次家 -> wrong information, 搬了三次家\n  - 但如果灵芝和夹竹桃一起吃，那就是药了 -> delete但，wrong information, 灵芝is a medicine\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n- 他吃花的时候生病了。夹竹桃有毒，但是他们不知道这个花有毒：it is confusing to have花，夹竹桃，这个花，it looks like they refer to two different flowers, but actually the same. 吃一种叫夹竹桃的花的时候\n\n- 所以神农吃了，一吃就生病：it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n## Student's scene to review\n他不知道这种花对身体好不好，这就要看这把花有没有毒。神农想找别的植物，但是这很麻烦。正好，他找到了另外一种花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “他不知道这种花对身体好不好，这就要看这把花有没有毒。”  \nFormula: （某种结果）+ 这就要看 + question form (A-not-A / wh-word / A还是B) + 了  \nCorrect: “这种花对身体有没有好处，这就要看这种花有没有毒了。”  \n“这把花” is not natural here; use “这种花.” Also, the first clause should express an uncertain result rather than simply say that he does not know.\n\nIncorrect phrase: “神农想找别的植物，但是这很麻烦。”  \nFormula: Subject + 想要/决定 + Verb; because/reason + 所以/因此 + result  \nCorrect: “神农想找别的植物，可是很难找到。”  \n“这很麻烦” is vague. Say specifically what is difficult.\n\nIncorrect phrase: “正好，他找到了另外一种花。”  \nFormula: 正好 + subject + verb + object  \nCorrect: “正好，神农找到了另外一种花。”  \nUse “神农” again to make the reference clear.\n\nIncorrect phrase: “他一吃花，很快就生病了。”  \nFormula: Subject + 一 + verb + object + 就 + result  \nCorrect: “他一吃这种花，就很快生病了。”  \n“花” is too general; “这种花” clearly refers to the flower he found.\n\nIncorrect phrase: “他的肚子疼死了。”  \nFormula: Subject + 肚子 + 疼得 + 很厉害 / 疼得受不了  \nCorrect: “他的肚子疼得很厉害。”  \n“疼死了” is very exaggerated and can literally suggest that he died. Also, “他” is slightly unclear, so “神农的肚子疼得很厉害” is even better.\n\nIncorrect phrase: “神农不知道他吃不吃灵芝或者夹竹桃。”  \nFormula: Subject + 不知道 + whether-clause / question word; A 还是 B  \nCorrect: “神农不知道该吃灵芝还是夹竹桃。”  \nUse “还是” for a choice in an indirect question, not “或者.” However, according to the story, he should not consider eating 夹竹桃 because it is poisonous. A better content-based sentence is: “神农不知道灵芝能不能治好他的肚子疼。”\n\n**Vocabulary Suggestions**\n\nWord: “对身体好不好”  \nContext: “这种花对身体好不好”  \nAlternatives: “对身体有没有好处” or “是否有益健康.” “对身体好” is common and understandable; “有好处” sounds more natural in this context. “有益健康” is more formal and is useful in writing.\n\nWord: “别的植物”  \nContext: “神农想找别的植物”  \nAlternatives: “其他植物” or “新的植物.” “别的” is conversational. “其他” is slightly more formal, while “新的植物” emphasizes that these are plants he has not tried before.\n\nWord: “很麻烦”  \nContext: “但是这很麻烦”  \nAlternatives: “很困难” or “不容易.” “麻烦” often means troublesome or inconvenient. “困难” and “不容易” more accurately describe the challenge of finding plants.\n\nWord: “另外一种花”  \nContext: “找到了另外一种花”  \nAlternatives: “另一种植物” or “一种陌生的花.” “另外一种” simply means one more kind. “另一种植物” matches the earlier topic of plants, while “陌生的花” emphasizes that Shen Nong does not know this flower yet.\n\nWord: “生病了”  \nContext: “很快就生病了”  \nAlternatives: “中毒了” or “感到不舒服.” “生病了” is general. “中毒了” is more precise if the flower is poisonous, while “感到不舒服” is softer and can describe early symptoms.\n\n**Encouragement and Next Steps**\n\nYou used the useful pattern “一……就……” well to show that the reaction happened quickly after Shen Nong ate the flower.  \nNext time, focus on making pronoun references clear and using more specific words such as “中毒” and “肚子疼得很厉害.”",
+  "usage": {
+   "prompt_tokens": 2274,
+   "completion_tokens": 923,
+   "total_tokens": 3197,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2271,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 8297
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:a_not_a_question",
+   "rule_card:coherence_connectives",
+   "correction_item:shennong_samples#24::c6",
+   "correction_item:shennong_samples#10::c3",
+   "correction_item:shennong_samples#11::c4"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: a_not_a_question\nGrammar/linguistic point: a_not_a_question\nEmbedded yes/no questions use A-not-A (有没有毒, 能不能吃, 知不知道) or 是……还是……; 'whether/if' in 'know if' is not 如果.\nExamples (original -> corrected, why):\n  - 不知道如果有毒 -> 有没有毒  [the “if” in “not know if + clause” is not 如果]\n  - 神农加下去很多的植物，看看如果毒还是药 -> 吃下去很多植物；看看是毒还是药  [the “if” in “see if + clause” is not 如果]\n  - 我们也不在乎植物是毒 -> 有没有毒\n  - 但是如果他想知道这些植物有毒或有药性 -> 有毒还是有药性\n  - 这就要看你知道该吃哪一个了 -> 知不知道\n  - 人们不知道什么植物是不是能吃的 -> 什么植物是能吃的，什么植物是不能吃的\n  - 看看如果能吃还是不能吃，药还是毒 -> delete如果，the “if” in “see if + clause” is not 如果；是药还是毒\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n- 他吃花的时候生病了。夹竹桃有毒，但是他们不知道这个花有毒：it is confusing to have花，夹竹桃，这个花，it looks like they refer to two different flowers, but actually the same. 吃一种叫夹竹桃的花的时候\n\n- 所以神农吃了，一吃就生病：it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n## Student's scene to review\n他不知道这种花对身体好不好，这就要看这把花有没有毒。神农想找别的植物，但是这很麻烦。正好，他找到了另外一种花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “这就要看这把花有没有毒。” / Formula: 这就要看 + specific noun + A-not-A question + 了 / Correct: “这就要看这种花有没有毒了。”  \n“这把花” is usually used for a bunch of cut flowers. Since you mean a type of flower, use “这种花.” Also add “了” at the end of this pattern.\n\nIncorrect phrase: “神农想找别的植物，但是这很麻烦。” / Formula: Subject + 想/要 + verb; however, + specific difficulty / Correct: “神农想找别的植物，但是很难找到。”  \n“这” is vague here. Say specifically what is difficult: finding other plants.\n\nIncorrect phrase: “正好，他找到了另外一种花。” / Formula: 正好 + subject + verb + object / Correct: “正好，神农找到了另外一种花。”  \nAfter the previous sentence, “他” could be unclear. Repeating “神农” makes the reference clear.\n\nIncorrect phrase: “他一吃花，很快就生病了。” / Formula: Subject + 一 + verb + object, 就 + result / Correct: “他一吃这种花，就很快生病了。”  \nUse “这种花” to make clear which flower he ate, and “一……就……” naturally connects the action and immediate result.\n\nIncorrect phrase: “他的肚子疼死了。” / Formula: Subject + 疼得 + complement / Correct: “他的肚子疼得不得了。”  \n“疼死了” is very strong and can sound as if he actually died. “疼得不得了” means “it hurt terribly” and is more natural here.\n\nIncorrect phrase: “神农不知道他吃不吃灵芝或者夹竹桃。” / Formula: 不知道 + subject + 是……还是…… / Correct: “神农不知道自己该吃灵芝还是夹竹桃。”  \nWhen choosing between two things, use “是……还是……”. Since 神农 is thinking about himself, “自己” is clearer than “他.”\n\n**Vocabulary Suggestions**\n\nWord: “对身体好不好” / Context: “这种花对身体好不好” / Alternatives: “有没有益处” or “是否有害”. “对身体好不好” is simple and understandable. “有没有益处” means whether it has health benefits, while “是否有害” focuses more specifically on possible harm or toxicity.\n\nWord: “别的植物” / Context: “神农想找别的植物” / Alternatives: “其他植物” or “新的草药”. “别的” is common in speech. “其他” is slightly more formal, and “新的草药” is more precise if Shennong is looking for plants with medicinal uses.\n\nWord: “很麻烦” / Context: “但是这很麻烦” / Alternatives: “很困难” or “不容易”. “麻烦” often means inconvenient or troublesome. “困难” emphasizes that the task is genuinely hard, while “不容易” is a natural, softer way to say something is not easy.\n\nWord: “生病了” / Context: “很快就生病了” / Alternatives: “中毒了” or “感到不适”. “生病了” is broad and can describe any illness. “中毒了” is more accurate if the flower was poisonous; “感到不适” means he felt unwell and is less dramatic.\n\nWord: “肚子疼” / Context: “他的肚子疼得不得了” / Alternatives: “腹痛” or “胃痛”. “肚子疼” is everyday spoken Chinese. “腹痛” is more formal and medical, while “胃痛” specifically means stomach pain rather than general abdominal pain.\n\n**Encouragement and Next Steps**\n\nYou did well using “这就要看……” and building a clear cause-and-effect story about Shennong trying an unfamiliar flower.  \nNext time, focus on making pronouns and nouns specific, and use “是……还是……” when presenting two choices.",
+  "usage": {
+   "prompt_tokens": 2272,
+   "completion_tokens": 867,
+   "total_tokens": 3139,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2269,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7081
+ }
+}

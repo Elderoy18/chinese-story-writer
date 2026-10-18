@@ -1,0 +1,140 @@
+{
+ "variant_id": "mengmu_samples_4_s3_c11",
+ "sample_id": "mengmu_samples#4",
+ "story_id": "mengmu_san_qian",
+ "scene": 3,
+ "her_line": "他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他",
+ "rules": [
+  "time_expression",
+  "word_choice",
+  "redundancy_delete"
+ ],
+ "original_scene": "孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。",
+ "variant_scene": "孟子在那个商店也找到了工作，可是不是做衣服的工作，而是喜欢的工作。孟子在学校学了十五年，他的学习和旅行经验很重要，对他有很多好处。他是大人的时候，他成为很有名的哲人。",
+ "previous_scenes": [
+  "古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。",
+  "这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。"
+ ],
+ "target_original": {
+  "start": 66,
+  "end": 83
+ },
+ "target_variant": {
+  "start": 65,
+  "end": 82
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#4/f11/p0/k0-1/e0",
+   "op": "replace",
+   "start": 66,
+   "end": 72,
+   "original": "是大人的时候",
+   "corrected": "长大以后",
+   "her_line": "他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他",
+   "her_piece": "长大以后，哲学家",
+   "her_note": "",
+   "review_row": "mengmu_samples#4/f11/p0/k0-1",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#4/f11/p0/k0-1/e1",
+   "op": "replace",
+   "start": 80,
+   "end": 82,
+   "original": "哲人",
+   "corrected": "哲学家",
+   "her_line": "他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他",
+   "her_piece": "长大以后，哲学家",
+   "her_note": "",
+   "review_row": "mengmu_samples#4/f11/p0/k0-1",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#4/f11/p0/k2/e0",
+   "op": "delete",
+   "start": 65,
+   "end": 66,
+   "original": "他",
+   "corrected": "",
+   "her_line": "他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他",
+   "her_piece": "delete the first他",
+   "her_note": "",
+   "review_row": "mengmu_samples#4/f11/p0/k2",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 4,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:time_expression",
+  "rule_card:cai_jiu_construction",
+  "rule_card:aspect_zai_progressive",
+  "rule_card:bushi_jiushi_construction",
+  "correction_item:mengmu_samples#42::c8",
+  "correction_item:mengmu_samples#41::c0",
+  "correction_item:mengmu_samples#34::c5"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:cai_jiu_construction",
+   "rule_card:time_expression",
+   "rule_card:aspect_zai_progressive",
+   "rule_card:bushi_jiushi_construction",
+   "correction_item:mengmu_samples#42::c8",
+   "correction_item:mengmu_samples#41::c0",
+   "correction_item:mengmu_samples#34::c5"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: aspect_zai_progressive\nGrammar/linguistic point: aspect_zai_progressive\n在/正在 + V. marks the ongoing foreground action in focus (一直在学习), in contrast to 着, which marks a background state; do not add 在 when the action is not ongoing.\nExamples (original -> corrected, why):\n  - 搬家十年，孟子一直学了很多东西，孟子每个地方才住了一年 -> 在搬家的十年里；一直在学习  [一直在+V., emphasizing always ongoing；replace the second孟子with他]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n  - 而是因为住在那里以后孟子一直在没读书 -> 一直没在读书\n  - 孟子不是在看商店的员工，就是在跟其他的孩子玩商店的游戏 -> delete the two在，here is not emphasizing “ongoing”\n\n### Rule: bushi_jiushi_construction\nGrammar/linguistic point: bushi_jiushi_construction\n不是……就是…… means 'either ... or ...' (two alternatives that both happen); it is not 'not X but Y' (that is 不是……而是……). The subject goes before 不是.\nExamples (original -> corrected, why):\n  - 不是学习中文，他就是跟老师说中文 -> 他不是……，就是……  [Subj. at the beginning of 不是……就是……]\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 那里孟子会不是画画，祭拜，就是做冬天衣服 -> 在那儿  [delete会，会will; 冬天的衣服]\n  - 在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方 -> 孟母搬家是为了让孟子接受良好的教育  [不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education]\n  - 难怪孟子不是高兴的孩子，就是安静的孩子 -> 每天都不高兴  [不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship]\n  - 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜 -> 不是在画画儿  [而是在祭拜；不是……就是…… is “either…or…”]\n  - 从早到晚他学习不是历史，就是哲学 -> 不是学习历史，就是学习哲学\n  - 教育做完以后孟子考虑，不是当哲学家就是当商家 -> 学完以后，商人\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 教育做完以后孟子考虑，不是当哲学家就是当商家：学完以后，商人\n\n- 古代时候有一个男孩名叫孟子，他成为哲学家：在古代，better to briefly introduce “孟子” when this character first appears; 他后来成为了哲学家\n\n- 孟子长大了以后成为一名画家：wrong information, 哲学家\n\n## Student's scene to review\n孟子在那个商店也找到了工作，可是不是做衣服的工作，而是喜欢的工作。孟子在学校学了十五年，他的学习和旅行经验很重要，对他有很多好处。他是大人的时候，他成为很有名的哲人。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “可是**不是**做衣服的工作，而是喜欢的工作”  \nFormula: 可是，**这不是** + A，**而是** + B  \nCorrect: “可是，这不是做衣服的工作，而是他喜欢的工作。”  \n“不是……而是……” contrasts two things, so the subject “这” should be clear. “喜欢的工作” also needs “他” to show who likes the job.\n\nIncorrect phrase: “他是大人的时候”  \nFormula: 人 + 长大以后／成为大人以后，+ 结果  \nCorrect: “他长大以后，” or “他成为大人以后，”  \n“是大人” is understandable, but “长大以后” is much more natural for saying “when he became an adult.”\n\nIncorrect phrase: “他成为很有名的哲人”  \nFormula: 主语 + 后来／长大以后 + 成为了 + 身份  \nCorrect: “他长大以后，成为了一位很有名的哲学家。”  \nUse “成为了” for a completed change in identity. “哲学家” is also more precise than “哲人” when referring to Mencius.\n\n**Vocabulary Suggestions**\n\nWord: “商店”  \nContext: “孟子在那个商店也找到了工作”  \nAlternatives: “店铺” or “铺子.” “商店” is a common, neutral word for a modern store. “店铺” is slightly more formal and can fit a historical setting better, while “铺子” has a more traditional, old-fashioned feeling.\n\nWord: “找到工作”  \nContext: “找到了工作”  \nAlternatives: “找到了一份工作” or “谋到了一份差事.” “找到工作” is correct and simple. Adding “一份” is more natural. “谋到一份差事” is more literary and better suited to an ancient-story context.\n\nWord: “做衣服”  \nContext: “做衣服的工作”  \nAlternatives: “缝制衣服” or “裁缝的工作.” “做衣服” is understandable but general. “缝制衣服” specifically emphasizes sewing clothes, while “裁缝的工作” refers to the profession of a tailor.\n\nWord: “旅行经验”  \nContext: “他的学习和旅行经验很重要”  \nAlternatives: “游历的经历” or “游学经历.” “旅行经验” usually refers to practical experience from travelling. “游历” has a more literary tone and means travelling to different places; “游学” emphasizes travelling while learning.\n\nWord: “哲人”  \nContext: “他成为很有名的哲人”  \nAlternatives: “哲学家” or “思想家.” “哲人” means a wise philosopher and has a literary, respectful tone. “哲学家” is the most precise word for Mencius’s profession, while “思想家” emphasizes his influence on ideas and thought.\n\n**Encouragement and Next Steps**\n\nYou clearly used contrast with “不是……而是……” and connected Mencius’s work, education, and later success in a logical order.  \nNext time, focus on making the subject clear in contrast sentences and using natural time phrases such as “长大以后.”",
+  "usage": {
+   "prompt_tokens": 2134,
+   "completion_tokens": 984,
+   "total_tokens": 3118,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2131,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 278,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 8481
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:cai_jiu_construction",
+   "rule_card:aspect_zai_progressive",
+   "rule_card:bushi_jiushi_construction",
+   "correction_item:mengmu_samples#42::c8",
+   "correction_item:mengmu_samples#41::c0",
+   "correction_item:mengmu_samples#34::c5"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: aspect_zai_progressive\nGrammar/linguistic point: aspect_zai_progressive\n在/正在 + V. marks the ongoing foreground action in focus (一直在学习), in contrast to 着, which marks a background state; do not add 在 when the action is not ongoing.\nExamples (original -> corrected, why):\n  - 搬家十年，孟子一直学了很多东西，孟子每个地方才住了一年 -> 在搬家的十年里；一直在学习  [一直在+V., emphasizing always ongoing；replace the second孟子with他]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n  - 而是因为住在那里以后孟子一直在没读书 -> 一直没在读书\n  - 孟子不是在看商店的员工，就是在跟其他的孩子玩商店的游戏 -> delete the two在，here is not emphasizing “ongoing”\n\n### Rule: bushi_jiushi_construction\nGrammar/linguistic point: bushi_jiushi_construction\n不是……就是…… means 'either ... or ...' (two alternatives that both happen); it is not 'not X but Y' (that is 不是……而是……). The subject goes before 不是.\nExamples (original -> corrected, why):\n  - 不是学习中文，他就是跟老师说中文 -> 他不是……，就是……  [Subj. at the beginning of 不是……就是……]\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 那里孟子会不是画画，祭拜，就是做冬天衣服 -> 在那儿  [delete会，会will; 冬天的衣服]\n  - 在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方 -> 孟母搬家是为了让孟子接受良好的教育  [不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education]\n  - 难怪孟子不是高兴的孩子，就是安静的孩子 -> 每天都不高兴  [不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship]\n  - 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜 -> 不是在画画儿  [而是在祭拜；不是……就是…… is “either…or…”]\n  - 从早到晚他学习不是历史，就是哲学 -> 不是学习历史，就是学习哲学\n  - 教育做完以后孟子考虑，不是当哲学家就是当商家 -> 学完以后，商人\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 教育做完以后孟子考虑，不是当哲学家就是当商家：学完以后，商人\n\n- 古代时候有一个男孩名叫孟子，他成为哲学家：在古代，better to briefly introduce “孟子” when this character first appears; 他后来成为了哲学家\n\n- 孟子长大了以后成为一名画家：wrong information, 哲学家\n\n## Student's scene to review\n孟子在那个商店也找到了工作，可是不是做衣服的工作，而是喜欢的工作。孟子在学校学了十五年，他的学习和旅行经验很重要，对他有很多好处。他是大人的时候，他成为很有名的哲人。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “孟子在那个商店也找到了工作”  \nFormula: Subject + 也 + 在 + place + verb + object (when “also” refers to the place)  \nCorrect: “孟子也在那家商店找到了工作。”\n\n\nIncorrect phrase: “可是不是做衣服的工作，而是喜欢的工作”  \nFormula: A + 不是 + B，+ 而是 + modifier + 的 + noun  \nCorrect: “不过，这不是做衣服的工作，而是他喜欢的工作。”  \n“可是” is not strictly wrong here, but “不过” sounds smoother before a clarification. Also, adding “他” makes it clear who likes the job.\n\n\nIncorrect phrase: “他是大人的时候，他成为很有名的哲人”  \nFormula: Subject + 长大以后／成年后，+ 就/then + 成为了 + description + noun  \nCorrect: “他长大以后，成为了一位很有名的哲学家。”  \nFor a life stage such as becoming an adult, “长大以后” or “成年后” is more natural than “是大人的时候.”\n\n**Vocabulary Suggestions**\n\nWord: “那个商店”  \nContext: “孟子在那个商店也找到了工作”  \nAlternatives: “那家店” or “那家店铺.” “商店” is correct but somewhat neutral and basic. “家” is the natural measure word for a business, so “那家店” sounds more conversational and natural.\n\nWord: “做衣服的工作”  \nContext: “不是做衣服的工作”  \nAlternatives: “制衣工作” or “裁缝的工作.” “做衣服” is understandable, but it is quite general. “制衣工作” sounds more formal, while “裁缝的工作” specifically refers to tailoring or making clothes professionally.\n\nWord: “喜欢的工作”  \nContext: “而是他喜欢的工作”  \nAlternatives: “他热爱的工作” or “他心仪的工作.” “喜欢” simply means “to like.” “热爱” expresses strong enthusiasm and dedication, while “心仪” means a job one particularly desires or admires.\n\nWord: “旅行经验”  \nContext: “他的学习和旅行经验很重要”  \nAlternatives: “游历经历” or “见闻.” “旅行经验” focuses on practical experience from travelling. “游历经历” sounds more literary and suits a historical figure, while “见闻” emphasizes the knowledge and observations gained through travel.\n\nWord: “很有名的哲人”  \nContext: “他成为很有名的哲人”  \nAlternatives: “著名的哲学家” or “声名远扬的哲学家.” “哲人” can mean a wise philosopher, but “哲学家” is more precise for Mencius’s role. “著名” is a standard word for “famous,” while “声名远扬” is more literary and means that someone’s reputation has spread far and wide.\n\n**Encouragement and Next Steps**\n\nYou did well using “不是……而是……” correctly to contrast two different kinds of work, and your paragraph has a clear chronological flow from work and study to adulthood.\n\nNext time, focus on using “长大以后” or “成年后” for changes in life stages, and make sure modifiers clearly show whose feelings or experiences you mean.",
+  "usage": {
+   "prompt_tokens": 2134,
+   "completion_tokens": 1997,
+   "total_tokens": 4131,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2131,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1252,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 18603
+ }
+}

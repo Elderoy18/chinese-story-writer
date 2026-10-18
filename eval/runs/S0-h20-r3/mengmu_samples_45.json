@@ -1,0 +1,142 @@
+{
+ "stage": "S0-h20-r3",
+ "sample_id": "mengmu_samples#45",
+ "story_id": "mengmu_san_qian",
+ "created": "2026-10-18T18:11:24.651Z",
+ "git_commit": "3b72f20+uncommitted",
+ "snapshot": "base-v4-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "scenes": [
+  {
+   "scene": 1,
+   "text": "古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候，有一个男孩子叫孟子和他的妈妈：在古代，有一个叫孟子的男孩子和他的妈妈住在一起\n\n- 古代的时候住了孟子和孟母：在古代，孟子和孟母住在墓地边，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，孟子的妈妈跟孟子一起住在中国：在古代，better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。"
+   },
+   "retrieved": [
+    "rule_card:time_expression",
+    "rule_card:character_introduction_first_mention",
+    "rule_card:attributive_modifier_de",
+    "rule_card:laoshi_negative_connotation",
+    "correction_item:mengmu_samples#14::c0",
+    "correction_item:mengmu_samples#34::c0",
+    "correction_item:mengmu_samples#27::c0"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “古代的时候” / Formula: 在 + historical time period / Correct: “在古代，一个叫孟子的男孩子跟他的妈妈住在中国。”  \n“在古代” is more natural than “古代的时候.” Also, introduce the character naturally on the first mention.\n\nIncorrect phrase: “住在墓地的旁边” / Formula: 住在 + place / Correct: “住在墓地旁边” or “住在离墓地很近的地方。”  \n“墓地旁边” is a common fixed place expression; the 的 is not needed here.\n\nIncorrect phrase: “孟子老是祭拜” / Formula: Subject + 常常/经常 + verb + object / Correct: “孟子常常祭拜祖先。”  \n“老是” often sounds negative or like a complaint. Use “常常” for a neutral habit. Also, 祭拜 usually needs an object, such as “祖先.”\n\nIncorrect phrase: “孟子不是祭拜，就是跟朋友聊天” / Formula: 不是 + verb phrase， 就是 + verb phrase / Correct: “孟子不是祭拜祖先，就是跟朋友聊天。”  \nThe two parts should be parallel verb phrases. Adding “祖先” makes the first activity complete and clear.\n\nIncorrect phrase: “城市有才两个学校” / Formula: Place + 才 + 有 + number + measure word + noun / Correct: “城市里才有两所学校，而且都很小。”  \n“才” should come before “有,” and schools use the measure word “所,” not “个.” “城市里” also makes the location clearer.\n\n**Vocabulary Suggestions**\n\nWord: “男孩子” / Context: “一个男孩子跟他的妈妈住在中国。” / Alternatives: “小孩子” or “少年.” “男孩子” is natural and neutral. “小孩子” emphasizes that he is young, while “少年” sounds more literary and usually refers to an older child or young teenager.\n\nWord: “墓地的旁边” / Context: “他们住在墓地的旁边。” / Alternatives: “墓地附近” or “墓地边.” “旁边” simply means “next to.” “附近” means “in the area near” and does not require them to live directly beside the cemetery; “墓地边” is concise and story-like.\n\nWord: “祭拜” / Context: “孟子常常祭拜祖先。” / Alternatives: “祭祖” or “祭奠.” “祭拜” is a general word for worshipping or making offerings. “祭祖” specifically means worshipping one’s ancestors, while “祭奠” is used for mourning a deceased person.\n\nWord: “聊天” / Context: “跟朋友聊天。” / Alternatives: “闲聊” or “交谈.” “聊天” is very common and neutral. “闲聊” emphasizes casual, relaxed conversation, while “交谈” is more formal and can suggest a more serious conversation.\n\nWord: “很小” / Context: “两所学校，都很小。” / Alternatives: “规模很小” or “不大.” “很小” is simple and understandable. “规模很小” is more precise for institutions, emphasizing that the schools have few students, buildings, or resources; “不大” is a natural conversational alternative.\n\n**Encouragement and Next Steps**\n\nYou created a clear little story with logical connections, especially using “所以” and “不是……就是……”.  \nNext time, focus on word order with “才有” and on choosing “常常” instead of “老是” for neutral habits.",
+   "usage": {
+    "prompt_tokens": 2194,
+    "completion_tokens": 770,
+    "total_tokens": 2964,
+    "prompt_tokens_details": {
+     "cached_tokens": 2191,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 7783
+  },
+  {
+   "scene": 2,
+   "text": "他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: bushi_ershi_construction\nGrammar/linguistic point: bushi_ershi_construction\n不是……而是…… ('not X but Y') refutes something conventional or wrong and affirms the correct, often unexpected, fact. When both parts share one subject, the subject comes before 不是 (他不是……，而是……).\nExamples (original -> corrected, why):\n  - 他们不是住在购物中心的旁边，而是住在学校的旁边 -> 搬到了学校旁边  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 可是他不是在家读书，而是老是出去玩 -> 不在家读书，老是出去玩  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他那不是成为医生，而是成为哲学人 -> 他没有当医生，而是成为哲学家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟母不是孟子的爸爸，而是孟子的妈妈 -> 孟母是孟子的妈妈  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 现在孟子和孟母不是打算搬家，而是打算待在这个小镇 -> 不打算搬家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟子的妈妈不是轻松的妈妈，而且她是厉害的妈妈 -> 在教育方面很厉害  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他不是在搬家，而是学多文章，成为很聪明 -> 不再搬家，而是待在这儿学习很多文章  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章；成为很聪明的哲学家]\n  - 不是孟子喜欢这个城市，而是他喜欢这个城市的人 -> 孟子不是喜欢这个城市，而是喜欢这个城市的人  [Subj. before “不是……而是……”]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 所以她带孟子到一个城市搬家了：带孟子搬到城市了\n\n- 孟子跟他的妈妈搬家，去一个最好的学校：去了，了completed\n\n- 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了：他们才在那儿住了一个星期，就又搬家了；在Place住，delete孟子跟他的妈妈\n\n## Student's scene to review\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。"
+   },
+   "retrieved": [
+    "rule_card:preposition_dao_place",
+    "rule_card:bushi_ershi_construction",
+    "rule_card:coherence_connectives",
+    "rule_card:laoshi_negative_connotation",
+    "correction_item:mengmu_samples#19::c1",
+    "correction_item:mengmu_samples#36::c4",
+    "correction_item:mengmu_samples#11::c4"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。”  \nFormula: Subject + 不是 + incorrect/contrasted idea， 而是 + correct idea; 想 + 让/希望 + someone + verb phrase  \nCorrect: “他的妈妈不是不喜欢他们住的城市，而是希望孟子能接受良好的教育。”  \n“不是……而是……” works here because it contrasts her real reason for moving with a possible misunderstanding. After 想, use 让/希望 or a complete verb phrase; “有教育” is not natural Chinese.\n\nIncorrect phrase: “他们搬家到有很多学校的城市。”  \nFormula: Subject + 搬到 + place  \nCorrect: “他们搬到了一座有很多学校的城市。”  \n搬家 can be a noun or verb, but 搬到 + place is the more natural pattern when emphasizing the destination.\n\n**Vocabulary Suggestions**\n\nWord: “很好的教育”  \nContext: “想孟子有很好的教育”  \nAlternatives: “良好的教育” is a natural, slightly formal expression for a high-quality education. “更好的教育” emphasizes that the new city offers education better than their previous city.\n\nWord: “有很多学校的城市”  \nContext: “一座有很多学校的城市”  \nAlternatives: “教育资源丰富的城市” is more advanced and means a city with abundant educational opportunities and resources. “学校很多的城市” is simpler and more conversational.\n\nWord: “从早到晚走路”  \nContext: “他们从早到晚走路”  \nAlternatives: “走了一整天” sounds more natural when describing one day’s completed journey. “长途跋涉” is more literary and emphasizes travelling a long, difficult distance on foot.\n\nWord: “一直抱怨”  \nContext: “孟子一直抱怨”  \nAlternatives: “不停地抱怨” emphasizes that the complaining continued without stopping. “发牢骚” is more informal and means to grumble or complain about something irritating.\n\nWord: “想”  \nContext: “而是想孟子有很好的教育”  \nAlternatives: “希望” is more natural for expressing a parent’s wish for their child. “为了” is useful when expressing purpose: “为了让孟子接受良好的教育，他们搬到了……”  \n\n**Encouragement and Next Steps**\n\nYou clearly expressed the mother’s motivation, the family’s move, and Mencius’s reaction in a logical three-sentence sequence.  \nNext time, focus on using **希望/让 + person + verb phrase** to express what someone wants another person to do or experience.",
+   "usage": {
+    "prompt_tokens": 2225,
+    "completion_tokens": 566,
+    "total_tokens": 2791,
+    "prompt_tokens_details": {
+     "cached_tokens": 2222,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 5610
+  },
+  {
+   "scene": 3,
+   "text": "他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: bushi_ershi_construction\nGrammar/linguistic point: bushi_ershi_construction\n不是……而是…… ('not X but Y') refutes something conventional or wrong and affirms the correct, often unexpected, fact. When both parts share one subject, the subject comes before 不是 (他不是……，而是……).\nExamples (original -> corrected, why):\n  - 他们不是住在购物中心的旁边，而是住在学校的旁边 -> 搬到了学校旁边  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 可是他不是在家读书，而是老是出去玩 -> 不在家读书，老是出去玩  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他那不是成为医生，而是成为哲学人 -> 他没有当医生，而是成为哲学家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟母不是孟子的爸爸，而是孟子的妈妈 -> 孟母是孟子的妈妈  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 现在孟子和孟母不是打算搬家，而是打算待在这个小镇 -> 不打算搬家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟子的妈妈不是轻松的妈妈，而且她是厉害的妈妈 -> 在教育方面很厉害  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他不是在搬家，而是学多文章，成为很聪明 -> 不再搬家，而是待在这儿学习很多文章  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章；成为很聪明的哲学家]\n  - 不是孟子喜欢这个城市，而是他喜欢这个城市的人 -> 孟子不是喜欢这个城市，而是喜欢这个城市的人  [Subj. before “不是……而是……”]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 她跟孟子搬家去墓地做祭拜，他成为一个有名的哲学家：孟母，“她” is ambiguous; 孟子，“他” is ambiguous, 后来成为\n\n- 古代时候有一个男孩名叫孟子，他成为哲学家：在古代，better to briefly introduce “孟子” when this character first appears; 他后来成为了哲学家\n\n- 长大的时候，孟子成为中国最重要的哲学人：长大以后，哲学家\n\n## Student's scene to review\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。"
+   },
+   "retrieved": [
+    "rule_card:coherence_connectives",
+    "rule_card:bushi_ershi_construction",
+    "rule_card:time_expression",
+    "rule_card:laoshi_negative_connotation",
+    "correction_item:mengmu_samples#43::c5",
+    "correction_item:mengmu_samples#41::c0",
+    "correction_item:mengmu_samples#49::c8"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “他难怪抱怨” / Formula: Subject + 难怪 + result/reaction; or Subject + 因为……，所以…… / Correct: “难怪他抱怨，因为他不想离开自己的城市。”  \n“难怪” means “no wonder,” so it should introduce or connect to the reason for his reaction.\n\nIncorrect phrase: “他想他的朋友” / Formula: 想念 + person / Correct: “他想念他的朋友。”  \nFor missing people, use **想念**. “想” alone more often means “to think” or “to want to.”\n\nIncorrect phrase: “因为他不要离开他的城市” / Formula: 因为 + subject + 不想 + verb / Correct: “因为他不想离开自己的城市。”  \nUse **不想** for “does not want to,” not “不要,” which often means “don’t” or “must not.” “自己的城市” is also more natural here.\n\nIncorrect phrase: “他的妈妈找到孟子一个老师” / Formula: Subject + 给 + person + 找 + object / Correct: “他的妈妈给孟子找了一位老师。”  \nUse 给 to show who receives the teacher, and 一位 is the natural measure word for a teacher.\n\nIncorrect phrase: “跟老师孟子学最重要的文学” / Formula: Subject + 跟 + person + 学习 + object / Correct: “孟子跟老师学习重要的文学知识。”  \nThe subject should come first. Also, **学习** is needed before the object.\n\nIncorrect phrase: “所以他成为哲学家” / Formula: Then/later + subject + 成为 + identity / Correct: “后来，他成为了一位哲学家。”  \n“后来” fits a story sequence better than “所以,” because studying literature does not directly or logically cause someone to become a philosopher.\n\n**Vocabulary Suggestions**\n\nWord: “抱怨” / Context: “他难怪抱怨” / Alternatives: **不满** or **埋怨**.  \n“抱怨” means to complain and is common in everyday speech. “不满” means “dissatisfied” and sounds more neutral or formal. “埋怨” means to blame or complain about someone/something, often with stronger emotion.\n\nWord: “想” / Context: “他想他的朋友” / Alternatives: **想念** or **思念**.  \n“想念” is the standard, natural word for missing friends or family. “思念” is more literary and emotional, often used for deep longing over a long distance or time.\n\nWord: “城市” / Context: “离开他的城市” / Alternatives: **家乡** or **故乡**.  \n“城市” simply refers to a city. “家乡” means one’s hometown and gives the sentence a more personal feeling. “故乡” is more literary and nostalgic.\n\nWord: “找到” / Context: “妈妈找到孟子一个老师” / Alternatives: **找** or **请**.  \n“找到” emphasizes successfully locating someone. “给孟子找了一位老师” is natural when arranging a teacher. “请了一位老师” emphasizes inviting or hiring a teacher, which is especially suitable in this context.\n\nWord: “最重要的文学” / Context: “孟子学最重要的文学” / Alternatives: **文学知识**, **经典著作**, or **儒家经典**.  \n“最重要的文学” is unclear because it does not say what makes the literature important. “文学知识” means knowledge about literature. “经典著作” means important, respected classic works. “儒家经典” is especially precise if you mean the Confucian texts that Mencius studied.\n\n**Encouragement and Next Steps**\n\nYou clearly communicate the main story: Mencius is unhappy about leaving his city, studies with a teacher, and later becomes a philosopher.  \nNext time, focus on word order with 跟……学习 and on choosing natural verbs such as 想念 and 不想.",
+   "usage": {
+    "prompt_tokens": 2467,
+    "completion_tokens": 862,
+    "total_tokens": 3329,
+    "prompt_tokens_details": {
+     "cached_tokens": 2464,
+     "cache_write_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 7522
+  }
+ ],
+ "content": {
+  "prompt": {
+   "system": "You are a Chinese-language writing tutor giving end-of-story feedback to an early learner who has just finished writing a short narrative scene by scene. Grammar, vocabulary, and coherence have ALREADY been covered scene by scene -- do NOT comment on them here. Assess only the overall CONTENT and COMPLETENESS of the story as a whole.\n\nRules:\n1. Judge the whole story: does it have enough scenes and events to be a complete story -- a beginning that introduces the characters and setting, a middle with the main events, and an ending that resolves them? Are there gaps where a reader would not understand what happened or why?\n2. Only flag real gaps. Do not invent problems; if a part is already complete, do not list it as an item.\n3. Point to specific scenes (\"Scene 2\") when you flag a gap, and say concretely what is missing.\n4. Write ALL prose in English. Chinese appears only in short quoted spans or small example phrases at the student's own level.\n5. Be encouraging and concise -- this is an early learner.\n\nOutput format -- Markdown, exactly this structure:\n\n## Content & Completeness\n- one missing, unclear, or underdeveloped part of the story per line, naming the scene and what the story needs\n- (if the story is complete, write exactly \"- Nothing to flag.\")\n\n## Overall Encouragement\nOne or two sentences on what the student did well across the whole story.\n\nKeep each \"## \" heading on its own line exactly as written, and put every item on its own line beginning with \"- \".",
+   "user": "## Student's complete story to review (3 scenes)\nScene 1: 古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\nScene 2: 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\nScene 3: 他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。"
+  },
+  "retrieved": [],
+  "feedback": "## Content & Completeness\n- Nothing to flag.\n\n## Overall Encouragement\nYour story has a clear beginning, middle, and ending: Mengzi’s home life, the move for education, and his learning with a teacher all connect well. You also show an important reason for the mother’s decision and explain how Mengzi later became a philosopher.",
+  "usage": {
+   "prompt_tokens": 493,
+   "completion_tokens": 73,
+   "total_tokens": 566,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 1339
+ }
+}

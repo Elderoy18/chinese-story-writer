@@ -1,0 +1,109 @@
+{
+ "variant_id": "mengmu_samples_39_s1_c1",
+ "sample_id": "mengmu_samples#39",
+ "story_id": "mengmu_san_qian",
+ "scene": 1,
+ "her_line": "虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here",
+ "rules": [
+  "coherence_connectives"
+ ],
+ "original_scene": "古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。",
+ "variant_scene": "在古代，人们觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是跟他开玩笑。孟子妈妈看到他的同学们对孟子有不好的影响，所以搬家了。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 46,
+  "end": 48
+ },
+ "target_variant": {
+  "start": 46,
+  "end": 48
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#39/f1/p0/k0/e0",
+   "op": "delete",
+   "start": 46,
+   "end": 48,
+   "original": "虽然",
+   "corrected": "",
+   "her_line": "虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here",
+   "her_piece": "delete虽然",
+   "her_note": "there is no “even though” meaning here",
+   "review_row": "mengmu_samples#39/f1/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 6,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:time_expression",
+  "rule_card:character_introduction_first_mention",
+  "rule_card:cai_jiu_construction",
+  "rule_card:laoshi_negative_connotation",
+  "correction_item:mengmu_samples#5::c0",
+  "correction_item:mengmu_samples#14::c0",
+  "correction_item:mengmu_samples#20::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:cai_jiu_construction",
+   "rule_card:laoshi_negative_connotation",
+   "rule_card:character_introduction_first_mention",
+   "correction_item:mengmu_samples#5::c0",
+   "correction_item:mengmu_samples#24::c1",
+   "correction_item:mengmu_samples#20::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 在古代时候，孟子跟他妈妈常常搬家：在古代，better to briefly introduce “孟子” when this character first appears\n\n- 从早到晚孟子跟小朋友看祭拜：孟子跟朋友看别人祭拜\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n在古代，人们觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是跟他开玩笑。孟子妈妈看到他的同学们对孟子有不好的影响，所以搬家了。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “孟子很小的时候，从早到晚一直祭拜” / Formula: Character introduction + 在……的时候，Subject + 从早到晚 + 一直 + V. / Correct: “在古代，孟子是一位著名的思想家。孟子很小的时候，就从早到晚一直祭拜。”  \n“孟子” should be briefly introduced when he first appears. Also, adding “就” makes the sentence sound more natural when describing something he began doing at a young age.\n\nIncorrect phrase: “虽然他没有朋友，因为每天只祭拜。” / Formula: 虽然 + Clause A，但是/可是 + Clause B; or 因为 + Reason，所以 + Result / Correct: “因为他每天只祭拜，所以没有朋友。”  \nDo not use “虽然” and “因为” together in this structure. Here, the reason is clear: he had no friends because he only worshipped every day.\n\nIncorrect phrase: “孟子妈妈看到他的同学们对孟子有不好的影响” / Formula: Possessive relationship: Name + 的 + family member; 对 + someone + 有 + influence / Correct: “孟子的妈妈看到同学们对孟子有不好的影响。”  \nUse “孟子的妈妈,” not “孟子妈妈,” in this context. Removing “他的” also makes the reference less repetitive and clearer.\n\nIncorrect phrase: “所以搬家了” / Formula: Subject + 因为/所以 + 搬家; for a completed action, Subject + 搬了家 / Correct: “所以她带着孟子搬了家。”  \nThe subject is unclear in the original. “她带着孟子搬了家” clearly states who moved and uses the natural form “搬了家.”\n\n**Vocabulary Suggestions**\n\nWord: “觉得” / Context: “人们觉得祭拜非常重要” / Alternatives: “认为” or “相信.” “觉得” is common and conversational, meaning “to feel/think.” “认为” is more formal and suits a general social opinion. “相信” emphasizes that people strongly believed worship was important.\n\nWord: “非常重要” / Context: “祭拜非常重要” / Alternatives: “至关重要” or “十分重要.” “非常重要” is correct but basic. “至关重要” means “crucial” and gives stronger emphasis; “十分重要” is slightly more formal and natural in writing.\n\nWord: “祭拜” / Context: “从早到晚一直祭拜” / Alternatives: “祭祀” or “祭拜祖先.” “祭拜” usually means worshipping ancestors, gods, or spirits. “祭祀” is more formal and historical, so it fits an ancient setting well. “祭拜祖先” is more specific and helps the reader understand whom he worshipped.\n\nWord: “开玩笑” / Context: “同学们老是跟他开玩笑” / Alternatives: “嘲笑” or “取笑.” “开玩笑” can be friendly and harmless. Since the classmates have a bad influence, “嘲笑” or “取笑” is more precise: both mean making fun of someone, often in an unkind way.\n\nWord: “不好的影响” / Context: “对孟子有不好的影响” / Alternatives: “负面影响” or “不良影响.” “不好的影响” is understandable but simple. “负面影响” is a very natural modern expression for a harmful effect, while “不良影响” is more formal and often used in written Chinese.\n\n**Encouragement and Next Steps**\n\nYou did a good job creating a clear cause-and-effect story: Mencius’s daily behavior leads to his loneliness, teasing from classmates, and finally moving house.  \nNext time, focus on connecting causes and results with one pattern at a time, especially “因为……所以……” and “虽然……但是……”.",
+  "usage": {
+   "prompt_tokens": 2197,
+   "completion_tokens": 828,
+   "total_tokens": 3025,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2194,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 8230
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:character_introduction_first_mention",
+   "rule_card:cai_jiu_construction",
+   "rule_card:laoshi_negative_connotation",
+   "correction_item:mengmu_samples#5::c0",
+   "correction_item:mengmu_samples#14::c0",
+   "correction_item:mengmu_samples#20::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 在古代时候，孟子跟他妈妈常常搬家：在古代，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，有一个男孩子叫孟子和他的妈妈：在古代，有一个叫孟子的男孩子和他的妈妈住在一起\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n在古代，人们觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是跟他开玩笑。孟子妈妈看到他的同学们对孟子有不好的影响，所以搬家了。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “在古代，人们觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜”  \nFormula: Time/setting + introduce character on first mention + character + 在/从……到…… + V.  \nCorrect: “在古代，有一个叫孟子的男孩子。他很小的时候，就从早到晚一直祭拜。”  \n“孟子” should be briefly introduced when he first appears. Also, separating the long sentence makes the timeline clearer.\n\nIncorrect phrase: “虽然他没有朋友，因为每天只祭拜。”  \nFormula: 因为 + reason，(所以) + result / 虽然 + contrast，but not 虽然…因为…  \nCorrect: “因为他每天只祭拜，所以他没有朋友。”  \nUse 因为…所以… to show that his lack of friends was the result of spending every day worshipping.\n\nIncorrect phrase: “他的同学们老是跟他开玩笑。”  \nFormula: Subject + 常常/总是 + V.  \nCorrect: “他的同学们常常跟他开玩笑。”  \n“老是” often expresses annoyance or criticism. If the teasing was negative, you could say: “他的同学们总是取笑他。”\n\nIncorrect phrase: “孟子妈妈看到他的同学们对孟子有不好的影响”  \nFormula: Subject + 看到/发现 + someone/something + 对 + person + 有 + negative influence  \nCorrect: “孟子的妈妈发现他的同学们对孟子有不好的影响。”  \n“孟子的妈妈” needs 的. “发现” is more natural than 看到 when someone realizes an influence or problem.\n\nIncorrect phrase: “所以搬家了。”  \nFormula: Subject + 搬家了 / Subject + 搬到 + place  \nCorrect: “所以她带着孟子搬家了。”  \nThe subject should be clear: it was his mother who decided to move, and Mengzi moved with her.\n\n**Vocabulary Suggestions**\n\nWord: “觉得”  \nContext: “人们觉得祭拜非常重要”  \nAlternatives: “认为” or “相信.” “觉得” is common and conversational. “认为” is more formal and fits a general social opinion, while “相信” emphasizes a deeply held belief.\n\nWord: “祭拜”  \nContext: “从早到晚一直祭拜”  \nAlternatives: “祭祀” or “祭奠.” “祭拜” is a broad word for worshipping ancestors or deities. “祭祀” is more formal and historical, so it suits an ancient-story setting well. “祭奠” is specifically for commemorating someone who has died.\n\nWord: “没有朋友”  \nContext: “因为他每天只祭拜，所以他没有朋友”  \nAlternatives: “很孤单” or “交不到朋友.” “没有朋友” is direct and factual. “很孤单” emphasizes Mengzi’s emotional loneliness, while “交不到朋友” emphasizes that he was unable to make friends.\n\nWord: “开玩笑”  \nContext: “他的同学们常常跟他开玩笑”  \nAlternatives: “取笑” or “嘲笑.” “开玩笑” can be friendly and harmless. “取笑” means making fun of someone and is more suitable if the classmates were unkind; “嘲笑” is even stronger and suggests cruel ridicule.\n\nWord: “不好的影响”  \nContext: “同学们对孟子有不好的影响”  \nAlternatives: “负面影响” or “不良影响.” “不好的影响” is clear and beginner-friendly. “负面影响” is natural and neutral in written Chinese, while “不良影响” is more formal and often used for harmful behavior or habits.\n\n**Encouragement and Next Steps**\n\nYou clearly explained the cause-and-effect relationship between Mengzi’s worshipping, his loneliness, and his mother’s decision to move.  \nNext time, focus on using one clear connector pattern at a time, especially “因为……所以……” and “虽然……但是……”.",
+  "usage": {
+   "prompt_tokens": 2206,
+   "completion_tokens": 864,
+   "total_tokens": 3070,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2203,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6971
+ }
+}

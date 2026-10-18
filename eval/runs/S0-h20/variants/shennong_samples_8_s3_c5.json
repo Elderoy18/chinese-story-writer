@@ -1,0 +1,139 @@
+{
+ "variant_id": "shennong_samples_8_s3_c5",
+ "sample_id": "shennong_samples#8",
+ "story_id": "shennong_chang_baicao",
+ "scene": 3,
+ "her_line": "以后，神农告诉别人一些植物能吃，一些植物不能吃：后来，Time+以后；告诉人们，“别(的)” is for “a different type”, and “all else except the spoken one”；哪些，哪些",
+ "rules": [
+  "time_expression",
+  "word_choice"
+ ],
+ "original_scene": "一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。",
+ "variant_scene": "一个人对神农说，麻烦告诉我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。",
+ "previous_scenes": [
+  "古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。",
+  "然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。"
+ ],
+ "target_original": {
+  "start": 36,
+  "end": 59
+ },
+ "target_variant": {
+  "start": 38,
+  "end": 61
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#8/f5/p0/k0/e0",
+   "op": "replace",
+   "start": 38,
+   "end": 40,
+   "original": "以后",
+   "corrected": "后来",
+   "her_line": "以后，神农告诉别人一些植物能吃，一些植物不能吃：后来，Time+以后；告诉人们，“别(的)” is for “a different type”, and “all else except the spoken one”；哪些，哪些",
+   "her_piece": "后来",
+   "her_note": "Time+以后",
+   "review_row": "shennong_samples#8/f5/p0/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "shennong_samples#8/f5/p1/k0/e0",
+   "op": "replace",
+   "start": 45,
+   "end": 47,
+   "original": "别人",
+   "corrected": "人们",
+   "her_line": "以后，神农告诉别人一些植物能吃，一些植物不能吃：后来，Time+以后；告诉人们，“别(的)” is for “a different type”, and “all else except the spoken one”；哪些，哪些",
+   "her_piece": "告诉人们",
+   "her_note": "“别(的)” is for “a different type”, and “all else except the spoken one”",
+   "review_row": "shennong_samples#8/f5/p1/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "shennong_samples#8/f5/p2/k0-1/e0",
+   "op": "replace",
+   "start": 47,
+   "end": 61,
+   "original": "一些植物能吃，一些植物不能吃",
+   "corrected": "哪些植物能吃，哪些植物不能吃",
+   "her_line": "以后，神农告诉别人一些植物能吃，一些植物不能吃：后来，Time+以后；告诉人们，“别(的)” is for “a different type”, and “all else except the spoken one”；哪些，哪些",
+   "her_piece": "哪些，哪些",
+   "her_note": "",
+   "review_row": "shennong_samples#8/f5/p2/k0-1",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:ambiguous_reference",
+  "rule_card:a_not_a_question",
+  "rule_card:redundancy_delete",
+  "correction_item:shennong_samples#1::c1",
+  "correction_item:shennong_samples#15::c0",
+  "correction_item:shennong_samples#20::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:a_not_a_question",
+   "rule_card:redundancy_delete",
+   "correction_item:shennong_samples#1::c1",
+   "correction_item:shennong_samples#15::c0",
+   "correction_item:shennong_samples#30::c6"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: a_not_a_question\nGrammar/linguistic point: a_not_a_question\nEmbedded yes/no questions use A-not-A (有没有毒, 能不能吃, 知不知道) or 是……还是……; 'whether/if' in 'know if' is not 如果.\nExamples (original -> corrected, why):\n  - 不知道如果有毒 -> 有没有毒  [the “if” in “not know if + clause” is not 如果]\n  - 神农加下去很多的植物，看看如果毒还是药 -> 吃下去很多植物；看看是毒还是药  [the “if” in “see if + clause” is not 如果]\n  - 我们也不在乎植物是毒 -> 有没有毒\n  - 但是如果他想知道这些植物有毒或有药性 -> 有毒还是有药性\n  - 这就要看你知道该吃哪一个了 -> 知不知道\n  - 人们不知道什么植物是不是能吃的 -> 什么植物是能吃的，什么植物是不能吃的\n  - 看看如果能吃还是不能吃，药还是毒 -> delete如果，the “if” in “see if + clause” is not 如果；是药还是毒\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 神农看到很多人吃了麻烦的植物：better to briefly introduce “神农” when this character first appears; 有害的植物\n\n- 所以神农去找一些植物，对身体有好处：找一些对身体有好处的植物\n\n- 然后神农回家告诉他的人民什么植物能吃：朋友邻居\n\n## Student's scene to review\n一个人对神农说，麻烦告诉我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “一个人对神农说” / Formula: specific person/group + 对 + person + 说 / Correct: “一个农民对神农说” or “一个村民对神农说”  \n“一个人” is too vague here; identifying the speaker makes the scene clearer.\n\nIncorrect phrase: “麻烦告诉我们可以吃什么植物？” / Formula: 请问/麻烦 + person + 告诉 + someone + 什么 + noun + 能吃 / Correct: “请问，您能告诉我们什么植物能吃吗？”  \n“麻烦” can be used politely, but “麻烦告诉我们……” sounds incomplete. Adding 您能 and 吗 makes it a natural request.\n\nIncorrect phrase: “这就要看你想不想生病了。” / Formula: uncertain result + 这就要看 + A-not-A question / Correct: “会不会生病，这就要看你吃了什么植物了。”  \n这就要看……了 should answer an uncertain question. “想不想生病” means “whether you *want* to get sick,” which does not fit the context. The relevant condition is what plants someone has eaten.\n\nIncorrect phrase: “以后，神农告诉别人一些植物能吃，一些植物不能吃。” / Formula: 后来/从此 + subject + 告诉 + specific group + 什么植物能吃，什么植物不能吃 / Correct: “后来，神农告诉村民什么植物能吃，什么植物不能吃。”  \n“以后” usually means “in the future/after this point”; “后来” is more natural for the next event in a past story. Also, “别人” is vague here.\n\n**Vocabulary Suggestions**\n\nWord: “一个人” / Context: “一个人对神农说” / Alternatives: “一个农民” or “一个村民.” “一个人” simply means “a person” and gives no information about who is speaking. “农民” emphasizes someone who works with plants and farming, while “村民” emphasizes a member of the village.\n\nWord: “麻烦” / Context: “麻烦告诉我们……” / Alternatives: “请问” or “劳驾.” “麻烦” can politely introduce a request, but “请问” is especially natural when asking for information. “劳驾” is polite and slightly more formal.\n\nWord: “想不想生病” / Context: “看你想不想生病” / Alternatives: “会不会生病” or “会不会中毒.” “想不想” asks about willingness or desire; people normally do not want to get sick. “会不会生病” asks whether illness may happen, while “会不会中毒” is more precise when discussing poisonous plants.\n\nWord: “以后” / Context: “以后，神农告诉别人……” / Alternatives: “后来” or “从此.” “以后” often refers to the future. “后来” moves a past narrative forward, and “从此” means “from then on,” emphasizing a lasting change.\n\nWord: “别人” / Context: “神农告诉别人” / Alternatives: “村民们” or “大家.” “别人” means “other people” but is vague. “村民们” makes the story setting more vivid, while “大家” is a natural general word for all the people present.\n\n**Encouragement and Next Steps**\n\nYou used the useful pattern “这就要看……” and clearly expressed the important contrast between edible and inedible plants.  \nNext time, focus on making characters and groups more specific, and use A-not-A questions such as “会不会” or “能不能” for uncertain results.",
+  "usage": {
+   "prompt_tokens": 2121,
+   "completion_tokens": 781,
+   "total_tokens": 2902,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2118,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6490
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:a_not_a_question",
+   "rule_card:redundancy_delete",
+   "correction_item:shennong_samples#1::c1",
+   "correction_item:shennong_samples#15::c0",
+   "correction_item:shennong_samples#20::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: a_not_a_question\nGrammar/linguistic point: a_not_a_question\nEmbedded yes/no questions use A-not-A (有没有毒, 能不能吃, 知不知道) or 是……还是……; 'whether/if' in 'know if' is not 如果.\nExamples (original -> corrected, why):\n  - 不知道如果有毒 -> 有没有毒  [the “if” in “not know if + clause” is not 如果]\n  - 神农加下去很多的植物，看看如果毒还是药 -> 吃下去很多植物；看看是毒还是药  [the “if” in “see if + clause” is not 如果]\n  - 我们也不在乎植物是毒 -> 有没有毒\n  - 但是如果他想知道这些植物有毒或有药性 -> 有毒还是有药性\n  - 这就要看你知道该吃哪一个了 -> 知不知道\n  - 人们不知道什么植物是不是能吃的 -> 什么植物是能吃的，什么植物是不能吃的\n  - 看看如果能吃还是不能吃，药还是毒 -> delete如果，the “if” in “see if + clause” is not 如果；是药还是毒\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 神农看到很多人吃了麻烦的植物：better to briefly introduce “神农” when this character first appears; 有害的植物\n\n- 所以神农去找一些植物，对身体有好处：找一些对身体有好处的植物\n\n- 神农看到人一吃百草就生病：better to briefly introduce “神农” when this character first appears；人们，一些植物，“百草“ is a general term for “different plants”\n\n## Student's scene to review\n一个人对神农说，麻烦告诉我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “一个人对神农说” / Formula: Introduce a person with a specific role or description + 对 + someone + 说 / Correct: “有一个人对神农说” or “一个村民对神农说”  \n“一个人” is vague here; “有一个人” introduces the character more naturally, while “一个村民” is more specific.\n\nIncorrect phrase: “麻烦告诉我们可以吃什么植物？” / Formula: 请/麻烦 + someone + 告诉 + someone + 哪些/什么 + noun + 能 + verb / Correct: “麻烦您告诉我们，哪些植物可以吃？”  \n“麻烦” is usually followed by “您” or a verb phrase. “哪些植物可以吃” sounds more natural when asking about multiple plants.\n\nIncorrect phrase: “这就要看你想不想生病了。” / Formula: [Uncertain result]，这就要看 + A-not-A question + 了 / Correct: “会不会生病，这就要看你吃了什么植物了。”  \n“这就要看……” must answer an uncertain question or condition. “Whether you will get sick” depends on what plants you eat, not on whether you *want* to get sick.\n\nIncorrect phrase: “以后，神农告诉别人一些植物能吃，一些植物不能吃。” / Formula: Then/after that + subject + 告诉 + people + [some…; some…] / Correct: “后来，神农告诉大家，有些植物能吃，有些植物不能吃。”  \n“后来” fits a story sequence better than “以后.” Add “有” before both “些植物” for a balanced, natural contrast.\n\n**Vocabulary Suggestions**\n\nWord: “一个人” / Context: “一个人对神农说” / Alternatives: “一个村民” means a villager and gives the speaker a clear identity. “一个农民” means a farmer and fits especially well in a story about plants. “一个人” is grammatically possible but too vague in a narrative.\n\nWord: “麻烦” / Context: “麻烦告诉我们……” / Alternatives: “请问” is a polite, common way to begin a question: “请问，哪些植物可以吃？” “麻烦您告诉我们” is also polite, but it needs “您” and sounds like a request for help.\n\nWord: “想不想生病” / Context: “看你想不想生病” / Alternatives: “会不会生病” means “whether someone will become sick” and describes an uncertain result. “想不想生病” literally means “whether someone wants to become sick,” which does not fit the meaning here.\n\nWord: “以后” / Context: “以后，神农告诉别人……” / Alternatives: “后来” means “later/after that” in a past story and is the most natural choice here. “以后” usually means “from now on” or “in the future.”\n\nWord: “别人” / Context: “神农告诉别人……” / Alternatives: “大家” means everyone/the people present and sounds warm and natural in this context. “人们” means people in general and is useful when describing broader knowledge shared with society. “别人” often means “other people,” especially in contrast to oneself.\n\n**Encouragement and Next Steps**\n\nYou clearly expressed the main idea that Shennong teaches people which plants are safe to eat, and your story has a logical beginning and ending.  \nNext time, focus on using **“这就要看……”** only after stating an uncertain result, such as “会不会生病.”",
+  "usage": {
+   "prompt_tokens": 2146,
+   "completion_tokens": 769,
+   "total_tokens": 2915,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2143,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6572
+ }
+}

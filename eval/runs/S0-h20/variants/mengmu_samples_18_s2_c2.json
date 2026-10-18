@@ -1,0 +1,111 @@
+{
+ "variant_id": "mengmu_samples_18_s2_c2",
+ "sample_id": "mengmu_samples#18",
+ "story_id": "mengmu_san_qian",
+ "scene": 2,
+ "her_line": "所以孟子的妈妈认为这样的地方对儿子的教育不太好：replace孟子的妈妈with她",
+ "rules": [
+  "reference_form"
+ ],
+ "original_scene": "孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家。",
+ "variant_scene": "孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师家里。",
+ "previous_scenes": [
+  "古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。"
+ ],
+ "target_original": {
+  "start": 24,
+  "end": 29
+ },
+ "target_variant": {
+  "start": 24,
+  "end": 29
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#18/f2/p0/note/e0",
+   "op": "replace",
+   "start": 24,
+   "end": 29,
+   "original": "孟子的妈妈",
+   "corrected": "她",
+   "her_line": "所以孟子的妈妈认为这样的地方对儿子的教育不太好：replace孟子的妈妈with她",
+   "her_piece": "replace孟子的妈妈with她",
+   "her_note": "replace孟子的妈妈with她",
+   "review_row": "mengmu_samples#18/f2/p0/note",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:preposition_dao_place",
+  "rule_card:cai_jiu_construction",
+  "rule_card:bushi_ershi_construction",
+  "rule_card:time_expression",
+  "correction_item:mengmu_samples#20::c0",
+  "correction_item:mengmu_samples#15::c2",
+  "correction_item:mengmu_samples#9::c10"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:cai_jiu_construction",
+   "rule_card:bushi_ershi_construction",
+   "rule_card:time_expression",
+   "correction_item:mengmu_samples#20::c0",
+   "correction_item:mengmu_samples#15::c2",
+   "correction_item:mengmu_samples#9::c10"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: bushi_ershi_construction\nGrammar/linguistic point: bushi_ershi_construction\n不是……而是…… ('not X but Y') refutes something conventional or wrong and affirms the correct, often unexpected, fact. When both parts share one subject, the subject comes before 不是 (他不是……，而是……).\nExamples (original -> corrected, why):\n  - 他们不是住在购物中心的旁边，而是住在学校的旁边 -> 搬到了学校旁边  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 可是他不是在家读书，而是老是出去玩 -> 不在家读书，老是出去玩  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他那不是成为医生，而是成为哲学人 -> 他没有当医生，而是成为哲学家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟母不是孟子的爸爸，而是孟子的妈妈 -> 孟母是孟子的妈妈  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 现在孟子和孟母不是打算搬家，而是打算待在这个小镇 -> 不打算搬家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟子的妈妈不是轻松的妈妈，而且她是厉害的妈妈 -> 在教育方面很厉害  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他不是在搬家，而是学多文章，成为很聪明 -> 不再搬家，而是待在这儿学习很多文章  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章；成为很聪明的哲学家]\n  - 不是孟子喜欢这个城市，而是他喜欢这个城市的人 -> 孟子不是喜欢这个城市，而是喜欢这个城市的人  [Subj. before “不是……而是……”]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n- 所以妈妈跟孟子一起搬家：妈妈带孟子搬家了，了completed\n\n- 原来他妈妈选择特别好的地方孟子长大：选择对孟子成长特别好的环境\n\n## Student's scene to review\n孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师家里。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “孟子取得良好的教育是很重要的” / Formula: Subject + 接受/获得 + 良好的教育；“取得” is usually used with achievements, results, or qualifications / Correct: “孟子接受良好的教育是很重要的” or “孟子获得良好的教育是很重要的”\n\nIncorrect phrase: “认为这样的地方对儿子的教育不太好” / Formula: 对 + somebody’s + education/growth + 不好；or 这个地方 + 不利于 + somebody’s + education/growth / Correct: “认为这样的地方不利于儿子的教育” or “认为这样的地方对儿子的教育不好”\n\nIncorrect phrase: “打算跟孟子搬家” / Formula: 带 + someone + 搬家；or 跟 + someone + 一起 + 搬家 / Correct: “就打算带孟子搬家” or “就打算跟孟子一起搬家”\n\nIncorrect phrase: “孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师家里” / Formula: Subject + 不是 + X，+ 而是 + Y. Use this pattern when correcting or contrasting two genuine possibilities. Here, simply state the destination with 搬到 + place / Correct: “孟子的妈妈带孟子搬到了孟子老师家里。”\n\n\n**Vocabulary Suggestions**\n\nWord: “觉得” / Context: “孟子的妈妈觉得……” / Alternatives: “认为” is more formal and objective, so it works especially well when explaining a reasoned judgment about education. “觉得” is more conversational and often expresses a personal feeling. Since you use “认为” later, you could use “认为” once and avoid repetition.\n\nWord: “良好的教育” / Context: “孟子取得良好的教育” / Alternatives: “优质教育” emphasizes high quality, often in a school or educational-resource context. “良好教育” is understandable and neutral, while “优质教育” sounds more concise and natural in modern written Chinese.\n\nWord: “这样的地方” / Context: “认为这样的地方对儿子的教育不太好” / Alternatives: “这里的环境” specifically emphasizes the surroundings and atmosphere of the place. “学习环境” is even more precise because it directly refers to an environment suitable for studying and growing up.\n\nWord: “不太好” / Context: “对儿子的教育不太好” / Alternatives: “不利于” is more formal and clearly means “not beneficial to.” “不太好” is vague and mild, while “不利于孟子的成长/教育” explains the negative effect more precisely.\n\nWord: “老师家里” / Context: “搬到了孟子老师家里” / Alternatives: “老师家附近” means “near the teacher’s home,” which may be more realistic if they are moving house rather than moving in with the teacher. “老师家里” means inside the teacher’s home, whereas “老师家附近” emphasizes convenience for studying.\n\n\n**Encouragement and Next Steps**\n\nYou explained Meng Mu’s motivation and the result in a clear, logical sequence, and your use of “所以” effectively connects the ideas.  \nNext time, focus on choosing natural verb-object combinations, such as “接受教育” rather than “取得教育,” and on using “带某人搬家” correctly.",
+  "usage": {
+   "prompt_tokens": 2198,
+   "completion_tokens": 709,
+   "total_tokens": 2907,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2195,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6326
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:cai_jiu_construction",
+   "rule_card:bushi_ershi_construction",
+   "rule_card:time_expression",
+   "correction_item:mengmu_samples#20::c0",
+   "correction_item:mengmu_samples#15::c2",
+   "correction_item:mengmu_samples#9::c10"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: bushi_ershi_construction\nGrammar/linguistic point: bushi_ershi_construction\n不是……而是…… ('not X but Y') refutes something conventional or wrong and affirms the correct, often unexpected, fact. When both parts share one subject, the subject comes before 不是 (他不是……，而是……).\nExamples (original -> corrected, why):\n  - 他们不是住在购物中心的旁边，而是住在学校的旁边 -> 搬到了学校旁边  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 可是他不是在家读书，而是老是出去玩 -> 不在家读书，老是出去玩  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他那不是成为医生，而是成为哲学人 -> 他没有当医生，而是成为哲学家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟母不是孟子的爸爸，而是孟子的妈妈 -> 孟母是孟子的妈妈  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 现在孟子和孟母不是打算搬家，而是打算待在这个小镇 -> 不打算搬家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟子的妈妈不是轻松的妈妈，而且她是厉害的妈妈 -> 在教育方面很厉害  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他不是在搬家，而是学多文章，成为很聪明 -> 不再搬家，而是待在这儿学习很多文章  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章；成为很聪明的哲学家]\n  - 不是孟子喜欢这个城市，而是他喜欢这个城市的人 -> 孟子不是喜欢这个城市，而是喜欢这个城市的人  [Subj. before “不是……而是……”]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n- 所以妈妈跟孟子一起搬家：妈妈带孟子搬家了，了completed\n\n- 原来他妈妈选择特别好的地方孟子长大：选择对孟子成长特别好的环境\n\n## Student's scene to review\n孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师家里。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “孟子取得良好的教育是很重要的”  \nFormula: 人 + 接受 + （形容词）+ 教育  \nCorrect: “孟子接受良好的教育是很重要的。”  \n“取得” is usually used for achievements or results, while one *receives* an education.\n\nIncorrect phrase: “孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师家里”  \nFormula: Subject + 不是/没有 + V1 + Place A，而是 + V2 + Place B  \nCorrect: “孟子的妈妈没有带孟子搬到城市，而是带他搬到了孟子老师的家里。”  \nPut the shared subject before “不是……而是……,” and repeat or clarify the verb in the second part for a smoother parallel structure.\n\n**Vocabulary Suggestions**\n\nWord: “良好的”  \nContext: “接受良好的教育”  \nAlternatives: “优质的教育” emphasizes high quality, often referring to educational resources or standards. “良好的教育” is correct and general, while “优质的教育” sounds slightly more formal.\n\nWord: “认为”  \nContext: “孟子的妈妈认为这样的地方……”  \nAlternatives: “觉得” is more conversational and expresses a personal feeling or judgment. “认为” is more neutral and formal, often used for a considered opinion.\n\nWord: “这样的地方”  \nContext: “这样的地方对儿子的教育不太好”  \nAlternatives: “这种环境” is more precise because the mother is judging the overall surroundings, not simply one physical place. It also sounds more natural when discussing a child’s education.\n\nWord: “不太好”  \nContext: “对儿子的教育不太好”  \nAlternatives: “不利” means “not beneficial” and is more concise and formal: “这种环境不利于孩子的教育.” “不太好” is simple and understandable, but less specific.\n\nWord: “搬家”  \nContext: “就打算跟孟子搬家”  \nAlternatives: “搬到别的地方去” clearly emphasizes moving to another place. “迁居” is a formal written term for changing one’s residence. “搬家” is the everyday, natural choice.\n\n**Encouragement and Next Steps**\n\nYou expressed Meng Mu’s reasoning clearly, especially the cause-and-effect connection from education to moving house.  \nNext time, focus on choosing natural verb-object collocations, such as “接受教育” rather than “取得教育.”",
+  "usage": {
+   "prompt_tokens": 2198,
+   "completion_tokens": 695,
+   "total_tokens": 2893,
+   "prompt_tokens_details": {
+    "cached_tokens": 2195,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 160,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6414
+ }
+}

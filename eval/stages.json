@@ -225,6 +225,78 @@
    "label": "S7-3, repeat run (r3)",
    "extends": "S7-3",
    "note": "Identical to S7-3; repeated run."
+  },
+  "S7-4": {
+   "label": "S7-4: + rule-card regex triggers (cards chosen by the error, not only by similarity)",
+   "extends": "S7-3",
+   "snapshot": "base-v6",
+   "flags": {
+    "ruleCardTriggers": true
+   },
+   "note": "base-v6 = base-v5 + provisional regex triggers on 5 rule cards (rule_card_triggers.json, measured on training stories). A matching trigger adds its rule card (marked with the places to check) and one past correction labelled with that rule. Similarity search and pinned cards unchanged. eval/S7_plan.md."
+  },
+  "S7-4-r2": {
+   "label": "S7-4, repeat run (r2)",
+   "extends": "S7-4",
+   "note": "Identical to S7-4; repeated run."
+  },
+  "S7-4-r3": {
+   "label": "S7-4, repeat run (r3)",
+   "extends": "S7-4",
+   "note": "Identical to S7-4; repeated run."
+  },
+  "S0-h20": {
+   "label": "S0 on the 20-story test set (floor: no teacher input)",
+   "extends": "S0",
+   "snapshot": "base-v4-h20",
+   "testSet": "test_set_h20.json",
+   "note": "Floor reference for S7: the original prompt with basic retrieval only (no critique, rules, scene list, vocabulary list or coherence input), on the 20 stories. Snapshot base-v4-h20 (S0 originally used base-v2; S0 reads only basic-data chunks, built from the same sources)."
+  },
+  "S0-h20-r2": {
+   "label": "S0-h20, repeat run (r2)",
+   "extends": "S0-h20",
+   "note": "Identical to S0-h20; repeated run."
+  },
+  "S0-h20-r3": {
+   "label": "S0-h20, repeat run (r3)",
+   "extends": "S0-h20",
+   "note": "Identical to S0-h20; repeated run."
+  },
+  "S7-5": {
+   "label": "S7-5: + rule cards found through her corrected student sentences (per sentence)",
+   "extends": "S7-4",
+   "flags": {
+    "ruleExamples": true
+   },
+   "note": "Each sentence of the scene is searched against the 920 rule_example chunks (student sentences she corrected, each linked to its rule card); the cards of the top 2 matches per sentence are added, at most 4 new cards per scene, each with the closest corrected sentence. Offline: card reach 43% -> 72%, +3.4 cards per scene. eval/S7_plan.md."
+  },
+  "S7-5-r2": {
+   "label": "S7-5, repeat run (r2)",
+   "extends": "S7-5",
+   "note": "Identical to S7-5; repeated run."
+  },
+  "S7-5-r3": {
+   "label": "S7-5, repeat run (r3)",
+   "extends": "S7-5",
+   "note": "Identical to S7-5; repeated run."
+  },
+  "S7-6": {
+   "label": "S7-6: whole-scene similarity cards replaced by per-sentence matches on her corrected sentences",
+   "extends": "S7-4",
+   "flags": {
+    "sentenceCards": true
+   },
+   "note": "Extends S7-4 (S7-5 rejected). The 4 rule cards from whole-scene similarity are replaced by the cards of the closest rule_example matches (top 2 per sentence, best first, up to 4 not already pinned or triggered); no example sentences shown. Same number of cards as S7-4. eval/S7_plan.md."
+  },
+  "S7-6-r2": {
+   "label": "S7-6, repeat run (r2)",
+   "extends": "S7-6",
+   "note": "Identical to S7-6; repeated run."
+  },
+  "S7-6-r3": {
+   "label": "S7-6, repeat run (r3)",
+   "extends": "S7-6",
+   "note": "Identical to S7-6; repeated run."
   }
  }
 }

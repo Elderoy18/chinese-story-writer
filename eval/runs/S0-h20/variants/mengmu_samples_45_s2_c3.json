@@ -1,0 +1,138 @@
+{
+ "variant_id": "mengmu_samples_45_s2_c3",
+ "sample_id": "mengmu_samples#45",
+ "story_id": "mengmu_san_qian",
+ "scene": 2,
+ "her_line": "他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨",
+ "rules": [
+  "redundancy_delete",
+  "coherence_connectives"
+ ],
+ "original_scene": "他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。",
+ "variant_scene": "他的妈妈，而是想让孟子接受很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。",
+ "previous_scenes": [
+  "古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。"
+ ],
+ "target_original": {
+  "start": 41,
+  "end": 50
+ },
+ "target_variant": {
+  "start": 33,
+  "end": 42
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#45/f3/p0/k0/e0",
+   "op": "delete",
+   "start": 33,
+   "end": 35,
+   "original": "他们",
+   "corrected": "",
+   "her_line": "他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨",
+   "her_piece": "delete他们",
+   "her_note": "",
+   "review_row": "mengmu_samples#45/f3/p0/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#45/f3/p0/k1-2/e0",
+   "op": "insert",
+   "start": 33,
+   "end": 33,
+   "original": "",
+   "corrected": "因为",
+   "her_line": "他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨",
+   "her_piece": "因为从早到晚走路，所以孟子一直抱怨",
+   "her_note": "",
+   "review_row": "mengmu_samples#45/f3/p0/k1-2",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#45/f3/p0/k1-2/e1",
+   "op": "insert",
+   "start": 42,
+   "end": 42,
+   "original": "",
+   "corrected": "所以",
+   "her_line": "他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨",
+   "her_piece": "因为从早到晚走路，所以孟子一直抱怨",
+   "her_note": "",
+   "review_row": "mengmu_samples#45/f3/p0/k1-2",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 2,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:preposition_dao_place",
+  "rule_card:bushi_ershi_construction",
+  "rule_card:coherence_connectives",
+  "rule_card:laoshi_negative_connotation",
+  "correction_item:mengmu_samples#19::c1",
+  "correction_item:mengmu_samples#36::c4",
+  "correction_item:mengmu_samples#11::c4"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:cai_jiu_construction",
+   "rule_card:coherence_connectives",
+   "rule_card:laoshi_negative_connotation",
+   "correction_item:mengmu_samples#36::c4",
+   "correction_item:mengmu_samples#20::c0",
+   "correction_item:mengmu_samples#9::c10"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 孟子跟他的妈妈搬家，去一个最好的学校：去了，了completed\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n- 原来他妈妈选择特别好的地方孟子长大：选择对孟子成长特别好的环境\n\n## Student's scene to review\n他的妈妈，而是想让孟子接受很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “他的妈妈，而是想让孟子接受很好的教育。” / Formula: 不是 + A，而是 + B / Correct: “他的妈妈不是想让孟子玩儿，而是想让孟子接受很好的教育。”  \nThe original sentence begins with “而是,” but it needs a preceding “不是……” clause to create a complete contrast.\n\nIncorrect phrase: “他们搬家到有很多学校的城市。” / Formula: 搬到 + Place / Correct: “他们搬到了一座有很多学校的城市。”  \n“搬到” is the natural verb phrase for moving to a place. “一座” is also a suitable measure word for a city.\n\n**Vocabulary Suggestions**\n\nWord: “很好的教育” / Context: “想让孟子接受很好的教育” / Alternatives: “优质的教育” means high-quality education and sounds more formal; “良好的教育” emphasizes education that is beneficial and well-rounded. “很好的” is correct but more general and conversational.\n\nWord: “很多学校” / Context: “有很多学校的城市” / Alternatives: “学校资源丰富的城市” means a city with abundant school resources and is more natural in formal writing; “教育资源丰富的城市” is even broader, including good teachers, facilities, and educational opportunities.\n\nWord: “城市” / Context: “搬到了一座有很多学校的城市” / Alternatives: “大城市” emphasizes the city’s size and usually suggests more opportunities; “学区” refers specifically to an area known for its schools, although it is more commonly used in modern discussions about school choice.\n\nWord: “走路” / Context: “他们从早到晚走路” / Alternatives: “步行” is a more concise and written-style word for walking; “赶路” means hurrying along a route, often for a long journey, and better conveys that they were traveling with a destination in mind.\n\nWord: “抱怨” / Context: “孟子一直抱怨” / Alternatives: “发牢骚” means to complain in an informal, somewhat repetitive way; “叫苦” means to complain about hardship or suffering. “抱怨” is neutral and general, while these alternatives make his unhappiness more vivid.\n\n**Encouragement and Next Steps**\n\nYou clearly expressed the mother’s goal, the family’s move, and Mencius’s reaction in a logical sequence.  \nNext time, focus on making contrast sentences complete by using the full pattern “不是……而是……”.",
+  "usage": {
+   "prompt_tokens": 2026,
+   "completion_tokens": 622,
+   "total_tokens": 2648,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2023,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 80,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 5400
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:bushi_ershi_construction",
+   "rule_card:coherence_connectives",
+   "rule_card:laoshi_negative_connotation",
+   "correction_item:mengmu_samples#19::c1",
+   "correction_item:mengmu_samples#36::c4",
+   "correction_item:mengmu_samples#11::c4"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: bushi_ershi_construction\nGrammar/linguistic point: bushi_ershi_construction\n不是……而是…… ('not X but Y') refutes something conventional or wrong and affirms the correct, often unexpected, fact. When both parts share one subject, the subject comes before 不是 (他不是……，而是……).\nExamples (original -> corrected, why):\n  - 他们不是住在购物中心的旁边，而是住在学校的旁边 -> 搬到了学校旁边  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 可是他不是在家读书，而是老是出去玩 -> 不在家读书，老是出去玩  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他那不是成为医生，而是成为哲学人 -> 他没有当医生，而是成为哲学家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟母不是孟子的爸爸，而是孟子的妈妈 -> 孟母是孟子的妈妈  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 现在孟子和孟母不是打算搬家，而是打算待在这个小镇 -> 不打算搬家  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 孟子的妈妈不是轻松的妈妈，而且她是厉害的妈妈 -> 在教育方面很厉害  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n  - 他不是在搬家，而是学多文章，成为很聪明 -> 不再搬家，而是待在这儿学习很多文章  [“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章；成为很聪明的哲学家]\n  - 不是孟子喜欢这个城市，而是他喜欢这个城市的人 -> 孟子不是喜欢这个城市，而是喜欢这个城市的人  [Subj. before “不是……而是……”]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: laoshi_negative_connotation\nGrammar/linguistic point: laoshi_negative_connotation\n老是 ('always/keeps on') carries a negative, complaining connotation -- wrong when the sentence is neutral/positive.\nExamples (original -> corrected, why):\n  - 在新的地方，孟子跟老师老是学习中文 -> 一直学习中文  [“老是“ for something negative, used to complain]\n  - 所以孟子老是在学习 -> 一直  [“老是“ for something negative, used to complain]\n  - 他写汉字老是写得很好 -> 一直  [“老是“ for something negative, used to complain]\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 他说他老是来墓地请祖先给他建议 -> 常常  [“老是“ for something negative, used to complain]\n  - 他从童年老是讨论重要的生活问题，很幸福 -> 从童年开始，一直  [“老是“ for something negative, used to complain]\n  - 孟母老是搬家，所以孟子会跟别的教授学哲学 -> “老是“ for something negative, used to complain；这样in this way\n  - 他认为没做过祭拜的孩子的父母老是死了 -> 没祭拜过的孩子会失去父母  [“老是“ means always, ”死” cannot be done multiple times]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 所以她带孟子到一个城市搬家了：带孟子搬到城市了\n\n- 孟子跟他的妈妈搬家，去一个最好的学校：去了，了completed\n\n- 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了：他们才在那儿住了一个星期，就又搬家了；在Place住，delete孟子跟他的妈妈\n\n## Student's scene to review\n他的妈妈，而是想让孟子接受很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “他的妈妈，而是想让孟子接受很好的教育。”  \nFormula: Subject + 不是 + A，+ 而是 + B / If there is no contrast, use Subject + 想让 + someone + verb phrase.  \nCorrect: “孟子的妈妈想让孟子接受很好的教育。”  \n“而是” needs a preceding “不是……” contrast. Also, using “孟子的妈妈” is clearer than “他的妈妈” here.\n\nIncorrect phrase: “他们搬家到有很多学校的城市。”  \nFormula: Subject + 搬到 + Place  \nCorrect: “他们搬到了一座有很多学校的城市。”  \nUse “搬到” rather than “搬家到.” “一座城市” is also a more natural measure-word phrase.\n\n**Vocabulary Suggestions**\n\nWord: “很好的教育”  \nContext: “想让孟子接受很好的教育”  \nAlternatives: “良好的教育” or “优质的教育.” “很好的” is simple and understandable; “良好的” is more natural in formal writing, while “优质的” emphasizes high quality.\n\nWord: “有很多学校的城市”  \nContext: “搬到了一座有很多学校的城市”  \nAlternatives: “学校众多的城市” or “教育资源丰富的城市.” “有很多学校” is direct and basic; “学校众多” is more concise, while “教育资源丰富” suggests that the city has many good educational opportunities.\n\nWord: “走路”  \nContext: “他们从早到晚走路”  \nAlternatives: “步行” or “赶路.” “走路” is everyday language; “步行” is slightly more formal, while “赶路” emphasizes travelling for a long time in order to reach a destination.\n\nWord: “一直抱怨”  \nContext: “孟子一直抱怨”  \nAlternatives: “不停地抱怨” or “一路抱怨.” “一直” means continuously over a period of time; “不停地” emphasizes that he did not stop, and “一路抱怨” fits especially well if he complained while travelling.\n\nWord: “妈妈”  \nContext: “孟子的妈妈”  \nAlternatives: “母亲” or “孟母.” “妈妈” is warm and conversational; “母亲” is more formal, and “孟母” is a concise, literary term often used when writing about Mencius’s mother.\n\n**Encouragement and Next Steps**\n\nYou clearly expressed the mother’s goal and showed Mengzi’s reaction during the move, so the scene has a logical flow.  \nNext time, focus on using “不是……而是……” only when you are clearly contrasting two ideas, and use “搬到 + place” for moving somewhere.",
+  "usage": {
+   "prompt_tokens": 2220,
+   "completion_tokens": 822,
+   "total_tokens": 3042,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2217,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 225,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6624
+ }
+}

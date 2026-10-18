@@ -1,0 +1,109 @@
+{
+ "variant_id": "shennong_samples_42_s1_c2",
+ "sample_id": "shennong_samples#42",
+ "story_id": "shennong_chang_baicao",
+ "scene": 1,
+ "her_line": "什么病人吃都会觉得身体更好：吃了以后",
+ "rules": [
+  "aspect_le_completed"
+ ],
+ "original_scene": "古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+ "variant_scene": "古代的时候有一个人叫神农。他需要当上医生，一看到病人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农走了三个月，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 75,
+  "end": 76
+ },
+ "target_variant": {
+  "start": 76,
+  "end": 77
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#42/f2/p0/k0/e0",
+   "op": "replace",
+   "start": 76,
+   "end": 77,
+   "original": "吃",
+   "corrected": "吃了以后",
+   "her_line": "什么病人吃都会觉得身体更好：吃了以后",
+   "her_piece": "吃了以后",
+   "her_note": "",
+   "review_row": "shennong_samples#42/f2/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 4,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:ambiguous_reference",
+  "rule_card:character_introduction_first_mention",
+  "rule_card:time_expression",
+  "rule_card:redundancy_delete",
+  "correction_item:shennong_samples#32::c2",
+  "correction_item:shennong_samples#24::c1",
+  "correction_item:shennong_samples#20::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:ambiguous_reference",
+   "rule_card:character_introduction_first_mention",
+   "rule_card:time_expression",
+   "rule_card:verb_object_collocation",
+   "correction_item:shennong_samples#32::c2",
+   "correction_item:shennong_samples#20::c0",
+   "correction_item:shennong_samples#24::c1"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: verb_object_collocation\nGrammar/linguistic point: verb_object_collocation\nCollocation/valence errors: the verb cannot take that object or complement (想 + V. not N., 想让 Sb. V., 成为 + N.), an adjective does not go with that noun (良好 + 生活), or a verb conflicts with an adjacent verb.\nExamples (original -> corrected, why):\n  - 我现在有良好的教育和生活 -> 幸福的生活  [良好 is usually not with生活]\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 所以他偷走一筐的梨，骑自行车走去 -> 一筐梨  [num. + MW. + noun, no的；骑自行车离开，“骑自行车“ conflicts with ”走“]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 这些植物对身体好处 -> delete这些植物，对身体有好处\n  - 看到我们糟糕的状态，用心得来帮忙整理梨子，拿起骑车 -> 他们过来用心地帮忙整理梨子，扶起自行车  [since the preceding phrase has “我们”, the Subj. 他们 should be stated, adv.地V，“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.]\n  - 他成为有名的 -> 有名的哲学家  [成为+N]\n  - 我觉得神农很有名的人，因为他作用这个时代的医学 -> 是很有名的人，对这个时代的医学有贡献\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 所以神农走了很长的时间找到植物药：能做药的植物\n\n- 神农看到人一吃百草就生病：better to briefly introduce “神农” when this character first appears；人们，一些植物，“百草“ is a general term for “different plants”\n\n- 神农想帮大家找到好吃的菜：植物，better to briefly introduce “神农” when this character first appears\n\n## Student's scene to review\n古代的时候有一个人叫神农。他需要当上医生，一看到病人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农走了三个月，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “古代的时候有一个人叫神农”  \nFormula: 在 + historical time, + 有 + character introduction  \nCorrect: “在古代，有一个人叫神农。”  \n“在古代” is more concise and natural for a story setting.\n\nIncorrect phrase: “他需要当上医生”  \nFormula: Subject + 想/希望 + 成为 + profession  \nCorrect: “他想成为一名医生。”  \n“当上” usually emphasizes successfully obtaining a position after effort; here, “想成为” is more natural.\n\nIncorrect phrase: “神农听说一个远远的地方有一种植物”  \nFormula: Subject + 听说 + 在 + place + 有/生长着 + noun  \nCorrect: “神农听说在一个遥远的地方生长着一种植物。”  \nThe place should follow “在,” and “遥远的地方” is the natural expression.\n\nIncorrect phrase: “什么病人吃都会觉得身体更好”  \nFormula: 不管 + person + 得 + 什么病，吃了 + medicine/plant + 都会 + result  \nCorrect: “不管病人得了什么病，吃了这种植物以后身体都会好起来。”  \n“什么病人” is unclear. You mean patients with any kind of illness.\n\nIncorrect phrase: “神农走了三个月，找到有植物的地方”  \nFormula: Subject + V了 + duration + ，到了/找到了 + place + 生长着 + noun  \nCorrect: “神农走了三个月，终于到了生长着这种植物的地方。”  \n“有植物的地方” is too general, since he is looking for this specific plant.\n\nIncorrect phrase: “他看到一个很漂亮的植物”  \nFormula: Subject + 看到 + 一株 + plant  \nCorrect: “他看到一株非常美丽的植物。”  \nUse the measure word “株” for plants. Also, “一个植物” is not natural.\n\n**Vocabulary Suggestions**\n\nWord: “当上”  \nContext: “他需要当上医生。”  \nAlternatives: “成为” or “当”. “当上” emphasizes achieving a job or position, often after competition or effort. “成为一名医生” sounds more natural when describing someone’s goal or identity.\n\nWord: “东西”  \nContext: “他不知道什么东西能做药。”  \nAlternatives: “植物,” “药材,” or “哪些东西可以入药.” “东西” is very general and conversational. “药材” specifically means medicinal materials, while “入药” means “to be used as medicine” and is more precise.\n\nWord: “远远的”  \nContext: “一个远远的地方”  \nAlternatives: “遥远的地方” or “很远的地方.” “远远的” is usually used as an adverb, such as “远远地看着.” “遥远的” is a more literary adjective and fits a traditional story well.\n\nWord: “漂亮”  \nContext: “一个很漂亮的植物”  \nAlternatives: “美丽的” or “奇特的.” “漂亮” is common in everyday speech, especially for people or clothes. “美丽的植物” is more natural in descriptive writing, while “奇特的植物” emphasizes that the plant looks unusual or mysterious.\n\nWord: “身体更好”  \nContext: “都会觉得身体更好”  \nAlternatives: “身体好起来,” “恢复健康,” or “病情好转.” “身体更好” is understandable but vague. “恢复健康” means returning to good health, and “病情好转” specifically means an illness is improving.\n\n**Encouragement and Next Steps**\n\nYou created a clear story sequence—from Shennong’s goal, to his problem, to his journey—and your final plant description is vivid.  \nNext time, focus on using precise nouns and measure words, especially for places, plants, and medicine.",
+  "usage": {
+   "prompt_tokens": 2275,
+   "completion_tokens": 1143,
+   "total_tokens": 3418,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2272,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 304,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 10430
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:ambiguous_reference",
+   "rule_card:character_introduction_first_mention",
+   "rule_card:time_expression",
+   "rule_card:redundancy_delete",
+   "correction_item:shennong_samples#32::c2",
+   "correction_item:shennong_samples#24::c1",
+   "correction_item:shennong_samples#20::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 所以神农走了很长的时间找到植物药：能做药的植物\n\n- 神农想帮大家找到好吃的菜：植物，better to briefly introduce “神农” when this character first appears\n\n- 神农看到人一吃百草就生病：better to briefly introduce “神农” when this character first appears；人们，一些植物，“百草“ is a general term for “different plants”\n\n## Student's scene to review\n古代的时候有一个人叫神农。他需要当上医生，一看到病人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农走了三个月，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “古代的时候有一个人叫神农” / Formula: 在 + historical time +，有一个叫……的人 / Correct: “在古代，有一个叫神农的人。” “在古代” is more natural than “古代的时候,” and this also introduces the character clearly.\n\nIncorrect phrase: “他需要当上医生” / Formula: 谁 + 想/决定 + 当 + profession; or 谁 + 需要 + become/verb phrase / Correct: “他想当医生。” “当上” means “successfully become,” while “需要当上” is unnatural here.\n\nIncorrect phrase: “一看到病人就想帮助他们” / Formula: 一 + verb phrase +，就 + verb phrase / Correct: “他一看到病人，就想帮助他们。” Add the subject for clarity and a comma between the two clauses.\n\nIncorrect phrase: “什么病人吃都会觉得身体更好” / Formula: 什么 + noun + 都 + verb; or 人 + 吃了……以后 + 身体 + 就/会 + better / Correct: “什么病人吃了这种植物以后，身体都会变好。” The original word order is unclear, and “身体变好” is more natural than “觉得身体更好.”\n\nIncorrect phrase: “神农走了三个月，找到有植物的地方” / Formula: 谁 + verb + duration +，才/然后 + verb + object; place + 有 + noun / Correct: “神农走了三个月，才找到一个长着这种植物的地方。” “有植物的地方” is too vague because plants grow in many places.\n\nIncorrect phrase: “一个很漂亮的植物” / Formula: numeral + classifier + adjective + noun / Correct: “一株很漂亮的植物。” Use 株 as the classifier for a plant.\n\n**Vocabulary Suggestions**\n\nWord: “远远的地方” / Context: “一个远远的地方” / Alternatives: “遥远的地方” is more natural and slightly literary; it emphasizes a great distance. “偏远的地方” means remote or isolated, often suggesting that transportation is inconvenient. “远远的” is understandable but less natural here.\n\nWord: “什么东西” / Context: “他不知道什么东西能做药” / Alternatives: “什么植物可以入药” is much more precise and natural in this story. “入药” means “to be used as medicine” and is more formal than “做药.”\n\nWord: “听说” / Context: “神农听说一个远远的地方有一种植物” / Alternatives: “听闻” has a more literary, story-like tone. “得知” means “learned/found out” and sounds more certain than “听说,” which suggests unconfirmed information.\n\nWord: “觉得身体更好” / Context: “病人吃都会觉得身体更好” / Alternatives: “身体会好转” means one’s health improves, especially after illness. “病情会减轻” specifically means the illness becomes less serious. Both are more natural than describing the feeling as “觉得身体更好.”\n\nWord: “又香又好看” / Context: “又香又好看” / Alternatives: “香气扑鼻” means the fragrance is strong and reaches you immediately; it is vivid and literary. “外形美丽” means the plant’s appearance is beautiful and is more descriptive than the general word “好看.”\n\n**Encouragement and Next Steps**\n\nYou created a clear story sequence—Shennong has a goal, faces a problem, hears about a plant, and goes on a journey.  \nNext time, focus on using more specific nouns and natural verb phrases, especially when describing plants, medicine, and changes in health.",
+  "usage": {
+   "prompt_tokens": 2240,
+   "completion_tokens": 791,
+   "total_tokens": 3031,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2237,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7204
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "variant_id": "shennong_samples_12_s3_c6",
+ "sample_id": "shennong_samples#12",
+ "story_id": "shennong_chang_baicao",
+ "scene": 3,
+ "her_line": "会告诉他的朋友哪一个植物能不能吃：也会告诉他的朋友哪一个植物能吃，哪个植物不能吃",
+ "rules": [
+  "word_choice"
+ ],
+ "original_scene": "发现了夹竹桃有毒。别人看到他，很快给他吃一个灵芝。神农一吃就觉得比较好。然后，他继续写他发现的信息。会告诉他的朋友哪一个植物能不能吃。",
+ "variant_scene": "发现了夹竹桃有毒。另外一个人看到他，很快给他吃一个灵芝。神农一吃就觉得比较好。然后，他继续写他发现的信息。会告诉他的朋友哪一个植物能不能吃。",
+ "previous_scenes": [
+  "很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+  "他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。"
+ ],
+ "target_original": {
+  "start": 50,
+  "end": 66
+ },
+ "target_variant": {
+  "start": 53,
+  "end": 69
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#12/f6/p0/k0-1/e0",
+   "op": "insert",
+   "start": 53,
+   "end": 53,
+   "original": "",
+   "corrected": "也",
+   "her_line": "会告诉他的朋友哪一个植物能不能吃：也会告诉他的朋友哪一个植物能吃，哪个植物不能吃",
+   "her_piece": "也会告诉他的朋友哪一个植物能吃，哪个植物不能吃",
+   "her_note": "",
+   "review_row": "shennong_samples#12/f6/p0/k0-1",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "shennong_samples#12/f6/p0/k0-1/e1",
+   "op": "replace",
+   "start": 60,
+   "end": 69,
+   "original": "哪一个植物能不能吃",
+   "corrected": "哪一个植物能吃，哪个植物不能吃",
+   "her_line": "会告诉他的朋友哪一个植物能不能吃：也会告诉他的朋友哪一个植物能吃，哪个植物不能吃",
+   "her_piece": "也会告诉他的朋友哪一个植物能吃，哪个植物不能吃",
+   "her_note": "",
+   "review_row": "shennong_samples#12/f6/p0/k0-1",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:wrong_information_content",
+  "rule_card:ambiguous_reference",
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:redundancy_delete",
+  "correction_item:shennong_samples#23::c10",
+  "correction_item:shennong_samples#24::c6",
+  "correction_item:shennong_samples#30::c6"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:wrong_information_content",
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:a_not_a_question",
+   "correction_item:shennong_samples#24::c6",
+   "correction_item:shennong_samples#23::c10",
+   "correction_item:shennong_samples#1::c1"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: wrong_information_content\nGrammar/linguistic point: wrong_information_content\nFactual/content error: the sentence states something that contradicts the story's actual plot.\nExamples (original -> corrected, why):\n  - 不是他喜欢学习写文字，而是他的爸爸喜欢他练习 -> 写字  [想要他练习；wrong information, his father did not appear in this story]\n  - 那杯茶他放多的夹竹桃 -> 放了很多夹竹桃  [wrong information, he directly ate夹竹桃]\n  - 他爸爸说 -> wrong information, his father did not appear in this story\n  - 一个人一吃灵芝就死了 -> wrong information, 灵芝is medicine\n  - 难怪我们没有钱 -> wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n  - 夹竹桃很好吃，也对你的健康有好处 -> wrong information, 夹竹桃 is a poison\n  - 他今年才九岁，可是搬了十次家 -> wrong information, 搬了三次家\n  - 但如果灵芝和夹竹桃一起吃，那就是药了 -> delete但，wrong information, 灵芝is a medicine\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: a_not_a_question\nGrammar/linguistic point: a_not_a_question\nEmbedded yes/no questions use A-not-A (有没有毒, 能不能吃, 知不知道) or 是……还是……; 'whether/if' in 'know if' is not 如果.\nExamples (original -> corrected, why):\n  - 不知道如果有毒 -> 有没有毒  [the “if” in “not know if + clause” is not 如果]\n  - 神农加下去很多的植物，看看如果毒还是药 -> 吃下去很多植物；看看是毒还是药  [the “if” in “see if + clause” is not 如果]\n  - 我们也不在乎植物是毒 -> 有没有毒\n  - 但是如果他想知道这些植物有毒或有药性 -> 有毒还是有药性\n  - 这就要看你知道该吃哪一个了 -> 知不知道\n  - 人们不知道什么植物是不是能吃的 -> 什么植物是能吃的，什么植物是不能吃的\n  - 看看如果能吃还是不能吃，药还是毒 -> delete如果，the “if” in “see if + clause” is not 如果；是药还是毒\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n- 神农现在知道哪个植物是毒，可以告诉他的家：有毒，家人\n\n- 神农看到很多人吃了麻烦的植物：better to briefly introduce “神农” when this character first appears; 有害的植物\n\n## Student's scene to review\n发现了夹竹桃有毒。另外一个人看到他，很快给他吃一个灵芝。神农一吃就觉得比较好。然后，他继续写他发现的信息。会告诉他的朋友哪一个植物能不能吃。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “发现了夹竹桃有毒。” / Formula: 人物 + 发现 + 宾语 + 有毒 / Correct: “神农发现夹竹桃有毒。”  \nAdding “神农” makes the subject clear and turns the fragment into a complete sentence.\n\nIncorrect phrase: “另外一个人看到他，很快给他吃一个灵芝。” / Formula: 人物 + 看到 + 明确的人 + 就/很快 + 给 + 人 + 吃了 + 数量 + 量词 + 东西 / Correct: “另一个人看到神农后，很快给神农吃了一株灵芝。”  \n“他” is unclear here: it could refer to either person. Also, “一株灵芝” is a more suitable measure word for the plant.\n\nIncorrect phrase: “神农一吃就觉得比较好。” / Formula: 人物 + 一 + 动作 + 就 + 觉得 + 身体/状态 + 更好 / Correct: “神农一吃就觉得身体好一些了。”  \n“觉得比较好” is understandable, but it needs a clearer description of what became better.\n\nIncorrect phrase: “然后，他继续写他发现的信息。” / Formula: 人物 + 继续 + 写下/记录 + 自己发现的 + 信息 / Correct: “然后，神农继续记录自己发现的信息。”  \n“写信息” is less natural than “记录信息,” especially when describing scientific or medical discoveries.\n\nIncorrect phrase: “会告诉他的朋友哪一个植物能不能吃。” / Formula: 人物 + 会 + 告诉 + 人 + 哪些 + 名词 + 能……，哪些 + 不能…… / Correct: “他会告诉朋友哪些植物能吃，哪些植物不能吃。”  \n“哪一个植物能不能吃” mixes a specific choice word, “哪一个,” with an A-not-A question. Since he is explaining multiple plants, use “哪些……能吃，哪些……不能吃.”\n\n**Vocabulary Suggestions**\n\nWord: “另外一个人” / Context: “另外一个人看到他……” / Alternatives: “一位路人” or “一个好心人.” “另外一个人” simply means “another person” and is vague. “一位路人” means a passer-by, while “一个好心人” highlights that the person kindly helped Shennong.\n\nWord: “给他吃” / Context: “给他吃一个灵芝” / Alternatives: “让他服下” or “给他服用.” “给他吃” is common in spoken Chinese, but “服下” and “服用” are more natural for medicine or healing plants. “服下” emphasizes the completed act of taking medicine.\n\nWord: “觉得比较好” / Context: “神农一吃就觉得比较好” / Alternatives: “感觉舒服多了” or “身体好转了.” “比较好” is general and slightly incomplete here. “感觉舒服多了” describes Shennong’s immediate feeling, while “身体好转了” emphasizes an improvement in his health.\n\nWord: “写” / Context: “继续写他发现的信息” / Alternatives: “记录” or “记下.” “写” is a basic, general verb. “记录” sounds more formal and fits discoveries or research; “记下” is natural for quickly writing down important information.\n\nWord: “朋友” / Context: “告诉他的朋友” / Alternatives: “身边的人” or “其他人.” “朋友” specifically means friends. “身边的人” includes people around him, such as family or companions, while “其他人” is broader and more neutral.\n\n**Encouragement and Next Steps**\n\nYou told the events in a clear order and correctly included the important detail that lingzhi helps after eating poisonous oleander.  \nNext time, focus on making the subject clear and using “哪些……能……，哪些……不能……” when comparing several things.",
+  "usage": {
+   "prompt_tokens": 2005,
+   "completion_tokens": 1081,
+   "total_tokens": 3086,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2002,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 245,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 9148
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:wrong_information_content",
+   "rule_card:ambiguous_reference",
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:redundancy_delete",
+   "correction_item:shennong_samples#23::c10",
+   "correction_item:shennong_samples#24::c6",
+   "correction_item:shennong_samples#30::c6"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: wrong_information_content\nGrammar/linguistic point: wrong_information_content\nFactual/content error: the sentence states something that contradicts the story's actual plot.\nExamples (original -> corrected, why):\n  - 不是他喜欢学习写文字，而是他的爸爸喜欢他练习 -> 写字  [想要他练习；wrong information, his father did not appear in this story]\n  - 那杯茶他放多的夹竹桃 -> 放了很多夹竹桃  [wrong information, he directly ate夹竹桃]\n  - 他爸爸说 -> wrong information, his father did not appear in this story\n  - 一个人一吃灵芝就死了 -> wrong information, 灵芝is medicine\n  - 难怪我们没有钱 -> wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n  - 夹竹桃很好吃，也对你的健康有好处 -> wrong information, 夹竹桃 is a poison\n  - 他今年才九岁，可是搬了十次家 -> wrong information, 搬了三次家\n  - 但如果灵芝和夹竹桃一起吃，那就是药了 -> delete但，wrong information, 灵芝is a medicine\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 神农现在知道哪个植物是毒，可以告诉他的家：有毒，家人\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n- 然后神农回家告诉他的人民什么植物能吃：朋友邻居\n\n## Student's scene to review\n发现了夹竹桃有毒。另外一个人看到他，很快给他吃一个灵芝。神农一吃就觉得比较好。然后，他继续写他发现的信息。会告诉他的朋友哪一个植物能不能吃。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “发现了夹竹桃有毒” / Formula: Subject + 发现 + object + 有毒 / Correct: “神农发现夹竹桃有毒。”  \nA complete sentence needs a clear subject.\n\nIncorrect phrase: “另外一个人看到他，很快给他吃一个灵芝” / Formula: Someone + 看见 + person + 后，+ 给 + person + 吃/让 + person + 吃 + object / Correct: “另一个人看见神农后，很快给他吃了一个灵芝。”  \nUse “了” for the completed action. Naming 神农 also makes the reference clearer.\n\nIncorrect phrase: “神农一吃就觉得比较好” / Formula: Subject + 一 + verb + 就 + feeling/result / Correct: “神农一吃就觉得好多了。”  \n“比较好” normally compares two things; “好多了” means “much better now.”\n\nIncorrect phrase: “然后，他继续写他发现的信息” / Formula: Subject + 继续 + 写下/记录 + discovered information / Correct: “然后，神农继续写下他发现的信息。”  \n“写下” is more natural when recording information.\n\nIncorrect phrase: “会告诉他的朋友哪一个植物能不能吃” / Formula: Subject + 会 + 告诉 + person + 哪些/什么 + noun + 能不能 + verb / Correct: “他会告诉朋友哪些植物能吃，哪些植物不能吃。”  \n“哪一个植物能不能吃” is awkward because “哪一个” asks for one item, while “能不能” asks whether it is edible. Use “哪些植物能吃，哪些不能吃” to express both categories clearly.\n\n**Vocabulary Suggestions**\n\nWord: “另外一个人” / Context: “另外一个人看到他” / Alternatives: “另一个人” is simpler and more natural here. “路人” means a passer-by, while “村民” means a villager; choose these if the story gives that person a specific identity.\n\nWord: “很快” / Context: “很快给他吃了一个灵芝” / Alternatives: “立刻” or “马上” more strongly emphasizes that the person acted immediately in an urgent situation. “很快” is neutral and simply means “quickly.”\n\nWord: “比较好” / Context: “觉得比较好” / Alternatives: “好多了” means his condition improved noticeably. “恢复了一些” means he recovered to some extent and sounds slightly more narrative or formal.\n\nWord: “写” / Context: “写他发现的信息” / Alternatives: “记录” means to write down facts systematically, so it suits Shennong’s discoveries. “记下” is more everyday and means to make a note of something.\n\nWord: “朋友” / Context: “告诉他的朋友” / Alternatives: “大家” means everyone around him and makes his knowledge-sharing sound broader. “村民” specifically refers to people in the village and gives the story a clearer setting.\n\n**Encouragement and Next Steps**\n\nYou did well connecting the events in a clear sequence: discovering the poison, taking lingzhi, recovering, and sharing the information.  \nNext time, focus on adding clear subjects and using “了” to show completed actions.",
+  "usage": {
+   "prompt_tokens": 2109,
+   "completion_tokens": 685,
+   "total_tokens": 2794,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2106,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6630
+ }
+}

@@ -1,0 +1,126 @@
+{
+ "variant_id": "shennong_samples_4_s3_c9",
+ "sample_id": "shennong_samples#4",
+ "story_id": "shennong_chang_baicao",
+ "scene": 3,
+ "her_line": "你得小心吃植物，因为有的植物对你的健康有坏处：吃植物得小心，delete“对你”",
+ "rules": [
+  "adverbial_word_order",
+  "reference_form"
+ ],
+ "original_scene": "神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。",
+ "variant_scene": "神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的大脑有坏处。可是，一个男人正好过来，看到我的旁边长着一个灵芝，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。",
+ "previous_scenes": [
+  "古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。",
+  "一个人问神农，哪个植物好吃。神农说，这就要看你的口味了。要是你喜欢吃甜的，有很多甜的水果，比方说苹果、西瓜和梨。一个别的人问神农，哪个植物对你的身体有好处。神农说，有很多种植物对你的身体有好处，比方说小白菜、黄瓜、茶和菠菜。一个别的人问神农，哪个植物对你的身体有坏处。"
+ ],
+ "target_original": {
+  "start": 98,
+  "end": 114
+ },
+ "target_variant": {
+  "start": 104,
+  "end": 120
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#4/f9/p0/k0/e0",
+   "op": "replace",
+   "start": 104,
+   "end": 111,
+   "original": "你得小心吃植物",
+   "corrected": "吃植物得小心",
+   "her_line": "你得小心吃植物，因为有的植物对你的健康有坏处：吃植物得小心，delete“对你”",
+   "her_piece": "吃植物得小心",
+   "her_note": "",
+   "review_row": "shennong_samples#4/f9/p0/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "shennong_samples#4/f9/p0/k1/e0",
+   "op": "delete",
+   "start": 118,
+   "end": 120,
+   "original": "对你",
+   "corrected": "",
+   "her_line": "你得小心吃植物，因为有的植物对你的健康有坏处：吃植物得小心，delete“对你”",
+   "her_piece": "delete“对你”",
+   "her_note": "",
+   "review_row": "shennong_samples#4/f9/p0/k1",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 4,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:ambiguous_reference",
+  "rule_card:wrong_information_content",
+  "rule_card:example_marker_tebie_bifang",
+  "correction_item:shennong_samples#24::c6",
+  "correction_item:shennong_samples#10::c3",
+  "correction_item:shennong_samples#1::c1"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:wrong_information_content",
+   "rule_card:example_marker_tebie_bifang",
+   "correction_item:shennong_samples#24::c6",
+   "correction_item:shennong_samples#10::c3",
+   "correction_item:shennong_samples#1::c1"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: wrong_information_content\nGrammar/linguistic point: wrong_information_content\nFactual/content error: the sentence states something that contradicts the story's actual plot.\nExamples (original -> corrected, why):\n  - 不是他喜欢学习写文字，而是他的爸爸喜欢他练习 -> 写字  [想要他练习；wrong information, his father did not appear in this story]\n  - 那杯茶他放多的夹竹桃 -> 放了很多夹竹桃  [wrong information, he directly ate夹竹桃]\n  - 他爸爸说 -> wrong information, his father did not appear in this story\n  - 一个人一吃灵芝就死了 -> wrong information, 灵芝is medicine\n  - 难怪我们没有钱 -> wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n  - 夹竹桃很好吃，也对你的健康有好处 -> wrong information, 夹竹桃 is a poison\n  - 他今年才九岁，可是搬了十次家 -> wrong information, 搬了三次家\n  - 但如果灵芝和夹竹桃一起吃，那就是药了 -> delete但，wrong information, 灵芝is a medicine\n\n### Rule: example_marker_tebie_bifang\nGrammar/linguistic point: example_marker_tebie_bifang\n特别是 + N./clause singles out a typical example of what was just said; 比方说 introduces an example. Neither can replace 特别 (very) or stand without the general statement.\nExamples (original -> corrected, why):\n  - 灵芝特别是帮忙 -> 特别有用  [”特别是+N, + Clause” is used to single out a typical example]\n  - 吃不知名的植物是特别是危险的 -> 特别危险的  [”特别是+N, + Clause” is used to single out a typical example]\n  - 夹竹桃是特别是毒 -> 夹竹桃的毒特别厉害  [”特别是+N, + Clause” is used to single out a typical example]\n  - 这个大山特别是的 -> 特别是+N, + clause\n  - 特别是夹竹桃对身体更不好 -> 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n  - 比方说，他又不能思考清楚又不能问帮忙 -> 比方说is used to express “for example”, delete it; 又想不清楚又不能找别人帮忙，the “ask” in “ask for help” is not问\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 这就要看灵芝是不是特别了。比方说，可能是毒的 -> 是不是有用了。比方说is used to express “for example”, delete it；可能有毒\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n- 他吃花的时候生病了。夹竹桃有毒，但是他们不知道这个花有毒：it is confusing to have花，夹竹桃，这个花，it looks like they refer to two different flowers, but actually the same. 吃一种叫夹竹桃的花的时候\n\n- 神农看到很多人吃了麻烦的植物：better to briefly introduce “神农” when this character first appears; 有害的植物\n\n## Student's scene to review\n神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的大脑有坏处。可是，一个男人正好过来，看到我的旁边长着一个灵芝，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “我吃了一个黄色的花，名字是夹竹桃” / Formula: 一 + measure word + adjective + 的 + noun；introduce a name with “叫……” / Correct: “我吃了一朵黄色的花，叫夹竹桃。”\n\nIncorrect phrase: “我一吃夹竹桃，就觉得这种植物对我的大脑有坏处” / Formula: Subject + 一 + verb + object, 就 + result; use a specific result rather than a vague or factually inaccurate effect / Correct: “我一吃夹竹桃，肚子就疼了。”  \n“对大脑有坏处” does not match the story very well; the key point is that oleander is poisonous and makes Shennong ill.\n\nIncorrect phrase: “一个男人正好过来，看到我的旁边长着一个灵芝” / Formula: Person + 看到 + place + 长着 + object; make the person’s relationship clear / Correct: “这时，一个男人正好走过来，看到我身边长着一株灵芝。”  \n“一个男人” is understandable, but he appears suddenly without an introduction, so “这时” helps the flow.\n\nIncorrect phrase: “麻烦你把那个植物给我吃一下” / Formula: 麻烦 + someone + 把 + object + 给 + someone; or 麻烦 + someone + 让 + someone + verb / Correct: “麻烦你把那株灵芝给我。” / “麻烦你让我吃一下那株灵芝。”  \n“把……给我吃” sounds like you are asking the man to eat it for you.\n\nIncorrect phrase: “我一吃这个灵芝就好了” / Formula: Subject + 吃了 + object + 以后/就 + result / Correct: “我吃了这株灵芝以后，病就好了。”  \nAdding “病” makes it clear what became better.\n\nIncorrect phrase: “特别是夹竹桃。因为夹竹桃有毒。” / Formula: General statement + 特别是 + example + 因为 + reason / Correct: “有的植物对健康有害，特别是夹竹桃，因为它有毒。”  \nYou used “特别是” correctly: it highlights 夹竹桃 as a specific example of harmful plants.\n\n**Vocabulary Suggestions**\n\nWord: “黄色的花” / Context: “我吃了一朵黄色的花” / Alternatives: “黄花” is shorter and more natural in everyday speech. “开黄花的植物” is useful if you want to emphasize that it is a plant with yellow flowers, rather than only one flower.\n\nWord: “对我的大脑有坏处” / Context: “这种植物对我的大脑有坏处” / Alternatives: “对身体有害” is a more natural and general way to say something harms health. “有毒” is stronger and directly means poisonous; it is especially appropriate for 夹竹桃.\n\nWord: “正好过来” / Context: “一个男人正好过来” / Alternatives: “恰好走过来” sounds slightly more polished and means “happened to walk over.” “路过” means “pass by” and is natural if the man was simply passing that place.\n\nWord: “好了” / Context: “我一吃这个灵芝就好了” / Alternatives: “痊愈了” means “recovered completely” and is more formal. “康复了” also means “recovered,” often from an illness, and sounds natural in health-related writing.\n\nWord: “小心吃植物” / Context: “你得小心吃植物” / Alternatives: “不要随便吃植物” is more direct and natural advice: do not casually eat plants. “谨慎食用不认识的植物” is more formal and specifically emphasizes being careful with unfamiliar plants.\n\n**Encouragement and Next Steps**\n\nYou told the story in a clear sequence—eating oleander, finding lingzhi, and recovering—and your final safety message fits the story well.  \nNext time, focus on measure words, such as “一朵花” and “一株灵芝,” and make new characters clearer when they first appear.",
+  "usage": {
+   "prompt_tokens": 2229,
+   "completion_tokens": 1409,
+   "total_tokens": 3638,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2226,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 512,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 11964
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:wrong_information_content",
+   "rule_card:example_marker_tebie_bifang",
+   "correction_item:shennong_samples#24::c6",
+   "correction_item:shennong_samples#10::c3",
+   "correction_item:shennong_samples#1::c1"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: wrong_information_content\nGrammar/linguistic point: wrong_information_content\nFactual/content error: the sentence states something that contradicts the story's actual plot.\nExamples (original -> corrected, why):\n  - 不是他喜欢学习写文字，而是他的爸爸喜欢他练习 -> 写字  [想要他练习；wrong information, his father did not appear in this story]\n  - 那杯茶他放多的夹竹桃 -> 放了很多夹竹桃  [wrong information, he directly ate夹竹桃]\n  - 他爸爸说 -> wrong information, his father did not appear in this story\n  - 一个人一吃灵芝就死了 -> wrong information, 灵芝is medicine\n  - 难怪我们没有钱 -> wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n  - 夹竹桃很好吃，也对你的健康有好处 -> wrong information, 夹竹桃 is a poison\n  - 他今年才九岁，可是搬了十次家 -> wrong information, 搬了三次家\n  - 但如果灵芝和夹竹桃一起吃，那就是药了 -> delete但，wrong information, 灵芝is a medicine\n\n### Rule: example_marker_tebie_bifang\nGrammar/linguistic point: example_marker_tebie_bifang\n特别是 + N./clause singles out a typical example of what was just said; 比方说 introduces an example. Neither can replace 特别 (very) or stand without the general statement.\nExamples (original -> corrected, why):\n  - 灵芝特别是帮忙 -> 特别有用  [”特别是+N, + Clause” is used to single out a typical example]\n  - 吃不知名的植物是特别是危险的 -> 特别危险的  [”特别是+N, + Clause” is used to single out a typical example]\n  - 夹竹桃是特别是毒 -> 夹竹桃的毒特别厉害  [”特别是+N, + Clause” is used to single out a typical example]\n  - 这个大山特别是的 -> 特别是+N, + clause\n  - 特别是夹竹桃对身体更不好 -> 特别是is used to single out a typical example, but夹竹桃is not an example of灵芝\n  - 比方说，他又不能思考清楚又不能问帮忙 -> 比方说is used to express “for example”, delete it; 又想不清楚又不能找别人帮忙，the “ask” in “ask for help” is not问\n  - 比方说，他吃一个麻烦的植物 -> 比方说is used to express “for example”, delete it; 吃了很多奇怪的植物，麻烦is not used to describe植物\n  - 这就要看灵芝是不是特别了。比方说，可能是毒的 -> 是不是有用了。比方说is used to express “for example”, delete it；可能有毒\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 夹竹桃是毒，所以神农的肚子疼死了：有毒\n\n- 他吃花的时候生病了。夹竹桃有毒，但是他们不知道这个花有毒：it is confusing to have花，夹竹桃，这个花，it looks like they refer to two different flowers, but actually the same. 吃一种叫夹竹桃的花的时候\n\n- 神农看到很多人吃了麻烦的植物：better to briefly introduce “神农” when this character first appears; 有害的植物\n\n## Student's scene to review\n神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的大脑有坏处。可是，一个男人正好过来，看到我的旁边长着一个灵芝，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “我吃了一个黄色的花”  \nFormula: 一 + measure word + adjective + noun  \nCorrect: “我吃了一朵黄色的花。”\n\nIncorrect phrase: “名字是夹竹桃”  \nFormula: Noun + 叫 + name  \nCorrect: “它叫夹竹桃。”  \n“叫” is more natural than “名字是” when introducing the name of a plant.\n\nIncorrect phrase: “我一吃夹竹桃，就觉得这种植物对我的大脑有坏处”  \nFormula: completed event + result: 吃了……以后/一……就……  \nCorrect: “我吃了夹竹桃以后，就觉得身体不舒服。”  \nIn this story, this is one completed event, so “吃了……以后” is clearer. “对大脑有坏处” is also overly specific and sounds less natural here.\n\nIncorrect phrase: “一个男人正好过来，看到我的旁边长着一个灵芝，我说……”  \nFormula: person + 看到 + place + 长着 + noun；speaker + 对 + listener + 说  \nCorrect: “一个男人正好走过来，看到我身旁长着一株灵芝。我对他说：……”  \nThis avoids a long run-on sentence and makes it clear who is speaking to whom.\n\nIncorrect phrase: “麻烦你把那个植物给我吃一下”  \nFormula: 请 + person + 把 + object + 给 + person / 让我 + verb  \nCorrect: “麻烦你把那株灵芝给我吧，让我吃一点。”  \n“给我吃” can sound like you are asking the man to feed you. Also, using “灵芝” instead of “那个植物” makes the reference clear.\n\nIncorrect phrase: “我一吃这个灵芝就好了”  \nFormula: subject + 吃了 + object + 以后/就 + result  \nCorrect: “我吃了这株灵芝以后就好了。”  \nThis better expresses that Shennong recovered after eating the lingzhi.\n\nIncorrect phrase: “特别是夹竹桃。因为夹竹桃有毒。”  \nFormula: general statement + 特别是 + example + 因为 + reason  \nCorrect: “有的植物对健康有坏处，特别是夹竹桃，因为它有毒。”  \nYour use of “特别是夹竹桃” is correct because it gives a specific example of harmful plants; it is smoother to connect the reason to the same sentence.\n\n**Vocabulary Suggestions**\n\nWord: “有坏处”  \nContext: “这种植物对我的大脑有坏处。”  \nAlternatives: “有害” or “会伤害身体.” “有坏处” is understandable but general and informal. “有害” is more concise and is often used for food, chemicals, or plants that can damage health.\n\nWord: “正好”  \nContext: “一个男人正好过来。”  \nAlternatives: “正巧” or “恰好.” “正好” is common in everyday speech. “正巧” and “恰好” mean “by coincidence” and sound a little more natural in a story.\n\nWord: “旁边”  \nContext: “我的旁边长着一个灵芝。”  \nAlternatives: “身旁” or “附近.” “旁边” is very common and simple. “身旁” is more literary and means right next to a person, while “附近” means in the nearby area, not necessarily immediately beside someone.\n\nWord: “好了”  \nContext: “我吃了这个灵芝就好了。”  \nAlternatives: “恢复了” or “痊愈了.” “好了” is natural but vague. “恢复了” means someone returned to a healthy or normal condition; “痊愈了” means fully recovered from an illness and is more formal.\n\nWord: “小心吃植物”  \nContext: “你得小心吃植物。”  \nAlternatives: “不要随便吃野生植物” or “要谨慎食用不认识的植物.” “小心吃植物” is understandable, but “不要随便吃” gives clearer safety advice. “谨慎食用” is more formal and emphasizes being careful before eating something.\n\n**Encouragement and Next Steps**\n\nYou told the story in a clear sequence—eating oleander, finding lingzhi, recovering, and then giving safety advice—and your final warning fits the story very well.  \nNext time, focus on using measure words for plants and making clear who is speaking or doing each action.",
+  "usage": {
+   "prompt_tokens": 2229,
+   "completion_tokens": 1897,
+   "total_tokens": 4126,
+   "prompt_tokens_details": {
+    "cached_tokens": 2226,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 927,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 16876
+ }
+}

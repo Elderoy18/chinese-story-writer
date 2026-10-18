@@ -1,0 +1,109 @@
+{
+ "variant_id": "mengmu_samples_18_s1_c0",
+ "sample_id": "mengmu_samples#18",
+ "story_id": "mengmu_san_qian",
+ "scene": 1,
+ "her_line": "古代的时候：在古代",
+ "rules": [
+  "time_expression"
+ ],
+ "original_scene": "古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。",
+ "variant_scene": "古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习不好。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 0,
+  "end": 5
+ },
+ "target_variant": {
+  "start": 0,
+  "end": 5
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#18/f0/p0/k0/e0",
+   "op": "replace",
+   "start": 0,
+   "end": 5,
+   "original": "古代的时候",
+   "corrected": "在古代",
+   "her_line": "古代的时候：在古代",
+   "her_piece": "在古代",
+   "her_note": "",
+   "review_row": "mengmu_samples#18/f0/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:time_expression",
+  "rule_card:attributive_modifier_de",
+  "rule_card:ambiguous_reference",
+  "rule_card:character_introduction_first_mention",
+  "correction_item:mengmu_samples#14::c0",
+  "correction_item:mengmu_samples#34::c0",
+  "correction_item:mengmu_samples#19::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:attributive_modifier_de",
+   "rule_card:character_introduction_first_mention",
+   "rule_card:ambiguous_reference",
+   "correction_item:mengmu_samples#14::c0",
+   "correction_item:mengmu_samples#34::c0",
+   "correction_item:mengmu_samples#19::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候，有一个男孩子叫孟子和他的妈妈：在古代，有一个叫孟子的男孩子和他的妈妈住在一起\n\n- 古代的时候住了孟子和孟母：在古代，孟子和孟母住在墓地边，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子：在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子，“这个小孩子” is unclear and ambiguous\n\n## Student's scene to review\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习不好。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “古代的时候，有一个男孩名字叫孟子。”  \nFormula: 在古代 + 有一个叫 + 名字 + 的 + 身份/名词  \nCorrect: “在古代，有一个叫孟子的男孩。”  \n“在古代” is more natural than “古代的时候,” and the name should modify “男孩” with 的. This also introduces the character clearly on first mention.\n\nIncorrect phrase: “住在很穷的农村。”  \nFormula: 住在 + 一个 + modifier + 的 + place + 里  \nCorrect: “住在一个贫穷的村庄里。”  \n“农村” usually means the countryside in general; “村庄” is a specific village where a family can live.\n\nIncorrect phrase: “墓地老是有很多人祭拜。”  \nFormula: Place + 老是/常常 + 有人 + 来 + verb  \nCorrect: “墓地里老是有人来祭拜。”  \nUse 墓地里 to show where the action happens. 来祭拜 also makes the purpose of their visit clearer.\n\nIncorrect phrase: “因为人们在祭拜，他们一直在哭。”  \nFormula: 因为 + specific person/group + action/result，+ main clause  \nCorrect: “因为来祭拜的人一直在哭，孟子和妈妈受不了。”  \n“他们” could refer either to the visitors or to Mencius and his mother, so naming the group makes the meaning clear.\n\nIncorrect phrase: “而且害得孟子的学习不好。”  \nFormula: 害得 + person + verb/result  \nCorrect: “而且害得孟子学习不好。”  \nHere, 孟子 is the person affected, so “孟子的” is unnecessary.\n\n**Vocabulary Suggestions**\n\nWord: “很穷”  \nContext: “住在很穷的农村”  \nAlternatives: “贫穷” or “贫困.” 很穷 is simple and conversational. 贫穷 is more neutral and appropriate for narrative writing, while 贫困 emphasizes a serious lack of money or resources.\n\nWord: “农村”  \nContext: “住在很穷的农村”  \nAlternatives: “村庄” or “乡村.” 农村 refers broadly to rural areas, while 村庄 is a specific village. 乡村 has a gentler, more literary feeling and often describes a rural atmosphere.\n\nWord: “旁边”  \nContext: “他们住的地方旁边是个墓地”  \nAlternatives: “附近” or “紧挨着.” 旁边 simply means “beside.” 附近 means “nearby,” while 紧挨着 emphasizes that two places are extremely close together.\n\nWord: “祭拜”  \nContext: “墓地老是有很多人祭拜”  \nAlternatives: “祭奠” or “扫墓.” 祭拜 can refer to worshipping ancestors or deities. 祭奠 emphasizes mourning and commemorating someone who has died, while 扫墓 specifically means visiting and tending a grave.\n\nWord: “受不了了”  \nContext: “就觉得受不了了”  \nAlternatives: “难以忍受” or “无法忍受.” 受不了 is natural in speech and expresses strong frustration. 难以忍受 is more formal, and 无法忍受 is even stronger: it means someone can no longer tolerate the situation.\n\n**Encouragement and Next Steps**\n\nYou created a clear cause-and-effect story: the crying visitors near the cemetery affect Mencius’s life and studies.  \n\nNext time, focus on using specific nouns instead of pronouns when “他们” could refer to more than one group.",
+  "usage": {
+   "prompt_tokens": 2224,
+   "completion_tokens": 1669,
+   "total_tokens": 3893,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2221,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 880,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 15043
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:time_expression",
+   "rule_card:attributive_modifier_de",
+   "rule_card:ambiguous_reference",
+   "rule_card:character_introduction_first_mention",
+   "correction_item:mengmu_samples#14::c0",
+   "correction_item:mengmu_samples#34::c0",
+   "correction_item:mengmu_samples#19::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 古代的时候，有一个男孩子叫孟子和他的妈妈：在古代，有一个叫孟子的男孩子和他的妈妈住在一起\n\n- 古代的时候住了孟子和孟母：在古代，孟子和孟母住在墓地边，better to briefly introduce “孟子” when this character first appears\n\n- 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子：在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子，“这个小孩子” is unclear and ambiguous\n\n## Student's scene to review\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习不好。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “古代的时候” / Formula: 在 + historical time period / Correct: “在古代，有一个叫孟子的男孩。” “古代的时候” is understandable, but “在古代” is more natural and concise.\n\nIncorrect phrase: “有一个男孩名字叫孟子” / Formula: 有 + 一个 + 叫 + name + 的 + noun / Correct: “有一个叫孟子的男孩。” This introduces the character more naturally.\n\nIncorrect phrase: “孟子和孟子的妈妈两个人住在很穷的农村” / Formula: Subject + 住在 + modifier + 的 + place / Correct: “孟子和妈妈住在一个很贫穷的农村。” “农村” is a place category, so it needs “一个” here; “贫穷” is more natural than “穷” for describing an area.\n\nIncorrect phrase: “他们住的地方旁边是个墓地” / Formula: 他们住的地方 + 旁边 + 有 + noun / Correct: “他们住的地方旁边有一个墓地。” Use 有 to say that something exists next to a place.\n\nIncorrect phrase: “墓地老是有很多人祭拜” / Formula: 在 + place +，people + 常常/总是 + verb / Correct: “很多人常常在墓地祭拜。” The people are the subject of 祭拜, not the cemetery.\n\nIncorrect phrase: “因为人们在祭拜，他们一直在哭” / Formula: 因为 + reason, 所以 + result / Correct: “因为来祭拜的人一直在哭，所以孟子和妈妈觉得很吵。” “他们” is unclear: it could mean the worshippers or Mengzi and his mother. Also, crying is not necessarily caused by the act of worshipping.\n\nIncorrect phrase: “住在这里才一个星期就觉得受不了了” / Formula: Subject + 在/住在 + place + 才 + duration + 就 + 受不了 + 了 / Correct: “他们才住了一个星期就受不了了。” This makes it clear that they had lived there for only one week.\n\nIncorrect phrase: “而且害得孟子的学习不好” / Formula: Subject/event + 害得 + person + result / Correct: “而且吵闹声害得孟子学习不好。” The thing causing the problem should be stated clearly.\n\n**Vocabulary Suggestions**\n\nWord: “很穷的农村” / Context: “住在很穷的农村” / Alternatives: “贫穷的农村” or “偏僻的农村.” “穷” is common and direct, while “贫穷” is more formal and natural for describing an area. “偏僻” means remote or isolated; it may fit especially well if the village is far from the city.\n\nWord: “旁边” / Context: “他们住的地方旁边” / Alternatives: “附近” or “不远处.” “旁边” means directly next to something. “附近” means in the surrounding area, while “不远处” creates a more story-like image of a place that is not far away.\n\nWord: “老是” / Context: “墓地老是有很多人祭拜” / Alternatives: “常常” or “总是.” “老是” often suggests that the speaker finds something annoying. “常常” is neutral and suitable for narration; “总是” emphasizes that something happens repeatedly or nearly every time.\n\nWord: “哭” / Context: “他们一直在哭” / Alternatives: “哭泣” or “号啕大哭.” “哭” is basic and neutral. “哭泣” is more written and literary. “号啕大哭” means to cry loudly and intensely, which would better explain why the noise disturbed Mengzi’s studies.\n\nWord: “受不了了” / Context: “就觉得受不了了” / Alternatives: “无法忍受” or “难以忍受.” “受不了” is natural in everyday speech. “无法忍受” and “难以忍受” are more formal and emphasize that the situation was intolerable.\n\n**Encouragement and Next Steps**\n\nYou created a clear cause-and-effect story: the nearby cemetery, the crying visitors, and Mengzi’s difficulty studying connect logically.\n\nNext time, focus on making pronoun references clear and stating exactly what causes a result.",
+  "usage": {
+   "prompt_tokens": 2224,
+   "completion_tokens": 937,
+   "total_tokens": 3161,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2221,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7474
+ }
+}

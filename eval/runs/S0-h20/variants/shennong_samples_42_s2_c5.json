@@ -1,0 +1,111 @@
+{
+ "variant_id": "shennong_samples_42_s2_c5",
+ "sample_id": "shennong_samples#42",
+ "story_id": "shennong_chang_baicao",
+ "scene": 2,
+ "her_line": "原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result",
+ "rules": [
+  "jieguo_unexpected_result"
+ ],
+ "original_scene": "他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。",
+ "variant_scene": "他觉得，这一定是一种做药的花。原来他想错了。吃了以后，神农很快就生病了。 这时一个穿着蓝色衣服的人帮神农，很快地给了他一种红的灵芝。神农吃了以后，病好了，想起来以前一个人告诉他，灵芝对身体有好处。",
+ "previous_scenes": [
+  "古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。"
+ ],
+ "target_original": {
+  "start": 14,
+  "end": 16
+ },
+ "target_variant": {
+  "start": 15,
+  "end": 17
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#42/f5/p0/k0/e0",
+   "op": "replace",
+   "start": 15,
+   "end": 17,
+   "original": "原来",
+   "corrected": "结果",
+   "her_line": "原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result",
+   "her_piece": "结果",
+   "her_note": "“原来” is to explain the reason while “结果” is to describe an unexpected result",
+   "review_row": "shennong_samples#42/f5/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 6,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:ambiguous_reference",
+  "rule_card:redundancy_delete",
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:coherence_connectives",
+  "correction_item:shennong_samples#46::c5",
+  "correction_item:shennong_samples#11::c4",
+  "correction_item:shennong_samples#20::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:ambiguous_reference",
+   "rule_card:redundancy_delete",
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:coherence_connectives",
+   "correction_item:shennong_samples#46::c5",
+   "correction_item:shennong_samples#11::c4",
+   "correction_item:shennong_samples#20::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 一个农民帮神农吃灵芝：给神农吃灵芝\n\n- 所以神农吃了，一吃就生病：it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n- 神农看到人一吃百草就生病：better to briefly introduce “神农” when this character first appears；人们，一些植物，“百草“ is a general term for “different plants”\n\n## Student's scene to review\n他觉得，这一定是一种做药的花。原来他想错了。吃了以后，神农很快就生病了。 这时一个穿着蓝色衣服的人帮神农，很快地给了他一种红的灵芝。神农吃了以后，病好了，想起来以前一个人告诉他，灵芝对身体有好处。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “一种做药的花” / Formula: 一种 + 用来/可以 + 做 + 名词 + 的 + 植物 / Correct: “一种可以用来做药的植物” or “一种药用植物”。“做药的花” is understandable, but “药用植物” is much more natural.\n\nIncorrect phrase: “吃了以后，神农很快就生病了” / Formula: 主语 + 吃了……以后 + 就 + 结果 / Correct: “神农吃了以后，很快就生病了。” Placing the subject first makes it immediately clear who ate the plant.\n\nIncorrect phrase: “一个穿着蓝色衣服的人帮神农” / Formula: 某人 + 帮/帮助 + 某人 + 做某事 / Correct: “一个穿着蓝色衣服的人帮助神农治病。” “帮神农” needs an action after it, such as “治病” or “找药.”\n\nIncorrect phrase: “很快地给了他一种红的灵芝” / Formula: 给 + 人 + 一种 + 颜色 + 的 + 名词 / Correct: “很快给了他一种红色的灵芝。” Use “红色的” before a noun; “红的” is less natural here.\n\nIncorrect phrase: “病好了，想起来以前一个人告诉他” / Formula: 主语 + 病好了以后 + 想起 + 以前 + 某人 + 告诉他的事 / Correct: “病好了以后，神农想起以前有人告诉过他，灵芝对身体有好处。” “一个人” is vague here, so “有人” is more natural; also, “告诉过” shows this happened in the past.\n\n**Vocabulary Suggestions**\n\nWord: “做药的花” / Context: “这一定是一种做药的花。” / Alternatives: “药用植物” is the most natural and concise term for a plant used as medicine. “草药” usually refers to medicinal herbs, often after they are gathered or prepared for medical use. “花” specifically means “flower,” but the scene may refer to the whole plant.\n\nWord: “想错了” / Context: “原来他想错了。” / Alternatives: “弄错了” means he made a mistake about a fact or identification. “猜错了” is especially suitable if he was guessing what the plant was. Both are slightly more precise than “想错了.”\n\nWord: “生病了” / Context: “神农很快就生病了。” / Alternatives: “中毒了” is more vivid and precise if the plant was poisonous. “感到不舒服” is milder and means he began to feel unwell, without necessarily saying that he became ill.\n\nWord: “穿着蓝色衣服的人” / Context: “一个穿着蓝色衣服的人……” / Alternatives: “一位身穿蓝衣的人” is more concise and story-like. “一位穿蓝色衣服的人” is natural in everyday writing. “身穿” has a slightly more literary tone.\n\nWord: “对身体有好处” / Context: “灵芝对身体有好处。” / Alternatives: “有益健康” is concise and more formal. “能够增强体质” is more specific: it means it can strengthen one’s physical condition. “滋补身体” has a traditional-medicine feeling and is often used for medicinal foods or herbs.\n\n**Encouragement and Next Steps**\n\nYou created a clear cause-and-effect story: Shennong eats a plant, becomes ill, receives lingzhi, and then remembers its benefits.  \nNext time, focus on making each character’s action explicit and using more precise words such as “药用植物” and “中毒了.”",
+  "usage": {
+   "prompt_tokens": 2378,
+   "completion_tokens": 812,
+   "total_tokens": 3190,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2375,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7021
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:ambiguous_reference",
+   "rule_card:redundancy_delete",
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:coherence_connectives",
+   "correction_item:shennong_samples#46::c5",
+   "correction_item:shennong_samples#11::c4",
+   "correction_item:shennong_samples#20::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 一个农民帮神农吃灵芝：给神农吃灵芝\n\n- 所以神农吃了，一吃就生病：it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n- 神农看到人一吃百草就生病：better to briefly introduce “神农” when this character first appears；人们，一些植物，“百草“ is a general term for “different plants”\n\n## Student's scene to review\n他觉得，这一定是一种做药的花。原来他想错了。吃了以后，神农很快就生病了。 这时一个穿着蓝色衣服的人帮神农，很快地给了他一种红的灵芝。神农吃了以后，病好了，想起来以前一个人告诉他，灵芝对身体有好处。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “这一定是一种做药的花” / Formula: 一种 + 用来/可以 + 做 + 名词 + 的 + 植物 / Correct: “这一定是一种可以入药的植物。”  \n“做药” is understandable, but “入药” is the more natural expression for a plant used as medicine.\n\nIncorrect phrase: “吃了以后，神农很快就生病了” / Formula: Subject + 吃了……以后 + 就 + Verb / Correct: “神农吃了以后，很快就生病了。”  \nPlacing 神农 at the beginning makes it immediately clear who ate the plant.\n\nIncorrect phrase: “一个穿着蓝色衣服的人帮神农” / Formula: Subject + 帮 + Person + Verb / Correct: “一个穿着蓝色衣服的人帮神农治病。”  \n帮 needs an action after the person; “治病” explains how the person helped Shennong.\n\nIncorrect phrase: “很快地给了他一种红的灵芝” / Formula: Subject + 很快(地) + 给了 + Person + Object / Correct: “很快给了他一种红色的灵芝。”  \nUse “红色的” before a noun. Also, “很快” can usually be used without 地 here.\n\nIncorrect phrase: “想起来以前一个人告诉他” / Formula: Subject + 想起 + (以前) + Someone + 告诉过 + Object / Correct: “他想起以前有人告诉过他……”  \n“一个人” is too vague here; “有人” is more natural when the person is unknown or unimportant.\n\n**Vocabulary Suggestions**\n\nWord: “做药” / Context: “一种做药的花” / Alternatives: “入药” means “to be used medicinally” and is concise and natural when discussing plants. “药材” means medicinal material/herb and can describe the plant itself: “这可能是一种药材.” “做药” is understandable but sounds less idiomatic.\n\nWord: “花” / Context: “一种做药的花” / Alternatives: “植物” is more accurate if Shennong ate the whole plant or an unknown part of it. “药草” specifically refers to a medicinal herb and fits this story especially well. “花” refers only to the flower, so it may be too specific.\n\nWord: “穿着蓝色衣服的人” / Context: “这时一个穿着蓝色衣服的人……” / Alternatives: “蓝衣人” is shorter and more story-like. “一位身穿蓝衣的人” is slightly more literary and descriptive. The original phrase is correct, but these alternatives make the narration smoother.\n\nWord: “病好了” / Context: “神农吃了以后，病好了” / Alternatives: “病就痊愈了” is more formal and means the illness was completely cured. “身体很快恢复了” emphasizes regaining health and strength. “病好了” is simple and natural, but less vivid.\n\nWord: “对身体有好处” / Context: “灵芝对身体有好处” / Alternatives: “对身体有益” is more concise and somewhat formal. “有养生的功效” emphasizes a health-promoting effect and is often used for traditional medicinal foods. “有好处” is broad and beginner-friendly, while these options are more precise.\n\n**Encouragement and Next Steps**\n\nYou created a clear cause-and-effect story: Shennong eats a plant, becomes ill, receives lingzhi, and then recovers.  \nNext time, focus on making unclear people and actions more specific, especially with phrases such as “帮某人治病” and “有人告诉过他.”",
+  "usage": {
+   "prompt_tokens": 2378,
+   "completion_tokens": 797,
+   "total_tokens": 3175,
+   "prompt_tokens_details": {
+    "cached_tokens": 2375,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6968
+ }
+}

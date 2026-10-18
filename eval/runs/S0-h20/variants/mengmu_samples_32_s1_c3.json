@@ -1,0 +1,109 @@
+{
+ "variant_id": "mengmu_samples_32_s1_c3",
+ "sample_id": "mengmu_samples#32",
+ "story_id": "mengmu_san_qian",
+ "scene": 1,
+ "her_line": "她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我",
+ "rules": [
+  "word_choice"
+ ],
+ "original_scene": "有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+ "variant_scene": "有一天孟子去了墓地玩儿，但是他妈妈觉得这不是适合孩子玩的地方，所以她决定搬家到更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她一直搬家想要让孟子受到良好的教育。然后他们搬到了离城市更近的地方。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 51,
+  "end": 53
+ },
+ "target_variant": {
+  "start": 46,
+  "end": 48
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#32/f3/p0/k0/e0",
+   "op": "replace",
+   "start": 46,
+   "end": 48,
+   "original": "恐怕",
+   "corrected": "怕",
+   "her_line": "她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我",
+   "her_piece": "怕/担心",
+   "her_note": "恐怕usually does not take Subj. except 我",
+   "review_row": "mengmu_samples#32/f3/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 7,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:preposition_dao_place",
+  "rule_card:cai_jiu_construction",
+  "rule_card:location_zai_place",
+  "rule_card:time_expression",
+  "correction_item:mengmu_samples#13::c3",
+  "correction_item:mengmu_samples#36::c4",
+  "correction_item:mengmu_samples#20::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:cai_jiu_construction",
+   "rule_card:location_zai_place",
+   "rule_card:time_expression",
+   "correction_item:mengmu_samples#20::c0",
+   "correction_item:mengmu_samples#13::c3",
+   "correction_item:mengmu_samples#9::c10"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n- 所以孟子的妈妈搬家很安全很安静的公寓：搬到……\n\n- 原来他妈妈选择特别好的地方孟子长大：选择对孟子成长特别好的环境\n\n## Student's scene to review\n有一天孟子去了墓地玩儿，但是他妈妈觉得这不是适合孩子玩的地方，所以她决定搬家到更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她一直搬家想要让孟子受到良好的教育。然后他们搬到了离城市更近的地方。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “她决定搬家到更好的地方” / Formula: 主语 + 决定 + 搬到 + 地点 / Correct: “她决定搬到更好的地方。”  \n“搬家” can be a noun or verb, but when followed by a destination, use “搬到 + place.”\n\nIncorrect phrase: “住在这儿教育不太好” / Formula: 地点 + 的 + 教育（条件）+ 不太好 / Correct: “这儿的教育条件不太好。”  \nThe subject should be “the educational conditions here,” not “living here.”\n\nIncorrect phrase: “她一直搬家想要让孟子受到良好的教育” / Formula: 主语 + 为了/想让 + 人 + 得到/受到 + 教育，+ 搬了好几次家 / Correct: “她为了让孟子受到良好的教育，搬了好几次家。”  \nFor completed repeated moves in this story, “搬了好几次家” is clearer and more natural than “一直搬家.”\n\n**Vocabulary Suggestions**\n\nWord: “玩儿” / Context: “孟子去了墓地玩儿” / Alternatives: “玩耍” or “模仿办丧事。” “玩儿” is natural and casual, but “玩耍” is slightly more suitable for written narration. In the story of Mencius’s mother, “模仿办丧事” is more vivid and specific because it explains what he did near the cemetery.\n\nWord: “更好的地方” / Context: “搬到更好的地方” / Alternatives: “更适合孩子成长的地方” or “更好的环境。” “更好的地方” is understandable but vague. “更适合孩子成长的环境” clearly emphasizes the kind of place a child needs for healthy development.\n\nWord: “恐怕” / Context: “她恐怕儿子的童年不会幸福” / Alternatives: “担心” or “害怕。” “恐怕” often means “I am afraid that…” and can sound somewhat formal or indirect. “担心” is more direct and natural for a mother’s ongoing concern.\n\nWord: “教育不太好” / Context: “这儿的教育不太好” / Alternatives: “教育条件不好” or “学习环境不好。” “教育不太好” is broad. “教育条件不好” focuses on resources and school quality, while “学习环境不好” focuses on whether the environment supports learning.\n\nWord: “离城市更近的地方” / Context: “他们搬到了离城市更近的地方” / Alternatives: “城里” or “靠近市场的地方。” “离城市更近的地方” is grammatically correct, but “城里” is more concise. “靠近市场的地方” is especially appropriate for the traditional story, because Mencius’s mother moved near a market before finding the right environment near a school.\n\n**Encouragement and Next Steps**\n\nYou explained Meng Mu’s motivation clearly, and the events flow logically from the cemetery to her decision to move.  \nNext time, focus on using more specific place descriptions and the structure “搬到 + place.”",
+  "usage": {
+   "prompt_tokens": 2069,
+   "completion_tokens": 924,
+   "total_tokens": 2993,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2066,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 241,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 8395
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:cai_jiu_construction",
+   "rule_card:location_zai_place",
+   "rule_card:time_expression",
+   "correction_item:mengmu_samples#13::c3",
+   "correction_item:mengmu_samples#36::c4",
+   "correction_item:mengmu_samples#20::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 所以孟子的妈妈搬家很安全很安静的公寓：搬到……\n\n- 孟子跟他的妈妈搬家，去一个最好的学校：去了，了completed\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n有一天孟子去了墓地玩儿，但是他妈妈觉得这不是适合孩子玩的地方，所以她决定搬家到更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她一直搬家想要让孟子受到良好的教育。然后他们搬到了离城市更近的地方。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “她决定搬家到更好的地方” / Formula: 决定 + Verb Phrase; 搬到 + Place / Correct: “她决定搬到更好的地方。”\n\nIncorrect phrase: “住在这儿教育不太好” / Formula: 在 + Place + (的) + education/environment + 不太好; the subject should be clear / Correct: “这儿的教育条件不太好。”  \nYou could also say: “住在这儿，孟子不太容易受到良好的教育。”\n\nIncorrect phrase: “她一直搬家想要让孟子受到良好的教育” / Formula: 为了 + Purpose, Subject + 搬到 + Place; “一直” means continuously over a long period and is not ideal here / Correct: “为了让孟子受到良好的教育，她带着孟子搬了好几次家。”\n\nIncorrect phrase: “然后他们搬到了离城市更近的地方” / Formula: 搬到 + Place; 离 + Place + 更近 / Correct: “后来，他们搬到了离城市更近的地方。”  \n“然后” is not wrong, but “后来” sounds more natural for a later event in a story.\n\n**Vocabulary Suggestions**\n\nWord: “玩儿” / Context: “孟子去了墓地玩儿” / Alternatives: “玩耍” is slightly more formal and works well in written storytelling: “孟子去了墓地玩耍。” “模仿办丧事” is much more specific: it explains that Mencius was copying funeral rituals, which is the key detail in this traditional story.\n\nWord: “恐怕” / Context: “她恐怕儿子的童年不会幸福” / Alternatives: “担心” is more direct and natural for a mother’s concern: “她担心儿子的成长会受到影响。” “害怕” is stronger and emphasizes fear, while “恐怕” can also mean “I am afraid that…” in a polite prediction.\n\nWord: “幸福” / Context: “儿子的童年不会幸福” / Alternatives: “健康成长” is more natural when discussing a child’s development. “受到不良影响” specifically emphasizes the negative effect of the environment. “幸福” focuses on personal happiness, while these alternatives better match Meng Mu’s educational concerns.\n\nWord: “教育不太好” / Context: “这儿教育不太好” / Alternatives: “教育环境不好” emphasizes the overall learning atmosphere and surroundings. “教育条件不好” focuses on practical resources and opportunities, such as schools and teachers.\n\nWord: “良好的教育” / Context: “让孟子受到良好的教育” / Alternatives: “更好的教育” is simpler and very natural in this context. “良好的成长环境” is broader: it includes not only school education, but also the neighborhood, role models, and daily atmosphere.\n\n**Encouragement and Next Steps**\n\nYou clearly explained Meng Mu’s motivation and connected the events with logical words such as “所以” and “因为.”  \nNext time, focus on making the subject clear in longer sentences and using more specific expressions for the environment and education.",
+  "usage": {
+   "prompt_tokens": 2067,
+   "completion_tokens": 663,
+   "total_tokens": 2730,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2064,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6346
+ }
+}

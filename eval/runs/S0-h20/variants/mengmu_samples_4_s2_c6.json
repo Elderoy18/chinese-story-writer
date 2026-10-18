@@ -1,0 +1,126 @@
+{
+ "variant_id": "mengmu_samples_4_s2_c6",
+ "sample_id": "mengmu_samples#4",
+ "story_id": "mengmu_san_qian",
+ "scene": 2,
+ "her_line": "孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred",
+ "rules": [
+  "you_zai_distinction",
+  "word_choice",
+  "measure_word"
+ ],
+ "original_scene": "这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。",
+ "variant_scene": "这个城市老是很吵，不是常常有人吵架，就是很多人都大声说话，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到了工作，在商店做衣服。",
+ "previous_scenes": [
+  "古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。"
+ ],
+ "target_original": {
+  "start": 49,
+  "end": 57
+ },
+ "target_variant": {
+  "start": 58,
+  "end": 66
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#4/f6/p0/k0/e0",
+   "op": "delete",
+   "start": 58,
+   "end": 59,
+   "original": "要",
+   "corrected": "",
+   "her_line": "孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred",
+   "her_piece": "又搬了一次家",
+   "her_note": "“要” is for future plan/desire, this already occurred",
+   "review_row": "mengmu_samples#4/f6/p0/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#4/f6/p0/k0/e1",
+   "op": "replace",
+   "start": 59,
+   "end": 66,
+   "original": "又一个次搬了家",
+   "corrected": "又搬了一次家",
+   "her_line": "孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred",
+   "her_piece": "又搬了一次家",
+   "her_note": "",
+   "review_row": "mengmu_samples#4/f6/p0/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 3,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:cai_jiu_construction",
+  "rule_card:preposition_dao_place",
+  "rule_card:ambiguous_reference",
+  "rule_card:location_zai_place",
+  "correction_item:mengmu_samples#41::c6",
+  "correction_item:mengmu_samples#26::c0",
+  "correction_item:mengmu_samples#19::c1"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:cai_jiu_construction",
+   "rule_card:preposition_dao_place",
+   "rule_card:coherence_connectives",
+   "rule_card:location_zai_place",
+   "correction_item:mengmu_samples#41::c6",
+   "correction_item:mengmu_samples#26::c0",
+   "correction_item:mengmu_samples#19::c1"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 在第二个城市，孟母发现孩子们老是用功工作，但没有道德：孟子，“孩子们” is ambiguous\n\n- 孟子和孟母住在小的城：一个小城市，better to briefly introduce “孟子” when this character first appears\n\n- 所以她带孟子到一个城市搬家了：带孟子搬到城市了\n\n## Student's scene to review\n这个城市老是很吵，不是常常有人吵架，就是很多人都大声说话，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到了工作，在商店做衣服。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “这个城市老是很吵”  \nFormula: Place/thing + 总是/一直 + adjective; “老是” is more often used for repeated actions that the speaker finds annoying.  \nCorrect: “这个城市总是很吵” or “这个城市一直很吵。”\n\nIncorrect phrase: “孟子和妈妈要又一个次搬了家”  \nFormula: Subject + 又 + Verb + 了 + number + measure word + object. Do not use “要” (future intention) together with “了” for a completed action.  \nCorrect: “孟子和妈妈又搬了一次家。”  \nMore natural in this story: “于是，孟子和孟母又搬了一次家。”\n\n**Vocabulary Suggestions**\n\nWord: “很吵”  \nContext: “这个城市总是很吵。”  \nAlternatives: “嘈杂” is a more advanced word for a place with many overlapping noises, such as traffic and people talking. “喧闹” emphasizes that a place is lively and noisily active, often with many people.\n\nWord: “大声说话”  \nContext: “很多人都大声说话。”  \nAlternatives: “高声说话” is slightly more formal and natural in narration. “喧哗” means making loud noise or talking loudly, and it is often used to describe a crowd.\n\nWord: “害得”  \nContext: “害得孟子一直不能睡觉。”  \nAlternatives: “导致” is more formal and objective: “导致孟子无法入睡.” “使” is also useful in written narration: “使孟子一直无法入睡.” “害得” has a stronger feeling of complaint or negative consequence.\n\nWord: “找不到工作”  \nContext: “孟母也找不到工作。”  \nAlternatives: “一直没能找到工作” emphasizes that she tried but did not succeed over a period of time. “难以找到工作” means it was difficult to find employment and sounds more formal.\n\nWord: “做衣服”  \nContext: “在商店做衣服。”  \nAlternatives: If she makes or sews clothes, say “在商店里做裁缝” or “在商店里缝制衣服.” If she works in a clothing shop selling clothes, “在服装店卖衣服” is clearer. “做衣服” can mean making clothes, but it is slightly vague here.\n\n**Encouragement and Next Steps**\n\nYou did a good job creating a clear problem-and-solution sequence: the noisy city and lack of work naturally explain why Mengzi and his mother move again.  \nNext time, focus on using “又 + verb + 了 + number + measure word” correctly when describing repeated completed actions.",
+  "usage": {
+   "prompt_tokens": 2087,
+   "completion_tokens": 850,
+   "total_tokens": 2937,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2084,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 252,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 8109
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:cai_jiu_construction",
+   "rule_card:preposition_dao_place",
+   "rule_card:ambiguous_reference",
+   "rule_card:location_zai_place",
+   "correction_item:mengmu_samples#41::c6",
+   "correction_item:mengmu_samples#26::c0",
+   "correction_item:mengmu_samples#19::c1"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 在第二个城市，孟母发现孩子们老是用功工作，但没有道德：孟子，“孩子们” is ambiguous\n\n- 孟子和孟母住在小的城：一个小城市，better to briefly introduce “孟子” when this character first appears\n\n- 所以她带孟子到一个城市搬家了：带孟子搬到城市了\n\n## Student's scene to review\n这个城市老是很吵，不是常常有人吵架，就是很多人都大声说话，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到了工作，在商店做衣服。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “不是常常有人吵架，就是很多人都大声说话”  \nFormula: 不是 + A， 就是 + B. The two parts should be parallel; use “常常” to describe the whole situation rather than only the first part.  \nCorrect: “这个城市常常很吵，不是有人吵架，就是很多人大声说话。”\n\nIncorrect phrase: “孟子和妈妈要又一个次搬了家”  \nFormula: 谁 + 又 + 搬了 + 一次 + 家. For a completed action, use 又 + verb + 了 + 一次.  \nCorrect: “孟子和孟母又搬了一次家。”  \n(If they have not moved yet, say: “孟子和孟母又要搬家了。”)\n\nIncorrect phrase: “在商店做衣服”  \nFormula: 在 + place + 里 + verb. Use 里 after a specific indoor location.  \nCorrect: “孟母在一家商店里做衣服。”  \nMore natural: “孟母在一家服装店里做衣服。”\n\n**Vocabulary Suggestions**\n\nWord: “很吵”  \nContext: “这个城市老是很吵。”  \nAlternatives: “嘈杂” is a more advanced word for a place filled with many loud, mixed sounds, such as traffic and people talking. “吵” is simple and common; “嘈杂” creates a stronger and more vivid description.\n\nWord: “大声说话”  \nContext: “很多人都大声说话。”  \nAlternatives: “喧哗” means making a lot of noise, often in a public place, and sounds more formal or written. “吵闹” emphasizes noisy, disorderly activity. “大声说话” is clear but more literal.\n\nWord: “找不到工作”  \nContext: “孟母也找不到工作。”  \nAlternatives: “一直没有找到工作” emphasizes that she searched for some time but was unsuccessful. “求职不顺利” is more formal and means that the job search did not go smoothly.\n\nWord: “做衣服”  \nContext: “在商店做衣服。”  \nAlternatives: “缝衣服” specifically means sewing clothes, while “制作衣服” means making clothes and is more formal. “做衣服” is understandable but less precise.\n\nWord: “又搬了一次家”  \nContext: “孟子和孟母又搬了一次家。”  \nAlternatives: “再次搬家” is more concise and written. “不得不搬家” means they had no choice but to move, which fits the reason that the city was too noisy and Meng Mu could not find a job.\n\n**Encouragement and Next Steps**\n\nYou did well connecting the city’s noise, Meng Zi’s sleep problem, and Meng Mu’s job search in a clear cause-and-effect sequence.  \nNext time, focus on word order with 又 and 一次, especially in sentences about repeated actions.",
+  "usage": {
+   "prompt_tokens": 1951,
+   "completion_tokens": 1143,
+   "total_tokens": 3094,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 1948,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 496,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 10838
+ }
+}

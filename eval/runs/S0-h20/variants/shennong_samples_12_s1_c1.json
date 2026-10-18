@@ -1,0 +1,122 @@
+{
+ "variant_id": "shennong_samples_12_s1_c1",
+ "sample_id": "shennong_samples#12",
+ "story_id": "shennong_chang_baicao",
+ "scene": 1,
+ "her_line": "吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况",
+ "rules": [
+  "redundancy_delete"
+ ],
+ "original_scene": "很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+ "variant_scene": "很久以前，古代的人不知道什么植物能吃，什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 52,
+  "end": 60
+ },
+ "target_variant": {
+  "start": 50,
+  "end": 58
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "shennong_samples#12/f1/p0/k0/e0",
+   "op": "delete",
+   "start": 50,
+   "end": 52,
+   "original": "你的",
+   "corrected": "",
+   "her_line": "吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况",
+   "her_piece": "delete你的",
+   "her_note": "redundant",
+   "review_row": "shennong_samples#12/f1/p0/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "shennong_samples#12/f1/p1/k0/e0",
+   "op": "insert",
+   "start": 58,
+   "end": 58,
+   "original": "",
+   "corrected": "是",
+   "her_line": "吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况",
+   "her_piece": "是很麻烦的情况",
+   "her_note": "",
+   "review_row": "shennong_samples#12/f1/p1/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 2,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:zhe_jiu_yao_kan",
+  "rule_card:ambiguous_reference",
+  "rule_card:a_not_a_question",
+  "rule_card:character_introduction_first_mention",
+  "correction_item:shennong_samples#43::c0",
+  "correction_item:shennong_samples#32::c1",
+  "correction_item:shennong_samples#29::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:a_not_a_question",
+   "rule_card:character_introduction_first_mention",
+   "correction_item:shennong_samples#43::c0",
+   "correction_item:shennong_samples#32::c1",
+   "correction_item:shennong_samples#29::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: a_not_a_question\nGrammar/linguistic point: a_not_a_question\nEmbedded yes/no questions use A-not-A (有没有毒, 能不能吃, 知不知道) or 是……还是……; 'whether/if' in 'know if' is not 如果.\nExamples (original -> corrected, why):\n  - 不知道如果有毒 -> 有没有毒  [the “if” in “not know if + clause” is not 如果]\n  - 神农加下去很多的植物，看看如果毒还是药 -> 吃下去很多植物；看看是毒还是药  [the “if” in “see if + clause” is not 如果]\n  - 我们也不在乎植物是毒 -> 有没有毒\n  - 但是如果他想知道这些植物有毒或有药性 -> 有毒还是有药性\n  - 这就要看你知道该吃哪一个了 -> 知不知道\n  - 人们不知道什么植物是不是能吃的 -> 什么植物是能吃的，什么植物是不能吃的\n  - 看看如果能吃还是不能吃，药还是毒 -> delete如果，the “if” in “see if + clause” is not 如果；是药还是毒\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 人们不知道什么植物是不是能吃的：什么植物是能吃的，什么植物是不能吃的\n\n- 他们不知道什么植物能吃不能吃：什么植物不能吃\n\n- 中国人不知道什么植物可能还是不可能吃：什么植物能吃，什么植物不能吃\n\n## Student's scene to review\n很久以前，古代的人不知道什么植物能吃，什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “吃不安全的植物对你的身体有坏处，很麻烦的情况” / Formula: 做某事 + 对 + 某人的身体 + 有坏处；完整句子需要有明确的谓语 / Correct: “吃不安全的植物对人的身体有坏处，会带来很多麻烦。”  \nHere, “很麻烦的情况” is not a complete sentence. Also, use “人的身体” rather than “你的身体,” because you are discussing people in general.\n\nIncorrect phrase: “但是一个人，神农，要解决这个问题。” / Formula: 有一个人叫……，他/她 + 要/想要 + 动词 + 宾语 / Correct: “但是，有一个人叫神农，他想要解决这个问题。”  \nThis introduces Shennong clearly and makes the sentence complete. “但是” is also more natural with a comma after it.\n\n**Vocabulary Suggestions**\n\nWord: “很久以前” / Context: “很久以前，古代的人……” / Alternatives: “在远古时代” or “在古代”  \n“很久以前” is natural and simple, but it is broad. “在远古时代” sounds more story-like and emphasizes that the time was extremely long ago. “在古代” is concise and works well for historical stories.\n\nWord: “古代的人” / Context: “古代的人不知道……” / Alternatives: “古人” or “当时的人们”  \n“古代的人” is correct but slightly wordy. “古人” is a concise, natural term for people in ancient times. “当时的人们” focuses on the people living at that particular time in the story.\n\nWord: “不安全的植物” / Context: “很多人常常吃不安全的植物” / Alternatives: “有毒的植物” or “不能食用的植物”  \n“不安全的植物” is understandable, but it is general. “有毒的植物” specifically means poisonous plants, while “不能食用的植物” means plants that should not be eaten, whether or not they are poisonous.\n\nWord: “有坏处” / Context: “对人的身体有坏处” / Alternatives: “有害” or “危害健康”  \n“有坏处” is beginner-friendly and understandable. “有害” is more concise and formal: “这种植物对身体有害.” “危害健康” is stronger and emphasizes damage to people’s health.\n\nWord: “解决这个问题” / Context: “神农想要解决这个问题” / Alternatives: “寻找答案” or “弄清楚”  \n“解决这个问题” emphasizes fixing a problem. “寻找答案” fits especially well because Shennong is trying to discover which plants people can eat. “弄清楚” is a natural spoken expression meaning “to find out clearly.”\n\n**Encouragement and Next Steps**\n\nYou set up the historical problem clearly, and the contrast between dangerous plants and Shennong’s goal gives your story a logical flow.  \n\nNext time, focus on making every sentence complete and introducing new characters with “有一个人叫……”.",
+  "usage": {
+   "prompt_tokens": 2102,
+   "completion_tokens": 665,
+   "total_tokens": 2767,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2099,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6035
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:zhe_jiu_yao_kan",
+   "rule_card:ambiguous_reference",
+   "rule_card:a_not_a_question",
+   "rule_card:character_introduction_first_mention",
+   "correction_item:shennong_samples#43::c0",
+   "correction_item:shennong_samples#32::c1",
+   "correction_item:shennong_samples#29::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: a_not_a_question\nGrammar/linguistic point: a_not_a_question\nEmbedded yes/no questions use A-not-A (有没有毒, 能不能吃, 知不知道) or 是……还是……; 'whether/if' in 'know if' is not 如果.\nExamples (original -> corrected, why):\n  - 不知道如果有毒 -> 有没有毒  [the “if” in “not know if + clause” is not 如果]\n  - 神农加下去很多的植物，看看如果毒还是药 -> 吃下去很多植物；看看是毒还是药  [the “if” in “see if + clause” is not 如果]\n  - 我们也不在乎植物是毒 -> 有没有毒\n  - 但是如果他想知道这些植物有毒或有药性 -> 有毒还是有药性\n  - 这就要看你知道该吃哪一个了 -> 知不知道\n  - 人们不知道什么植物是不是能吃的 -> 什么植物是能吃的，什么植物是不能吃的\n  - 看看如果能吃还是不能吃，药还是毒 -> delete如果，the “if” in “see if + clause” is not 如果；是药还是毒\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 人们不知道什么植物是不是能吃的：什么植物是能吃的，什么植物是不能吃的\n\n- 他们不知道什么植物能吃不能吃：什么植物不能吃\n\n- 中国人不知道什么植物可能还是不可能吃：什么植物能吃，什么植物不能吃\n\n## Student's scene to review\n很久以前，古代的人不知道什么植物能吃，什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “很久以前，古代的人……” / Formula: 时间状语 + 人们/人物 + 动作 / Correct: “在古代，人们不知道什么植物能吃，什么植物不能吃。”  \n“很久以前” and “古代” repeat the same time idea, so use one. “人们” is also more natural than “古代的人” here.\n\nIncorrect phrase: “所以很多人常常吃不安全的植物” / Formula: 许多人 + 常常 + 动词 + 宾语 / Correct: “所以许多人常常吃不安全的植物。”  \n“很多人” is understandable, but “许多人” is a slightly more natural written expression.\n\nIncorrect phrase: “吃不安全的植物对你的身体有坏处，很麻烦的情况。” / Formula: 做某事 + 对 + 某人的身体 + 有害/有坏处；这是一个……的情况 / Correct: “吃不安全的植物对人的身体有害，这是一个很麻烦的情况。”  \n“你的身体” suddenly addresses the reader, while the story is about ancient people, so “人的身体” is clearer. The final phrase needs a verb such as “是”.\n\nIncorrect phrase: “但是一个人，神农，要解决这个问题。” / Formula: 有一个人叫……，他想要/决定 + 动词 + 宾语 / Correct: “但是，有一个人叫神农，他想要解决这个问题。”  \nIntroduce Shennong clearly when he first appears, and add a verb expressing his intention.\n\n**Vocabulary Suggestions**\n\nWord: “不安全的植物” / Context: “吃不安全的植物” / Alternatives: “有毒的植物” or “不能吃的植物.” “不安全的” is broad and can describe many dangers; “有毒的” specifically means poisonous, which is likely the danger in this story. “不能吃的” is simpler and emphasizes that the plants are inedible.\n\nWord: “有坏处” / Context: “对人的身体有坏处” / Alternatives: “有害” or “会伤害身体.” “有坏处” is understandable but general. “有害” is concise and more formal, while “会伤害身体” is vivid and easy to understand.\n\nWord: “很麻烦的情况” / Context: “这是一个很麻烦的情况” / Alternatives: “严重的问题” or “危险的处境.” “麻烦” often means inconvenient or troublesome. “严重的问题” emphasizes the importance of the problem, while “危险的处境” highlights the physical danger people face.\n\nWord: “解决” / Context: “解决这个问题” / Alternatives: “找出答案” or “寻找可以吃的植物.” “解决问题” is correct but abstract. “找出答案” emphasizes discovery, while “寻找可以吃的植物” is more specific to Shennong’s goal.\n\nWord: “常常” / Context: “许多人常常吃不安全的植物” / Alternatives: “经常” or “不小心吃了.” “常常” and “经常” both mean “often”; “经常” is slightly more common in neutral writing. “不小心吃了” adds the useful idea that people ate poisonous plants accidentally.\n\n**Encouragement and Next Steps**\n\nYou clearly explained the historical problem first and then introduced Shennong as the person who will act, which gives your story a good beginning.  \nNext time, focus on making every sentence complete and using specific words such as “有毒” instead of general words like “不安全.”",
+  "usage": {
+   "prompt_tokens": 2102,
+   "completion_tokens": 767,
+   "total_tokens": 2869,
+   "prompt_tokens_details": {
+    "cached_tokens": 2099,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6311
+ }
+}

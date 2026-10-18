@@ -1,0 +1,137 @@
+{
+ "variant_id": "mengmu_samples_32_s1_c2",
+ "sample_id": "mengmu_samples#32",
+ "story_id": "mengmu_san_qian",
+ "scene": 1,
+ "her_line": "所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方",
+ "rules": [
+  "aspect_le_completed",
+  "redundancy_delete",
+  "preposition_dao_place"
+ ],
+ "original_scene": "有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+ "variant_scene": "有一天孟子去了墓地玩儿，但是他妈妈觉得这不是适合孩子玩的地方，所以她决定了他们会搬家找更好的地方。她怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她一直搬家想要让孟子受到良好的教育。然后他们搬到了离城市更近的地方。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 37,
+  "end": 49
+ },
+ "target_variant": {
+  "start": 36,
+  "end": 48
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#32/f2/p0/note/e0",
+   "op": "delete",
+   "start": 36,
+   "end": 37,
+   "original": "了",
+   "corrected": "",
+   "her_line": "所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方",
+   "her_piece": "决定is a mental state verb, no了",
+   "her_note": "决定is a mental state verb, no了",
+   "review_row": "mengmu_samples#32/f2/p0/note",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#32/f2/p1/k0/e0",
+   "op": "delete",
+   "start": 37,
+   "end": 40,
+   "original": "他们会",
+   "corrected": "",
+   "her_line": "所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方",
+   "her_piece": "delete他们会",
+   "her_note": "",
+   "review_row": "mengmu_samples#32/f2/p1/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#32/f2/p2/k0/e0",
+   "op": "replace",
+   "start": 40,
+   "end": 48,
+   "original": "搬家找更好的地方",
+   "corrected": "搬家到更好的地方",
+   "her_line": "所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方",
+   "her_piece": "搬家到更好的地方",
+   "her_note": "",
+   "review_row": "mengmu_samples#32/f2/p2/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 5,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:preposition_dao_place",
+  "rule_card:cai_jiu_construction",
+  "rule_card:location_zai_place",
+  "rule_card:time_expression",
+  "correction_item:mengmu_samples#13::c3",
+  "correction_item:mengmu_samples#36::c4",
+  "correction_item:mengmu_samples#20::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:cai_jiu_construction",
+   "rule_card:location_zai_place",
+   "rule_card:time_expression",
+   "correction_item:mengmu_samples#20::c0",
+   "correction_item:mengmu_samples#13::c3",
+   "correction_item:mengmu_samples#13::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n- 所以孟子的妈妈搬家很安全很安静的公寓：搬到……\n\n- 古代的时候，孟子和他的妈妈住在离墓地很近：在古代，better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place\n\n## Student's scene to review\n有一天孟子去了墓地玩儿，但是他妈妈觉得这不是适合孩子玩的地方，所以她决定了他们会搬家找更好的地方。她怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她一直搬家想要让孟子受到良好的教育。然后他们搬到了离城市更近的地方。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “她决定了他们会搬家找更好的地方” / Formula: Subject + 决定 + to + Verb Phrase; use 决定搬到 + Place, and do not use 了 after a mental-state verb such as 决定 / Correct: “她决定带孟子搬到一个更好的地方。”\n\nIncorrect phrase: “住在这儿教育不太好” / Formula: 在 + Place + receives/has + education; or Place + 的 + education + 不太好 / Correct: “在这儿受到的教育不太好。”  \nA more natural version is: “这里的教育条件不太好。”\n\nIncorrect phrase: “因为她望子成龙，所以她一直搬家想要让孟子受到良好的教育” / Formula: 为了 + Goal, Subject + Verb; 搬到 + Place; “一直” describes a continuing action, while this story describes a completed move / Correct: “因为她望子成龙，所以她想搬到一个教育条件更好的地方，让孟子受到良好的教育。”\n\nIncorrect phrase: “他们搬到了离城市更近的地方” / Formula: 搬到 + Place; when comparing distance, use 离 + Place + 更近 / Correct: “他们搬到了一个离城市更近的地方。”  \nThis sentence is grammatically acceptable, but adding “一个” makes it sound more complete and natural.\n\n**Vocabulary Suggestions**\n\nWord: “玩儿” / Context: “孟子去了墓地玩儿” / Alternatives: “玩耍” is slightly more formal and is common in writing; “模仿大人祭拜” is much more specific if you are referring to the traditional story of Mencius, because he copied adults’ funeral rituals rather than simply playing.\n\nWord: “适合” / Context: “这不是适合孩子玩的地方” / Alternatives: “不适宜” is more formal and emphasizes that an environment is unsuitable; “不利于孩子成长” is more advanced and emphasizes the negative effect on a child’s development.\n\nWord: “怕” / Context: “她怕儿子的童年不会幸福” / Alternatives: “担心” is more neutral and natural in formal writing; “忧虑” is more literary and expresses a deeper, more persistent worry.\n\nWord: “教育不太好” / Context: “住在这儿教育不太好” / Alternatives: “教育条件不好” refers to the quality of schools, teachers, and learning resources; “学习环境不好” focuses more broadly on whether the surroundings are good for studying and growing up.\n\nWord: “良好的教育” / Context: “让孟子受到良好的教育” / Alternatives: “更好的教育” is natural when comparing the new place with the old one; “优质的教育” is more advanced and emphasizes high-quality educational resources and teaching.\n\n**Encouragement and Next Steps**\n\nYou explained Meng Mu’s reasons for moving in a clear cause-and-effect sequence, and your use of “望子成龙” fits the story very well.  \nNext time, focus on using “决定 + verb” without 了 and on expressing location-related ideas with more natural phrases such as “这里的教育条件不好.”",
+  "usage": {
+   "prompt_tokens": 2099,
+   "completion_tokens": 682,
+   "total_tokens": 2781,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2096,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6165
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:cai_jiu_construction",
+   "rule_card:location_zai_place",
+   "rule_card:time_expression",
+   "correction_item:mengmu_samples#13::c3",
+   "correction_item:mengmu_samples#36::c4",
+   "correction_item:mengmu_samples#20::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 所以孟子的妈妈搬家很安全很安静的公寓：搬到……\n\n- 孟子跟他的妈妈搬家，去一个最好的学校：去了，了completed\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n有一天孟子去了墓地玩儿，但是他妈妈觉得这不是适合孩子玩的地方，所以她决定了他们会搬家找更好的地方。她怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她一直搬家想要让孟子受到良好的教育。然后他们搬到了离城市更近的地方。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “她决定了他们会搬家找更好的地方” / Formula: Subject + 决定 + to do something; for a completed decision, use “决定 + 了 + VP,” not “决定了 + clause with 会” / Correct: “她决定带孟子搬家，去找一个更好的地方。”  \n“会” is unnecessary here because the decision itself already indicates a future action.\n\nIncorrect phrase: “住在这儿教育不太好” / Formula: 在 + Place + (the local) + Noun + 很/不太 + Adjective / Correct: “这儿的教育不太好。”  \nAlternatively: “住在这儿，孟子可能得不到良好的教育。”\n\nIncorrect phrase: “她一直搬家想要让孟子受到良好的教育” / Formula: Subject + 搬了 + Number + 次 + 家 +，想让 + someone + 得到/受到 + Noun / Correct: “她搬了好几次家，想让孟子受到良好的教育。”  \n“一直搬家” suggests continuous or repeated moving over a long period; “搬了好几次家” is clearer for this story.\n\nIncorrect phrase: “他们搬到了离城市更近的地方” / Formula: 搬到 + Place; for a comparison, 离 + Place + 更近 / Correct: “他们搬到了一个离城市更近的地方。”  \nAdding “一个” makes “地方” sound more natural here.\n\n**Vocabulary Suggestions**\n\nWord: “玩儿” / Context: “孟子去了墓地玩儿” / Alternatives: “玩耍” is slightly more formal and works well in narration: “孟子去墓地玩耍。” “模仿大人祭拜” is even more precise if you are referring to the traditional story of Mencius, because it explains what he did at the cemetery.\n\nWord: “觉得” / Context: “他妈妈觉得这不是适合孩子玩的地方” / Alternatives: “认为” is more formal and objective, while “担心” emphasizes the mother’s worry. For example: “孟母认为墓地不适合孩子玩耍” or “孟母担心墓地会影响孟子的成长.”\n\nWord: “更好的地方” / Context: “搬家找更好的地方” / Alternatives: “更适合孩子成长的环境” is more specific and natural in this context. It emphasizes not simply a “better place,” but an environment that benefits a child’s development.\n\nWord: “童年不会幸福” / Context: “她怕儿子的童年不会幸福” / Alternatives: “健康成长” is a very natural collocation for children and emphasizes both emotional and personal development. You could say: “她担心孟子不能健康成长。”\n\nWord: “教育不太好” / Context: “这儿教育不太好” / Alternatives: “教育环境不好” emphasizes the overall learning environment, while “教育资源不足” specifically means that the area lacks schools, teachers, or learning opportunities. “教育环境不好” fits this story especially well.\n\n**Encouragement and Next Steps**\n\nYou clearly explained Meng Mu’s motivation for moving, and you used “望子成龙” very appropriately to show her hopes for Mencius.  \nNext time, focus on using more specific phrases for places and environments, such as “教育环境” and “适合孩子成长的地方.”",
+  "usage": {
+   "prompt_tokens": 2069,
+   "completion_tokens": 729,
+   "total_tokens": 2798,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2066,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6516
+ }
+}

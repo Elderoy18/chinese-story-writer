@@ -168,6 +168,48 @@ def scene_checks(runs, test_set):
     return out
 
 
+def her_versions(text, span, edits):
+    """Her corrected text for the student's words at `span` (whole-story positions): her
+    edits that overlap the span applied inside it (window widened to cover them). One string
+    per alternative she gave (怕/担心), squashed. Empty set if no edit overlaps."""
+    hit = [e for e in edits if S.overlaps(span, e)]
+    if not hit:
+        return set()
+    lo = min([span[0]] + [e["start"] for e in hit])
+    hi = max([span[1]] + [e["end"] for e in hit])
+    alts = [""]
+    pos = lo
+    for e in sorted(hit, key=lambda e: e["start"]):
+        if e["start"] < pos:
+            continue
+        options = (e["corrected"] or "").split("/") or [""]
+        alts = [a + text[pos:e["start"]] + o for a in alts for o in options][:8]
+        pos = e["end"]
+    return {S.squash(a + text[pos:hi]) for a in alts}
+
+
+def accuracy_at_her_places(run, recs, test_set, key):
+    """Generation accuracy where the item is at a place she corrected: lexical = the item's
+    corrected text is hers (any of her alternatives); information = the fix is right and the
+    corrected text clean (judge)."""
+    texts = {s["sample_id"]: s for s in test_set["samples"]}
+    n = lex = info = 0
+    for r in recs:
+        if r["kind"] != "item" or r["system"] != run or not r["at_her_place"] or r["after"] is None:
+            continue
+        s = texts[r["sample_id"]]
+        lo = scene_offsets(s["raw_text"], s["scenes"])[r["scene"] - 1][0]
+        span = (r["span"][0], r["span"][1])
+        edits = [e for e in key[r["sample_id"]] if e["start"] is not None and e["op"] in ("replace", "delete", "insert")]
+        mine = clean_after(r["after"])
+        hers = her_versions(s["raw_text"], span, edits)
+        n += 1
+        lex += bool(hers) and any(mine == h or (h and h in mine and len(mine) - len(h) <= 2) for h in hers)
+        f = S.item_flags(r)
+        info += not f["incorrect"] and not f["after_not_correct"]
+    return n, lex, info
+
+
 def load_key(test_set):
     key = defaultdict(list)
     for s in test_set["samples"]:
@@ -434,6 +476,23 @@ def main():
               f"- Verdicts over all runs: {dict(counts)}",
               f"- Stories where the runs listed different numbers of scenes: "
               f"{sum(len({len(v) for v in pr}) > 1 for pr in sc_checks.values())}/{len(sc_checks)}"]
+    acc = {run: accuracy_at_her_places(run, recs, test_set, key) for run in args.runs}
+    gen = {run: (sum(r["card_in_prompt"] for r in attr[run] if r["cards_wanted"]),
+                 sum(r["card_in_prompt"] and r["blame"].startswith("right") for r in attr[run] if r["cards_wanted"]),
+                 sum(not r["card_in_prompt"] for r in attr[run] if r["cards_wanted"]),
+                 sum(not r["card_in_prompt"] and r["blame"].startswith("right") for r in attr[run] if r["cards_wanted"]))
+           for run in args.runs}
+    L += ["", "## Accuracy split: retrieval and generation", "",
+          "Items at a place she corrected (generation accuracy on real errors):", "",
+          "| | " + " | ".join(args.runs) + " |", "|---|" + "---|" * len(args.runs),
+          "| Items at her corrections (with a corrected text) | " + " | ".join(str(acc[r][0]) for r in args.runs) + " |",
+          "| **Lexical accuracy**: corrected text is hers (any of her alternatives) | " + " | ".join(pct(acc[r][1], acc[r][0]) for r in args.runs) + " |",
+          "| **Information accuracy**: right fix, clean corrected text (judge) | " + " | ".join(pct(acc[r][2], acc[r][0]) for r in args.runs) + " |",
+          "", "Her corrections (with a rule card), split by whether retrieval brought the card:", "",
+          "| | " + " | ".join(args.runs) + " |", "|---|" + "---|" * len(args.runs),
+          "| **Retrieval accuracy** (card reach) | " + " | ".join(pct(gen[r][0], gen[r][0] + gen[r][2]) for r in args.runs) + " |",
+          "| **Generation accuracy given the card**: caught and rightly fixed | " + " | ".join(pct(gen[r][1], gen[r][0]) for r in args.runs) + " |",
+          "| Generation accuracy without the card | " + " | ".join(pct(gen[r][3], gen[r][2]) for r in args.runs) + " |"]
     L += ["", "## Attribution: why her corrections were missed or got a wrong fix", "",
           "| | " + " | ".join(args.runs) + " |", "|---|" + "---|" * len(args.runs)]
     labels = sorted({r["blame"] for rows in attr.values() for r in rows})

@@ -1,0 +1,125 @@
+{
+ "variant_id": "mengmu_samples_39_s2_c7",
+ "sample_id": "mengmu_samples#39",
+ "story_id": "mengmu_san_qian",
+ "scene": 2,
+ "her_line": "不过，看过很多政治文章对他害得，他有很多问题：delete对他；害得他有很多问题，害得Sb. + harmful result",
+ "rules": [
+  "haide_harmful_result",
+  "redundancy_delete"
+ ],
+ "original_scene": "孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。",
+ "variant_scene": "孟子才十一岁，就成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。",
+ "previous_scenes": [
+  "古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。"
+ ],
+ "target_original": {
+  "start": 51,
+  "end": 62
+ },
+ "target_variant": {
+  "start": 52,
+  "end": 63
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#39/f7/p0/k0/e0",
+   "op": "delete",
+   "start": 52,
+   "end": 54,
+   "original": "对他",
+   "corrected": "",
+   "her_line": "不过，看过很多政治文章对他害得，他有很多问题：delete对他；害得他有很多问题，害得Sb. + harmful result",
+   "her_piece": "delete对他",
+   "her_note": "",
+   "review_row": "mengmu_samples#39/f7/p0/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#39/f7/p1/k0/e0",
+   "op": "replace",
+   "start": 54,
+   "end": 63,
+   "original": "害得，他有很多问题",
+   "corrected": "害得他有很多问题",
+   "her_line": "不过，看过很多政治文章对他害得，他有很多问题：delete对他；害得他有很多问题，害得Sb. + harmful result",
+   "her_piece": "害得他有很多问题",
+   "her_note": "害得Sb. + harmful result",
+   "review_row": "mengmu_samples#39/f7/p1/k0",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 1,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:bushi_jiushi_construction",
+  "rule_card:cai_jiu_construction",
+  "rule_card:attributive_modifier_de",
+  "rule_card:coherence_connectives",
+  "correction_item:mengmu_samples#21::c0",
+  "correction_item:mengmu_samples#40::c6",
+  "correction_item:mengmu_samples#49::c8"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:bushi_jiushi_construction",
+   "rule_card:cai_jiu_construction",
+   "rule_card:attributive_modifier_de",
+   "rule_card:coherence_connectives",
+   "correction_item:mengmu_samples#21::c0",
+   "correction_item:mengmu_samples#40::c6",
+   "correction_item:mengmu_samples#49::c8"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: bushi_jiushi_construction\nGrammar/linguistic point: bushi_jiushi_construction\n不是……就是…… means 'either ... or ...' (two alternatives that both happen); it is not 'not X but Y' (that is 不是……而是……). The subject goes before 不是.\nExamples (original -> corrected, why):\n  - 不是学习中文，他就是跟老师说中文 -> 他不是……，就是……  [Subj. at the beginning of 不是……就是……]\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 那里孟子会不是画画，祭拜，就是做冬天衣服 -> 在那儿  [delete会，会will; 冬天的衣服]\n  - 在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方 -> 孟母搬家是为了让孟子接受良好的教育  [不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education]\n  - 难怪孟子不是高兴的孩子，就是安静的孩子 -> 每天都不高兴  [不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship]\n  - 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜 -> 不是在画画儿  [而是在祭拜；不是……就是…… is “either…or…”]\n  - 从早到晚他学习不是历史，就是哲学 -> 不是学习历史，就是学习哲学\n  - 教育做完以后孟子考虑，不是当哲学家就是当商家 -> 学完以后，商人\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 很多人想孟子做哲学家是本质的：很多人认为，想 + V., cannot be followed by N.; 孟子成为哲学家是有天赋；better to briefly introduce “孟子” when this character first appears\n\n- 才二十岁，孟子成为很厉害的哲学家：就成为，才Num.就V.\n\n- 长大的时候，孟子成为中国最重要的哲学人：长大以后，哲学家\n\n## Student's scene to review\n孟子才十一岁，就成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “孟子才十一岁，就成为一个哲学家。” / Formula: Subject + 才 + age/number + 就 + verb + 了 / Correct: “孟子才十一岁，就成为了一名哲学家。”  \n“一名哲学家” is a more natural noun phrase, and “成为了” clearly marks the completed change.\n\nIncorrect phrase: “孟子不是祭拜，而是看政治文章” / Formula: Subject + 不是 + V-ing, 而是 + V-ing / Correct: “孟子不是在祭拜，而是在看政治文章。”  \nUse 在 with ongoing actions. Also, “祭拜” usually needs an object, such as “祭拜祖先.”\n\nIncorrect phrase: “难怪他成为了哲学家。” / Formula: 难怪 + result / Correct: “难怪他后来成为了一名哲学家。”  \nAdding “后来” makes the cause-and-result relationship clearer: he read political writings, so later he became a philosopher.\n\nIncorrect phrase: “看过很多政治文章对他害得” / Formula: V + 了/过 + many + noun + 对 + person + 有害 / Correct: “看了很多政治文章对他有害。”  \n“有害” means “harmful”; “害得” must be followed by a result, for example: “这些文章害得他有很多问题。”\n\nIncorrect phrase: “他有很多问题。” / Formula: 因为 + cause, 所以 + result / Correct: “因为这些文章太复杂，所以他有很多疑问。”  \n“问题” can mean problems or questions. Here, “疑问” is clearer if you mean that he has many things he does not understand.\n\n**Vocabulary Suggestions**\n\nWord: “政治文章” / Context: “看政治文章” / Alternatives: “政治方面的文章” or “政治思想方面的文章.” “政治文章” is understandable but somewhat broad. “政治方面的文章” sounds more natural for articles about politics, while “政治思想方面的文章” is more specific and fits Mencius, who studied political and philosophical ideas.\n\nWord: “哲学家” / Context: “成为一个哲学家” / Alternatives: “思想家” or “儒家思想家.” “哲学家” is correct, but “思想家” emphasizes someone influential for their ideas. “儒家思想家” is especially accurate for Mencius because he was an important Confucian thinker.\n\nWord: “祭拜” / Context: “不是祭拜” / Alternatives: “祭拜祖先” or “参加祭祀活动.” “祭拜” generally needs an object. “祭拜祖先” specifically means worshipping one’s ancestors, while “参加祭祀活动” means taking part in a ritual ceremony and is more formal.\n\nWord: “有很多问题” / Context: “他有很多问题” / Alternatives: “他有很多疑问” or “他感到很困惑.” “问题” can refer to difficulties as well as questions. “疑问” means intellectual questions or doubts, while “困惑” emphasizes feeling confused.\n\nWord: “对他有害” / Context: “看了很多政治文章对他有害” / Alternatives: “让他感到困惑” or “给他带来了很多困扰.” “有害” suggests actual harm, perhaps to health or development. “让他感到困惑” is softer and more suitable if difficult articles made him confused; “带来了很多困扰” means they caused ongoing trouble or distress.\n\n**Encouragement and Next Steps**\n\nYou used the “才……就……” structure well, and your writing has a clear contrast between ritual activities and studying political writings.  \nNext time, focus on using “有害” versus “害得,” and add connectors such as “因为……所以……” to make the relationship between ideas clearer.",
+  "usage": {
+   "prompt_tokens": 2252,
+   "completion_tokens": 829,
+   "total_tokens": 3081,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2249,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 7248
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:bushi_jiushi_construction",
+   "rule_card:cai_jiu_construction",
+   "rule_card:attributive_modifier_de",
+   "rule_card:coherence_connectives",
+   "correction_item:mengmu_samples#21::c0",
+   "correction_item:mengmu_samples#40::c6",
+   "correction_item:mengmu_samples#49::c8"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: bushi_jiushi_construction\nGrammar/linguistic point: bushi_jiushi_construction\n不是……就是…… means 'either ... or ...' (two alternatives that both happen); it is not 'not X but Y' (that is 不是……而是……). The subject goes before 不是.\nExamples (original -> corrected, why):\n  - 不是学习中文，他就是跟老师说中文 -> 他不是……，就是……  [Subj. at the beginning of 不是……就是……]\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 那里孟子会不是画画，祭拜，就是做冬天衣服 -> 在那儿  [delete会，会will; 冬天的衣服]\n  - 在孟母搬家的故事中，不是为了学问，就是为了以她搬家又搬着找合适的地方 -> 孟母搬家是为了让孟子接受良好的教育  [不是……就是……is used for “either…or…”，here “学问” and “合适的地方” are actually the same purpose, to have a good environment for education]\n  - 难怪孟子不是高兴的孩子，就是安静的孩子 -> 每天都不高兴  [不是……就是……is used for “either…or…”, “高兴” and “安静” cannot form “either…or…” relationship]\n  - 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜 -> 不是在画画儿  [而是在祭拜；不是……就是…… is “either…or…”]\n  - 从早到晚他学习不是历史，就是哲学 -> 不是学习历史，就是学习哲学\n  - 教育做完以后孟子考虑，不是当哲学家就是当商家 -> 学完以后，商人\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: coherence_connectives\nGrammar/linguistic point: coherence_connectives\nDiscourse coherence: sentences are loosely strung together without connectives/transitions.\nExamples (original -> corrected, why):\n  - 妈妈让孟子每天上课，孟子长得很乖，很聪明 -> loosely connected, unclear between-sentence relationship\n  - 神农旅行了，吃过新的植物 -> it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n  - 但政府实行的改革经济一系列政策就让他失业，被迫转行 -> 实行的改革经济的一系列政策  [却使他失业并被迫转行；“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业，被迫，转行”，adding “并” will increase the coherence.]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 所以他一吃，肚子就疼死了 -> it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  - 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位 -> the coherence needs to be improved, 但我没想到的是，他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位\n  - 不是孟子幸福的生活就是孟子的妈妈开心 -> 虽然孟子的生活不快乐  [可是妈妈很开心；不是……就是……is used for “either…or…”]\n  - 所以神农吃了，一吃就生病 -> it is problematic in coherence, 灵芝is medicine, it should not be一吃就生病\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 很多人想孟子做哲学家是本质的：很多人认为，想 + V., cannot be followed by N.; 孟子成为哲学家是有天赋；better to briefly introduce “孟子” when this character first appears\n\n- 才二十岁，孟子成为很厉害的哲学家：就成为，才Num.就V.\n\n- 长大的时候，孟子成为中国最重要的哲学人：长大以后，哲学家\n\n## Student's scene to review\n孟子才十一岁，就成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “孟子才十一岁，就成为一个哲学家。”  \nFormula: Subject + 才 + age/number + 就 + verb; use “成为了” for a completed change.  \nCorrect: “孟子才十一岁，就成为了一名哲学家。”\n\n\nIncorrect phrase: “孟子不是祭拜，而是看政治文章”  \nFormula: Subject + 不是 + verb phrase + ，而是 + verb phrase; use parallel verb forms.  \nCorrect: “孟子不是在祭拜，而是在看政治文章。”\n\n\nIncorrect phrase: “难怪他成为了哲学家。”  \nFormula: Because the previous action happened before the result, use 了 after the completed action; “难怪” introduces an understandable result.  \nCorrect: “难怪他成了哲学家。”  \nNote: This is grammatically possible, but the logic is a little too simple: reading political articles does not necessarily make someone a philosopher.\n\n\nIncorrect phrase: “看过很多政治文章对他害得”  \nFormula: Subject + 看了/读了 + object + ，对 + person + 有害 / 使 + person + result.  \nCorrect: “看了很多政治文章对他有害。”  \nMore natural: “读了很多政治文章以后，他有了很多问题。”\n\n**Vocabulary Suggestions**\n\nWord: “成为一个哲学家”  \nContext: “孟子才十一岁，就成为一个哲学家。”  \nAlternatives: “成为一名哲学家” is more natural for a profession or identity. “成为著名的哲学家” adds the idea that he was well known, while “成为伟大的哲学家” emphasizes his historical importance.\n\n\nWord: “政治文章”  \nContext: “看政治文章”  \nAlternatives: “政治方面的文章” is a clearer, more everyday expression. “政治理论文章” specifically refers to articles about political theories, while “政论文章” is a more formal term for argumentative writing about politics.\n\n\nWord: “看”  \nContext: “看政治文章”  \nAlternatives: “读” is more precise for reading articles or books. “研读” means to study a text carefully and seriously, so it fits especially well if Mengzi is learning philosophical or political ideas.\n\n\nWord: “难怪”  \nContext: “难怪他成为了哲学家。”  \nAlternatives: “因此” means “therefore” and gives a more direct cause-and-effect connection. “这也解释了为什么……” is useful when you want to explain a result in a fuller, more natural way.\n\n\nWord: “害得”  \nContext: “看过很多政治文章对他害得”  \nAlternatives: “有害” means harmful and is used in the pattern “对……有害.” “带来了很多疑问” is more neutral and means that something caused many questions. “引发了很多思考” has a positive meaning: it suggests the reading inspired deep thought.\n\n**Encouragement and Next Steps**\n\nYou used both “才……就……” and “不是……而是……” well to create an interesting contrast between traditional activities and intellectual study.  \nNext time, focus on making cause-and-effect relationships clearer, especially when explaining why an action leads to a result.",
+  "usage": {
+   "prompt_tokens": 2252,
+   "completion_tokens": 687,
+   "total_tokens": 2939,
+   "prompt_tokens_details": {
+    "cached_tokens": 2249,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 6160
+ }
+}

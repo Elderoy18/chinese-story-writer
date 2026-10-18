@@ -1,0 +1,142 @@
+{
+ "stage": "S0-h20",
+ "sample_id": "shennong_samples#26",
+ "story_id": "shennong_chang_baicao",
+ "created": "2026-10-18T18:11:32.594Z",
+ "git_commit": "3b72f20+uncommitted",
+ "snapshot": "base-v4-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "scenes": [
+  {
+   "scene": 1,
+   "text": "很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 所以神农走了很长的时间找到植物药：能做药的植物\n\n- 老的人叫神农，想学习：有一位叫神农的老人想学习植物的知识\n\n- 在古代有一个神农：有一个叫神农的老人\n\n## Student's scene to review\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。"
+   },
+   "retrieved": [
+    "rule_card:character_introduction_first_mention",
+    "rule_card:redundancy_delete",
+    "rule_card:time_expression",
+    "rule_card:ambiguous_reference",
+    "correction_item:shennong_samples#32::c2",
+    "correction_item:shennong_samples#29::c2",
+    "correction_item:shennong_samples#46::c0"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “有一个老男人叫神农” / Formula: 有一位 + 身份/description + 叫 + 名字 / Correct: “有一位叫神农的老人。”  \n“老男人” can sound impolite or overly literal in Chinese; “老人” is more natural. This also introduces the character more smoothly.\n\nIncorrect phrase: “神农在古代每一天看到了别的小镇人生病还是不舒服” / Formula: 在古代，+ 人物 + 每天 + 看到 + 地方 + 的人 + 生病 / Correct: “在古代，神农每天看到镇上的人们生病或身体不舒服。”  \n“在古代” should come earlier; “每天” is more natural than “每一天” here. Also, “别的小镇人” is unclear—use “镇上的人们.”\n\nIncorrect phrase: “生病还是不舒服” / Formula: A 或 B / Correct: “生病或身体不舒服。”  \n“还是” is usually used in questions or to express a choice. In a statement, use “或/或者.”\n\nIncorrect phrase: “所以他决定开始找新的药” / Formula: 所以 + 人物 + 决定 + 开始 + 寻找 + 能做药的植物 / Correct: “所以他决定开始寻找能做药的植物。”  \n“新的药” means new medicines that already exist. Here, Shennong is searching for plants that can be used as medicine.\n\nIncorrect phrase: “他下一天开始爬当地的山脉” / Formula: 第二天，+ 人物 + 开始 + 爬/进入 + 当地的山里 / Correct: “第二天，神农开始爬当地的山。”  \nUse “第二天” rather than “他下一天.” “山脉” refers to a mountain range and is less natural in this context. Repeating “神农” also makes the reference clearer.\n\nIncorrect phrase: “找了各种各样的植物” / Formula: 开始 + 寻找 + 各种各样的植物 / Correct: “寻找各种各样的植物。”  \nSince this action continues with the next sentence, do not use 了 here. Alternatively: “他找到了各种各样的植物,” if you mean that he successfully found them.\n\nIncorrect phrase: “神农试一试每个植物，知道有什么好处” / Formula: 人物 + 尝试 + 每一种植物，想知道/了解 + 它们 + 有什么作用 / Correct: “神农尝试每一种植物，想了解它们有什么作用。”  \n“试一试” is usually for casually trying something once; “尝试” fits systematic testing better. “知道” needs a clearer connection, such as “想了解.”\n\n**Vocabulary Suggestions**\n\nWord: “老男人” / Context: “有一个老男人叫神农” / Alternatives: “老人” or “长者.” “老男人” is literal and can sound impolite. “老人” is neutral and natural, while “长者” is respectful and more literary, fitting an ancient legend.\n\nWord: “别的小镇人” / Context: “别的小镇人生病” / Alternatives: “镇上的人们” or “当地的百姓.” “镇上的人们” simply means people living in the town. “当地的百姓” has a historical, story-like tone and is especially suitable for an ancient setting.\n\nWord: “不舒服” / Context: “生病还是不舒服” / Alternatives: “身体不适” or “患病.” “不舒服” is common and conversational. “身体不适” is more formal and describes physical discomfort, while “患病” means to suffer from an illness and sounds more formal.\n\nWord: “找新的药” / Context: “开始找新的药” / Alternatives: “寻找草药” or “寻找药用植物.” “找” is basic and general. “寻找” is more appropriate for a long, purposeful search; “草药” means herbal medicine, and “药用植物” precisely means plants that can be used medicinally.\n\nWord: “有什么好处” / Context: “知道有什么好处” / Alternatives: “有什么作用” or “有哪些药效.” “好处” is broad and informal. “作用” means function or effect, while “药效” specifically refers to medicinal effects, making it ideal for this topic.\n\n**Encouragement and Next Steps**\n\nYou created a clear sequence of events and used “所以” effectively to show why Shennong began his search.  \nNext time, focus on time expressions such as “在古代” and “第二天,” and use more precise words for medicinal plants and their effects.",
+   "usage": {
+    "prompt_tokens": 2194,
+    "completion_tokens": 1008,
+    "total_tokens": 3202,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 2191,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 8109
+  },
+  {
+   "scene": 2,
+   "text": "比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: zhe_jiu_yao_kan\nGrammar/linguistic point: zhe_jiu_yao_kan\n这就要看……了 ('it depends on ...') gives a flexible response to a question or uncertain condition instead of a direct answer. The part after 看 must be a question form: A-not-A (吃不吃), a wh-word, or A还是B.\nExamples (original -> corrected, why):\n  - 这个植物你能吃吗，这就要看植物的大小、植物的长短、植物的颜色了 -> 能不能吃  [delete the last two植物的]\n  - 他们常常生病了，这就要看什么植物你吃了 -> 常常生病  [no了for routine/habit; add a condition “会不会生病“ before “这就要看……了”, the condition is “not definite”; 你吃了什么植物了]\n  - 他拿说，这就要看什么植物吃了 -> 拿着花说  [着durative; add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了]\n  - 这就要看你也吃不吃灵芝了 -> add a condition before “这就要看……了“，e.g., 如果吃了夹竹桃，病能不能好？这就要看你吃没吃灵芝了，不for habit/routine/willingness, 没for non-occurrence of an event\n  - 他有时候病了，这就要看他吃了什么 -> the component before “这就要看……了“ should be “not definite” condition, 他会不会生病，这就要看他吃了什么\n  - 这就要看夹竹桃能不能马上给他活力了 -> 马上让他更有精神了\n  - 这就要看蘑菇看不看像伞 -> add a condition before “这就要看……了“，e.g., 蘑菇能不能吃，这就要看蘑菇像不像伞了\n  - 这就要看你吃什么植物了 -> it does not answer the previous Q “什么植物可以吃?”\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: verb_reduplication\nGrammar/linguistic point: verb_reduplication\nVerb reduplication (V.V., e.g. 玩玩, 想想) and V一V (试一试, 尝一尝) are for brief, light, tentative requests or plans, not for actions actually carried out (an executed action uses e.g. 尝试).\nExamples (original -> corrected, why):\n  - 在新的城，孟子老是想玩玩 -> 在新城市，想玩  [V.V. is used to make requests or plans]\n  - 但是他刚尝尝的花 -> 刚尝的花  [V.V. is used to make requests or plans]\n  - 在家不是学习就是玩玩 -> 玩  [V.V. is used to make requests or plans]\n  - 他跳跳了 -> 跳了跳  [V.V. is used to make requests or plans]\n  - 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜 -> loosely connected with the preceding sentence; replace孟子with他，delete the second他；都想玩儿，V.V. is used to make requests or plans；坐在墓地祭拜\n  - 他跑遍尝尝各种各样的植物 -> 跑遍大山小山  [跑遍 + place; 尝了，V.V. is used to make requests or plans]\n\n### Rule: wrong_information_content\nGrammar/linguistic point: wrong_information_content\nFactual/content error: the sentence states something that contradicts the story's actual plot.\nExamples (original -> corrected, why):\n  - 不是他喜欢学习写文字，而是他的爸爸喜欢他练习 -> 写字  [想要他练习；wrong information, his father did not appear in this story]\n  - 那杯茶他放多的夹竹桃 -> 放了很多夹竹桃  [wrong information, he directly ate夹竹桃]\n  - 他爸爸说 -> wrong information, his father did not appear in this story\n  - 一个人一吃灵芝就死了 -> wrong information, 灵芝is medicine\n  - 难怪我们没有钱 -> wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n  - 夹竹桃很好吃，也对你的健康有好处 -> wrong information, 夹竹桃 is a poison\n  - 他今年才九岁，可是搬了十次家 -> wrong information, 搬了三次家\n  - 但如果灵芝和夹竹桃一起吃，那就是药了 -> delete但，wrong information, 灵芝is a medicine\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 他尝很多植物：尝了，了completed\n\n- 他一吃新的植物就写了植物有没有毒，他也写了每个植物的大小、长短和颜色：吃到result, 写下\n\n- 神农旅行了，吃过新的植物：it is loosely connected with the previous sentence, better add “为了帮助人们找到能吃的植物”, 神农决定去旅行尝试新的植物，“过” is to express “experience”, now the experience has not yet been experienced\n\n## Student's scene to review\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。"
+   },
+   "retrieved": [
+    "rule_card:zhe_jiu_yao_kan",
+    "rule_card:ambiguous_reference",
+    "rule_card:verb_reduplication",
+    "rule_card:wrong_information_content",
+    "correction_item:shennong_samples#22::c2",
+    "correction_item:shennong_samples#5::c3",
+    "correction_item:shennong_samples#1::c2"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “他一次试一试有些植物的叶” / Formula: Subject + 尝试/尝了 + quantity + object; verb reduplication (V一V) is for a light suggestion or intention, not a completed action / Correct: “他一次尝试了几种植物的叶子。”\n\nIncorrect phrase: “吃得又新鲜又甜” / Formula: Food + 吃起来 + adjective / Correct: “这些叶子吃起来又新鲜又甜。”  \n“吃得……” usually describes how someone performs the action of eating, while “吃起来……” describes the taste or quality of food.\n\nIncorrect phrase: “煮这些叶以后，他一喝就知道他发现新的茶叶” / Formula: Subject + 煮了 + object + 以后，+ subject + 一 + verb + 就 + result; use 自己 to make the reference clear / Correct: “煮了这些叶子以后，他喝了一口，就知道自己发现了一种新的茶叶了。”\n\nIncorrect phrase: “很多的新的植物” / Formula: 很多 + (种) + adjective + noun / Correct: “很多种新植物。”  \nYou can also say “很多新的植物,” but “很多种新植物” is more natural here.\n\nIncorrect phrase: “他的旅程有的时候特别是危险” / Formula: Subject + 有时候 + 很/特别 + adjective / Correct: “他的旅程有时候特别危险。”\n\nIncorrect phrase: “他一吃灵芝就开始生病” / Formula: Subject + 一 + verb + 就 + result / Correct: “他一吃夹竹桃就开始生病。”  \nThis is a content correction: 灵芝 is medicinal, while 夹竹桃 is poisonous.\n\n**Vocabulary Suggestions**\n\nWord: “比方说” / Context: “比方说，他一次尝试了几种植物的叶子。” / Alternatives: “例如” is more concise and is especially natural in writing. “比方说” is conversational and often introduces an example in speech.\n\nWord: “叶” / Context: “植物的叶” / Alternatives: “叶子” is the usual everyday word for a plant’s leaves. “叶” is shorter and more formal or literary, but “叶子” sounds more natural in this narrative.\n\nWord: “新鲜又甜” / Context: “这些叶子吃起来又新鲜又甜。” / Alternatives: “清香甘甜” describes a pleasant, light fragrance and sweetness, so it suits tea especially well. “新鲜” usually emphasizes that food is recently picked or not spoiled.\n\nWord: “旅程” / Context: “他的旅程有时候特别危险。” / Alternatives: “探索过程” emphasizes Shen Nong’s process of investigating and discovering plants. “旅程” focuses more on the physical trip from place to place.\n\nWord: “危险” / Context: “有时候特别危险。” / Alternatives: “凶险” is stronger and more literary, suggesting serious danger. “危险” is a common, neutral word for something unsafe.\n\n**Encouragement and Next Steps**\n\nYou did well to use connecting words such as “虽然……但是……” and “一……就……,” which give your story a clear flow.  \nNext time, focus on using completed-action forms such as “尝试了” or “尝了,” and double-check which plants are poisonous or medicinal in the story.",
+   "usage": {
+    "prompt_tokens": 2100,
+    "completion_tokens": 1237,
+    "total_tokens": 3337,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 2097,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 512,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 11157
+  },
+  {
+   "scene": 3,
+   "text": "一个爬山的男人正好看到神农的麻烦，然后给了他一些药。神农最终他的小镇回到，跟别的人分享他的发现。你认为神农的故事真的吗？这就要看你相信中药对身体有好处。",
+   "prompt": {
+    "system_sha": "6b4344a891cb560e",
+    "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: redundancy_delete\nGrammar/linguistic point: redundancy_delete\nRedundant word/phrase that should simply be deleted (repeated subject, repeated adverb, etc.).\nExamples (original -> corrected, why):\n  - 孟母找到了良好的工作，她挣不少钱 -> 好工作  [良好is not with工作；delete她, redundant]\n  - 神农出发在一个旅程，他在这个旅程尝了很多植物 -> 神农开始了旅程，在旅程中  [delete他，redundant]\n  - 一个农人爬着一个树，他把树上的梨子摘下来 -> 农民；一棵树；delete他，otherwise redundant.\n  - 第一次他们搬家，他们在墓地住 -> 他们第一次搬家是在墓地住  [delete the second他们，redundant]\n  - 神农回他的家，他看到了药，正好看到了毒植物 -> 回到家  [delete他的, redundant; delete他，redundant; 有毒植物；what is the connection between 看到了药and正好看到了有毒植物?]\n  - 这个坏人好像没有什么有希望的前途 -> 没有什么前途；“前途” itself means “hopeful future”, so “有希望” is a little bit redundant.\n  - 他写太多的文章，他建议孩子们常常做祭拜 -> 写了  [了completed; delete the second他, redundant; 祭拜]\n  - 神农看他的朋友很生病，他想帮他们，所以神农去了大山 -> 病得很重  [“生病” is not an Adj., so it cannot be with 很 or 不; delete the second他and the second神农，redundant]\n\n### Rule: ambiguous_reference\nGrammar/linguistic point: ambiguous_reference\nAmbiguous or vague referent (pronoun 他/她 unclear, vague noun like 人/事情/别人 needing specificity).\nExamples (original -> corrected, why):\n  - 妈妈老是工作了，害得她的身体不好 -> 孟母  [“妈妈” here is ambiguous; 老是工作，no了for routine/habit]\n  - 夹竹桃一吃，就生病了 -> 他就生病了  [otherwise it is ambiguous who gets sick]\n  - 他送三个梨给他们 -> 送了  [了completed; “他” is a bit ambiguous]\n  - 人一直在墓地大声哭 -> 来祭拜的人  [“人“ is too general and too vague, and does not stand alone]\n  - 他一吃黄色的花就有麻烦 -> 肚子就疼  [“有麻烦“ is too vague]\n  - 他停在树下 -> here “他” is a bit ambiguous, it can refer to the boy or the man wearing the scarf.\n  - 古代的时候，有一个妈妈和他的儿子，这个小孩子叫孟子 -> 在古代，“她”，有一个妈妈和她的儿子住在一起，儿子叫孟子  [“这个小孩子” is unclear and ambiguous]\n  - 因为他想知道什么植物能吃，他看到什么植物就吃什么 -> 因为神农想知道……，所以……  [the first他is a bit ambiguous]\n\n### Rule: attributive_modifier_de\nGrammar/linguistic point: attributive_modifier_de\nModifiers come before the noun with 的 (一个叫孟子的小孩子, 住在离墓地很近的地方, 有毒的植物); no 的 after 很多 or in fixed phrases (好主意).\nExamples (original -> corrected, why):\n  - 有一位小孩子叫孟子 -> 有一个叫孟子的小孩子  [“位” is a polite MW.]\n  - 很多的东西麻烦得很 -> 很多植物  [no的；麻烦is usually not used to describe植物]\n  - 自行车的男孩给三个男孩子们每一个人一个梨子 -> 骑自行车的男孩；给三个男孩子  [“们”cannot be used with num.]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 很多的人吃了有毒的饭 -> 很多人  [no的；有毒的植物]\n  - 这个戴围巾的男人拿多梨 -> 拿了很多梨  [了completed, 很多+noun]\n  - 他成为了一个人写文章老是好 -> 一个写文章非常好的作家\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n\n### Rule: character_introduction_first_mention\nGrammar/linguistic point: character_introduction_first_mention\nA character should be briefly introduced on first mention (name + who they are) rather than assumed known.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 为了帮人们找到他们的饭，神农开始找我们可以吃的植物 -> 找到可以吃的植物  [delete我们；better to briefly introduce “神农” when this character first appears]\n  - 就看到很漂亮的女孩 -> 一个很漂亮的女孩  [first appearing noun should not be specific]\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 这是一个神农的古代故事 -> 关于神农的  [better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农和他的城市不知道什么植物他们可以吃 -> 人们不知道什么植物可以吃  [delete他们；better to briefly introduce “神农” when this character first appears]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 神农看到很多人吃了麻烦的植物：better to briefly introduce “神农” when this character first appears; 有害的植物\n\n- 一个农民帮神农吃灵芝：给神农吃灵芝\n\n- 神农看到很多人随便吃各种植物：better to briefly introduce “神农” when this character first appears\n\n## Student's scene to review\n一个爬山的男人正好看到神农的麻烦，然后给了他一些药。神农最终他的小镇回到，跟别的人分享他的发现。你认为神农的故事真的吗？这就要看你相信中药对身体有好处。"
+   },
+   "retrieved": [
+    "rule_card:redundancy_delete",
+    "rule_card:ambiguous_reference",
+    "rule_card:attributive_modifier_de",
+    "rule_card:character_introduction_first_mention",
+    "correction_item:shennong_samples#1::c1",
+    "correction_item:shennong_samples#46::c5",
+    "correction_item:shennong_samples#6::c0"
+   ],
+   "feedback": "**Grammar Corrections**\n\nIncorrect phrase: “一个爬山的男人” / Formula: 一个 + 正在 + 动作 + 的 + 人 / Correct: “一个正在爬山的男人”  \n“爬山的男人” can describe a man who hikes in general; “正在爬山的男人” clearly shows that he is climbing at that moment.\n\nIncorrect phrase: “看到神农的麻烦” / Formula: 人 + 看到 + 某人 + 遇到了 + 困难/麻烦 / Correct: “看到神农遇到了麻烦”  \n“神农的麻烦” is vague. This correction clearly states that Shennong was having a problem.\n\nIncorrect phrase: “神农最终他的小镇回到” / Formula: 谁 + 最终/最后 + 回到 + 地点 / Correct: “神农最终回到了自己的小镇”  \nThe verb phrase should be “回到 + place,” and the location comes after the verb.\n\nIncorrect phrase: “你认为神农的故事真的吗？” / Formula: 你认为 + 句子 + 吗？ / Correct: “你认为神农的故事是真的吗？”  \nUse “是……的吗？” to ask whether something is true.\n\nIncorrect phrase: “这就要看你相信中药对身体有好处。” / Formula: 这要看 + 主语 + 是否 + 动词/句子 / Correct: “这要看你是否相信中药对身体有好处。”  \n“是否” means “whether or not” and is especially natural after “要看.”\n\n**Vocabulary Suggestions**\n\nWord: “爬山” / Context: “一个正在爬山的男人” / Alternatives: “登山” is a more formal and literary word for climbing mountains, while “爬山” is the common everyday term.\n\nWord: “麻烦” / Context: “神农遇到了麻烦” / Alternatives: “困难” means a difficulty or obstacle and sounds more neutral; “困境” suggests a more serious, difficult situation. “麻烦” is common but slightly vague here.\n\nWord: “药” / Context: “给了他一些药” / Alternatives: “草药” refers specifically to medicinal herbs, which fits Shennong’s story especially well. “中草药” emphasizes traditional Chinese herbal medicine.\n\nWord: “小镇” / Context: “回到了自己的小镇” / Alternatives: “家乡” means one’s hometown and is more natural if this is the place where Shennong grew up. “小镇” simply describes a small town and does not necessarily mean his home.\n\nWord: “真的” / Context: “神农的故事是真的吗？” / Alternatives: “真实的” means real or factual and is more formal; “可信的” means believable or credible. “真的” is very common in conversation, while “真实的” suits historical stories better.\n\n**Encouragement and Next Steps**\n\nYou created a clear mini-story with a logical ending question, and your use of “然后” and “最终” gives the events a good flow.  \nNext time, focus on Chinese word order, especially placing locations after verbs such as “回到 + 地点.”",
+   "usage": {
+    "prompt_tokens": 2082,
+    "completion_tokens": 1129,
+    "total_tokens": 3211,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 2079,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 449,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "ms": 9714
+  }
+ ],
+ "content": {
+  "prompt": {
+   "system": "You are a Chinese-language writing tutor giving end-of-story feedback to an early learner who has just finished writing a short narrative scene by scene. Grammar, vocabulary, and coherence have ALREADY been covered scene by scene -- do NOT comment on them here. Assess only the overall CONTENT and COMPLETENESS of the story as a whole.\n\nRules:\n1. Judge the whole story: does it have enough scenes and events to be a complete story -- a beginning that introduces the characters and setting, a middle with the main events, and an ending that resolves them? Are there gaps where a reader would not understand what happened or why?\n2. Only flag real gaps. Do not invent problems; if a part is already complete, do not list it as an item.\n3. Point to specific scenes (\"Scene 2\") when you flag a gap, and say concretely what is missing.\n4. Write ALL prose in English. Chinese appears only in short quoted spans or small example phrases at the student's own level.\n5. Be encouraging and concise -- this is an early learner.\n\nOutput format -- Markdown, exactly this structure:\n\n## Content & Completeness\n- one missing, unclear, or underdeveloped part of the story per line, naming the scene and what the story needs\n- (if the story is complete, write exactly \"- Nothing to flag.\")\n\n## Overall Encouragement\nOne or two sentences on what the student did well across the whole story.\n\nKeep each \"## \" heading on its own line exactly as written, and put every item on its own line beginning with \"- \".",
+   "user": "## Student's complete story to review (3 scenes)\nScene 1: 很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\nScene 2: 比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\nScene 3: 一个爬山的男人正好看到神农的麻烦，然后给了他一些药。神农最终他的小镇回到，跟别的人分享他的发现。你认为神农的故事真的吗？这就要看你相信中药对身体有好处。"
+  },
+  "retrieved": [],
+  "feedback": "## Content & Completeness\n- Nothing to flag.\n\n## Overall Encouragement\nYou created a complete story with a clear beginning, an adventurous middle, and a satisfying ending where Shennong returns home and shares what he learned. The danger in Scene 2 and the help he receives in Scene 3 make the journey feel meaningful.",
+  "usage": {
+   "prompt_tokens": 547,
+   "completion_tokens": 70,
+   "total_tokens": 617,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 1233
+ }
+}

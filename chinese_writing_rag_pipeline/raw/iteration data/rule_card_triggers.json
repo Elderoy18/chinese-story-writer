@@ -1,0 +1,100 @@
+{
+ "_about": "Regex triggers for rule cards (S7-4): when one matches the student's scene, the rule card is added to the prompt and the matched place is shown as a place to check (a hint, not an error). Mined from her corrections on the 87 training stories with HanLP word boundaries (scripts/mine_triggers.py) and measured there; this file keeps the triggers marked suggested_keep=yes (at least half of their matches were at her corrections, and they rarely match correct text). PROVISIONAL (2026-10-18): taken over unreviewed so S7-4 could run; edit after reviewing review/triggers/triggers_review.csv and rebuild the snapshot.",
+ "status": "provisional, not yet reviewed",
+ "rules": {
+  "resultative_complement": [
+   {
+    "regex": "一看",
+    "fires_in_training": 20,
+    "at_her_edits": 11,
+    "precision": 0.55
+   },
+   {
+    "regex": "他吃毒",
+    "fires_in_training": 2,
+    "at_her_edits": 2,
+    "precision": 1.0
+   },
+   {
+    "regex": "吃毒",
+    "fires_in_training": 5,
+    "at_her_edits": 5,
+    "precision": 1.0
+   },
+   {
+    "regex": "吃毒的",
+    "fires_in_training": 3,
+    "at_her_edits": 3,
+    "precision": 1.0
+   },
+   {
+    "regex": "看很多",
+    "fires_in_training": 5,
+    "at_her_edits": 4,
+    "precision": 0.8
+   }
+  ],
+  "time_expression": [
+   {
+    "regex": "古代的时候",
+    "fires_in_training": 30,
+    "at_her_edits": 18,
+    "precision": 0.6
+   },
+   {
+    "regex": "在古代的时候",
+    "fires_in_training": 5,
+    "at_her_edits": 4,
+    "precision": 0.8
+   }
+  ],
+  "verb_object_collocation": [
+   {
+    "regex": "受到",
+    "fires_in_training": 4,
+    "at_her_edits": 2,
+    "precision": 0.5
+   }
+  ],
+  "word_choice": [
+   {
+    "regex": "什么菜",
+    "fires_in_training": 3,
+    "at_her_edits": 3,
+    "precision": 1.0
+   },
+   {
+    "regex": "他的人民",
+    "fires_in_training": 3,
+    "at_her_edits": 3,
+    "precision": 1.0
+   },
+   {
+    "regex": "别的人",
+    "fires_in_training": 8,
+    "at_her_edits": 8,
+    "precision": 1.0
+   },
+   {
+    "regex": "菜能",
+    "fires_in_training": 2,
+    "at_her_edits": 2,
+    "precision": 1.0
+   },
+   {
+    "regex": "食品",
+    "fires_in_training": 3,
+    "at_her_edits": 3,
+    "precision": 1.0
+   }
+  ],
+  "word_class_misuse": [
+   {
+    "regex": "是毒",
+    "fires_in_training": 17,
+    "at_her_edits": 14,
+    "precision": 0.82
+   }
+  ]
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "variant_id": "mengmu_samples_32_s1_c4",
+ "sample_id": "mengmu_samples#32",
+ "story_id": "mengmu_san_qian",
+ "scene": 1,
+ "her_line": "所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育",
+ "rules": [
+  "redundancy_delete",
+  "word_choice",
+  "verb_object_collocation"
+ ],
+ "original_scene": "有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+ "variant_scene": "有一天孟子去了墓地玩儿，但是他妈妈觉得这不是适合孩子玩的地方，所以她决定搬家到更好的地方。她怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+ "previous_scenes": [],
+ "target_original": {
+  "start": 86,
+  "end": 101
+ },
+ "target_variant": {
+  "start": 80,
+  "end": 95
+ },
+ "target_edits_variant": [
+  {
+   "edit_id": "mengmu_samples#32/f4/p0/k0/e0",
+   "op": "delete",
+   "start": 80,
+   "end": 81,
+   "original": "会",
+   "corrected": "",
+   "her_line": "所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育",
+   "her_piece": "delete会",
+   "her_note": "会will",
+   "review_row": "mengmu_samples#32/f4/p0/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#32/f4/p1/k0/e0",
+   "op": "delete",
+   "start": 85,
+   "end": 87,
+   "original": "才能",
+   "corrected": "",
+   "her_line": "所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育",
+   "her_piece": "delete才能",
+   "her_note": "",
+   "review_row": "mengmu_samples#32/f4/p1/k0",
+   "her_decision": "yes"
+  },
+  {
+   "edit_id": "mengmu_samples#32/f4/p1/k1/e0",
+   "op": "replace",
+   "start": 87,
+   "end": 95,
+   "original": "找到质量好的教育",
+   "corrected": "想要让孟子受到良好的教育",
+   "her_line": "所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育",
+   "her_piece": "想要让孟子受到良好的教育",
+   "her_note": "",
+   "review_row": "mengmu_samples#32/f4/p1/k1",
+   "her_decision": "yes"
+  }
+ ],
+ "n_other_edits_applied": 5,
+ "stage": "S0-h20",
+ "model": "gpt-5.6-terra",
+ "reasoning_effort": "low",
+ "original_retrieved": [
+  "rule_card:preposition_dao_place",
+  "rule_card:cai_jiu_construction",
+  "rule_card:location_zai_place",
+  "rule_card:time_expression",
+  "correction_item:mengmu_samples#13::c3",
+  "correction_item:mengmu_samples#36::c4",
+  "correction_item:mengmu_samples#20::c0"
+ ],
+ "own": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:cai_jiu_construction",
+   "rule_card:location_zai_place",
+   "rule_card:time_expression",
+   "correction_item:mengmu_samples#13::c3",
+   "correction_item:mengmu_samples#36::c4",
+   "correction_item:mengmu_samples#9::c10"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 所以孟子的妈妈搬家很安全很安静的公寓：搬到……\n\n- 孟子跟他的妈妈搬家，去一个最好的学校：去了，了completed\n\n- 原来他妈妈选择特别好的地方孟子长大：选择对孟子成长特别好的环境\n\n## Student's scene to review\n有一天孟子去了墓地玩儿，但是他妈妈觉得这不是适合孩子玩的地方，所以她决定搬家到更好的地方。她怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “她决定搬家到更好的地方” / Formula: 决定 + Verb Phrase; 搬到 + Place / Correct: “她决定搬到更好的地方。”\n\nIncorrect phrase: “住在这儿教育不太好” / Formula: 在 + Place + the situation/condition is + adjective / Correct: “这儿的教育不太好。” Or: “住在这儿，孩子受到的教育不太好。”\n\nIncorrect phrase: “她会一直搬家才能找到质量好的教育” / Formula: 为了 + purpose + 才能 + Verb; 搬家到 + Place / Correct: “为了找到高质量的教育，她决定不断搬到更好的地方。”  \n“才能” usually expresses that a condition is necessary to achieve a result. Here, the mother’s repeated moves are her plan, so “为了……” is clearer.\n\n**Vocabulary Suggestions**\n\nWord: “玩儿” / Context: “孟子去了墓地玩儿” / Alternatives: “玩耍” is a slightly more formal written alternative and fits a story narration well. “嬉戏” is more literary and emphasizes children playing happily and freely. “玩儿” is natural in speech but more casual.\n\nWord: “更好的地方” / Context: “搬到更好的地方” / Alternatives: “更适合孩子成长的环境” is more specific and emphasizes the child’s overall development. “更理想的居住环境” sounds more formal and focuses on the quality of the living environment. “更好的地方” is understandable but vague.\n\nWord: “怕” / Context: “她怕儿子的童年不会幸福” / Alternatives: “担心” is more natural in written narration and expresses concern. “忧虑” is more formal and conveys deeper, ongoing worry. “怕” is common and direct, but slightly more conversational.\n\nWord: “质量好的教育” / Context: “找到质量好的教育” / Alternatives: “高质量的教育” is the standard and most natural collocation. “良好的教育资源” emphasizes access to good schools, teachers, and learning opportunities. “质量好的教育” is understandable, but “高质量的教育” is more idiomatic.\n\nWord: “离城市更近的地方” / Context: “他们搬到了离城市更近的地方” / Alternatives: “城里” is concise and natural if they moved into the city. “市中心附近” specifically means near the city center. “离城市更近的地方” is grammatically correct, but it does not explain why this location provides better education.\n\n**Encouragement and Next Steps**\n\nYou clearly explained Meng Mu’s motivation—her concern for her son’s happiness and education—and your story has a logical cause-and-effect flow.  \nNext time, focus on using more precise phrases for locations and education, such as “搬到……” and “高质量的教育资源.”",
+  "usage": {
+   "prompt_tokens": 2056,
+   "completion_tokens": 612,
+   "total_tokens": 2668,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2053,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 5237
+ },
+ "fixed": {
+  "retrieved": [
+   "rule_card:preposition_dao_place",
+   "rule_card:cai_jiu_construction",
+   "rule_card:location_zai_place",
+   "rule_card:time_expression",
+   "correction_item:mengmu_samples#13::c3",
+   "correction_item:mengmu_samples#36::c4",
+   "correction_item:mengmu_samples#20::c0"
+  ],
+  "user": "## Relevant grammar rule cards (ground your explanations in these)\n\n### Rule: preposition_dao_place\nGrammar/linguistic point: preposition_dao_place\n到 + Place ('to a place').\nExamples (original -> corrected, why):\n  - 他们搬家安静以后，孟子从早到晚老是学哲学 -> 搬到安静的地方以后，一直  [“老是“ for something negative, used to complain]\n  - 小王骑自行车到张先生的梨子树 -> 到张先生的梨子树下  [到 + place]\n  - 所以孟子的妈妈搬家很安全很安静的公寓 -> 搬到……\n  - 所以她带孟子到一个城市搬家了 -> 带孟子搬到城市了\n  - 所以他们到城市的外边搬家了 -> 搬到城市外了\n  - 所以他们搬家去商店的旁边 -> 搬家到\n  - 她决定了以后搬出去学校的旁边 -> 决定is a mental state verb, no了；搬到\n\n### Rule: cai_jiu_construction\nGrammar/linguistic point: cai_jiu_construction\n才 + Num. ... 就 + V.: the action happened early or after only a small amount (才五岁就开始学习, 才吃了两口饭就饱了).\nExamples (original -> corrected, why):\n  - 他才四岁，开始祭拜 -> 就开始……  [才 Num.就V.]\n  - 所以孟子才八岁，跟孟母一起搬家三次 -> 就跟孟母搬了三次家  [才 Num.就V.，了completed，V. + Num. + MW. + Obj.]\n  - 他才八岁，开始学哲学 -> 就开始……  [才 Num.就V.]\n  - 孟子才三岁开始搬家，以后每年搬家 -> 就开始  [才Num.就V., 后来每年都搬家]\n  - 才二十岁，孟子成为很厉害的哲学家 -> 就成为  [才Num.就V.]\n  - 才九岁，他想找工作 -> delete他，add就，才Num.就V.\n  - 他们才一个星期住在那儿，孟子跟他的妈妈已经搬家了 -> 他们才在那儿住了一个星期  [就又搬家了；在Place住，delete孟子跟他的妈妈]\n  - 可是搬才三次就找到好的地方 -> 才搬了三次  [才V. + Num., 了completed]\n\n### Rule: location_zai_place\nGrammar/linguistic point: location_zai_place\n在 + Place phrase required before a verb of location/position.\nExamples (original -> corrected, why):\n  - 他每天在文学家的房子上学 -> 房子里  [在+Place]\n  - 他到山以后，他喝了茶 -> 到了山上  [了completed, 山上is a place; delete the second他, redundant]\n  - 小王在马路骑自行车一看到别个人 -> 在马路上  [在+ place；骑着自行车，“着” is for “durative”；另外一个人/一个女孩子，there is no “别个人”.]\n  - 他们搬家不是为了孟母要住在更好的房子 -> 为了住在更好的房子里  [在+Place, delete孟母，为了 + VP.]\n  - 在照片可以看一个很老的人 -> 在照片上可以看到  [看look vs.看到see; 老人；please introduce神农]\n  - 一个孩子在马路看到小王的帽子，拿上去 -> 在马路上  [在+ place；拿起来pick up，拿上去means “bring it up”]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 神农在新鲜空气的山走路看到几种的植物，也看到了很多人吃植物 -> 在空气新鲜的山里走路，很多人在吃植物  [在ongoing]\n\n### Rule: time_expression\nGrammar/linguistic point: time_expression\nTime expressions: 在古代 (not 古代的时候), 后来 vs. 以后 vs. 将来, 长大以后, Time + 以后; 'then' in a narrative is 然后/后来, not 以后 alone.\nExamples (original -> corrected, why):\n  - 古代的时候，孟子和孟母住在一起 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 很多年的时候，他测试别的植物 -> 他尝试各种植物尝试了很多年  [“别的” is for “a different type”, and “all else except the spoken one”]\n  - 秋季期间 not very natural -> 整个秋季期间；Time + 期间：usually special, long period, “秋季” itself is not “special” enough, “整个/今年秋季” would highlight this particular, special period.\n  - 在古代时候，孟子跟他妈妈常常搬家 -> 在古代  [better to briefly introduce “孟子” when this character first appears]\n  - 他以后正好看一个灵芝，他一吃灵芝就身体好了 -> 然后  [Time+以后；他正好看到，看look vs.看到see; 身体就好了，Subj. + 就]\n  - 古代的时候，孟子和他的妈妈住在离墓地很近 -> 在古代  [better to briefly introduce “孟子” when this character first appears；住在离墓地很近的地方，住在+Place]\n  - 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药 -> 后来  [Time+以后；“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine]\n  - 古代的时候，一个家人住在中国。那个家人是孟子的家人 -> 在古代，孟子一家人住在中国  [better to briefly introduce “孟子” when this character first appears]\n\n## Nearby real correction exemplars (style reference for how to phrase corrections)\n\n- 所以孟子的妈妈搬家很安全很安静的公寓：搬到……\n\n- 孟子跟他的妈妈搬家，去一个最好的学校：去了，了completed\n\n- 从小到大，孟子和他的妈妈一直在搬家：better to briefly introduce “孟子” when this character first appears\n\n## Student's scene to review\n有一天孟子去了墓地玩儿，但是他妈妈觉得这不是适合孩子玩的地方，所以她决定搬家到更好的地方。她怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+  "text": "**Grammar Corrections**\n\nIncorrect phrase: “她决定搬家到更好的地方” / Formula: 决定 + Verb Phrase; 搬家 + 到 + Place / Correct: “她决定搬到更好的地方。”  \n“搬家到” is understandable, but 搬到 is more concise and natural when the destination follows.\n\nIncorrect phrase: “住在这儿教育不太好” / Formula: 在 + Place + Education/Schooling + 不太好 / Correct: “这儿的教育不太好。”  \nAlternatively: “住在这儿，孩子受到的教育不太好。”\n\nIncorrect phrase: “她会一直搬家才能找到质量好的教育” / Formula: 要/得 + Verb, 才能 + Verb; or 一直 + Verb, 直到 + result / Correct: “她得一直搬家，才能找到高质量的教育。”  \n“会一直……才能……” does not connect the condition and result naturally here.\n\n**Vocabulary Suggestions**\n\nWord: “觉得” / Context: “他妈妈觉得这不是适合孩子玩的地方” / Alternatives: “认为” is more formal and expresses a considered opinion; “觉得” is common in everyday speech and sounds more personal. In this narrative, “认为” fits well.\n\nWord: “更好的地方” / Context: “她决定搬到更好的地方” / Alternatives: “更适合孩子成长的地方” is more specific and emphasizes the child’s development; “环境更好的地方” emphasizes living conditions. “更好的地方” is understandable but vague.\n\nWord: “幸福” / Context: “儿子的童年不会幸福” / Alternatives: “快乐” is more natural for describing a child’s daily emotional experience; “幸福” is broader and can sound more serious or long-term. “快乐的童年” would be especially natural here.\n\nWord: “质量好的教育” / Context: “找到质量好的教育” / Alternatives: “高质量的教育” is the standard and more natural collocation; “良好的教育” emphasizes beneficial, well-rounded education. “质量好的” is understandable but less idiomatic with 教育.\n\nWord: “离城市更近的地方” / Context: “他们搬到了离城市更近的地方” / Alternatives: “离城里更近的地方” sounds more conversational; “更靠近市中心的地方” specifically means closer to downtown. Your original phrase is grammatically correct, but these alternatives can make the location clearer.\n\n**Encouragement and Next Steps**\n\nYou clearly explained the mother’s motivation and used a logical sequence of events, especially with “所以” and “然后.”  \nNext time, focus on making phrases about education and reasons for actions more natural, such as “高质量的教育” and “得……才能……”.",
+  "usage": {
+   "prompt_tokens": 2063,
+   "completion_tokens": 583,
+   "total_tokens": 2646,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 2060,
+    "audio_tokens": 0
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "audio_tokens": 0,
+    "accepted_prediction_tokens": 0,
+    "rejected_prediction_tokens": 0
+   }
+  },
+  "ms": 5049
+ }
+}
