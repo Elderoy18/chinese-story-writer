@@ -62,6 +62,27 @@ full system prompt, the model and the snapshot manifest.
 each input, including the AI-critique docs and `critique_labels.json`, in the
 manifest).
 
+## S7 measurement harness
+
+```
+python eval/s7/evaluate.py S6-h20 S6-h20-r2 S6-h20-r3 --name S6-h20
+    -> reports/S7_S6-h20.md, s7/out/S6-h20.json
+```
+
+Scores a stage from its repeated runs on the 20-story test set (stages with
+`"testSet": "test_set_h20.json"`). Uses the judge of `v1_vs_v2/score.py` (same
+prompts and cache) with her aligned edits as the answer key. Reports, in her
+order of priority: accuracy (false positives and incorrect corrections per
+scene, items fully right, corrected text, partial sentences, categories,
+content, expressiveness, recall), each as mean (lowest–highest) over the runs;
+consistency across the runs (places flagged in every run; lexical = identical
+corrected text; information = same error with an equivalent fix, judged);
+retrieval (Jaccard between runs; card reach = was the rule card for her
+correction in the prompt, overall and per rule); and attribution of each of her
+corrections (retrieval: card missing / generation: card there but the error
+missed or misfixed / right). Variant inputs (the same error in another context)
+are added before the retrieval stages S7-4 to S7-6 (`S7_plan.md`).
+
 ## Guard: earlier stages stay unchanged
 
 Later stages share code with earlier ones (`lib/rag/promptStages.ts`, the

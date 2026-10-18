@@ -230,6 +230,28 @@ are used to re-check the judge (how often the judge agrees with her).
   `triggers/`, `contradictions/`. Built and embedded `base-v5`. Production chunk files
   (`chunks/*.jsonl`) and the live database are untouched until Phase 5.
 
+- **18 Oct -- Phase 2 (first part).** Added `eval/s7/evaluate.py` (accuracy over repeated runs,
+  lexical + information consistency, retrieval Jaccard and card reach, attribution) ->
+  `eval/reports/S7_<name>.md`. Reuses `eval/v1_vs_v2/score.py`'s parsing and judge; fixes the
+  lexical metric (English explanation no longer counted as corrected text). Variant inputs
+  (A/B, fixed retrieval) deferred to just before S7-4 -- only the retrieval stages need them.
+
+- **18 Oct -- baseline and S7-0 measured** (`eval/reports/S7_S6-h20.md`, `S7_S7-0.md`; 3 runs each,
+  20 stories / 60 scenes; harness now leaves out scenes whose judge prompt OpenAI's content filter
+  refuses -- for all runs and stages, list in `eval/s7/out/refused.json`; none so far).
+  S6-h20: FP 0.54/scene (0.40-0.72), incorrect 0.41 (0.37-0.48), fully right 70%, recall 75%;
+  consistency: lexical 24%, information 62% of places flagged in every run; retrieval identical
+  across runs (Jaccard 1.0); **card reach 34%** -- 13 rule cards never reached the prompt at any
+  of their places (word_choice 0/48, resultative_complement 0/15, verb_object_collocation 0/14...);
+  only pinned cards reach every place (了 29/29). Of her corrections missed or misfixed, ~45 per
+  run had no card in the prompt vs ~20 with it -- but ~68 per run were fixed right without
+  their card, so this is a pointer, not proof, that retrieval stages will help.
+  S7-0 (new data, same code): every accuracy figure within S6's run-to-run range (incorrect
+  0.48, at S6's highest run; FP 0.56); lexical 31%, information 64% (+2, within noise);
+  孟母 expressiveness 74% vs 67%; card reach 35%. **Verdict: neutral** -- the new data alone does
+  not change behaviour, as expected (most of it is only used by later stages). Kept as the base
+  for S7-0b onward, since those stages need base-v5.
+
 ## Decisions
 
 - **D1 (18 Oct): 20 held-out stories.** S6 re-baselined on `base-v4-h20`.
