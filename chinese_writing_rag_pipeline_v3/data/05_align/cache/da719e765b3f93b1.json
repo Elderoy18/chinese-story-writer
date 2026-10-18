@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他们在到处的中国住。\nquote: 他们在到处的中国住\npart p0: fix [ref p0/k0] 他们在中国各地都住过 ; notes: “过” experience, have done, Place到处都 + Clause",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "到处的中国",
+    "corrected": "中国各地都",
+    "before": "他们在",
+    "after": "住",
+    "note": "Place到处都 + Clause",
+    "confidence": "high",
+    "reason": "reorders the place expression and adds 都 before the verb"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "过",
+    "before": "各地都住",
+    "after": "",
+    "note": "“过” experience, have done",
+    "confidence": "high",
+    "reason": "adds experiential 过 after 住"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1000,
+  "completion_tokens": 294,
+  "total_tokens": 1294,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 162,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

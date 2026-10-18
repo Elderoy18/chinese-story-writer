@@ -1,0 +1,105 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 古代的时候  →  古代的时候 → 在古代\n- 孟子和孟子的妈妈一直住在墓地的旁边  →  孟子 → (delete)\n- 孟子的妈妈每天从早到晚做工作  →  做 → (delete)\n- 他们搬到城市  →  搬到 → 搬到了  (了completed)\n- 孟子在墓地和祭拜跟其他孩子  →  和 → (delete)\n- 孟母害得孟子玩儿  →  玩儿 → 整天都很郁闷  (害得 + N/sb. + Harmful result, 玩儿is not harmful)\n\nScene to review:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "古代的时候",
+    "corrected": "在古代",
+    "errors": [
+     {
+      "original": "古代的时候",
+      "correction": "在古代",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 在古代 to mean “in ancient times.”"
+     }
+    ]
+   },
+   {
+    "clause": "孟子和孟母住了在靠墓地的家",
+    "corrected": "孟子和孟母住在靠墓地的家",
+    "errors": [
+     {
+      "original": "住了在",
+      "correction": "住在",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "住 describes a state here, so use zero aspect. 了 cannot come before 在."
+     }
+    ]
+   },
+   {
+    "clause": "孩子才五岁就每天在墓地祭拜了",
+    "corrected": "他才五岁就每天在墓地祭拜",
+    "errors": [
+     {
+      "original": "孩子",
+      "correction": "他",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "孟子 was mentioned in the previous clause, so use the close pronoun 他."
+     },
+     {
+      "original": "祭拜了",
+      "correction": "祭拜",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "每天 shows a routine, so use zero aspect rather than 了."
+     }
+    ]
+   },
+   {
+    "clause": "在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱",
+    "corrected": "在那个城市，孟母从早到晚都找工作，可是找不到，害得她没有钱",
+    "errors": [
+     {
+      "original": "孟母",
+      "correction": "她",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "孟母 is the close, already-mentioned person, so use 她 here."
+     }
+    ]
+   },
+   {
+    "clause": "他们搬了到别一个城市找工作",
+    "corrected": "他们搬到了另一个城市找工作",
+    "errors": [
+     {
+      "original": "搬了到",
+      "correction": "搬到了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "The move is completed, so 了 comes after 到: 搬到了."
+     },
+     {
+      "original": "别一个",
+      "correction": "另一个",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 另一个 for “another one.”"
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1166,
+  "completion_tokens": 2549,
+  "total_tokens": 3715,
+  "prompt_tokens_details": {
+   "cached_tokens": 1163,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2049,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。\nquote: 他不知道如果这把花对你的身体好\npart p0: fix [ref p0/k0] 不知道这种花对身体好不好 ; notes: the “if” in “not know if + clause” is not 如果",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "他不知道如果这把花对你的身体好",
+    "corrected": "他不知道这种花对身体好不好",
+    "before": "",
+    "after": "，",
+    "note": "the “if” in “not know if + clause” is not 如果",
+    "confidence": "high",
+    "reason": "replaces 如果 with an indirect-question construction and follows the teacher's revised wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1016,
+  "completion_tokens": 95,
+  "total_tokens": 1111,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

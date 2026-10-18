@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 可是，他没走远，就看到很漂亮的女孩，把帽子弄掉，一下子撞了一个大石，被筐里的梨子坐在地上了。\nquote: 把帽子弄掉，一下子撞了一个大石\npart p0: fix [ref p0/k0] 把帽子弄掉了 ; notes: “把”usually ends with了\npart p1: fix [ref p1/k0] 又一下子撞到了一个大石头 ; instruction [ref p1/k1] add “又” to make it smooth, 撞到+Obj.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "把帽子弄掉",
+    "after": "，一下子撞",
+    "note": "“把”usually ends with了",
+    "confidence": "high",
+    "reason": "adds sentence-final 了 to the 把 construction"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "撞了一个大石",
+    "corrected": "撞到了一个大石头",
+    "before": "掉，一下子",
+    "after": "",
+    "note": "撞到+Obj.",
+    "confidence": "high",
+    "reason": "changes 撞了 to 撞到了 and completes 大石头"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "insert",
+    "original": "",
+    "corrected": "又",
+    "before": "帽子弄掉，",
+    "after": "一下子撞了",
+    "note": "add “又” to make it smooth, 撞到+Obj.",
+    "confidence": "high",
+    "reason": "inserts 又 before 一下子 as instructed"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1071,
+  "completion_tokens": 417,
+  "total_tokens": 1488,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1068,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 207,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

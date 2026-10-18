@@ -1,0 +1,107 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n古代的时候住了孟子和孟母。孟母不是孟子的爸爸，而是孟子的妈妈。孟母老是不挣钱，从早到晚抱怨她没有钱。他们一直搬家，难怪孟子常常病得很厉害。孟子才一岁的时候，他们先搬到了村庄，在那里生活五年后，他们搬到了街上，孟母才找到工作了，所以他们最后搬到了寺庙。孟子在那儿很忙，不是画画儿，而是祭拜。孟子长大了以后成为一名画家，因为他画画儿很厉害。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "孟子 and 孟母 live near a graveyard; 孟子 imitates sacrifices",
+    "verdict": "partly",
+    "evidence": [
+     "古代的时候住了孟子和孟母。",
+     "孟子在那儿很忙，不是画画儿，而是祭拜。"
+    ],
+    "missing_part": "They live near a graveyard, and 孟子 imitates the sacrifices there.",
+    "details_left_out": [
+     "孟子 does this every day."
+    ],
+    "out_of_order": true
+   },
+   {
+    "id": "S2",
+    "core": "孟母 moves away from the graveyard because the sacrifices affect 孟子 badly",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 decides to leave the graveyard neighbourhood because she thinks 孟子 copying sacrifices is bad for him.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "孟母 moves near the market; 孟子 imitates buying and selling",
+    "verdict": "partly",
+    "evidence": [
+     "他们搬到了街上"
+    ],
+    "missing_part": "They move to the neighbourhood near the market, and 孟子 imitates buying and selling.",
+    "details_left_out": [
+     "孟子 imitates buying and selling every day."
+    ],
+    "out_of_order": true
+   },
+   {
+    "id": "S4",
+    "core": "孟母 moves from the market near a school; 孟子 starts studying",
+    "verdict": "partly",
+    "evidence": [
+     "所以他们最后搬到了寺庙。"
+    ],
+    "missing_part": "孟母 moves from the market to a neighbourhood near a school, and 孟子 starts studying.",
+    "details_left_out": [
+     "孟子 studies every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a famous philosopher",
+    "verdict": "partly",
+    "evidence": [
+     "孟子长大了以后成为一名画家，因为他画画儿很厉害。"
+    ],
+    "missing_part": "孟子 becomes a famous philosopher.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "孟子才一岁的时候，他们先搬到了村庄，在那里生活五年后，他们搬到了街上，孟母才找到工作了，所以他们最后搬到了寺庙。",
+    "problem": "The story has them first living near a graveyard, then moving near a market, and finally moving near a school. The moves are caused by 孟母 noticing what 孟子 imitates, not by finding a job."
+   },
+   {
+    "learner_text": "孟子在那儿很忙，不是画画儿，而是祭拜。",
+    "problem": "孟子 imitates sacrifices while living near the graveyard, not after moving to a temple."
+   },
+   {
+    "learner_text": "孟子长大了以后成为一名画家，因为他画画儿很厉害。",
+    "problem": "孟子 grows up to become a famous philosopher, not a painter."
+   }
+  ],
+  "feedback": [
+   "At the beginning, add that 孟子 and 孟母 live near a graveyard and 孟子 copies sacrifices there.",
+   "After 孟子 copies sacrifices, add that 孟母 moves away because she thinks this is bad for him.",
+   "After leaving the graveyard, include the move near the market and 孟子 copying buying and selling.",
+   "After the market, include the move near a school and 孟子 beginning to study.",
+   "At the end, say that 孟子 becomes a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1033,
+  "completion_tokens": 2779,
+  "total_tokens": 3812,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1030,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2047,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

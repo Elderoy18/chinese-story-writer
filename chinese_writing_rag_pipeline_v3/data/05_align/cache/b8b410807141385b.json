@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 她才搬过两次家，也她感到孩子教育的好地方。\nquote: 也她感到孩子教育的好地方\npart p0: instruction [ref p0/k0] delete她 ; instruction [ref p0/k1] delete也 ; fix [ref p0/k2] 就找到了让孩子接受良好教育的环境",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "她",
+    "corrected": "",
+    "before": "过两次家，也",
+    "after": "感到孩子教",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicitly deletes 她"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "也",
+    "corrected": "",
+    "before": "搬过两次家，",
+    "after": "她感到孩子",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicitly deletes 也"
+   },
+   {
+    "ref": "p0/k2",
+    "op": "replace",
+    "original": "感到孩子教育的好地方",
+    "corrected": "就找到了让孩子接受良好教育的环境",
+    "before": "两次家，也她",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the remaining predicate phrase with her rewrite"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1018,
+  "completion_tokens": 278,
+  "total_tokens": 1296,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 98,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

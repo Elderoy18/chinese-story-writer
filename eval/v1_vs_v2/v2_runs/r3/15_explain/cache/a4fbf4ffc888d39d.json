@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nITEMS:\n\n[I5] 住【^】离墓地太近   correction: ∅ → 得   strength: error\n  checker's note: degree complement needs 得 after 住\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: 他[离墓地住很近→住在离墓地很近的地方]\n  her past correction: [小房子→这个小房子]离一个墓地不太远 — her note: otherwise unclear which house\n  her past correction: [-他们]在墓地住 — her note: redundant\n\n[I6] 【害得孟子的心气】   correction: 害得孟子的心气 → 害得孟子心情不好   strength: error\n  checker's note: 害得 needs a resulting state; 心气 is not appropriate here\n  rule card (haide_harmful_result, Vocabulary): Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得.  Pattern: <wrong> → <correct>: after 害得 + <person/noun>, use a genuinely harmful result; <neutral or mild result> is not harmful enough.  Her terms: 害得 + N/sb. + Harmful result, 害得+Sb.+V., 害得 + clause (harmful result)\n  her past correction: 害得[-对]孟子有不好的影响 — her note: 害得+Sb.+V.\n  her past correction: 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n  her past correction: 觉得害得孟子的身体[+不好] — her note: 害得+harmful result\n\n[I7] 孟子和【孟母】搬到子思老师的家   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 孟母: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: 孟子的妈妈叫[-了]孟子搬家 — her note: 叫/让 is a modal verb, no了\n  her past correction: 孟子跟他的妈妈[已经→就又]搬家了\n  her past correction: [-孟子跟他的妈妈]已经搬家了\n\n[I8] 孟子和孟母搬到子思老师的家【，跟子思老师】住   correction: ，跟子思老师 → (delete)   strength: suggestion\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: 孟母和孟子住[了→在那儿]很高兴\n  her past correction: 孟子跟他的妈妈[已经→就又]搬家了\n  her past correction: 孟子的妈妈叫[-了]孟子搬家 — her note: 叫/让 is a modal verb, no了\n\n[I9] 【^】他老是读书   correction: ∅ → 所以   strength: suggestion\n  rule card (not_but_refutation, Coherence: connectors): Use 不是……而是…… only to correct a conventional or mistaken idea with an unexpected alternative. Put the subject before 不是……而是…… when both alternatives have the same subject.  Pattern: <wrong> → <correct>: 不是……而是…… must refute a mistaken or expected idea and give its correction; <first alternative> is not conventionally related to <second alternative>.  Her terms: 不是……而是……, Subj.\n  her past correction: 可是他不[-是]在家读书 — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong\n  her past correction: 他小的时候[-现在]读书最重要\n  her past correction: 所以孟子[老是→一直]在学习 — her note: “老是“ for something negative, used to complain",
+ "salt": "repeat-run3",
+ "output": {
+  "items": [
+   {
+    "item_id": "I5",
+    "explanation": "Use 得 after 住 to introduce the degree complement: 住得离墓地太近.",
+    "dimension": "grammar",
+    "corrected": "得",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I6",
+    "explanation": "After 害得 + N/sb., use a harmful result. 心情不好 gives the result for 孟子.",
+    "dimension": "word_choice",
+    "corrected": "害得孟子心情不好",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I7",
+    "explanation": "孟母 appears for the first time here, so please introduce her briefly, for example as 孟子的妈妈.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I8",
+    "explanation": "It would be more natural to delete 跟子思老师 because 子思老师的家 already shows where they live.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I9",
+    "explanation": "It would be more natural to use 所以 to show the result: because he has no friends, he reads books often.",
+    "dimension": "coherence_connectors",
+    "corrected": "所以",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1640,
+  "completion_tokens": 478,
+  "total_tokens": 2118,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1637,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 205,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

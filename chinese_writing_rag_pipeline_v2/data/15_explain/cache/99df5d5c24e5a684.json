@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n他们在很漂亮的河找夹竹桃。神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要看你想要安全还是接近知道了。“神农一吃夹竹桃就生病了。哥哥说：“太麻烦了。\n\nITEMS:\n\n[I180] 他们在很漂亮的河【^】找夹竹桃   correction: ∅ → 边   strength: error\n  checker's note: a river needs a locative such as 河边 here\n  rule card (missing_or_unclear_subject, Grammar): State the Subj. when leaving it out would make it unclear who does the action. Restate the Subj. after a different Subj. or an inserted “narrator comment” before returning to the main story.  Pattern: <wrong> → <correct>: Add <Subj.> because otherwise it is unclear who <action>; the previous <Subj./narrator comment> cannot continue here.  Her terms: Subj., narrator comment\n  her past correction: [+他们过来]用心得来帮忙整理梨子 — her note: since the preceding phrase has “我们”, the Subj. 他们 should be stated\n  her past correction: 就[+看到]筐里放着差不多十个梨\n  her past correction: [+这朵花]漂亮是漂亮 — her note: here needs a subject\n\n[I181] 神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要【看】你想要安全还是接近知道了   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 他一[看→看到]植物就吃 — her note: 看look vs.看到see\n  her past correction: 因为[他→神农]想知道什么植物能吃 — her note: the first他is a bit ambiguous\n  her past correction: ⟦神农⟧看到有的植物不能吃 — her note: better to briefly introduce “神农” when this character first appears\n\n[I182] 神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要看你想要安全还是【接近】知道了   correction: 接近 → 想   strength: error\n  checker's note: 接近 cannot modify 知道; 想知道 is natural\n  rule card (ambiguous_pronoun, Coherence: reference): Use 他/她/它/他们 only when it is clear who or what they refer to. If more than one person or thing is possible, repeat the name or use a clear noun phrase.  Pattern: <wrong pronoun> → <clear name/noun phrase>: <pronoun> is ambiguous; it can refer to <possible referent(s)>.\n  her past correction: 因为[他→神农]想知道什么植物能吃 — her note: the first他is a bit ambiguous\n  her past correction: 神农[什么想尝→想尝什么植物]\n  her past correction: ⟦这就要看你吃什么植物了⟧ — her note: it does not answer the previous Q “什么植物可以吃?”\n\n[I183] 神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要看你想要安全还是接近【知道了】   correction: 知道了 → (delete)   strength: error\n  rule card (ambiguous_pronoun, Coherence: reference): Use 他/她/它/他们 only when it is clear who or what they refer to. If more than one person or thing is possible, repeat the name or use a clear noun phrase.  Pattern: <wrong pronoun> → <clear name/noun phrase>: <pronoun> is ambiguous; it can refer to <possible referent(s)>.\n  her past correction: 因为[他→神农]想知道什么植物能吃 — her note: the first他is a bit ambiguous\n  her past correction: 神农发现[-了]大家都不知道什么植物能吃 — her note: 发现is a mental state verb, no了\n  her past correction: ⟦这就要看你吃什么植物了⟧ — her note: it does not answer the previous Q “什么植物可以吃?”",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I180",
+    "explanation": "Use 河边 for “by the river.” A river needs the locative word 边 here.",
+    "dimension": "grammar",
+    "corrected": "边",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I181",
+    "explanation": "The person actually sees the situation, so use 看到, not 看: 看look vs. 看到see.",
+    "dimension": "word_choice",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I182",
+    "explanation": "接近 cannot modify 知道. Use 想知道 to mean “want to know.”",
+    "dimension": "coherence_reference",
+    "corrected": "想",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I183",
+    "explanation": "Do not use 了 after 知道 here; 知道 describes the goal of wanting to know.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1456,
+  "completion_tokens": 642,
+  "total_tokens": 2098,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1453,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 439,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

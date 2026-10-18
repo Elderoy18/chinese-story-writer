@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nThis scene:\n你不是当数学家，而是当哲学家，不能当卖东西的人。所以他们又搬家。在他们第三个家，孟子学了怎么祭拜。妈妈感觉这个地方适合他们，告诉了孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 你不是当数学家，而是当哲学家，不能当卖东西的人：不是要当商人，而是要当哲学家，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong\n- 所以他们又搬家：又搬家了，了completed\n- 在他们第三个家，孟子学了怎么祭拜：在他们的第三个家，学会了/学习了，wrong information, it’s not about learning to offer sacrifices\n- 告诉了孟子：告诉，no了for speaking word\n- 他难怪成为有名的哲学家：难怪后来他成为……\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “你不是当数学家，而是当哲学家，不能当卖东西的人。” / Formula: Subject + 不当/不是 + profession +，而是 + 当/成为 + profession. Use 不能 for inability or prohibition, not to add another career contrast. / Correct: “孟子不是当数学家，而是当哲学家，不当卖东西的人。”   *Note:* Since this is a narrative about Mencius, use “孟子” rather than “你.”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “在他们第三个家” / Formula: 在 + possessive pronoun + 第 + number + measure word + noun + 里/， / Correct: “在他们的第三个家里，孟子学了怎么祭拜。”\n3. [Grammar & Vocabulary, error] Incorrect phrase: “妈妈感觉这个地方适合他们，告诉了孟子” / Formula: Subject + 觉得/认为 + clause，+ 然后/并 + 告诉 + person + content. / Correct: “孟母觉得这个地方适合他们，就告诉孟子……”\n4. [Grammar & Vocabulary, error] Incorrect phrase: “我们找到了最后的家” / Formula: Subject + 找到 + final/ideal + noun. “最后” means the final one in a sequence; for a place where they will settle, use “合适的” or “理想的.” / Correct: “我们终于找到了一个合适的家。”\n5. [Grammar & Vocabulary, error] Incorrect phrase: “在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。” / Formula: 因为 + reason，+ 所以 + result; or Subject + 从早到晚 + 学习，+ 后来 + 成为 + profession. / Correct: “在这儿，孟母让孟子从早到晚学习，所以他后来成为了一位有名的哲学家。”   “难怪” means “no wonder” and is usually used when the speaker discovers or realizes the reason for something.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original misuses the 不是……而是…… contrast and 卖东西的人, while the correction still has unnatural 不是当数学家 and 不当卖东西的人."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "他们的第三个家 is required, but the corrected sentence retains the incorrect event information about learning how to offer sacrifices."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "告诉 is a speech verb introducing the following quotation and should not take 了 here; the correction removes it correctly."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "最后的家 can correctly mean the last home in their sequence of moves, so it does not need to be changed."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "他难怪成为 has the subject in the wrong position for 难怪; replacing it with a clear 所以 result clause is grammatical and fits the narrative."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2515,
+  "completion_tokens": 1359,
+  "total_tokens": 3874,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 864,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1006,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

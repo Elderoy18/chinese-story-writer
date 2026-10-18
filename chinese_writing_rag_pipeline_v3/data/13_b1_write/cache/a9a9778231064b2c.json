@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “在古代时候中国人不知道什么植物可以吃”: 时候 → (deleted)\n- in “因为大家知道什么植物不能吃”: 因为 → 这样   [her note: not “because”]\n- in “神农很幸福”: 很幸福 → 很高兴   [her note: 幸福is for long-term, life-related happiness]\n- in “吃不知名的植物是特别是危险的”: 特别是危险的 → 特别危险的   [her note: ”特别是+N, + Clause” is used to single out a typical example]\n- in “很多的东西麻烦得很”: 很多的东西 → 很多植物   [her note: no的]\n- in “有一位人来了”: 一位人 → 一个人\n\nScene to review:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "很不知道什么植物能吃",
+    "corrected": "不知道什么植物能吃",
+    "explanation": "很 does not normally modify 不知道. Use 不知道 to say that they did not know which plants they could eat."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "也什么植物不能吃",
+    "corrected": "也不知道什么植物不能吃",
+    "explanation": "也 needs a verb here. The people also did not know which plants they could not eat."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "对你的身体有坏处",
+    "corrected": "对他们的身体有坏处",
+    "explanation": "你的 means the reader's body, but this sentence is talking about 很多人. Use 他们的 to refer back to those people."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "很麻烦的情况",
+    "corrected": "是一件很麻烦的事",
+    "explanation": "很麻烦的情况 is only a noun phrase and cannot finish the sentence by itself. Add 是 and use 件 for a troublesome matter."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "但是一个人，神农，要解决这个问题。",
+    "corrected": "但是有一个人叫神农，他要解决这个问题。",
+    "explanation": "When a character appears for the first time, introduce the person with a noun phrase such as 有一个人叫神农. Then use 他 to refer to Shennong in the next clause."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1293,
+  "completion_tokens": 2106,
+  "total_tokens": 3399,
+  "prompt_tokens_details": {
+   "cached_tokens": 1290,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1757,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

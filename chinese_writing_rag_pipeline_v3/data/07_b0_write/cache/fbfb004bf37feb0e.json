@@ -1,0 +1,52 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\nScene 2: 他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThe teacher's corrections in other learners' similar clauses:\n- 比方说  →  比方说 → (delete)  (是不是有用了。比方说is used to express “for example”, delete it)\n- 神农发现很多植物  →  ∅ → 了  (了completed)\n- 神农吃灵芝以后  →  吃 → 吃了  (了completed)\n- 神农问人帮他给他灵芝  →  问 → 请  (the “ask” in “ask for help” is not问)\n- 神农一看朋友就想找药  →  一看 → 一看到  (看look vs.看到see)\n- 神农的朋友给他这植物  →  给 → 给了  (了completed)\n\nScene to review:\n别的人给了神农一个灵芝。这个植物可以让神农更好。比方说，他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "吃灵芝以后，他可以再走",
+    "corrected": "吃了灵芝以后，他可以再走",
+    "errors": [
+     {
+      "original": "吃",
+      "correction": "吃了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "Eating the lingzhi is completed before he can walk again, so use 了."
+     }
+    ]
+   },
+   {
+    "clause": "最后，神农找到了很多植物，他可以用对药",
+    "corrected": "最后，神农找到了很多植物，他可以用它们当药",
+    "errors": [
+     {
+      "original": "对药",
+      "correction": "它们当药",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "用对药 is not a Chinese expression. Use 用它们当药 to mean “use them as medicine.”"
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1349,
+  "completion_tokens": 1729,
+  "total_tokens": 3078,
+  "prompt_tokens_details": {
+   "cached_tokens": 1346,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1537,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

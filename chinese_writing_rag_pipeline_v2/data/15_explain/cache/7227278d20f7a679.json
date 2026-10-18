@@ -1,0 +1,47 @@
+{
+ "input": "CURRENT SCENE:\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nITEMS:\n\n[I96] 成为【^】一个哲学家   correction: ∅ → 了   strength: error\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他成为[+了]哲学家\n  her past correction: 他[+后来]成为哲学家\n  her past correction: 而是成为[哲学人→哲学家]\n\n[I97] 而是【看】政治文章   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 而是[学→学习]多文章\n  her past correction: 而是[+待在这儿]学多文章 — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章\n  her past correction: 她[一看这→一看到这样] — her note: 看look vs.看到see\n\n[I98] 看过很多政治文章对他【害得】   correction: 害得 → 有害   strength: error\n  checker's note: 对他有害 is the correct expression\n  rule card (haide_harmful_result, Vocabulary): Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得.  Pattern: <wrong> → <correct>: after 害得 + <person/noun>, use a genuinely harmful result; <neutral or mild result> is not harmful enough.  Her terms: 害得 + N/sb. + Harmful result, 害得+Sb.+V., 害得 + clause (harmful result)\n  her past correction: 他[写→写了]太多的文章 — her note: 了completed\n  her past correction: 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n  her past correction: 他[看得很麻烦的事情→看到很麻烦的情况]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I96",
+    "explanation": "成为 is a change of state completed in the story, so it takes 了completed.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I97",
+    "explanation": "孟子 actually sees the political articles, so use 看到see, not 看look.",
+    "dimension": "word_choice",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I98",
+    "explanation": "对他有害 is the correct expression for “is harmful to him.” 害得 needs a person or noun followed by a genuinely harmful result.",
+    "dimension": "word_choice",
+    "corrected": "有害",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1135,
+  "completion_tokens": 156,
+  "total_tokens": 1291,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1132,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

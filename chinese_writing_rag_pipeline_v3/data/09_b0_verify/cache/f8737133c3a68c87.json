@@ -1,0 +1,50 @@
+{
+ "input": "Scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nCorrections to check:\n1. 旅行很远找到很多植物  →  去很远的地方旅行，找到了很多植物   [grammar]\n2. 然后  →     [coherence: connectors]\n3. 神农遇到了一个黄色的花，一吃就觉得不舒服  →  神农遇到了一朵黄色的花，一吃就觉得不舒服   [grammar]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "旅行很远 cannot directly express travelling to a faraway place in this structure."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "connectors",
+    "reason": "然后 is an acceptable connector for the sequence of events, though removing it still leaves a grammatical sentence."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "Flowers normally take the measure word 朵 rather than the generic 个."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 539,
+  "completion_tokens": 660,
+  "total_tokens": 1199,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 510,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

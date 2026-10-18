@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 古代的时候，有一个才十二岁小男孩子叫孟子。\nquote: 古代的时候，有一个才十二岁小男孩子叫孟子\npart p0: fix [ref p0/k0-1] 在古代，才十二岁的男孩子",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "before": "",
+    "after": "，有一个",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the time expression with her corrected introduction"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "有一个",
+    "corrected": "",
+    "before": "的时候，",
+    "after": "才十二岁",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction omits 有一个"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "才十二岁小男孩子",
+    "corrected": "才十二岁的男孩子",
+    "before": "，有一个",
+    "after": "叫孟子",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 的 and removes 小 as in her correction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 997,
+  "completion_tokens": 510,
+  "total_tokens": 1507,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 331,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

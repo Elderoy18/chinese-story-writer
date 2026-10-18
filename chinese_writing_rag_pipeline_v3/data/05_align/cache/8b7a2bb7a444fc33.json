@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。\nquote: 也写一个课文的植物\npart p0: fix [ref p0/k0] 写下一篇有关植物的文章",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "也",
+    "corrected": "",
+    "before": "",
+    "after": "写一个课",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction omits 也"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "写",
+    "corrected": "写下",
+    "before": "也",
+    "after": "一个课文",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction adds 下 to 写"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "一个课文的植物",
+    "corrected": "一篇有关植物的文章",
+    "before": "也写",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction replaces the object phrase"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 997,
+  "completion_tokens": 372,
+  "total_tokens": 1369,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 215,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

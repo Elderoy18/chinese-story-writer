@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “所以妈妈跟孟子一起搬家”: 所以 → (deleted)\n- in “他然后没有朋友”: 他然后没有朋友 → 然后孟子失去了这个朋友   [her note: “他“ is ambiguous]\n- in “孟母看出来孟子老是难过”: (nothing) → 很   [her note: usually Adj. takes 很]\n- in “开始祭拜”: (nothing) → 就   [her note: 才 Num.就V.]\n- in “有一天孟子才四岁”: 有一天 → (deleted)\n- in “因为他们觉得祭拜有很多好处”: 他们 → (deleted)   [her note: redundant]\n\nScene to review:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子很小的时候，从早到晚一直祭拜",
+    "corrected": "有一个小男孩叫孟子，他很小的时候，从早到晚一直祭拜",
+    "explanation": "This is Mengzi's first appearance in the story, so introduce him with a noun phrase that says who he is, not only with his name."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "conjunction",
+    "original": "虽然他没有朋友，因为每天只祭拜。",
+    "corrected": "因为他每天只祭拜，所以没有朋友。",
+    "explanation": "Although and because cannot be used together this way. Here, worshipping all day is the reason that he has no friends, so use 因为……所以……."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "他的同学们老是对他开玩笑了。",
+    "corrected": "他的同学们老是对他开玩笑。",
+    "explanation": "老是 describes a repeated habit, so do not use 了, which marks a completed action."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "孟子妈妈看了他的同学们对孟子不好的影响",
+    "corrected": "孟子妈妈看出同学们对孟子有不好的影响",
+    "explanation": "看了 means “looked at,” but here the mother realizes or notices the bad effect, so use 看出. Say 对孟子有不好的影响, not 对孟子不好的影响."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子和孟子妈妈搬家了",
+    "corrected": "孟子和妈妈搬家了",
+    "explanation": "孟子妈妈 has already been named earlier in this sentence. Do not repeat her full name again in the same sentence; 妈妈 is enough here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1329,
+  "completion_tokens": 3119,
+  "total_tokens": 4448,
+  "prompt_tokens_details": {
+   "cached_tokens": 1078,
+   "cache_write_tokens": 248,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2683,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

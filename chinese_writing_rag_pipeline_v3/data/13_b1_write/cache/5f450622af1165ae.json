@@ -1,0 +1,54 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “人们不知道什么植物是不是能吃的”: 什么植物是不是能吃的 → 什么植物是能吃的，什么植物是不能吃的\n- in “神农发现很多植物”: (nothing) → 了   [her note: 了completed]\n- in “他一吃就生病了”: 他 → (deleted)\n- in “每个人都不知道哪些植物能安全吃”: (nothing) → 地\n- in “一个天时候”: 一个天时候 → 有一天\n\nScene to review:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to mean “in ancient times.” 古代时候 is not a natural time expression here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "人不知道他们能吃什么植物",
+    "corrected": "人们不知道哪些植物能吃",
+    "explanation": "他们 does not clearly refer to a specific group of people. Use 人们 for people in general, and do not use a pronoun here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "神农出去试一试很多种植物",
+    "corrected": "有一个人叫神农，出去试一试很多种植物",
+    "explanation": "This is the first mention of 神农, so introduce him with a noun phrase that says who he is, not only with his name."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "出去试一试很多种植物，告诉人什么植物是安全什么是危险",
+    "corrected": "出去试一试很多种植物，告诉了人们哪些植物是安全的，哪些植物是危险的",
+    "explanation": "This completed series of actions needs 了 on the final verb, 告诉了. When contrasting the safe and dangerous plants, say 哪些植物是安全的，哪些植物是危险的."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1235,
+  "completion_tokens": 2888,
+  "total_tokens": 4123,
+  "prompt_tokens_details": {
+   "cached_tokens": 1045,
+   "cache_write_tokens": 187,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2560,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

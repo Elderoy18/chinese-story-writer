@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nThe teacher's corrections in other learners' similar clauses:\n- 比方说  →  比方说 → (delete)  (是不是有用了。比方说is used to express “for example”, delete it)\n- 他一吃灵芝就身体好了  →  就身体好了 → 身体就好了  (Subj. + 就)\n- 他找到了很多有用植物  →  有用植物 → 有用的植物\n- 很多年的时候，他测试别的植物  →  很多年的时候，他测试别的植物 → 他尝试各种植物尝试了很多年  (“别的” is for “a different type”, and “all else except the spoken one”)\n- 他喝了茶  →  他 → (delete)  (redundant)\n- 在他的旅行  →  ∅ → 中\n\nScene to review:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "比方说，他一次试一试有些植物的叶，吃得又新鲜又甜",
+    "corrected": "比方说，他一次试一试有些植物的叶，吃起来又新鲜又甜",
+    "errors": [
+     {
+      "original": "吃得",
+      "correction": "吃起来",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 吃起来 to describe how food tastes. 吃得 describes the manner of eating, not the taste of the leaves."
+     }
+    ]
+   },
+   {
+    "clause": "煮这些叶以后，他一喝就知道他发现新的茶叶",
+    "corrected": "煮这些叶以后，他一喝就知道发现了新的茶叶",
+    "errors": [
+     {
+      "original": "他",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The subject is already clear within this clause, so do not repeat 他."
+     },
+     {
+      "original": "发现",
+      "correction": "发现了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "发现 is a completed discovery in this story event, so it needs 了."
+     }
+    ]
+   },
+   {
+    "clause": "虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险",
+    "corrected": "虽然他找到了很多的新的植物，但是他的旅程有的时候特别危险",
+    "errors": [
+     {
+      "original": "是",
+      "correction": "",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "特别 directly modifies an adjective: 特别危险. 特别是 is used before a noun or phrase being singled out."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1255,
+  "completion_tokens": 2539,
+  "total_tokens": 3794,
+  "prompt_tokens_details": {
+   "cached_tokens": 1252,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2183,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

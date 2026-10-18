@@ -1,0 +1,47 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “一个老先生叫神农”: 一个老先生叫神农 → 有一个叫神农的老先生\n- in “神农看了很多生病的人”: 看了 → 看到了   [her note: 看look vs.看到see]\n- in “看很多植物”: 看很多植物 → 看到了很多植物   [her note: 看look vs.看到see]\n- in “神农发现很多植物”: (nothing) → 了   [her note: 了completed]\n- in “他爬山”: 爬山 → 爬了很多山\n- in “他看到了药”: 他 → (deleted)   [her note: redundant]\n\nScene to review:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "神农在古代每一天看到了别的小镇人生病还是不舒服",
+    "corrected": "神农在古代每天看到别的小镇的人生病或者不舒服",
+    "explanation": "每天 describes a routine, so do not use 了 with 看到. Say 小镇的人 with 的, and use 或者, not 还是, to join two possibilities in this statement."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "找了各种各样的植物",
+    "corrected": "找到了各种各样的植物",
+    "explanation": "找了 means that he searched for plants. 找到了 means that he successfully found the plants."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "神农试一试每个植物",
+    "corrected": "神农试了试每种植物",
+    "explanation": "This is a completed action in the story, so use 了. Use 种 for different kinds of plants, rather than 个."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1313,
+  "completion_tokens": 2540,
+  "total_tokens": 3853,
+  "prompt_tokens_details": {
+   "cached_tokens": 1310,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2290,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

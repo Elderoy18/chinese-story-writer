@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他需要当上医，一看别的人就想帮助他们。\nquote: 一看别的人就想帮助他们\npart p0: fix [ref p0/k0] 看到 ; notes: 看look vs.看到see\npart p1: fix [ref p1/k0] 病人 ; notes: “别的” is for “a different type”, and “all else except the spoken one”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "看",
+    "corrected": "看到",
+    "before": "一",
+    "after": "别的人就想",
+    "note": "看look vs.看到see",
+    "confidence": "high",
+    "reason": "replaces 看 with 看到"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "别的人",
+    "corrected": "病人",
+    "before": "一看到",
+    "after": "就想帮助他",
+    "note": "“别的” is for “a different type”, and “all else except the spoken one”",
+    "confidence": "high",
+    "reason": "replaces 别的人 with 病人"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1029,
+  "completion_tokens": 139,
+  "total_tokens": 1168,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1026,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

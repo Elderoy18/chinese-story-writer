@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟母也觉得在市场的旁边对孟子不合适的地方长大，孟母看孟子老是做他们住很近的人做的事情，这害得孟母离学校很近搬家。\nquote: 这害得孟母离学校很近搬家\npart p0: comment [ref p0/note] “害得“ is followed by something harmful, 搬家is not harmful\npart p1: fix [ref p1/k0] 搬家到离学校很近的地方",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "害得孟母离学校很近搬家",
+    "corrected": "",
+    "before": "的事情，这",
+    "after": "。",
+    "note": "“害得“ is followed by something harmful, 搬家is not harmful",
+    "confidence": "high",
+    "reason": "teacher comments that 害得 takes a harmful result"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "离学校很近搬家",
+    "corrected": "搬家到离学校很近的地方",
+    "before": "这害得孟母",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "teacher rewrites the moving phrase"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1057,
+  "completion_tokens": 146,
+  "total_tokens": 1203,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1054,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

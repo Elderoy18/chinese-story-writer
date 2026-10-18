@@ -1,0 +1,92 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 古代的时候  →  古代的时候 → 在古代\n- 人们不知道什么植物是不是能吃的  →  什么植物是不是能吃的 → 什么植物是能吃的，什么植物是不能吃的\n- 神农发现很多植物  →  ∅ → 了  (了completed)\n- 他一吃就生病了  →  他 → (delete)\n- 每个人都不知道哪些植物能安全吃  →  ∅ → 地\n- 一个天时候  →  一个天时候 → 有一天\n\nScene to review:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "古代时候",
+    "corrected": "在古代",
+    "errors": [
+     {
+      "original": "古代时候",
+      "correction": "在古代",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 在古代 to introduce the time setting of the story."
+     }
+    ]
+   },
+   {
+    "clause": "但是不知道为什么",
+    "corrected": "但是他们不知道为什么",
+    "errors": [
+     {
+      "original": "但是",
+      "correction": "但是他们",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The people were mentioned in the previous clause, so use 他们 to refer back to them."
+     }
+    ]
+   },
+   {
+    "clause": "没有办法",
+    "corrected": "他们没有办法",
+    "errors": [
+     {
+      "original": "没有办法",
+      "correction": "他们没有办法",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "Use 他们 to show that the people had no solution."
+     }
+    ]
+   },
+   {
+    "clause": "告诉人什么植物是安全什么是危险",
+    "corrected": "告诉了人什么植物是安全的，什么是危险的",
+    "errors": [
+     {
+      "original": "告诉",
+      "correction": "告诉了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "This is the final action in a completed series of past events, so use 了."
+     },
+     {
+      "original": "安全什么",
+      "correction": "安全的，什么",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "After 是, an adjective needs 的 here. Use a comma to separate the two indirect questions."
+     },
+     {
+      "original": "危险",
+      "correction": "危险的",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "After 是, use 危险的 rather than 危险."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1101,
+  "completion_tokens": 3277,
+  "total_tokens": 4378,
+  "prompt_tokens_details": {
+   "cached_tokens": 1098,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2894,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝和夹竹桃，Use 和 to join two plant names. 的 marks a modifying or possessive relationship and cannot mean “and.”\n2. [Grammar & Vocabulary, error] 写：写下，When recording plants or information, 写下 is the appropriate verb because it means “write down.”\n3. [Grammar & Vocabulary, error] 一个课文的植物：这些植物，This noun phrase is not grammatical for the intended meaning: 一个 needs an appropriate measure word before 课文, and 课文的植物 would mean plants belonging to a text rather than the plants being recorded.\n4. [Grammar & Vocabulary, error] 特别是毒：特别有毒，Use 有毒 to describe a poisonous plant. 是毒 does not form a natural predicate here.\n5. [Coherence: temporality, error] Coherence (Temporality): 也写一个课文的植物：也写下了这些植物，The writing is a completed action in a sequence after 吃完了, so it needs the completion marker 了; in a series of completed actions, the final verb takes 了.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "The phrase wrongly makes 夹竹桃 modify 灵芝药; 灵芝 is supposed to be an antidote for 夹竹桃, not simply another coordinated plant."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "写下 correctly replaces 写 for recording something, but the remaining noun phrase 一个课文的植物 is still erroneous."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original should mean an article about plants, not a list of these plants, so 这些植物 changes the intended meaning."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "特别有毒 is a correct predicate, whereas 特别是毒 is not appropriate here."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Adding 了 correctly marks completion, but changing the intended article about plants into writing down plants does not correctly repair the original meaning."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2133,
+  "completion_tokens": 1576,
+  "total_tokens": 3709,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 482,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1231,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

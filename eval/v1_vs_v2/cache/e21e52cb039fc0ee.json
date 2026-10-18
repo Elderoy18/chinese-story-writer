@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this time expression is not idiomatic here; use the fixed narrative expression “在古代”.\n2. [Grammar & Vocabulary, error] 孟子老是祭拜：孟子常常祭拜，“老是” usually carries a negative or complaining tone; without a stated complaint, “常常” neutrally describes a repeated action.\n3. [Grammar & Vocabulary, error] 城市有才两个学校：这座城市才有两所学校，when “才” emphasizes a small number, it comes before “有”; schools also take the measure word “所”.\n4. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，by the first-mention rule, introduce a new main character with both the name and a full noun phrase at the first mention.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“古代的时候” is redundant under the teacher’s time-expression rule, and “在古代” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是祭拜” is acceptable here; it may carry emphasis, but it is not necessarily an inappropriate negative complaint."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original has incorrect placement of “才” and lacks the school measure word, but the teacher’s required correction is “只有”, not “才有”."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The main character should be introduced with his name in the first full noun phrase, and the proposed rewrite does this correctly."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1971,
+  "completion_tokens": 863,
+  "total_tokens": 2834,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 320,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 587,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他一看花，就觉得是很漂亮的。\nquote: 他一看花，就觉得是很漂亮的\npart p0: fix [ref p0/k0] 看到 ; notes: 看look vs.看到see\npart p1: fix [ref p1/k0] 很漂亮 ; notes: 是Adj.的 is to emphasize",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "看",
+    "corrected": "看到",
+    "before": "他一",
+    "after": "花，就觉",
+    "note": "看look vs.看到see",
+    "confidence": "high",
+    "reason": "replaces 看 with 看到"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "是",
+    "corrected": "",
+    "before": "，就觉得",
+    "after": "很漂亮的",
+    "note": "是Adj.的 is to emphasize",
+    "confidence": "high",
+    "reason": "her fix removes 是"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "的",
+    "corrected": "",
+    "before": "得是很漂亮",
+    "after": "",
+    "note": "是Adj.的 is to emphasize",
+    "confidence": "high",
+    "reason": "her fix removes 的"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1014,
+  "completion_tokens": 165,
+  "total_tokens": 1179,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

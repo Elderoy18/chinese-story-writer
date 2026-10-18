@@ -1,0 +1,42 @@
+{
+ "input": "Scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nCorrections to check:\n1. 孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家  →  孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬家   [coherence: temporality]\n2. 她望子成龙，所以孟子的妈妈安排他的生活  →  她望子成龙，所以她安排他的生活   [coherence: reference]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "With habitual 常常, 搬家 should not take the completed-event particle 了."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "Repeating 孟子的妈妈 is acceptable and clear, though 她 is less repetitive."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 520,
+  "completion_tokens": 106,
+  "total_tokens": 626,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

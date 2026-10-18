@@ -1,0 +1,51 @@
+{
+ "round": "B1",
+ "date": "2026-10-17",
+ "data": "basic data only",
+ "git_commit": "cbcabd597f1715eecdefb253102c0584544d7541",
+ "git_uncommitted_changes": true,
+ "steps": {
+  "13_b1_write": {
+   "model": "gpt-5.6-terra",
+   "reasoning_effort": "medium",
+   "prompt_version": "ba6d45ef8e",
+   "n_runs": 3
+  },
+  "15_b1_enrich": {
+   "model": "gpt-5.6-terra",
+   "reasoning_effort": "medium",
+   "prompt_version": "a259ac89ec",
+   "script": "10_b0_enrich.py --corrections data/14_b1_vote/items.jsonl --out data/15_b1_enrich"
+  },
+  "11_b0_content": {
+   "prompt": "calibrated content check (core vs details + her train decisions)"
+  }
+ },
+ "scripts": {
+  "01_extract.py": "5b4bfe182c49",
+  "02_corpus.py": "1da81eaa9a36",
+  "03_split.py": "e1df2db5a345",
+  "04_parse.py": "49f868b6cdfa",
+  "05_align.py": "aef39db6a8b7",
+  "06_s0v2_labels.py": "01b2113009d6",
+  "07_b0_write.py": "7cdfb0298118",
+  "08_b0_vote.py": "df9020f61b2a",
+  "09_b0_verify.py": "111a59f80e47",
+  "10_b0_enrich.py": "6690a3914bbd",
+  "11_b0_content.py": "3a565b9c99d1",
+  "12_b0_assemble.py": "94ef5208620f",
+  "13_b1_write.py": "49b46e3af27b",
+  "14_b1_vote.py": "a78f42d00b46",
+  "16_b1_assemble.py": "42ab22109cc4",
+  "b0_lib.py": "02898732e33d",
+  "llm.py": "b1b3c6fdc6d2",
+  "score.py": "d8dac4aadb2d"
+ },
+ "inputs": {
+  "data\\14_b1_vote\\items.jsonl": "170b02ca6284",
+  "data\\15_b1_enrich\\enrich.jsonl": "5725a415fd48",
+  "data\\11_b0_content\\checks_test.jsonl": "11d0f751baff",
+  "data\\02_corpus\\corpus.json": "48e22d34e4be",
+  "data\\03_split\\split.json": "613c01404bea"
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。\nquote: 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育\npart p0: instruction [ref p0/k0] delete不是不喜欢他们的城市 ; notes: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong\npart p1: fix [ref p1/k0] 想让孟子接受…… ; notes: 想 + V., cannot be followed by N.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "不是不喜欢他们的城市，",
+    "corrected": "",
+    "before": "他的妈妈",
+    "after": "而是想孟子",
+    "note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+    "confidence": "high",
+    "reason": "deletes the instructed contrast clause, including its comma"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "想孟子有很好的教育",
+    "corrected": "想让孟子接受很好的教育",
+    "before": "，而是",
+    "after": "",
+    "note": "想 + V., cannot be followed by N.",
+    "confidence": "high",
+    "reason": "changes 想 plus noun phrase to 想让孟子接受…"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1061,
+  "completion_tokens": 167,
+  "total_tokens": 1228,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1058,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

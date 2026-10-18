@@ -1,0 +1,39 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 他离墓地住很近  →  离墓地住很近 → 住在离墓地很近的地方\n- 这是一个神农的古代故事  →  一个神农的 → 关于神农的\n- 有一天孟子才四岁  →  有一天 → (delete)\n- 他有的时候只要跟朋友玩儿  →  有的时候 → (delete)  (wrong conjunctions, 他只要跟朋友玩儿)\n- 也有他的妈妈  →  也有他的妈妈 → 和妈妈住在一起\n\nScene to review:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿",
+    "corrected": "从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩儿",
+    "errors": [
+     {
+      "original": "玩玩儿",
+      "correction": "玩儿",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Verb reduplication suggests doing something briefly or casually. It conflicts with 从早到晚, which describes a long duration."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1109,
+  "completion_tokens": 1185,
+  "total_tokens": 2294,
+  "prompt_tokens_details": {
+   "cached_tokens": 1106,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1041,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

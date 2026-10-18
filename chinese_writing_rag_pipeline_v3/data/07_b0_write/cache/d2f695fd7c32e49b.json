@@ -1,0 +1,59 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 古代的时候  →  古代的时候 → 在古代\n- 因为他们吃毒  →  因为他们吃毒 → 他们吃的植物有毒\n- 老的人叫神农  →  老的人 → 有一位叫神农的老人\n- 人们不知道什么植物是不是能吃的  →  什么植物是不是能吃的 → 什么植物是能吃的，什么植物是不能吃的\n- 植物他觉得好吃得很  →  植物 → 什么植物？一种绿色的植物\n- 因为大家知道什么植物不能吃  →  因为 → 这样  (not “because”)\n\nScene to review:\n古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "古代的时候",
+    "corrected": "在古代",
+    "errors": [
+     {
+      "original": "古代的时候",
+      "correction": "在古代",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 在古代 to introduce a time period in this story."
+     }
+    ]
+   },
+   {
+    "clause": "有很多人吃植物以后就吃坏肚子了，因为他们吃了毒",
+    "corrected": "有很多人吃植物以后就吃坏肚子了，他们吃的植物有毒",
+    "errors": [
+     {
+      "original": "因为",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "connectors",
+      "explanation": "The following clause states the reason directly, so 因为 is not needed after the result."
+     },
+     {
+      "original": "他们吃了毒",
+      "correction": "他们吃的植物有毒",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Plants are poisonous; people do not normally say they “eat poison” in this context."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1172,
+  "completion_tokens": 1445,
+  "total_tokens": 2617,
+  "prompt_tokens_details": {
+   "cached_tokens": 1169,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1217,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

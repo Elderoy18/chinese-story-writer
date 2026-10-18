@@ -1,0 +1,116 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun predicate needs 是, and a single mountain is counted with the measure word 座.\n2. [Grammar & Vocabulary, error] 你跟黄色的花做茶：用黄色的花做茶，Use 用 to introduce the material used to make something. 你 has no referent here, and 跟 does not mean “using” in this structure.\n3. [Grammar & Vocabulary, error] 头发疼死：头疼得要死，头发 means “hair,” which cannot ache; use 头疼 for a headache. A degree complement also requires 得 before 要死.\n4. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative before a countable noun follows the pattern 这/那 + measure word + noun.\n5. [Coherence: reference, error] Coherence (Reference): 这也找植物：他也在这儿找植物，Use a pronoun for the previously introduced character 神农; 这 refers to a place, so 在这儿 is needed to show where the searching happens.\n6. [Coherence: reference, error] Coherence (Reference): 黄色的花：一些黄色的花，This is the first mention of these flowers, so introduce them as an indefinite group rather than as an already known, specific object.\n7. [Coherence: temporality, error] Coherence (Temporality): 找到黄色的花：找到了一些黄色的花，Use 了 after 找到 because this is a completed discovery in the story.\n8. [Coherence: connectors, error] Coherence (Conjunction): 头疼得要死，这杯冰茶是药：头疼得要死的时候，这杯冰茶是药，Use 的时候 to connect the headache condition with the tea’s use.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original lacks a valid predicate structure, while 凉山是一座很大的山 is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "你 has no appropriate referent here, and 用 is the correct word for introducing the material used to make tea."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "头发 cannot ache, and 头疼得要死 is a correct way to express an extremely bad headache."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "This demonstrative phrase needs a measure word, and 杯 is suitable for a cup of iced tea."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这 cannot serve as the person doing the searching; 他 and 在这儿 make the character and location clear."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "一些 only makes the flowers indefinite; it does not solve the teacher's problem that 黄色的花 is too vague and should be introduced as 一种黄色的花."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Adding 了 correctly marks the completed discovery, but 一些黄色的花 still leaves the vague first introduction uncorrected."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The teacher did not require 的时候 here, and 这杯冰茶 still does not match the intended general kind of tea, which should be 这种冰茶."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2265,
+  "completion_tokens": 3086,
+  "total_tokens": 5351,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 614,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2542,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

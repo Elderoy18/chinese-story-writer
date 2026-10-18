@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 看到我们糟糕的状态，用心得来帮忙整理梨子，拿起骑车。\nquote: 看到我们糟糕的状态，用心得来帮忙整理梨子，拿起骑车\npart p0: fix [ref p0/k0-1] 他们过来用心地帮忙整理梨子，扶起自行车 ; notes: since the preceding phrase has “我们”, the Subj. 他们 should be stated, adv.地V，“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "他们过来",
+    "before": "糟糕的状态，",
+    "after": "用心得来帮",
+    "note": "since the preceding phrase has “我们”, the Subj. 他们 should be stated",
+    "confidence": "high",
+    "reason": "adds the stated subject and movement"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "得来",
+    "corrected": "地",
+    "before": "状态，用心",
+    "after": "帮忙整理梨",
+    "note": "adv.地V",
+    "confidence": "high",
+    "reason": "changes the adverbial marker and removes 来"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "拿起骑车",
+    "corrected": "扶起自行车",
+    "before": "帮忙整理梨子，",
+    "after": "",
+    "note": "“骑车” is a verb phrase, cannot be the Obj. of “扶起”，“拿起” is usually used for smaller items.",
+    "confidence": "high",
+    "reason": "replaces the unsuitable verb-object phrase"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1073,
+  "completion_tokens": 410,
+  "total_tokens": 1483,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1070,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 177,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThis scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 开始死：快要死了，\"开始\" normally takes a durative action, while \"死\" is a change-of-state verb; use \"快要……了\" to express that someone is close to dying.\n2. [Grammar & Vocabulary, error] 生病时候：生病的时候，A multi-syllable verb phrase before \"时候\" needs the linking particle \"的\".\n3. [Grammar & Vocabulary, error] 人：人们，\"人\" is a generic noun and cannot refer by itself to the concrete group of people being told.\n4. [Grammar & Vocabulary, error] 是毒：有毒，Use \"有毒\" to describe that a plant contains poison; \"是毒\" does not fit this predicate meaning.\n5. [Coherence: reference, error] Coherence (Reference): 这个口味：一种花，\"这个\" needs a clear earlier referent, but no specific taste has been introduced; introduce this first-mentioned object with an indefinite noun phrase.\n6. [Coherence: temporality, error] Coherence (Temporality): 告诉人们什么植物是药：告诉了人们什么植物是药，This is one completed action in the past narrative, so the verb needs completed-action \"了\".",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "“死” is an instantaneous change, so “开始死” is not appropriate; “快要死了” correctly expresses being near death."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The multisyllabic phrase “生病” requires 的 before 时候."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "This refers to the concrete people he informed, so the teacher's rule requires 人们 rather than generic 人."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Plants are described as “有毒,” not “是毒,” in this meaning."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Vocabulary"
+    ],
+    "reason": "The teacher deleted the whole irrelevant and unclear “他发现这个口味” clause; replacing the noun phrase with “一种花” does not repair that problem."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "In this completed past-story event, 告诉了 correctly marks the completed act of informing people."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2215,
+  "completion_tokens": 1778,
+  "total_tokens": 3993,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 564,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1385,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

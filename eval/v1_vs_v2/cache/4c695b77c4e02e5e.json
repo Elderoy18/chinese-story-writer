@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThis scene:\n城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得孟母只好一直陪孟子：add something like “不能出去工作”, “害得“ + harmful result, 一直陪孟子itself is not harmful\n- 住在商店的旁边不是适合孟子，而是让他觉得很伤心：不是适合孟子的环境\n\nThe system's feedback items:\n1. [Grammar, suggestion] …母只好一直陪孟子 → …母只好一直陪着孟子 -- It would be more natural to say 一直陪着孟子. 着 shows that 陪 is a continuing action.\n2. [Vocabulary, error] …在商店的旁边不是适合孟子 → …在商店的旁边不但不适合孟子 -- this sentence needs the paired structure 不但……而且…… to add a second negative result.\n3. [Vocabulary, error] 而是让他觉得很伤… → 而且让他觉得很伤… -- 不但 should pair with 而且, not 而是.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "一直陪孟子 is already grammatical; 着 is optional, and the displayed fragment starts in the middle of 孟母."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original needs a noun such as 环境 after 适合孟子, and changing it to 不但 does not fix that problem or provide a matching 而且."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "而是 can be used in the intended contrast, and 而且 does not follow from the original wording because there is no 不但."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1179,
+  "completion_tokens": 991,
+  "total_tokens": 2170,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1176,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 764,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0d4672217c"
+}

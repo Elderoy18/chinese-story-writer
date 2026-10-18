@@ -1,0 +1,54 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “一个老先生叫神农”: 一个老先生叫神农 → 有一个叫神农的老先生\n- in “神农看了很多生病的人”: 看了 → 看到了   [her note: 看look vs.看到see]\n- in “看很多植物”: 看很多植物 → 看到了很多植物   [her note: 看look vs.看到see]\n- in “神农发现很多植物”: (nothing) → 了   [her note: 了completed]\n- in “他爬山”: 爬山 → 爬了很多山\n- in “他看到了药”: 他 → (deleted)   [her note: redundant]\n\nScene to review:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "有一个老男人叫神农",
+    "corrected": "有一个老人叫神农",
+    "explanation": "老男人 is not the usual neutral word for an old man and can sound negative. Use 老人 for an old man in a story."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "神农在古代每一天看到了别的小镇人生病还是不舒服",
+    "corrected": "他在古代每天看到别的小镇的人生病或不舒服",
+    "explanation": "神农 was named in the previous sentence and no other person has been introduced, so use 他. A routine with 每天 does not use 了, 小镇的人 needs 的, and use 或 for alternatives in a statement."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他下一天开始爬当地的山脉",
+    "corrected": "他第二天开始爬当地的山脉",
+    "explanation": "Use 第二天 to mean “the next day” in a story. 下一天 is not the usual expression here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "神农试一试每个植物，知道有什么好处",
+    "corrected": "他试每一种植物，知道了它们有什么好处",
+    "explanation": "Use 他 because 神农 was the subject of the preceding sentence. 植物 uses 一种 as its measure word, and 知道了 shows that he came to know the plants’ benefits after trying them."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1280,
+  "completion_tokens": 1884,
+  "total_tokens": 3164,
+  "prompt_tokens_details": {
+   "cached_tokens": 1277,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

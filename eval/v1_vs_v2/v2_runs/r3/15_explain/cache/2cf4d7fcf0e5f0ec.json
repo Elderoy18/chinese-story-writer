@@ -1,0 +1,68 @@
+{
+ "input": "CURRENT SCENE:\n你不是当数学家，而是当哲学家，不能当卖东西的人。所以他们又搬家。在他们第三个家，孟子学了怎么祭拜。妈妈感觉这个地方适合他们，告诉了孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。\n\nITEMS:\n\n[I30] 而是当哲学家【^】   correction: ∅ → 的   strength: suggestion\n  rule card (fixed_expressions, Vocabulary): Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place.  Pattern: <wrong> → <correct>: use the established expression <correct>, not the literal/nonstandard combination <wrong>.  Her terms: 从 + Place, 制定规定, 自然规律, Subj.算是Obj., 只/不过/才(+num.) + 而已\n  her past correction: 而是成为[哲学人→哲学家]\n  her past correction: 他成为[+了]哲学家\n  her past correction: 他[+后来]成为哲学家\n\n[I31] 所以他们又搬家【^】   correction: ∅ → 了   strength: suggestion\n  rule card (addition_repetition_connectors, Coherence: connectors): Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.).  Pattern: <wrong> → <correct>: use <connector> here because it shows <repetition / similarity / an added or surprising point / a coherent addition>; place it as <position> when needed.  Her terms: 又for something already occurred, Subj.也, 又+ modal V., surprising, anger tone, natural continuation tone\n  her past correction: 所以他们[再搬家→又搬家了] — her note: 又for something already occurred\n  her past correction: 所以他们[再→又]搬家一次 — her note: 又for something already occurred\n  her past correction: 所以他们再[搬家一次→搬了一次家] — her note: 了completed\n\n[I32] 在他们第三个家【^】   correction: ∅ → 里   strength: error\n  checker's note: a numbered home needs a locative suffix here\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 在[第三个房子→第三个地方]\n  her past correction: 他们[搬家三次→搬了三次家]以后 — her note: 了completed, V. + Num. + MW. + Obj.\n  her past correction: 他们⟦才搬了三次家⟧ — her note: 才 + Num. to express “small, few”, but here搬了三次家 is a large quantity\n\n[I33] 孟子学【^】了怎么祭拜   correction: ∅ → 会   strength: suggestion\n  rule card (no_le_mental_state, Coherence: temporality (了/着/在)): Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative.  Pattern: <wrong> → <correct>: <verb> is a mental-state verb here, so use no 了.  Her terms: mental state verb, no了\n  her past correction: 孟子⟦决定了⟧祭拜 — her note: 决定is a mental state verb, no了\n  her past correction: 孟母[一看→看到]孟子祭拜 — her note: 看look vs.看到see\n  her past correction: ⟦孟子⟧一直祭拜 — her note: better to briefly introduce “孟子” when this character first appears\n\n[I34] 告诉【了】孟子：我们找到了最后的家   correction: 了 → (delete)   strength: error\n  checker's note: no 了 after the speaking verb 告诉\n  rule card (no_le_speaking_word, Coherence: temporality (了/着/在)): A speaking word that introduces quoted speech normally uses no particle, not 了.  Pattern: <wrong> → <correct>: <speaking word> introduces quoted speech, so use no 了.  Her terms: no了for speaking word introducing quoted speech, no 了for speaking word, no了for speaking word\n  her past correction: [-孟子的妈妈]告诉孟子 — her note: redundant\n  her past correction: 孟子的妈妈叫[-了]孟子搬家 — her note: 叫/让 is a modal verb, no了\n  her past correction: 所以妈妈跟孟子一起搬家[+了] — her note: 了completed\n\n[I35] 【他难怪】成为有名的哲学家   correction: 他难怪 → 难怪他   strength: error\n  checker's note: 难怪 normally comes before the subject\n  rule card (word_class_choice, Vocabulary): Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.  Pattern: <wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.  Her terms: noun, Adj., Subj., 很多+noun, 这个 + Noun\n  her past correction: 难怪他成为[名的→有名的]哲学家\n  her past correction: 他难怪[+后来]成为了一个很聪明的哲学家\n  her past correction: 难怪他长大以后[当→成为]很有名的哲学家",
+ "salt": "repeat-run3",
+ "output": {
+  "items": [
+   {
+    "item_id": "I30",
+    "explanation": "It would be more natural to say 而是当哲学家的. The particle 的 links the contrastive description to the following person.",
+    "dimension": "word_choice",
+    "corrected": "的",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I31",
+    "explanation": "It would be more natural to say 又搬家了. 又 shows that moving happened again, and 了 marks the completed move.",
+    "dimension": "coherence_connectors",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I32",
+    "explanation": "在他们第三个家 does not normally collocate as a place expression; use 在他们第三个家里 instead.",
+    "dimension": "word_choice",
+    "corrected": "里",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I33",
+    "explanation": "It would be more natural to say 孟子学会了怎么祭拜. 学会 means “learn to be able to do,” while 学 alone does not clearly show this result.",
+    "dimension": "coherence_temporality",
+    "corrected": "会",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I34",
+    "explanation": "告诉 introduces quoted speech, so use no 了 for the speaking word.",
+    "dimension": "coherence_temporality",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I35",
+    "explanation": "难怪 normally comes before the subject. Use 难怪他成为有名的哲学家.",
+    "dimension": "word_choice",
+    "corrected": "难怪他",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1833,
+  "completion_tokens": 326,
+  "total_tokens": 2159,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1830,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

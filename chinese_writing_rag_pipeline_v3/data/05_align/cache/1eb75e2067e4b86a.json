@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他画画很厉害，他越来越喜欢祭拜，所以他祭拜不是想帮妈妈工作，而是他很喜欢画画。\nquote: 他画画很厉害，他越来越喜欢祭拜\npart p0: instruction [ref p0/k0] delete the second他 ; notes: redundant\npart p1: comment [ref p1/note] no logic relationship, add也before越来越",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "很厉害，",
+    "after": "越来越喜",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the second 他"
+   },
+   {
+    "ref": "p1/note",
+    "op": "insert",
+    "original": "",
+    "corrected": "也",
+    "before": "厉害，他",
+    "after": "越来越喜",
+    "note": "no logic relationship, add也before越来越",
+    "confidence": "high",
+    "reason": "adds 也 before 越来越"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1025,
+  "completion_tokens": 115,
+  "total_tokens": 1140,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

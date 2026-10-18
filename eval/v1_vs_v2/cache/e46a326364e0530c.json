@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThis scene:\n子思认为，对孩子来说，读书最重要，特别是学哲学。孟子不是练习写文章，就是看哲学书。孟子从五岁一直学哲学。他才五岁就学哲学，难怪他成为很有名的哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子从五岁一直学哲学：从五岁开始\n\nThe system's feedback items:\n1. [Vocabulary, error] 就是看哲学书 → 就是看到哲学书 -- 孟子 actually sees the philosophy books, so use 看到see, not 看look.\n2. [Vocabulary, error] 孟子从五岁一直学哲学 → 孟子从五岁起一直学哲学 -- After 从五岁, add 起 to mark the starting age: 从五岁起一直学哲学.\n3. [Coherence: reference, error] 难怪他成为很有名的… → 难怪成为很有名的… -- 孟子 is already clear from the previous clause, so delete the redundant 他. Chinese uses zero form here.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“看哲学书” correctly describes the habitual activity here; “看到” wrongly adds a completed-result meaning."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The starting-time expression needs “开始” or “起”; “从五岁起一直学哲学” is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他” correctly refers to the recently mentioned 孟子, and the displayed text is cut off after “很有名的….”"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2045,
+  "completion_tokens": 720,
+  "total_tokens": 2765,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 394,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

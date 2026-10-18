@@ -1,0 +1,68 @@
+{
+ "input": "CURRENT SCENE:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nITEMS:\n\n[I203] 特别【是毒】   correction: 是毒 → 有毒   strength: error\n  checker's note: her pattern: 是毒 -> 有毒 (corrected 14/15 in train)\n  rule card (word_class_choice, Vocabulary): Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.  Pattern: <wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.  Her terms: noun, Adj., Subj., 很多+noun, 这个 + Noun\n  her past correction: 有的花[是毒→有毒]\n  her past correction: 和这个花[是毒→有毒]\n  her past correction: 什么植物[是毒→有毒]\n\n[I204] 【灵芝药的夹竹桃】他吃完了   correction: 灵芝药的夹竹桃 → 有灵芝   strength: error\n  checker's note: this noun phrase cannot express that lingzhi was present.\n  rule card (incorrect_story_information, Content): Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information.  Pattern: <wrong> → <correct>: this changes a story fact; the story says <fact>.  Her terms: wrong information, problematic in coherence\n  her past correction: [+如果吃了夹竹桃，]这就要看你也吃不吃灵芝了 — her note: e.g., 如果吃了夹竹桃\n  her past correction: [灵芝→他]一吃就正好\n  her past correction: [-但]如果灵芝和夹竹桃一起吃 — her note: wrong information, 灵芝is a medicine\n\n[I205] 灵芝药的夹竹桃【他】吃完了   correction: 他 → 他把它   strength: suggestion\n  checker's note: after introducing 灵芝, the eaten object needs to be marked.\n  rule card (incorrect_story_information, Content): Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information.  Pattern: <wrong> → <correct>: this changes a story fact; the story says <fact>.  Her terms: wrong information, problematic in coherence\n  her past correction: [灵芝→他]一吃就正好\n  her past correction: [+如果吃了夹竹桃，]这就要看你也吃不吃灵芝了 — her note: e.g., 如果吃了夹竹桃\n  her past correction: 神农[吃→吃了]灵芝以后 — her note: 了completed\n\n[I206] 也写【^】一个课文的植物   correction: ∅ → 了   strength: error\n  checker's note: 写 is a completed past action.\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他尝[+了]很多植物 — her note: 了completed\n  her past correction: 神农的朋友给[+了]他这植物 — her note: 了completed\n  her past correction: 学习植物[+的知识]\n\n[I207] 也写一【个】课文的植物   correction: 个 → 本   strength: error\n  checker's note: 本 is the measure word for a book.\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 神农[写植物→写了一本有关植物]的书\n  her past correction: 他测试[别的→各种]植物 — her note: “别的” is for “a different type”, and “all else except the spoken one”\n  her past correction: 一回家就写什么植物[-他们]能和不能吃 — her note: redundant\n\n[I208] 也写一个【课文的植物】   correction: 课文的植物 → 关于植物的书   strength: error\n  checker's note: the modifier order and noun do not mean “a book about plants.”\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 神农[写植物→写了一本有关植物]的书\n  her past correction: [对植物→关于植物有没有毒，]我学到了\n  her past correction: 哪些植物是毒[+的书]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I203",
+    "explanation": "Use 有毒 here. The structure needs an Adj.; 是毒 uses a noun form.",
+    "dimension": "word_choice",
+    "corrected": "有毒",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I204",
+    "explanation": "灵芝药的夹竹桃 changes a story fact: 灵芝 is medicine, not a kind of 夹竹桃. The story says he had 有灵芝.",
+    "dimension": "content",
+    "corrected": "有灵芝",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I205",
+    "explanation": "It would be more natural to say 他把它吃完了, so the object 灵芝 is clearly marked.",
+    "dimension": "content",
+    "corrected": "他把它",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I206",
+    "explanation": "写 is completed in the story, so it takes 了 (了completed).",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I207",
+    "explanation": "Use 本 for a book. 一本关于植物的书 is the natural object of 写.",
+    "dimension": "grammar",
+    "corrected": "本",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I208",
+    "explanation": "Use 关于植物的书 for “a book about plants.” 课文的植物 does not mean this.",
+    "dimension": "grammar",
+    "corrected": "关于植物的书",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1824,
+  "completion_tokens": 301,
+  "total_tokens": 2125,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1821,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

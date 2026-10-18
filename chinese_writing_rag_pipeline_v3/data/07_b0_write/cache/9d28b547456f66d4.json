@@ -1,0 +1,46 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections in other learners' similar clauses:\n- 孟子才有一个朋友  →  才有 → 只有\n- 孟母害得孟子玩儿  →  玩儿 → 整天都很郁闷  (害得 + N/sb. + Harmful result, 玩儿is not harmful)\n- 孟子不是在看商店的员工  →  在 → (delete)  (here is not emphasizing “ongoing”)\n- 难怪他不喜欢常常学习  →  常常学习 → 学习/一直学习\n- 他一看觉得担心  →  ∅ → 就\n- 在中国不太安全  →  在中国 → (delete)\n\nScene to review:\n城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "住在商店的旁边不是适合孟子，而是让他觉得很伤心",
+    "corrected": "住在商店的旁边不适合孟子，也让他觉得很伤心",
+    "errors": [
+     {
+      "original": "不是适合",
+      "correction": "不适合",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "适合 is a verb, so use 不 directly before it. Do not use 是 here."
+     },
+     {
+      "original": "而是",
+      "correction": "也",
+      "dimension": "coherence",
+      "coherence_type": "connectors",
+      "explanation": "而是 introduces an alternative after a negation. Here both “not suitable” and “makes him sad” are true, so use 也."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1219,
+  "completion_tokens": 1464,
+  "total_tokens": 2683,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1216,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1281,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

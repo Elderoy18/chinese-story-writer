@@ -1,0 +1,54 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections in other learners' similar clauses:\n- in “他离墓地住很近”: 离墓地住很近 → 住在离墓地很近的地方\n- in “觉得害得孟子的身体”: 觉得 → (deleted)\n- in “孟子才有一个朋友”: 才有 → 只有\n- in “孟子跟他的妈妈已经搬家了”: 已经 → 就又\n- in “妈妈认为他们拿东西”: 拿东西 → 拿了墓地的东西   [her note: “东西” is too general and vague]\n- in “孟子的妈妈爱她的小孩子”: 爱她的小孩子 → 很爱孩子\n\nScene to review:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "妈妈认为，住离墓地太近，害得孟子的心气。",
+    "corrected": "妈妈认为住在离墓地太近的地方，会影响孟子的心情。",
+    "explanation": "住 needs 在 before the place phrase, so say 住在离墓地太近的地方. 害得孟子的心气 is not a natural expression; living near a cemetery can 影响 a person's 心情."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "孟子和孟母搬到子思老师的家，跟子思老师住。",
+    "corrected": "孟子和孟母搬到子思老师的家，跟子思老师住了。",
+    "explanation": "These are two completed actions in a series. In a series of completed actions, only the last verb takes 了."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "子思帮孟母教她的儿子。",
+    "corrected": "子思帮孟母教儿子。",
+    "explanation": "孟母 has already appeared in this sentence, so use the zero form rather than 她 to refer to her again. 教儿子 here naturally means teaching Meng Mu's son."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "conjunction",
+    "original": "因为孟子现在没有朋友，他老是读书。",
+    "corrected": "因为孟子现在没有朋友，所以他老是读书。",
+    "explanation": "Because this sentence gives a cause and its result, use the paired conjunction 因为……所以……."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1384,
+  "completion_tokens": 1817,
+  "total_tokens": 3201,
+  "prompt_tokens_details": {
+   "cached_tokens": 1078,
+   "cache_write_tokens": 303,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1453,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

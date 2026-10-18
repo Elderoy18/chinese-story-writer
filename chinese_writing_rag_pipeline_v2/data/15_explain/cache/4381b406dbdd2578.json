@@ -1,0 +1,103 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。\n\nITEMS:\n\n[I276] 【古代的时候】   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I277] 【他】的名字是神农   correction: (comment, no correction)   strength: error\n  checker's note: the story starts with a pronoun: introduce the character first\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: [-他]正好看神农\n  her past correction: 神农回[-他的]家 — her note: redundant\n  her past correction: [神农→他]可能会死 — her note: use他to replace神农，otherwise it is ambiguous, as if there are three persons referred here, in fact there are only two\n\n[I278] 他看到了有很多人不知道哪【个】植物好吃   correction: 个 → 种   strength: error\n  checker's note: plants are classified by 种 here\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 他一[看→看到]植物就吃 — her note: 看look vs.看到see\n  her past correction: 神农发现[-了]大家都不知道什么植物能吃 — her note: 发现is a mental state verb, no了\n  her past correction: [植物→一种绿色的植物]他觉得好吃得很\n\n[I279] 也不【知道】什么植物对你的身体有好处   correction: 知道 → 了解   strength: suggestion\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-这些植物]对身体好处\n  her past correction: 哪些植物对[-你的]健康有好处\n  her past correction: 现在他们[懂→知道]什么植物不毒\n\n[I280] 也不知道什么植物对【你】的身体有好处   correction: 你 → 人   strength: error\n  checker's note: refers to people in general, not the listener\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-这些植物]对身体好处\n  her past correction: 哪些植物对[-你的]健康有好处\n  her past correction: 这些植物对身体[+有]好处\n\n[I281] 所以【神农】去了吃每种植物   correction: 神农 → (delete)   strength: error\n  checker's note: 神农 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: ⟦神农⟧看到很多人随便吃各种植物 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: ⟦神农⟧看到有的植物不能吃 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: ⟦神农⟧开始找我们可以吃的植物 — her note: better to briefly introduce “神农” when this character first appears\n\n[I282] 所以神农去【了】吃每种植物   correction: 了 → (delete)   strength: error\n  checker's note: 了 cannot go between 去 and 吃\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: ⟦神农⟧看到很多人随便吃各种植物 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: ⟦神农⟧看到有的植物不能吃 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 因为[他→神农]想知道什么植物能吃 — her note: the first他is a bit ambiguous\n\n[I283] 所以神农去了【吃】每种植物   correction: 吃 → (delete)   strength: suggestion\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦神农⟧看到很多人随便吃各种植物 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: ⟦神农⟧看到有的植物不能吃 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 因为[他→神农]想知道什么植物能吃 — her note: the first他is a bit ambiguous\n\n[I284] 就写了这个植物对【你】有没有好处   correction: 你 → 人   strength: error\n  checker's note: refers to people in general, not the listener\n  rule card (possessive_reference, Coherence: reference): Do not use 他的/她的 for people or a place when it sounds like the person owns them. Use a precise relationship word, such as 家人, 朋友邻居, 人们, or 这个小城市.  Pattern: <wrong> → <correct>: <他的/她的 + noun> implies that <person> owns <noun>; use <relationship/reference expression> instead.\n  her past correction: 哪些植物对[-你的]健康有好处\n  her past correction: 这些植物对身体[+有]好处\n  her past correction: [-这些植物]对身体好处\n\n[I285] 会来跟他的朋友聊【到】他吃的植物了   correction: 到 → (delete)   strength: error\n  checker's note: 聊 takes its topic directly\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农的朋友给[+了]他这植物 — her note: 了completed\n  her past correction: [-他]决定找出什么植物可以吃\n  her past correction: 有的人吃[+到]很好吃的植物\n\n[I286] 会来跟他的朋友聊到他吃的植物【了】   correction: 了 → (delete)   strength: error\n  checker's note: not used after 会 in this sentence\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农的朋友给[+了]他这植物 — her note: 了completed\n  her past correction: [-他]决定找出什么植物可以吃\n  her past correction: 他尝[+了]很多植物 — her note: 了completed",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I276",
+    "explanation": "古代 is the setting of the action, so use 在+Place: 在古代.",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I277",
+    "explanation": "This character appears for the first time, so introduce him briefly with an identifying noun phrase, such as 有一个男人, before using his name or 他.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I278",
+    "explanation": "Plants are counted by type here, so use 种, not 个.",
+    "dimension": "word_choice",
+    "corrected": "种",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I279",
+    "explanation": "It would be more natural to say 了解 here when referring to knowing about which plants are good for the body.",
+    "dimension": "word_choice",
+    "corrected": "了解",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I280",
+    "explanation": "This means people in general, not the listener. Use 人 instead of 你.",
+    "dimension": "coherence_reference",
+    "corrected": "人",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I281",
+    "explanation": "神农 is already clear from the previous clause, so delete the repeated subject. Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I282",
+    "explanation": "Do not put 了 between 去 and 吃. Delete 了 here.",
+    "dimension": "coherence_temporality",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I283",
+    "explanation": "It would be more natural to delete 吃 here and say 去 every kind of plant.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I284",
+    "explanation": "This refers to people in general, not the listener. Use 人 instead of 你.",
+    "dimension": "coherence_reference",
+    "corrected": "人",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I285",
+    "explanation": "聊 takes its topic directly, so delete 到: 聊他吃的植物.",
+    "dimension": "word_choice",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I286",
+    "explanation": "会 shows a future or habitual action here, not a completed action, so do not use 了completed.",
+    "dimension": "coherence_temporality",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2935,
+  "completion_tokens": 531,
+  "total_tokens": 3466,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2932,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

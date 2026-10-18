@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\n\nITEMS:\n\n[I92] 【古代的时候】   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I93] 【一看】很多人正在吃一些植物   correction: 一看 → 一看到   strength: error\n  checker's note: her pattern: 一看 -> 一看到 (corrected 10/15 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 也看到了很多人[+在]吃植物 — her note: 在ongoing\n  her past correction: 他[看了→看到了]很多人吃毒的植物 — her note: 看look vs.看到see\n  her past correction: [植物一看→一看到植物]就吃了 — her note: 看look vs.看到see\n\n[I94] 神农想帮【^】别人   correction: ∅ → 助   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: ”神农[帮→帮了]很多人 — her note: 了completed\n  her past correction: 神农[问人帮他→请人]给他灵芝 — her note: the “ask” in “ask for help” is not问\n  her past correction: 他一[看→看到]神农就帮他 — her note: 看look vs.看到see\n\n[I95] 哪些【植物】不能吃   correction: 植物 → (delete)   strength: suggestion\n  rule card (question_patterns, Grammar): Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.  Pattern: <wrong> → <correct>: this asks <whether/what/where>, so use <question pattern>, not 如果.  Her terms: repeated Wh-Q\n  her past correction: [因为→这样]大家知道什么植物不能吃 — her note: not “because”\n  her past correction: 中国人不知道什么植物[可能还是不可能→能吃，什么植物不能]吃\n  her past correction: 他们不知道什么植物[-能吃]不能吃",
+ "salt": "repeat-run3",
+ "output": {
+  "items": [
+   {
+    "item_id": "I92",
+    "explanation": "古代 is the story’s time/place setting, so use 在+Place before the action: 在古代。",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I93",
+    "explanation": "Shennong actually sees this situation, so use 看到see, not 看look.",
+    "dimension": "word_choice",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I94",
+    "explanation": "It would be more natural to say 帮了别人 if this helping is completed in the story; use 了completed for a completed action.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I95",
+    "explanation": "It would be more natural not to repeat 植物. After 哪些植物能吃, you can say 哪些不能吃.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1297,
+  "completion_tokens": 320,
+  "total_tokens": 1617,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1294,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 99,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

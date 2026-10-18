@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 每天孟母安排孟子的爱好，也他就理解他妈妈的做法。\nquote: 也他就理解他妈妈的做法\npart p0: fix [ref p0/k0] 他也理解…… ; notes: Subj.也",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "也他",
+    "corrected": "他也",
+    "before": "的爱好，",
+    "after": "就理解他妈",
+    "note": "Subj.也",
+    "confidence": "high",
+    "reason": "moves 也 after the subject"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "就",
+    "corrected": "",
+    "before": "好，也他",
+    "after": "理解他妈妈",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 就"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 997,
+  "completion_tokens": 233,
+  "total_tokens": 1230,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 114,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

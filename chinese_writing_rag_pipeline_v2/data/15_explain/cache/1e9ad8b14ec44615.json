@@ -1,0 +1,103 @@
+{
+ "input": "CURRENT SCENE:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\nITEMS:\n\n[I250] 所以他们找到了很多植物【对】药   correction: 对 → 当   strength: error\n  checker's note: 当药 means “use as medicine”\n  rule card (incorrect_story_information, Content): Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information.  Pattern: <wrong> → <correct>: this changes a story fact; the story says <fact>.  Her terms: wrong information, problematic in coherence\n  her past correction: [几棵植物→有的植物]可以是药\n  her past correction: 他⟦看到了药，正好看到了毒植物⟧ — her note: what is the connection between 看到了药and正好看到了有毒植物?\n  her past correction: 可是[他找到毒的植物→找到的是有毒的植物]\n\n[I251] 【神农】先看到很多病人   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 神农: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦神农⟧看了很多生病的人 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: ⟦神农⟧看到很多人生病了 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 所以⟦神农⟧一看病人就想找药 — her note: better to briefly introduce “神农” when this character first appears\n\n[I252] 他们吃很多植物【对】药   correction: 对 → 当   strength: error\n  checker's note: 当药 means “use as medicine”\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 吃很多[-的]植物\n  her past correction: 毒[+植物]他吃很多次\n  her past correction: 他看了很多人吃[+有]毒的植物\n\n[I253] 但是我觉得他们【的】吃的植物   correction: 的 → (delete)   strength: error\n  checker's note: 他们吃的植物 needs no 的 after 他们\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 可是一些[-的]人一吃植物 — her note: no的\n  her past correction: 吃很多[-的]植物\n  her past correction: 古代的生活很多的人吃很多[-的]植物\n\n[I254] 让他们【病人】   correction: 病人 → 生病   strength: error\n  checker's note: 让人生病 means “make someone ill”\n  rule card (non_adjective_degree_patterns, Grammar): “病” and “生病” are not normal Adj., so do not use 很 or 不 directly with them. To show degree, use 病得很厉害 or 病得很重.  Pattern: <wrong> → <correct>: 病/生病 is not a normal Adj., so it cannot take 很 or 不; use 病得很<degree> to describe how serious the illness is.  Her terms: 病得很厉害, 病得很重, Adj.\n  her past correction: 他看到很多人[很病→生病]了 — her note: “病” is not a normal Adj., so it cannot be with 很 or 不\n  her past correction: 人正好生病还是百草让他们生病[-了]\n  her past correction: [人→你们]正好生病还是百草让他们生病了\n\n[I255] 神农觉得这个植物【可能】特别是毒   correction: 可能 → ，这样可以   strength: error\n  checker's note: her pattern: 可能 -> ，这样可以 (corrected 9/14 in train)\n  rule card (loose_clause_connection, Coherence: connectors): Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.  Pattern: <wrong> → <correct>: use <connector/purpose/sequence phrase> to show how this sentence connects to the previous clause or sentence.\n  her past correction: 他说：“很多植物[可以是毒→可能有毒]\n  her past correction: 神农现在知道哪个植物[是毒→有毒]\n  her past correction: 但是如果他想知道这些植物有毒[或→还是]有药性\n\n[I256] 神农觉得这个植物可能特别【是毒】   correction: 是毒 → 有毒   strength: error\n  checker's note: her pattern: 是毒 -> 有毒 (corrected 14/15 in train)\n  rule card (word_class_choice, Vocabulary): Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.  Pattern: <wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.  Her terms: noun, Adj., Subj., 很多+noun, 这个 + Noun\n  her past correction: 神农现在知道哪个植物[是毒→有毒]\n  her past correction: 什么植物[是毒→有毒]\n  her past correction: 哪些植物是[毒→有毒]\n\n[I257] 所以他想找一【个】植物对药   correction: 个 → 种   strength: suggestion\n  rule card (incorrect_story_information, Content): Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information.  Pattern: <wrong> → <correct>: this changes a story fact; the story says <fact>.  Her terms: wrong information, problematic in coherence\n  her past correction: [几棵植物→有的植物]可以是药\n  her past correction: 他走了很远的路去[-了]学哪些植物可以入药\n  her past correction: [-他]决定找出什么植物可以吃\n\n[I258] 所以他想找一个植物【对药】   correction: 对药 → 这个药   strength: error\n  checker's note: 吃 needs a medicine object here\n  rule card (loose_clause_connection, Coherence: connectors): Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.  Pattern: <wrong> → <correct>: use <connector/purpose/sequence phrase> to show how this sentence connects to the previous clause or sentence.\n  her past correction: 他⟦看到了药，正好看到了毒植物⟧ — her note: what is the connection between 看到了药and正好看到了有毒植物?\n  her past correction: 所以神农走了很长的时间找到[植物药→能做药的植物]\n  her past correction: 可是这个灵芝可能[是啊→是药]\n\n[I259] 【他】想把花放在茶里   correction: 他 → (delete)   strength: error\n  checker's note: 他 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]喝了茶 — her note: redundant\n  her past correction: 然后他认识[-他]在山上吃的花 — her note: redundant\n  her past correction: [-所以，]他吃一个香香的花 — her note: “所以” is inappropriate because here is not a result, delete it, add “在山上”\n\n[I260] 【对】药   correction: 对 → 当   strength: suggestion\n  rule card (question_patterns, Grammar): Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.  Pattern: <wrong> → <correct>: this asks <whether/what/where>, so use <question pattern>, not 如果.  Her terms: repeated Wh-Q\n  her past correction: 看看[如果→是]毒还是药 — her note: the “if” in “see if + clause” is not 如果\n  her past correction: [+是]药还是毒\n  her past correction: [-他]看到了药 — her note: redundant",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I250",
+    "explanation": "对药 is wrong information here. The story says the plants were used 当药.",
+    "dimension": "content",
+    "corrected": "当",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I251",
+    "explanation": "神农 appears for the first time here, so please briefly introduce him, for example as a doctor.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I252",
+    "explanation": "Use 当药 to mean “use as medicine.”",
+    "dimension": "grammar",
+    "corrected": "当",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I253",
+    "explanation": "他们 does not need 的 here. 吃的 describes the noun 植物, so write 他们吃的植物.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I254",
+    "explanation": "病人 is a noun meaning “sick person.” After 让, use the verb 生病: 让他们生病.",
+    "dimension": "grammar",
+    "corrected": "生病",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I255",
+    "explanation": "Use a clearer connection to show how this sentence leads to the next idea. Here, 可能有毒 makes the meaning clear.",
+    "dimension": "coherence_connectors",
+    "corrected": "可能有毒",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I256",
+    "explanation": "Here the structure needs an Adj. form. Use 有毒, not 是毒.",
+    "dimension": "word_choice",
+    "corrected": "有毒",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I257",
+    "explanation": "It would be more natural to say 一种植物. The story is about finding a kind of plant that can be medicine.",
+    "dimension": "content",
+    "corrected": "种",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I258",
+    "explanation": "对药 does not clearly show the purpose of finding the plant. Use 当药: 找一种植物当药.",
+    "dimension": "coherence_connectors",
+    "corrected": "当药",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I259",
+    "explanation": "他 is already clear from the previous clause, so delete it. Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I260",
+    "explanation": "It would be more natural to say 当药 for “use as medicine.”",
+    "dimension": "grammar",
+    "corrected": "当",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2802,
+  "completion_tokens": 2222,
+  "total_tokens": 5024,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2799,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1670,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

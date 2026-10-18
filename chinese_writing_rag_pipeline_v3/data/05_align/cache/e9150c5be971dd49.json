@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 在新的城，孟子老是想玩玩。\nquote: 在新的城，孟子老是想玩玩\npart p0: fix [ref p0/k0-1] 在新城市，想玩 ; notes: V.V. is used to make requests or plans",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "新的城",
+    "corrected": "新城市",
+    "before": "在",
+    "after": "，孟子老",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the location noun phrase"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "孟子老是",
+    "corrected": "",
+    "before": "新城市，",
+    "after": "想玩玩",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits the subject and adverb"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "玩玩",
+    "corrected": "玩",
+    "before": "子老是想",
+    "after": "",
+    "note": "V.V. is used to make requests or plans",
+    "confidence": "high",
+    "reason": "removes verb reduplication"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1001,
+  "completion_tokens": 174,
+  "total_tokens": 1175,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

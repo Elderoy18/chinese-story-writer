@@ -1,0 +1,50 @@
+{
+ "input": "Scene:\n啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。\n\nCorrections to check:\n1. 一回家就告诉别人  →  他一回家就告诉了别人   [coherence: reference]\n2. 他找到药以后他写下怎么做药在书上  →  他找到药以后，他在书上写下了怎么做药   [grammar]\n3. 所以人们都知道，那红灵芝对身体好处  →  所以人们都知道，那红灵芝对身体有好处   [grammar]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "The omitted subject is naturally understood as 他 from the preceding context."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "The original places 在书上 unnaturally after the written content."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "对身体好处 requires 有 before 好处."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 533,
+  "completion_tokens": 438,
+  "total_tokens": 971,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 303,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 神农出发在一个旅程，他在这个旅程尝了很多植物，写下了植物可以用来做什么。\nquote: 神农出发在一个旅程，他在这个旅程尝了很多植物\npart p0: fix [ref p0/k0-1] 神农开始了旅程，在旅程中 ; instruction [ref p0/k2] delete他 ; notes: redundant",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "出发在一个旅程",
+    "corrected": "开始了旅程",
+    "before": "神农",
+    "after": "，他在这个",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the departure phrase with her revised journey phrase"
+   },
+   {
+    "ref": "p0/k2",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "个旅程，",
+    "after": "在这个旅程",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "explicit instruction to delete 他"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "在这个旅程",
+    "corrected": "在旅程中",
+    "before": "旅程，他",
+    "after": "尝了很多植",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the journey-location phrase to her wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1029,
+  "completion_tokens": 487,
+  "total_tokens": 1516,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1026,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 299,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

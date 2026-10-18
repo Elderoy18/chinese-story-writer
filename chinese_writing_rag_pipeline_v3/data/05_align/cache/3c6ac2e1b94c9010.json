@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟母也觉得在市场的旁边对孟子不合适的地方长大，孟母看孟子老是做他们住很近的人做的事情，这害得孟母离学校很近搬家。\nquote: 孟母也觉得在市场的旁边对孟子不合适的地方长大\npart p0: fix [ref p0/k0] 又觉得 ; notes: “又“ emphasizes repeating vs. ”也“ emphasizes similarity\npart p1: fix [ref p1/k0] 不适合孟子成长",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "也",
+    "corrected": "又",
+    "before": "孟母",
+    "after": "觉得在市",
+    "note": "“又“ emphasizes repeating vs. ”也“ emphasizes similarity",
+    "confidence": "high",
+    "reason": "replaces 也 with 又"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "对孟子不合适的地方长大",
+    "corrected": "不适合孟子成长",
+    "before": "场的旁边",
+    "after": "，",
+    "note": "",
+    "confidence": "high",
+    "reason": "rewrites the suitability-and-growing phrase"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1062,
+  "completion_tokens": 317,
+  "total_tokens": 1379,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1059,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 178,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

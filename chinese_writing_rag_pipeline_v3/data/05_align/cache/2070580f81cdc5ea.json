@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\nquote: 孟子妈妈看了他的同学们对孟子不好的影响\npart p0: fix [ref p0/k0] 看到 ; notes: 看look vs.看到see\npart p1: fix [ref p1/k0] 有不好的影响",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "看了",
+    "corrected": "看到",
+    "before": "孟子妈妈",
+    "after": "他的同学",
+    "note": "看look vs.看到see",
+    "confidence": "high",
+    "reason": "replaces 看了 with 看到"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "对孟子不好的影响",
+    "corrected": "有不好的影响",
+    "before": "他的同学们",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the influence phrase to 有不好的影响"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1028,
+  "completion_tokens": 259,
+  "total_tokens": 1287,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1025,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 129,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

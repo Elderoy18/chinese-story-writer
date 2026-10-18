@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 神农加下去很多的植物，看看如果毒还是药。\nquote: 神农加下去很多的植物，看看如果毒还是药\npart p0: fix [ref p0/k0] 吃下去很多植物\npart p1: fix [ref p1/k0] 看看是毒还是药 ; notes: the “if” in “see if + clause” is not 如果",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "加",
+    "corrected": "吃",
+    "before": "神农",
+    "after": "下去很多",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 加 with 吃"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "的",
+    "corrected": "",
+    "before": "下去很多",
+    "after": "植物，看",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 的"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "如果",
+    "corrected": "是",
+    "before": "植物，看看",
+    "after": "毒还是药",
+    "note": "the “if” in “see if + clause” is not 如果",
+    "confidence": "high",
+    "reason": "replaces 如果 with 是"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1028,
+  "completion_tokens": 270,
+  "total_tokens": 1298,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1025,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 101,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

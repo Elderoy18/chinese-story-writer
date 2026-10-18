@@ -1,0 +1,115 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n在古代，孟子和孟母住在小的城。孟子跟朋友看很多的大人在墓地祭拜。孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜。孟母觉得孟子不喜欢他的小的城，所以她和孟子搬家。在新的城，孟子老是想玩玩。在家不是学习就是玩玩，孟母觉得学习害得孟子，所以孟子常常玩玩。孟子很聪明，不是学习害得，而是常常搬家，难怪他不喜欢常常学习。孟子是孩子。孟子决定他应该学哲学，孟子决定他可以学习和高兴。孟母和孟子住了很高兴。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "graveyard home; 孟子 copies sacrifices",
+    "verdict": "partly",
+    "evidence": [
+     "孟子跟朋友看很多的大人在墓地祭拜。",
+     "孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜。"
+    ],
+    "missing_part": "孟子 and 孟母 living near the graveyard",
+    "details_left_out": [
+     "every day"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "孟母 moves away from the graveyard neighborhood",
+    "verdict": "partly",
+    "evidence": [
+     "孟母觉得孟子不喜欢他的小的城，所以她和孟子搬家。"
+    ],
+    "missing_part": "the move was away from the neighborhood near the graveyard",
+    "details_left_out": [
+     "孟母 thought copying sacrifices would have a bad impact on 孟子"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "move near the market; 孟子 copies buying and selling",
+    "verdict": "partly",
+    "evidence": [
+     "孟母觉得孟子不喜欢他的小的城，所以她和孟子搬家。",
+     "在新的城，孟子老是想玩玩。"
+    ],
+    "missing_part": "the new neighborhood was near the market, and 孟子 imitated buying and selling",
+    "details_left_out": [
+     "every day"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "move from the market to a school neighborhood; 孟子 studies",
+    "verdict": "partly",
+    "evidence": [
+     "在家不是学习就是玩玩，孟母觉得学习害得孟子，所以孟子常常玩玩。",
+     "孟子决定他可以学习和高兴。"
+    ],
+    "missing_part": "孟母 moved from the market to a neighborhood near a school",
+    "details_left_out": [
+     "孟子 studied every day"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a philosopher",
+    "verdict": "partly",
+    "evidence": [
+     "孟子决定他应该学哲学。"
+    ],
+    "missing_part": "孟子 becoming a philosopher",
+    "details_left_out": [
+     "He was famous"
+    ],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "孟母觉得孟子不喜欢他的小的城，所以她和孟子搬家。",
+    "problem": "孟母 moves because she is worried that copying sacrifices will negatively affect 孟子, not because he dislikes the small city."
+   },
+   {
+    "learner_text": "孟母觉得学习害得孟子，所以孟子常常玩玩。",
+    "problem": "孟母 moves 孟子 near a school so that he begins studying; she does not think studying harms him."
+   },
+   {
+    "learner_text": "孟子很聪明，不是学习害得，而是常常搬家，难怪他不喜欢常常学习。",
+    "problem": "The story has two specific moves, not constant moving that makes 孟子 dislike studying."
+   }
+  ],
+  "feedback": [
+   "At the beginning, say that 孟子 and 孟母 lived near the graveyard before 孟子 copied the sacrifices.",
+   "After the graveyard sacrifices, say that 孟母 moved away from the graveyard neighborhood.",
+   "After that move, include the market neighborhood and 孟子 copying buying and selling.",
+   "After the market episode, say that 孟母 moved near a school.",
+   "At the end, show that 孟子 became a philosopher, not only that he decided to study philosophy."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1064,
+  "completion_tokens": 2987,
+  "total_tokens": 4051,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1061,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2251,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

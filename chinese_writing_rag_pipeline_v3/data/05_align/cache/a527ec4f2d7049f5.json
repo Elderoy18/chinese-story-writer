@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 妈妈老是工作了，害得她的身体不好。\nquote: 妈妈老是工作了，害得她的身体不好\npart p0: fix [ref p0/k0] 孟母 ; notes: “妈妈” here is ambiguous\npart p1: fix [ref p1/k0] 老是工作 ; notes: no了for routine/habit",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "妈妈",
+    "corrected": "孟母",
+    "before": "",
+    "after": "老是工作",
+    "note": "“妈妈” here is ambiguous",
+    "confidence": "high",
+    "reason": "replaces ambiguous 妈妈 with 孟母"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "妈老是工作",
+    "after": "，害得她的",
+    "note": "no了for routine/habit",
+    "confidence": "high",
+    "reason": "removes 了 for habitual action"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1023,
+  "completion_tokens": 124,
+  "total_tokens": 1147,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

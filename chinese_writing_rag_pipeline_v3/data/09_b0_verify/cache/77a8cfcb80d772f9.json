@@ -1,0 +1,58 @@
+{
+ "input": "Scene:\n一个爬山的男人正好看到神农的麻烦，然后给了他一些药。神农最终他的小镇回到，跟别的人分享他的发现。你认为神农的故事真的吗？这就要看你相信中药对身体有好处。\n\nCorrections to check:\n1. 神农最终他的小镇回到  →  神农最终回到他的小镇   [grammar]\n2. 跟别的人分享他的发现  →  跟别的人分享了他的发现   [coherence: temporality]\n3. 你认为神农的故事真的吗  →  你认为神农的故事是真的吗   [grammar]\n4. 这就要看你相信中药对身体有好处  →  这就要看你相不相信中药对身体有好处   [coherence: connectors]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "The object phrase must follow 回到, not interrupt it."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "Zero aspect is acceptable here in a narrative sequence, so 了 is optional rather than required."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "A copula 是 is required before the adjective phrase 真的."
+   },
+   {
+    "n": 4,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "connectors",
+    "reason": "看你相信中药对身体有好处 is grammatical and can already express that the answer depends on this belief."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 564,
+  "completion_tokens": 611,
+  "total_tokens": 1175,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 414,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

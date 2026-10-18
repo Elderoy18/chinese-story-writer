@@ -1,0 +1,66 @@
+{
+ "input": "Scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nCorrections to check:\n1. 这也找植物  →  他也找植物   [coherence: reference]\n2. 一天，他找到黄色的花  →  一天，他找到了黄色的花   [coherence: temporality]\n3. 他听说你跟黄色的花做茶很有用  →  他听说用黄色的花做茶很有用   [coherence: reference]\n4. 你的头发疼死  →  你的头疼死了   [vocabulary]\n5. 他一喝茶就很不舒服  →  他一喝茶就很不舒服了   [coherence: temporality]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "“这” cannot naturally refer to the person who is looking for plants here; “他” is needed."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "“找到” already expresses a completed finding, so adding “了” is optional."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "“你跟黄色的花做茶” incorrectly says that you and the flowers make tea; “用” is needed."
+   },
+   {
+    "n": 4,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "“头发疼” is not the normal expression for a headache, whereas “头疼死了” is natural."
+   },
+   {
+    "n": 5,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "Without “了,” the sentence is grammatical and can describe a habitual reaction to drinking tea."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 576,
+  "completion_tokens": 897,
+  "total_tokens": 1473,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 625,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

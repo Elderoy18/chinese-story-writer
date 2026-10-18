@@ -1,0 +1,54 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections in other learners' similar clauses:\n- in “他们常常搬家”: (nothing) → 所以   [her note: 无聊？add所以]\n- in “也有他的妈妈”: 也有他的妈妈 → 和妈妈住在一起\n- in “孟母不是孟子的爸爸，而是孟子的妈妈”: 不是孟子的爸爸，而 → (deleted)   [her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n- in “孟母害得孟子玩儿”: 玩儿 → 整天都很郁闷   [her note: 害得 + N/sb. + Harmful result, 玩儿is not harmful]\n- in “跟孟母一起搬家三次”: (nothing) → 就   [her note: 才 Num.就V.]\n- in “孟子的妈妈告诉孟子”: 孟子的妈妈 → (deleted)   [her note: redundant]\n\nScene to review:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "conjunction",
+    "original": "因为他们常常搬了家，中国人说，孟母三迁。",
+    "corrected": "因为他们常常搬家，所以中国人说“孟母三迁”。",
+    "explanation": "Because this sentence gives a cause and its result, use 因为……所以…… together. 常常 describes a routine, so 搬家 does not take 了."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "妈妈教孟子很多技能",
+    "corrected": "她教孟子很多技能",
+    "explanation": "孟子的妈妈 was mentioned in the previous sentence, so use 她 to refer to her again."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "先她",
+    "corrected": "她先",
+    "explanation": "The subject comes before 先, so say 她先让孟子……."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "教他怎么买又便宜又好质量的东西",
+    "corrected": "教了他怎么买又便宜又质量好的东西",
+    "explanation": "In this completed sequence, the last action takes 了. Say 质量好, not 好质量, for “good quality.”"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1389,
+  "completion_tokens": 2183,
+  "total_tokens": 3572,
+  "prompt_tokens_details": {
+   "cached_tokens": 1386,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1893,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

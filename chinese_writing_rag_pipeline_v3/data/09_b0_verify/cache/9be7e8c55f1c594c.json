@@ -1,0 +1,58 @@
+{
+ "input": "Scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nCorrections to check:\n1. 孟子在那个商店也找了到工作  →  孟子在那个商店也找到了工作   [coherence: temporality]\n2. 孟子学习馆学了十五年  →  孟子在学校学了十五年   [coherence: temporality]\n3. 他的学习和他的旅行经验很重要，对他很多好处  →  他的学习和他的旅行经验很重要，对他有很多好处   [grammar]\n4. 他是大人的时候，他成为很有名的哲人  →  他长大以后，他成为了很有名的哲人   [vocabulary]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "The aspect particle must follow the result complement, as in 找到了."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "学习馆 is not the intended location expression; 在学校学了十五年 is grammatical."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "The phrase 对他很多好处 needs 有 to form a grammatical predicate."
+   },
+   {
+    "n": 4,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "他是大人的时候 is understandable and grammatically acceptable, though 长大以后 is more natural."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 586,
+  "completion_tokens": 634,
+  "total_tokens": 1220,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 441,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

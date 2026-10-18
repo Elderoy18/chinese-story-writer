@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 但是我觉得他们的吃的植物，让他们病人。\nquote: 但是我觉得他们的吃的植物，让他们病人\npart p0: fix [ref p0/k0] 他们吃的植物让他们生病 ; notes: 让Sb. + V./Adj.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "的",
+    "corrected": "",
+    "before": "我觉得他们",
+    "after": "吃的植物，",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix removes 的 after 他们"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "，",
+    "corrected": "",
+    "before": "们吃的植物",
+    "after": "让他们病人",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix removes the comma"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "病人",
+    "corrected": "生病",
+    "before": "植物，让他们",
+    "after": "",
+    "note": "让Sb. + V./Adj.",
+    "confidence": "high",
+    "reason": "uses 生病 as the verb after 让"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1005,
+  "completion_tokens": 162,
+  "total_tokens": 1167,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

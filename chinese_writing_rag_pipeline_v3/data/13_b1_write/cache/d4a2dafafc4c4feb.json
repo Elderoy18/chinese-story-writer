@@ -1,0 +1,47 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “他离墓地住很近”: 离墓地住很近 → 住在离墓地很近的地方\n- in “这是一个神农的古代故事”: 一个神农的 → 关于神农的\n- in “有一天孟子才四岁”: 有一天 → (deleted)\n- in “他有的时候只要跟朋友玩儿”: 有的时候 → (deleted)   [her note: wrong conjunctions, 他只要跟朋友玩儿]\n- in “也有他的妈妈”: 也有他的妈妈 → 和妈妈住在一起\n\nScene to review:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子小的时候，他的爸爸很早就去世了。",
+    "corrected": "有一个小男孩叫孟子。他小的时候，爸爸很早就去世了。",
+    "explanation": "孟子 appears for the first time here, so introduce him with a noun phrase that says who he is. After introducing him, use 他 rather than repeating the name in the same sentence."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "从他的家到墓地很近",
+    "corrected": "从孟子家到墓地很近",
+    "explanation": "The previous sentence also mentions Mengzi's father, so 他的 can unclearly refer to either Mengzi or his father. Repeat 孟子 to make the reference clear."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "从早到晚去墓地跟朋友们玩玩儿",
+    "corrected": "从早到晚去墓地跟朋友们玩儿",
+    "explanation": "玩玩儿 means to play for a short time or just a little. It does not fit with 从早到晚, which means for the whole day."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1271,
+  "completion_tokens": 2208,
+  "total_tokens": 3479,
+  "prompt_tokens_details": {
+   "cached_tokens": 1268,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1927,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

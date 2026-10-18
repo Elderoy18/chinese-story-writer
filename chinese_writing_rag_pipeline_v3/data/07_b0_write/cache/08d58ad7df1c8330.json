@@ -1,0 +1,79 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 古代的时候  →  古代的时候 → 在古代\n- 人们不知道什么植物是不是能吃的  →  什么植物是不是能吃的 → 什么植物是能吃的，什么植物是不能吃的\n- 神农发现很多植物  →  ∅ → 了  (了completed)\n- 他一吃就生病了  →  他 → (delete)\n- 每个人都不知道哪些植物能安全吃  →  ∅ → 地\n- 一个天时候  →  一个天时候 → 有一天\n\nScene to review:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "古代时候",
+    "corrected": "在古代",
+    "errors": [
+     {
+      "original": "古代时候",
+      "correction": "在古代",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 在古代 to mean “in ancient times.”"
+     }
+    ]
+   },
+   {
+    "clause": "人不知道他们能吃什么植物",
+    "corrected": "人们不知道他们能吃什么植物",
+    "errors": [
+     {
+      "original": "人",
+      "correction": "人们",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "他们 refers to a plural group, so introduce the group as 人们."
+     }
+    ]
+   },
+   {
+    "clause": "告诉人什么植物是安全什么是危险",
+    "corrected": "告诉了他们什么植物是安全的，什么植物是危险的",
+    "errors": [
+     {
+      "original": "告诉",
+      "correction": "告诉了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "This is the final action in a series, so use 了 to show it was completed."
+     },
+     {
+      "original": "人",
+      "correction": "他们",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "Use 他们 to refer back to the people already mentioned."
+     },
+     {
+      "original": "安全什么是危险",
+      "correction": "安全的，什么植物是危险的",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 的 after the adjectives and repeat 什么植物 to make the two parts parallel."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1101,
+  "completion_tokens": 2321,
+  "total_tokens": 3422,
+  "prompt_tokens_details": {
+   "cached_tokens": 1098,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1999,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

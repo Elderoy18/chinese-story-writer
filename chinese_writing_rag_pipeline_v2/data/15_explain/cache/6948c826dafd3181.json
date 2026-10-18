@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nITEMS:\n\n[I167] 【旅行很远】找到很多植物   correction: 旅行很远 → 走了很远   strength: error\n  checker's note: 走了很远 is the natural way to express travelling a long distance here.\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 所以他[走路旅行找足多→步行去找很多]不同的植物\n  her past correction: [在他的旅行，→旅行中，]神农发现很多植物\n  her past correction: 他[在这个旅程→在旅程中]尝了很多植物\n\n[I168] 旅行很远【找到】很多植物   correction: 找到 → 找到了   strength: error\n  checker's note: the completed discovery needs 了.\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 所以他[走路旅行找足多→步行去找很多]不同的植物\n  her past correction: [在他的旅行，→旅行中，]神农发现很多植物\n  her past correction: [看很多植物→看到了很多植物] — her note: 看look vs.看到see\n\n[I169] 神农【写】他的主意   correction: 写 → 写下了   strength: error\n  checker's note: ideas should be written down, using 写下了.\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农就想到了一个好[-的]主意\n  her past correction: 神农[回→回到]他的家\n  her past correction: 神农写下来他所有学到的[事情→知识]\n\n[I170] 神农遇到了一【个】黄色的花   correction: 个 → 朵   strength: error\n  checker's note: 朵 is the measure word for flowers.\n  rule card (search_find, Vocabulary): 找 means “look for.” Use 找到 when the person successfully finds something.  Pattern: <wrong> → <correct>: the person successfully finds <object>, so use 找到, not 找.  Her terms: 找look for vs.找到find\n  her past correction: 神农找[+到]了一个很漂亮的花 — her note: 找look for vs.找到find\n  her past correction: 神农在他[远走→远行]的过程中碰见了一个长得像太阳的花儿 — her note: “远走” indicates leave something behind and go to a place far away\n  her past correction: 神农的朋友给[+了]他这植物 — her note: 了completed",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I167",
+    "explanation": "旅行很远 does not normally collocate with the action of going a long distance; use 走了很远 instead.",
+    "dimension": "word_choice",
+    "corrected": "走了很远",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I168",
+    "explanation": "Finding the plants is completed in the story, so it takes 了 (了completed): 找到了.",
+    "dimension": "coherence_temporality",
+    "corrected": "找到了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I169",
+    "explanation": "Writing down his ideas is completed in the story, so use 写下了 with 了 (了completed).",
+    "dimension": "coherence_temporality",
+    "corrected": "写下了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I170",
+    "explanation": "个 is not the usual measure word for flowers; use 朵 for a flower.",
+    "dimension": "word_choice",
+    "corrected": "朵",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1327,
+  "completion_tokens": 263,
+  "total_tokens": 1590,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1324,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 46,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

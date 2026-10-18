@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会影响孟子的心情，住 needs 在 before a location, and the original use of 害得 does not contain a complete result clause; 影响 can directly take the noun 心情.\n2. [Grammar & Vocabulary, error] 他老是读书：他一直读书，老是 usually expresses annoyance or criticism about a repeated action; 一直 is neutral and fits regular studying.\n3. [Coherence: reference, error] Coherence (Reference): 跟子思老师住：跟他住，Use a pronoun for a close re-occurrence: 子思老师 has just been named in the same sentence and no other male person competes as the referent.\n4. [Coherence: reference, error] Coherence (Reference): 教她的儿子：教儿子，Use zero form for a re-occurring person within the same clause: 孟母 has already been named, so the possessive pronoun is unnecessary.\n5. [Coherence: temporality, error] Coherence (Temporality): 孟子和孟母搬到子思老师的家：孟子和孟母搬到了子思老师的家，Use 了 for the completed moving action in this past narrative.\n6. [Coherence: connectors, error] Coherence (Conjunction): 因为孟子现在没有朋友，：因为孟子现在没有朋友，所以，Use 因为……所以…… to mark the cause-and-effect relation between having no friends and reading regularly.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“住”需要和地点搭配“在”，而“害得孟子的心气”不符合“害得 + 人 + 结果”的结构。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是读书”可以表示经常读书，并非一定是不合适的批评语气。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思老师刚刚在同一句中出现，按参考规则应改用“他”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟母已在同一句中出现，儿子的所属关系可用零形式表达，不必重复“她”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里后面还有“跟子思老师住”的动作，按动作序列规则不必在前一个“搬到”上加“了”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "原句的因果关系说反了：孟子没有朋友是因为他老是读书，而不只是缺少“所以”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2234,
+  "completion_tokens": 1369,
+  "total_tokens": 3603,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 583,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 956,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

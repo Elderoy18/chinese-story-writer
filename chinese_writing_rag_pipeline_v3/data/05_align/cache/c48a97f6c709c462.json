@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 不是孟子喜欢这个城市，而是他喜欢这个城市的人。\nquote: 不是孟子喜欢这个城市，而是他喜欢这个城市的人\npart p0: fix [ref p0/k0-1] 孟子不是喜欢这个城市，而是喜欢这个城市的人 ; notes: Subj. before “不是……而是……”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "不是孟子",
+    "corrected": "孟子不是",
+    "before": "",
+    "after": "喜欢这个城",
+    "note": "Subj. before “不是……而是……”",
+    "confidence": "high",
+    "reason": "moves the subject before 不是"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "市，而是",
+    "after": "喜欢这个城",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction omits repeated subject"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1014,
+  "completion_tokens": 231,
+  "total_tokens": 1245,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 105,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

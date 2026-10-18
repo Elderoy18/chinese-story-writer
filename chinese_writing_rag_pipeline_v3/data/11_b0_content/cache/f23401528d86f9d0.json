@@ -1,0 +1,104 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n孟子生活在古代。有一天，孟子的妈妈孟母在墓地看到孟子，因为孟子才五岁，孟母以为他在墓地玩游戏。但是孟子说，妈妈，我不是玩游戏，而是祭拜。孟母一看孟子祭拜，就觉得孟子学哲学最重要。孟母老是搬家，所以孟子会跟别的教授学哲学。从早到晚孟子一直学习，他不是看书，就是写文章。难怪孟子成为很有名的哲学家，他学习得很厉害。有的人觉得常常搬家害得孩子的生活，但是搬家对孟子的看法有影响。他跟很多人打交道，结果他取得生活经验。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "Mencius and his mother live near a graveyard; he imitates sacrifices",
+    "verdict": "partly",
+    "evidence": [
+     "孟子的妈妈孟母在墓地看到孟子，因为孟子才五岁，孟母以为他在墓地玩游戏。",
+     "但是孟子说，妈妈，我不是玩游戏，而是祭拜。"
+    ],
+    "missing_part": "孟子 and 孟母 living near the graveyard",
+    "details_left_out": [
+     "Mencius imitated sacrifices every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "Meng Mu moves away from the graveyard neighbourhood",
+    "verdict": "partly",
+    "evidence": [
+     "孟母老是搬家，所以孟子会跟别的教授学哲学。"
+    ],
+    "missing_part": "moving away from the neighbourhood near the graveyard",
+    "details_left_out": [
+     "She decided to move because she thought copying sacrifices would have a bad impact on 孟子."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "They move near the market; Mencius imitates buying and selling",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "the move to the market neighbourhood and 孟子 copying buying and selling",
+    "details_left_out": [
+     "Mencius did this every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "They move from the market to a school neighbourhood; Mencius begins studying",
+    "verdict": "partly",
+    "evidence": [
+     "从早到晚孟子一直学习，他不是看书，就是写文章。"
+    ],
+    "missing_part": "the move from the market neighbourhood to the neighbourhood near a school",
+    "details_left_out": [
+     "Mencius studied every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "Mencius becomes a famous philosopher",
+    "verdict": "told",
+    "evidence": [
+     "难怪孟子成为很有名的哲学家，他学习得很厉害。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "孟母一看孟子祭拜，就觉得孟子学哲学最重要。",
+    "problem": "孟母 should think that imitating sacrifices may have a bad impact on 孟子, not that it is most important for him to study philosophy."
+   },
+   {
+    "learner_text": "孟母老是搬家，所以孟子会跟别的教授学哲学。",
+    "problem": "The story has two specific moves, ending near a school, and does not include 孟子 studying with other professors."
+   }
+  ],
+  "feedback": [
+   "At the beginning, say that 孟子 and 孟母 lived near the graveyard before he copied 祭拜.",
+   "After 孟子 copies 祭拜, say that 孟母 moves away from the graveyard neighbourhood.",
+   "After they leave the graveyard, add that they move near the market and 孟子 copies buying and selling.",
+   "After the market part, say that they move near a school, where 孟子 begins to study."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1058,
+  "completion_tokens": 2188,
+  "total_tokens": 3246,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1055,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

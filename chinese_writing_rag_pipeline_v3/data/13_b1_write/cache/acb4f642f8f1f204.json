@@ -1,0 +1,75 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “吃一个植物以后”: 吃一个植物以后 → 吃了   [her note: 了completed]\n- in “神农吃以后”: (nothing) → 了   [her note: 了completed]\n- in “所以神农去了大山”: 神农 → (deleted)   [her note: redundant]\n- in “他吃一个麻烦的植物”: 吃一个麻烦的植物 → 吃了很多奇怪的植物   [her note: 麻烦is not used to describe植物]\n- in “也看到了很多人吃植物”: (nothing) → ，\n\nScene to review:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to mean “in ancient times.” 古代的时候 is not the usual expression here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "有一个男人，他的名字是神农",
+    "corrected": "有一个男人叫神农",
+    "explanation": "The man is introduced in this same sentence, so do not repeat him with 他. Introduce him directly as 有一个男人叫神农."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "哪个植物好吃",
+    "corrected": "哪种植物好吃",
+    "explanation": "Use 种 for types of plants. 哪种植物 means “which kind of plant.”"
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "所以神农去了吃每种植物",
+    "corrected": "所以去吃每种植物",
+    "explanation": "神农 was the subject in the previous sentence, so the name does not need to be repeated. Also, 去 is followed directly by the action verb; do not put 了 between 去 and 吃."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "有的时候，神农吃了很好吃的植物",
+    "corrected": "有的时候，他吃很好吃的植物",
+    "explanation": "神农 was mentioned very recently and no other person competes, so use 他. 有的时候 describes a routine, so 吃 does not take 了."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "有的时候，他吃了很危险的植物",
+    "corrected": "有的时候，他吃很危险的植物",
+    "explanation": "有的时候 describes something that happens sometimes, so use the verb without 了."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "会来跟他的朋友聊到他吃的植物了",
+    "corrected": "会来跟他的朋友聊到他吃的植物",
+    "explanation": "会 is a modal verb, so the final verb phrase does not take 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1320,
+  "completion_tokens": 3493,
+  "total_tokens": 4813,
+  "prompt_tokens_details": {
+   "cached_tokens": 1045,
+   "cache_write_tokens": 272,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3018,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

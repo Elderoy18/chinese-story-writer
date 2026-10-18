@@ -1,0 +1,78 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。\nScene 2: 一个人问神农，哪个植物好吃。神农说，这就要看你的口味了。要是你喜欢吃甜的，有很多甜的水果，比方说苹果、西瓜和梨。一个别的人问神农，哪个植物对你的身体有好处。神农说，有很多种植物对你的身体有好处，比方说小白菜、黄瓜、茶和菠菜。一个别的人问神农，哪个植物对你的身体有坏处。\n\nThe teacher's corrections in other learners' similar clauses:\n- 夹竹桃是毒  →  是毒 → 有毒\n- 夹竹桃一吃  →  夹竹桃一吃 → 他  (otherwise it is ambiguous who gets sick)\n- 还花的名字是夹竹桃  →  还花的名字是夹竹桃 → 也发现了一种叫夹竹桃的花\n- 他一吃灵芝就身体好了  →  就身体好了 → 身体就好了  (Subj. + 就)\n- 夹竹桃是特别是毒  →  是特别是毒 → 的毒特别厉害  (”特别是+N, + Clause” is used to single out a typical example)\n- 神农很幸福  →  很幸福 → 很高兴  (幸福is for long-term, life-related happiness)\n\nScene to review:\n神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "我吃了一个黄色的花",
+    "corrected": "我吃了一朵黄色的花",
+    "errors": [
+     {
+      "original": "一个",
+      "correction": "一朵",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Flowers use the measure word 朵, not 个."
+     }
+    ]
+   },
+   {
+    "clause": "名字是夹竹桃",
+    "corrected": "它的名字是夹竹桃",
+    "errors": [
+     {
+      "original": "名字",
+      "correction": "它的名字",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The flower was just mentioned, so use 它 to refer back to it in the next clause."
+     }
+    ]
+   },
+   {
+    "clause": "麻烦你把那个植物给我吃一下",
+    "corrected": "麻烦你把那个灵芝给我吃一下",
+    "errors": [
+     {
+      "original": "那个植物",
+      "correction": "那个灵芝",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "Use the specific noun 灵芝 here, since more than one plant has been mentioned."
+     }
+    ]
+   },
+   {
+    "clause": "我一吃这个灵芝就好了",
+    "corrected": "我一吃这个灵芝身体就好了",
+    "errors": [
+     {
+      "original": "就",
+      "correction": "身体就",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "好 needs a clear subject here. 身体就好了 means that the speaker's body recovered."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1438,
+  "completion_tokens": 2969,
+  "total_tokens": 4407,
+  "prompt_tokens_details": {
+   "cached_tokens": 1435,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2640,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

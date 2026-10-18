@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 以后，神农告诉别人一些植物能吃，一些植物不能吃。\nquote: 以后，神农告诉别人一些植物能吃，一些植物不能吃\npart p0: fix [ref p0/k0] 后来 ; notes: Time+以后\npart p1: fix [ref p1/k0] 告诉人们 ; notes: “别(的)” is for “a different type”, and “all else except the spoken one”\npart p2: fix [ref p2/k0-1] 哪些，哪些",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "以后",
+    "corrected": "后来",
+    "before": "",
+    "after": "，神农告诉",
+    "note": "Time+以后",
+    "confidence": "high",
+    "reason": "replaces the time expression"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "别人",
+    "corrected": "人们",
+    "before": "后，神农告诉",
+    "after": "一些植物能",
+    "note": "“别(的)” is for “a different type”, and “all else except the spoken one”",
+    "confidence": "high",
+    "reason": "replaces 别人 with 人们"
+   },
+   {
+    "ref": "p2/k0-1",
+    "op": "replace",
+    "original": "一些",
+    "corrected": "哪些",
+    "before": "农告诉别人",
+    "after": "植物能吃，",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the first indefinite item to 哪些"
+   },
+   {
+    "ref": "p2/k0-1",
+    "op": "replace",
+    "original": "一些",
+    "corrected": "哪些",
+    "before": "植物能吃，",
+    "after": "植物不能吃",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the second indefinite item to 哪些"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1058,
+  "completion_tokens": 395,
+  "total_tokens": 1453,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1055,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 151,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

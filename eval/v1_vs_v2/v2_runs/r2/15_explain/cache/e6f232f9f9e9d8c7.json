@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nITEMS:\n\n[I37] 【古代的时候】   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I38] 一个男孩子跟【他】的妈妈住在中国   correction: (comment, no correction)   strength: error\n  checker's note: the story starts with a pronoun: introduce the character first\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: 有一个孩子和他的妈妈[+住在一起]\n  her past correction: 他跟他的妈妈住在一个小房子[+里] — her note: 在Place\n  her past correction: [-他]跟他的妈妈住在一个小房子\n\n[I39] 所以孟子老是祭拜【^】   correction: ∅ → 他们   strength: suggestion\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧一直祭拜 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: [-所以他们]祭拜 — her note: there is no cause-effect relationship\n  her past correction: 所以孟子[老是→一直]在学习 — her note: “老是“ for something negative, used to complain\n\n[I40] 但是城市【有才】两个学校   correction: 有才 → 才有   strength: error\n  checker's note: 才 normally comes before 有 here\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: [去→去了]一个最好的学校 — her note: 了completed\n  her past correction: 而是因为[学校→学业]很难\n  her past correction: ⟦不是商店而是学校⟧ — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 商店is not conventionally related to对教育有好处\n\n[I41] 但是城市有才两【个】学校   correction: 个 → 所   strength: error\n  checker's note: 所 is the measure word for schools\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: 而是因为[学校→学业]很难\n  her past correction: [去→去了]一个最好的学校 — her note: 了completed\n  her past correction: ⟦不是商店而是学校⟧ — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 商店is not conventionally related to对教育有好处",
+ "salt": "repeat-run2",
+ "output": {
+  "items": [
+   {
+    "item_id": "I37",
+    "explanation": "古代 is the setting, so use 在古代 before the action.",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I38",
+    "explanation": "His mother appears for the first time here, so introduce her with a noun phrase, such as 妈妈, rather than only using 他.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I39",
+    "explanation": "It would be more natural to say 他们 to include both 孟子 and his mother.",
+    "dimension": "coherence_reference",
+    "corrected": "他们",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I40",
+    "explanation": "Put 才 before 有: 才有 means “there are only.”",
+    "dimension": "grammar",
+    "corrected": "才有",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I41",
+    "explanation": "Use 所 for schools: 一所学校. 个 is not the usual measure word for 学校.",
+    "dimension": "word_choice",
+    "corrected": "所",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1533,
+  "completion_tokens": 476,
+  "total_tokens": 2009,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1530,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 227,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

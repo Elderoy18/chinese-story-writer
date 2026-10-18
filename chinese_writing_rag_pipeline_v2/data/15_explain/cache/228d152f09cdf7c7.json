@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nITEMS:\n\n[I0] 【孟子】小的时候   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 孟子: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧小的时候 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子⟧出生以后 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子是孩子⟧ — her note: no logic relationship with the preceding or following sentences\n\n[I1] 孟子和他的朋友喜欢【玩在墓地里】   correction: 玩在墓地里 → 在墓地里玩   strength: error\n  checker's note: 在 + Place comes before the action: 在Place + V.\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: ⟦孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜⟧ — her note: loosely connected with the preceding sentence\n  her past correction: 孟子一直跟他的朋友⟦去了⟧墓地祭拜 — her note: no了for routine/habit\n  her past correction: 孟子老是想[玩玩→玩] — her note: V.V. is used to make requests or plans\n\n[I2] 【装】祭拜   correction: 装 → 装作   strength: error\n  checker's note: 装作 is needed before a verb phrase\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 在墓地[-做]祭拜\n  her past correction: [+就]开始祭拜 — her note: 才 Num.就V.\n  her past correction: 而是[-他]祭拜\n\n[I3] 跟妈妈搬家【^】   correction: ∅ → 了   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 所以妈妈跟孟子一起搬家[+了] — her note: 了completed\n  her past correction: [+就]跟孟母一起搬家三次 — her note: 才 Num.就V.\n  her past correction: 孟母⟦老是⟧搬家 — her note: “老是“ for something negative, used to complain\n\n[I4] 而是【因为】妈妈认为他们的家离墓地太近   correction: 因为 → (delete)   strength: suggestion\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧和他的妈妈住在离墓地很近 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: 孟子和他的妈妈住在离墓地很近[+的地方] — her note: 住在+Place\n  her past correction: 他的妈妈[不想跟他的朋友去墓地→不想让他跟朋友去墓地] — her note: otherwise it means his mother didn’t want to go with his friend to the graveyard.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I0",
+    "explanation": "孟子 appears for the first time, so please introduce him briefly with an identifying noun phrase, not only his name.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I1",
+    "explanation": "墓地 is the location, so use 在+Place before the action: 在墓地里玩.",
+    "dimension": "grammar",
+    "corrected": "在墓地里玩",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I2",
+    "explanation": "装作 is needed before a verb phrase such as 祭拜. 装 alone cannot directly introduce this action.",
+    "dimension": "grammar",
+    "corrected": "装作",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I3",
+    "explanation": "It would be clearer to use 了 because the move is completed in the story: 搬家了.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I4",
+    "explanation": "It would be more natural to say 而是妈妈认为…… directly. 而是 already introduces the real reason, so 因为 is unnecessary here.",
+    "dimension": "coherence_connectors",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1656,
+  "completion_tokens": 365,
+  "total_tokens": 2021,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1653,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 85,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

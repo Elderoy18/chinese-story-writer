@@ -1,0 +1,75 @@
+{
+ "input": "CURRENT SCENE:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nITEMS:\n\n[I123] 孟子在那个商店也【找了】到工作   correction: 找了 → 找到了   strength: error\n  checker's note: her pattern: 找了 -> 找到了 (corrected 3/5 in train)\n  rule card (search_find, Vocabulary): 找 means “look for.” Use 找到 when the person successfully finds something.  Pattern: <wrong> → <correct>: the person successfully finds <object>, so use 找到, not 找.  Her terms: 找look for vs.找到find\n  her past correction: 一个人正好[找了→找到了]神农 — her note: 找look for vs.找到find\n  her past correction: 孟母找到一个[打工→打工的工作]\n  her past correction: 孟子不是[-在]看商店的员工 — her note: here is not emphasizing “ongoing”\n\n[I124] 可是不是做衣服的工作【，而是喜欢的工作】   correction: ，而是喜欢的工作 → (delete)   strength: suggestion\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: [-和]她也会做她最喜欢的兴趣爱好 — her note: 和cannot connect clauses\n  her past correction: 和[-她]也会做她最喜欢的兴趣爱好 — her note: redundant\n  her past correction: 和她也会做[-她]最喜欢的兴趣爱好 — her note: redundant\n\n[I125] 孟子【^】学习馆学了十五年   correction: ∅ → 在   strength: error\n  checker's note: location needs 在 before it\n  rule card (laoshi_negative_repetition, Vocabulary): 老是 means “always” and is used for something negative or to complain; for a neutral or positive repeated action, use 一直 or 常常 instead.  Pattern: <老是 + action> → <一直/常常 + action>: the action is neutral or positive, not something negative to complain about, so do not use 老是.  Her terms: 老是\n  her past correction: 孟子[+还是]从早到晚努力学习\n  her past correction: 孟子从早到晚[+都]努力学习\n  her past correction: 所以孟子[老是→一直]在学习 — her note: “老是“ for something negative, used to complain\n\n[I126] 对他【^】很多好处   correction: ∅ → 有   strength: error\n  checker's note: 对他有很多好处 needs 有\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 这些植物对身体[+有]好处\n  her past correction: 因为他怕[+有]毒\n  her past correction: 他[+的]朋友帮他\n\n[I127] 他【是大人的时候】   correction: 是大人的时候 → 长大后   strength: error\n  checker's note: 长大后 is the natural time expression\n  rule card (fixed_expressions, Vocabulary): Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place.  Pattern: <wrong> → <correct>: use the established expression <correct>, not the literal/nonstandard combination <wrong>.  Her terms: 从 + Place, 制定规定, 自然规律, Subj.算是Obj., 只/不过/才(+num.) + 而已\n  her past correction: [是大人的时候→长大以后]\n  her past correction: [大人的时候→长大以后]\n  her past correction: [长大的时候→长大以后]\n\n[I128] 【他】成为很有名的哲人   correction: 他 → (delete)   strength: error\n  checker's note: 他 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [他成为很有名的老师→哲学家]\n  her past correction: [-他]难怪成为了一个很聪明的哲学家\n  her past correction: [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为\n\n[I129] 他成为【^】很有名的哲人   correction: ∅ → 了   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他成为[+了]哲学家\n  her past correction: [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为\n  her past correction: 成为很聪明[+的哲学家]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I123",
+    "explanation": "孟子 successfully finds the job, so use 找到find, not 找look for.",
+    "dimension": "word_choice",
+    "corrected": "找到了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I124",
+    "explanation": "It would be more natural to delete ，而是喜欢的工作. This part is redundant because the sentence already says what kind of job it was not.",
+    "dimension": "other",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I125",
+    "explanation": "Use 在+Place before an action location: 在学习馆学了十五年.",
+    "dimension": "grammar",
+    "corrected": "在",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I126",
+    "explanation": "Use 有 in this verb structure: 对他有很多好处.",
+    "dimension": "grammar",
+    "corrected": "有",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I127",
+    "explanation": "Use the established expression 长大后, not the literal combination 是大人的时候.",
+    "dimension": "word_choice",
+    "corrected": "长大后",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I128",
+    "explanation": "孟子 is already clear from the previous clause, so delete 他; Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I129",
+    "explanation": "It would be more natural to add 了 because becoming a famous philosopher is a completed change in the story (了completed).",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1940,
+  "completion_tokens": 337,
+  "total_tokens": 2277,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1937,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

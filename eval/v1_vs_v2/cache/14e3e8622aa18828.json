@@ -1,0 +1,114 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThis scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's feedback items:\n1. [Vocabulary, suggestion] 他发现这个口味 → 他有这个口味 -- It would be more natural to say 有 because a preference is something a person has; 发现 means to discover something.\n2. [Vocabulary, error] 一百岁时候 → 一百岁的时候 -- 一百岁的时候 is the established expression for “when [someone was] one hundred years old.”\n3. [Vocabulary, error] 不小心吃了毒的花 → 不小心吃了有毒的花 -- Here the structure needs an Adj. before 花. 有毒的 means “poisonous,” while 毒的 is not the usual form here.\n4. [Vocabulary, suggestion] 什么植物是毒 → 什么是毒 -- It would be more natural to omit 植物 here because the plants are already clear from 什么植物是药.\n5. [Vocabulary, error] 什么植物是毒 → 什么植物有毒 -- Here the structure needs an Adj. form. 有毒 means “poisonous”; 是毒 is not natural for describing a plant.\n6. [Coherence: reference, error] 一吃就开始死 → 一吃就开始死了 -- Use 了 after 死 to show the death is completed.\n7. [Coherence: connectors, error] 一吃就开始死 → 一吃就死 -- 一吃就死 is the natural result pattern. Do not use 开始 with 死 here.\n8. [Content, error] 但是生病时候告诉人什… → 但是生病的时候告诉人什… -- Use 生病的时候 for this time expression; 的 comes before 时候.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The clause should be deleted because it has no coherent link to the surrounding events, and changing 发现 to 有 does not solve that."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "的时候 is required after the multisyllabic age expression 一百岁."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "毒 cannot directly modify 花 here; 有毒的花 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "什么是毒 is grammatical, but it changes the intended meaning from which plants are poisonous to what poison is."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Plants should be described as 有毒, not as 是毒."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Adding 了 does not fix the problem that 死 is instantaneous and cannot follow 开始."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Removing 开始 makes the clause grammatical, but it incorrectly changes the intended event from becoming unwell to dying."
+   },
+   {
+    "n": 8,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "生病的时候 correctly requires 的, but the displayed clause is cut off and therefore is not a complete corrected unit."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2282,
+  "completion_tokens": 1753,
+  "total_tokens": 4035,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 631,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1283,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

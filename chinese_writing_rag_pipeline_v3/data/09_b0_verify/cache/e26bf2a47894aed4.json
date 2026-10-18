@@ -1,0 +1,66 @@
+{
+ "input": "Scene:\n他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nCorrections to check:\n1. 他们住才一月就又搬家  →  他们才住了一个月就又搬家了   [coherence: temporality]\n2. 古代的时候  →  在古代   [grammar]\n3. 但是孟子老是跟这些卖东西的人常常玩儿  →  但是孟子老是跟他们玩儿   [coherence: reference]\n4. 因为她恐怕儿子会成为跟他们很像  →  因为她恐怕儿子会变得跟他们很像   [vocabulary]\n5. 她告诉了孟子  →  她告诉孟子   [coherence: temporality]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "The duration expression needs aspect marking here: 住了一个月."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "古代的时候 is already a grammatical and natural expression."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "Using 老是 and 常常 together is redundant; the pronoun itself is not the problem."
+   },
+   {
+    "n": 4,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "成为 cannot naturally take 跟他们很像 as its complement, whereas 变得 can."
+   },
+   {
+    "n": 5,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "告诉了孟子 is grammatical before quoted speech, although dropping 了 is also natural."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 605,
+  "completion_tokens": 733,
+  "total_tokens": 1338,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 496,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

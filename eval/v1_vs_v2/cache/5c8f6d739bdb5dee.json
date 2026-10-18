@@ -1,0 +1,125 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThis scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这个口味：这种花的味道，口味 usually refers to a food’s flavour or a person’s preference; this context needs a noun phrase that specifies the flower whose taste he notices.\n2. [Grammar & Vocabulary, error] 一百岁时候：一百岁的时候，A multi-syllable time expression before 时候 requires the particle 的.\n3. [Grammar & Vocabulary, error] 毒的花：有毒的花，Use 有毒的 to describe a poisonous plant; 毒 cannot directly modify a noun in this way.\n4. [Grammar & Vocabulary, error] 开始死：快要死了，Death is an endpoint, so 开始死 is not natural here; 快要死了 expresses that he is close to dying.\n5. [Grammar & Vocabulary, error] 是毒：有毒，Use 有毒 to describe a poisonous plant, rather than 是毒.\n6. [Coherence: reference, error] Coherence (Reference): 人：人们，Use 人们 for the concrete group of people whom he tells; 人 is a generic noun and does not naturally refer to this group.\n7. [Coherence: temporality, error] Coherence (Temporality): 发现：发现了，Use 了 for the completed discovery in this past narrative event.\n8. [Coherence: temporality, error] Coherence (Temporality): 告诉：告诉了，Use 了 because telling the people is presented as a completed event in the story.\n9. [Coherence: connectors, error] Coherence (Conjunction): 但是：delete，但是 introduces contrast, but being ill does not contrast with telling people about poisonous and medicinal plants.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The whole “他发现这个口味” should be deleted because it has no coherent connection to the surrounding events; replacing the noun phrase does not solve that."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "一百岁 is multisyllabic, so it requires 的 before 时候."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "毒 cannot directly modify 花 here; 有毒的花 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "死 is an instantaneous endpoint, so 开始死 is inappropriate; 快要死了 is a valid correction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Plants are described as 有毒, not as 是毒."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "人 cannot refer to this concrete group of people under the teacher's standard; 人们 is required."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The problem is that the entire discovery clause is unrelated and should be deleted, not that 发现 merely lacks 了."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "告诉 does not necessarily require 了 here, and the teacher's corrected version keeps it without 了."
+   },
+   {
+    "n": 9,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "但是 is appropriate when the clause is correctly formed as “但是即使他生病了，也告诉……”; it should not be deleted."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2305,
+  "completion_tokens": 2607,
+  "total_tokens": 4912,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 654,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

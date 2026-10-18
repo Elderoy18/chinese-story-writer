@@ -1,0 +1,47 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “也看到了很多人吃植物”: (nothing) → ，\n- in “神农一走路就走到了”: 路 → (deleted)\n- in “因为他想知道什么植物能吃”: 他 → 神农   [her note: the first他is a bit ambiguous]\n- in “可是一些的人一吃植物”: 的 → (deleted)   [her note: no的]\n- in “一个人正好找了神农”: 找了 → 找到了   [her note: 找look for vs.找到find]\n\nScene to review:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to say “in ancient times.” 古代的时候 is not the usual expression here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "一天，神农正在路上走",
+    "corrected": "一天，他正在路上走",
+    "explanation": "神农 was named in the previous sentence, and no other person has been introduced yet, so use 他 rather than repeating the name."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "一看很多人正在吃一些植物",
+    "corrected": "看到了很多人正在吃一些植物",
+    "explanation": "一看 does not mean “saw” by itself in this sentence. Use 看到 to say that he saw something; 了 shows that the seeing happened."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1254,
+  "completion_tokens": 1745,
+  "total_tokens": 2999,
+  "prompt_tokens_details": {
+   "cached_tokens": 1045,
+   "cache_write_tokens": 206,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1537,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

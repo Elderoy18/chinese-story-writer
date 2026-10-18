@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 蓝衣男人说：“这个植物除了很好吃以外，我也不知道。”\nquote: 这个植物除了很好吃以外，我也不知道\npart p0: fix [ref p0/k0-1] 除了知道这个植物很好吃以外，我也不知道叫什么",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "这个植物除了很好吃",
+    "corrected": "除了知道这个植物很好吃",
+    "before": "",
+    "after": "以外，我也",
+    "note": "",
+    "confidence": "high",
+    "reason": "moves the object into 知道 and adds 知道"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "叫什么",
+    "before": "，我也不知道",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the unknown name after 不知道"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1000,
+  "completion_tokens": 231,
+  "total_tokens": 1231,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 106,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

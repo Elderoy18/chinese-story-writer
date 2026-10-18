@@ -1,0 +1,42 @@
+{
+ "input": "Scene:\n你不是当数学家，而是当哲学家，不能当卖东西的人。所以他们又搬家。在他们第三个家，孟子学了怎么祭拜。妈妈感觉这个地方适合他们，告诉了孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。\n\nCorrections to check:\n1. 所以他们又搬家  →  所以他们又搬家了   [coherence: temporality]\n2. 在他们第三个家  →  在他们的第三个家   [grammar]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "The zero-aspect form “又搬家” is acceptable in this narrative context."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "“在他们第三个家” is acceptable, although adding “的” is more explicit and natural."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 509,
+  "completion_tokens": 312,
+  "total_tokens": 821,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 201,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

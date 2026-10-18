@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “因为他们吃毒”: 因为他们吃毒 → 他们吃的植物有毒\n- in “老的人叫神农”: 老的人 → 有一位叫神农的老人\n- in “人们不知道什么植物是不是能吃的”: 什么植物是不是能吃的 → 什么植物是能吃的，什么植物是不能吃的\n- in “植物他觉得好吃得很”: 植物 → 什么植物？一种绿色的植物\n- in “因为大家知道什么植物不能吃”: 因为 → 这样   [her note: not “because”]\n\nScene to review:\n古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to say that something happened in ancient times. 古代的时候 is not the usual expression here."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "什么植物能吃，什么植物不能吃",
+    "corrected": "什么植物是能吃的，什么植物是不能吃的",
+    "explanation": "When contrasting which plants are edible and which are not, use 是能吃的 and 是不能吃的."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他们吃了毒",
+    "corrected": "他们吃了有毒的植物",
+    "explanation": "毒 by itself is not the thing the people ate here. Say that they ate poisonous plants."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "有一个老人叫神农，他什么植物都觉得好吃",
+    "corrected": "有一个老人叫神农，什么植物都觉得好吃",
+    "explanation": "After introducing 神农 in the same sentence, omit the repeated subject pronoun. The omitted subject still clearly refers to 神农."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "如果他们还怕吃毒，不会吃他喜欢的植物",
+    "corrected": "如果他们还怕吃有毒的植物，就不会吃他喜欢的植物",
+    "explanation": "Say 吃有毒的植物 rather than 吃毒. With 如果, use 就 in the result clause to show the condition and its result."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1329,
+  "completion_tokens": 1882,
+  "total_tokens": 3211,
+  "prompt_tokens_details": {
+   "cached_tokens": 1326,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

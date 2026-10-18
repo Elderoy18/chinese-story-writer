@@ -1,0 +1,52 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 人们不知道什么植物是不是能吃的  →  什么植物是不是能吃的 → 什么植物是能吃的，什么植物是不能吃的\n- 因为他们常常生病了  →  了 → (delete)  (no了for routine/habit)\n- 在古代有一个神农  →  一个神农 → 一个叫神农的老人\n- 神农开始找我们可以吃的植物  →  找我们可以吃的植物 → 找到可以吃的植物\n- 他们搬家每次学到了比较多  →  他们搬家每次学到了比较多 → 每次搬家都学到了很多知识\n- 比方说  →  比方说 → (delete)  (是不是有用了。比方说is used to express “for example”, delete it)\n\nScene to review:\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "因为他的家人常常生病了",
+    "corrected": "因为他的家人常常生病",
+    "errors": [
+     {
+      "original": "了",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "常常 shows a repeated habit or condition, so do not use 了."
+     }
+    ]
+   },
+   {
+    "clause": "他们去很多不一样的地方",
+    "corrected": "他们去了很多不一样的地方",
+    "errors": [
+     {
+      "original": "去",
+      "correction": "去了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "This is a completed action in the story, so use 了."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1180,
+  "completion_tokens": 1701,
+  "total_tokens": 2881,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1177,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

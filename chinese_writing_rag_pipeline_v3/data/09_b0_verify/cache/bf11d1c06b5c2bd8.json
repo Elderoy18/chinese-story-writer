@@ -1,0 +1,42 @@
+{
+ "input": "Scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nCorrections to check:\n1. 古代的人很不知道什么植物能吃，也什么植物不能吃  →  古代的人不知道什么植物能吃，也不知道什么植物不能吃   [grammar]\n2. 吃不安全的植物对你的身体有坏处  →  吃不安全的植物对他们的身体有坏处   [coherence: reference]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "很不能 directly modify 不知道 here, and the second clause needs 不知道."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "Generic 你 is acceptable in a general statement, although 他们 more clearly refers to the people mentioned."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 515,
+  "completion_tokens": 371,
+  "total_tokens": 886,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 262,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子\n\nThe system's feedback items:\n1. [Grammar, error] …他的朋友喜欢玩在墓地里 → …他的朋友喜欢在墓地里玩 -- 墓地里 is the location, so use 在+Place before the action: 在墓地里玩.\n2. [Grammar, error] 装祭拜 → 装作祭拜 -- Use 装作 before a verb phrase. Say 装作祭拜.\n3. [Grammar, error] 跟妈妈搬家 → 跟妈妈搬家了 -- This move was completed in the past, so add 了 after 搬: 搬家了.\n4. [Grammar, suggestion] 而是因为妈妈认为他们… → 而是妈妈认为他们… -- It would be more natural to say 而是妈妈认为他们的家离墓地太近. 而是 already introduces the contrasting reason.\n5. [Coherence: reference, error] ⟦孟子⟧小的时候 -- 孟子 appears for the first time here, so please briefly introduce him with an identifying noun phrase, not only his name.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The location phrase must precede 玩 as 在墓地里玩, as the teacher marked."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "装祭拜 lacks the needed construction; 装作祭拜 is a grammatical way to express pretending to worship."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "This is a completed past move in the narrative, so 搬家了 correctly marks completion."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "不是因为……而是因为…… is already a correct and natural contrastive-reason structure."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "On first mention, the teacher requires a brief identifying introduction rather than only the name 孟子."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2034,
+  "completion_tokens": 1791,
+  "total_tokens": 3825,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 383,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1470,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

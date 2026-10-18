@@ -1,0 +1,117 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n在古代，一位叫神农的老人和他的家人决定一起爬山。爬山前，他们吃了很多植物，神农的儿子王朋吃了夹竹桃，就开始肚子疼。神农越来越紧张，因为王朋不停地哭。 这时，神农快速地跑上山。在上山的路上，神农吃了一个蘑菇，他觉得蘑菇很好吃，一点儿甜一点儿咸。神农决定跟家人回家，他要回家，所以王朋也可以吃一个蘑菇，那个蘑菇是药。在家，王朋吃了蘑菇吃了以后，王朋不再哭了。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "People do not know which plants are safe to eat and become sick after eating plants",
+    "verdict": "partly",
+    "evidence": [
+     "在古代，一位叫神农的老人和他的家人决定一起爬山。",
+     "爬山前，他们吃了很多植物，神农的儿子王朋吃了夹竹桃，就开始肚子疼。"
+    ],
+    "missing_part": "People did not know which plants were safe to eat.",
+    "details_left_out": [
+     "People often became sick after eating plants."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 decides to identify safe and unsafe plants and tries plants in the mountains",
+    "verdict": "partly",
+    "evidence": [
+     "在古代，一位叫神农的老人和他的家人决定一起爬山。",
+     "这时，神农快速地跑上山。",
+     "在上山的路上，神农吃了一个蘑菇，他觉得蘑菇很好吃，一点儿甜一点儿咸。"
+    ],
+    "missing_part": "神农's purpose and decision to find which plants were safe or unsafe, and trying different plants for that purpose.",
+    "details_left_out": [
+     "He climbed mountains."
+    ],
+    "out_of_order": true
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 finds 茶 and takes a record of it.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints",
+    "verdict": "partly",
+    "evidence": [
+     "爬山前，他们吃了很多植物，神农的儿子王朋吃了夹竹桃，就开始肚子疼。"
+    ],
+    "missing_part": "神农 tries 夹竹桃 and faints.",
+    "details_left_out": [],
+    "out_of_order": true
+   },
+   {
+    "id": "S5",
+    "core": "A person in blue gives 灵芝 to 神农, who feels better after eating it",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "A person in blue gives 灵芝 to 神农, and 神农 feels better after eating 灵芝.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "A person in brown comes by and talks with 神农",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Another person in brown comes by and has a conversation with 神农.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 takes a record of both 灵芝 and 夹竹桃.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "爬山前，他们吃了很多植物，神农的儿子王朋吃了夹竹桃，就开始肚子疼。",
+    "problem": "王朋 is not part of the required story. This also changes the event: 神农, not his son, tries 夹竹桃, and 神农 faints rather than getting a stomach ache."
+   }
+  ],
+  "feedback": [
+   "At the beginning, before 神农 goes up the mountain, add that people did not know which plants were safe and became sick after eating some plants.",
+   "Before 神农 finds 茶, add that he wants to discover which plants are safe or unsafe and tries different plants for this reason.",
+   "After he starts testing plants in the mountains, add that 神农 finds 茶 and records it.",
+   "After finding and recording 茶, say that 神农 himself eats 夹竹桃 and faints.",
+   "After 神农 faints from 夹竹桃, add that a person in blue gives him 灵芝 and he feels better after eating it.",
+   "After 神农 feels better, add that another person in brown comes and talks with him.",
+   "After the conversation with the person in brown, add that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1070,
+  "completion_tokens": 2760,
+  "total_tokens": 3830,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1067,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1893,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 不是他喜欢学习写文字，而是他的爸爸喜欢他练习。\nquote: 不是他喜欢学习写文字，而是他的爸爸喜欢他练习\npart p0: fix [ref p0/k0-1] 写字，想要他练习\npart p1: comment [ref p1/note] wrong information, his father did not appear in this story",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "写文字",
+    "corrected": "写字",
+    "before": "他喜欢学习",
+    "after": "，而是他的",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 写文字 to 写字"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "而是他的爸爸喜欢",
+    "corrected": "想要",
+    "before": "学习写文字，",
+    "after": "他练习",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the contrast and father-subject phrase with 想要"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "他的爸爸",
+    "corrected": "",
+    "before": "而是",
+    "after": "喜欢他练习",
+    "note": "wrong information, his father did not appear in this story",
+    "confidence": "high",
+    "reason": "comments that the father is incorrect story information"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1022,
+  "completion_tokens": 360,
+  "total_tokens": 1382,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 167,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

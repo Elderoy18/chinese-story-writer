@@ -1,0 +1,104 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 古代的时候  →  古代的时候 → 在古代\n- 吃一个植物以后  →  吃一个植物以后 → 吃了  (了completed)\n- 神农吃以后  →  ∅ → 了  (了completed)\n- 所以神农去了大山  →  神农 → (delete)  (redundant)\n- 他吃一个麻烦的植物  →  吃一个麻烦的植物 → 吃了很多奇怪的植物  (麻烦is not used to describe植物)\n- 也看到了很多人吃植物  →  ∅ → ，\n\nScene to review:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "古代的时候，有一个男人，他的名字是神农",
+    "corrected": "在古代，有一个男人，他的名字是神农",
+    "errors": [
+     {
+      "original": "古代的时候",
+      "correction": "在古代",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 在古代 to introduce this historical time setting."
+     }
+    ]
+   },
+   {
+    "clause": "他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处",
+    "corrected": "他看到了有很多人不知道哪个植物好吃，也不知道什么植物对他们的身体有好处",
+    "errors": [
+     {
+      "original": "你",
+      "correction": "他们",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The people being discussed are 很多人, so use 他们 rather than the listener-oriented 你."
+     }
+    ]
+   },
+   {
+    "clause": "这个问题神农觉得很糟糕，所以神农去了吃每种植物",
+    "corrected": "这个问题神农觉得很糟糕，所以去了吃每种植物",
+    "errors": [
+     {
+      "original": "神农",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The subject is still 神农 in the following linked clause, so it can be omitted."
+     }
+    ]
+   },
+   {
+    "clause": "有的时候，神农吃了很好吃的植物",
+    "corrected": "有的时候，神农吃很好吃的植物",
+    "errors": [
+     {
+      "original": "吃了",
+      "correction": "吃",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "有的时候 describes a habitual situation, so use the zero aspect form rather than 了."
+     }
+    ]
+   },
+   {
+    "clause": "有的时候，他吃了很危险的植物",
+    "corrected": "有的时候，他吃很危险的植物",
+    "errors": [
+     {
+      "original": "吃了",
+      "correction": "吃",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "有的时候 describes a habitual situation, so use the zero aspect form rather than 了."
+     }
+    ]
+   },
+   {
+    "clause": "他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了",
+    "corrected": "他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物",
+    "errors": [
+     {
+      "original": "了",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "会 is a modal verb, so the following action normally does not take sentence-final 了."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1181,
+  "completion_tokens": 3831,
+  "total_tokens": 5012,
+  "prompt_tokens_details": {
+   "cached_tokens": 1178,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3276,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

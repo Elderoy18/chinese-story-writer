@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this is the idiomatic time expression for a historical setting; the listed form is not natural here.\n2. [Grammar & Vocabulary, error] 城市有才两个学校：城市才有两所学校，restrictive 才 must come before the verb 有, and 所 is the usual measure word for schools.\n3. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，under the first-mention rule, introduce the character’s name together with who he is, rather than naming him only in the following sentence.\n4. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜：他不是祭拜，under the pronoun rule, use a pronoun for a recently mentioned character when no other male character competes as the referent.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "在古代 is the appropriate idiomatic expression for this historical-time setting."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "才 should precede 有 and schools need 所, but the correction does not make the teacher-required reference to 这个城市."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Introducing an unnamed boy and naming him in the next sentence with 他叫孟子 is natural and clear."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating 孟子 here is acceptable and does not require replacement with 他."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1127,
+  "completion_tokens": 1123,
+  "total_tokens": 2250,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1124,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 872,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0d4672217c"
+}

@@ -1,0 +1,75 @@
+{
+ "input": "CURRENT SCENE:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nITEMS:\n\n[I309] 这种【^】一定是做药的花   correction: ∅ → 花   strength: suggestion\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 和这个花[是毒→有毒]\n  her past correction: 他正好吃[一毒→一种有毒]的花\n  her past correction: 有的花[是毒→有毒]\n\n[I310] 神农【^】快生病   correction: ∅ → 很   strength: error\n  checker's note: 很快 means “soon”; 快 alone is not natural here\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n  her past correction: ⟦神农⟧看到很多人生病了 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 所以神农吃[+了]以后就生病了 — her note: 了completed\n\n[I311] 神农快生病【^】   correction: ∅ → 了   strength: error\n  checker's note: the illness began after the completed action\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 所以神农吃[+了]以后就生病了 — her note: 了completed\n  her past correction: 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n  her past correction: 神农没死[-了] — her note: 没+ V.\n\n[I312] 【快】给他一种红的灵芝   correction: 快 → 赶快   strength: error\n  checker's note: 赶快 is the adverb “quickly/hurriedly” here\n  her past correction: 给[+了]他一个灵芝 — her note: 了completed\n  her past correction: [给→给了]他一个灵芝 — her note: 了completed\n  her past correction: 那个人给[+了]他灵芝 — her note: 了completed\n\n[I313] 快给【^】他一种红的灵芝   correction: ∅ → 了   strength: error\n  checker's note: giving the lingzhi is a completed past action\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 给[+了]他一个灵芝 — her note: 了completed\n  her past correction: [给→给了]他一个灵芝 — her note: 了completed\n  her past correction: 那个人给[+了]他灵芝 — her note: 了completed\n\n[I314] 快给他【一种】红的灵芝   correction: 一种 → 一朵   strength: suggestion\n  checker's note: 一种 means a type; a single lingzhi needs an individual classifier\n  her past correction: 给[+了]他一个灵芝 — her note: 了completed\n  her past correction: [给→给了]他一个灵芝 — her note: 了completed\n  her past correction: 那个人给[+了]他灵芝 — her note: 了completed\n\n[I315] 他【没有病】   correction: 没有病 → 的病好了   strength: error\n  checker's note: 病好了 means that his illness recovered\n  rule card (no_le_with_mei, Coherence: temporality (了/着/在)): After 没/没有 with an action verb for an action that did not happen, use 没 + V. and do not add 了.  Pattern: <wrong> → <correct>: this action did not happen, so use 没 + V. with no 了 (no了in “没+V.”).  Her terms: 没+ V., no了in “没+V.”, verb is an action verb\n  her past correction: 和他[没病了→病好了] — her note: 没 +V., no了, the verb is an action verb\n  her past correction: [然后，不病→就好了] — her note: “病” is not a normal Adj., so it cannot be with 很 or 不\n  her past correction: [-和]他没病了 — her note: 和cannot link clauses",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I309",
+    "explanation": "It would be more natural to say 这种花: 这种 normally collocates with a noun such as 花.",
+    "dimension": "word_choice",
+    "corrected": "花",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I310",
+    "explanation": "Use 很 before 生病 here. 快生病 is not natural; 很生病 means he became very ill.",
+    "dimension": "word_choice",
+    "corrected": "很",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I311",
+    "explanation": "Becoming ill is a completed change in the story, so use 了 (了completed): 生病了.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I312",
+    "explanation": "Use 赶快 for “quickly/hurriedly” before 给. 快 alone is not natural in this position.",
+    "dimension": "word_choice",
+    "corrected": "赶快",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I313",
+    "explanation": "Giving the lingzhi is completed in the story, so 给 takes 了 (了completed): 给了.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I314",
+    "explanation": "It would be more natural to use the individual classifier 一朵 for one lingzhi. 一种 means one type or kind.",
+    "dimension": "word_choice",
+    "corrected": "一朵",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I315",
+    "explanation": "没有病 means he does not have an illness, but here he recovered after eating it. Use 的病好了 to show the change of state (了completed/change).",
+    "dimension": "coherence_temporality",
+    "corrected": "的病好了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1805,
+  "completion_tokens": 495,
+  "total_tokens": 2300,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1802,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 112,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

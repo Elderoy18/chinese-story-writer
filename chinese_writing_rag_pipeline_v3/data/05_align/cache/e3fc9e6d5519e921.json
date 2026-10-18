@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 因为他这么无，他们常常搬家。\nquote: 因为他这么无，他们常常搬家\npart p0: comment [ref p0/note] 无聊？add所以",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "replace",
+    "original": "无",
+    "corrected": "无聊",
+    "before": "因为他这么",
+    "after": "，他们常",
+    "note": "无聊？add所以",
+    "confidence": "low",
+    "reason": "reads 无聊？ as completing 无 to 无聊"
+   },
+   {
+    "ref": "p0/note",
+    "op": "insert",
+    "original": "",
+    "corrected": "所以",
+    "before": "他这么无，",
+    "after": "他们常常",
+    "note": "无聊？add所以",
+    "confidence": "high",
+    "reason": "adds 所以 before the result clause"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 985,
+  "completion_tokens": 258,
+  "total_tokens": 1243,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 128,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,125 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 古代的时候  →  古代的时候 → 在古代\n- 孟子和孟子的妈妈一直住在墓地的旁边  →  孟子 → (delete)\n- 孟子的妈妈每天从早到晚做工作  →  做 → (delete)\n- 他们搬到城市  →  搬到 → 搬到了  (了completed)\n- 孟子在墓地和祭拜跟其他孩子  →  和 → (delete)\n- 孟母害得孟子玩儿  →  玩儿 → 整天都很郁闷  (害得 + N/sb. + Harmful result, 玩儿is not harmful)\n\nScene to review:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "古代的时候",
+    "corrected": "在古代",
+    "errors": [
+     {
+      "original": "古代的时候",
+      "correction": "在古代",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 在古代 to mean “in ancient times.”"
+     }
+    ]
+   },
+   {
+    "clause": "孟子和孟母住了在靠墓地的家",
+    "corrected": "孟子和孟母住在靠墓地的家",
+    "errors": [
+     {
+      "original": "住了在",
+      "correction": "住在",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "住 describes a continuing state here, so do not use 了 before 在."
+     }
+    ]
+   },
+   {
+    "clause": "孩子才五岁就每天在墓地祭拜了",
+    "corrected": "他才五岁就每天在墓地祭拜",
+    "errors": [
+     {
+      "original": "孩子",
+      "correction": "他",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "孟子 was just mentioned, so use the pronoun 他 to refer to him again."
+     },
+     {
+      "original": "祭拜了",
+      "correction": "祭拜",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "每天 shows a routine action, so use no 了."
+     }
+    ]
+   },
+   {
+    "clause": "可是找不到，害得孟母没有钱",
+    "corrected": "可是找不到，害得她没有钱",
+    "errors": [
+     {
+      "original": "孟母",
+      "correction": "她",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "孟母 was just mentioned, so use 她 when referring to her again."
+     }
+    ]
+   },
+   {
+    "clause": "难怪她跟孩子搬家",
+    "corrected": "难怪她跟他搬了家",
+    "errors": [
+     {
+      "original": "孩子",
+      "correction": "他",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The child is Mengzi, who was mentioned earlier, so use 他 here."
+     },
+     {
+      "original": "搬",
+      "correction": "搬了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "This refers to the completed action of moving house, so add 了."
+     }
+    ]
+   },
+   {
+    "clause": "他们搬了到别一个城市找工作",
+    "corrected": "他们搬到了另一个城市找工作",
+    "errors": [
+     {
+      "original": "搬了到",
+      "correction": "搬到了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "Put 了 after 到 for the completed action: 搬到了."
+     },
+     {
+      "original": "别一个",
+      "correction": "另一个",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 另一个 to mean “another one.”"
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1166,
+  "completion_tokens": 3629,
+  "total_tokens": 4795,
+  "prompt_tokens_details": {
+   "cached_tokens": 1163,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3041,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

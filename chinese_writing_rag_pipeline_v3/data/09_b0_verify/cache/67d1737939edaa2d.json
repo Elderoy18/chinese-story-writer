@@ -1,0 +1,58 @@
+{
+ "input": "Scene:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nCorrections to check:\n1. 有一个老男人叫神农  →  有一个叫神农的老男人   [grammar]\n2. 神农在古代每一天看到了别的小镇人生病还是不舒服  →  他在古代每一天看到别的小镇人生病还是不舒服   [coherence: reference]\n3. 他下一天开始爬当地的山脉  →  他第二天开始爬当地的山脉   [vocabulary]\n4. 神农试一试每个植物  →  神农试了试每种植物   [coherence: temporality]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "The original clause is grammatical; the revision is only a stylistic rephrasing."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "no",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "“每一天看到了” is not appropriate for a habitual action, and the revision leaves this aspect problem unchanged."
+   },
+   {
+    "n": 3,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "“下一天” is understandable and acceptable, though “第二天” is more natural here."
+   },
+   {
+    "n": 4,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "The original can use a narrative-present reading, so adding 了 is not a necessary correction."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 583,
+  "completion_tokens": 1067,
+  "total_tokens": 1650,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 852,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

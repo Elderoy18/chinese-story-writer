@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代时候，人不知道他们能吃什么植物：古代的时候，人们\n- 所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears\n- 告诉人什么植物是安全什么是危险：是安全的，是危险的\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “古代时候” / Formula: 在 + time period / Correct: “在古代的时候” or simply “在古代”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “人不知道他们能吃什么植物” / Formula: 人们 + 不知道 + 什么植物 + 能不能吃；introduce a character on first mention / Correct: “在古代的时候，人们不知道什么植物能吃。神农是一位传说中的医生，他想帮助人们找到可以吃的植物。”\n3. [Grammar & Vocabulary, error] Incorrect phrase: “常常一吃就死” / Formula: subject + 常常/容易 + 一 + V1 + 就 + V2; the subject needs to be clear / Correct: “人们常常一吃到有毒的植物就会中毒，甚至死亡。”   “人” is too general here, and “一吃就死” sounds overly absolute.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “但是不知道为什么，没有办法” / Formula: 谁 + 不知道 + 为什么；谁 + 没有办法 + 做什么 / Correct: “可是人们不知道哪些植物有毒，也没有办法分辨。”   The original sentence does not clearly say who “不知道” and “没有办法” refers to.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “神农出去试一试很多种植物，告诉人什么植物是安全什么是危险” / Formula: 神农 + 尝试/试吃 + many kinds of plants +，想/为了 + 告诉 + 人们 + 哪些……，哪些…… / Correct: “有一天，神农出去试吃许多种植物，想告诉人们哪些植物是安全的，哪些是危险的。”   Use “人们,” not the vague noun “人,” and use “哪些……，哪些……” to contrast the two categories.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“古代时候” needs 的 (or can simply be “在古代”), as the teacher marked."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“人” should be “人们” for this concrete group, and “他们” is an unclear reference here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "With the people established in the preceding context, “常常一吃就死” is an acceptable zero-subject clause and need not be rewritten."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The omitted subject and the implied reasons/actions are recoverable from the immediately preceding context, so the original is acceptable."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The original needs “人们” and “安全的／危险的,” and the proposed version still does not briefly introduce 神农 on his first appearance."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2255,
+  "completion_tokens": 1958,
+  "total_tokens": 4213,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 604,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1600,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

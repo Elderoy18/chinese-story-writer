@@ -1,0 +1,68 @@
+{
+ "input": "CURRENT SCENE:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nITEMS:\n\n[I149] 因为他们常常搬【了】家   correction: 了 → (delete)   strength: error\n  checker's note: habitual action with 常常 does not take 了\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: [+所以]他们常常搬家 — her note: 无聊？add所以\n  her past correction: [-他们]搬家每次学到了比较多\n  her past correction: 他们⟦才搬了三次家⟧ — her note: 才 + Num. to express “small, few”, but here搬了三次家 is a large quantity\n\n[I150] 【孟母】三迁   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 孟母: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧和孟母住在一起 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子⟧跟他妈妈常常搬家 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子⟧的妈妈跟孟子一起住在中国 — her note: better to briefly introduce “孟子” when this character first appears\n\n[I151] 妈妈教孟子很多【技能】   correction: 技能 → 东西   strength: suggestion\n  rule card (loose_clause_connection, Coherence: connectors): Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.  Pattern: <wrong> → <correct>: use <connector/purpose/sequence phrase> to show how this sentence connects to the previous clause or sentence.\n  her past correction: ⟦妈妈让孟子每天上课，孟子长得很乖，很聪明⟧ — her note: loosely connected, unclear between-sentence relationship\n  her past correction: 孟子从早到晚[学了新的东西→学习新知识]\n  her past correction: 孟母发现[孩子们→孟子]老是用功工作 — her note: “孩子们” is ambiguous\n\n[I152] 【先她】让孟子跟朋友玩儿   correction: 先她 → 她先   strength: error\n  checker's note: the subject comes before 先\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧不是跟朋友玩 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: 孟子的妈妈爱[-她的]小孩子\n  her past correction: [-孟子老是]想玩玩\n\n[I153] 然后教他怎么买又便宜【^】又好质量的东西   correction: ∅ → 质量   strength: suggestion\n  rule card (ambiguous_pronoun, Coherence: reference): Use 他/她/它/他们 only when it is clear who or what they refer to. If more than one person or thing is possible, repeat the name or use a clear noun phrase.  Pattern: <wrong pronoun> → <clear name/noun phrase>: <pronoun> is ambiguous; it can refer to <possible referent(s)>.\n  her past correction: 所以[-他]看什么就吃什么 — her note: this is ambiguous, as the topic is他的朋友\n  her past correction: 这个天他请他们[-给他]建议怎么减轻他的家庭的负担 — her note: too many他\n  her past correction: 因为[+他]老是去墓地吃祭品\n\n[I154] 然后教他怎么买又便宜又【好质量】的东西   correction: 好质量 → 质量好   strength: error\n  checker's note: quality adjective order is reversed\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 然后忙着偷走[优秀→优质]的梨子\n  her past correction: 所以[-他]看什么就吃什么 — her note: this is ambiguous, as the topic is他的朋友\n  her past correction: 他在这个地方学到了[害得习惯→坏习惯] — her note: 害得 + clause (harmful result)",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I149",
+    "explanation": "常常 shows a habitual action, not one completed action in the story, so do not use 了completed here.",
+    "dimension": "coherence_temporality",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I150",
+    "explanation": "孟母 appears for the first time, so please briefly introduce her, for example as 孟子的妈妈.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I151",
+    "explanation": "It would be more natural to say 东西 here. 妈妈教孟子很多东西 connects better to the examples that follow.",
+    "dimension": "coherence_connectors",
+    "corrected": "东西",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I152",
+    "explanation": "Put the subject before 先: 她先让孟子跟朋友玩儿.",
+    "dimension": "grammar",
+    "corrected": "她先",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I153",
+    "explanation": "It would be more natural to add 质量: 又便宜又质量好 clearly describes the things he buys.",
+    "dimension": "coherence_reference",
+    "corrected": "质量",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I154",
+    "explanation": "好质量 does not normally collocate with 东西. Use 质量好 instead.",
+    "dimension": "word_choice",
+    "corrected": "质量好",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1773,
+  "completion_tokens": 307,
+  "total_tokens": 2080,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1770,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

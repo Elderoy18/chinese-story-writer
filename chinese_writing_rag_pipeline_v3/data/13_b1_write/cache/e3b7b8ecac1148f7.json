@@ -1,0 +1,68 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “孟子和孟子的妈妈一直住在墓地的旁边”: 孟子 → (deleted)\n- in “孟子的妈妈每天从早到晚做工作”: 做 → (deleted)\n- in “他们搬到城市”: 搬到 → 搬到了   [her note: 了completed]\n- in “孟子在墓地和祭拜跟其他孩子”: 和 → (deleted)\n- in “孟母害得孟子玩儿”: 玩儿 → 整天都很郁闷   [her note: 害得 + N/sb. + Harmful result, 玩儿is not harmful]\n\nScene to review:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to mean “in ancient times.” 古代的时候 is not the appropriate expression here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子和孟母住了在靠墓地的家。",
+    "corrected": "有一个孩子叫孟子，他和妈妈住在靠近墓地的家里。",
+    "explanation": "When a character first appears, introduce who the person is, such as 有一个孩子叫孟子. For a continuing living state, use 住在 before the place and do not use 了."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孩子才五岁就每天在墓地祭拜了。",
+    "corrected": "他才五岁，就每天在墓地祭拜。",
+    "explanation": "孟子 was just mentioned, so use 他 rather than repeating 孩子. 每天 describes a routine, so do not use 了."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "害得孟母没有钱",
+    "corrected": "害得没有钱",
+    "explanation": "孟母 is already the subject of this sentence, so do not repeat her name. The result clearly happens to the same person."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "她跟孩子搬家",
+    "corrected": "她跟孩子搬了家",
+    "explanation": "Moving house is a completed action in this story, so use 了 after 搬."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他们搬了到别一个城市找工作。",
+    "corrected": "他们搬到了另一个城市找工作。",
+    "explanation": "For a completed move to a destination, put 了 after 到: 搬到了. Say 另一个城市, not 别一个城市."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1297,
+  "completion_tokens": 3723,
+  "total_tokens": 5020,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1294,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3274,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

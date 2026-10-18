@@ -1,0 +1,58 @@
+{
+ "input": "Scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nCorrections to check:\n1. 虽然他没有朋友  →  他没有朋友   [coherence: connectors]\n2. 他的同学们老是对他开玩笑了  →  他的同学们老是对他开玩笑   [coherence: temporality]\n3. 孟子妈妈看了他的同学们对孟子不好的影响  →  孟子妈妈看到了他的同学们对他的不好的影响   [grammar]\n4. 所以孟子和孟子妈妈搬家了  →  孟子和孟子妈妈搬家了   [coherence: connectors]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "connectors",
+    "reason": "虽然 normally needs a following concessive main clause, which is missing here."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "老是 describes a habitual action and is not appropriate with sentence-final 了 in this context."
+   },
+   {
+    "n": 3,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "看了他的同学们对孟子不好的影响 is acceptable, although 看到了 is more natural."
+   },
+   {
+    "n": 4,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "connectors",
+    "reason": "所以 correctly links the move to the preceding reason and should not be removed."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 598,
+  "completion_tokens": 671,
+  "total_tokens": 1269,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 467,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

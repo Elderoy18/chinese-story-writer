@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 神农写植物的书，因为大家知道什么植物不能吃，特别是毒的植物。\nquote: 因为大家知道什么植物不能吃，特别是毒的植物\npart p0: fix [ref p0/k0] 这样 ; notes: not “because”\npart p1: fix [ref p1/k0] 有毒的",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "因为",
+    "corrected": "这样",
+    "before": "",
+    "after": "大家知道什",
+    "note": "not “because”",
+    "confidence": "high",
+    "reason": "replaces the causal connector"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "毒的",
+    "corrected": "有毒的",
+    "before": "，特别是",
+    "after": "植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 有 to modify 毒"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1016,
+  "completion_tokens": 108,
+  "total_tokens": 1124,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。\n\nITEMS:\n\n[I293] 我吃了一【个】黄色的花   correction: 个 → 朵   strength: error\n  checker's note: 花 normally uses the classifier 朵\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他发现[-了]黄色花有毒 — her note: 发现is a mental state verb, no了\n  her past correction: 他吃[+了]一片花瓣 — her note: 了completed\n  her past correction: 他[吃→吃了]一个香香的花 — her note: 了completed\n\n[I294] 【^】名字是夹竹桃   correction: ∅ → 它的   strength: error\n  checker's note: the flower needs a possessive subject for 名字\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 另外一个植物[-是]叫夹竹桃\n  her past correction: 夹竹桃是[+有]毒的\n  her past correction: 小王和那筐梨子倒[+了] — her note: 了completed/change\n\n[I295] 就觉得这种植物对我的【脑】有坏处   correction: 脑 → 大脑   strength: error\n  checker's note: 脑 is not normally used alone for the brain\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 这些植物对身体[+有]好处\n  her past correction: 他看了很多人吃[+有]毒的植物\n  her past correction: 毒[+植物]他吃很多次\n\n[I296] 一【个】灵芝和一个男人正好在我的旁边   correction: 个 → 株   strength: error\n  checker's note: 灵芝 normally uses 株 as its classifier\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 一个人[看→看到]一个灵芝 — her note: 看look vs.看到see\n  her past correction: [他以后→然后]正好看一个灵芝 — her note: Time+以后\n  her past correction: 正好有一个人[帮他→给他]吃一个灵芝\n\n[I297] 【因为】夹竹桃有毒   correction: 因为 → (delete)   strength: error\n  checker's note: it unnecessarily starts a separate reason fragment\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 夹竹桃是[+有]毒的\n  her past correction: 可是[-吃]夹竹桃有毒\n  her past correction: 夹竹桃[是毒→有毒]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I293",
+    "explanation": "Use the classifier 朵 for flowers: 一朵黄色的花.",
+    "dimension": "grammar",
+    "corrected": "朵",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I294",
+    "explanation": "名字 needs a possessive subject here. Say 它的名字是夹竹桃.",
+    "dimension": "grammar",
+    "corrected": "它的",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I295",
+    "explanation": "Use 大脑, not 脑 alone, when you mean the brain.",
+    "dimension": "grammar",
+    "corrected": "大脑",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I296",
+    "explanation": "Use 株 as the classifier for 灵芝: 一株灵芝.",
+    "dimension": "word_choice",
+    "corrected": "株",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I297",
+    "explanation": "因为 introduces a reason and normally needs a following result. Here this is a separate sentence, so delete 因为.",
+    "dimension": "word_choice",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1652,
+  "completion_tokens": 360,
+  "total_tokens": 2012,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1649,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 127,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

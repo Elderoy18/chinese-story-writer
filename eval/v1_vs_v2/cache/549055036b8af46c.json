@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar, error] 他的妈妈找到孟子一个老师 → 他的妈妈给孟子找到一个老师 -- Use 给孟子 to show that his mother found a teacher for Mencius.\n2. [Grammar, error] 跟老师孟子学最重要的文学 → 孟子跟老师学最重要的文学 -- 孟子 should be the subject before 跟老师. Say 孟子跟老师学.\n3. [Vocabulary, error] 他想他的朋友 → 他想念他的朋友 -- 想念 means “to miss” someone. Use 想念 for missing his friends.\n4. [Vocabulary, error] 因为他不要离开他的城市 → 因为他不想离开他的城市 -- 不想离开 means “does not want to leave.” 不要 is usually used for a command or refusal.\n5. [Coherence: reference, error] 他想他的朋友 → 想他的朋友 -- 他 is already clear from the previous clause, so delete it; Chinese uses zero form here.\n6. [Coherence: reference, error] 因为他不要离开他的… → 因为不要离开他的… -- 他 is already clear in this close continuation, so delete it; Chinese uses zero form here.\n7. [Coherence: 了 / 着 / 在, error] 所以他成为哲学家 → 所以他成为了哲学家 -- Becoming a philosopher is a completed change in the story, so it takes 了completed.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "找到 needs 给孟子 to mark the beneficiary, and 一个老师 is required."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "Putting 孟子 before 跟老师 correctly supplies the subject, but 最重要的文学 remains an issue the teacher removed."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "想朋友 can correctly mean “miss one’s friends,” and the teacher retained this wording."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "For not wanting to leave, 不想离开 is needed rather than 不要离开."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The pronoun 他 is acceptable here, and the teacher's correction also uses 他 in 原来他想他的朋友."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The displayed text is cut off, and 他 is acceptable as the subject of the 因为-clause; deleting it also leaves 不要离开 uncorrected."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Becoming a philosopher is a completed change in the narrative, so 成为了 is appropriate."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2222,
+  "completion_tokens": 2104,
+  "total_tokens": 4326,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 571,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1655,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

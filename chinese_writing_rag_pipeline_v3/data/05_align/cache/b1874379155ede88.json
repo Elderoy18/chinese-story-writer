@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 人类创造文明到底从哪里由此而来啊，看起一点文明都没有。\nquote: 看起一点文明都没有\npart p0: fix [ref p0/k0] 看起来一点儿都不文明 ; notes: “文明” can be an Adj., meaning “civilized”.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "看起",
+    "corrected": "看起来",
+    "before": "",
+    "after": "一点文明都",
+    "note": "",
+    "confidence": "high",
+    "reason": "completes 看起来"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "一点",
+    "corrected": "一点儿",
+    "before": "看起来",
+    "after": "文明都没",
+    "note": "",
+    "confidence": "high",
+    "reason": "uses the corrected 一点儿 form"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "不",
+    "before": "一点儿",
+    "after": "文明都没",
+    "note": "“文明” can be an Adj., meaning “civilized”.",
+    "confidence": "high",
+    "reason": "adds negation before adjectival 文明"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1005,
+  "completion_tokens": 165,
+  "total_tokens": 1170,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

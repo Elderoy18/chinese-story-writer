@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。\nquote: 不是人吵架，就是都叫\npart p0: fix [ref p0/k0-1] 不是常常有人吵架，就是很多人都大声说话",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "人",
+    "corrected": "常常有人",
+    "before": "不是",
+    "after": "吵架，就是",
+    "note": "",
+    "confidence": "high",
+    "reason": "expands 人吵架 to 常常有人吵架"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "都叫",
+    "corrected": "很多人都大声说话",
+    "before": "吵架，就是",
+    "after": "，害得孟子",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 都叫 with 很多人都大声说话"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1011,
+  "completion_tokens": 281,
+  "total_tokens": 1292,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 140,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

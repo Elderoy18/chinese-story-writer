@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近，害得孟子的心气：住在离墓地太近的地方会影响孟子的心气，A location after “住” needs “在”, and “害得” must be followed by a result phrase with a predicate; it cannot directly introduce the noun phrase “孟子的心气”.\n2. [Grammar & Vocabulary, error] 老是读书：一直读书，“老是” normally carries a complaining or negative tone; “一直” neutrally describes his continuing reading habit.\n3. [Coherence: reference, error] Coherence (Reference): 孟子和孟母搬到子思老师的家：孟子和她搬到子思老师的家，Use a pronoun for a close re-occurrence: “妈妈” was mentioned in the immediately preceding sentence, and no other female character competes as the referent.\n4. [Coherence: reference, error] Coherence (Reference): 跟子思老师住：跟他住，Use a pronoun for a close re-occurrence: “子思老师” has just been named in the same sentence.\n5. [Coherence: temporality, error] Coherence (Temporality): 搬到：搬到了，Use “了” for the completed action of moving; the family has finished moving before the following living situation is described.\n6. [Coherence: connectors, error] Coherence (Conjunction): 因为孟子现在没有朋友，他老是读书：因为孟子现在没有朋友，所以他老是读书，Use the paired connector “因为……所以……” to make the cause-and-effect relation explicit.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“住” needs “在” before the location, and the original “害得孟子的心气” lacks the required harmful result clause."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是读书” is acceptable here; its possible negative nuance does not make it an error."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Since 妈妈 was just mentioned and no other woman is relevant, the close re-reference should be 她 rather than 孟母."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思老师 has just been introduced in the same sentence, so 跟他住 is the appropriate close reference."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed narrative event, so 搬到 should be 搬到了."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The correction keeps the causal relation backwards: he has no friends because he always reads, not the reverse."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2245,
+  "completion_tokens": 1383,
+  "total_tokens": 3628,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 594,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 992,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他看起来一个很聪明的孩子。\nquote: 他看起来一个很聪明的孩子\npart p0: fix [ref p0/k0] 孟子 ; notes: “他“ is ambiguous\npart p1: fix [ref p1/k0] 看起来是……",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "他",
+    "corrected": "孟子",
+    "before": "",
+    "after": "看起来一个很",
+    "note": "“他“ is ambiguous",
+    "confidence": "high",
+    "reason": "replaces ambiguous pronoun with 孟子"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "是",
+    "before": "他看起来",
+    "after": "一个很聪明",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 是 after 看起来"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1004,
+  "completion_tokens": 201,
+  "total_tokens": 1205,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 83,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

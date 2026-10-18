@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位。\nquote: 但我没想到他可能很久以前并不是这样，得到了硕士和博士学位\npart p0: fix [ref p0/k1-2] 他很久以前可能并不是这样碌碌无为，而是拿到了硕士和博士学位 ; notes: the coherence needs to be improved, 但我没想到的是",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k1-2",
+    "op": "insert",
+    "original": "",
+    "corrected": "是",
+    "before": "但我没想到",
+    "after": "他可能很久",
+    "note": "the coherence needs to be improved, 但我没想到的是",
+    "confidence": "high",
+    "reason": "adds 是 in the stated 没想到的是 structure"
+   },
+   {
+    "ref": "p0/k1-2",
+    "op": "replace",
+    "original": "可能很久以前",
+    "corrected": "很久以前可能",
+    "before": "没想到他",
+    "after": "并不是这样",
+    "note": "",
+    "confidence": "high",
+    "reason": "reorders the adverbial phrase as in her fix"
+   },
+   {
+    "ref": "p0/k1-2",
+    "op": "insert",
+    "original": "",
+    "corrected": "碌碌无为",
+    "before": "前并不是这样",
+    "after": "，得到了硕",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the description included in her fix"
+   },
+   {
+    "ref": "p0/k1-2",
+    "op": "replace",
+    "original": "得到了",
+    "corrected": "而是拿到了",
+    "before": "并不是这样，",
+    "after": "硕士和博士",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the contrast and verb as in her fix"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1044,
+  "completion_tokens": 541,
+  "total_tokens": 1585,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1041,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 282,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

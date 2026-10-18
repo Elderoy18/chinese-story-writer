@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一看很多人正在吃一些植物：看到，一……就\n- 神农想帮别人：帮他们，“别(的)” is for “a different type”, and “all else except the spoken one”\n\nThe system's feedback items:\n1. [Grammar, error] 古代的时候 → 在古代 -- 古代 is the setting/location for the action, so use 在+Place before the action: 在古代。\n2. [Grammar, suggestion] 哪些植物不能吃 → 哪些不能吃 -- It would be more natural to omit the repeated noun after 哪些: 哪些植物能吃，哪些不能吃。\n3. [Vocabulary, error] 一看很多人正在吃… → 一看到很多人正在吃… -- 神农 actually sees this situation, so use 看到see, not 看look.\n4. [Vocabulary, suggestion] 神农想帮别人 → 神农想帮助别人 -- It would be more natural to use the full verb 帮助 here: 想帮助别人。",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundantly formed under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Repeating 植物 after 哪些 is acceptable and is not an error, although omission is also natural."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "看 should be 看到 here, but the displayed unit is cut off and the remaining 一……就 structure is not corrected."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "别人 incorrectly refers to the people just mentioned; changing 帮 to 帮助 leaves this reference error unchanged."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1946,
+  "completion_tokens": 496,
+  "total_tokens": 2442,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 295,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 241,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

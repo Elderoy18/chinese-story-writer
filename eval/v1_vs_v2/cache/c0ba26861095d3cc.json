@@ -1,0 +1,77 @@
+{
+ "input": "Required scenes:\n1. 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n2. 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n3. 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n4. 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n5. 孟子becomes a famous philosopher\n\nThe learner's story:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's content flags:\n- Miss one scene: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n\nThe system's content notes:\n1. After the graveyard part, add that 孟母 moved with 孟子 near a market, where he copied buying and selling.\n2. After the market part, add that 孟母 moved near a school, and then 孟子 studied every day.\n3. Wrong information: “他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。” — This gives good education as the reason for moving, rather than 孟母 being worried that 孟子's sacrifice imitation near the graveyard would affect him badly.\n4. Wrong information: “他们搬家到有很多学校的城市。” — The first move should be to a neighborhood near the market; the move near a school happens later, after the market scene.",
+ "salt": "",
+ "output": {
+  "scenes": [
+   {
+    "n": 1,
+    "teacher": "none",
+    "system": "none"
+   },
+   {
+    "n": 2,
+    "teacher": "none",
+    "system": "wrong"
+   },
+   {
+    "n": 3,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 4,
+    "teacher": "none",
+    "system": "missing"
+   },
+   {
+    "n": 5,
+    "teacher": "none",
+    "system": "none"
+   }
+  ],
+  "notes": [
+   {
+    "n": 1,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner does not include the move to a market or Mengzi copying buying and selling."
+   },
+   {
+    "n": 2,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner does not include the market scene before the move to a school-area neighborhood and daily studying."
+   },
+   {
+    "n": 3,
+    "correct": true,
+    "clear": true,
+    "reason": "The story gives better education as the reason for moving instead of Mengmu worrying about the harmful influence of sacrifice imitation."
+   },
+   {
+    "n": 4,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner incorrectly makes the first move directly to a city with many schools rather than first moving near a market."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 805,
+  "completion_tokens": 448,
+  "total_tokens": 1253,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 220,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "47505bee5c"
+}

@@ -1,0 +1,94 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 一天，孟子决定了祭拜。 | 她跟孟子搬家去墓地做祭拜 | 可是他不是玩游戏，而是他祭拜。\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他妈妈就让他搬去城市。 | 孟子跟他的妈妈已经搬家了。 | 孟母老是搬家，所以孟子会跟别的教授学哲学。 ; flagged as missing: 她常常搬家 | 她跟孟子搬家去墓地做祭拜\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 所以他们搬家去商店的旁边 | 他们去了一个房子，在购物中心的旁边。 | 第二个房子离购物中心近，所以孟子老是买东西。 ; flagged as missing: 他们搬到了街上 | 他们搬到城市。\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 从早到晚孟子一直学习，他不是看书，就是写文章。 | 让孟子多学习他每天在文学家的房子上学，从早到晚一直学习 | 孟子跟他的妈妈搬家，去一个最好的学校。孟子从早到晚学习。 ; flagged as missing: 而是学多文章 | 后来，练习写文字。\nS5: 孟子becomes a famous philosopher\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 成为很聪明。 | 难怪他成为很聪明的人。 | 难怪他长大了成为哲学家。 ; flagged as missing: 孟子决定他应该学哲学。 | 孟母一直想她的孩子受到良好的教育，难怪她的男孩子成为孟子。\n\nlearner's story:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。",
+ "salt": "run3",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "Living near a graveyard; 孟子 offers sacrifices daily",
+    "verdict": "told",
+    "evidence": [
+     "古代的时候，孟子和孟母住了在靠墓地的家。",
+     "孩子才五岁就每天在墓地祭拜了。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "孟母 moves away from the graveyard neighborhood",
+    "verdict": "told",
+    "evidence": [
+     "难怪她跟孩子搬家，原来买不了房。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "孟母 thinks imitating sacrifices will have a bad impact on 孟子."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "Moving near the market; 孟子 imitates buying and selling",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 and 孟子 moving to a neighborhood near the market, and 孟子 imitating buying and selling there.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "Moving from the market to a school neighborhood; 孟子 studies",
+    "verdict": "partly",
+    "evidence": [
+     "孟子学习馆学了十五年。"
+    ],
+    "missing_part": "孟母 moving from the market neighborhood to a neighborhood near a school.",
+    "details_left_out": [
+     "孟子 studies every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a famous philosopher",
+    "verdict": "told",
+    "evidence": [
+     "他是大人的时候，他成为很有名的哲人。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "难怪她跟孩子搬家，原来买不了房。",
+    "problem": "This says 孟母 moved because she could not buy a house, but in the story she moved away because she worried that imitating sacrifices would negatively affect 孟子."
+   }
+  ],
+  "feedback": [
+   "After they leave the graveyard, add that they move near the market and 孟子 imitates buying and selling, before the move to the school.",
+   "After the time near the market, add that 孟母 moves them to a neighborhood near a school, where 孟子 studies."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1561,
+  "completion_tokens": 1519,
+  "total_tokens": 3080,
+  "prompt_tokens_details": {
+   "cached_tokens": 1558,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ef48428c82"
+}

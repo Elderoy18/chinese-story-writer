@@ -1,0 +1,47 @@
+{
+ "input": "CURRENT SCENE:\n城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nITEMS:\n\n[I20] 害得孟母只好一直陪【^】孟子   correction: ∅ → 着   strength: suggestion\n  rule card (zhe_durative, Coherence: temporality (了/着/在)): Use 着 for a durative, accompanying, or static state. When one action accompanies the main action, use V.着 + V2 (for example, 牵着驴走).  Pattern: <wrong> → <correct>: <V> is a durative/accompanying action while <main action> happens, so use 着 (着durative).  Her terms: 着durative, 了completed, V.着\n  her past correction: 孟母看出来孟子老是[+很]难过 — her note: usually Adj. takes 很\n  her past correction: [-可是]孟子的妈妈一直很控制他\n  her past correction: 所以妈妈跟孟子一起搬家[+了] — her note: 了completed\n\n[I21] 住在商店的旁边【不是适合】孟子   correction: 不是适合 → 不但不适合   strength: error\n  checker's note: 适合 takes 不, and this needs the paired 不但…而且 structure\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 孟母也觉得在市场的旁边[对孟子不合适的地方长大→不适合孟子成长]\n  her past correction: 孟子不是[-在]看商店的员工 — her note: here is not emphasizing “ongoing”\n  her past correction: 孟母[也觉得→又觉得]在市场的旁边对孟子不合适的地方长大 — her note: “又“ emphasizes repeating vs. ”也“ emphasizes similarity\n\n[I22] 【而是】让他觉得很伤心   correction: 而是 → 而且   strength: error\n  checker's note: 不但 should pair with 而且, not 而是\n  rule card (haide_harmful_result, Vocabulary): Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得.  Pattern: <wrong> → <correct>: after 害得 + <person/noun>, use a genuinely harmful result; <neutral or mild result> is not harmful enough.  Her terms: 害得 + N/sb. + Harmful result, 害得+Sb.+V., 害得 + clause (harmful result)\n  her past correction: [害得→让]她很不高兴 — her note: 害得 + harmful result，不高兴is not that “harmful”\n  her past correction: ⟦害得他不高兴⟧ — her note: 害得 + harmful result, “不高兴” is not that “harmful”\n  her past correction: 他一看[+就]觉得担心",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I20",
+    "explanation": "It would be more natural to say 陪着孟子. 陪 is a durative accompanying action, so use 着durative.",
+    "dimension": "coherence_temporality",
+    "corrected": "着",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I21",
+    "explanation": "不是适合 → 不但不适合: this needs the paired connector 不但……而且……, not 不是……而是…….",
+    "dimension": "coherence_connectors",
+    "corrected": "不但不适合",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I22",
+    "explanation": "而是 → 而且: 不但 should pair with 而且 to add a second negative result.",
+    "dimension": "coherence_connectors",
+    "corrected": "而且",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1239,
+  "completion_tokens": 290,
+  "total_tokens": 1529,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1236,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 105,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

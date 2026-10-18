@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 古代的时候，有一个男孩子叫孟子和他的妈妈。\nquote: 古代的时候，有一个男孩子叫孟子和他的妈妈\npart p0: fix [ref p0/k0-1] 在古代，有一个叫孟子的男孩子和他的妈妈住在一起",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "before": "",
+    "after": "，有一个男",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the time expression"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "一个男孩子叫孟子和他的妈妈",
+    "corrected": "一个叫孟子的男孩子和他的妈妈住在一起",
+    "before": "，有",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "rewrites the noun phrase and adds the intended predicate"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1002,
+  "completion_tokens": 129,
+  "total_tokens": 1131,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

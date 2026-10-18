@@ -1,0 +1,127 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar, error] 凉山很大的山 → 凉山是很大的山 -- This clause needs 是 to link 凉山 with 很大的山.\n2. [Grammar, error] 他找到黄色的花 → 他找到一朵黄色的花 -- A single flower needs a measure word. Say 一朵黄色的花.\n3. [Grammar, suggestion] …跟黄色的花做茶很有用 → …跟黄色的花做的茶很有用 -- It would be more natural to say 用黄色的花做的茶, using 的 to link 做 to 茶.\n4. [Grammar, error] 你的头发疼死 → 你的头发疼死了 -- Use 了 for this change of state: 头疼死了.\n5. [Grammar, suggestion] 他一喝茶就很不舒服 → 他一喝茶就觉得很不舒服 -- It would be more natural to say 他一喝茶就觉得很不舒服.\n6. [Vocabulary, error] 他听说你跟黄色的花做茶… → 他听说用黄色的花做茶… -- Use 用 to show the material used to make tea: 用黄色的花做茶.\n7. [Vocabulary, error] 你的头发疼死 → 你的头疼死 -- 头发 means “hair,” but a headache is 头疼. Delete 发.\n8. [Vocabulary, error] 这冰茶是药 → 这杯茶是药 -- Use 杯 as the measure word for a cup of tea: 这杯茶.\n9. [Coherence: reference, error] 这也找植物 → 他也找植物 -- 这 refers to a thing, but the person finding plants is 神农. Use 他.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "凉山和“很大的山”之间需要用“是”连接。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“黄色的花”过于笼统，而“一朵黄色的花”是完整且可理解的具体说法。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "表示材料应说“用黄色的花”，不能保留“跟黄色的花”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“头发疼”不表示头痛，加“了”没有改正“头发”这个词的错误。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“他一喝茶就很不舒服”本来就语法正确，“觉得”只是可选的表达。"
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "这里应删除无所指的“你”，并用“用”表示做茶的材料。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "虽然删掉“发”改成了头痛，但“你的头疼死”仍不完整自然，且保留了不必要的泛指“你”。"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“这杯茶”本身正确，但把原来的“冰茶”改成了普通“茶”，没有按原意改成“这种冰茶”。"
+   },
+   {
+    "n": 9,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“这”不能作寻找植物的人，近距离再次指神农可用“他”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2235,
+  "completion_tokens": 2994,
+  "total_tokens": 5229,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 584,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2399,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

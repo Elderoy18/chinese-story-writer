@@ -1,0 +1,79 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。\n\nThe teacher's corrections in other learners' similar clauses:\n- 神农吃一个夹竹桃  →  吃 → 吃了  (了completed)\n- “麻烦  →  麻烦 → 麻烦问一下\n- 这个植物你能吃吗  →  你能吃吗 → 能不能吃\n- 神农回他的家  →  回 → 回到\n- 还花的名字是夹竹桃  →  还花的名字是夹竹桃 → 也发现了一种叫夹竹桃的花\n- 他一说了  →  了 → (delete)  (no了for speaking word)\n\nScene to review:\n他们在很漂亮的河找夹竹桃。神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要看你想要安全还是接近知道了。“神农一吃夹竹桃就生病了。哥哥说：“太麻烦了。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "他们在很漂亮的河找夹竹桃",
+    "corrected": "他们在很漂亮的河边找夹竹桃",
+    "errors": [
+     {
+      "original": "河",
+      "correction": "河边",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "A location with 河 normally needs a location word such as 边. 在河边 means “by the river.”"
+     }
+    ]
+   },
+   {
+    "clause": "哥哥说：“这就要看你想要安全还是接近知道了。“",
+    "corrected": "哥哥说：“这就要看你想要安全还是想知道”",
+    "errors": [
+     {
+      "original": "接近",
+      "correction": "想",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "接近 cannot modify 知道 here. 想知道 means “want to know.”"
+     },
+     {
+      "original": "了",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "想知道 is a mental-state expression and normally takes no 了 here."
+     },
+     {
+      "original": "“",
+      "correction": "”",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use a closing quotation mark at the end of the quoted speech."
+     }
+    ]
+   },
+   {
+    "clause": "哥哥说：“太麻烦了",
+    "corrected": "哥哥说：“太麻烦了”",
+    "errors": [
+     {
+      "original": "了",
+      "correction": "了”",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "The quoted speech needs a closing quotation mark."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1200,
+  "completion_tokens": 2784,
+  "total_tokens": 3984,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1197,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2446,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

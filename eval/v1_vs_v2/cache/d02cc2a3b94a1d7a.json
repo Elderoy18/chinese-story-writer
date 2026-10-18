@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nThis scene:\n所以，孟母和孟子搬到学校的旁边住。才五岁孟子开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 才五岁孟子开始学哲学：就开始，才Num.就V.\n- 将来，他成为中国的一个非常有名的哲学家：后来，“将来“ refers to the absolute future\n\nThe system's feedback items:\n1. [Vocabulary, suggestion] 他成为中国的一… → 他会成为中国的一… -- It would be more natural to add 会 to show that becoming a famous philosopher was his future result. 成为 is correctly followed by the profession noun 哲学家.\n2. [Coherence: 了 / 着 / 在, error] 将来 → 后来 -- 将来 means “in the future,” but this is a later event in a past story. Use 后来 for the next story event.\n3. [Coherence: connectors, error] 才五岁孟子开始学哲… → 才五岁时孟子开始学哲… -- Use 时 after an age phrase to show the time when an action happened: 才五岁时。\n4. [Coherence: connectors, suggestion] 才五岁孟子开始学哲学 → 才五岁孟子就开始学哲学 -- It would be more natural to use 才Num.就V. to emphasize that he started learning at the early age of five.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The displayed text is cut off, and “他成为中国的一个非常有名的哲学家” is not itself an error; the problem is 将来."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "将来 refers to the absolute future, whereas 后来 correctly introduces a later event in this past narrative."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The sentence needs 就 after 才五岁, and adding 时 does not repair that missing required structure."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "With 才五岁, 就开始 correctly expresses that he started at the notably early age of five."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2127,
+  "completion_tokens": 639,
+  "total_tokens": 2766,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 476,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 368,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

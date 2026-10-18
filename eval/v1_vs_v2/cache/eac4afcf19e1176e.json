@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThis scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's feedback items:\n1. [Vocabulary, error] 而是想孟子有很好的教育 → 而是想让孟子受到很好的教育 -- After 想, use 让 before the person who will receive the action. Education is something 孟子 receives, so say 想让孟子受到很好的教育.\n2. [Vocabulary, error] 他难怪抱怨 → 难怪他抱怨 -- 难怪 normally comes before the subject. Say 难怪他抱怨.\n3. [Coherence: 了 / 着 / 在, error] 他们搬家到有很多学校的… → 他们搬家到了有很多学校的… -- The moving is completed in the story, so it takes 了completed: 搬家到了有很多学校的城市.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "想不能直接带“孟子有很好的教育”这样的名词性内容，想让孟子受到很好的教育是正确的。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "难怪应放在它所解释的整句前面，难怪他抱怨正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "搬家是已完成的叙事事件，应使用完成体了；但所显示的改后文本在“的……”处被截断。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2100,
+  "completion_tokens": 725,
+  "total_tokens": 2825,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 449,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

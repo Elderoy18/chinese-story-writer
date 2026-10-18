@@ -1,0 +1,65 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 古代的时候  →  古代的时候 → 在古代\n- 古代时候有一个男孩名叫孟子  →  古代时候 → 在古代\n- 孟子和孟母住在小的城  →  小的城 → 一个小城市\n- 在墓地做祭拜  →  做 → (delete)\n- 孟子和孟母才住在两个月  →  才住在 → 才住了  (了completed)\n- 他们在墓地住  →  他们 → (delete)  (redundant)\n\nScene to review:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "古代的时候，有一个男孩名字叫孟子",
+    "corrected": "在古代，有一个男孩名字叫孟子",
+    "errors": [
+     {
+      "original": "古代的时候",
+      "correction": "在古代",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 在古代 to mean “in ancient times.”"
+     }
+    ]
+   },
+   {
+    "clause": "孟子和孟子的妈妈住在这里才一个星期就觉得受不了了",
+    "corrected": "孟子和孟子的妈妈在这里才住了一个星期就觉得受不了了",
+    "errors": [
+     {
+      "original": "住在这里才一个星期",
+      "correction": "在这里才住了一个星期",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "Use 了 with 住 for a completed duration of one week before they felt they could not bear it."
+     }
+    ]
+   },
+   {
+    "clause": "而且害得孟子的学习",
+    "corrected": "而且影响了孟子的学习",
+    "errors": [
+     {
+      "original": "害得",
+      "correction": "影响了",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "害得 needs a result clause, such as 害得他不能学习. 影响了 can directly take 孟子的学习 as its object."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1149,
+  "completion_tokens": 2036,
+  "total_tokens": 3185,
+  "prompt_tokens_details": {
+   "cached_tokens": 1146,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1743,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

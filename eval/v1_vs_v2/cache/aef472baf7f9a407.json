@@ -1,0 +1,105 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar, error] …做衣服的工作，而是喜欢的工作 → …做衣服的工作 -- The phrase 而是喜欢的工作 does not fit the meaning here, so delete it.\n2. [Grammar, error] 孟子学习馆学了十… → 孟子在学习馆学了十… -- Use 在 before a place where an action happens: 在学习馆学了十五年.\n3. [Grammar, error] 对他很多好处 → 对他有很多好处 -- Use 有 in 对他有很多好处 to say something has many benefits for him.\n4. [Vocabulary, error] …在那个商店也找了到工作 → …在那个商店也找到了到工作 -- The person successfully finds a job, so use 找到find, not 找look for.\n5. [Vocabulary, error] 他是大人的时候 → 他长大后 -- Use the established time expression 长大后, not the literal combination 是大人的时候.\n6. [Vocabulary, suggestion] 他成为很有名的哲人 → 他成为了很有名的哲人 -- It would be more natural to add 了 after 成为 to show the completed change: 成为了很有名的哲人.\n7. [Coherence: reference, error] 他成为很有名的… → 成为很有名的… -- The subject is already clear from the previous clause, so delete 他. Chinese uses zero form here.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The omitted beginning cuts off the 不是……而是…… construction, and 而是喜欢的工作 is acceptable here."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "在 is needed before the place, but 学习馆 should be 学校 and the displayed unit is cut off."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "对他有很多好处 requires 有."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "找了到 has incorrect 了 placement; 找到了 is required, not 找到了到."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "是大人的时候 is not the appropriate expression here; 长大后 is correct."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "成为了 correctly marks the completed change, but 哲人 still needs to be 哲学家."
+   },
+   {
+    "n": 7,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The teacher deletes the first 他 in 他是大人的时候, while the later 他 should remain as the main-clause subject after 长大以后."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2286,
+  "completion_tokens": 1840,
+  "total_tokens": 4126,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 635,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1408,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

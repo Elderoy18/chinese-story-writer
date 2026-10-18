@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他那不是成为医生，而是成为哲学人。\nquote: 他那不是成为医生，而是成为哲学人\npart p0: fix [ref p0/k0-1] 他没有当医生，而是成为哲学家 ; notes: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "那不是",
+    "corrected": "没有",
+    "before": "他",
+    "after": "成为医生，",
+    "note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+    "confidence": "high",
+    "reason": "replaces 那不是 with 没有"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "成为医生",
+    "corrected": "当医生",
+    "before": "他那不是",
+    "after": "，而是成为",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 成为医生 with 当医生"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "哲学人",
+    "corrected": "哲学家",
+    "before": "，而是成为",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 哲学人 with 哲学家"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1018,
+  "completion_tokens": 196,
+  "total_tokens": 1214,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

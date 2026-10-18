@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\nScene 2: 孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThe teacher's corrections in other learners' similar clauses:\n- 他学习得很厉害  →  得 → (delete)  (V.得很厉害for something negative, with a high degree)\n- 孟子长大的时候一直搬家  →  长大的时候 → 小时候\n- 他问了  →  了 → (delete)  (no了for speaking word introducing quoted speech)\n- 所以孟子老是在学习  →  老是 → 一直  (“老是“ for something negative, used to complain)\n- 而是学习很多  →  而是学习很多 → 而是要多学习\n- 可是他们老是有问题  →  老是有问题 → 碰到麻烦\n\nScene to review:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "孟子长大",
+    "corrected": "他长大",
+    "errors": [
+     {
+      "original": "孟子",
+      "correction": "他",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "Mengzi was mentioned in the immediately preceding clause, so use the pronoun 他 for this close reference."
+     }
+    ]
+   },
+   {
+    "clause": "他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪",
+    "corrected": "他常常建议你不要学金融，而是学政治，因为如果你懂政治，你会成为高薪人士",
+    "errors": [
+     {
+      "original": "不是",
+      "correction": "不要",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 不要 to advise someone not to do an action. 不是 does not give this meaning here."
+     },
+     {
+      "original": "高薪",
+      "correction": "高薪人士",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "高薪 describes a high salary, not a person. A person can be a 高薪人士."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1283,
+  "completion_tokens": 4252,
+  "total_tokens": 5535,
+  "prompt_tokens_details": {
+   "cached_tokens": 1280,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3982,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

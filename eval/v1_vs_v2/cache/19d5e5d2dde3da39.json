@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这是不合适的地方让孩子玩：这不是适合孩子玩的地方，Use “适合 + person + action” to say that a place is suitable for someone to do something; the original word order does not naturally express this meaning.\n2. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，“恐怕” cannot follow another subject to mean that person is worried; use “担心” for a character’s fear or concern.\n3. [Grammar & Vocabulary, error] 找到质量好的教育：找到能提供优质教育的地方，“找到” should take something discoverable, such as a place or school; education is something a child receives rather than an object one finds.\n4. [Coherence: reference, error] Coherence (Reference): 有一天孟子去了墓地玩儿：有一天，一个叫孟子的小男孩去了墓地玩儿，On first mention, introduce a character with a full noun phrase rather than only a name, so the reader knows who he is.\n5. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，“决定” is a mental-state verb, so it normally takes the zero particle rather than completed-action “了”.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original structure does not naturally express that the cemetery is unsuitable for children to play in."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "恐怕 is not appropriate here for the mother's personal worry; 担心 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "找到质量好的教育 is not a natural collocation, while finding a place that provides good education is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Introducing a known historical character by name alone is acceptable, although adding a brief introduction could improve clarity for some readers."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Following the teacher's correction, the mental-state verb 决定 should not take 了 here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1354,
+  "completion_tokens": 719,
+  "total_tokens": 2073,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1351,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 414,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0d4672217c"
+}

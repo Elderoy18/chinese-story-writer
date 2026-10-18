@@ -1,0 +1,150 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 在古代的时候  →  在古代的时候 → 在古代\n- 神农看了很多生病的人  →  看了 → 看到了  (看look vs.看到see)\n- 他找有的花  →  找有的花 → 找到一种植物  (找look for vs.找到find)\n- 神农现在知道哪个植物是毒  →  是毒 → 有毒\n- 他们吃毒植物  →  毒植物 → 有毒的植物\n- 他找到了很多有用植物  →  有用植物 → 有用的植物\n\nScene to review:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "所以他们找到了很多植物对药",
+    "corrected": "所以他们找到了很多植物做药",
+    "errors": [
+     {
+      "original": "对",
+      "correction": "做",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "做药 means “make medicine.” 对药 does not fit this meaning."
+     }
+    ]
+   },
+   {
+    "clause": "神农先看到很多病人",
+    "corrected": "神农先看到了很多病人",
+    "errors": [
+     {
+      "original": "看到",
+      "correction": "看到了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "This is a completed event in the story, so use 了."
+     }
+    ]
+   },
+   {
+    "clause": "他们吃很多植物对药",
+    "corrected": "他们吃很多植物做药",
+    "errors": [
+     {
+      "original": "对",
+      "correction": "做",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "做药 means “make medicine.” 对药 does not fit this meaning."
+     }
+    ]
+   },
+   {
+    "clause": "但是我觉得他们的吃的植物",
+    "corrected": "但是我觉得他们吃的植物",
+    "errors": [
+     {
+      "original": "他们的吃的植物",
+      "correction": "他们吃的植物",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use the verb phrase before 的 to describe the noun: 他们吃的植物."
+     }
+    ]
+   },
+   {
+    "clause": "让他们病人",
+    "corrected": "让他们生病",
+    "errors": [
+     {
+      "original": "病人",
+      "correction": "生病",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "病人 is a noun meaning “patient.” After 让, use the verb 生病, “become ill.”"
+     }
+    ]
+   },
+   {
+    "clause": "神农觉得这个植物可能特别是毒",
+    "corrected": "神农觉得这个植物可能特别有毒",
+    "errors": [
+     {
+      "original": "是毒",
+      "correction": "有毒",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 有毒 to say that a plant is poisonous."
+     }
+    ]
+   },
+   {
+    "clause": "所以他想找一个植物对药",
+    "corrected": "所以他想找一种植物做药",
+    "errors": [
+     {
+      "original": "一个",
+      "correction": "一种",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 种 as the measure word for a type of plant."
+     },
+     {
+      "original": "对",
+      "correction": "做",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "做药 means “make medicine.”"
+     }
+    ]
+   },
+   {
+    "clause": "他们可以吃对药",
+    "corrected": "他们可以吃药",
+    "errors": [
+     {
+      "original": "对",
+      "correction": "",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "吃药 means “take medicine.” 对 is not used here."
+     }
+    ]
+   },
+   {
+    "clause": "对药",
+    "corrected": "做药",
+    "errors": [
+     {
+      "original": "对",
+      "correction": "做",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "做药 means “make medicine.”"
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1152,
+  "completion_tokens": 4428,
+  "total_tokens": 5580,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1149,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3777,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

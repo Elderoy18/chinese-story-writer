@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 朋友说：“这就要看灵芝是不是特别了。比方说，可能是毒的。”\nquote: 这就要看灵芝是不是特别了。比方说，可能是毒的\npart p0: comment [ref p0/note] 是不是有用了。比方说is used to express “for example”, delete it\npart p1: fix [ref p1/k0] 可能有毒",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "replace",
+    "original": "是不是特别了",
+    "corrected": "是不是有用了",
+    "before": "要看灵芝",
+    "after": "。比方说",
+    "note": "是不是有用了。比方说is used to express “for example”, delete it",
+    "confidence": "high",
+    "reason": "comment supplies the revised predicate"
+   },
+   {
+    "ref": "p0/note",
+    "op": "delete",
+    "original": "比方说",
+    "corrected": "",
+    "before": "别了。",
+    "after": "，可能是",
+    "note": "是不是有用了。比方说is used to express “for example”, delete it",
+    "confidence": "high",
+    "reason": "comment explicitly says to delete 比方说"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "可能是毒的",
+    "corrected": "可能有毒",
+    "before": "比方说，",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the phrase with the teacher's fix"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1034,
+  "completion_tokens": 504,
+  "total_tokens": 1538,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1031,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 294,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

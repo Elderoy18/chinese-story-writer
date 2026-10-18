@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This time expression is not used naturally in narrative Chinese; use the fixed expression for a historical period.\n2. [Grammar & Vocabulary, error] 老是祭拜：常常祭拜，The word “老是” usually carries a negative or complaining tone. Nothing in this sentence establishes that negative tone, so “常常” neutrally describes a frequent action.\n3. [Grammar & Vocabulary, error] 有才两个学校：才有两所学校，With a quantity, “才” comes before “有,” and schools use the measure word “所,” not “个.”\n4. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子。：一个叫孟子的男孩子跟他的妈妈住在中国。，Use the name and a full noun phrase at first mention, so the reader knows immediately who the boy is.\n5. [Coherence: reference, error] Coherence (Reference): 但是城市才有两所学校：但是那里才有两所学校，Use a pronoun-like place reference for a close re-occurrence; “那里” naturally refers back to the city just mentioned.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already expresses a time period, so 古代的时候 is redundant; 在古代 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是 can describe repeated behavior and is not necessarily inappropriate here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "有才 has the wrong order and 个 is not the measure word for schools, but the required form is 只有两所学校, not 才有两所学校."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Introducing the boy and naming him in the immediately following sentence is clear and does not create a reference problem."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "城市 needs a determiner such as 这个城市 here, while 那里 is less clear and 才有 also does not follow the required 只有 form."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2025,
+  "completion_tokens": 1329,
+  "total_tokens": 3354,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 374,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 998,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

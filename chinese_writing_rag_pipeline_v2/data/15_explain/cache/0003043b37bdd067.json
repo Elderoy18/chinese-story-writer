@@ -1,0 +1,68 @@
+{
+ "input": "CURRENT SCENE:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nITEMS:\n\n[I149] 因为他们常常搬【了】家   correction: 了 → (delete)   strength: error\n  checker's note: habitual action with 常常 does not take 了\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: [+所以]他们常常搬家 — her note: 无聊？add所以\n  her past correction: 他们[搬了家两次→搬了两次家] — her note: V. + Num. + MW. + Obj.\n  her past correction: 所以他们再[搬家一次→搬了一次家] — her note: 了completed\n\n[I150] 【孟母】三迁   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 孟母: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧和孟母住在一起 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子⟧跟妈妈一起住在西安 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子⟧和孟母住在小的城 — her note: better to briefly introduce “孟子” when this character first appears\n\n[I151] 妈妈教孟子很多【技能】   correction: 技能 → 东西   strength: suggestion\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: [-孟子的妈妈]告诉孟子 — her note: redundant\n  her past correction: 孟子的妈妈不是工作就是试一试[帮助她的儿子孟子→辅导儿子孟子]\n  her past correction: 孟子的妈妈[不是轻松的妈妈，而且她是厉害的妈妈→在教育方面很厉害] — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong\n\n[I152] 【先她】让孟子跟朋友玩儿   correction: 先她 → 她先   strength: error\n  checker's note: the subject comes before 先\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧不是跟朋友玩 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: 孟子老是想[玩玩→玩] — her note: V.V. is used to make requests or plans\n  her past correction: [-孟子老是]想玩玩\n\n[I153] 然后教他怎么买又便宜【^】又好质量的东西   correction: ∅ → 质量   strength: suggestion\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: 她跟孟子常常[去买东西在城市→去城市买东西]\n  her past correction: 所以[-他]看什么就吃什么 — her note: this is ambiguous, as the topic is他的朋友\n  her past correction: 然后写[+下了]他学了什么\n\n[I154] 然后教他怎么买又便宜又【好质量】的东西   correction: 好质量 → 质量好   strength: error\n  checker's note: quality adjective order is reversed\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: 她跟孟子常常[去买东西在城市→去城市买东西]\n  her past correction: 所以[-他]看什么就吃什么 — her note: this is ambiguous, as the topic is他的朋友\n  her past correction: [常常祭拜以后，→常常在祭拜以后]孟子和他的妈妈一起去买东西",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I149",
+    "explanation": "常常 shows a habitual action, not one completed action in the story, so do not use 了completed here.",
+    "dimension": "coherence_temporality",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I150",
+    "explanation": "孟母 appears for the first time here, so please briefly introduce her, for example as 孟子的妈妈孟母.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I151",
+    "explanation": "It would be more natural to say 东西 here, because the next sentence explains the things that his mother taught him.",
+    "dimension": "other",
+    "corrected": "东西",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I152",
+    "explanation": "Put the subject before 先: 她先让孟子跟朋友玩儿.",
+    "dimension": "grammar",
+    "corrected": "她先",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I153",
+    "explanation": "It would be more natural to describe the things as 又便宜又质量好.",
+    "dimension": "word_choice",
+    "corrected": "又便宜又质量好",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I154",
+    "explanation": "Use 质量好, not 好质量: 质量 comes before 好 when you describe the quality of something.",
+    "dimension": "grammar",
+    "corrected": "质量好",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1830,
+  "completion_tokens": 755,
+  "total_tokens": 2585,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1827,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 443,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

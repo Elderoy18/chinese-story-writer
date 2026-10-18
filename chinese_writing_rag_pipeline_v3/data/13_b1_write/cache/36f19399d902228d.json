@@ -1,0 +1,54 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “人们不知道什么植物是不是能吃的”: 什么植物是不是能吃的 → 什么植物是能吃的，什么植物是不能吃的\n- in “神农发现很多植物”: (nothing) → 了   [her note: 了completed]\n- in “他一吃就生病了”: 他 → (deleted)\n- in “每个人都不知道哪些植物能安全吃”: (nothing) → 地\n- in “一个天时候”: 一个天时候 → 有一天\n\nScene to review:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to mean “in ancient times.” 古代时候 is not a natural time expression here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "人不知道他们能吃什么植物",
+    "corrected": "人不知道能吃什么植物",
+    "explanation": "他们 refers to 人 in the same sentence. When the subject is repeated so closely, Chinese normally leaves it out."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "神农出去试一试很多种植物",
+    "corrected": "有一个人叫神农，他出去尝一尝很多种植物",
+    "explanation": "神农 appears for the first time here, so introduce him with a noun phrase that says who he is. 尝一尝 is the suitable verb for tasting plants to find out whether they are safe to eat."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "告诉人什么植物是安全什么是危险。",
+    "corrected": "告诉人们哪些植物是安全的，哪些植物是危险的了。",
+    "explanation": "Use 哪些植物 for several plants, and use 的 after 安全 and 危险 when describing which plants have those qualities. The telling is the final completed action in this series, so it takes 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1268,
+  "completion_tokens": 1849,
+  "total_tokens": 3117,
+  "prompt_tokens_details": {
+   "cached_tokens": 1265,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

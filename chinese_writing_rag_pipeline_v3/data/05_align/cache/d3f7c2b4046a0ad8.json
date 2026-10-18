@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 这个天他请他们给他建议怎么减轻他的家庭的负担。\nquote: 这个天他请他们给他建议怎么减轻他的家庭的负担\npart p0: fix [ref p0/k0] 这一天 ; instruction [ref p0/k1] delete给他 &他的, too many他 ; fix [ref p0/k2] 他们",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "这个天",
+    "corrected": "这一天",
+    "before": "",
+    "after": "他请他们给",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the time expression with her correction"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "给他",
+    "corrected": "",
+    "before": "他请他们",
+    "after": "建议怎么减",
+    "note": "too many他",
+    "confidence": "high",
+    "reason": "deletes the specified 给他"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "他的",
+    "corrected": "",
+    "before": "议怎么减轻",
+    "after": "家庭的负担",
+    "note": "too many他",
+    "confidence": "high",
+    "reason": "deletes the specified 他的"
+   },
+   {
+    "ref": "p0/k2",
+    "op": "replace",
+    "original": "他请他们",
+    "corrected": "他们",
+    "before": "这个天",
+    "after": "给他建议怎",
+    "note": "",
+    "confidence": "high",
+    "reason": "her corrected fragment reduces 他请他们 to 他们"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1024,
+  "completion_tokens": 626,
+  "total_tokens": 1650,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 405,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

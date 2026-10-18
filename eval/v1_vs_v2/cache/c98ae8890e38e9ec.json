@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar, error] …妈妈觉得这是不合适的地方让孩子玩 → …妈妈觉得这是不适合让孩子玩的地方 -- 不适合 must take the action phrase 让孩子玩 as its complement before 地方.\n2. [Grammar, error] 而且住在这儿教育不太好 → 而且这儿的教育不太好 -- use 这儿的 to modify 教育.\n3. [Vocabulary, error] 所以她会一直搬家才能… → 所以她要一直搬家才能… -- 会 does not naturally form the conditional pattern with 才能 here; use 要...才能 instead.\n4. [Coherence: reference, error] 有一天⟦孟子⟧去了墓地玩儿 -- 孟子 appears for the first time, so please introduce him briefly, for example 孟子这个孩子.\n5. [Coherence: reference, error] 所以她会一直搬家才… → 所以会一直搬家才… -- 她 is already clear from the previous clause, so delete it; Chinese uses zero form here.\n6. [Coherence: 了 / 着 / 在, error] 所以她决定了他们会搬家找… → 所以她决定他们会搬家找… -- 决定 is a mental-state verb here, so use no 了.\n7. [Coherence: connectors, suggestion] 有一天孟子去了墓地玩儿 → 有一天孟子去墓地玩儿 -- It would be more natural to delete 了 and use a sequence phrase such as 后来 to show how this sentence connects to the narrative.\n8. [Other, suggestion] …搬家找更好的地方 → …搬家找更好的 -- It would be more natural to delete 地方 because 更好的 already expresses the thing she wants to find.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "不适合应直接修饰“让孩子玩”的动作短语，改后句子正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“住在这儿教育不太好”缺少清楚的修饰关系，“这儿的教育”正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "这里“要……才能……”比“会……才能……”合适，但所示文本被截断，无法构成完整正确句。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子首次出现时，按教师标准应先简要介绍这个人物。"
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前文刚提到“她”，这里继续用“她”清楚且可接受，并非必须省略。"
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“决定”是心理动词，此处不应加“了”，但改后仍保留“他们会搬家找……”等未改问题。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "叙述“有一天”发生并完成的事件时，“去了”正确，不应删除“了”。"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“找更好的地方”本身正确，“地方”并不需要删除。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2308,
+  "completion_tokens": 1779,
+  "total_tokens": 4087,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 657,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1251,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

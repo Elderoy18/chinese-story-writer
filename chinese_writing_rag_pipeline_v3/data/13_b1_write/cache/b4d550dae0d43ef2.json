@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “人们不知道什么植物是不是能吃的”: 什么植物是不是能吃的 → 什么植物是能吃的，什么植物是不能吃的\n- in “神农发现很多植物”: (nothing) → 了   [her note: 了completed]\n- in “他一吃就生病了”: 他 → (deleted)\n- in “每个人都不知道哪些植物能安全吃”: (nothing) → 地\n- in “一个天时候”: 一个天时候 → 有一天\n\nScene to review:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to say “in ancient times.” 古代时候 is not the usual expression."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "人不知道他们能吃什么植物",
+    "corrected": "人们不知道能吃什么植物",
+    "explanation": "人们 and 他们 refer to the same people in the same clause, so do not repeat the subject with 他们. Use the zero form before 能吃."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "神农出去",
+    "corrected": "有一个人叫神农，他出去",
+    "explanation": "This is the first mention of 神农, so introduce him with a noun phrase that says who he is before using his name."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "告诉人",
+    "corrected": "告诉了人",
+    "explanation": "This is the final action in a completed series of actions, so 告诉 needs 了."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "什么植物是安全什么是危险",
+    "corrected": "什么植物是安全的，什么植物是危险的",
+    "explanation": "When 安全 and 危险 describe an omitted noun here, use 的. Repeat 什么植物 to make the two categories clear."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1268,
+  "completion_tokens": 2723,
+  "total_tokens": 3991,
+  "prompt_tokens_details": {
+   "cached_tokens": 1265,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2395,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 孟子看很多不同的文化，他们搬家每次学到了比较多，结果他成为很聪明的人。\nquote: 他们搬家每次学到了比较多，结果他成为很聪明的人\npart p0: fix [ref p0/k0-1] 每次搬家都学到了很多知识，后来他变得越来越聪明 ; notes: “结果” is for unexpected result, 成为 + profession/celebrity",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "他们搬家每次学到了比较多",
+    "corrected": "每次搬家都学到了很多知识",
+    "before": "",
+    "after": "，结果他成",
+    "note": "",
+    "confidence": "high",
+    "reason": "rewrites the repeated-event clause with 都 and 知识"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "结果",
+    "corrected": "后来",
+    "before": "到了比较多，",
+    "after": "他成为很聪",
+    "note": "“结果” is for unexpected result",
+    "confidence": "high",
+    "reason": "replaces 结果 with later-sequence marker"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "成为很聪明的人",
+    "corrected": "变得越来越聪明",
+    "before": "，结果他",
+    "after": "。",
+    "note": "成为 + profession/celebrity",
+    "confidence": "high",
+    "reason": "uses 变得 for becoming increasingly intelligent"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1039,
+  "completion_tokens": 208,
+  "total_tokens": 1247,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1036,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

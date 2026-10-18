@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar, suggestion] …妈妈找到孟子一个老师 → …妈妈找到孟子的老师 -- It would be more natural to say 孟子的老师. 孟子 describes 老师, so use 的.\n2. [Grammar, error] 跟老师孟子学最重要的文… → 孟子跟老师学最重要的文… -- 孟子 is the subject, so put it before 跟老师: 孟子跟老师学最重要的文学.\n3. [Vocabulary, suggestion] 因为他不要离开他的城市 → 因为他不想离开他的城市 -- It would be more natural to say 想 here: 因为他不想离开他的城市 means he does not want to leave his city.\n4. [Coherence: reference, error] 他想他的朋友 → 想他的朋友 -- 他 is already clear from the previous clause, so it is redundant. Delete it; Chinese uses zero form here.\n5. [Coherence: reference, error] 因为他不要离开他的… → 因为不要离开他的… -- 他 is already clear in the close continuation, so it is redundant. Delete it; Chinese uses zero form here.\n6. [Coherence: 了 / 着 / 在, suggestion] 所以他成为哲学家 → 所以他成为了哲学家 -- It would be more natural to use 了completed because becoming a philosopher is a completed change in the story.\n7. [Other, error] 他的妈妈找到孟子一个老师 → 他的妈妈给孟子找到一个老师 -- Use 给孟子 to show that his mother found a teacher for Mencius. The person receiving the help comes after 给.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“找到孟子一个老师” needs 给孟子 to express finding a teacher for him; 孟子的老师 changes the intended meaning, although the resulting Chinese is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "Putting 孟子 before 跟老师 correctly fixes the subject order, but 最重要的文学 remains an inappropriate expression here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "不要离开 is not the appropriate way to express that he does not want to leave; 不想离开 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他 is not redundant in this new clause, and the teacher’s correction likewise retains 他 after 原来."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他 is needed as the subject of the 因为-clause, so deleting it leaves an unacceptable omitted reference under the teacher’s rule."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Becoming a philosopher is a completed change in the narrative, so 成为了 correctly marks completion."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "给孟子 correctly marks Mencius as the person for whom his mother found a teacher."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2267,
+  "completion_tokens": 2602,
+  "total_tokens": 4869,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 616,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2129,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

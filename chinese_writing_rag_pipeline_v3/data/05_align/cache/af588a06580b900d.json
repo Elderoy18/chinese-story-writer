@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 你不是当数学家，而是当哲学家，不能当卖东西的人。\nquote: 你不是当数学家，而是当哲学家，不能当卖东西的人\npart p0: fix [ref p0/k0-1] 不是要当商人，而是要当哲学家 ; notes: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "要",
+    "before": "你不是",
+    "after": "当数学家，",
+    "note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+    "confidence": "high",
+    "reason": "adds 要 after 不是 as in her correction"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "数学家",
+    "corrected": "商人",
+    "before": "你不是当",
+    "after": "，而是当哲",
+    "note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+    "confidence": "high",
+    "reason": "changes the contrasted occupation to 商人"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "要",
+    "before": "学家，而是",
+    "after": "当哲学家，",
+    "note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+    "confidence": "high",
+    "reason": "adds 要 after 而是 as in her correction"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "，不能当卖东西的人",
+    "corrected": "",
+    "before": "而是当哲学家",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction ends after 当哲学家"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1035,
+  "completion_tokens": 516,
+  "total_tokens": 1551,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1032,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 214,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

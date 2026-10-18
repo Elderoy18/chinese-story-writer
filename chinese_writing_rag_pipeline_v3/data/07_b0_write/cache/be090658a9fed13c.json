@@ -1,0 +1,59 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 而是她望子成龙  →  她 → (delete)  (Subj.不是……而是……)\n- 他们搬到城市  →  搬到 → 搬到了  (了completed)\n- 孟子在墓地和祭拜跟其他孩子  →  和 → (delete)\n- 所以他们要搬家  →  他们 → 我们  (in quoted speech)\n- 而是她觉得墓地不合适孩子们玩  →  不合适 → 不适合\n- 每次搬家她都辛苦地工作，为了给孟子提供更好的学习环境  →  每次搬家她都辛苦地工作，为了给孟子提供更好的学习环境 → 为了给孟子提供更好的学习环境，每次搬家她都辛苦地工作  (“为了……” cannot be in the latter clause)\n\nScene to review:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "但是他妈妈觉得这是不合适的地方让孩子玩",
+    "corrected": "但是他妈妈觉得这是不适合孩子玩的地方",
+    "errors": [
+     {
+      "original": "不合适的地方让孩子玩",
+      "correction": "不适合孩子玩的地方",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 不适合 + person + verb to say that a place is not suitable for someone to do something."
+     }
+    ]
+   },
+   {
+    "clause": "所以她决定了他们会搬家找更好的地方",
+    "corrected": "所以她决定搬家找更好的地方",
+    "errors": [
+     {
+      "original": "决定了",
+      "correction": "决定",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "决定 is a mental-state verb, so it normally uses no aspect particle here."
+     },
+     {
+      "original": "他们会",
+      "correction": "",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "After 决定, state the action directly: 决定搬家."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1215,
+  "completion_tokens": 1508,
+  "total_tokens": 2723,
+  "prompt_tokens_details": {
+   "cached_tokens": 1212,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1275,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

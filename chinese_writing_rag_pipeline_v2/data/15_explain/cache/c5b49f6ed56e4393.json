@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n子思认为，对孩子来说，读书最重要，特别是学哲学。孟子不是练习写文章，就是看哲学书。孟子从五岁一直学哲学。他才五岁就学哲学，难怪他成为很有名的哲学家。\n\nITEMS:\n\n[I10] 就是【看】哲学书   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 所以他[看→看到]什么就吃什么 — her note: 看look vs.看到see\n  her past correction: 一个人[看→看到]一个灵芝 — her note: 看look vs.看到see\n  her past correction: 他一[看→看到]花 — her note: 看look vs.看到see\n\n[I11] 孟子从五岁【^】一直学哲学   correction: ∅ → 起   strength: error\n  checker's note: 从五岁一直 usually needs 起 or an endpoint\n  rule card (laoshi_negative_repetition, Vocabulary): 老是 means “always” and is used for something negative or to complain; for a neutral or positive repeated action, use 一直 or 常常 instead.  Pattern: <老是 + action> → <一直/常常 + action>: the action is neutral or positive, not something negative to complain about, so do not use 老是.  Her terms: 老是\n  her past correction: 孟子从早到晚[老是→一直]学哲学 — her note: “老是“ for something negative, used to complain\n  her past correction: 孟子[一直学了→一直在学习]很多东西 — her note: 一直在+V., emphasizing always ongoing\n  her past correction: [+就]开始学哲学 — her note: 才 Num.就V.\n\n[I12] 难怪【他】成为很有名的哲学家   correction: 他 → (delete)   strength: error\n  checker's note: 他 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]难怪成为了一个很聪明的哲学家\n  her past correction: 难怪他长大以后[当→成为]很有名的哲学家\n  her past correction: [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为\n\n[I13] 难怪他成为【^】很有名的哲学家   correction: ∅ → 了   strength: error\n  checker's note: becoming a philosopher is a completed later event\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他成为[+了]哲学家\n  her past correction: [+后来]他成为一个有名的哲学家 — her note: “他” is ambiguous, 后来成为\n  her past correction: [-他]难怪成为了一个很聪明的哲学家",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I10",
+    "explanation": "孟子 actually sees the philosophy books, so use 看到see, not 看look.",
+    "dimension": "word_choice",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I11",
+    "explanation": "With 从五岁一直, add 起 to show the starting age: 从五岁起一直学哲学.",
+    "dimension": "grammar",
+    "corrected": "起",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I12",
+    "explanation": "孟子 is already clear from the previous clause, so delete the redundant 他; Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I13",
+    "explanation": "Becoming a famous philosopher is a completed change in the story, so it takes 了completed.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1390,
+  "completion_tokens": 199,
+  "total_tokens": 1589,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1387,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

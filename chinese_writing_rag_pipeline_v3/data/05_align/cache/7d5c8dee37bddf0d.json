@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟子知道难怪他的奶奶爷爷死了，原来他的父母都没做过而祭拜。\nquote: 孟子知道难怪他的奶奶爷爷死了，原来他的父母都没做过而祭拜\npart p0: fix [ref p0/k0] 孟子想\npart p1: fix [ref p1/k0] 没祭拜过",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "知道",
+    "corrected": "想",
+    "before": "孟子",
+    "after": "难怪他的",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 知道 with 想"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "没做过而祭拜",
+    "corrected": "没祭拜过",
+    "before": "他的父母都",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the verb phrase with 没祭拜过"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1032,
+  "completion_tokens": 118,
+  "total_tokens": 1150,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1029,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

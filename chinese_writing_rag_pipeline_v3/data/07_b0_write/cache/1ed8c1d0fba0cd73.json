@@ -1,0 +1,52 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\nScene 2: 城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nThe teacher's corrections in other learners' similar clauses:\n- 练习写文字  →  ∅ → 孟子  (miss a Subj.)\n- 他成为一个有名的哲学家  →  他 → 孟子  (“他” is ambiguous, 后来成为)\n- 孟母和孟子住了很高兴  →  住了很高兴 → 住在那儿很高兴\n- 孟子不是学新的东西  →  新的东西 → 新知识\n- 孟子决定他应该学哲学  →  他应该 → (delete)\n- 他成长在学校的旁边  →  ∅ → 原来\n\nScene to review:\n所以，孟母和孟子搬到学校的旁边住。才五岁孟子开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "才五岁孟子开始学哲学",
+    "corrected": "孟子才五岁就开始学哲学",
+    "errors": [
+     {
+      "original": "才五岁孟子开始",
+      "correction": "孟子才五岁就开始",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Put the subject before 才五岁. 才...就... expresses that he started unusually early."
+     }
+    ]
+   },
+   {
+    "clause": "将来，他成为中国的一个非常有名的哲学家",
+    "corrected": "后来，他成为中国的一个非常有名的哲学家",
+    "errors": [
+     {
+      "original": "将来",
+      "correction": "后来",
+      "dimension": "coherence",
+      "coherence_type": "connectors",
+      "explanation": "The story narrates events that happened after Mengzi was five, so use 后来 (“later”) rather than 将来 (“in the future”)."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1267,
+  "completion_tokens": 1572,
+  "total_tokens": 2839,
+  "prompt_tokens_details": {
+   "cached_tokens": 1264,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1361,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

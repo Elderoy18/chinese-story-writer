@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nITEMS:\n\n[I240] 让肚子感觉又暖和又【清楚】   correction: 清楚 → 舒服   strength: error\n  checker's note: 清楚 cannot describe how the stomach feels\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农的肚子[最好→好了]以后\n  her past correction: 所以⟦他一吃，肚子就疼死了⟧ — her note: it is problematic in coherence, if 灵芝is medicine, it should not be他一吃肚子就疼死了\n  her past correction: 特别是[肚子疼→肚子，很疼]\n\n[I241] 这就要【看】你的口味   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 所以他[看→看到]什么就吃什么 — her note: 看look vs.看到see\n  her past correction: 她[一看这→一看到这样] — her note: 看look vs.看到see\n  her past correction: 他一[看→看到]花 — her note: 看look vs.看到see\n\n[I242] 【可能】喜欢糖   correction: 可能 → ，这样可以   strength: error\n  checker's note: her pattern: 可能 -> ，这样可以 (corrected 9/14 in train)\n  rule card (loose_clause_connection, Coherence: connectors): Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.  Pattern: <wrong> → <correct>: use <connector/purpose/sequence phrase> to show how this sentence connects to the previous clause or sentence.\n  her past correction: 一点儿甜[+，也]一点儿咸\n  her past correction: 所以我们[可能→可以]住在家安静\n  her past correction: [可能是毒的→可能有毒]\n\n[I243] 什么【都花】想吃   correction: 都花 → 花都   strength: error\n  checker's note: 什么花都想吃 is the required word order\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他吃[+了]一片花瓣 — her note: 了completed\n  her past correction: 他[+在山上]吃一个香香的花 — her note: “所以” is inappropriate because here is not a result, delete it, add “在山上”\n  her past correction: 他[吃→吃了]一个香香的花 — her note: 了completed",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I240",
+    "explanation": "清楚 describes whether something is clear, not how the stomach feels. Use 舒服 for a warm, comfortable stomach feeling.",
+    "dimension": "word_choice",
+    "corrected": "舒服",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I241",
+    "explanation": "Use 看到see when the person actually sees something, rather than 看look. Here use 看到, not 看.",
+    "dimension": "word_choice",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I242",
+    "explanation": "Use ，这样可以 to make the connection with the previous clause clear.",
+    "dimension": "coherence_connectors",
+    "corrected": "，这样可以",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I243",
+    "explanation": "With 什么, put 花 before 都: 什么花都想吃. This word order means “want to eat every kind of flower.”",
+    "dimension": "grammar",
+    "corrected": "花都",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1353,
+  "completion_tokens": 574,
+  "total_tokens": 1927,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1350,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 361,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

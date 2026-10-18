@@ -1,0 +1,40 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “他找到了很多有用植物”: 有用植物 → 有用的植物\n- in “一个老先生叫神农”: 一个老先生叫神农 → 有一个叫神农的老先生\n- in “他吃了以后”: 他 → (deleted)   [her note: redundant]\n- in “这就要看什么植物吃了”: (nothing) → 会不会生病？\n- in “植物他觉得好吃得很”: 植物 → 什么植物？一种绿色的植物\n\nScene to review:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的时候，一个男人觉得植物很有意思。",
+    "corrected": "在古代，有一个男人觉得植物很有意思。",
+    "explanation": "Say 在古代, not 古代的时候, for this meaning. When introducing a character for the first time, use 有一个 to show that this is a new person."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他找很多植物。",
+    "corrected": "他找到了很多植物。",
+    "explanation": "找 means “look for,” while 找到 means “find.” Here he has found many plants, so use 找到了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1234,
+  "completion_tokens": 879,
+  "total_tokens": 2113,
+  "prompt_tokens_details": {
+   "cached_tokens": 1045,
+   "cache_write_tokens": 186,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 721,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

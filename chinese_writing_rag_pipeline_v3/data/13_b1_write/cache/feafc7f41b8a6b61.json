@@ -1,0 +1,68 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “孟子和孟子的妈妈一直住在墓地的旁边”: 孟子 → (deleted)\n- in “古代的时候”: 古代的时候 → 在古代\n- in “墓地的人真影响孟子”: 真 → 很   [her note: “真” is usually used in conversation]\n- in “他们新的家在商店的旁边”: 他们新的家 → 他们的新家\n- in “所以妈妈跟孟子一起搬家”: 所以 → (deleted)\n- in “可是孟子的妈妈一直很控制他”: 可是 → (deleted)\n\nScene to review:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代",
+    "corrected": "在古代",
+    "explanation": "Use 在 before 古代 when it gives the time of the event."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子跟孟母住在墓地的旁边",
+    "corrected": "有一个孩子叫孟子，他跟他的母亲孟母住在墓地的旁边",
+    "explanation": "When a character appears for the first time, introduce them with a noun phrase that says who they are, not only with a name."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "可是孟母注意，住在墓地的旁边影响孟子",
+    "corrected": "孟母注意到住在墓地的旁边影响孟子",
+    "explanation": "可是 needs a contrast, but there is no contrast here. Use 注意到 when someone notices or realizes something."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他常常跟朋友们祭拜玩",
+    "corrected": "他常常跟朋友们玩祭拜的游戏",
+    "explanation": "祭拜 is the action of worshipping; it cannot directly be followed by 玩. Say 玩祭拜的游戏 for “play worship/funeral games.”"
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "孟母决定他们会搬家",
+    "corrected": "孟母决定带孟子搬家",
+    "explanation": "After 决定, say the action that is decided. Do not use 会 here; 孟母 can decide to take 孟子 to move."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "conjunction",
+    "original": "这次，他们住在城市里的商店的旁边",
+    "corrected": "后来，他们住在城市里的商店的旁边",
+    "explanation": "这次 means “this time” and needs an earlier comparable occasion. Later in the story, use 后来 to show that this happened after the decision to move."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1295,
+  "completion_tokens": 2636,
+  "total_tokens": 3931,
+  "prompt_tokens_details": {
+   "cached_tokens": 1292,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2184,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

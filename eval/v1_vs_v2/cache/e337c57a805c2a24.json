@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A single mountain needs the linking verb 是 and a measure word such as 座 before the noun.\n2. [Grammar & Vocabulary, error] 这也找植物：他也在这儿找植物，The person must be the agent of 找植物; use 在 to mark the location and 这儿 to refer to the place.\n3. [Grammar & Vocabulary, error] 你跟黄色的花做茶很有用：用黄色的花做的茶很有用，Use 用 to introduce the material used to make something; 跟 cannot introduce the material here. The modifier ending in 的 makes the tea, rather than the action of making tea, the thing described as useful.\n4. [Grammar & Vocabulary, error] 头发疼死：头疼得要死，头发 means “hair” and cannot be painful in this meaning. Use 头疼 for a headache and 得要死 as a degree complement.\n5. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative before a countable drink needs a measure word: 这 + 杯 + noun.\n6. [Coherence: reference, error] Coherence (Reference): 你的：他的，Use a third-person pronoun for the story character already being discussed; 你 introduces an unclear listener who has not appeared in the scene.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "凉山很大的山 lacks the linking structure needed to identify Liangshan as a large mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 cannot function as the location of 找植物 here; 在这儿 is needed."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "跟 is not the appropriate material marker and 你 introduces an inappropriate listener, but 黄色的花 remains too vague without 一种."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发 is hair, whereas a headache is expressed with 头疼."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The demonstrative needs a measure word before 冰茶, and 杯 is a grammatical possible choice."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你的 is cut off from its noun phrase in the item, but the original use of 你 introduces an unestablished listener and 他的 correctly refers to the character."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2168,
+  "completion_tokens": 2820,
+  "total_tokens": 4988,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 517,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2428,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

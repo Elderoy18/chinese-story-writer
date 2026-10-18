@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不合适的地方让孩子玩：不适合孩子玩儿的地方，适合 takes the person or activity as its complement; placing the activity before 的 correctly describes a place that is unsuitable for a child to play in.\n2. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育环境不太好，教育环境 is the noun phrase that can be described as good or bad; 住在这儿 cannot directly function as the modifier of 教育 in this sentence.\n3. [Grammar & Vocabulary, error] 会一直搬家才能找到质量好的教育：得一直搬家，才能找到质量好的教育，得 expresses the necessary condition required before 才能; 会 only expresses future possibility or prediction.\n4. [Coherence: reference, error] Coherence (Reference): 孟子：小男孩孟子，This is the character’s first mention, so introduce him with a brief noun phrase rather than using only his name.\n5. [Coherence: reference, error] Coherence (Reference): 他妈妈：孟子的妈妈，This is the mother’s first mention, so use a full noun phrase to introduce her clearly before later using pronouns.\n6. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，决定 is a mental-state verb, so it normally takes the zero particle rather than 了.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "适合应直接带人或活动作宾语，原来的定语结构不对。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“住在这儿教育不太好”虽较口语和简略，但意思清楚，并非必须改成“教育环境”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "这里的会不表达所需的条件，而“得……才能……”能正确表达必须如此才可能找到教育。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "故事开头直接用专有名词“孟子”介绍人物是可以的，“小男孩孟子”只是可选的更具体说法。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚被提到后，“他妈妈”指代清楚且自然，不必改为“孟子的妈妈”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "按照教师的修改，这里的决定不应带了，改为“决定”正确修正了该处。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1376,
+  "completion_tokens": 1547,
+  "total_tokens": 2923,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1373,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1128,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0d4672217c"
+}

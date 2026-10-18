@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 在他们第三个家，孟子学了怎么祭拜。\nquote: 在他们第三个家，孟子学了怎么祭拜\npart p0: fix [ref p0/k0-1] 在他们的第三个家，学会了/学习了 ; notes: wrong information, it’s not about learning to offer sacrifices",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "的",
+    "before": "在他们",
+    "after": "第三个家",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 的 in 在他们的第三个家"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "孟子学了怎么祭拜",
+    "corrected": "学会了/学习了",
+    "before": "第三个家，",
+    "after": "",
+    "note": "wrong information, it’s not about learning to offer sacrifices",
+    "confidence": "high",
+    "reason": "replaces the incorrect learning-to-sacrifice content with her correction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1013,
+  "completion_tokens": 137,
+  "total_tokens": 1150,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

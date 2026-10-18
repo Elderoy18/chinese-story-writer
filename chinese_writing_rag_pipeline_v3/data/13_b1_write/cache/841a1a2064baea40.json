@@ -1,0 +1,54 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “这个小孩子叫孟子”: 这个小孩子 → 儿子   [her note: “这个小孩子” is unclear and ambiguous]\n- in “而是她望子成龙”: 她 → (deleted)   [her note: Subj.不是……而是……]\n- in “他们常常搬家”: (nothing) → 所以   [her note: 无聊？add所以]\n- in “孟子的妈妈一直想她的儿子在很好的地方长大”: 想她的儿子在很好的地方长大 → 想让她的儿子在很好的地方长大   [her note: 想 + V., cannot be followed by N.]\n- in “古代的时候有一个男人叫孟子”: 古代的时候 → 在古代\n- in “可是孟子的妈妈一直很控制他”: 可是 → (deleted)\n\nScene to review:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "这个男孩子叫孟子",
+    "corrected": "有一个男孩子叫孟子",
+    "explanation": "This is Mengzi's first mention, so introduce him with 有一个. Starting with 这个 makes it sound as though the reader should already know which boy you mean."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子是古代的人",
+    "corrected": "他是古代的人",
+    "explanation": "Mengzi was just named in the previous clause, and no other person is competing here. Use 他 instead of repeating his name."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "他们常常搬了家",
+    "corrected": "他们常常搬家",
+    "explanation": "常常 describes a repeated routine, so the verb does not take 了. 了 marks a completed action."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "她望子成龙，所以孟子的妈妈安排他的生活",
+    "corrected": "她望子成龙，所以安排他的生活",
+    "explanation": "孟子的妈妈 and 她 are the same person in the same sentence. Do not repeat the subject; omit it after 所以."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1304,
+  "completion_tokens": 1253,
+  "total_tokens": 2557,
+  "prompt_tokens_details": {
+   "cached_tokens": 1301,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 974,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

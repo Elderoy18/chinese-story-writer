@@ -1,0 +1,61 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections in other learners' similar clauses:\n- in “他离墓地住很近”: 离墓地住很近 → 住在离墓地很近的地方\n- in “觉得害得孟子的身体”: 觉得 → (deleted)\n- in “孟子才有一个朋友”: 才有 → 只有\n- in “孟子跟他的妈妈已经搬家了”: 已经 → 就又\n- in “妈妈认为他们拿东西”: 拿东西 → 拿了墓地的东西   [her note: “东西” is too general and vague]\n- in “孟子的妈妈爱她的小孩子”: 爱她的小孩子 → 很爱孩子\n\nScene to review:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "住离墓地太近",
+    "corrected": "住在离墓地很近的地方",
+    "explanation": "A place phrase with 在 comes after 住. Say 住在离墓地很近的地方 for “live in a place that is very close to the cemetery.”"
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子和孟母搬到子思老师的家，跟子思老师住。",
+    "corrected": "他们搬到子思老师的家，跟他住了。",
+    "explanation": "孟子 and his mother were just mentioned, so use 他们. 子思老师 is also already named in this sentence, so use 他 the second time."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "孟子和孟母搬到子思老师的家，跟子思老师住。",
+    "corrected": "他们搬到子思老师的家，跟他住了。",
+    "explanation": "This is a completed series of actions. In a series, put 了 only on the final verb, so say 跟他住了."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "子思帮孟母教她的儿子。",
+    "corrected": "他帮孟母教儿子。",
+    "explanation": "子思 was named in the previous sentence, so use 他. 她 repeats 孟母 in the same sentence; after 孟母, 教儿子 is enough."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "conjunction",
+    "original": "因为孟子现在没有朋友，他老是读书。",
+    "corrected": "因为孟子现在没有朋友，所以老是读书。",
+    "explanation": "Because-and-result sentences use the pair 因为……所以……."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1351,
+  "completion_tokens": 3483,
+  "total_tokens": 4834,
+  "prompt_tokens_details": {
+   "cached_tokens": 1348,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3057,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

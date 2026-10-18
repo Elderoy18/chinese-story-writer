@@ -1,0 +1,42 @@
+{
+ "input": "Scene:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nCorrections to check:\n1. 因为他们常常搬了家  →  因为他们常常搬家   [coherence: temporality]\n2. 先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西  →  她先让孟子跟朋友玩儿，然后教了他怎么买又便宜又质量好的东西   [grammar]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "了 is inappropriate with the habitual adverb 常常 here."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "先 must follow the subject here, and 好质量 must be reordered as 质量好."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 530,
+  "completion_tokens": 279,
+  "total_tokens": 809,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 176,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。\nquote: 因为她恐怕儿子会成为跟他们很像\npart p0: fix [ref p0/k0] 怕/担心 ; notes: 恐怕usually does not take Subj. except 我\npart p1: fix [ref p1/k0] 跟他们一样/很像的人 ; notes: 成为+ noun",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "恐怕",
+    "corrected": "怕",
+    "before": "因为她",
+    "after": "儿子会成为",
+    "note": "恐怕usually does not take Subj. except 我",
+    "confidence": "low",
+    "reason": "teacher offers 怕 or 担心 as the verb replacement"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "跟他们很像",
+    "corrected": "跟他们一样的人",
+    "before": "儿子会成为",
+    "after": "",
+    "note": "成为+ noun",
+    "confidence": "high",
+    "reason": "become requires a noun phrase"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1055,
+  "completion_tokens": 133,
+  "total_tokens": 1188,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1052,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

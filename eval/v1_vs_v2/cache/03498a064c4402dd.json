@@ -1,0 +1,71 @@
+{
+ "input": "Required scenes:\n1. 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n2. 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n3. 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n4. 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n5. 孟子becomes a famous philosopher\n\nThe learner's story:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。子思认为，对孩子来说，读书最重要，特别是学哲学。孟子不是练习写文章，就是看哲学书。孟子从五岁一直学哲学。他才五岁就学哲学，难怪他成为很有名的哲学家。\n\nThe teacher's content flags:\n- Miss one scene: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n\nThe system's content notes:\n1. After Mengzi imitates sacrifices in the graveyard, the story needs Mengmu to decide to move because she worries that copying sacrifices every day will negatively influence him; it should not say the move was unrelated to his play.\n2. Between leaving the graveyard and living near the school, the story needs the part where they move near a market and Mengzi imitates buying and selling every day.\n3. After Mengzi imitates buying and selling near the market, the story needs Mengmu to move again to a neighborhood near a school, where Mengzi begins studying; living with Zisi is different from this part of the retelling.",
+ "salt": "",
+ "output": {
+  "scenes": [
+   {
+    "n": 1,
+    "teacher": "none",
+    "system": "none"
+   },
+   {
+    "n": 2,
+    "teacher": "none",
+    "system": "wrong"
+   },
+   {
+    "n": 3,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 4,
+    "teacher": "none",
+    "system": "wrong"
+   },
+   {
+    "n": 5,
+    "teacher": "none",
+    "system": "none"
+   }
+  ],
+  "notes": [
+   {
+    "n": 1,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner says the move was because the home was too close to the graveyard, rather than because Mengmu feared the sacrifice imitation would harm Mengzi."
+   },
+   {
+    "n": 2,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner omits the move near the market and Mengzi's imitation of buying and selling."
+   },
+   {
+    "n": 3,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner has Mengzi live with Zisi instead of describing Mengmu's move from the market to a neighborhood near a school."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 838,
+  "completion_tokens": 513,
+  "total_tokens": 1351,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 307,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "47505bee5c"
+}

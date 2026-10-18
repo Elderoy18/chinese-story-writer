@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 但是，灵芝很麻烦，神农吃以后，神农的朋友正好在这儿，所以他帮神农。\nquote: 神农吃以后\npart p0: fix [ref p0/k0] 吃了以后 ; notes: 了completed, miss the result of eating",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "神农吃",
+    "after": "以后，神农",
+    "note": "了completed",
+    "confidence": "high",
+    "reason": "adds completed-action 了 after 吃"
+   },
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "神农吃以后",
+    "corrected": "",
+    "before": "很麻烦，",
+    "after": "，神农的朋",
+    "note": "miss the result of eating",
+    "confidence": "high",
+    "reason": "note identifies a separate missing eating result"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1006,
+  "completion_tokens": 122,
+  "total_tokens": 1128,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

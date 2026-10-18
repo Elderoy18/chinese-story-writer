@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 所以他去了又空又高的山，可是他没有吃了，因为他怕毒。\nquote: 所以他去了又空又高的山，可是他没有吃了，因为他怕毒\npart p0: comment [ref p0/note] “所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”\npart p1: fix [ref p1/k0] 什么都没有吃 ; notes: no了in “没+V.”\npart p2: fix [ref p2/k0] 怕有毒",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "delete",
+    "original": "所以",
+    "corrected": "",
+    "before": "",
+    "after": "他去了又空",
+    "note": "“所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”",
+    "confidence": "high",
+    "reason": "deletes inappropriate result connector"
+   },
+   {
+    "ref": "p0/note",
+    "op": "insert",
+    "original": "",
+    "corrected": "为了找到没有毒的植物，",
+    "before": "",
+    "after": "所以他去了又",
+    "note": "“所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”",
+    "confidence": "high",
+    "reason": "adds stated purpose before the action"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "没有吃了",
+    "corrected": "什么都没有吃",
+    "before": "又高的山，可是他",
+    "after": "，因为他怕毒",
+    "note": "no了in “没+V.”",
+    "confidence": "high",
+    "reason": "replaces the negative verb phrase with her corrected form"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "怕毒",
+    "corrected": "怕有毒",
+    "before": "吃了，因为他",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 有 in the fear expression"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1065,
+  "completion_tokens": 380,
+  "total_tokens": 1445,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1062,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 104,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

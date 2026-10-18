@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 小王在马路骑自行车一看到别个人，一下子就撞自行车。\nquote: 一下子就撞自行车\npart p0: fix [ref p0/k0] 自行车一下子就撞到石头了 ; notes: “撞自行车” means to hit the bike, in fact, it is: the bike hit the rock.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "一下子就撞自行车",
+    "corrected": "自行车一下子就撞到石头了",
+    "before": "到别个人，",
+    "after": "。",
+    "note": "“撞自行车” means to hit the bike, in fact, it is: the bike hit the rock.",
+    "confidence": "high",
+    "reason": "recasts the bike as the subject and adds the rock, result complement, and completion marker"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1021,
+  "completion_tokens": 359,
+  "total_tokens": 1380,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 245,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

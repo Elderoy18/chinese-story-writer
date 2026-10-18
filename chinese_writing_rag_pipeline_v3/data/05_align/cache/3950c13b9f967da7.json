@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 神农的身体一些小时以后变得越来越健康，然后另外一个人看见他。穿着棕色的人问神农：“发生什么事了？”\nquote: 然后另外一个人看见他。穿着棕色的人问神农\npart p0: fix [ref p0/k0-1] 另外一个穿着棕色衣服的人，那个人问 ; notes: otherwise it will be ambiguous, as if there are two persons to see and ask 神农",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "另外一个人",
+    "corrected": "另外一个穿着棕色衣服的人",
+    "before": "然后",
+    "after": "看见他。",
+    "note": "otherwise it will be ambiguous, as if there are two persons to see and ask 神农",
+    "confidence": "high",
+    "reason": "moves the clothing description to modify 另外一个人"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "穿着棕色的人",
+    "corrected": "那个人",
+    "before": "看见他。",
+    "after": "问神农",
+    "note": "otherwise it will be ambiguous, as if there are two persons to see and ask 神农",
+    "confidence": "high",
+    "reason": "uses 那个人 to refer back to the same person"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1047,
+  "completion_tokens": 657,
+  "total_tokens": 1704,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1044,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 477,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

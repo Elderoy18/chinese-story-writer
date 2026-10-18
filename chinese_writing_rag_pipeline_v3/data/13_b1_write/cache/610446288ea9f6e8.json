@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “而是她望子成龙”: 她 → (deleted)   [her note: Subj.不是……而是……]\n- in “他们搬到城市”: 搬到 → 搬到了   [her note: 了completed]\n- in “孟子在墓地和祭拜跟其他孩子”: 和 → (deleted)\n- in “所以他们要搬家”: 他们 → 我们   [her note: in quoted speech]\n- in “而是她觉得墓地不合适孩子们玩”: 不合适 → 不适合\n- in “每次搬家她都辛苦地工作，为了给孟子提供更好的学习环境”: 每次搬家她都辛苦地工作，为了给孟子提供更好的学习环境 → 为了给孟子提供更好的学习环境，每次搬家她都辛苦地工作   [her note: “为了……” cannot be in the latter clause]\n\nScene to review:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "有一天孟子去了墓地玩儿",
+    "corrected": "有一天，一个叫孟子的小男孩去了墓地玩儿",
+    "explanation": "This is Mengzi's first appearance in the story, so introduce him with a noun phrase that says who he is, not only with his name."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "这是不合适的地方让孩子玩",
+    "corrected": "这是不适合孩子玩的地方",
+    "explanation": "适合 is used with the person or activity that something is suitable for. Say 不适合孩子玩的地方, not 不合适的地方让孩子玩."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "她决定了他们会搬家找更好的地方",
+    "corrected": "她决定搬家，找一个更好的地方",
+    "explanation": "决定 is a mental-state verb, so it does not take 了 here. Chinese says 决定搬家 rather than 决定他们会搬家."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "住在这儿教育不太好",
+    "corrected": "这儿的教育不太好",
+    "explanation": "Use 的 to show that the education belongs to this place: 这儿的教育."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "她会一直搬家才能找到质量好的教育",
+    "corrected": "她得一直搬家，才能找到质量好的教育",
+    "explanation": "才能 shows that something is necessary to achieve a result. Use a necessity word such as 得 or 要 before it, rather than 会."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1352,
+  "completion_tokens": 1897,
+  "total_tokens": 3249,
+  "prompt_tokens_details": {
+   "cached_tokens": 1349,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1528,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

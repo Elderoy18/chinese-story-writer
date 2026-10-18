@@ -1,0 +1,73 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 在古代有一个神农  →  一个神农 → 一个叫神农的老人\n- 神农发现很多植物  →  ∅ → 了  (了completed)\n- 他偶然看到了一朵美丽的黄花  →  他 → (delete)  (redundant)\n- 他找到了很多有用植物  →  有用植物 → 有用的植物\n- 晚上神农去了  →  晚上神农去了 → 神农是晚上去的\n- 他现在是当医生  →  当 → (delete)  (redundant with是)\n\nScene to review:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "他需要当上医",
+    "corrected": "他需要当上医生",
+    "errors": [
+     {
+      "original": "医",
+      "correction": "医生",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "医生 is the usual word for “doctor.” 医 alone is not normally used as an occupation noun here."
+     }
+    ]
+   },
+   {
+    "clause": "神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看",
+    "corrected": "神农走了三个月，找到有这种植物的地方，他看到了一棵很漂亮的植物，又香又好看",
+    "errors": [
+     {
+      "original": "三个月走去",
+      "correction": "走了三个月",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "A duration such as 三个月 normally comes after the verb: 走了三个月."
+     },
+     {
+      "original": "植物",
+      "correction": "这种植物",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "This refers back to the particular plant mentioned earlier, so use 这种植物 to identify it."
+     },
+     {
+      "original": "看到",
+      "correction": "看到了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "This is the final action in a series, so use 了 to mark its completion."
+     },
+     {
+      "original": "一个",
+      "correction": "一棵",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "棵 is the measure word used for plants."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1156,
+  "completion_tokens": 1862,
+  "total_tokens": 3018,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1153,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

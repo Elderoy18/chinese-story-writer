@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 农夫就给神农吃一些灵芝，神农一吃灵芝就马上恢复了，感觉得身体健康。\nquote: 感觉得身体健康\npart p0: fix [ref p0/k0] 觉得身体又健康了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "感",
+    "corrected": "",
+    "before": "恢复了，",
+    "after": "觉得身体",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction removes 感 from 感觉得"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "身体健康",
+    "corrected": "身体又健康了",
+    "before": "感觉得",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction adds 又 and 了"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 996,
+  "completion_tokens": 217,
+  "total_tokens": 1213,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 102,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 这就要看蘑菇看不看像伞。\nquote: 这就要看蘑菇看不看像伞\npart p0: instruction [ref p0/k0] add a condition before “这就要看……了“ ; fix [ref p0/k2] 这就要看蘑菇像不像伞了 ; notes: e.g., 蘑菇能不能吃",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "unplaceable",
+    "original": "",
+    "corrected": "",
+    "before": "",
+    "after": "",
+    "note": "e.g., 蘑菇能不能吃",
+    "confidence": "low",
+    "reason": "teacher requests an unspecified condition before the quoted clause"
+   },
+   {
+    "ref": "p0/k2",
+    "op": "replace",
+    "original": "看不看像伞",
+    "corrected": "像不像伞了",
+    "before": "这就要看蘑菇",
+    "after": "",
+    "note": "e.g., 蘑菇能不能吃",
+    "confidence": "high",
+    "reason": "changes the embedded question to 蘑菇像不像伞 and adds 了"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1036,
+  "completion_tokens": 143,
+  "total_tokens": 1179,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1033,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

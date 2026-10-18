@@ -1,0 +1,50 @@
+{
+ "input": "Scene:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nCorrections to check:\n1. 吃了以后，神农快生病  →  吃了以后，神农快生病了   [coherence: temporality]\n2. 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝  →  这时一个穿着蓝色衣服的人帮神农，很快给了他一种红的灵芝   [coherence: temporality]\n3. 神农吃了以后，他没有病  →  神农吃了以后，他没有病了   [coherence: temporality]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "no",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "The original needs a completed-event form, but 快生病了 means “is about to get sick” rather than “quickly got sick.”"
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "The original cannot use 快 directly before 给 in this narrative event, while 很快给了 is natural and complete."
+   },
+   {
+    "n": 3,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "没有病 is grammatical and can state that he is not ill, though 没有病了 more clearly expresses recovery."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 586,
+  "completion_tokens": 1344,
+  "total_tokens": 1930,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1149,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

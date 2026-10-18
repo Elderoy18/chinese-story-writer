@@ -1,0 +1,47 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections in other learners' similar clauses:\n- in “难怪他成为名的哲学家”: 名的 → 有名的\n- in “而是成为哲学人”: 哲学人 → 哲学家\n- in “有一天孟子才四岁”: 有一天 → (deleted)\n- in “孟子决定了祭拜”: 了 → (deleted)   [her note: 决定is a mental state verb, no了]\n- in “他跟很多人打交道”: 打交道 → 打过交道   [her note: “过” for “have done, experience”]\n- in “而是学多文章”: 学 → 待在这儿学习\n\nScene to review:\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "孟子才十一岁，成为一个哲学家。",
+    "corrected": "孟子才十一岁，成为了一个哲学家。",
+    "explanation": "Becoming a philosopher is a completed event here, so 成为 needs 了."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子不是祭拜，而是看政治文章",
+    "corrected": "他不是祭拜，而是看政治文章",
+    "explanation": "孟子 was named in the previous sentence, and no other person is competing for the reference, so use 他 instead of repeating his name."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "不过，看过很多政治文章对他害得，他有很多问题。",
+    "corrected": "不过，看过很多政治文章对他有害，所以他有很多问题。",
+    "explanation": "害得 must introduce a result, such as 害得他有很多问题. To say something is harmful to someone, use 对他有害; 所以 then links this cause to the result."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1347,
+  "completion_tokens": 2825,
+  "total_tokens": 4172,
+  "prompt_tokens_details": {
+   "cached_tokens": 1045,
+   "cache_write_tokens": 299,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2560,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

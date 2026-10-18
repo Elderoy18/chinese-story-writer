@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他发现了有些花可以做茶，还有的有毒。\nquote: 还有的有毒\npart p0: instruction [ref p0/k0] delete还 ; fix [ref p0/k1] 有些花",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "还",
+    "corrected": "",
+    "before": "有些花可以做茶，",
+    "after": "有的有毒。",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit deletion instruction"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "replace",
+    "original": "有的",
+    "corrected": "有些花",
+    "before": "些花可以做茶，还",
+    "after": "有毒。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the second noun phrase with her supplied wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 990,
+  "completion_tokens": 119,
+  "total_tokens": 1109,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

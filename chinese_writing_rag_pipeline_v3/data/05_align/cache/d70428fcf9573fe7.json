@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 搬家对孟子好处影响，因为他小的时候学好了，他难怪成为了一个很聪明的哲学家。\nquote: 因为他小的时候学好了，他难怪成为了一个很聪明的哲学家\npart p0: instruction [ref p0/k0] delete the second他\npart p1: fix [ref p1/k0] 难怪后来……",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "学好了，",
+    "after": "难怪成为",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the repeated pronoun before 难怪"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "后来",
+    "before": "他难怪",
+    "after": "成为了一",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 后来 after 难怪"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1029,
+  "completion_tokens": 417,
+  "total_tokens": 1446,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1026,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 304,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

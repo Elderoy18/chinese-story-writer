@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nITEMS:\n\n[I66] 这【^】黄色的花是夹竹桃   correction: ∅ → 朵   strength: error\n  checker's note: a classifier is needed for a single flower\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: [还花的名字是夹竹桃→也发现了一种叫夹竹桃的花]\n  her past correction: [夹竹桃→这个花]有毒 — her note: it is confusing to have花 ; it looks like they refer to two different flowers, but actually the same. 吃一种叫夹竹桃的花的时候\n  her past correction: 另外一个植物[-是]叫夹竹桃\n\n[I67] 特别【是毒】   correction: 是毒 → 有毒   strength: error\n  checker's note: her pattern: 是毒 -> 有毒 (corrected 14/15 in train)\n  rule card (word_class_choice, Vocabulary): Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.  Pattern: <wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.  Her terms: noun, Adj., Subj., 很多+noun, 这个 + Noun\n  her past correction: 特别是[毒的→有毒的]植物\n  her past correction: 夹竹桃[是特别是毒→的毒特别厉害] — her note: ”特别是+N, + Clause” is used to single out a typical example\n  her past correction: [-还]有的有毒\n\n[I68] 【^】灵芝药的夹竹桃他吃完了   correction: ∅ → 有   strength: error\n  checker's note: an existential verb is needed after this locative phrase\n  rule card (incorrect_story_information, Content): Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information.  Pattern: <wrong> → <correct>: this changes a story fact; the story says <fact>.  Her terms: wrong information, problematic in coherence\n  her past correction: [+如果吃了夹竹桃，]这就要看你也吃不吃灵芝了 — her note: e.g., 如果吃了夹竹桃\n  her past correction: [-但]如果灵芝和夹竹桃一起吃 — her note: wrong information, 灵芝is a medicine\n  her past correction: [灵芝→他]一吃就正好\n\n[I69] 也写【^】一个课文的植物   correction: ∅ → 了   strength: error\n  checker's note: 写 is a completed action in this sequence\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 学习植物[+的知识]\n  her past correction: 他[写好→写下]了什么植物能吃\n  her past correction: 神农[写植物→写了一本有关植物]的书\n\n[I70] 也写一个【课文的植物】   correction: 课文的植物 → 关于植物的课文   strength: error\n  checker's note: the modifier order must mean “a text about plants”\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 学习植物[+的知识]\n  her past correction: [对植物→关于植物有没有毒，]我学到了\n  her past correction: 神农[写植物→写了一本有关植物]的书",
+ "salt": "repeat-run2",
+ "output": {
+  "items": [
+   {
+    "item_id": "I66",
+    "explanation": "^ → 朵: 朵 normally collocates with a single flower; use 这朵黄色的花.",
+    "dimension": "word_choice",
+    "corrected": "朵",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I67",
+    "explanation": "是毒 → 有毒: here the structure needs a verb phrase describing the flower. Use 有毒, not 是毒.",
+    "dimension": "word_choice",
+    "corrected": "有毒",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I68",
+    "explanation": "Use 有 after 在这儿 to show that the 灵芝药 is present there. This keeps the story information clear.",
+    "dimension": "content",
+    "corrected": "有",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I69",
+    "explanation": "Use 了 after 写 because the writing is a completed action in this sequence.",
+    "dimension": "word_choice",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I70",
+    "explanation": "写 must take the thing being written as its object. Use 关于植物的课文 for “a text about plants.”",
+    "dimension": "grammar",
+    "corrected": "关于植物的课文",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1612,
+  "completion_tokens": 722,
+  "total_tokens": 2334,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1609,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 459,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

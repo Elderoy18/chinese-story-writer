@@ -1,0 +1,66 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections in other learners' similar clauses:\n- 孟子的妈妈叫了孟子搬家  →  了 → (delete)  (叫/让 is a modal verb, no了)\n- 孟母一直觉得受到教育很重要  →  受到教育 → 接受教育\n- 所以妈妈跟孟子一起搬家  →  所以 → (delete)\n- 可是孟子的妈妈有别的看法  →  可是 → (delete)  (wrong conjunctions, 他只要跟朋友玩儿)\n- 孟子跟他的妈妈已经搬家了  →  已经 → 就又\n\nScene to review:\n孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家",
+    "corrected": "孟子的妈妈觉得孟子接受良好的教育是很重要的，所以她认为这样的地方对儿子的教育不太好，就打算跟孟子搬家",
+    "errors": [
+     {
+      "original": "取得",
+      "correction": "接受",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "We say 接受教育, meaning “receive an education.” 取得 does not collocate with 教育 here."
+     },
+     {
+      "original": "孟子的妈妈",
+      "correction": "她",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The mother was already the subject earlier in this sentence. Use 她 for this close repeated reference."
+     }
+    ]
+   },
+   {
+    "clause": "孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家",
+    "corrected": "她带孟子不是搬到城市，而是搬到了孟子的老师的家",
+    "errors": [
+     {
+      "original": "孟子的妈妈",
+      "correction": "她",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The mother was mentioned in the immediately preceding clause, so use 她."
+     },
+     {
+      "original": "孟子老师",
+      "correction": "孟子的老师",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 的 to show that the teacher belongs to Mengzi: 孟子的老师."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1216,
+  "completion_tokens": 3506,
+  "total_tokens": 4722,
+  "prompt_tokens_details": {
+   "cached_tokens": 1213,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3146,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

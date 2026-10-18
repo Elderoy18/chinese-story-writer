@@ -1,0 +1,74 @@
+{
+ "input": "Scene:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\nCorrections to check:\n1. 所以他们找到了很多植物对药  →  所以他们找到了很多植物做药   [vocabulary]\n2. 神农先看到很多病人  →  神农先看到了很多病人   [coherence: temporality]\n3. 但是我觉得他们的吃的植物  →  但是我觉得他们吃的植物   [grammar]\n4. 神农觉得这个植物可能特别是毒  →  神农觉得这个植物可能特别有毒   [vocabulary]\n5. 所以他想找一个植物对药  →  所以他想找一种植物做药   [grammar]\n6. 正好，他找到了一把花，他想把花放在茶里，对药  →  正好，他找到了一把花，他想把花放在茶里，做药   [vocabulary]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "“对药” is not an appropriate verb phrase for making medicine from plants."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "“先看到很多病人” is already grammatically acceptable without 了."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "“他们的吃的植物” incorrectly inserts 的 before the verb phrase modifying 植物."
+   },
+   {
+    "n": 4,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "“特别是毒” is not a natural way to say that a plant is especially poisonous."
+   },
+   {
+    "n": 5,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "“对药” is not the correct expression here, while “一种植物做药” is natural."
+   },
+   {
+    "n": 6,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "“对药” is not appropriate here, whereas “做药” correctly expresses using the flowers as medicine."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 653,
+  "completion_tokens": 805,
+  "total_tokens": 1458,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 510,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。\nquote: 他一次试一试有些植物的叶，吃得又新鲜又甜\npart p0: fix [ref p0/k0] 有一次\npart p1: fix [ref p1/k0] 试了试 ; notes: 了completed\npart p2: fix [ref p2/k0] 叶子\npart p3: fix [ref p3/k0] 吃起来",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "一次",
+    "corrected": "有一次",
+    "before": "他",
+    "after": "试一试有些",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 一次 with 有一次"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "试一试",
+    "corrected": "试了试",
+    "before": "他一次",
+    "after": "有些植物的",
+    "note": "了completed",
+    "confidence": "high",
+    "reason": "adds completed 了 to the trial action"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "叶",
+    "corrected": "叶子",
+    "before": "些植物的",
+    "after": "，吃得又新",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 叶 with 叶子"
+   },
+   {
+    "ref": "p3/k0",
+    "op": "replace",
+    "original": "吃得",
+    "corrected": "吃起来",
+    "before": "物的叶，",
+    "after": "又新鲜又",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 吃得 with 吃起来"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1054,
+  "completion_tokens": 451,
+  "total_tokens": 1505,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1051,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 221,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

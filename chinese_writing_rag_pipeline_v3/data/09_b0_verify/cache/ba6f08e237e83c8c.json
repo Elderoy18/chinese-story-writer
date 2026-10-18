@@ -1,0 +1,50 @@
+{
+ "input": "Scene:\n所以，他上山下山找植物，吃了很多样子的植物。他是第一人，找到了茶。他把所有的植物写下来了。他一直都吃了，他连毒都能吃。可是他还没吃了一个叫夹竹桃的植物。他找到了那个像星星的植物，觉得很漂亮，马上就吃下了。\n\nCorrections to check:\n1. 他是第一人  →  他是第一个人   [grammar]\n2. 他一直都吃了  →  他一直都吃   [coherence: temporality]\n3. 可是他还没吃了一个叫夹竹桃的植物  →  可是他还没吃一个叫夹竹桃的植物   [coherence: temporality]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "第一 cannot directly modify 人 here; the ordinal requires the measure word 个."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "一直都吃了 is not appropriate for an ongoing or habitual action, while 一直都吃 is grammatical."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "还没 cannot be followed by the perfective particle 了 in this clause."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 541,
+  "completion_tokens": 421,
+  "total_tokens": 962,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 265,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

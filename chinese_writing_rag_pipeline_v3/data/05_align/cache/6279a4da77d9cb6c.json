@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 但政府实行的改革经济一系列政策就让他失业，被迫转行。\nquote: 但政府实行的改革经济一系列政策就让他失业，被迫转行\npart p0: fix [ref p0/k0-1] 实行的改革经济的一系列政策，却使他失业并被迫转行\npart p1: fix [ref p1/k1-2] 被迫，转行” ; notes: “却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业 ; adding “并” will increase the coherence.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "的",
+    "before": "行的改革经济",
+    "after": "一系列政策就",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 的 after 改革经济"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "就让",
+    "corrected": "却使",
+    "before": "一系列政策",
+    "after": "他失业，被",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 就让 with 却使"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "，",
+    "corrected": "并",
+    "before": "让他失业",
+    "after": "被迫转行",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the comma with 并"
+   },
+   {
+    "ref": "p1/k1-2",
+    "op": "unplaceable",
+    "original": "被迫转行",
+    "corrected": "",
+    "before": "让他失业，",
+    "after": "",
+    "note": "“却” indicates unexpected semantic turn, “使” is more formal and better fit other formal words like “失业 ; adding “并” will increase the coherence.",
+    "confidence": "low",
+    "reason": "the supplied fix fragment is malformed and conflicts with the full correction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1074,
+  "completion_tokens": 713,
+  "total_tokens": 1787,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1071,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 448,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

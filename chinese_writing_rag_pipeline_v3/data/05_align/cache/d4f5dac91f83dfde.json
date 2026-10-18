@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他以后正好看一个灵芝，他一吃灵芝就身体好了，可是，蘑菇不见得都好吃，你应该特别是小心。\nquote: 他以后正好看一个灵芝，他一吃灵芝就身体好了\npart p0: fix [ref p0/k0] 然后 ; notes: Time+以后\npart p1: fix [ref p1/k0] 他正好看到 ; notes: 看look vs.看到see\npart p2: fix [ref p2/k0] 身体就好了 ; notes: Subj. + 就",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "他以后",
+    "corrected": "然后他",
+    "before": "",
+    "after": "正好看一",
+    "note": "Time+以后",
+    "confidence": "high",
+    "reason": "replaces the unsupported 以后 phrase with 然后 and keeps the subject after it"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "看",
+    "corrected": "看到",
+    "before": "后正好",
+    "after": "一个灵芝",
+    "note": "看look vs.看到see",
+    "confidence": "high",
+    "reason": "changes 看 to 看到"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "就身体好了",
+    "corrected": "身体就好了",
+    "before": "一吃灵芝",
+    "after": "，",
+    "note": "Subj. + 就",
+    "confidence": "high",
+    "reason": "moves 就 to follow the subject 身体"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1069,
+  "completion_tokens": 703,
+  "total_tokens": 1772,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1066,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

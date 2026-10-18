@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 神农回他的家，他看到了药，正好看到了毒植物，特别是灵芝和夹竹桃。\nquote: 神农回他的家，他看到了药，正好看到了毒植物\npart p0: fix [ref p0/k0] 回到家 ; instruction [ref p0/k1] delete他的, redundant\npart p1: instruction [ref p1/k0] delete他 ; notes: redundant\npart p2: fix [ref p2/k0] 有毒植物\npart p3: comment [ref p3/note] what is the connection between 看到了药and正好看到了有毒植物?",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "回",
+    "corrected": "回到",
+    "before": "神农",
+    "after": "他的家，他",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 回 to 回到 while the separate instruction removes 他的"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "他的",
+    "corrected": "",
+    "before": "神农回",
+    "after": "家，他看",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the redundant possessive"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "他的家，",
+    "after": "看到了药，",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the redundant pronoun"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "毒植物",
+    "corrected": "有毒植物",
+    "before": "正好看到了",
+    "after": "，特别是",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 有 to describe poisonous plants"
+   },
+   {
+    "ref": "p3/note",
+    "op": "comment",
+    "original": "看到了药，正好看到了毒植物",
+    "corrected": "",
+    "before": "神农回他的家，他",
+    "after": "，特别是",
+    "note": "what is the connection between 看到了药and正好看到了有毒植物?",
+    "confidence": "high",
+    "reason": "teacher questions the connection between the two clauses"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1080,
+  "completion_tokens": 600,
+  "total_tokens": 1680,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1077,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 301,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

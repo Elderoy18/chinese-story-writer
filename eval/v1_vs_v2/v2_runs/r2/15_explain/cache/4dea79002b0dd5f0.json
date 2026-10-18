@@ -1,0 +1,47 @@
+{
+ "input": "CURRENT SCENE:\n子思认为，对孩子来说，读书最重要，特别是学哲学。孟子不是练习写文章，就是看哲学书。孟子从五岁一直学哲学。他才五岁就学哲学，难怪他成为很有名的哲学家。\n\nITEMS:\n\n[I11] 就是【看】哲学书   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 他成为[+了]哲学家\n  her past correction: [+就]开始学哲学 — her note: 才 Num.就V.\n  her past correction: 而是成为[哲学人→哲学家]\n\n[I12] 孟子从五岁【^】一直学哲学   correction: ∅ → 起   strength: error\n  checker's note: 起 more clearly marks the starting age after 从五岁\n  rule card (laoshi_negative_repetition, Vocabulary): 老是 means “always” and is used for something negative or to complain; for a neutral or positive repeated action, use 一直 or 常常 instead.  Pattern: <老是 + action> → <一直/常常 + action>: the action is neutral or positive, not something negative to complain about, so do not use 老是.  Her terms: 老是\n  her past correction: 孟子从早到晚[老是→一直]学哲学 — her note: “老是“ for something negative, used to complain\n  her past correction: 孟子决定[-他应该]学哲学\n  her past correction: 孟子[一直学了→一直在学习]很多东西 — her note: 一直在+V., emphasizing always ongoing\n\n[I13] 难怪【他】成为很有名的哲学家   correction: 他 → (delete)   strength: error\n  checker's note: 他 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 难怪他成为[名的→有名的]哲学家\n  her past correction: 难怪他长大以后[当→成为]很有名的哲学家\n  her past correction: [-他]难怪成为了一个很聪明的哲学家",
+ "salt": "repeat-run2",
+ "output": {
+  "items": [
+   {
+    "item_id": "I11",
+    "explanation": "孟子 actually sees the philosophy books, so use 看到see, not 看look.",
+    "dimension": "word_choice",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I12",
+    "explanation": "After 从五岁, add 起 to mark the starting age: 从五岁起一直学哲学.",
+    "dimension": "word_choice",
+    "corrected": "起",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I13",
+    "explanation": "孟子 is already clear from the previous clause, so delete the redundant 他. Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1140,
+  "completion_tokens": 151,
+  "total_tokens": 1291,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1137,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

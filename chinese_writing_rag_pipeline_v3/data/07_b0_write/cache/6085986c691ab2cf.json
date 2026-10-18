@@ -1,0 +1,78 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 古代的时候  →  古代的时候 → 在古代\n- 他叫孟子  →  他 → (delete)\n- 他们在墓地住  →  他们 → (delete)  (redundant)\n- 孟子决定了祭拜  →  了 → (delete)  (决定is a mental state verb, no了)\n- 而是他喜欢这个城市的人  →  他 → (delete)\n- 他跟他的妈妈住在一个小房子  →  他 → (delete)\n\nScene to review:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "古代的时候",
+    "corrected": "在古代",
+    "errors": [
+     {
+      "original": "古代的时候",
+      "correction": "在古代",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 在古代 to mean “in ancient times.”"
+     }
+    ]
+   },
+   {
+    "clause": "他叫孟子",
+    "corrected": "叫孟子",
+    "errors": [
+     {
+      "original": "他",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The same subject continues from the previous sentence, so the pronoun can be omitted."
+     }
+    ]
+   },
+   {
+    "clause": "他们住在墓地的旁边",
+    "corrected": "住在墓地的旁边",
+    "errors": [
+     {
+      "original": "他们",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The people have just been mentioned, so the subject can be omitted here."
+     }
+    ]
+   },
+   {
+    "clause": "他很喜欢他的城市，但是城市有才两个学校，都很小",
+    "corrected": "他很喜欢他的城市，但是城市才有两个学校，都很小",
+    "errors": [
+     {
+      "original": "有才",
+      "correction": "才有",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "才 goes before 有: 才有两个学校 means “there are only two schools.”"
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1111,
+  "completion_tokens": 2012,
+  "total_tokens": 3123,
+  "prompt_tokens_details": {
+   "cached_tokens": 1108,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1716,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

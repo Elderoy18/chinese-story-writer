@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar, error] …常常跟朋友们祭拜玩 → …常常跟朋友们玩祭拜的游戏 -- Put 玩 before the activity being played. Say 玩祭拜的游戏.\n2. [Vocabulary, suggestion] …在墓地的旁边影响孟子 → …在墓地的旁边会影响孟子 -- It would be more natural to say 会影响孟子 to show that living beside a cemetery may have this result.\n3. [Vocabulary, error] 所以孟母决定他们会搬家 → 所以孟母决定搬家 -- After 决定, use the action directly: 决定搬家. Do not add 他们会 here.\n4. [Coherence: reference, error] ⟦孟子⟧跟孟母住在墓… -- This character appears for the first time, so please introduce 孟子 briefly with an identifying noun phrase, not only his name.\n5. [Coherence: reference, error] 孟子跟⟦孟母⟧住在墓地的旁… -- This character appears for the first time, so please introduce 孟母 briefly, for example as 孟子的妈妈.\n6. [Coherence: connectors, error] 可是孟母注意 → 可是孟母注意到 -- Use 注意到 when you mean “notice” or “realize” a fact.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“祭拜玩” needs a grammatical play-for-fun structure such as “祭拜着玩儿”; “玩祭拜的游戏” is also grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“住在墓地的旁边影响孟子” can state the effect directly, so 会 is optional rather than required."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "决定 should be followed directly by the action, so “决定搬家” correctly removes the unnecessary clause."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first introduced here, and the teacher requires a brief identifying introduction for a first-mentioned character."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“孟母” already identifies her as Mengzi’s mother in the immediately linked phrase, so a further introduction is not required."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "注意到 is needed for the result meaning “notice,” but the displayed correction is cut off before its content clause."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2157,
+  "completion_tokens": 1822,
+  "total_tokens": 3979,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 506,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1414,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

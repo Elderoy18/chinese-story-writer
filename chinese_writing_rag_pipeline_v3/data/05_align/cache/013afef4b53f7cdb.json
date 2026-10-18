@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他又爬上去梯子的时候，马先生跟他的驴走去筐的后边来。\nquote: 马先生跟他的驴走去筐的后边来\npart p0: fix [ref p0/k0] 马先生牵着驴走到筐的后边来 ; notes: “跟/和+noun.” is used for multiple nouns that have the same action, we can say: 马先生和张先生走……，because both 马先生and 张先生 “walk”, but here “驴” does not walk by itself, but walked by 马先生, so you need to use the accompanying phrase “V.着”\npart p1: comment [ref p1/note] 走到place来/去，cannot say “走去/来Place”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "跟他的驴",
+    "corrected": "牵着驴",
+    "before": "马先生",
+    "after": "走去筐的",
+    "note": "“跟/和+noun.” is used for multiple nouns that have the same action, we can say: 马先生和张先生走……，because both 马先生and 张先生 “walk”, but here “驴” does not walk by itself, but walked by 马先生, so you need to use the accompanying phrase “V.着”",
+    "confidence": "high",
+    "reason": "replaces 跟他的驴 with the accompanying phrase 牵着驴"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "走去",
+    "corrected": "走到",
+    "before": "跟他的驴",
+    "after": "筐的后边",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix changes 走去 to 走到 before the place"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "走去筐",
+    "corrected": "",
+    "before": "跟他的驴",
+    "after": "的后边来",
+    "note": "走到place来/去，cannot say “走去/来Place”",
+    "confidence": "high",
+    "reason": "comments on the placement of the destination after 走"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1114,
+  "completion_tokens": 794,
+  "total_tokens": 1908,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1111,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 507,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

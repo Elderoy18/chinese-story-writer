@@ -1,0 +1,82 @@
+{
+ "input": "CURRENT SCENE:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nITEMS:\n\n[I14] 有一天【孟子】去了墓地玩儿   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 孟子: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜⟧ — her note: loosely connected with the preceding sentence\n  her past correction: 孟子在墓地[-和]祭拜跟其他孩子\n  her past correction: ⟦孟子⟧从早到晚想玩玩儿 — her note: replace孟子with他\n\n[I15] 有一天孟子去【了】墓地玩儿   correction: 了 → (delete)   strength: suggestion\n  rule card (loose_clause_connection, Coherence: connectors): Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.  Pattern: <wrong> → <correct>: use <connector/purpose/sequence phrase> to show how this sentence connects to the previous clause or sentence.\n  her past correction: ⟦孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜⟧ — her note: loosely connected with the preceding sentence\n  her past correction: 孟子在墓地[-和]祭拜跟其他孩子\n  her past correction: 孟子在墓地和[祭拜跟其他孩子→跟其他孩子祭拜]\n\n[I16] 但是他妈妈觉得这是【不合适的地方让孩子玩】   correction: 不合适的地方让孩子玩 → 不适合孩子玩的地方   strength: error\n  checker's note: the modifier order for a place suitable for children to play is wrong\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 而是她觉得墓地[不合适→不适合]孩子们玩\n  her past correction: 孟母觉得这个环境[不对孩子的成长有→对孩子的成长没有]好处\n  her past correction: 就自己觉得我不想[我的儿子→儿子不应该]在这个地方长大\n\n[I17] 所以她决定【了】他们会搬家找更好的地方   correction: 了 → (delete)   strength: error\n  checker's note: no 了 after the mental-state verb 决定\n  rule card (no_le_mental_state, Coherence: temporality (了/着/在)): Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative.  Pattern: <wrong> → <correct>: <verb> is a mental-state verb here, so use no 了.  Her terms: mental state verb, no了\n  her past correction: 所以[他们→我们]要搬家 — her note: in quoted speech\n  her past correction: 所以他们[再→又]搬家一次 — her note: 又for something already occurred\n  her past correction: 他们搬家不是为了[-孟母]要住在更好的房子 — her note: delete孟母\n\n[I18] 所以她决定了他们会搬家找更好的【地方】   correction: 地方 → (delete)   strength: suggestion\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 他们搬家不是为了[-孟母]要住在更好的房子 — her note: delete孟母\n  her past correction: 他们搬家不是为了孟母要住在更好的房子[+里] — her note: 在+Place\n  her past correction: 所以[他们→我们]要搬家 — her note: in quoted speech\n\n[I19] 而且【住在这儿】教育不太好   correction: 住在这儿 → 这儿的   strength: error\n  checker's note: the sentence needs “the education here,” not “living here education”\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 但这个地方不是[教育意义→教导孩子学习知识]\n  her past correction: 我现在有良好的[-教育和]生活\n  her past correction: 也[-她]感到孩子教育的好地方\n\n[I20] 所以【她】会一直搬家才能找到质量好的教育   correction: 她 → (delete)   strength: error\n  checker's note: 她 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 也她[感到孩子教育的好地方→就找到了让孩子接受良好教育的环境]\n  her past correction: [-也]她感到孩子教育的好地方\n  her past correction: 也[-她]感到孩子教育的好地方\n\n[I21] 所以她【会】一直搬家才能找到质量好的教育   correction: 会 → 要   strength: suggestion\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 也她[感到孩子教育的好地方→就找到了让孩子接受良好教育的环境]\n  her past correction: [-也]她感到孩子教育的好地方\n  her past correction: 也[-她]感到孩子教育的好地方",
+ "salt": "repeat-run2",
+ "output": {
+  "items": [
+   {
+    "item_id": "I14",
+    "explanation": "孟子 appears for the first time, so please introduce him briefly, for example 孟子小时候.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I15",
+    "explanation": "It would be more natural to delete 了 here, so the sentence connects more smoothly to the following action.",
+    "dimension": "coherence_connectors",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I16",
+    "explanation": "不合适的地方让孩子玩 → 不适合孩子玩的地方: use 不适合孩子玩的地方 to make 孩子玩 modify 地方 clearly.",
+    "dimension": "grammar",
+    "corrected": "不适合孩子玩的地方",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I17",
+    "explanation": "决定 is a mental state verb here, so use no 了.",
+    "dimension": "coherence_temporality",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I18",
+    "explanation": "It would be more natural to delete 地方 because 更好的 already expresses the idea, and 地方 is redundant here.",
+    "dimension": "other",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I19",
+    "explanation": "住在这儿 → 这儿的: use 这儿的教育 to show that the education belongs to this place.",
+    "dimension": "grammar",
+    "corrected": "这儿的",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I20",
+    "explanation": "她 is already clear from the previous clause, so delete it; Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I21",
+    "explanation": "It would be more natural to use 要 instead of 会 here, because 要 naturally expresses her intention to keep moving.",
+    "dimension": "word_choice",
+    "corrected": "要",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2338,
+  "completion_tokens": 419,
+  "total_tokens": 2757,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2335,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

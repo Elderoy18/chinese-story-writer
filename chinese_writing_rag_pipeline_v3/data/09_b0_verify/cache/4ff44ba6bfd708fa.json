@@ -1,0 +1,74 @@
+{
+ "input": "Scene:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nCorrections to check:\n1. 古代的时候  →  在古代   [vocabulary]\n2. 孟子和孟母住了在靠墓地的家  →  孟子和孟母住在靠墓地的家   [coherence: temporality]\n3. 孩子才五岁就每天在墓地祭拜了  →  他才五岁就每天在墓地祭拜   [coherence: reference]\n4. 可是找不到，害得孟母没有钱  →  可是找不到，害得她没有钱   [coherence: reference]\n5. 难怪她跟孩子搬家  →  难怪她跟他搬了家   [coherence: reference]\n6. 他们搬了到别一个城市找工作  →  他们搬到了另一个城市找工作   [coherence: temporality]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "古代的时候 is grammatical and natural, though 在古代 is also fine."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "住了在 has an invalid placement of 了, while 住在靠墓地的家 is acceptable."
+   },
+   {
+    "n": 3,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "孩子 is a valid reference, and the original 了 can mark that the daily action began at age five."
+   },
+   {
+    "n": 4,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "Repeating 孟母 is acceptable and does not create a reference error."
+   },
+   {
+    "n": 5,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "她跟孩子搬家 is grammatical and clear, although 她跟他搬了家 is also natural."
+   },
+   {
+    "n": 6,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "搬了到 is not a valid verb-plus-direction structure; 搬到了另一个城市 is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 651,
+  "completion_tokens": 1340,
+  "total_tokens": 1991,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

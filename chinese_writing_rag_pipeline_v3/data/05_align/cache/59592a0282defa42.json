@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 神农说：啊，所以这个灵芝是药啊，和这个花是毒，我要马上写这个花不能吃，特别很新鲜的时候。\nquote: 和这个花是毒，我要马上写这个花不能吃，特别很新鲜的时候\npart p0: instruction [ref p0/k0] delete和 ; notes: 和cannot connect clauses\npart p1: fix [ref p1/k0] 有毒\npart p2: fix [ref p2/k0] 特别是",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "和",
+    "corrected": "",
+    "before": "是药啊，",
+    "after": "这个花是毒",
+    "note": "和cannot connect clauses",
+    "confidence": "high",
+    "reason": "deletes clause-connecting 和"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "是毒",
+    "corrected": "有毒",
+    "before": "啊，和这个花",
+    "after": "，我要马上",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 是毒 with 有毒"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "特别很",
+    "corrected": "特别是",
+    "before": "花不能吃，",
+    "after": "新鲜的时",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 特别很 with 特别是"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1049,
+  "completion_tokens": 171,
+  "total_tokens": 1220,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1046,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

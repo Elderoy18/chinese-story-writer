@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。\nquote: 因为如果你懂政治，你会成为高薪\npart p0: instruction [ref p0/k0] delete the second你 ; notes: redundant\npart p1: fix [ref p1/k0] 得到高薪 ; notes: 成为 + profession/celebrity",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "你",
+    "corrected": "",
+    "before": "为如果懂政治，",
+    "after": "会成为高薪",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the second 你"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "成为高薪",
+    "corrected": "得到高薪",
+    "before": "政治，你会",
+    "after": "。",
+    "note": "成为 + profession/celebrity",
+    "confidence": "high",
+    "reason": "replaces 成为 with 得到 for 高薪"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1026,
+  "completion_tokens": 126,
+  "total_tokens": 1152,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 喜欢玩在墓地里：喜欢在墓地里玩，A location phrase such as “在墓地里” normally comes before the main action verb “玩”.\n2. [Grammar & Vocabulary, error] 装祭拜：装作祭拜，“装作” must be followed by an action or state to mean pretending to do it.\n3. [Grammar & Vocabulary, error] 跟妈妈：妈妈带着他，“跟” means doing an action together with someone, but here the mother is relocating her young child; “带着” expresses that relationship accurately.\n4. [Coherence: reference, error] Coherence (Reference): 孟子和他的朋友：他和朋友，Use a pronoun for a close re-occurrence: “孟子” was named in the immediately preceding sentence, and no competing male character has appeared.\n5. [Coherence: reference, error] Coherence (Reference): 孟子五岁的时候：他五岁的时候，Use a pronoun for a close re-occurrence of the same character.\n6. [Coherence: temporality, error] Coherence (Temporality): 妈妈带着他搬家：妈妈带着他搬了家，Use “了” for this completed, one-time move.\n7. [Coherence: temporality, error] Coherence (Temporality): 他们搬家不是因为：他们搬家了不是因为，Use “了” because this sentence explains the cause of a completed move.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "地点短语“在墓地里”应放在动作“玩”之前。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“装祭拜”不成立，而“装作祭拜”仍不如“装着祭拜的样子”或“装作在祭拜”完整自然。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“跟妈妈搬家”可以表示孟子和妈妈一起搬家，并无错误。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚在前句出现，按该参考规则应改用近距离回指代词“他”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子在紧接的前文已出现，按该参考规则这里应使用“他”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这是一次已经完成的搬家事件，句末动作应标记完成体，如“搬了家”。"
+   },
+   {
+    "n": 7,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "完整句子说明已完成的搬家原因，需要完成标记；但所示文本在“不是因为”处截断。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2130,
+  "completion_tokens": 1999,
+  "total_tokens": 4129,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 479,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

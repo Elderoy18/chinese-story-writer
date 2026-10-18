@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他发现这个口味，一百岁时候，不小心吃了毒的花。\nquote: 他发现这个口味，一百岁时候，不小心吃了毒的花\npart p0: instruction [ref p0/k0] delete “他发现这个口味”, since it has no clear relationship with previous or following clauses\npart p1: fix [ref p1/k0-1] 一百岁的时候，有毒的花",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "他发现这个口味",
+    "corrected": "",
+    "before": "",
+    "after": "，一百岁时",
+    "note": "since it has no clear relationship with previous or following clauses",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "的",
+    "before": "一百岁",
+    "after": "时候，不小",
+    "note": "",
+    "confidence": "high",
+    "reason": "completes 一百岁的时候"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "replace",
+    "original": "毒的花",
+    "corrected": "有毒的花",
+    "before": "不小心吃了",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 有 to form 有毒的花"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1034,
+  "completion_tokens": 173,
+  "total_tokens": 1207,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1031,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

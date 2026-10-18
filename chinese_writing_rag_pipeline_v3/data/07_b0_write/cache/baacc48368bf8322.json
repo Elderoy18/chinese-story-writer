@@ -1,0 +1,78 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 所以妈妈跟孟子一起搬家  →  所以 → (delete)\n- 他然后没有朋友  →  他然后没有朋友 → 然后孟子失去了这个朋友  (“他“ is ambiguous)\n- 孟母看出来孟子老是难过  →  ∅ → 很  (usually Adj. takes 很)\n- 开始祭拜  →  ∅ → 就  (才 Num.就V.)\n- 有一天孟子才四岁  →  有一天 → (delete)\n- 因为他们觉得祭拜有很多好处  →  他们 → (delete)  (redundant)\n\nScene to review:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "虽然他没有朋友",
+    "corrected": "他没有朋友",
+    "errors": [
+     {
+      "original": "虽然",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "connectors",
+      "explanation": "虽然 needs a contrasting result clause, usually with 但是/可是. Here the next clause gives a reason instead."
+     }
+    ]
+   },
+   {
+    "clause": "他的同学们老是对他开玩笑了",
+    "corrected": "他的同学们老是对他开玩笑",
+    "errors": [
+     {
+      "original": "了",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "老是 describes a habitual action, so it normally uses no 了."
+     }
+    ]
+   },
+   {
+    "clause": "孟子妈妈看了他的同学们对孟子不好的影响",
+    "corrected": "孟子妈妈看到了他的同学们对孟子不好的影响",
+    "errors": [
+     {
+      "original": "看",
+      "correction": "看到",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 看到, not 看, when someone notices or observes an effect."
+     }
+    ]
+   },
+   {
+    "clause": "所以孟子和孟子妈妈搬家了",
+    "corrected": "孟子和孟子妈妈搬家了",
+    "errors": [
+     {
+      "original": "所以",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "connectors",
+      "explanation": "The previous clause already gives the reason for moving, so 所以 is unnecessary here."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1159,
+  "completion_tokens": 1681,
+  "total_tokens": 2840,
+  "prompt_tokens_details": {
+   "cached_tokens": 1156,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1362,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

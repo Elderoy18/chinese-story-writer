@@ -1,0 +1,82 @@
+{
+ "input": "CURRENT SCENE:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nITEMS:\n\n[I60] 【这】也找植物   correction: 这 → 他   strength: error\n  checker's note: refers to Shennong, not “this”\n  rule card (search_find, Vocabulary): 找 means “look for.” Use 找到 when the person successfully finds something.  Pattern: <wrong> → <correct>: the person successfully finds <object>, so use 找到, not 找.  Her terms: 找look for vs.找到find\n  her past correction: 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction: 他找了第一个[菜→植物]\n  her past correction: 他[测试→尝试]别的植物\n\n[I61] 他找【^】到黄色的花   correction: ∅ → 了   strength: error\n  checker's note: completed discovery needs 了\n  rule card (no_le_mental_state, Coherence: temporality (了/着/在)): Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative.  Pattern: <wrong> → <correct>: <verb> is a mental-state verb here, so use no 了.  Her terms: mental state verb, no了\n  her past correction: 他发现[-了]黄色花有毒 — her note: 发现is a mental state verb, no了\n  her past correction: 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction: 他[一爬山→一爬上山]就找到花\n\n[I62] 他听说你【跟】黄色的花做茶很有用   correction: 跟 → 用   strength: error\n  checker's note: 用 expresses making tea with flowers\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农尝[+了]花儿以后就发现这个花儿不但可以被用做茶 — her note: 了completed\n  her past correction: 他发现[-了]黄色花有毒 — her note: 发现is a mental state verb, no了\n  her past correction: 喝茶对[-你的]身体有好处\n\n[I63] 【你】的头发疼死   correction: 你 → (delete)   strength: error\n  checker's note: no second-person subject is intended\n  rule card (specific_noun_choice, Vocabulary): Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦.  Pattern: <wrong> → <correct>: <wrong> is too general/vague here; say specifically what <person/thing/problem> it is.\n  her past correction: [就疼死了→肚子/头就疼死了]\n  her past correction: [-他]累死了 — her note: delete他\n  her past correction: 可是[有很多麻烦→头疼起来了] — her note: “有很多麻烦” is too vague\n\n[I64] 你的头【发】疼死   correction: 发 → (delete)   strength: error\n  checker's note: 头疼 means “have a headache”\n  rule card (specific_noun_choice, Vocabulary): Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦.  Pattern: <wrong> → <correct>: <wrong> is too general/vague here; say specifically what <person/thing/problem> it is.\n  her past correction: [就疼死了→肚子/头就疼死了]\n  her past correction: 可是[有很多麻烦→头疼起来了] — her note: “有很多麻烦” is too vague\n  her past correction: [-他]累死了 — her note: delete他\n\n[I65] 你的头发【疼死】   correction: 疼死 → 疼得要死   strength: error\n  checker's note: degree complement needs 得\n  rule card (specific_noun_choice, Vocabulary): Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦.  Pattern: <wrong> → <correct>: <wrong> is too general/vague here; say specifically what <person/thing/problem> it is.\n  her past correction: [就疼死了→肚子/头就疼死了]\n  her past correction: 可是[有很多麻烦→头疼起来了] — her note: “有很多麻烦” is too vague\n  her past correction: 神农吃了那个花以后[头越来越好→头不疼了]\n\n[I66] 这【冰】茶是药   correction: 冰 → 种   strength: error\n  checker's note: 这种茶 means “this kind of tea”\n  rule card (demonstrative_reference, Coherence: reference): Use 这个/这种/这些/有的 + N. only when the preceding context makes exactly which person, thing, place, or set clear. If it is already a known event, use 这样的 + N.; if the reference is unclear, name it more specifically.  Pattern: <wrong reference> → <correct reference>: the preceding context does not identify exactly which <person/thing/place/set> this refers to.\n  her past correction: ⟦这种植物⟧原来是茶 — her note: “这种植物” is unclear, sine preceding sentence has two types of plants\n  her past correction: [-他]喝了茶 — her note: redundant\n  her past correction: [+是]药还是毒\n\n[I67] 他一喝茶就【^】很不舒服   correction: ∅ → 觉得   strength: suggestion\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]喝了茶 — her note: redundant\n  her past correction: 他一看[+就]觉得担心\n  her past correction: 喝茶对[-你的]身体有好处",
+ "salt": "repeat-run3",
+ "output": {
+  "items": [
+   {
+    "item_id": "I60",
+    "explanation": "Use 他 because this refers to Shennong, not to “this.”",
+    "dimension": "coherence_reference",
+    "corrected": "这 → 他",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I61",
+    "explanation": "The discovery is completed in the story, so add 了: 找到了.",
+    "dimension": "grammar",
+    "corrected": "∅ → 了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I62",
+    "explanation": "Use 用 to say that the tea is made with yellow flowers.",
+    "dimension": "word_choice",
+    "corrected": "跟 → 用",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I63",
+    "explanation": "No second-person subject is intended here, so delete 你.",
+    "dimension": "coherence_reference",
+    "corrected": "你 → (delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I64",
+    "explanation": "Use 头疼 for “have a headache.” 发 means “hair,” so delete it here.",
+    "dimension": "word_choice",
+    "corrected": "发 → (delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I65",
+    "explanation": "Use 得 before the degree complement: 疼得要死.",
+    "dimension": "grammar",
+    "corrected": "疼死 → 疼得要死",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I66",
+    "explanation": "Use 这种茶 to refer to this kind of tea from the previous context.",
+    "dimension": "coherence_reference",
+    "corrected": "冰 → 种",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I67",
+    "explanation": "It would be more natural to say 觉得很不舒服 to show that he feels uncomfortable.",
+    "dimension": "word_choice",
+    "corrected": "∅ → 觉得",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2069,
+  "completion_tokens": 497,
+  "total_tokens": 2566,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2066,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 123,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

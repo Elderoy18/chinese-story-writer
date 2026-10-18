@@ -1,0 +1,50 @@
+{
+ "input": "Scene:\n一个人问神农，哪个植物好吃。神农说，这就要看你的口味了。要是你喜欢吃甜的，有很多甜的水果，比方说苹果、西瓜和梨。一个别的人问神农，哪个植物对你的身体有好处。神农说，有很多种植物对你的身体有好处，比方说小白菜、黄瓜、茶和菠菜。一个别的人问神农，哪个植物对你的身体有坏处。\n\nCorrections to check:\n1. 一个别的人问神农  →  另外一个人问神农   [vocabulary]\n2. 神农说，有很多种植物对你的身体有好处  →  神农说，有很多种植物对身体有好处   [coherence: reference]\n3. 一个别的人问神农，哪个植物对你的身体有坏处  →  另外一个人问神农，哪个植物对身体有坏处   [vocabulary]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "“一个别的人” is not a natural way to introduce another person; “另外一个人” is appropriate."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "“对你的身体有好处” is already natural and correctly refers to the listener."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "“一个别的人” is unnatural here, and “另外一个人” correctly expresses another person asking."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 587,
+  "completion_tokens": 477,
+  "total_tokens": 1064,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 315,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this time expression is not idiomatic for a historical setting; use the fixed expression “在古代”.\n2. [Grammar & Vocabulary, error] 老是祭拜：常常祭拜，“老是” usually conveys a negative or complaining attitude, while this sentence neutrally describes a habitual action.\n3. [Grammar & Vocabulary, error] 城市有才两个学校：城市里才有两所学校，an adverb such as “才” goes before “有”, and the appropriate measure word for schools is “所”.\n4. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，follow the first-mention rule: introduce the character with both his name and a description when he first appears.\n5. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜，就是跟朋友聊天：他不是祭拜，就是跟朋友聊天，follow the pronoun rule: after “孟子” was named in the immediately preceding sentence, use “他” for the close re-occurrence.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“古代的时候” is redundant under the teacher's time-expression rule, and “在古代” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是祭拜” is acceptable here; any negative-persistence nuance does not make it erroneous."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original has incorrect placement of 才 and lacks the school measure word, but “才有” violates the teacher's rule requiring “只有,” and it also leaves the needed reference to 这个城市 unresolved."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Introducing the boy first and naming him in the immediately following sentence is already clear and acceptable."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the teacher's close re-occurrence rule, the second immediate use of 孟子 should be replaced by 他."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2022,
+  "completion_tokens": 1321,
+  "total_tokens": 3343,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 371,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 983,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

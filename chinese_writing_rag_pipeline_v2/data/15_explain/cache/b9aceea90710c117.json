@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nITEMS:\n\n[I27] 【古代的时候】   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I28] 【^】他们一直在哭   correction: ∅ → 所以   strength: suggestion\n  rule card (cause_result_soyi, Coherence: connectors): Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate.  Pattern: <wrong> → <correct>: the following event is not a result of the preceding clause, so 所以 is not appropriate; use <connector> / delete it.  Her terms: 这样, 结果, 后来\n  her past correction: [+所以]他们常常搬家 — her note: 无聊？add所以\n  her past correction: 但是孟子一直哭[-了] — her note: it’s not about “completion”, no了\n  her past correction: [-所以他们]祭拜 — her note: there is no cause-effect relationship\n\n[I29] 而且【害得】孟子的学习   correction: 害得 → 影响了   strength: error\n  checker's note: 害得 needs a following result clause; 影响了 fits a noun object.\n  rule card (haide_harmful_result, Vocabulary): Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得.  Pattern: <wrong> → <correct>: after 害得 + <person/noun>, use a genuinely harmful result; <neutral or mild result> is not harmful enough.  Her terms: 害得 + N/sb. + Harmful result, 害得+Sb.+V., 害得 + clause (harmful result)\n  her past correction: 孟母觉得学习⟦害得孟子⟧ — her note: 害得孟子+harmful result, 常常玩\n  her past correction: 害得[-对]孟子有不好的影响 — her note: 害得+Sb.+V.\n  her past correction: 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n\n[I30] 而且害得孟子【的】学习   correction: 的 → (delete)   strength: suggestion\n  rule card (haide_harmful_result, Vocabulary): Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得.  Pattern: <wrong> → <correct>: after 害得 + <person/noun>, use a genuinely harmful result; <neutral or mild result> is not harmful enough.  Her terms: 害得 + N/sb. + Harmful result, 害得+Sb.+V., 害得 + clause (harmful result)\n  her past correction: 孟母觉得学习⟦害得孟子⟧ — her note: 害得孟子+harmful result, 常常玩\n  her past correction: 害得[-对]孟子有不好的影响 — her note: 害得+Sb.+V.\n  her past correction: ⟦所以⟧孟子会跟别的教授学哲学 — her note: 这样in this way",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I27",
+    "explanation": "古代 is the location/time setting, so use 在+Place before the action: 在古代。",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I28",
+    "explanation": "It would be more natural to add 所以 because the people’s worshipping is the reason they cry.",
+    "dimension": "coherence_connectors",
+    "corrected": "所以",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I29",
+    "explanation": "害得 needs a harmful result after the person or noun. Here, 影响了 can take 学习 as its object.",
+    "dimension": "word_choice",
+    "corrected": "影响了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I30",
+    "explanation": "It would be more natural to delete 的: after 影响了, use 孟子的学习 as the object, but the smoother sentence is 影响了孟子的学习.",
+    "dimension": "word_choice",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1454,
+  "completion_tokens": 220,
+  "total_tokens": 1674,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1451,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

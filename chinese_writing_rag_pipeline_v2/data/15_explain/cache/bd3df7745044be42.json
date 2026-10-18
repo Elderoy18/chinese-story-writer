@@ -1,0 +1,47 @@
+{
+ "input": "CURRENT SCENE:\n一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。\n\nITEMS:\n\n[I355] 【麻烦】我们可以吃什么植物？神农说   correction: 麻烦 → 请问   strength: error\n  checker's note: 麻烦 cannot directly introduce this question; 请问 is needed.\n  rule card (search_find, Vocabulary): 找 means “look for.” Use 找到 when the person successfully finds something.  Pattern: <wrong> → <correct>: the person successfully finds <object>, so use 找到, not 找.  Her terms: 找look for vs.找到find\n  her past correction: 神农开始[-找]我们可以吃的植物\n  her past correction: ⟦神农⟧开始找我们可以吃的植物 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 神农开始找[-我们]可以吃的植物\n\n[I356] 这就要【看】你想不想生病了   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 他[看→看到]很多病人 — her note: 看look vs.看到see\n  her past correction: 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n  her past correction: 所以神农一[看→看到]病人就想找药 — her note: 看look vs.看到see\n\n[I357] 一些【植物】不能吃   correction: 植物 → (delete)   strength: suggestion\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 可是一些[-的]人一吃植物 — her note: no的\n  her past correction: 他们不知道什么植物[-能吃]不能吃\n  her past correction: 吃很多[-的]植物",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I355",
+    "explanation": "麻烦 cannot directly introduce this question. Use 请问 to politely ask a question.",
+    "dimension": "word_choice",
+    "corrected": "请问",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I356",
+    "explanation": "Use 看到 when the person actually sees or catches sight of a situation: 看 look vs. 看到 see.",
+    "dimension": "word_choice",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I357",
+    "explanation": "It would be more natural to omit the repeated noun here: 一些不能吃. No 的 is needed.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1072,
+  "completion_tokens": 402,
+  "total_tokens": 1474,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1069,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 246,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

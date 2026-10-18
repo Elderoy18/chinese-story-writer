@@ -1,0 +1,42 @@
+{
+ "input": "Scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nCorrections to check:\n1. 他的妈妈觉得在墓地玩儿，害得，所以他们搬家  →  他的妈妈觉得在墓地玩儿不好，所以他们搬家   [vocabulary]\n2. 搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作  →  搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈工作   [grammar]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "害得 cannot be used here to mean that playing in the cemetery is bad."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "帮妈妈的工作 is not grammatical for the intended meaning of helping his mother work."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 521,
+  "completion_tokens": 359,
+  "total_tokens": 880,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 256,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

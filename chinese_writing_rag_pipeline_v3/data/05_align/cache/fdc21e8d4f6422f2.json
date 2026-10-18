@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 他不是在搬家，而是学多文章，成为很聪明。\nquote: 他不是在搬家，而是学多文章，成为很聪明\npart p0: fix [ref p0/k0-1] 不再搬家，而是待在这儿学习很多文章 ; notes: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章\npart p1: fix [ref p1/k0] 成为很聪明的哲学家",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "不是在",
+    "corrected": "不再",
+    "before": "他",
+    "after": "搬家，而是",
+    "note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 搬家is not conventionally related to看文章",
+    "confidence": "high",
+    "reason": "changes the contrast construction to 不再…而是…"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "学",
+    "corrected": "待在这儿学习",
+    "before": "搬家，而是",
+    "after": "多文章，成",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 待在这儿 and changes 学 to 学习"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "很",
+    "before": "而是学",
+    "after": "多文章，成",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 很 before 多文章"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "很聪明",
+    "corrected": "很聪明的哲学家",
+    "before": "文章，成为",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "completes the predicate with 的哲学家"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1063,
+  "completion_tokens": 466,
+  "total_tokens": 1529,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1060,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 191,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,66 @@
+{
+ "input": "Scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nCorrections to check:\n1. 他难怪抱怨  →  难怪他抱怨   [grammar]\n2. 因为他不要离开他的城市  →  因为他不想离开他的城市   [vocabulary]\n3. 他的妈妈找到孟子一个老师  →  他的妈妈给孟子找到了一个老师   [grammar]\n4. 跟老师孟子学最重要的文学  →  孟子跟老师学最重要的文学   [grammar]\n5. 所以他成为哲学家  →  所以后来他成为哲学家   [coherence: connectors]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "难怪 should precede the subject in this meaning."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "不要离开 is acceptable for expressing that he does not want to leave."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "孟子 needs to be introduced with 给 as the recipient of 找老师."
+   },
+   {
+    "n": 4,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "The original word order does not clearly make 孟子 the person learning from the teacher."
+   },
+   {
+    "n": 5,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "connectors",
+    "reason": "所以 already links the events acceptably, and 后来 is optional."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 561,
+  "completion_tokens": 1255,
+  "total_tokens": 1816,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

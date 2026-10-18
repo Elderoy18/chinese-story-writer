@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 神农不喜欢看他的城市生病了，所以他决定去旅行，这个旅行又远又麻烦。\nquote: 神农不喜欢看他的城市生病了，所以他决定去旅行\npart p0: fix [ref p0/k0] 不希望看到人们生病 ; notes: 看look vs.看到see, no了\npart p1: comment [ref p1/note] loose connection between the two clauses, 决定去旅行找到能吃的植物",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "不喜欢",
+    "corrected": "不希望",
+    "before": "神农",
+    "after": "看他的城",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the preference verb with 希望"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "看",
+    "corrected": "看到",
+    "before": "神农不喜欢",
+    "after": "他的城市生",
+    "note": "看look vs.看到see",
+    "confidence": "high",
+    "reason": "changes 看 to 看到"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "他的城市",
+    "corrected": "人们",
+    "before": "不喜欢看",
+    "after": "生病了，所",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the sick subject with 人们"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "的城市生病",
+    "after": "，所以他决",
+    "note": "no了",
+    "confidence": "high",
+    "reason": "removes 了"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "所以他决定去旅行",
+    "corrected": "",
+    "before": "的城市生病了，",
+    "after": "，这个旅行",
+    "note": "loose connection between the two clauses, 决定去旅行找到能吃的植物",
+    "confidence": "high",
+    "reason": "comments that the decision to travel needs a clearer connection and purpose"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1045,
+  "completion_tokens": 436,
+  "total_tokens": 1481,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1042,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 135,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

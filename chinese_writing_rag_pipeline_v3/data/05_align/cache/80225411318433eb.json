@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 吃着夹竹桃的以后，他病得很。\nquote: 吃着夹竹桃的以后，他病得很\npart p0: fix [ref p0/k0] 吃了夹竹桃以后 ; notes: 着durative vs.了completed, 病得很厉害，“病” is not a normal Adj., so it cannot be with 很 or 不",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "吃着夹竹桃的以后",
+    "corrected": "吃了夹竹桃以后",
+    "before": "",
+    "after": "，他病得很",
+    "note": "着durative vs.了completed",
+    "confidence": "high",
+    "reason": "replaces 着 with completed 了 and removes 的"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "病得很",
+    "corrected": "病得很厉害",
+    "before": "桃的以后，他",
+    "after": "",
+    "note": "“病” is not a normal Adj., so it cannot be with 很 or 不",
+    "confidence": "high",
+    "reason": "adds 厉害 after 病得很"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1024,
+  "completion_tokens": 153,
+  "total_tokens": 1177,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

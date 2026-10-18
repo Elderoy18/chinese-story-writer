@@ -1,0 +1,114 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar, error] …妈妈觉得这是不合适的地方让孩子玩 → …妈妈觉得这是不适合让孩子玩的地方 -- the whole action 让孩子玩 needs to modify 地方, so use the 的 structure.\n2. [Vocabulary, error] 所以她会一直搬家才能… → 所以她要一直搬家才能… -- 会 does not normally collocate with 一直搬家才能 in this necessary-condition meaning; use 要…才能 instead.\n3. [Coherence: reference, error] 有一天⟦孟子⟧去了墓地玩儿 -- This character appears for the first time, so please introduce 孟子 briefly, for example 孟子小时候.\n4. [Coherence: reference, error] 而且住在这儿教育不太好 → 而且这儿的教育不太好 -- use 的 to show that 这儿 modifies 教育.\n5. [Coherence: reference, error] 所以她会一直搬家才… → 所以会一直搬家才… -- 她 is redundant because the subject is already clear from the previous clause; Chinese uses zero form here.\n6. [Coherence: 了 / 着 / 在, error] 所以她决定了他们会搬家找… → 所以她决定他们会搬家找… -- 决定 is a mental state verb here, so use no 了.\n7. [Coherence: connectors, suggestion] 有一天孟子去了墓地玩儿 → 有一天孟子去墓地玩儿 -- It would be more natural to say 去墓地玩儿 without 了 here; this opening sentence does not need 了 to connect to a previous event.\n8. [Other, suggestion] …搬家找更好的地方 → …搬家找更好的 -- It would be more natural to delete 地方 because 更好的 already expresses the intended meaning here.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The action 让孩子玩 must be linked to 地方 with a modifying 的 structure."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Replacing future 会 with 要 correctly makes the necessary-condition pattern 要……才能, but the remaining wording is not the teacher's intended coherent expression."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 needs an initial introduction, but 孟子小时候 cannot simply be inserted after 有一天 in this position."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住在这儿，教育不太好 is understandable and grammatical as a clause sequence, although 这儿的教育 is clearer."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "她 is an acceptable reference to the mother from the preceding context and is not redundant."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Under the teacher's rule, the mental-state verb 决定 should not take 了, but the correction leaves 他们会搬家找 unchanged."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "去了 appropriately presents the cemetery visit as a completed story event, and the revised sentence also still lacks an initial introduction for 孟子."
+   },
+   {
+    "n": 8,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "更好的地方 is a valid noun phrase; deleting 地方 does not fix the actual issue that one moves 搬家到 a place rather than 搬家找 it."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2321,
+  "completion_tokens": 3081,
+  "total_tokens": 5402,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 670,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2532,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

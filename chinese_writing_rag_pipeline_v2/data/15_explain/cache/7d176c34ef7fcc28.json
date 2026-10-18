@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。\n\nITEMS:\n\n[I176] 【神农】和他的家人住在古代   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 神农: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: 这是一个⟦神农⟧的古代故事 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: ⟦神农⟧住在一个中国小镇 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: ⟦很久以前，在古代⟧有一个叫神农的老人 — her note: “很久以前“ and ”在古代” are redundant, only keep one\n\n[I177] 神农和他的家人【住】在古代   correction: 住 → 生活   strength: error\n  checker's note: 生活在古代 is needed for living in a historical era\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦神农⟧住在一个中国小镇 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: ⟦很久以前，在古代⟧有一个叫神农的老人 — her note: “很久以前“ and ”在古代” are redundant, only keep one\n  her past correction: 神农回[-他的]家 — her note: redundant\n\n[I178] 因为他的家人常常生病【了】   correction: 了 → (delete)   strength: error\n  checker's note: habitual action with 常常 does not take 了\n  rule card (no_le_routine_state, Coherence: temporality (了/着/在)): For a routine, habit, repeated condition, or state, use zero particle: do not add 了completed. This is especially true with words such as 老是, 常常, and 从早到晚.  Pattern: <wrong> → <correct>: this describes a routine/habit or repeated condition, so use no 了 (no了for routine/habit).  Her terms: no了for routine/habit, no了for habit/routine, 看look vs.看到see, no了\n  her past correction: 因为他们常常生病[-了] — her note: no了for routine/habit\n  her past correction: 他们常常生病[-了] — her note: no了for routine/habit\n  her past correction: [+他]就生病了 — her note: otherwise it is ambiguous who gets sick\n\n[I179] 他们去【^】很多不一样的地方   correction: ∅ → 了   strength: error\n  checker's note: a completed action in this narrative normally needs 了\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他们搬到[+了]城市 — her note: 了completed\n  her past correction: 快要死[+了]\n  her past correction: 他尝[+了]很多植物 — her note: 了completed",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I176",
+    "explanation": "This character appears for the first time, so please introduce 神农 briefly, for example as a person in an ancient story.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I177",
+    "explanation": "Use 生活在古代 for living in a historical era. 住 is usually used for living in a specific place.",
+    "dimension": "word_choice",
+    "corrected": "生活",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I178",
+    "explanation": "This describes a routine or repeated condition with 常常, so use no 了 for routine/habit.",
+    "dimension": "coherence_temporality",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I179",
+    "explanation": "Going to many places is completed in the story, so it takes 了 completed.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1394,
+  "completion_tokens": 213,
+  "total_tokens": 1607,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1391,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

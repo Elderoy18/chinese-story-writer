@@ -1,0 +1,96 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar, error] 也写一个课文的植物 → 也写一个关于植物的书 -- 课文的植物 does not mean “a book about plants.” Use 关于植物的书 for a book whose topic is plants.\n2. [Vocabulary, error] 特别是毒 → 特别有毒 -- Use 有毒 to describe that the oleander has poison. 是毒 treats 毒 as a noun after 是, but this description needs the adjective form 有毒.\n3. [Vocabulary, error] 也写一个课文的植… → 也写了一个课文的植… -- Use 了 after 写 for this completed past action: 写了.\n4. [Vocabulary, error] 也写一个课文的植物 → 也写一本课文的植物 -- Use 本 for a book. 个 does not normally collocate with 课文 here.\n5. [Coherence: reference, suggestion] …芝药的夹竹桃他吃完了 → …芝药的夹竹桃他把它吃完了 -- It would be more natural to say 他把它吃完了. 把它 clearly marks 灵芝 as the object that he finished eating.\n6. [Coherence: connectors, error] 灵芝药的夹竹桃他吃完了 → 有灵芝他吃完了 -- 灵芝药的夹竹桃 does not say that lingzhi is present. Use 有灵芝 to introduce that there is lingzhi here.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "课文的植物 is not a valid way to say an article about plants, and 一个关于植物的书 still has the wrong measure word and lacks the needed completed-action marking."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "特别是毒 is malformed here, while 特别有毒 correctly describes the flower as highly poisonous."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "In this completed narrative event, 写 needs 了, but the displayed corrected fragment still contains the erroneous 课文的植物 wording."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "个 is not the appropriate measure word for the intended written article, and 一本课文的植物 remains ungrammatical and nonsensical."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original expression wrongly combines 灵芝、药 and 夹竹桃, and adding 把它 neither repairs that expression nor makes the referent clear."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The phrase incorrectly expresses the relation between lingzhi and the oleander antidote, and 有灵芝他吃完了 does not form a correct complete correction."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1351,
+  "completion_tokens": 1328,
+  "total_tokens": 2679,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1348,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 905,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0d4672217c"
+}

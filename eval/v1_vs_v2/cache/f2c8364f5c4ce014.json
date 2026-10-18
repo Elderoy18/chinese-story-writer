@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这是不合适的地方让孩子玩：这不是适合孩子玩儿的地方，The original word order incorrectly makes the place appear to “let” the child play. Use a modifier before the noun phrase to say that a place is suitable for a child to play.\n2. [Grammar & Vocabulary, error] 他们会搬家找更好的地方：带着孟子搬家，找一个更好的地方，After a decision verb, use the action that is decided on rather than a future-prediction clause with 会. Add 一个 before the singular countable place noun.\n3. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，When a location modifies the noun 教育, use 的 to form the possessive modifier.\n4. [Grammar & Vocabulary, error] 她会一直搬家才能找到质量好的教育：她得不断搬家，才能找到质量好的教育，得 expresses the necessary action before 才能. 会 only marks a future prediction and does not fit this necessary-condition pattern.\n5. [Coherence: reference, error] Coherence (Reference): 有一天孟子去了墓地玩儿：有一天，小男孩孟子去了墓地玩儿，On first mention, briefly introduce the character with a full noun phrase, such as a role plus the name.\n6. [Coherence: temporality, error] Coherence (Temporality): 她决定了：她决定，Use the zero particle with the mental-state verb 决定; it describes an intention or decision rather than a completed physical action.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original order incorrectly treats the place as the subject that lets children play."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "After 决定, the decided action should be expressed directly rather than with 他们会."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住在这儿教育不太好 is an acceptable clause meaning that the education is not good when living here; 的 is not required."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "会一直搬家才能 does not properly express the necessary-action relationship, while 得不断搬家，才能... does."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "On the character's first mention, the teacher requires a brief identifying noun phrase before the name."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "决定 is a mental-state verb here and should take the zero aspect form rather than 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2263,
+  "completion_tokens": 1463,
+  "total_tokens": 3726,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 612,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1086,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

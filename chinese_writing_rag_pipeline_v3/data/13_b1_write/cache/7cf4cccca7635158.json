@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “古代时候有一个男孩名叫孟子”: 古代时候 → 在古代\n- in “孟子和孟母住在小的城”: 小的城 → 一个小城市\n- in “在墓地做祭拜”: 做 → (deleted)\n- in “孟子和孟母才住在两个月”: 才住在 → 才住了   [her note: 了completed]\n- in “他们在墓地住”: 他们 → (deleted)   [her note: redundant]\n\nScene to review:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to mean “in ancient times.”"
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子和孟子的妈妈",
+    "corrected": "孟子和妈妈",
+    "explanation": "孟子 has already been named in this phrase, so do not repeat his name to identify his mother. Say 孟子和妈妈."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "住在这里才一个星期",
+    "corrected": "在这里才住了一个星期",
+    "explanation": "The stay of one week is completed before they feel they cannot bear it, so 住 needs 了. The place phrase 在这里 comes before the verb."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子和孟子的妈妈",
+    "corrected": "孟子和妈妈",
+    "explanation": "Do not repeat 孟子’s name in the same phrase. 妈妈 already refers to Mengzi’s mother here."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "而且害得孟子的学习",
+    "corrected": "而且这里还害得孟子不能学习",
+    "explanation": "害得 must be followed by a result, not directly by a noun such as 学习. Say what the result is, for example 孟子不能学习."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1279,
+  "completion_tokens": 2995,
+  "total_tokens": 4274,
+  "prompt_tokens_details": {
+   "cached_tokens": 1276,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2660,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

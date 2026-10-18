@@ -1,0 +1,42 @@
+{
+ "input": "Scene:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nCorrections to check:\n1. 孟子和妈妈要又一个次搬了家  →  孟子和妈妈又搬了一次家   [grammar]\n2. 孟母找到工作  →  孟母找到了工作   [coherence: temporality]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "The original word order and measure-word phrase are ungrammatical, while the correction is natural."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "The bare form 找到工作 is acceptable in this narrative context, though 找到了工作 is also correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 503,
+  "completion_tokens": 284,
+  "total_tokens": 787,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 170,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

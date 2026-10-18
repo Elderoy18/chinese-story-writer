@@ -1,0 +1,66 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 在古代时候中国人不知道什么植物可以吃  →  时候 → (delete)\n- 因为大家知道什么植物不能吃  →  因为 → 这样  (not “because”)\n- 神农很幸福  →  很幸福 → 很高兴  (幸福is for long-term, life-related happiness)\n- 吃不知名的植物是特别是危险的  →  特别是危险的 → 特别危险的  (”特别是+N, + Clause” is used to single out a typical example)\n- 很多的东西麻烦得很  →  很多的东西 → 很多植物  (no的)\n- 有一位人来了  →  一位人 → 一个人\n\nScene to review:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "古代的人很不知道什么植物能吃，也什么植物不能吃",
+    "corrected": "古代的人不知道什么植物能吃，也不知道什么植物不能吃",
+    "errors": [
+     {
+      "original": "很",
+      "correction": "",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "很 cannot modify 不知道 in this way. Delete it here."
+     },
+     {
+      "original": "也",
+      "correction": "也不知道",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "The second part also needs the verb 不知道."
+     }
+    ]
+   },
+   {
+    "clause": "吃不安全的植物对你的身体有坏处，很麻烦的情况",
+    "corrected": "吃不安全的植物对他们的身体有坏处，这是一个很麻烦的情况",
+    "errors": [
+     {
+      "original": "你的",
+      "correction": "他们的",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The sentence is about 很多人, not the reader, so use 他们的."
+     },
+     {
+      "original": "很麻烦的情况",
+      "correction": "这是一个很麻烦的情况",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "很麻烦的情况 is only a noun phrase. It needs a subject and a verb to make a complete sentence."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1155,
+  "completion_tokens": 1536,
+  "total_tokens": 2691,
+  "prompt_tokens_details": {
+   "cached_tokens": 1152,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1256,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

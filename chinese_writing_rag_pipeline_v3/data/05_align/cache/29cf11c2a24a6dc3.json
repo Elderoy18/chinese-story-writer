@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他找有的花，然后做茶。\nquote: 他找有的花\npart p0: fix [ref p0/k0] 找到一种植物 ; notes: 找look for vs.找到find\npart p1: fix [ref p1/k0-1] 有的，有的 ; notes: some, some",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "找有的花",
+    "corrected": "找到一种植物",
+    "before": "他",
+    "after": "",
+    "note": "找look for vs.找到find",
+    "confidence": "high",
+    "reason": "replaces the phrase with the teacher's find-and-plant wording"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "replace",
+    "original": "有的花",
+    "corrected": "有的，有的",
+    "before": "他找",
+    "after": "",
+    "note": "some, some",
+    "confidence": "low",
+    "reason": "teacher's correction repeats 有的 to express 'some, some'"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1010,
+  "completion_tokens": 471,
+  "total_tokens": 1481,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 331,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

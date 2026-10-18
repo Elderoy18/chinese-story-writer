@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 不是孟子幸福的生活就是孟子的妈妈开心。\nquote: 不是孟子幸福的生活就是孟子的妈妈开心\npart p0: fix [ref p0/k0-1] 虽然孟子的生活不快乐，可是妈妈很开心\npart p1: comment [ref p1/note] 不是……就是……is used for “either…or…”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "不是孟子幸福的生活就是孟子的妈妈开心",
+    "corrected": "虽然孟子的生活不快乐，可是妈妈很开心",
+    "before": "",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the full sentence with the teacher's contrast construction"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "不是孟子幸福的生活就是孟子的妈妈开心",
+    "corrected": "",
+    "before": "",
+    "after": "。",
+    "note": "不是……就是……is used for “either…or…”",
+    "confidence": "high",
+    "reason": "explains the incorrect use of 不是……就是……"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1023,
+  "completion_tokens": 148,
+  "total_tokens": 1171,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

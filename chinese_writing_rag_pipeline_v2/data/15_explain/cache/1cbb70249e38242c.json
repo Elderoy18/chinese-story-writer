@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nITEMS:\n\n[I43] 他的妈妈【觉得在墓地】玩儿   correction: 觉得在墓地 → 在墓地觉得   strength: error\n  checker's note: 在 + Place comes before the action: 在Place + V.\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: 他的妈妈[不想跟他的朋友去墓地→不想让他跟朋友去墓地] — her note: otherwise it means his mother didn’t want to go with his friend to the graveyard.\n  her past correction: 妈妈认为他们[拿东西→拿了墓地的东西] — her note: “东西” is too general and vague\n  her past correction: 而是她觉得墓地[不合适→不适合]孩子们玩\n\n[I44] 【害得】   correction: 害得 → 不好   strength: error\n  checker's note: 害得 needs a result complement; 不好 fits the meaning.\n  rule card (haide_harmful_result, Vocabulary): Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得.  Pattern: <wrong> → <correct>: after 害得 + <person/noun>, use a genuinely harmful result; <neutral or mild result> is not harmful enough.  Her terms: 害得 + N/sb. + Harmful result, 害得+Sb.+V., 害得 + clause (harmful result)\n  her past correction: [害得→让]她很不高兴 — her note: 害得 + harmful result，不高兴is not that “harmful”\n  her past correction: ⟦害得他不高兴⟧ — her note: 害得 + harmful result, “不高兴” is not that “harmful”\n  her past correction: 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n\n[I45] 害得【，所以】他们搬家   correction: ，所以 → (delete)   strength: suggestion\n  rule card (cause_result_soyi, Coherence: connectors): Use 所以 only when the clause before it gives the cause/reason and the clause after it is the result. If there is no cause-result relationship, delete 所以 or use a connector such as 这样, 后来, or 结果 when appropriate.  Pattern: <wrong> → <correct>: the following event is not a result of the preceding clause, so 所以 is not appropriate; use <connector> / delete it.  Her terms: 这样, 结果, 后来\n  her past correction: 所以[他们→我们]要搬家 — her note: in quoted speech\n  her past correction: [+所以]他们常常搬家 — her note: 无聊？add所以\n  her past correction: 所以他们[再搬家→又搬家了] — her note: 又for something already occurred\n\n[I46] 可是每天不是写字就是帮妈妈【的】工作   correction: 的 → (delete)   strength: error\n  checker's note: 帮妈妈工作 does not take 的 here.\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 妈妈老是工作[-了] — her note: no了for routine/habit\n  her past correction: 孟子的妈妈每天从早到晚[-做]工作\n  her past correction: [妈妈→孟母]老是工作了 — her note: “妈妈” here is ambiguous",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I43",
+    "explanation": "Use 在+Place before the action: 觉得在墓地玩儿. Here 在墓地 describes 玩儿, not 觉得.",
+    "dimension": "grammar",
+    "corrected": "觉得在墓地",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I44",
+    "explanation": "害得 needs 害得 + N/sb. + harmful result. There is no person and harmful result after 害得 here, so 不好 fits the meaning.",
+    "dimension": "word_choice",
+    "corrected": "不好",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I45",
+    "explanation": "It would be more natural to delete 所以 here. The sentence is clearer without an extra connector.",
+    "dimension": "coherence_connectors",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I46",
+    "explanation": "的 is redundant because 帮妈妈工作 already means to help Mother work.",
+    "dimension": "other",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1435,
+  "completion_tokens": 734,
+  "total_tokens": 2169,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1432,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

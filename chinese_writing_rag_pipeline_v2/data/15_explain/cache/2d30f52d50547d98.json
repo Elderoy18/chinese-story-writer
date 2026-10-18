@@ -1,0 +1,40 @@
+{
+ "input": "CURRENT SCENE:\n他很聪明的人，难怪他成为有名的人。\n\nITEMS:\n\n[I47] 他【^】很聪明的人   correction: ∅ → 是   strength: error\n  rule card (become_and_profession, Vocabulary): 成为 is followed by an appropriate N., especially a profession or public identity: 成为 + N. (profession/celebrity). For becoming successful or capable, use 成才.  Pattern: <wrong> → <correct>: 成为 needs an appropriate noun, such as a profession or public identity; for becoming capable or successful, use 成才.  Her terms: 成为+N, 成为 + N. (profession/celebrity), 成为 + profession/celebrity\n  her past correction: 难怪他成为很聪明[+的人]\n  her past correction: 他看起来[+是]一个很聪明的孩子\n  her past correction: ⟦可是⟧他很聪明 — her note: no “semantic turn” relationship, so可是is inappropriate\n\n[I48] 难怪【他】成为有名的人   correction: 他 → (delete)   strength: error\n  checker's note: 他 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]难怪成为了一个很聪明的哲学家\n  her past correction: 难怪他成为很聪明[+的人]\n  her past correction: 难怪他长大以后[当→成为]很有名的哲学家",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I47",
+    "explanation": "他很聪明的人 → 他是很聪明的人: use 是 to link the subject to a description with 人.",
+    "dimension": "grammar",
+    "corrected": "是",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I48",
+    "explanation": "他 is already clear from the previous clause, so delete it; Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 866,
+  "completion_tokens": 107,
+  "total_tokens": 973,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

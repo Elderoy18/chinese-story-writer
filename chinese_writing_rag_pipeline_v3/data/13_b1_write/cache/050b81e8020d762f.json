@@ -1,0 +1,47 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “在古代时候中国人不知道什么植物可以吃”: 时候 → (deleted)\n- in “因为大家知道什么植物不能吃”: 因为 → 这样   [her note: not “because”]\n- in “神农很幸福”: 很幸福 → 很高兴   [her note: 幸福is for long-term, life-related happiness]\n- in “吃不知名的植物是特别是危险的”: 特别是危险的 → 特别危险的   [her note: ”特别是+N, + Clause” is used to single out a typical example]\n- in “很多的东西麻烦得很”: 很多的东西 → 很多植物   [her note: no的]\n- in “有一位人来了”: 一位人 → 一个人\n\nScene to review:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的人很不知道什么植物能吃，也什么植物不能吃",
+    "corrected": "古代的人不知道什么植物能吃，也不知道什么植物不能吃",
+    "explanation": "很 cannot modify 不知道 here. Repeat 知道 after 也 to say that people also did not know which plants could not be eaten."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "吃不安全的植物对你的身体有坏处，很麻烦的情况",
+    "corrected": "吃不安全的植物对你的身体有坏处，这是一个很麻烦的情况",
+    "explanation": "很麻烦的情况 is a noun phrase and cannot stand alone after the comma. Use 这是一个 to introduce and describe the situation."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "但是一个人，神农，要解决这个问题",
+    "corrected": "但是有一个人叫神农，要解决这个问题",
+    "explanation": "When a character appears for the first time, introduce them with a noun phrase that says who they are. 有一个人叫神农 introduces Shennong naturally."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1326,
+  "completion_tokens": 1605,
+  "total_tokens": 2931,
+  "prompt_tokens_details": {
+   "cached_tokens": 1078,
+   "cache_write_tokens": 245,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1340,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

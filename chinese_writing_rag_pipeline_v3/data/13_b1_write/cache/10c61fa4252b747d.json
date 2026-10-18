@@ -1,0 +1,54 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “在古代有一个神农”: 一个神农 → 一个叫神农的老人\n- in “神农发现很多植物”: (nothing) → 了   [her note: 了completed]\n- in “他偶然看到了一朵美丽的黄花”: 他 → (deleted)   [her note: redundant]\n- in “他找到了很多有用植物”: 有用植物 → 有用的植物\n- in “晚上神农去了”: 晚上神农去了 → 神农是晚上去的\n- in “他现在是当医生”: 当 → (deleted)   [her note: redundant with是]\n\nScene to review:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "但是，他有一个问题，他不知道什么东西能做药。",
+    "corrected": "但是，他有一个问题，不知道什么东西能做药。",
+    "explanation": "神农 is already the subject in this sentence, so do not repeat 他 before 不知道."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "什么病人吃都会觉得身体更好",
+    "corrected": "什么病人吃了都会觉得身体更好",
+    "explanation": "Eating happens before the patient feels better, so 吃 needs 了 to show that this action is completed."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "神农三个月走去",
+    "corrected": "神农走了三个月",
+    "explanation": "A duration such as 三个月 comes after the verb. Use 了 after 走 to show that the three-month journey was completed."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "他看到一个很漂亮的植物",
+    "corrected": "看到了一棵很漂亮的植物",
+    "explanation": "神农 is already the subject in the same sentence, so 他 is unnecessary. The final completed action needs 了, and the measure word for a plant is 棵, not 个."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1322,
+  "completion_tokens": 3213,
+  "total_tokens": 4535,
+  "prompt_tokens_details": {
+   "cached_tokens": 1319,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2900,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

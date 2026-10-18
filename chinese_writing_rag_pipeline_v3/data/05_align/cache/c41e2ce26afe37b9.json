@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟子和妈妈要又一个次搬了家。\nquote: 孟子和妈妈要又一个次搬了家\npart p0: fix [ref p0/k0] 又搬了一次家 ; notes: “要” is for future plan/desire, this already occurred",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "要",
+    "corrected": "",
+    "before": "孟子和妈妈",
+    "after": "又一个次搬",
+    "note": "“要” is for future plan/desire, this already occurred",
+    "confidence": "high",
+    "reason": "removes future marker"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "又一个次搬了家",
+    "corrected": "又搬了一次家",
+    "before": "和妈妈要",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "reorders the frequency phrase and adds 一"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1003,
+  "completion_tokens": 126,
+  "total_tokens": 1129,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

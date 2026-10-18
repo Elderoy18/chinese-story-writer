@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 一吃夹竹桃就死，这就要看你也吃不吃灵芝了。\nquote: 这就要看你也吃不吃灵芝了\npart p0: instruction [ref p0/k0] add a condition before “这就要看……了“ ; fix [ref p0/k2] 病能不能好？这就要看你吃没吃灵芝了 ; notes: e.g., 如果吃了夹竹桃 ; 不for habit/routine/willingness, 没for non-occurrence of an event",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "如果吃了夹竹桃，",
+    "before": "",
+    "after": "这就要看",
+    "note": "e.g., 如果吃了夹竹桃",
+    "confidence": "high",
+    "reason": "adds the requested condition before the result"
+   },
+   {
+    "ref": "p0/k2",
+    "op": "insert",
+    "original": "",
+    "corrected": "病能不能好？",
+    "before": "",
+    "after": "这就要看",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the question supplied in her rewrite"
+   },
+   {
+    "ref": "p0/k2",
+    "op": "delete",
+    "original": "也",
+    "corrected": "",
+    "before": "要看你",
+    "after": "吃不吃灵芝",
+    "note": "",
+    "confidence": "high",
+    "reason": "her rewrite omits 也"
+   },
+   {
+    "ref": "p0/k2",
+    "op": "replace",
+    "original": "吃不吃",
+    "corrected": "吃没吃",
+    "before": "就要看你也",
+    "after": "灵芝了",
+    "note": "不for habit/routine/willingness, 没for non-occurrence of an event",
+    "confidence": "high",
+    "reason": "changes 不 to 没 for whether the event occurred"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1059,
+  "completion_tokens": 638,
+  "total_tokens": 1697,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1056,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 390,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

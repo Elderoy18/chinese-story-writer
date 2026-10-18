@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThis scene:\n城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得孟母只好一直陪孟子：add something like “不能出去工作”, “害得“ + harmful result, 一直陪孟子itself is not harmful\n- 住在商店的旁边不是适合孟子，而是让他觉得很伤心：不是适合孟子的环境\n\nThe system's feedback items:\n1. [Grammar, suggestion] …母只好一直陪孟子 → …母只好一直陪着孟子 -- It would be more natural to say 一直陪着孟子. 着 shows that 陪 is a continuing action.\n2. [Vocabulary, error] …在商店的旁边不是适合孟子 → …在商店的旁边不但不适合孟子 -- this sentence needs the paired structure 不但……而且…… to add a second negative result.\n3. [Vocabulary, error] 而是让他觉得很伤… → 而且让他觉得很伤… -- 不但 should pair with 而且, not 而是.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“一直陪孟子”本身没有时态错误；加“着”也没有解决“害得”后面缺少有害结果的问题。"
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“住在商店的旁边不是适合孟子”缺少合适的中心名词，但改成“不但不适合”会与后面的“而是”不匹配。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "原来的“不是……而是……”连接词本身是正确的，改成“而且”反而使原句的配对结构错误。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2024,
+  "completion_tokens": 753,
+  "total_tokens": 2777,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 373,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

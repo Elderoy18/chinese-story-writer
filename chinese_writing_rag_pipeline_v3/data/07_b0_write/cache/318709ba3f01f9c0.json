@@ -1,0 +1,104 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 在古代时候中国人不知道什么植物可以吃  →  时候 → (delete)\n- 因为大家知道什么植物不能吃  →  因为 → 这样  (not “because”)\n- 神农很幸福  →  很幸福 → 很高兴  (幸福is for long-term, life-related happiness)\n- 吃不知名的植物是特别是危险的  →  特别是危险的 → 特别危险的  (”特别是+N, + Clause” is used to single out a typical example)\n- 很多的东西麻烦得很  →  很多的东西 → 很多植物  (no的)\n- 有一位人来了  →  一位人 → 一个人\n\nScene to review:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "古代的人很不知道什么植物能吃",
+    "corrected": "古代的人不知道什么植物能吃",
+    "errors": [
+     {
+      "original": "很不知道",
+      "correction": "不知道",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "很 does not normally modify 不知道. Use 不知道 here."
+     }
+    ]
+   },
+   {
+    "clause": "也什么植物不能吃",
+    "corrected": "也不知道什么植物不能吃",
+    "errors": [
+     {
+      "original": "也",
+      "correction": "也不知道",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "The verb 知道 is needed after 也 to make a complete parallel sentence."
+     }
+    ]
+   },
+   {
+    "clause": "吃不安全的植物对你的身体有坏处",
+    "corrected": "吃不安全的植物对人的身体有坏处",
+    "errors": [
+     {
+      "original": "你",
+      "correction": "人",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The story is talking generally about people, not directly to the reader. Use 人的身体 for a general statement."
+     }
+    ]
+   },
+   {
+    "clause": "很麻烦的情况",
+    "corrected": "这是一种很麻烦的情况",
+    "errors": [
+     {
+      "original": "很麻烦的情况",
+      "correction": "这是一种很麻烦的情况",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "A sentence needs a subject and verb here. 这是一种……的情况 means “This is a … situation.”"
+     }
+    ]
+   },
+   {
+    "clause": "但是一个人",
+    "corrected": "但是有一个人",
+    "errors": [
+     {
+      "original": "但是",
+      "correction": "但是有",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 有 to introduce a new person: 有一个人."
+     }
+    ]
+   },
+   {
+    "clause": "神农",
+    "corrected": "叫神农",
+    "errors": [
+     {
+      "original": "神农",
+      "correction": "叫神农",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 叫 to give the new person's name: 有一个人，叫神农."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1155,
+  "completion_tokens": 1874,
+  "total_tokens": 3029,
+  "prompt_tokens_details": {
+   "cached_tokens": 1152,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1440,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

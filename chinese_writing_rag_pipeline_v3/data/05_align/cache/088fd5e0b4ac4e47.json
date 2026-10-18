@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他爬山，看很多植物，然后写他学了什么。\nquote: 他爬山，看很多植物，然后写他学了什么\npart p0: fix [ref p0/k0-1] 爬了很多山，看到了很多植物 ; fix [ref p0/k3] 写下了他学到的知识 ; notes: 看look vs.看到see",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "爬山",
+    "corrected": "爬了很多山",
+    "before": "他",
+    "after": "，看很多植",
+    "note": "",
+    "confidence": "high",
+    "reason": "expands the climbing action with duration and quantity"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "看很多植物",
+    "corrected": "看到了很多植物",
+    "before": "他爬山，",
+    "after": "，然后写他",
+    "note": "看look vs.看到see",
+    "confidence": "high",
+    "reason": "changes 看 to the resultative form 看到"
+   },
+   {
+    "ref": "p0/k3",
+    "op": "replace",
+    "original": "写他学了什么",
+    "corrected": "写下了他学到的知识",
+    "before": "物，然后",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the writing phrase with the teacher's revised wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1021,
+  "completion_tokens": 396,
+  "total_tokens": 1417,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 193,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

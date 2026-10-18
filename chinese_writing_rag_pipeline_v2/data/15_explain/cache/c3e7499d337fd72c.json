@@ -1,0 +1,75 @@
+{
+ "input": "CURRENT SCENE:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nITEMS:\n\n[I233] 【古代时候】   correction: 古代时候 → 古代   strength: error\n  checker's note: her pattern: 古代时候 -> 古代 (corrected 3/3 in train)\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 在[古代时候→古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I234] 人不知道【他们】能吃什么植物   correction: 他们 → 自己   strength: error\n  checker's note: generic 人 should refer to itself\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 他们不知道什么植物[-能吃]不能吃\n  her past correction: 我们不知道[-我们]可以吃什么植物 — her note: redundant\n  her past correction: 神农和他的城市不知道什么植物[-他们]可以吃\n\n[I235] 【所以】有一天   correction: 所以 → 于是   strength: error\n  checker's note: 于是 connects the resulting action naturally\n  rule card (fixed_expressions, Vocabulary): Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place.  Pattern: <wrong> → <correct>: use the established expression <correct>, not the literal/nonstandard combination <wrong>.  Her terms: 从 + Place, 制定规定, 自然规律, Subj.算是Obj., 只/不过/才(+num.) + 而已\n  her past correction: [一个天时候→有一天]\n  her past correction: 每天[就是→都是]这样\n  her past correction: [结果他→所以，]取得生活经验 — her note: “结果” for unexpected result\n\n[I236] 【神农】出去试一试很多种植物   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 神农: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦神农⟧看到很多人随便吃各种植物 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: ⟦神农⟧开始找我们可以吃的植物 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: ⟦神农⟧看到有的植物不能吃 — her note: better to briefly introduce “神农” when this character first appears\n\n[I237] 神农出去【试一试】很多种植物   correction: 试一试 → 尝一尝   strength: error\n  checker's note: plants are tasted to test whether they are edible\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: [吃→尝试]很多的植物\n  her past correction: 就[测试→尝试]更植物\n  her past correction: 他跑遍[尝尝→尝了]各种各样的植物 — her note: V.V. is used to make requests or plans\n\n[I238] 告诉人什么植物是安全【^】什么是危险   correction: ∅ → 的   strength: error\n  checker's note: 安全 needs 的 in this identifying phrase\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 每个人都不知道哪些植物能安全[+地]吃\n  her past correction: 哪些植物是毒[+的书]\n  her past correction: [-他]写下了哪些植物有毒 — her note: redundant\n\n[I239] 【^】发现有的植物对身体非常好   correction: ∅ → 了   strength: error\n  checker's note: completed discovery in the narrative needs 了\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 这些植物对身体[+有]好处\n  her past correction: [-这些植物]对身体好处\n  her past correction: 他尝[+了]很多植物 — her note: 了completed",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I233",
+    "explanation": "古代时候 → 古代: 时候 is redundant because 古代 already expresses the time.",
+    "dimension": "other",
+    "corrected": "古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I234",
+    "explanation": "人 refers to themselves here, so use 自己 instead of 他们.",
+    "dimension": "coherence_reference",
+    "corrected": "自己",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I235",
+    "explanation": "所以 → 于是: use 于是 to connect naturally to the resulting action.",
+    "dimension": "word_choice",
+    "corrected": "于是",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I236",
+    "explanation": "神农 appears for the first time here, so please introduce him briefly, for example 一个叫神农的人.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I237",
+    "explanation": "试一试 → 尝一尝: use 尝一尝 because Shennong tastes plants to find out whether they are edible; 试一试 is more general.",
+    "dimension": "word_choice",
+    "corrected": "尝一尝",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I238",
+    "explanation": "安全 describes the omitted noun 植物 in this identifying phrase, so use 的: 安全的.",
+    "dimension": "grammar",
+    "corrected": "的",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I239",
+    "explanation": "发现 is completed in the story, so it takes 了completed: 发现了.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1933,
+  "completion_tokens": 801,
+  "total_tokens": 2734,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1930,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 449,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

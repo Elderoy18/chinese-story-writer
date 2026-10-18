@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n四年后，孟子开始帮妈妈祭拜。他画画很厉害，他越来越喜欢祭拜，所以他祭拜不是想帮妈妈工作，而是他很喜欢画画。孟子成为很著名的古代画家。今天很多中国人很喜欢孟子。\n\nITEMS:\n\n[I83] 【他】越来越喜欢祭拜   correction: 他 → (delete)   strength: error\n  checker's note: 他 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 而是[-他]祭拜\n  her past correction: [-所以他们]祭拜 — her note: there is no cause-effect relationship\n  her past correction: 因为[-他们]觉得祭拜有很多好处 — her note: redundant\n\n[I84] 所以【他】祭拜不是想帮妈妈工作   correction: 他 → (delete)   strength: error\n  checker's note: 他 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 而是[-他]祭拜\n  her past correction: ⟦他的妈妈祭拜⟧ — her note: wrong information, 妈妈做衣服\n  her past correction: [-他]想帮忙 — her note: redundant\n\n[I85] 而是【他】很喜欢画画   correction: 他 → (delete)   strength: error\n  checker's note: 他 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]跟别的孩子画画儿很幸福 — her note: redundant\n  her past correction: 他跟别的孩子画画儿[+觉得]很幸福\n  her past correction: 所以[-他]问他的妈妈怎么画 — her note: redundant\n\n[I86] 而是他很喜欢【画画】   correction: 画画 → 祭拜   strength: error\n  checker's note: it should match the stated reason for worshipping\n  rule card (not_but_refutation, Coherence: connectors): Use 不是……而是…… only to correct a conventional or mistaken idea with an unexpected alternative. Put the subject before 不是……而是…… when both alternatives have the same subject.  Pattern: <wrong> → <correct>: 不是……而是…… must refute a mistaken or expected idea and give its correction; <first alternative> is not conventionally related to <second alternative>.  Her terms: 不是……而是……, Subj.\n  her past correction: ⟦不是画画儿，而是祭拜⟧ — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 画画儿 is not a conventional activity related to 寺庙\n  her past correction: 他的妈妈告诉孟子他们⟦不是做画画儿，就是做祭拜⟧ — her note: 不是……就是…… is “either…or…”\n  her past correction: 他的妈妈告诉孟子他们[不是做画画儿，就是做祭拜→不是在画画儿，而是在祭拜]\n\n[I87] 孟子成为【^】很著名的古代画家   correction: ∅ → 了   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 孟子长大了以后⟦成为一名画家⟧ — her note: wrong information, 哲学家\n  her past correction: [+在]那里孟子会不是画画\n  her past correction: [-孟子]觉得他们画得很漂亮 — her note: redundant",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I83",
+    "explanation": "孟子 is already clear from the previous clause, so 他 is redundant. Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I84",
+    "explanation": "孟子 is already clear, so 他 is redundant. Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I85",
+    "explanation": "In 不是……而是……, put the Subj. before 不是 and do not repeat it after 而是. 他 is redundant, so use zero form.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I86",
+    "explanation": "不是……而是…… must refute an expected idea and give its correction. Here the reason for 祭拜 should be 喜欢祭拜, not 喜欢画画.",
+    "dimension": "coherence_connectors",
+    "corrected": "祭拜",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I87",
+    "explanation": "It would be more natural to add 了: becoming a famous ancient painter is a completed change in the story, so it can take 了completed/change.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1673,
+  "completion_tokens": 292,
+  "total_tokens": 1965,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1670,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

@@ -1,0 +1,42 @@
+{
+ "input": "Scene:\n发现了夹竹桃有毒。别人看到他，很快给他吃一个灵芝。神农一吃就觉得比较好。然后，他继续写他发现的信息。会告诉他的朋友哪一个植物能不能吃。\n\nCorrections to check:\n1. 别人看到他，很快给他吃一个灵芝  →  别人看到他，很快给他吃了一个灵芝   [coherence: temporality]\n2. 会告诉他的朋友哪一个植物能不能吃  →  他会告诉他的朋友哪一种植物能吃，哪一种植物不能吃   [coherence: reference]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "A completed event in this narrative needs 了 after 吃."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "哪一个植物能不能吃 is not a well-formed way to contrast edible and inedible plants."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 511,
+  "completion_tokens": 529,
+  "total_tokens": 1040,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 421,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

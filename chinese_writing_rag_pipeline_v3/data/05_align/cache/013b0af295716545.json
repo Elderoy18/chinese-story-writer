@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他拿说，这就要看什么植物吃了。\nquote: 他拿说，这就要看什么植物吃了\npart p0: fix [ref p0/k0] 拿着花说 ; notes: 着durative\npart p1: instruction [ref p1/k0] add a condition “会不会生病？” before “这就要看……了”, 这就要看吃了什么植物了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "拿说",
+    "corrected": "拿着花说",
+    "before": "他",
+    "after": "，这就要",
+    "note": "着durative",
+    "confidence": "high",
+    "reason": "expands 拿说 to 拿着花说"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "会不会生病？",
+    "before": "他拿说，",
+    "after": "这就要看",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the requested condition before 这就要看"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "看什么植物吃了",
+    "corrected": "看吃了什么植物了",
+    "before": "，这就要",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "uses the supplied revised wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1033,
+  "completion_tokens": 381,
+  "total_tokens": 1414,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1030,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 196,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

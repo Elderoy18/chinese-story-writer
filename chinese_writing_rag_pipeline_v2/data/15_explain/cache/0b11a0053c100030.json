@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n孟子想，难怪我们常常搬家，原来我妈妈很忙。可是常常搬家害得孟子很难找到朋友。每次搬家孟子也觉得新的地方不是太热就是太冷，不是太大就是太小。在哪的地方，他都不高兴。孟子想帮助妈妈祭拜，可是他六岁，所以不能祭拜。\n\nITEMS:\n\n[I78] 每次搬家孟子【也】觉得新的地方不是太热就是太冷   correction: 也 → 都   strength: suggestion\n  rule card (purpose_weile, Coherence: connectors): Use 为了 + VP. to state a purpose, usually before the main clause. Do not use 为了 as a result connector, and do not put the 为了 phrase in the latter clause.  Pattern: <wrong> → <correct>: <purpose> is the purpose of <main action>, so use 为了 + <VP> before the main clause; do not use 所以 to show a result here.  Her terms: 为了 + VP.\n  her past correction: 他们搬家不是为了孟母[-要]住在更好的房子 — her note: 为了 + VP.\n  her past correction: 他们搬家不是为了[-孟母]要住在更好的房子 — her note: delete孟母\n  her past correction: [-他们]搬家每次学到了比较多\n\n[I79] 不是【太】大就是太小   correction: 太 → (delete)   strength: error\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: 你就[太→那么]淘气了\n  her past correction: [-比方说] — her note: 比方说is used to express “for example”, delete it\n  her past correction: [-他]就不会成为好的大人 — her note: redundant\n\n[I80] 不是太大就是【太】小   correction: 太 → (delete)   strength: error\n  rule card (example_emphasis_connectors, Coherence: connectors): 比方说 introduces a following example; delete it when no example follows. 特别是+N, + Clause singles out a typical example, so N must be an example of the category.  Pattern: <wrong> → <correct>: <比方说> needs a following example, or <特别是+N, + Clause> must single out an N that is a typical example of <category>.  Her terms: 比方说, 特别是+N, + Clause\n  her past correction: [-比方说] — her note: 比方说is used to express “for example”, delete it\n  her past correction: 你就[太→那么]淘气了\n  her past correction: 他问[-了] — her note: no了for speaking word introducing quoted speech\n\n[I81] 在【哪】的地方   correction: 哪 → 哪个   strength: error\n  checker's note: “在哪个地方” is the grammatical phrase.\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 小孟[在→在哪儿？]\n  her past correction: 在第一个[房子→地方]\n  her past correction: 在[第三个房子→第三个地方]\n\n[I82] 可是他【^】六岁   correction: ∅ → 只有   strength: suggestion\n  rule card (adversative_connector, Coherence: connectors): Use 可是, 却, 而, and 但 only when there is a real “semantic turn,” such as a contrast or an unexpected result. 却 indicates an unexpected semantic turn.  Pattern: <wrong> → <correct>: there is no real contrast or “semantic turn” here, so do not use <connector>.  Her terms: semantic turn\n  her past correction: 他才三岁[+，可是一直]的以后待在墓地里\n  her past correction: 他才四[-年]岁\n  her past correction: 他有的时候[-只要]跟朋友玩儿 — her note: or 他有的时候跟朋友玩儿",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I78",
+    "explanation": "It would be more natural to use 都 with 每次. 每次搬家 means “every time they moved,” so use 都 to show that this feeling happened each time.",
+    "dimension": "coherence_connectors",
+    "corrected": "都",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I79",
+    "explanation": "Use 不是大就是小 here. 太 means “too/excessively,” but the sentence is simply contrasting whether the place was big or small.",
+    "dimension": "word_choice",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I80",
+    "explanation": "Use 不是大就是小 here. 太 means “too/excessively,” but the sentence is simply contrasting whether the place was big or small.",
+    "dimension": "coherence_connectors",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I81",
+    "explanation": "哪 does not normally go directly before 地方 in this phrase. Use 哪个地方 instead.",
+    "dimension": "word_choice",
+    "corrected": "哪个",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I82",
+    "explanation": "It would be more natural to say 可是他只有六岁. 只有 emphasizes that he was very young, so 可是 has a clear semantic turn.",
+    "dimension": "coherence_connectors",
+    "corrected": "只有",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1482,
+  "completion_tokens": 606,
+  "total_tokens": 2088,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1479,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 308,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

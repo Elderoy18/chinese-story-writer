@@ -1,0 +1,47 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “在古代时候中国人不知道什么植物可以吃”: 时候 → (deleted)\n- in “因为大家知道什么植物不能吃”: 因为 → 这样   [her note: not “because”]\n- in “神农很幸福”: 很幸福 → 很高兴   [her note: 幸福is for long-term, life-related happiness]\n- in “吃不知名的植物是特别是危险的”: 特别是危险的 → 特别危险的   [her note: ”特别是+N, + Clause” is used to single out a typical example]\n- in “很多的东西麻烦得很”: 很多的东西 → 很多植物   [her note: no的]\n- in “有一位人来了”: 一位人 → 一个人\n\nScene to review:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。",
+    "corrected": "很久以前，古代的人不知道什么植物能吃，也不知道什么植物不能吃。",
+    "explanation": "很 cannot modify 不知道. The verb 知道 is also needed after 也, because both parts say what ancient people did not know."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。",
+    "corrected": "所以很多人常常吃不安全的植物，这对他们的身体有坏处，是一个很麻烦的情况。",
+    "explanation": "Use 这 to refer back to the action just mentioned instead of repeating 吃不安全的植物. The people in the story are 很多人, so use 他们, not 你; the final noun phrase also needs 是 to make a complete sentence."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "但是一个人，神农，要解决这个问题。",
+    "corrected": "但是有一个人叫神农，要解决这个问题。",
+    "explanation": "When a character appears for the first time, introduce them with a noun phrase and their name. Say 有一个人叫神农."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1293,
+  "completion_tokens": 1957,
+  "total_tokens": 3250,
+  "prompt_tokens_details": {
+   "cached_tokens": 1045,
+   "cache_write_tokens": 245,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1634,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

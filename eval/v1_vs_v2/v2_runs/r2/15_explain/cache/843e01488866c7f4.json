@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。\n\nITEMS:\n\n[I98] 【麻烦】我们可以吃什么植物？神农说   correction: 麻烦 → 请问   strength: error\n  checker's note: 请问 is the natural polite question opener\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 神农[-开始]找我们可以吃的植物\n  her past correction: 神农开始[-找]我们可以吃的植物\n  her past correction: 神农开始找[-我们]可以吃的植物\n\n[I99] 这就要【看】你想不想生病了   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 他[看→看到]很多病人 — her note: 看look vs.看到see\n  her past correction: 他看到很多人[很病→生病]了 — her note: “病” is not a normal Adj., so it cannot be with 很 or 不\n  her past correction: 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n\n[I100] 这就要看你想不想生病【了】   correction: 了 → (delete)   strength: suggestion\n  checker's note: 了 is generally unnecessary after 想不想生病 here\n  rule card (condition_not_definite, Coherence: connectors): Before 这就要看……了, state a not definite condition or alternative, such as 会不会生病, 要不要吃, or 蘑菇能不能吃.  Pattern: <wrong> → <correct>: Before 这就要看……了, add a not definite condition or alternative, such as <condition>.  Her terms: not definite condition, 这就要看……了\n  her past correction: [+要不要吃，]这就要看对你的身体有没有好处了 — her note: add a condition “要不要吃“ before “这就要看……了”\n  her past correction: [+你要不要吃？]这就要看你饿不饿了 — her note: add a condition “要不要吃？” before “这就要看……了”\n  her past correction: [-有的人]吃的生病\n\n[I101] 一些【植物】不能吃   correction: 植物 → (delete)   strength: suggestion\n  rule card (question_patterns, Grammar): Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.  Pattern: <wrong> → <correct>: this asks <whether/what/where>, so use <question pattern>, not 如果.  Her terms: repeated Wh-Q\n  her past correction: [因为→这样]大家知道什么植物不能吃 — her note: not “because”\n  her past correction: 他们不知道什么植物[-能吃]不能吃\n  her past correction: 中国人不知道什么植物[可能还是不可能→能吃，什么植物不能]吃",
+ "salt": "repeat-run2",
+ "output": {
+  "items": [
+   {
+    "item_id": "I98",
+    "explanation": "麻烦 means “trouble,” so it is not a natural polite question opener here. Use 请问 to begin the question politely.",
+    "dimension": "other",
+    "corrected": "请问",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I99",
+    "explanation": "看 is “look,” while 看到 is “see.” The person actually sees the situation, so use 看到, not 看.",
+    "dimension": "word_choice",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I100",
+    "explanation": "It would be more natural to delete 了 here. 想不想生病 already gives the not definite condition, so 了 is unnecessary.",
+    "dimension": "coherence_connectors",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I101",
+    "explanation": "It would be more natural to delete 植物 because it was just mentioned. 一些能吃，一些不能吃 avoids repeating the noun.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1329,
+  "completion_tokens": 454,
+  "total_tokens": 1783,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1326,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 218,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

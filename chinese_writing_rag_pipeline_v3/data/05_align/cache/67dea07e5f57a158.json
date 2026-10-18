@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 很多人想祭拜，因为他们觉得祭拜有很多好处，对他们的生活。\nquote: 很多人想祭拜，因为他们觉得祭拜有很多好处，对他们的生活\npart p0: instruction [ref p0/k0] delete 他们 ; notes: redundant\npart p1: fix [ref p1/k0] 对生活有很多好处",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "他们",
+    "corrected": "",
+    "before": "很多人想祭拜，因为",
+    "after": "觉得祭拜有很多",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the redundant subject after 因为"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "有很多好处，对他们的生活",
+    "corrected": "对生活有很多好处",
+    "before": "因为他们觉得祭拜",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "moves 对生活 before 有很多好处 and omits 他们"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1020,
+  "completion_tokens": 452,
+  "total_tokens": 1472,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 312,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

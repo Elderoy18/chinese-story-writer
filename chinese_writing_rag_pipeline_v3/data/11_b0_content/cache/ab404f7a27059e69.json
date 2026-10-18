@@ -1,0 +1,91 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n在古代的时候，有一个孩子叫孟轲，他一直住跟他的妈妈。他们住在一个墓地的旁边，孟轲老是看看别的人，从早到晚祭拜、哭哭啼啼的人。难怪孟轲的妈妈出家的时候看看她的儿子做一样的事情。他们把家搬到了别的地方，他们住离一个学校很近。所以孟轲开始不是学习就是看书，才几个星期就成为很明智。他那不是成为医生，而是成为哲学人。在以前，哲学人很聪明和重要。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "孟子 lives near a graveyard and imitates sacrifices",
+    "verdict": "told",
+    "evidence": [
+     "他们住在一个墓地的旁边，孟轲老是看看别的人，从早到晚祭拜、哭哭啼啼的人。",
+     "难怪孟轲的妈妈出家的时候看看她的儿子做一样的事情。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "孟母 moves away from the graveyard neighborhood",
+    "verdict": "told",
+    "evidence": [
+     "他们把家搬到了别的地方"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "孟母's thought that copying sacrifices would have a bad impact on 孟子"
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "They move near the market and 孟子 imitates buying and selling",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "moving to the neighborhood near the market and 孟子 imitating buying and selling",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "They move from the market near a school and 孟子 studies",
+    "verdict": "partly",
+    "evidence": [
+     "他们把家搬到了别的地方",
+     "他们住离一个学校很近。",
+     "所以孟轲开始不是学习就是看书，才几个星期就成为很明智。"
+    ],
+    "missing_part": "the move from the market neighborhood to the neighborhood near the school",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a philosopher",
+    "verdict": "told",
+    "evidence": [
+     "他那不是成为医生，而是成为哲学人。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "孟子 becomes famous"
+    ],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "Before the move near the school, add that 孟母 moved near the market and 孟子 copied buying and selling.",
+   "When they move near the school, say that they moved there from the market before 孟子 starts studying."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1029,
+  "completion_tokens": 2001,
+  "total_tokens": 3030,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1026,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

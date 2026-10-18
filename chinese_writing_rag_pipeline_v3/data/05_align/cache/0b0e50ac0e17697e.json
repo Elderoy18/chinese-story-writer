@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 神农看到很多人吃了麻烦的植物，比方说一个人生病了，一个孩子哭了，一个人晕了。\nquote: 神农看到很多人吃了麻烦的植物\npart p0: comment [ref p0/note] better to briefly introduce “神农” when this character first appears\npart p1: fix [ref p1/k0] 有害的植物",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "神农",
+    "corrected": "",
+    "before": "",
+    "after": "看到很多",
+    "note": "better to briefly introduce “神农” when this character first appears",
+    "confidence": "high",
+    "reason": "teacher requests an introduction for 神农"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "麻烦的",
+    "corrected": "有害的",
+    "before": "很多人吃了",
+    "after": "植物，比方",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 麻烦的 with 有害的"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1026,
+  "completion_tokens": 124,
+  "total_tokens": 1150,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

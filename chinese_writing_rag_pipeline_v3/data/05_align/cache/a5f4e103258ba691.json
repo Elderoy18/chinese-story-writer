@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 然后，自行车的男孩给三个男孩子们每一个人一个梨子，报答给予帮助的人最好不过了。\nquote: 自行车的男孩给三个男孩子们每一个人一个梨子\npart p0: fix [ref p0/k0] 骑自行车的男孩\npart p1: fix [ref p1/k0] 给三个男孩子 ; notes: “们”cannot be used with num.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "自行车的男孩",
+    "corrected": "骑自行车的男孩",
+    "before": "",
+    "after": "给三个男",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the noun phrase with the teacher's corrected description"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "三个男孩子们",
+    "corrected": "三个男孩子",
+    "before": "孩给",
+    "after": "每一个人",
+    "note": "“们”cannot be used with num.",
+    "confidence": "high",
+    "reason": "removes 们 after a numbered noun"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1040,
+  "completion_tokens": 200,
+  "total_tokens": 1240,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1037,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 62,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

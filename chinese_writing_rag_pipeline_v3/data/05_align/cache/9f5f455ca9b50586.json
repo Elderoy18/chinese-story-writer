@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他把梨从筐里倒出去，他的帽子也倒下去。\nquote: 他把梨从筐里倒出去\npart p0: fix [ref p0/k0] 梨从筐里撒出去\npart p1: comment [ref p1/note] “把“ is used for initiated actions (“disposal”), here it is not he who threw those pears, but the pears fell themselves. 倒 means “pour” if it is an initiated action, and means “fall” if it is not an initiated action, and followed by 下去/下来。",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "把",
+    "corrected": "",
+    "before": "他",
+    "after": "梨从筐里",
+    "note": "",
+    "confidence": "high",
+    "reason": "teacher's replacement omits 把"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "倒",
+    "corrected": "撒",
+    "before": "梨从筐里",
+    "after": "出去",
+    "note": "",
+    "confidence": "high",
+    "reason": "teacher replaces the action verb"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "他把梨从筐里倒出去",
+    "corrected": "",
+    "before": "",
+    "after": "",
+    "note": "“把“ is used for initiated actions (“disposal”), here it is not he who threw those pears, but the pears fell themselves. 倒 means “pour” if it is an initiated action, and means “fall” if it is not an initiated action, and followed by 下去/下来。",
+    "confidence": "high",
+    "reason": "teacher explains the inappropriate disposal construction and verb meaning"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1067,
+  "completion_tokens": 216,
+  "total_tokens": 1283,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1064,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

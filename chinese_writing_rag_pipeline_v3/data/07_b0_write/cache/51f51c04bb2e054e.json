@@ -1,0 +1,111 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThe teacher's corrections in other learners' similar clauses:\n- 比方说  →  比方说 → (delete)  (是不是有用了。比方说is used to express “for example”, delete it)\n- 他发现了黄色花有毒  →  了 → (delete)  (发现is a mental state verb, no了)\n- 他喝了茶  →  他 → (delete)  (redundant)\n- 看很多植物  →  看很多植物 → 看到了很多植物  (看look vs.看到see)\n- 每天就是这样  →  就是 → 都是\n- 他走过有大有小山  →  有大有小山 → 大山小山\n\nScene to review:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "凉山很大的山",
+    "corrected": "凉山是很大的山",
+    "errors": [
+     {
+      "original": "凉山很大的山",
+      "correction": "凉山是很大的山",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "A noun subject needs 是 before a noun phrase used as its description."
+     }
+    ]
+   },
+   {
+    "clause": "这也找植物",
+    "corrected": "他也找植物",
+    "errors": [
+     {
+      "original": "这",
+      "correction": "他",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "Use 他 to refer back to 神农. 这 means “this” and cannot refer to the male character here."
+     }
+    ]
+   },
+   {
+    "clause": "一天，他找到黄色的花",
+    "corrected": "一天，他找到了黄色的花",
+    "errors": [
+     {
+      "original": "找到",
+      "correction": "找到了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "Finding the flower is a completed event in the story, so use 了."
+     }
+    ]
+   },
+   {
+    "clause": "他听说你跟黄色的花做茶很有用",
+    "corrected": "他听说用黄色的花做茶很有用",
+    "errors": [
+     {
+      "original": "你跟",
+      "correction": "用",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "用 means “use ... to.” 你跟 means “you and/with,” which does not fit this meaning."
+     }
+    ]
+   },
+   {
+    "clause": "你的头发疼死",
+    "corrected": "你的头疼死了",
+    "errors": [
+     {
+      "original": "头发",
+      "correction": "头",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "头发 is “hair,” while 头疼 means “have a headache.”"
+     },
+     {
+      "original": "死",
+      "correction": "死了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "疼死了 expresses a completed or very strong state of pain."
+     }
+    ]
+   },
+   {
+    "clause": "这冰茶是药",
+    "corrected": "这杯茶是药",
+    "errors": [
+     {
+      "original": "冰",
+      "correction": "杯",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "A cup of tea needs the measure word 杯 after 这."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1186,
+  "completion_tokens": 2337,
+  "total_tokens": 3523,
+  "prompt_tokens_details": {
+   "cached_tokens": 1183,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1856,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

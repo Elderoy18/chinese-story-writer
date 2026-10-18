@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar, error] 因为他不要离开他的城市 → 因为他不想离开他的城市 -- 不想 means “does not want to.” Use 不想离开他的城市 here.\n2. [Grammar, suggestion] …妈妈找到孟子一个老师 → …妈妈找到孟子的老师 -- It would be more natural to use 的 because 孟子 describes the noun 老师: 孟子的老师.\n3. [Vocabulary, error] 跟老师孟子学最重要的文… → 孟子跟老师学最重要的文… -- Put the subject 孟子 before 跟老师. Say 孟子跟老师学最重要的文学.\n4. [Coherence: reference, error] 他想他的朋友 → 想他的朋友 -- 他 is already clear from the close continuation, so delete it; Chinese uses zero form here.\n5. [Coherence: reference, error] 因为他不要离开他的… → 因为不要离开他的… -- 他 is already clear from the previous clause, so it is redundant. Chinese uses zero form here.\n6. [Coherence: 了 / 着 / 在, suggestion] 所以他成为哲学家 → 所以他成为了哲学家 -- Becoming a philosopher is a completed change in the story, so use 了completed: 成为了哲学家.\n7. [Other, error] 他的妈妈找到孟子一个老师 → 他的妈妈找到给孟子找了一个老师孟子一个老师 -- Use 给 to mark 孟子 as the person receiving the teacher. Say 给孟子找了一个老师.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "不要离开 means something different here; the intended meaning is 不想离开."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "找到孟子一个老师 needs 给孟子, while 孟子的老师 changes the intended meaning."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "孟子 must be placed before 跟老师, but 最重要的文学 remains an unsuitable expression here."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The pronoun 他 is acceptable and is retained in the teacher's correction."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "The problem is 不要 rather than 他, and deleting 他 leaves the wrong wording unchanged."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The final completed change of becoming a philosopher should use 了."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "给孟子找到一个老师 is needed, but the proposed correction is ungrammatical and repeats material."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2248,
+  "completion_tokens": 1225,
+  "total_tokens": 3473,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 597,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 816,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

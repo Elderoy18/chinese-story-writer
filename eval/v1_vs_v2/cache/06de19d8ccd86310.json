@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this time expression is not used naturally for a general historical setting; use the fixed narrative expression shown in the correction.\n2. [Grammar & Vocabulary, error] 老是祭拜：常常祭拜，老是 has a negative or complaining tone, while this sentence describes a neutral repeated activity.\n3. [Grammar & Vocabulary, error] 有才两个学校：才有两个学校，才 should come before the verb to mean “there are only two schools.”\n4. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，follow the first-mention rule: introduce the character with his name in the first noun phrase rather than naming him only after using a pronoun.\n5. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜，就是跟朋友聊天：他不是祭拜，就是跟朋友聊天，follow the close re-occurrence rule: after the previous sentence has named 孟子 and no other male character competes, use a pronoun.\n6. [Coherence: reference, error] Coherence (Reference): 但是城市才有两个学校：但是那里才有两个学校，follow the close re-occurrence rule: after mentioning his city, use a pronoun-like place reference rather than repeating the noun.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“古代的时候” is redundant under the teacher’s time-expression rule; “在古代” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是” can carry a negative tone, but it is still acceptable here and the teacher did not mark it."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The teacher requires “只有两个学校,” not “才有两个学校,” for this meaning."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the teacher’s first-mention rule, the boy should be introduced with his name in the initial noun phrase."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Since 孟子 was named in the immediately preceding sentence and no competing male referent occurs, “他” is required by the close-reference rule."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“那里” correctly avoids repeating the nearby place reference, but the corrected clause still uses disallowed “才有” instead of “只有”."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2070,
+  "completion_tokens": 1509,
+  "total_tokens": 3579,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 419,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1110,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

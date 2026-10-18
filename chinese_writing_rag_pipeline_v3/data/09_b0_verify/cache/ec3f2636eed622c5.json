@@ -1,0 +1,42 @@
+{
+ "input": "Scene:\n别的人给了神农一个灵芝。这个植物可以让神农更好。比方说，他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。\n\nCorrections to check:\n1. 吃灵芝以后  →  吃了灵芝以后   [coherence: temporality]\n2. 他可以用对药  →  他可以用来做药   [grammar]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "“吃灵芝以后” is already a natural and grammatical way to mean “after eating lingzhi.”"
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "“用对药” is not a natural way to say that he can use the plants to make medicine, while “用来做药” is natural in context."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 506,
+  "completion_tokens": 456,
+  "total_tokens": 962,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 328,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

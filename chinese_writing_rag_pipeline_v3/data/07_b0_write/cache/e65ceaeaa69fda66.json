@@ -1,0 +1,139 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 古代的时候  →  古代的时候 → 在古代\n- 吃一个植物以后  →  吃一个植物以后 → 吃了  (了completed)\n- 神农吃以后  →  ∅ → 了  (了completed)\n- 所以神农去了大山  →  神农 → (delete)  (redundant)\n- 他吃一个麻烦的植物  →  吃一个麻烦的植物 → 吃了很多奇怪的植物  (麻烦is not used to describe植物)\n- 也看到了很多人吃植物  →  ∅ → ，\n\nScene to review:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处",
+    "corrected": "他看到了有很多人不知道哪种植物好吃，也不知道什么植物对他们的身体有好处",
+    "errors": [
+     {
+      "original": "哪个植物",
+      "correction": "哪种植物",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 种, not 个, as the measure word for types of plants."
+     },
+     {
+      "original": "你的身体",
+      "correction": "他们的身体",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The people are the subject here, so use 他们的 to refer back to them. 你 would address the reader."
+     }
+    ]
+   },
+   {
+    "clause": "所以神农去了吃每种植物",
+    "corrected": "所以去吃每种植物",
+    "errors": [
+     {
+      "original": "神农",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "神农 was just mentioned, so the subject can be omitted here."
+     },
+     {
+      "original": "去了",
+      "correction": "去",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "Before another verb expressing purpose, use 去吃, not 去了吃."
+     }
+    ]
+   },
+   {
+    "clause": "他吃了一种植物以后，就写了这个植物对你有没有好处",
+    "corrected": "他吃了一种植物以后，就写了它对人的身体有没有好处",
+    "errors": [
+     {
+      "original": "这个植物",
+      "correction": "它",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The plant was just mentioned, so use the pronoun 它 to refer back to it."
+     },
+     {
+      "original": "你",
+      "correction": "人",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "This is a general statement about people, not an address to the reader."
+     }
+    ]
+   },
+   {
+    "clause": "有的时候，神农吃了很好吃的植物",
+    "corrected": "有的时候，他吃很好吃的植物",
+    "errors": [
+     {
+      "original": "神农",
+      "correction": "他",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "神农 was mentioned in the preceding context, so use 他 here."
+     },
+     {
+      "original": "吃了",
+      "correction": "吃",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "有的时候 describes a repeated situation, so use the verb without 了."
+     }
+    ]
+   },
+   {
+    "clause": "有的时候，他吃了很危险的植物",
+    "corrected": "有的时候，他吃很危险的植物",
+    "errors": [
+     {
+      "original": "吃了",
+      "correction": "吃",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "有的时候 describes a repeated situation, so use the verb without 了."
+     }
+    ]
+   },
+   {
+    "clause": "他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了",
+    "corrected": "他吃完了每种植物以后，会来跟他的朋友聊到它们",
+    "errors": [
+     {
+      "original": "他吃的植物",
+      "correction": "它们",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "每种植物 was just mentioned, so use 它们 to refer back to the plants."
+     },
+     {
+      "original": "了",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "会 expresses a future or habitual action, so do not add sentence-final 了."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1181,
+  "completion_tokens": 4169,
+  "total_tokens": 5350,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1178,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3418,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

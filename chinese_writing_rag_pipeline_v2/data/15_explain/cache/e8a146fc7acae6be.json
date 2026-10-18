@@ -1,0 +1,75 @@
+{
+ "input": "CURRENT SCENE:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nITEMS:\n\n[I233] 【古代时候】   correction: 古代时候 → 古代   strength: error\n  checker's note: her pattern: 古代时候 -> 古代 (corrected 3/3 in train)\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I234] 人不知道【他们】能吃什么植物   correction: 他们 → 自己   strength: error\n  checker's note: generic 人 should refer to itself\n  rule card (question_patterns, Grammar): Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.  Pattern: <wrong> → <correct>: this asks <whether/what/where>, so use <question pattern>, not 如果.  Her terms: repeated Wh-Q\n  her past correction: 他们不知道什么植物[-能吃]不能吃\n  her past correction: 我们不知道[-我们]可以吃什么植物 — her note: redundant\n  her past correction: 大家不知道什么[菜→植物]能吃\n\n[I235] 【所以】有一天   correction: 所以 → 于是   strength: error\n  checker's note: 于是 connects the resulting action naturally\n  rule card (fixed_expressions, Vocabulary): Use established fixed expressions and compounds, rather than literal or self-created word combinations. For example, use 自然规律, 制定规定, and 从 + Place.  Pattern: <wrong> → <correct>: use the established expression <correct>, not the literal/nonstandard combination <wrong>.  Her terms: 从 + Place, 制定规定, 自然规律, Subj.算是Obj., 只/不过/才(+num.) + 而已\n  her past correction: [一个天时候→有一天]\n  her past correction: 每天[就是→都是]这样\n  her past correction: [-然后]\n\n[I236] 【神农】出去试一试很多种植物   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 神农: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: 神农[加→吃]下去很多的植物\n  her past correction: 神农[发现→发现了]很多植物 — her note: 了completed\n  her past correction: ⟦神农⟧看到很多人随便吃各种植物 — her note: better to briefly introduce “神农” when this character first appears\n\n[I237] 神农出去【试一试】很多种植物   correction: 试一试 → 尝一尝   strength: error\n  checker's note: plants are tasted to test whether they are edible\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 神农[加→吃]下去很多的植物\n  her past correction: 神农[什么想尝→想尝什么植物]\n  her past correction: 神农[发现→发现了]很多植物 — her note: 了completed\n\n[I238] 告诉人什么植物是安全【^】什么是危险   correction: ∅ → 的   strength: error\n  checker's note: 安全 needs 的 in this identifying phrase\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 每个人都不知道哪些植物能安全[+地]吃\n  her past correction: [-他]写下了哪些植物有毒 — her note: redundant\n  her past correction: 什么植物[是毒→有毒]\n\n[I239] 告诉人什么植物是安全什么是危险【^】   correction: ∅ → 的   strength: error\n  checker's note: 危险 needs 的 in this identifying phrase\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 这些植物对身体[+有]好处\n  her past correction: [-这些植物]对身体好处\n  her past correction: 哪些植物对[-你的]健康有好处",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I233",
+    "explanation": "时候 is redundant because 古代 already expresses this time meaning.",
+    "dimension": "other",
+    "corrected": "古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I234",
+    "explanation": "With generic 人, use 自己 to refer back to the same people, not 他们.",
+    "dimension": "coherence_reference",
+    "corrected": "自己",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I235",
+    "explanation": "Use 于是 to connect the earlier situation to the resulting action naturally.",
+    "dimension": "word_choice",
+    "corrected": "于是",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I236",
+    "explanation": "神农 appears for the first time, so please briefly introduce him with an identifying noun phrase.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I237",
+    "explanation": "试一试 does not naturally collocate with plants in this situation; use 尝一尝 to mean tasting plants to test them.",
+    "dimension": "word_choice",
+    "corrected": "尝一尝",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I238",
+    "explanation": "安全 describes the implied noun 植物 here, so use 的: 安全的.",
+    "dimension": "grammar",
+    "corrected": "的",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I239",
+    "explanation": "危险 describes the implied noun 植物 here, so use 的: 危险的.",
+    "dimension": "grammar",
+    "corrected": "的",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1835,
+  "completion_tokens": 384,
+  "total_tokens": 2219,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1832,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 55,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

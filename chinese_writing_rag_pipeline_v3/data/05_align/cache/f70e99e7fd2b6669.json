@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟母看出来孟子老是难过，害得他不能好好学习。\nquote: 孟母看出来孟子老是难过\npart p0: fix [ref p0/k0] 很难过 ; notes: usually Adj. takes 很\npart p1: comment [ref p1/note] miss information: 孟子 imitated how to offer sacrifices",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "很",
+    "before": "孟子",
+    "after": "老是难过",
+    "note": "usually Adj. takes 很",
+    "confidence": "high",
+    "reason": "adds 很 before the adjective"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "孟母看出来孟子老是难过",
+    "corrected": "",
+    "before": "",
+    "after": "，害得他不",
+    "note": "miss information: 孟子 imitated how to offer sacrifices",
+    "confidence": "high",
+    "reason": "notes missing event information"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1024,
+  "completion_tokens": 126,
+  "total_tokens": 1150,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

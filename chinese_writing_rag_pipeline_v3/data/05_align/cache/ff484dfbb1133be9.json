@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 她常常搬家，觉得对孟子有好处，可是孟子不喜欢常常搬家，觉得交新朋友老是害得。\nquote: 觉得交新朋友老是害得\npart p0: fix [ref p0/k0] 觉得常常搬家害得他老是交不到新朋友 ; notes: 害得 + N/sb. + Harmful result",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "交新朋友老是害得",
+    "corrected": "常常搬家害得他老是交不到新朋友",
+    "before": "搬家，觉得",
+    "after": "。",
+    "note": "害得 + N/sb. + Harmful result",
+    "confidence": "high",
+    "reason": "reorders the harmful cause and supplies the person and harmful result"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1030,
+  "completion_tokens": 572,
+  "total_tokens": 1602,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1027,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 471,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

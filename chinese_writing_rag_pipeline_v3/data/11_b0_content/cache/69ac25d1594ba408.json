@@ -1,0 +1,130 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n在古代，神农和他的城市不知道什么植物他们可以吃。比方说，他们吃毒植物。他们常常生病了，这就要看什么植物你吃了。神农不喜欢看他的城市生病了，所以他决定去旅行，这个旅行又远又麻烦。但是，他看到很多的植物。先找到了好看的花，一吃就生病。再找到了灵芝，灵芝真像伞。所以神农吃了，一吃就生病。神农回他的家，他看到了药，正好看到了毒植物，特别是灵芝和夹竹桃。一回家就写什么植物他们能和不能吃。现在他们懂什么植物不毒，谢谢神农！",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "ancient people do not know edible plants and become sick after eating plants",
+    "verdict": "told",
+    "evidence": [
+     "在古代，神农和他的城市不知道什么植物他们可以吃。",
+     "比方说，他们吃毒植物。",
+     "他们常常生病了，这就要看什么植物你吃了。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 decides to test plants to learn which are safe to eat",
+    "verdict": "told",
+    "evidence": [
+     "神农不喜欢看他的城市生病了，所以他决定去旅行，这个旅行又远又麻烦。",
+     "但是，他看到很多的植物。",
+     "一回家就写什么植物他们能和不能吃。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "He climbed mountains while trying different plants."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it",
+    "verdict": "partly",
+    "evidence": [
+     "一回家就写什么植物他们能和不能吃。"
+    ],
+    "missing_part": "He found 茶.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints",
+    "verdict": "partly",
+    "evidence": [
+     "先找到了好看的花，一吃就生病。",
+     "正好看到了毒植物，特别是灵芝和夹竹桃。"
+    ],
+    "missing_part": "The flower was 夹竹桃, and 神农 fainted after trying it.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "a visitor gives 神农 灵芝, and he feels better after eating it",
+    "verdict": "partly",
+    "evidence": [
+     "再找到了灵芝，灵芝真像伞。",
+     "所以神农吃了，一吃就生病。"
+    ],
+    "missing_part": "A person gave 神农 灵芝, and 神农 felt better after eating it.",
+    "details_left_out": [
+     "The visitor wore blue and stopped by."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "another person has a conversation with 神农",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Another person came and talked with 神农.",
+    "details_left_out": [
+     "The visitor wore brown."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃",
+    "verdict": "told",
+    "evidence": [
+     "正好看到了毒植物，特别是灵芝和夹竹桃。",
+     "一回家就写什么植物他们能和不能吃。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "所以神农吃了，一吃就生病。",
+    "problem": "In the story, 神农 eats 灵芝 after a visitor gives it to him, and he feels better rather than becoming sick."
+   },
+   {
+    "learner_text": "正好看到了毒植物，特别是灵芝和夹竹桃。",
+    "problem": "This says that 灵芝 is poisonous, but 灵芝 makes 神农 feel better in the story."
+   }
+  ],
+  "feedback": [
+   "After 神农 starts trying plants, add that he finds 茶 and records it.",
+   "Before he finds 灵芝, add that 神农 tries 夹竹桃 and faints.",
+   "After 神农 faints, add that a visitor gives him 灵芝 and he feels better after eating it.",
+   "After 神农 feels better and before he writes his final record, add that another visitor talks with 神农."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1066,
+  "completion_tokens": 2506,
+  "total_tokens": 3572,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1063,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1729,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

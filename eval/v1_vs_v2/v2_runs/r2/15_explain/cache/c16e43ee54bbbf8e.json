@@ -1,0 +1,89 @@
+{
+ "input": "CURRENT SCENE:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nITEMS:\n\n[I57] 凉山【^】很大的山   correction: ∅ → 是一座   strength: error\n  checker's note: a singular mountain needs 是 and the measure word 座\n  rule card (example_emphasis_connectors, Coherence: connectors): 比方说 introduces a following example; delete it when no example follows. 特别是+N, + Clause singles out a typical example, so N must be an example of the category.  Pattern: <wrong> → <correct>: <比方说> needs a following example, or <特别是+N, + Clause> must single out an N that is a typical example of <category>.  Her terms: 比方说, 特别是+N, + Clause\n  her past correction: 这个大山⟦特别是⟧的 — her note: 特别是+N, + clause\n  her past correction: 他[爬山→爬了很多山]\n  her past correction: 他走过[有大有小山→大山小山]\n\n[I58] 【这】也找植物   correction: 这 → 他   strength: error\n  checker's note: the subject should refer to Shennong, not “this”\n  rule card (search_find, Vocabulary): 找 means “look for.” Use 找到 when the person successfully finds something.  Pattern: <wrong> → <correct>: the person successfully finds <object>, so use 找到, not 找.  Her terms: 找look for vs.找到find\n  her past correction: 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction: 他找了第一个[菜→植物]\n  her past correction: 他[测试→尝试]别的植物\n\n[I59] 他找到【^】黄色的花   correction: ∅ → 一朵   strength: error\n  checker's note: a single flower normally needs a measure word\n  rule card (no_le_mental_state, Coherence: temporality (了/着/在)): Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative.  Pattern: <wrong> → <correct>: <verb> is a mental-state verb here, so use no 了.  Her terms: mental state verb, no了\n  her past correction: 他发现[-了]黄色花有毒 — her note: 发现is a mental state verb, no了\n  her past correction: 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction: [-他]偶然看到了一朵美丽的黄花 — her note: redundant\n\n[I60] 他听说【你跟】黄色的花做茶很有用   correction: 你跟 → 用   strength: error\n  checker's note: 用 means “use ... to make tea”\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农尝[+了]花儿以后就发现这个花儿不但可以被用做茶 — her note: 了completed\n  her past correction: 他发现[-了]黄色花有毒 — her note: 发现is a mental state verb, no了\n  her past correction: 喝茶对[-你的]身体有好处\n\n[I61] 他听说你跟黄色的花做【^】茶很有用   correction: ∅ → 的   strength: error\n  checker's note: a modifier before 茶 needs 的\n  rule card (no_le_mental_state, Coherence: temporality (了/着/在)): Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative.  Pattern: <wrong> → <correct>: <verb> is a mental-state verb here, so use no 了.  Her terms: mental state verb, no了\n  her past correction: 他发现[-了]黄色花有毒 — her note: 发现is a mental state verb, no了\n  her past correction: 神农尝[+了]花儿以后就发现这个花儿不但可以被用做茶 — her note: 了completed\n  her past correction: 喝茶对[-你的]身体有好处\n\n[I62] 你的【头发】疼死   correction: 头发 → 头   strength: error\n  checker's note: 头发 is hair; a headache is 头疼\n  rule card (specific_noun_choice, Vocabulary): Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦.  Pattern: <wrong> → <correct>: <wrong> is too general/vague here; say specifically what <person/thing/problem> it is.\n  her past correction: [就疼死了→肚子/头就疼死了]\n  her past correction: 可是[有很多麻烦→头疼起来了] — her note: “有很多麻烦” is too vague\n  her past correction: 神农吃了那个花以后[头越来越好→头不疼了]\n\n[I63] 你的头发疼死【^】   correction: ∅ → 了   strength: error\n  checker's note: 疼死 needs 了 here to express the resulting state\n  rule card (specific_noun_choice, Vocabulary): Use a specific noun or noun phrase when the story needs to say exactly what person, thing, plant, experience, or problem you mean. Avoid general words such as 人、东西、事情、水果, or vague phrases such as 有麻烦.  Pattern: <wrong> → <correct>: <wrong> is too general/vague here; say specifically what <person/thing/problem> it is.\n  her past correction: 可是[有很多麻烦→头疼起来了] — her note: “有很多麻烦” is too vague\n  her past correction: [就疼死了→肚子/头就疼死了]\n  her past correction: 神农吃了那个花以后[头越来越好→头不疼了]\n\n[I64] 这【冰】茶是药   correction: 冰 → 种   strength: error\n  checker's note: 这种茶 means “this kind of tea”\n  rule card (demonstrative_reference, Coherence: reference): Use 这个/这种/这些/有的 + N. only when the preceding context makes exactly which person, thing, place, or set clear. If it is already a known event, use 这样的 + N.; if the reference is unclear, name it more specifically.  Pattern: <wrong reference> → <correct reference>: the preceding context does not identify exactly which <person/thing/place/set> this refers to.\n  her past correction: ⟦这种植物⟧原来是茶 — her note: “这种植物” is unclear, sine preceding sentence has two types of plants\n  her past correction: [-他]喝了茶 — her note: redundant\n  her past correction: [+是]药还是毒\n\n[I65] 他一喝茶就【^】很不舒服   correction: ∅ → 觉得   strength: suggestion\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]喝了茶 — her note: redundant\n  her past correction: 他一看[+就]觉得担心\n  her past correction: 喝茶对[-你的]身体有好处",
+ "salt": "repeat-run2",
+ "output": {
+  "items": [
+   {
+    "item_id": "I57",
+    "explanation": "For one mountain, use 是一座 before the description.",
+    "dimension": "grammar",
+    "corrected": "是一座",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I58",
+    "explanation": "这 refers to a thing, but the person looking for plants is Shennong. Use 他.",
+    "dimension": "coherence_reference",
+    "corrected": "他",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I59",
+    "explanation": "A single flower needs the measure word 朵. Say 一朵黄色的花.",
+    "dimension": "grammar",
+    "corrected": "一朵",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I60",
+    "explanation": "Use 用 to say “use yellow flowers to make tea.”",
+    "dimension": "word_choice",
+    "corrected": "用",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I61",
+    "explanation": "The phrase before 茶 modifies it, so add 的: 做的茶.",
+    "dimension": "grammar",
+    "corrected": "的",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I62",
+    "explanation": "头发 means “hair.” For a headache, say 头疼.",
+    "dimension": "word_choice",
+    "corrected": "头",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I63",
+    "explanation": "Add 了 after 疼死 to show the resulting state.",
+    "dimension": "grammar",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I64",
+    "explanation": "这种茶 means “this kind of tea” and clearly refers to the tea just mentioned.",
+    "dimension": "coherence_reference",
+    "corrected": "种",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I65",
+    "explanation": "It would be more natural to say 觉得很不舒服 to describe how he feels after drinking the tea.",
+    "dimension": "word_choice",
+    "corrected": "觉得",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2332,
+  "completion_tokens": 598,
+  "total_tokens": 2930,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2329,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 207,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

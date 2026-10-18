@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun phrase needs the copula 是 to state what a place is, and 一座 is the appropriate measure-word phrase for a mountain.\n2. [Grammar & Vocabulary, error] 这也找植物：他也在这里找植物，这 means “this” and cannot refer to Shennong as the actor; use 他 for the known character and 在这里 for the location.\n3. [Grammar & Vocabulary, error] 找到黄色的花：找到了一朵黄色的花，This is a completed discovery, so use 了; a single flower also needs the measure word 朵.\n4. [Grammar & Vocabulary, error] 跟黄色的花做茶：用黄色的花做茶，Use 用 to introduce the material or ingredient used to make something; 跟 does not express this relationship here.\n5. [Grammar & Vocabulary, error] 头发疼死：头疼死了，头发 means “hair,” which cannot hurt in the intended sense. Use 头疼 for a headache; 疼死了 is a natural intensifying expression.\n6. [Coherence: reference, error] Coherence (Reference): 你：（delete），The pronoun 你 has no introduced referent or addressee. This is a general statement about tea, so no person needs to be named here.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "凉山需要用“是”和量词“座”来说明它是一座很大的山。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "“这”不能作神农这个动作的施事，改为“他”并用“在这里”表示地点是正确的。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "“一朵黄色的花”虽通顺，但仍没有解决老师指出的“黄色的花”过于笼统的问题，应说“一种黄色的花”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "表示制作茶的材料应使用“用”，不能用“跟”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“头发”不能表示头痛，改成“头疼死了”是正确且通顺的说法。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这里的“你”没有合适的指称对象，删除它符合老师的修改。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2161,
+  "completion_tokens": 1832,
+  "total_tokens": 3993,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 510,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1426,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

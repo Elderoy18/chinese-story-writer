@@ -1,0 +1,73 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 特别是毒：特别有毒，Use 有毒 to describe a poisonous plant. 是 cannot directly link the adverb 特别 to the adjective 毒 in this structure.\n2. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝和夹竹桃，The original phrase does not form a valid noun phrase: 的 must connect a modifier to a noun, but 灵芝药 cannot modify 夹竹桃 in this way.\n3. [Grammar & Vocabulary, error] 写一个课文的植物：写下这些植物，Use 写下 when recording plants or information. 课文 cannot be used as a modifier before 植物 here.\n4. [Coherence: temporality, error] Coherence (Temporality): 吃完了：吃完，In a series of completed actions, only the last verb takes 了. Here, remove 了 from 吃完 and put it on the final action: 写下了.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "特别是 cannot directly modify 毒 here, and 特别有毒 is a correct description."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "灵芝药的夹竹桃 is an invalid and unintended noun phrase, while 灵芝和夹竹桃 changes the meaning to eating both plants rather than identifying lingzhi as an antidote."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "课文的植物 is wrong here, but 写下这些植物 changes the intended meaning instead of correcting it to writing an article about plants."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Under the teacher's series-of-actions rule, the earlier action should not take 了; the final action should take it instead."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2096,
+  "completion_tokens": 1182,
+  "total_tokens": 3278,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 445,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 894,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

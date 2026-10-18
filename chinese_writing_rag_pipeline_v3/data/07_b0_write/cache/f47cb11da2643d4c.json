@@ -1,0 +1,52 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 这个小孩子叫孟子  →  这个小孩子 → 儿子  (“这个小孩子” is unclear and ambiguous)\n- 而是她望子成龙  →  她 → (delete)  (Subj.不是……而是……)\n- 他们常常搬家  →  ∅ → 所以  (无聊？add所以)\n- 孟子的妈妈一直想她的儿子在很好的地方长大  →  想她的儿子在很好的地方长大 → 想让她的儿子在很好的地方长大  (想 + V., cannot be followed by N.)\n- 古代的时候有一个男人叫孟子  →  古代的时候 → 在古代\n- 可是孟子的妈妈一直很控制他  →  可是 → (delete)\n\nScene to review:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家",
+    "corrected": "孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬家",
+    "errors": [
+     {
+      "original": "搬了家",
+      "correction": "搬家",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "常常 describes a habitual action, so use the zero aspect form rather than 了."
+     }
+    ]
+   },
+   {
+    "clause": "她望子成龙，所以孟子的妈妈安排他的生活",
+    "corrected": "她望子成龙，所以她安排他的生活",
+    "errors": [
+     {
+      "original": "孟子的妈妈",
+      "correction": "她",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The mother has just been mentioned as 她, so use the pronoun again for this close reference."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1166,
+  "completion_tokens": 449,
+  "total_tokens": 1615,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1163,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 253,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

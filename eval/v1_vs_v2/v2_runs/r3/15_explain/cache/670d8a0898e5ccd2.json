@@ -1,0 +1,75 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nITEMS:\n\n[I53] 【古代的时候】   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I54] 【他】叫神农   correction: (comment, no correction)   strength: error\n  checker's note: the story starts with a pronoun: introduce the character first\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦神农⟧是很聪明的人 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 神农回[-他的]家 — her note: redundant\n  her past correction: ⟦神农⟧很常走去找饭 — her note: better to briefly introduce “神农” when this character first appears\n\n[I55] 有的植物【^】吃了以后他的肚子疼死了   correction: ∅ → 他   strength: error\n  checker's note: the person, not the plants, does the eating\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: 虽然有的[-他]邻居一吃了植物就生病\n  her past correction: [吃一个植物以后→吃了] — her note: 了completed\n  her past correction: 他[吃一个麻烦的植物→吃了很多奇怪的植物] — her note: 麻烦is not used to describe植物\n\n[I56] 可是有的【^】吃了以后很舒服   correction: ∅ → 他   strength: error\n  checker's note: the person, not the plants, does the eating\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: 有些人[吃得好→吃了以后没事儿]\n  her past correction: [-他]吃了以后 — her note: redundant\n  her past correction: 有的人吃[的→了以后]生病\n\n[I57] 可是有的吃了【以】后很舒服   correction: 以 → 之   strength: suggestion\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: 有些人[吃得好→吃了以后没事儿]\n  her past correction: 有的人吃[的→了以后]生病\n  her past correction: [-他]吃了以后 — her note: redundant\n\n[I58] 他找【^】很多植物   correction: ∅ → 了   strength: error\n  checker's note: a completed past action needs 了\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 他找到了很多[有用植物→有用的植物]\n  her past correction: 他找到了很多[-的]中国的植物\n  her past correction: 他尝[+了]很多植物 — her note: 了completed\n\n[I59] 【凉山】很大的山   correction: 凉山 → 上了   strength: error\n  checker's note: needs the verb phrase “went up”\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他[爬山→爬了很多山]\n  her past correction: 他[到山→到了山上]以后 — her note: 了completed, 山上is a place\n  her past correction: 他走过[有大有小山→大山小山]",
+ "salt": "repeat-run3",
+ "output": {
+  "items": [
+   {
+    "item_id": "I53",
+    "explanation": "古代 is the location/time setting for the action, so use 在+Place before the action: 在古代。",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I54",
+    "explanation": "This character appears for the first time, so please introduce him briefly with an identifying noun phrase, not only 他.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I55",
+    "explanation": "The plants are not doing the eating. Add 他 to show that he eats the plants.",
+    "dimension": "coherence_reference",
+    "corrected": "他",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I56",
+    "explanation": "The plants are not doing the eating. Add 他 to show that he eats them.",
+    "dimension": "word_choice",
+    "corrected": "他",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I57",
+    "explanation": "It would be more natural to say 吃了之后 here. 之后 means “after” in this completed action sequence.",
+    "dimension": "word_choice",
+    "corrected": "之",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I58",
+    "explanation": "找 is a completed action in the story, so add 了: 找了。",
+    "dimension": "grammar",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I59",
+    "explanation": "This is a completed action in the story, so use 上了 with 了completed.",
+    "dimension": "coherence_temporality",
+    "corrected": "上了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1931,
+  "completion_tokens": 705,
+  "total_tokens": 2636,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1928,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 358,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

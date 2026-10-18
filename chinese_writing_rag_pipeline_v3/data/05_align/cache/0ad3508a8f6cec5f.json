@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟子才一岁的时候，他们先搬到了村庄，在那里生活五年后，他们搬到了街上，孟母才找到工作了，所以他们最后搬到了寺庙。\nquote: 所以他们最后搬到了寺庙\npart p0: comment [ref p0/note] no cause-effect relationship, so “所以” is inappropriate\npart p1: comment [ref p1/note] wrong information, it’s not a temple but a school",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "所以",
+    "corrected": "",
+    "before": "工作了，",
+    "after": "他们最后搬",
+    "note": "no cause-effect relationship, so “所以” is inappropriate",
+    "confidence": "high",
+    "reason": "comments that 所以 is inappropriate"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "寺庙",
+    "corrected": "",
+    "before": "后搬到了",
+    "after": "。",
+    "note": "wrong information, it’s not a temple but a school",
+    "confidence": "high",
+    "reason": "comments that 寺庙 is factually wrong"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1041,
+  "completion_tokens": 131,
+  "total_tokens": 1172,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1038,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

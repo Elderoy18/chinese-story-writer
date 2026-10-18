@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 对植物我学到了，我会写起来，让每个人都知道什么植物能不能吃。\nquote: 对植物我学到了，我会写起来，让每个人都知道什么植物能不能吃\npart p0: fix [ref p0/k0-1] 关于植物有没有毒，我学到了\npart p1: fix [ref p1/k0] 写下来\npart p2: fix [ref p2/k0-1] 什么植物能吃，什么植物不能吃",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "对植物我学到了",
+    "corrected": "关于植物有没有毒，我学到了",
+    "before": "",
+    "after": "，我会写起",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the opening phrase with the teacher's wording"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "写起来",
+    "corrected": "写下来",
+    "before": "到了，我会",
+    "after": "，让每个人",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 起 to 下 in the result complement"
+   },
+   {
+    "ref": "p2/k0-1",
+    "op": "replace",
+    "original": "什么植物能不能吃",
+    "corrected": "什么植物能吃，什么植物不能吃",
+    "before": "个人都知道",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "expands 能不能吃 into two parallel clauses"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1044,
+  "completion_tokens": 244,
+  "total_tokens": 1288,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1041,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 50,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

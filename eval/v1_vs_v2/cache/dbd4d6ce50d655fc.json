@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 喜欢玩在墓地里：喜欢在墓地里玩，A location phrase with 在 should come before the main verb 玩.\n2. [Grammar & Vocabulary, error] 装祭拜：假装祭拜，假装 means to pretend to do an action; 装 cannot directly take 祭拜 in this sentence.\n3. [Grammar & Vocabulary, error] 跟妈妈搬家：妈妈带着他搬家，For a young child, the mother is the person who carries out the move, while the child goes with her; use 带着孟子/他搬家.\n4. [Coherence: reference, error] Coherence (Reference): 孟子小的时候：古代，有一个小男孩叫孟子。小时候，First mention should introduce the character with a full noun phrase, such as the name and who the character is, before using the name again.\n5. [Coherence: reference, error] Coherence (Reference): 孟子和他的朋友喜欢：他们喜欢，Use a pronoun for a close re-occurrence when the same people were named in the preceding sentence and no competing referent has appeared.\n6. [Coherence: temporality, error] Coherence (Temporality): 孟子五岁的时候，妈妈带着他搬家：孟子五岁的时候，妈妈带着他搬家了，Use 了 for the completed moving event in this past narrative.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The location phrase should precede 玩: 在墓地里玩."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "装祭拜 is not an appropriate collocation here; 假装祭拜 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "孟子五岁的时候跟妈妈搬家 is a natural way to say that he moved with his mother."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The first mention should introduce 孟子, but the proposed text ends with the incomplete time phrase 小时候."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the reference rule, the recently mentioned group should be referred to as 他们."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed event in the narrative, so 搬家了 is appropriate."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2118,
+  "completion_tokens": 1900,
+  "total_tokens": 4018,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 467,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1538,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

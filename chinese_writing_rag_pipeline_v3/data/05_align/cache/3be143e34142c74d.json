@@ -1,0 +1,92 @@
+{
+ "input": "learner text: 他有的时候只要跟朋友玩儿，可是孟子的妈妈有别的看法。\nquote: 他有的时候只要跟朋友玩儿，可是孟子的妈妈有别的看法\npart p0: fix [ref p0/k1] 妈妈就抱怨 ; notes: wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as\npart p1: fix [ref p1/k1] 妈妈就有别的看法 ; notes: or 他有的时候跟朋友玩儿",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "有的时候",
+    "corrected": "",
+    "before": "他",
+    "after": "只要跟朋",
+    "note": "wrong conjunctions, 他只要跟朋友玩儿",
+    "confidence": "high",
+    "reason": "removes 有的时候 for the 只要…就 pattern"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "可是",
+    "corrected": "",
+    "before": "玩儿，",
+    "after": "孟子的妈",
+    "note": "wrong conjunctions, 他只要跟朋友玩儿",
+    "confidence": "high",
+    "reason": "removes the contrasting conjunction"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "replace",
+    "original": "妈妈有别的看法",
+    "corrected": "妈妈就抱怨",
+    "before": "是孟子的",
+    "after": "",
+    "note": "只要……就as long as",
+    "confidence": "high",
+    "reason": "changes the result clause to 妈妈就抱怨"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "delete",
+    "original": "只要",
+    "corrected": "",
+    "before": "有的时候",
+    "after": "跟朋友玩",
+    "note": "or 他有的时候跟朋友玩儿",
+    "confidence": "high",
+    "reason": "removes 只要 in the alternative wording"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "delete",
+    "original": "可是",
+    "corrected": "",
+    "before": "玩儿，",
+    "after": "孟子的妈",
+    "note": "",
+    "confidence": "high",
+    "reason": "removes the contrasting conjunction"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "replace",
+    "original": "妈妈有别的看法",
+    "corrected": "妈妈就有别的看法",
+    "before": "是孟子的",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 就 to the alternative result clause"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1059,
+  "completion_tokens": 1207,
+  "total_tokens": 2266,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1056,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 841,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

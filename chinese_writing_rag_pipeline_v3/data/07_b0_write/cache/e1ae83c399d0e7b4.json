@@ -1,0 +1,80 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\nThe teacher's corrections in other learners' similar clauses:\n- 他找有的花  →  找有的花 → 找到一种植物  (找look for vs.找到find)\n- 他一看花  →  看 → 看到  (看look vs.看到see)\n- 神农吃灵芝以后  →  吃 → 吃了  (了completed)\n- 神农发现很多植物  →  ∅ → 了  (了completed)\n- 可是有很多麻烦  →  有很多麻烦 → 头疼起来了  (“有很多麻烦” is too vague)\n- 肚子还没疼死了  →  还没疼死了 → 就不疼了\n\nScene to review:\n他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了",
+    "corrected": "他不知道这把花对他的身体好不好，这就要看这把花毒不毒",
+    "errors": [
+     {
+      "original": "如果",
+      "correction": "",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use an A-not-A question after 不知道, not 如果, to mean “whether.”"
+     },
+     {
+      "original": "你的",
+      "correction": "他的",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The flower is being tested on Shennong's body, so use 他的 rather than “your.”"
+     },
+     {
+      "original": "好",
+      "correction": "好不好",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "After 不知道, 好不好 forms the question “whether it is good.”"
+     },
+     {
+      "original": "如果",
+      "correction": "",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "After 看, use the A-not-A form 毒不毒 to mean “whether it is poisonous.”"
+     },
+     {
+      "original": "了",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "毒不毒 describes a state here; it does not need 了."
+     }
+    ]
+   },
+   {
+    "clause": "神农不知道他吃不吃灵芝或者夹竹桃",
+    "corrected": "神农不知道吃不吃灵芝或者夹竹桃",
+    "errors": [
+     {
+      "original": "他",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "When the subject is still 神农 within the same clause, omit the pronoun."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1256,
+  "completion_tokens": 2283,
+  "total_tokens": 3539,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1253,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1918,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

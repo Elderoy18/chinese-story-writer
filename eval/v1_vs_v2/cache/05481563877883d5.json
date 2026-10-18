@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThis scene:\n发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n- 这就要看你的口味：这就要看……了\n- 什么都花想吃：什么花都想吃\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n\nThe system's feedback items:\n1. [Grammar, error] 什么都花想吃 → 什么花都想吃 -- Use the word order 什么花都想吃: 什么花 is the object, and 都 comes before 想吃.\n2. [Vocabulary, error] …感觉又暖和又清楚 → …感觉又暖和又舒服 -- 清楚 describes whether something is clear, not how the stomach feels. Use 舒服 for a warm, comfortable stomach feeling.\n3. [Vocabulary, error] 这就要看你的口味 → 这就要看你的口味 -- Here 看 means “depend on,” in the phrase 看你的口味. Do not change it to 看到, which means “see/catch sight of.”\n4. [Coherence: connectors, error] 可能喜欢糖 → ，这样可以吃糖喜欢糖 -- Use ，这样可以 to show how the example connects to the previous clause: if someone likes sweet food, they can eat candy.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The question word phrase must be 什么花, with 都 placed before 想吃."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "清楚 cannot describe the stomach's physical feeling, but the correction still leaves the teacher-marked unnecessary 感觉."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "This fixed structure requires sentence-final 了, so repeating the original text does not correct it."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "可能喜欢糖 is already an acceptable continuation of the example, while the proposed replacement is ungrammatical."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2121,
+  "completion_tokens": 839,
+  "total_tokens": 2960,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 470,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 588,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

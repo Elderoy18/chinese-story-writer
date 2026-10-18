@@ -1,0 +1,96 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar, error] 灵芝药的夹竹桃他… → 灵芝是药的夹竹桃他… -- Use 是 to link 灵芝药 with its description: 灵芝药是……。\n2. [Grammar, error] 也写一个课文的植物 → 也写一个关于这种植物的课文 -- 课文的植物 means “a plant of the text.” Use 关于这种植物的课文 to show that the text is about this plant.\n3. [Vocabulary, error] 特别是毒 → 特别有毒 -- The structure needs an Adj. to describe 夹竹桃, but 毒 is a noun. Use 有毒.\n4. [Vocabulary, error] 也写一个课文的植… → 也写了一个课文的植… -- The writing action is completed, so add 了 after 写.\n5. [Vocabulary, error] 也写一个课文的植物 → 也写一篇课文的植物 -- 篇 is the normal measure word for 课文, not 个.\n6. [Coherence: connectors, error] 灵芝药的夹竹… → 有灵芝药的夹竹… -- Use 有 before 灵芝 to show that the medicine exists: 有灵芝药。",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original phrase does not express that lingzhi is an antidote to oleander, and the proposed wording is nonsensical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "Changing the modifier to 关于这种植物的课文 fixes the reversed relationship, but 一个 is still the wrong measure word for 课文."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "毒 cannot directly follow 特别 here; 特别有毒 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Adding 了 correctly marks the final writing action as completed, but the remaining object phrase is still wrong."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "篇 is the appropriate measure word for 课文, but 课文的植物 still has the wrong modifier relationship."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "有灵芝药的夹竹桃 means an oleander that has lingzhi medicine and does not express lingzhi as an antidote."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2154,
+  "completion_tokens": 1932,
+  "total_tokens": 4086,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 503,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

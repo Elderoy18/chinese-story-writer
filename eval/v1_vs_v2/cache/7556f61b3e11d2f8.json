@@ -1,0 +1,77 @@
+{
+ "input": "Required scenes:\n1. 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n2. 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n3. 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n4. 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n5. 孟子becomes a famous philosopher\n\nThe learner's story:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's content flags:\n- Miss one scene: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n\nThe system's content notes:\n1. After 孟子 begins imitating sacrifices near the graveyard, the story needs his mother’s reason for moving: she worries that this daily behavior will have a bad influence on him.\n2. Before moving to the area with a school, the story needs the part where they live near a market and 孟子 imitates buying and selling every day.\n3. The move near a school should come after leaving the market, and then 孟子 should begin studying every day there.\n4. At the end, make clear that 孟子 grows up and becomes a famous philosopher, not only that he becomes a philosopher after studying with one teacher.",
+ "salt": "",
+ "output": {
+  "scenes": [
+   {
+    "n": 1,
+    "teacher": "none",
+    "system": "none"
+   },
+   {
+    "n": 2,
+    "teacher": "none",
+    "system": "missing"
+   },
+   {
+    "n": 3,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 4,
+    "teacher": "none",
+    "system": "wrong"
+   },
+   {
+    "n": 5,
+    "teacher": "none",
+    "system": "wrong"
+   }
+  ],
+  "notes": [
+   {
+    "n": 1,
+    "correct": true,
+    "clear": true,
+    "reason": "The story does not say that 孟母 moved because she feared the sacrifice imitation would negatively affect 孟子."
+   },
+   {
+    "n": 2,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner omits the market neighborhood and 孟子 imitating buying and selling."
+   },
+   {
+    "n": 3,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner moves directly to a city with schools rather than moving from the market to a school neighborhood."
+   },
+   {
+    "n": 4,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner says he becomes a philosopher but does not say that he grows up to become famous."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 782,
+  "completion_tokens": 510,
+  "total_tokens": 1292,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 286,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "47505bee5c"
+}

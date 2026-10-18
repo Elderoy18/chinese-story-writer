@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他们从早到晚在墓地祭拜，可是小孩子孟子老是祭拜的时候行为不端，可是孟子的妈妈一直很控制他，害得他不高兴。\nquote: 可是孟子的妈妈一直很控制他，害得他不高兴\npart p0: instruction [ref p0/k0] delete可是\npart p1: comment [ref p1/note] 害得 + harmful result, “不高兴” is not that “harmful”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "可是",
+    "corrected": "",
+    "before": "拜的时候行为不端，",
+    "after": "孟子的妈妈一",
+    "note": "",
+    "confidence": "high",
+    "reason": "explicit deletion instruction"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "害得他不高兴",
+    "corrected": "",
+    "before": "妈一直很控制他，",
+    "after": "。",
+    "note": "害得 + harmful result, “不高兴” is not that “harmful”",
+    "confidence": "high",
+    "reason": "comment identifies inappropriate use of 害得"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1049,
+  "completion_tokens": 131,
+  "total_tokens": 1180,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1046,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

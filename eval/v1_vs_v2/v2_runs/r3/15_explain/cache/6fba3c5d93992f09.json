@@ -1,0 +1,47 @@
+{
+ "input": "CURRENT SCENE:\n然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。\n\nITEMS:\n\n[I96] 一些植物【吃真好】   correction: 吃真好 → 很好吃   strength: error\n  checker's note: the flavor description needs 很好吃, not 吃真好\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 有的人吃[+到]很好吃的植物\n  her past correction: 吃很多[-的]植物\n  her past correction: 可是一些[-的]人一吃植物 — her note: no的\n\n[I97] 一些植物【^】毒得很   correction: ∅ → 有   strength: suggestion\n  rule card (word_class_choice, Vocabulary): Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.  Pattern: <wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.  Her terms: noun, Adj., Subj., 很多+noun, 这个 + Noun\n  her past correction: 哪些植物是[毒→有毒]\n  her past correction: 什么植物[是毒→有毒]\n  her past correction: 特别是[毒的→有毒的]植物\n\n[I98] 一些植物毒【得很】   correction: 得很 → (delete)   strength: suggestion\n  rule card (word_class_choice, Vocabulary): Choose the word class and form that the structure needs: use nouns as nouns, verbs as verbs, and Adj. where an adjective is needed. Follow fixed patterns such as 很多+noun and 这个 + Noun; 据说 goes at sentence initial, separate from the information heard.  Pattern: <wrong> → <correct>: here the structure needs a <required word class/form>, but <wrong word/form> is a <wrong word class/form>.  Her terms: noun, Adj., Subj., 很多+noun, 这个 + Noun\n  her past correction: 哪些植物是[毒→有毒]\n  her past correction: 什么植物[是毒→有毒]\n  her past correction: 哪些植物是毒[+的书]",
+ "salt": "repeat-run3",
+ "output": {
+  "items": [
+   {
+    "item_id": "I96",
+    "explanation": "很好吃 is the usual adjective phrase for “tastes good.” Say 植物很好吃, not 吃真好.",
+    "dimension": "grammar",
+    "corrected": "很好吃",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I97",
+    "explanation": "It would be more natural to use the Adj. 有毒 here: 有毒 means “poisonous.”",
+    "dimension": "word_choice",
+    "corrected": "有",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I98",
+    "explanation": "It would be more natural to say 有毒, without 得很. 有毒 is already an Adj. phrase describing the plants.",
+    "dimension": "word_choice",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1065,
+  "completion_tokens": 164,
+  "total_tokens": 1229,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1062,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

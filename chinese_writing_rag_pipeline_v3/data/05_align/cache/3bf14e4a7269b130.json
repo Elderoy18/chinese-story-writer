@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他等了三个小时以后，直到小鸟扑飞回上山，所以，他吃一个香香的花， 而且那个花的味道很好。\nquote: 所以，他吃一个香香的花\npart p0: comment [ref p0/note] “所以” is inappropriate because here is not a result, delete it, add “在山上”\npart p1: fix [ref p1/k0] 吃了 ; notes: 了completed",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "delete",
+    "original": "所以，",
+    "corrected": "",
+    "before": "",
+    "after": "他吃一个香",
+    "note": "“所以” is inappropriate because here is not a result, delete it, add “在山上”",
+    "confidence": "high",
+    "reason": "deletes the inappropriate result connector"
+   },
+   {
+    "ref": "p0/note",
+    "op": "insert",
+    "original": "",
+    "corrected": "在山上",
+    "before": "所以，他",
+    "after": "吃一个香香",
+    "note": "“所以” is inappropriate because here is not a result, delete it, add “在山上”",
+    "confidence": "high",
+    "reason": "adds the mountain location after 他"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "吃",
+    "corrected": "吃了",
+    "before": "所以，他",
+    "after": "一个香香的",
+    "note": "了completed",
+    "confidence": "high",
+    "reason": "adds completed-action 了"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1042,
+  "completion_tokens": 459,
+  "total_tokens": 1501,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1039,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 256,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

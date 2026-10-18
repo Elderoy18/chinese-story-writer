@@ -1,0 +1,42 @@
+{
+ "input": "Scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nCorrections to check:\n1. 古代的时候，有一个男孩名字叫孟子  →  在古代，有一个男孩名字叫孟子   [grammar]\n2. 孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习  →  孟子和孟子的妈妈在这里才住了一个星期就觉得受不了了，而且影响了孟子的学习   [coherence: temporality]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "“古代的时候” is already grammatical and natural in this context."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "“害得孟子的学习” is not a complete or natural use of 害得, while “影响了孟子的学习” is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 559,
+  "completion_tokens": 516,
+  "total_tokens": 1075,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 403,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

@@ -1,0 +1,58 @@
+{
+ "input": "Scene:\n可是夹竹桃的毒很重，让他肚子很痛。他在地上躺着，觉得他快会死了。可是正好有别人找到他了，给了他一个像伞的植物，叫灵芝。他吃灵芝以后就觉得很好，不再生病了。他测量起来了，像星星的植物是毒，像伞的植物是药。\n\nCorrections to check:\n1. 他在地上躺着，觉得他快会死了  →  他在地上躺着，觉得快要死了   [coherence: reference]\n2. 可是正好有别人找到他了，给了他一个像伞的植物，叫灵芝  →  可是正好有一个人找到他，给了他一个像伞的植物，叫灵芝   [coherence: reference]\n3. 他吃灵芝以后就觉得很好  →  他吃了灵芝以后就觉得很好   [coherence: temporality]\n4. 他测量起来了，像星星的植物是毒，像伞的植物是药  →  他测量起来了，像星星的植物有毒，像伞的植物是药   [vocabulary]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "Using 他 to refer back to the subject is understandable and not definitely incorrect here."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "有别人找到他了 is awkward but still understandable and not definitely ungrammatical."
+   },
+   {
+    "n": 3,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "吃灵芝以后 already presents the eating as preceding the later feeling, so 了 is not required."
+   },
+   {
+    "n": 4,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "植物是毒 is not a natural way to say that a plant is poisonous; 有毒 is appropriate."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 651,
+  "completion_tokens": 1106,
+  "total_tokens": 1757,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 892,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

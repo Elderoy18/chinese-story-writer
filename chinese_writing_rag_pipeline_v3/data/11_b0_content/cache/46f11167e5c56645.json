@@ -1,0 +1,125 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 在古代，大家不知道什么菜能吃。 | 古代的时候，没有人知道什么食品能吃。 | 因为他有很多朋友生病了，所以他去找药。\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 所以神农去旅行，学习植物。 | 所以他走路旅行找足多不同的植物 | 所以他爬山找解药。在他的旅行，神农发现很多植物。\nS3: 神农found茶and took a record\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他找到了茶 | 他发现了有些花可以做茶。 | 第一个花，神农做茶，好喝得很。 ; flagged as missing: 他找有的花，然后做茶。 | 他到山以后，他喝了茶。\nS4: 神农tried 夹竹桃 and fainted\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 吃着夹竹桃的以后，他病得很。 | 比方说，他一吃夹竹桃，就生病了。 | 然后他吃夹竹桃。他一吃就毒死了。 ; flagged as missing: 吃一个植物以后，他觉得不怎么样。 | 他尝很多植物，比方说茶、灵芝和夹竹桃。\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 一个农民帮神农吃灵芝灵芝是夹竹桃毒的药 | 所以他们找植物。神农吃着植物，特别是灵芝。 | 夹竹桃找到了灵芝，他给神农。神农的身体越来越好 ; flagged as missing: 正好有一个人帮他吃一个灵芝 | 神农吃了那个花以后头越来越好。\nS6: another person in brown came by and had a conversation with 神农\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他印象深刻，问年轻人给了他什么？他们说这是当地的一种药用植物。 | 一个别的人跟神农说，有很多花有毒，特别是夹竹桃，可以杀人。 | 一个穿着咖啡色衣服的男人走过来，问神农：你怎么了？神农说：我吃坏肚子了。 ; flagged as missing: 两个人找他，不知道做什么。 | 他们告诉神农，他得吃得慢。\nS7: 神农takes record of灵芝and夹竹桃\n    the teacher's past decisions on other learners' versions of this scene -- accepted as told: 他一吃植物，就在笔记本写下来观测结果。 | 后来神农写书了哪些植物是药，哪些植物是毒。 | 他在岩石写什么植物可以吃，那我们现在知道什么菜能吃。 ; flagged as missing: 山走以后，他找完了，写植物。 | 他爬山，看很多植物，然后写他学了什么。\n\nlearner's story:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。",
+ "salt": "run3",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "People do not know edible plants and get sick after eating them",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "In ancient times, people did not know which plants were safe to eat and often became sick after eating plants.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 seeks and tries plants to learn which are safe",
+    "verdict": "told",
+    "evidence": [
+     "神农三个月走去，找到有植物的地方",
+     "他看到一个很漂亮的植物，又香又好看。",
+     "吃了以后，神农快生病。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "He climbed mountains.",
+     "He tried different kinds of plants.",
+     "His stated aim was to distinguish safe-to-eat plants from unsafe ones."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 found 茶 and made a record of it.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints",
+    "verdict": "partly",
+    "evidence": [
+     "他看到一个很漂亮的植物，又香又好看。",
+     "吃了以后，神农快生病。"
+    ],
+    "missing_part": "The plant is not named 夹竹桃, and 神农 does not faint.",
+    "details_left_out": [
+     "The plant is described as beautiful and fragrant."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "A person in blue gives 神农 灵芝, and he feels better",
+    "verdict": "told",
+    "evidence": [
+     "这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。",
+     "神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "The person stops by."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "Another person in brown comes by and talks with 神农",
+    "verdict": "partly",
+    "evidence": [
+     "神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。"
+    ],
+    "missing_part": "The other person does not come by after the blue-clothed person, and is not identified as wearing brown.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃",
+    "verdict": "partly",
+    "evidence": [
+     "他找到药以后他写下怎么做药在书上。",
+     "所以人们都知道，那红灵芝对身体好处。"
+    ],
+    "missing_part": "He does not record 夹竹桃.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "吃了以后，神农快生病。",
+    "problem": "After trying 夹竹桃, the story says that 神农 fainted, not that he almost became sick."
+   }
+  ],
+  "feedback": [
+   "At the beginning, add that ancient people did not know which plants they could eat, so eating some plants made them sick.",
+   "After 神农 starts looking at plants and before he tries 夹竹桃, add that he finds 茶 and writes it down.",
+   "When 神农 tries 夹竹桃, name the plant and say that he faints.",
+   "After the person in blue gives 灵芝, add another person in brown who comes by and talks with 神农.",
+   "Near the end, when 神农 writes in his book, add that he records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1789,
+  "completion_tokens": 2125,
+  "total_tokens": 3914,
+  "prompt_tokens_details": {
+   "cached_tokens": 1786,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1335,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ef48428c82"
+}

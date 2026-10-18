@@ -1,0 +1,54 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “孟子跟他的妈妈已经搬家了”: 已经 → 就又\n- in “孟子的妈妈每天从早到晚做工作”: 做 → (deleted)\n- in “他的妈妈告诉他”: 他的 → 孟子的   [her note: “他的” is ambiguous]\n- in “在墓地做祭拜”: 做 → (deleted)\n- in “孟子决定他可以学习和高兴”: 孟子决定 → (deleted)\n- in “从早到晚看和写文章”: 看和写文章 → 看书、写文章   [her note: 和cannot connect verb phrases]\n\nScene to review:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子和他妈妈住在中国",
+    "corrected": "有一个小男孩叫孟子，他和妈妈住在中国",
+    "explanation": "孟子 appears for the first time here, so introduce him with a noun phrase that says who he is, not only his name."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子妈妈的工作是祭拜",
+    "corrected": "她的工作是祭拜",
+    "explanation": "The mother was just mentioned and no other female character competes with her, so use 她 rather than repeating 孟子妈妈."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "conjunction",
+    "original": "孟子不高兴，因为他说我们老是搬家，为什么？",
+    "corrected": "孟子不高兴，说：“我们老是搬家，为什么？”",
+    "explanation": "The quoted words explain why Mengzi is unhappy; they should be introduced with 说, not because he says them. After 孟子, do not repeat the subject with 他 in the same sentence."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "他妈妈说",
+    "corrected": "她说",
+    "explanation": "The mother has just been mentioned and 她 clearly refers to her, so use a pronoun instead of repeating 他妈妈."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1267,
+  "completion_tokens": 2304,
+  "total_tokens": 3571,
+  "prompt_tokens_details": {
+   "cached_tokens": 1264,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1990,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

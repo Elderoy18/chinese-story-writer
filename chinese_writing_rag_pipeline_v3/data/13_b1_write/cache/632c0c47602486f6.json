@@ -1,0 +1,75 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “在古代的时候”: 在古代的时候 → 在古代\n- in “神农看了很多生病的人”: 看了 → 看到了   [her note: 看look vs.看到see]\n- in “他找有的花”: 找有的花 → 找到一种植物   [her note: 找look for vs.找到find]\n- in “神农现在知道哪个植物是毒”: 是毒 → 有毒\n- in “他们吃毒植物”: 毒植物 → 有毒的植物\n- in “他找到了很多有用植物”: 有用植物 → 有用的植物\n\nScene to review:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "找到了很多植物对药",
+    "corrected": "找到了很多植物来做药",
+    "explanation": "对药 is not the verb for making medicine. Use 做药, and 来 shows that the plants are used for this purpose."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "神农先看到很多病人",
+    "corrected": "有一个医生叫神农，他先看到了很多病人",
+    "explanation": "神农 is appearing for the first time, so introduce who he is. Use 看到, not 看, when the meaning is that he saw the patients."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "他们吃很多植物对药",
+    "corrected": "病人把很多植物当药吃",
+    "explanation": "他们 is unclear because it could refer to the doctors or the patients. Name 病人 again, and use 把……当药吃 to say that they ate the plants as medicine."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "让他们病人",
+    "corrected": "让他们生病了",
+    "explanation": "病人 is a noun meaning “patient”; it cannot be used as the verb here. Use 生病 to mean “become ill,” and 了 shows the resulting change."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "神农觉得这个植物可能特别是毒",
+    "corrected": "神农觉得有一种植物可能特别有毒",
+    "explanation": "这个植物 has no specific plant as its earlier referent, so it is unclear. Use 有一种植物 to introduce the plant, and say 有毒, not 是毒."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他想找一个植物对药，他们可以吃对药",
+    "corrected": "他想找一种植物来做药，让病人可以吃",
+    "explanation": "Use 一种 as the measure word for a kind of plant, and use 做药 rather than 对药. 让病人可以吃 clearly says that the medicine is for the patients to eat."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他想把花放在茶里，对药",
+    "corrected": "他想把花放在茶里做药",
+    "explanation": "对药 is not correct here. Use 做药 to say that he wanted to use the flower as medicine."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1285,
+  "completion_tokens": 2061,
+  "total_tokens": 3346,
+  "prompt_tokens_details": {
+   "cached_tokens": 1282,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

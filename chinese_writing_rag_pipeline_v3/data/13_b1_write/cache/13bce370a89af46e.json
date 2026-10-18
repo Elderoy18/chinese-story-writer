@@ -1,0 +1,96 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “在古代的时候”: 在古代的时候 → 在古代\n- in “神农看了很多生病的人”: 看了 → 看到了   [her note: 看look vs.看到see]\n- in “他找有的花”: 找有的花 → 找到一种植物   [her note: 找look for vs.找到find]\n- in “神农现在知道哪个植物是毒”: 是毒 → 有毒\n- in “他们吃毒植物”: 毒植物 → 有毒的植物\n- in “他找到了很多有用植物”: 有用植物 → 有用的植物\n\nScene to review:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他们找到了很多植物对药",
+    "corrected": "他们找到了很多植物来做药",
+    "explanation": "对药 is not used to mean “make medicine.” Use 来做药 to say that they found plants to make medicine."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "神农先看到很多病人",
+    "corrected": "有一个医生叫神农，他先看到很多病人",
+    "explanation": "This is Shennong's first appearance in the story, so introduce him with a noun phrase that says who he is, not only his name."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他们吃很多植物对药",
+    "corrected": "他们吃很多植物当药",
+    "explanation": "当药 means “as medicine.” 对药 cannot be used after 吃 to express this meaning."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "我觉得",
+    "corrected": "神农觉得",
+    "explanation": "我 introduces a new speaker without explaining who that person is. The person who is thinking here is Shennong."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他们的吃的植物，让他们病人",
+    "corrected": "他们吃的植物让他们生病了",
+    "explanation": "Use 他们吃的植物, not 他们的吃的植物, for “the plants they ate.” 生病 is the verb “become ill,” and 了 shows that they became ill as a result."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "这个植物",
+    "corrected": "有一种植物",
+    "explanation": "这个植物 refers to one particular plant, but no particular plant has been mentioned before. Introduce it as 有一种植物."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "可能特别是毒",
+    "corrected": "可能特别有毒",
+    "explanation": "Use 有毒 to say that a plant is poisonous. 是毒 is not natural here."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "一个植物对药",
+    "corrected": "一种植物来做药",
+    "explanation": "Use 一种 for a type of plant, and use 来做药 to mean “to make medicine.” 对药 is not correct here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "他们可以吃对药",
+    "corrected": "病人可以吃药",
+    "explanation": "他们 is unclear because it could mean the doctors or the patients, so repeat 病人. Say 吃药 for “take medicine”; 吃对药 is not correct."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "他找到了一把花，他想把花放在茶里，对药",
+    "corrected": "他找到了一把花，想把花放在茶里做药",
+    "explanation": "Do not repeat 他 within the same sentence when it has the same subject; omit it before 想. Use 做药, not 对药, to express making medicine."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1285,
+  "completion_tokens": 4432,
+  "total_tokens": 5717,
+  "prompt_tokens_details": {
+   "cached_tokens": 1045,
+   "cache_write_tokens": 237,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3747,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

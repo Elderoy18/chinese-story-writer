@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 我觉得看起来他妈妈的中国教育，成为他一个很重要和聪明的中国哲学。\nquote: 我觉得看起来他妈妈的中国教育，成为他一个很重要和聪明的中国哲学\npart p0: instruction [ref p0/k0] delete我觉得 ; notes: redundant with看起来\npart p1: instruction [ref p1/k0] delete中国\npart p2: fix [ref p2/k0] 让他成为一个很重要的哲学家",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "我觉得",
+    "corrected": "",
+    "before": "",
+    "after": "看起来他",
+    "note": "redundant with看起来",
+    "confidence": "high",
+    "reason": "deletes redundant opening phrase"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "中国",
+    "corrected": "",
+    "before": "和聪明的",
+    "after": "哲学",
+    "note": "",
+    "confidence": "low",
+    "reason": "reads the instruction as deleting Chinese before 哲学"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "成为他",
+    "corrected": "让他成为",
+    "before": "国教育，",
+    "after": "一个很重",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the education-to-person relationship"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "delete",
+    "original": "和聪明的",
+    "corrected": "",
+    "before": "一个很重要",
+    "after": "中国哲学",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 和聪明的"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "哲学",
+    "corrected": "哲学家",
+    "before": "明的中国",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 哲学 to 哲学家"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1051,
+  "completion_tokens": 1052,
+  "total_tokens": 2103,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1048,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 781,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

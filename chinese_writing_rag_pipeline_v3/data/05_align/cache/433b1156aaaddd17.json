@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 每天就是这样，这个坏人好像没有什么有希望的前途，就把希望寄托在梨子身上。\nquote: 这个坏人好像没有什么有希望的前途\npart p0: fix [ref p0/k0] 没有什么前途\npart p1: comment [ref p1/note] “前途” itself means “hopeful future”, so “有希望” is a little bit redundant.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "有希望的",
+    "corrected": "",
+    "before": "好像没有什么",
+    "after": "前途",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix removes the redundant modifier"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1038,
+  "completion_tokens": 60,
+  "total_tokens": 1098,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1035,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

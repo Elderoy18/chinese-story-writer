@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “凉山很大的山，这也找植物。” / Formula: Place + 是 + 一座 + adjective + 的 + noun; Person + 在/也在 + place + verb + object / Correct: “凉山是一座很大的山，神农也在那里找植物。”   “很大的山” needs “是” and the measure word “一座.” Also, “这” should be “这里” when referring to a place, and “他” needs a clear referent.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “一天，他找到黄色的花。” / Formula: 一天，+ subject + verb + object / Correct: “一天，神农找到了一朵黄色的花。”   Use “了” because finding the flower is a completed event. “一朵” is a natural measure word for a flower.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “他听说你跟黄色的花做茶很有用。” / Formula: Subject + 听说 + 用 + material + 做/泡 + drink + 很有用 / Correct: “他听说用黄色的花泡茶很有用。”   “跟” does not mean “using” here; use “用.” Also, “你” is unclear and should not be used unless you really mean the listener. “泡茶” is more natural than “做茶” in this context.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “比方说，你的头发疼死，这冰茶是药。” / Formula: 如果 + person + body part + 疼得 + complement，+ 这种茶 + 可以 + verb + illness / Correct: “如果你头疼得要命，这种茶可以治头疼。”   “头发” is hair, while “头疼” means headache. “比方说” introduces an example, but this sentence expresses a condition, so “如果” is better. “这冰茶” should be “这种茶” unless you specifically mean iced tea.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “他一喝茶就很不舒服。” / Formula: Subject + 一 + verb phrase + 就 + result / Correct: “神农一喝这种茶，就觉得很不舒服。”   The “一……就……” structure is good, but specify who “他” is and which tea he drank.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The original lacks the needed copular structure for 凉山 and uses 这 where 这里 plus a clear subject is needed."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "Adding 了 correctly marks completion, but 一朵黄色的花 does not address the teacher's intended meaning of 一种黄色的花, since the flower type remains vague."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "用 replaces the incorrect 跟 and deleting 你 is right, but the corrected text still has the teacher-marked vague phrase 黄色的花 rather than 一种黄色的花."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发疼 is wrong for a headache, and 这种茶 is a grammatical and meaningful repair of the tea reference."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他 clearly refers to 神农 from the immediately preceding context, and 茶 is also clear, so no clarification is required."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2374,
+  "completion_tokens": 1340,
+  "total_tokens": 3714,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 723,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 973,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

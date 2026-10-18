@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nITEMS:\n\n[I136] 而是想【^】孟子有很好的教育   correction: ∅ → 让   strength: error\n  checker's note: 想 needs 让 before another subject and verb\n  rule card (modal_and_control_verb_complements, Grammar): 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了.  Pattern: <wrong> → <correct>: 想 needs a following action (想 + V.); use 想让 + <person> + <V.> if the person is meant to do the action.  Her terms: 想 + V., 叫/让 is a modal verb, no了\n  her past correction: 孟母一直想[+让]她的孩子受到良好的教育 — her note: 想 + V., cannot be followed by N.\n  her past correction: 教育做完以后[+，]孟子考虑\n  her past correction: [+孟子]练习写文字 — her note: miss a Subj.\n\n[I137] 而是想孟子【有】很好的教育   correction: 有 → 接受   strength: error\n  checker's note: one normally 接受 good education\n  rule card (haide_harmful_result, Vocabulary): Use 害得 + N/sb. + harmful result (or a harmful clause). The result must be genuinely harmful: neutral events such as 搬家 or 玩儿, and mild feelings such as 不高兴, do not fit after 害得.  Pattern: <wrong> → <correct>: after 害得 + <person/noun>, use a genuinely harmful result; <neutral or mild result> is not harmful enough.  Her terms: 害得 + N/sb. + Harmful result, 害得+Sb.+V., 害得 + clause (harmful result)\n  her past correction: 害得对孟子[有→受到了]不好的影响 — her note: 害得+Sb.+V.\n  her past correction: 孟母一直觉得[受到→接受]教育很重要\n  her past correction: 教育做完以后[+，]孟子考虑\n\n[I138] 他们搬【家】到有很多学校的城市   correction: 家 → (delete)   strength: suggestion\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他们]搬家每次学到了比较多\n  her past correction: 他们搬到[+了]城市 — her note: 了completed\n  her past correction: [-他们]住离一个学校很近\n\n[I139] 他们搬家到【^】有很多学校的城市   correction: ∅ → 了   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他们搬到[+了]城市 — her note: 了completed\n  her past correction: [-他们]搬家每次学到了比较多\n  her past correction: [+所以]他们常常搬家 — her note: 无聊？add所以\n\n[I140] 【他难怪】抱怨   correction: 他难怪 → 难怪他   strength: error\n  checker's note: 难怪 should come before the subject\n  rule card (incorrect_story_information, Content): Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information.  Pattern: <wrong> → <correct>: this changes a story fact; the story says <fact>.  Her terms: wrong information, problematic in coherence\n  her past correction: ⟦难怪我们没有钱⟧ — her note: wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n  her past correction: 人类[就多么奇怪呢→就是这么奇怪呢]\n  her past correction: 可是孟子的妈妈[有别的看法→就抱怨] — her note: wrong conjunctions, 他只要跟朋友玩儿 ; 只要……就as long as",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I136",
+    "explanation": "想 needs a following action (想 + V.). Use 想让 + person + V. when you mean “want someone to do something.”",
+    "dimension": "grammar",
+    "corrected": "让",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I137",
+    "explanation": "For education, it is more natural to say 接受教育, not 有教育.",
+    "dimension": "word_choice",
+    "corrected": "接受",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I138",
+    "explanation": "It would be more natural to delete 家 here. 搬到 already expresses moving to the new city.",
+    "dimension": "coherence_reference",
+    "corrected": "",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I139",
+    "explanation": "The move is completed in the story, so use 了completed: 搬到了.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I140",
+    "explanation": "难怪 comes before the subject: 难怪他抱怨.",
+    "dimension": "grammar",
+    "corrected": "难怪他",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1592,
+  "completion_tokens": 433,
+  "total_tokens": 2025,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1589,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 188,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

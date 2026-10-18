@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他什么植物都吃了以后，他写下了哪些植物有毒，哪些植物对你的健康有好处。\nquote: 他写下了哪些植物有毒，哪些植物对你的健康有好处\npart p0: instruction [ref p0/k0] delete他 ; notes: redundant\npart p1: instruction [ref p1/k0] delete你的",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "",
+    "after": "写下了哪些",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the redundant subject"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "你的",
+    "corrected": "",
+    "before": "些植物对",
+    "after": "健康有好",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes 你的"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1020,
+  "completion_tokens": 101,
+  "total_tokens": 1121,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

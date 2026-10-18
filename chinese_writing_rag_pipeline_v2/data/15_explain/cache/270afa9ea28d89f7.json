@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。\n\nITEMS:\n\n[I316] 他怎么忘记了？他把灵芝放【^】在包里   correction: ∅ → 了   strength: suggestion\n  checker's note: a completed past action normally takes 了\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 那个人给[+了]他灵芝 — her note: 了completed\n  her past correction: 给[+了]他一个灵芝 — her note: 了completed\n  her past correction: 他给[+了]神农灵芝 — her note: 了completed\n\n[I317] 一回家就告诉【^】别人   correction: ∅ → 了   strength: suggestion\n  checker's note: specific completed telling action normally takes 了\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 所以他回家告诉[他的人→人们]\n  her past correction: 快要死[+了]\n  her past correction: [-他要回家]\n\n[I318] 他找到药以后他【写下怎么做药在书上】   correction: 写下怎么做药在书上 → 在书上写下怎么做药   strength: error\n  checker's note: location phrase must come before 写下\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 后来神农写[书了→了一本]哪些植物是药\n  her past correction: 后来神农写书了哪些植物是药[-，]哪些植物是毒\n  her past correction: [-他]看到了药 — her note: redundant\n\n[I319] 那【^】红灵芝对身体好处   correction: ∅ → 种   strength: error\n  checker's note: a demonstrative needs a classifier for a type\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 这些植物对身体[+有]好处\n  her past correction: [-这些植物]对身体好处\n  her past correction: 灵芝一吃[+灵芝]就正好\n\n[I320] 那红灵芝对身体【^】好处   correction: ∅ → 有   strength: error\n  checker's note: the phrase is 对身体有好处\n  rule card (verb_object_valency, Grammar): Use the verb structure that the verb allows: give it the needed object, and do not add an extra object after a V.+Obj. compound or complement. For example, 跑遍 + place, while 掉 cannot take an object by itself.  Pattern: <wrong> → <correct>: <verb/verb phrase> must take <the allowed object or complement structure>; <brief reason, such as “it is a V.+Obj. compound” or “the action is durative, so use 着durative”>.  Her terms: 着durative, 跑遍 + place, 管事V.+Obj. compound, 掉 + directional + place, resultative complement\n  her past correction: 这些植物对身体[+有]好处\n  her past correction: [-这些植物]对身体好处\n  her past correction: 感觉得身体健康[+了]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I316",
+    "explanation": "This is a completed action in the story, so it takes 了completed: 把灵芝放了在包里.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I317",
+    "explanation": "This specific telling action is completed in the story, so it can take 了completed: 一回家就告诉了别人.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I318",
+    "explanation": "Put the location phrase 在书上 before 写下: 在书上写下怎么做药.",
+    "dimension": "grammar",
+    "corrected": "在书上写下怎么做药",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I319",
+    "explanation": "A demonstrative such as 那 needs a classifier before a type of thing: 那种红灵芝.",
+    "dimension": "grammar",
+    "corrected": "种",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I320",
+    "explanation": "Use the verb structure 对身体有好处. 有 is needed before 好处.",
+    "dimension": "grammar",
+    "corrected": "有",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1561,
+  "completion_tokens": 256,
+  "total_tokens": 1817,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1558,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

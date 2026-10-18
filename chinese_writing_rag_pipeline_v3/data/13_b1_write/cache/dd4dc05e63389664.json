@@ -1,0 +1,75 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “吃一个植物以后”: 吃一个植物以后 → 吃了   [her note: 了completed]\n- in “神农吃以后”: (nothing) → 了   [her note: 了completed]\n- in “所以神农去了大山”: 神农 → (deleted)   [her note: redundant]\n- in “他吃一个麻烦的植物”: 吃一个麻烦的植物 → 吃了很多奇怪的植物   [her note: 麻烦is not used to describe植物]\n- in “也看到了很多人吃植物”: (nothing) → ，\n\nScene to review:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to say that something happened in ancient times."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "对你有没有好处",
+    "corrected": "对身体有没有好处",
+    "explanation": "你 has not been introduced as a person in the story, so its referent is unclear. Say 对身体 to refer generally to people's bodies."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "这个问题神农觉得很糟糕",
+    "corrected": "这个问题，他觉得很糟糕",
+    "explanation": "神农 was named in the previous sentence and no other person is competing, so use the pronoun 他 here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "所以神农去了吃每种植物",
+    "corrected": "所以去吃了每种植物",
+    "explanation": "The subject is the same as in the preceding clause, so do not repeat 神农. In a series of actions, put 了 on the final action, so say 去吃了, not 去了吃."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "有的时候，神农吃了很好吃的植物",
+    "corrected": "有的时候，他吃很好吃的植物",
+    "explanation": "Use 他 because 神农 was just mentioned. 有的时候 describes a repeated situation, so the verb normally has no 了."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "有的时候，他吃了很危险的植物",
+    "corrected": "有的时候，他吃很危险的植物",
+    "explanation": "有的时候 describes something that happens sometimes as a routine, so do not use 了."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "会来跟他的朋友聊到他吃的植物了",
+    "corrected": "就来跟他的朋友聊到他吃的植物",
+    "explanation": "After a completed past action, use 就 to show what happened next. 会 means “will” or “can,” and it does not fit with the final 了 here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1320,
+  "completion_tokens": 3564,
+  "total_tokens": 4884,
+  "prompt_tokens_details": {
+   "cached_tokens": 1317,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3072,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

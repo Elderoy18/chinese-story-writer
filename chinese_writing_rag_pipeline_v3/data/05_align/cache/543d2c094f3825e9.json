@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。\nquote: 灵芝药的夹竹桃他吃完了\npart p0: fix [ref p0/k0] 可以做夹竹桃解药的灵芝他吃了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "灵芝药的夹竹桃",
+    "corrected": "可以做夹竹桃解药的灵芝",
+    "before": "正好在这儿，",
+    "after": "他吃完了",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the reversed medicine-and-plant description"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "吃完了",
+    "corrected": "吃了",
+    "before": "夹竹桃他",
+    "after": "，也写一",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix omits 完"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1006,
+  "completion_tokens": 408,
+  "total_tokens": 1414,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 269,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

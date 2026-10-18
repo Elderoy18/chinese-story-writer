@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 古代，孟子跟孟母住在墓地的旁边。\nquote: 古代，孟子跟孟母住在墓地的旁边\npart p0: fix [ref p0/k0] 在古代 ; notes: better to briefly introduce “孟子” when this character first appears",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "古代，",
+    "corrected": "在古代，",
+    "before": "",
+    "after": "孟子跟孟",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the time phrase with 在古代"
+   },
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "孟子",
+    "corrected": "",
+    "before": "古代，",
+    "after": "跟孟母住",
+    "note": "better to briefly introduce “孟子” when this character first appears",
+    "confidence": "high",
+    "reason": "teacher requests an introduction on first mention"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1007,
+  "completion_tokens": 127,
+  "total_tokens": 1134,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

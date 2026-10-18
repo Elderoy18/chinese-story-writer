@@ -1,0 +1,128 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n在古代，人们还不知道肉的味道怎么样，非吃青菜不可。所以越来越餐馆儿没有那么多盘菜就关门了。有一位餐馆的老板决定世界旅行找新植物做饭。他走过有大有小山，找到了很多对做好饭的植物，比方说茶。茶虽然味道有一点儿苦，跟牛奶喝，香极了。今天的奶茶是从他对茶学到的。有一天，老板第一次看到一黄色新的花，赶快想吃下去。一吃，刚才，觉得难受得不得了，就在地方躺着。他说：啊，口味太好，但是为什么我越来越累了？ 一个男人去过来，一看到老板，就着急得很。老板不可动，得问男人给他地方上像蘑菇一样的植物吃了。老板吃了以后，身体有一点好。他发现了黄色花有毒，但是味道很好。如果跟蘑菇一样的植物，做饭可以，没再有毒了。后面这就是老板最好的菜，叫香毒菇蘑。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "People do not know which plants are edible and get sick from some plants.",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "People did not know which plants were safe to eat, and they often became sick after eating some plants.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 decides to test plants in the mountains for safety.",
+    "verdict": "partly",
+    "evidence": [
+     "有一位餐馆的老板决定世界旅行找新植物做饭。",
+     "他走过有大有小山，找到了很多对做好饭的植物，比方说茶。"
+    ],
+    "missing_part": "神农, and his purpose of finding out which plants were safe or unsafe by trying them.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it.",
+    "verdict": "partly",
+    "evidence": [
+     "他走过有大有小山，找到了很多对做好饭的植物，比方说茶。"
+    ],
+    "missing_part": "神农 takes a record of 茶.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints.",
+    "verdict": "partly",
+    "evidence": [
+     "有一天，老板第一次看到一黄色新的花，赶快想吃下去。",
+     "一吃，刚才，觉得难受得不得了，就在地方躺着。"
+    ],
+    "missing_part": "The flower is named 夹竹桃, and 神农 faints after eating it.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "A visitor gives 神农 灵芝, and he feels better.",
+    "verdict": "partly",
+    "evidence": [
+     "一个男人去过来，一看到老板，就着急得很。",
+     "老板不可动，得问男人给他地方上像蘑菇一样的植物吃了。",
+     "老板吃了以后，身体有一点好。"
+    ],
+    "missing_part": "The plant is named 灵芝, and the person helps 神农 rather than a restaurant owner.",
+    "details_left_out": [
+     "The visitor is dressed in blue."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "Another visitor talks with 神农.",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Another person comes by and has a conversation with 神农.",
+    "details_left_out": [
+     "The person is dressed in brown."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃.",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 records both 灵芝 and 夹竹桃.",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "有一位餐馆的老板决定世界旅行找新植物做饭。",
+    "problem": "The person in the story is 神农, not a restaurant owner."
+   },
+   {
+    "learner_text": "如果跟蘑菇一样的植物，做饭可以，没再有毒了。",
+    "problem": "灵芝 makes 神农 feel better; it does not make 夹竹桃 no longer poisonous."
+   },
+   {
+    "learner_text": "后面这就是老板最好的菜，叫香毒菇蘑。",
+    "problem": "The story does not say that 夹竹桃 and 灵芝 become a dish; 夹竹桃 is poisonous, while 灵芝 is recorded as a helpful plant."
+   }
+  ],
+  "feedback": [
+   "At the beginning, say that people did not know which plants were safe and often got sick after eating them.",
+   "After this problem, say that 神农 went into the mountains to test plants and learn which were safe.",
+   "After testing plants in the mountains, say that 神农 found 茶 and wrote it down.",
+   "After finding 茶, name the flower 夹竹桃 and say that 神农 fainted after eating it.",
+   "After he faints, say that someone gives 神农 灵芝 and he feels better.",
+   "After 神农 feels better, add another person who comes and talks with him.",
+   "After the conversation, say that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1155,
+  "completion_tokens": 2943,
+  "total_tokens": 4098,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1152,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2049,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

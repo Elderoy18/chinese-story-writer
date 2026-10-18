@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 有些人吃生病了，有些人吃得好。\nquote: 有些人吃生病了，有些人吃得好\npart p0: fix [ref p0/k0-1] 吃了以后生病了，吃了以后没事儿",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "吃生病了",
+    "corrected": "吃了以后生病了",
+    "before": "有些人",
+    "after": "，有些人",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 了以后 after 吃"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "吃得好",
+    "corrected": "吃了以后没事儿",
+    "before": "，有些人",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the second outcome phrase"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1000,
+  "completion_tokens": 125,
+  "total_tokens": 1125,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

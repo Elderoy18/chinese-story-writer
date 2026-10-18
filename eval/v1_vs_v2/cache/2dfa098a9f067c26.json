@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar, error] 古代的时候 → 在古代 -- 古代 is the location/time setting, so use 在+Place before the action: 在古代。\n2. [Grammar, error] 但是城市有才两个学校 → 但是城市才有两个学校 -- Put 才 before 有 here: 才有两个学校 means “there are only two schools.”\n3. [Vocabulary, error] …是城市有才两个学校 → …是城市有才两所学校 -- Use 所 for schools: 一所学校. 个 is a general measure word, but 所 is the usual measure word for a school.\n4. [Coherence: reference, error] 一个男孩子跟⟦他⟧的妈妈住在中… -- This character appears for the first time, so please introduce his mother briefly with a noun phrase, such as 孟子的妈妈, instead of only using 他。\n5. [Coherence: reference, suggestion] …孟子老是祭拜 → …孟子老是祭拜他们 -- It would be clearer to add 他们, because both Mengzi and his mother live next to the cemetery and may worship there.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代的时候 is redundantly formed under the teacher's rule; 在古代 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "The teacher requires 这个城市，只有两个学校; 才有 is not accepted here and the correction also leaves 城市 insufficiently specified."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "个学校 is acceptable, and the proposed text still contains the unfixed 有才 error."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的妈妈 is an unambiguous possessive reference to the immediately preceding 一个男孩子."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "祭拜 can stand without an explicit object here, and 他们 would wrongly make Mengzi and his mother the people being worshipped."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2010,
+  "completion_tokens": 1195,
+  "total_tokens": 3205,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 359,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 862,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

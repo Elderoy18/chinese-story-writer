@@ -1,0 +1,47 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “也看到了很多人吃植物”: (nothing) → ，\n- in “神农一走路就走到了”: 路 → (deleted)\n- in “因为他想知道什么植物能吃”: 他 → 神农   [her note: the first他is a bit ambiguous]\n- in “可是一些的人一吃植物”: 的 → (deleted)   [her note: no的]\n- in “一个人正好找了神农”: 找了 → 找到了   [her note: 找look for vs.找到find]\n\nScene to review:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to say that something happened in ancient times."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "神农正在路上走，一看很多人正在吃一些植物",
+    "corrected": "神农正在路上走，看到很多人正在吃一些植物了",
+    "explanation": "一看 cannot mean that Shennong saw people here. Use 看到 for a completed action of seeing, and use 了 because the people are in the middle of eating."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "conjunction",
+    "original": "神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。",
+    "corrected": "神农想帮别人，所以想知道哪些植物能吃，哪些植物不能吃。",
+    "explanation": "These two ideas have a reason-and-result relationship, so connect them in one sentence with 所以."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1287,
+  "completion_tokens": 1125,
+  "total_tokens": 2412,
+  "prompt_tokens_details": {
+   "cached_tokens": 1078,
+   "cache_write_tokens": 206,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 897,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

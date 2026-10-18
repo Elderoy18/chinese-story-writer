@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n发现了夹竹桃有毒。别人看到他，很快给他吃一个灵芝。神农一吃就觉得比较好。然后，他继续写他发现的信息。会告诉他的朋友哪一个植物能不能吃。\n\nITEMS:\n\n[I171] 发现【了】夹竹桃有毒   correction: 了 → (delete)   strength: error\n  checker's note: no 了 after the mental-state verb 发现\n  rule card (no_le_mental_state, Coherence: temporality (了/着/在)): Mental-state verbs such as 决定 and 发现 normally do not take 了 when they express a decision or discovery in the narrative.  Pattern: <wrong> → <correct>: <verb> is a mental-state verb here, so use no 了.  Her terms: mental state verb, no了\n  her past correction: 可是[-吃]夹竹桃有毒\n  her past correction: 夹竹桃[是毒→有毒]\n  her past correction: 夹竹桃[很毒→有毒]\n\n[I172] 很快给他吃【^】一个灵芝   correction: ∅ → 了   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 给[+了]他一个灵芝 — her note: 了completed\n  her past correction: 正好有一个人[帮他→给他]吃一个灵芝\n  her past correction: [给→给了]他一个灵芝 — her note: 了completed\n\n[I173] 神农一吃就觉得比较好【^】   correction: ∅ → 吃   strength: suggestion\n  her past correction: 神农吃[+了]以后 — her note: 了completed\n  her past correction: 神农[吃→吃了]一个夹竹桃 — her note: 了completed\n  her past correction: 神农[吃→吃了]灵芝以后 — her note: 了completed\n\n[I174] 会告诉他的朋友哪一【个】植物能不能吃   correction: 个 → 种   strength: error\n  checker's note: 植物种类 takes 种, not 个\n  rule card (incorrect_story_information, Content): Use the story’s established facts when retelling it. Do not add or change people, places, actions, objects, identities, or causes; otherwise it is wrong information.  Pattern: <wrong> → <correct>: this changes a story fact; the story says <fact>.  Her terms: wrong information, problematic in coherence\n  her past correction: 然后神农回家告诉他的[人民→朋友邻居]什么植物能吃\n  her past correction: 但是[他的人民→他的朋友邻居]不知道什么植物能吃 — her note: “他的人民”implies that神农is a king\n  her past correction: [因为→这样]大家知道什么植物不能吃 — her note: not “because”\n\n[I175] 会告诉他的朋友哪一个植物【能不能吃】   correction: 能不能吃 → 能吃，哪一种不能吃   strength: error\n  checker's note: which-plant and yes/no forms cannot be combined this way\n  rule card (question_patterns, Grammar): Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.  Pattern: <wrong> → <correct>: this asks <whether/what/where>, so use <question pattern>, not 如果.  Her terms: repeated Wh-Q\n  her past correction: 一回家就写什么植物他们[能和不能吃→能吃，什么植物不能吃]\n  her past correction: 中国人不知道什么植物[可能还是不可能→能吃，什么植物不能]吃\n  her past correction: 但是[他的人民→他的朋友邻居]不知道什么植物能吃 — her note: “他的人民”implies that神农is a king",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I171",
+    "explanation": "发现 is a mental state verb here, so use no了.",
+    "dimension": "coherence_temporality",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I172",
+    "explanation": "It would be more natural to use 了 because giving him the 灵芝 is completed in the story (了completed).",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I173",
+    "explanation": "It would be more natural to say 神农一吃就觉得比较好吃: this describes that the 灵芝 tastes good.",
+    "dimension": "word_choice",
+    "corrected": "吃",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I174",
+    "explanation": "Use 种 for types of plants, not 个.",
+    "dimension": "word_choice",
+    "corrected": "种",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I175",
+    "explanation": "This asks which plants can or cannot be eaten, so use a Wh-question pattern: 哪一种能吃，哪一种不能吃.",
+    "dimension": "grammar",
+    "corrected": "能吃，哪一种不能吃",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1374,
+  "completion_tokens": 251,
+  "total_tokens": 1625,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1371,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

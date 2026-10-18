@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 她有一个很小的孩子，他叫孟子。\nquote: 她有一个很小的孩子，他叫孟子\npart p0: fix [ref p0/k0] 儿子 ; instruction [ref p0/k1] delete他",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "孩子",
+    "corrected": "儿子",
+    "before": "一个很小的",
+    "after": "，他叫孟子",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 孩子 with 儿子"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "很小的孩子，",
+    "after": "叫孟子",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes 他 as instructed"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 996,
+  "completion_tokens": 113,
+  "total_tokens": 1109,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

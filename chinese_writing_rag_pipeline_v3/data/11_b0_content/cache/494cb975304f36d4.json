@@ -1,0 +1,102 @@
+{
+ "input": "required scenes (story order):\nS1: 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\nS2: 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\nS3: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\nS4: 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\nS5: 孟子becomes a famous philosopher\n\nlearner's story:\n在古代的时候，孟子不是跟朋友玩，就是在家学习。一天，孟子的妈妈一直在找他，一个小时以后找到了。孟子不是在玩，而是在墓地祭拜。孟子的妈妈说每天跟朋友见面害得他学习不怎么样。孟子才七岁的时候，从早到晚看和写文章。他写汉字老是写得很好。难怪他长大了成为哲学家。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "孟子 and 孟母 live near a graveyard; 孟子 imitates sacrifices",
+    "verdict": "partly",
+    "evidence": [
+     "孟子不是在玩，而是在墓地祭拜。"
+    ],
+    "missing_part": "孟子 and 孟母 living near the graveyard",
+    "details_left_out": [
+     "孟子 did this every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "孟母 decides to leave the graveyard because the sacrifices may harm 孟子",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 decides to move away from the graveyard neighborhood because she believes 孟子 imitating sacrifices will have a bad impact on him",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "They move near the market; 孟子 imitates buying and selling",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "孟母 moves them to the neighborhood near the market, where 孟子 imitates buying and selling",
+    "details_left_out": [
+     "孟子 did this every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "They move from the market near a school; 孟子 starts studying",
+    "verdict": "partly",
+    "evidence": [
+     "孟子才七岁的时候，从早到晚看和写文章。",
+     "他写汉字老是写得很好。"
+    ],
+    "missing_part": "孟母 moves from the market to a neighborhood near a school",
+    "details_left_out": [
+     "孟子 starts studying there.",
+     "孟子 studies every day."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "孟子 becomes a famous philosopher",
+    "verdict": "partly",
+    "evidence": [
+     "难怪他长大了成为哲学家。"
+    ],
+    "missing_part": "孟子 becomes famous",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "孟子不是跟朋友玩，就是在家学习。",
+    "problem": "This says his activities were only playing with friends or studying at home, but the story says he imitated sacrifices near the graveyard."
+   },
+   {
+    "learner_text": "孟子的妈妈说每天跟朋友见面害得他学习不怎么样。",
+    "problem": "In the story, 孟母 is worried that imitating sacrifices will have a bad impact on 孟子, not that meeting friends harms his studies."
+   }
+  ],
+  "feedback": [
+   "Before the cemetery worship, add that 孟子 and 孟母 lived near the graveyard.",
+   "After the cemetery worship, add that 孟母 decided to move because she feared the sacrifices would harm 孟子.",
+   "After they leave the graveyard and before the school, add that they moved near a market and 孟子 copied buying and selling.",
+   "Before 孟子 studies, add that 孟母 moved from the market to a neighborhood near a school.",
+   "At the end, say that 孟子 became a famous philosopher."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 995,
+  "completion_tokens": 1958,
+  "total_tokens": 2953,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1327,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

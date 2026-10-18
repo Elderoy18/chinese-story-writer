@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nITEMS:\n\n[I78] 让【肚子】感觉又暖和又清楚   correction: 肚子 → 人   strength: error\n  checker's note: tea makes a person feel awake, not a stomach feel clear\n  rule card (addition_repetition_connectors, Coherence: connectors): Use 又 for something that happened again, 也 for similarity, 还 for an added or surprising point, and 并 to make an addition more coherent. Put 也 after the subject (Subj.也), and put 又 before a modal V. (又+ modal V.).  Pattern: <wrong> → <correct>: use <connector> here because it shows <repetition / similarity / an added or surprising point / a coherent addition>; place it as <position> when needed.  Her terms: 又for something already occurred, Subj.也, 又+ modal V., surprising, anger tone, natural continuation tone\n  her past correction: 肚子[还没疼死了→就不疼了]\n  her past correction: 感觉得身体[+又]健康\n  her past correction: 感觉得身体健康[+了]\n\n[I79] 让肚子感觉又暖和又【清楚】   correction: 清楚 → 清醒   strength: error\n  checker's note: 清醒 is the natural word for feeling awake\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 肚子[还没疼死了→就不疼了]\n  her past correction: 感觉得身体健康[+了]\n  her past correction: 感觉得身体[+又]健康\n\n[I80] 这就要【看】你的口味   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: [口味→味道]太好 — her note: 口味is for a person\n  her past correction: 她[一看这→一看到这样] — her note: 看look vs.看到see\n  her past correction: 所以他[看→看到]什么就吃什么 — her note: 看look vs.看到see\n\n[I81] 【可能】喜欢糖   correction: 可能 → ，这样可以   strength: error\n  checker's note: her pattern: 可能 -> ，这样可以 (corrected 9/14 in train)\n  rule card (loose_clause_connection, Coherence: connectors): Make the relationship between clauses or sentences clear. Add or choose a connector, a purpose phrase, or a sequence marker that shows the real connection.  Pattern: <wrong> → <correct>: use <connector/purpose/sequence phrase> to show how this sentence connects to the previous clause or sentence.\n  her past correction: [可能是毒的→可能有毒]\n  her past correction: 一点儿甜[+，也]一点儿咸\n  her past correction: 一点儿甜[一点儿→有点儿]咸\n\n[I82] 【什么都花】想吃   correction: 什么都花 → 什么花都   strength: error\n  checker's note: 什么花都 means “all kinds of flowers”\n  rule card (resultative_complements, Grammar): Use a resultative complement when the action reaches its result: 吃到, 写下, 撞到+Obj., or 把Obj. V. Resultative complement.  Pattern: <wrong> → <correct>: the action reaches a result, so use <resultative complement>.  Her terms: 吃到result, 写下, 撞到+Obj., 把Obj. V. Resultative complement\n  her past correction: 他[正好吃→吃到]一毒的花\n  her past correction: 他正好吃[一毒→一种有毒]的花\n  her past correction: 他[吃→吃了]一个香香的花 — her note: 了completed",
+ "salt": "repeat-run2",
+ "output": {
+  "items": [
+   {
+    "item_id": "I78",
+    "explanation": "茶让人感觉暖和、清醒，不是让肚子感觉“清楚”。",
+    "dimension": "content",
+    "corrected": "人",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I79",
+    "explanation": "Use 清醒 for a person who feels awake. 清楚 means clear or understood, so it does not describe this feeling.",
+    "dimension": "word_choice",
+    "corrected": "清醒",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I80",
+    "explanation": "这里是在说“depends on your taste,” not actually seeing something. Use 看, not 看到.",
+    "dimension": "word_choice",
+    "corrected": "看",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I81",
+    "explanation": "Use ，这样可以 to show the result or purpose of choosing something sweet: ，这样可以喜欢糖。",
+    "dimension": "coherence_connectors",
+    "corrected": "，这样可以",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I82",
+    "explanation": "Put 花 after 什么: 什么花都 means “all kinds of flowers.”",
+    "dimension": "grammar",
+    "corrected": "什么花都",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1524,
+  "completion_tokens": 246,
+  "total_tokens": 1770,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1521,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

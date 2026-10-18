@@ -1,0 +1,81 @@
+{
+ "input": "learner text: 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜。\nquote: 孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜\npart p0: comment [ref p0/note] loosely connected with the preceding sentence\npart p1: instruction [ref p1/k1] delete the second他 ; notes: replace孟子with他\npart p2: fix [ref p2/k0] 都想玩儿 ; notes: V.V. is used to make requests or plans\npart p3: fix [ref p3/k0] 坐在墓地祭拜",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜",
+    "corrected": "",
+    "before": "",
+    "after": "",
+    "note": "loosely connected with the preceding sentence",
+    "confidence": "high",
+    "reason": "comment on the sentence’s connection to the preceding sentence"
+   },
+   {
+    "ref": "p1/k1",
+    "op": "unplaceable",
+    "original": "他",
+    "corrected": "",
+    "before": "所以",
+    "after": "和朋友坐墓",
+    "note": "replace孟子with他",
+    "confidence": "low",
+    "reason": "the quote contains only one 他, so “delete the second 他” cannot be located; the note conflicts with the instruction"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "都",
+    "before": "从早到晚",
+    "after": "想玩玩儿，",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix adds 都 before 想"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "玩玩儿",
+    "corrected": "玩儿",
+    "before": "到晚想",
+    "after": "，所以他和",
+    "note": "V.V. is used to make requests or plans",
+    "confidence": "high",
+    "reason": "her fix removes the repeated verb form"
+   },
+   {
+    "ref": "p3/k0",
+    "op": "replace",
+    "original": "坐墓地在祭拜",
+    "corrected": "坐在墓地祭拜",
+    "before": "他和朋友",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix moves 在 to follow 坐"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1081,
+  "completion_tokens": 631,
+  "total_tokens": 1712,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1078,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 307,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

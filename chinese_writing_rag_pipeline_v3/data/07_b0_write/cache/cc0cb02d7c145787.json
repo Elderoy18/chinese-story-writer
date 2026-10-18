@@ -1,0 +1,72 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 在古代有一个神农  →  一个神农 → 一个叫神农的老人\n- 神农发现很多植物  →  ∅ → 了  (了completed)\n- 他偶然看到了一朵美丽的黄花  →  他 → (delete)  (redundant)\n- 他找到了很多有用植物  →  有用植物 → 有用的植物\n- 晚上神农去了  →  晚上神农去了 → 神农是晚上去的\n- 他现在是当医生  →  当 → (delete)  (redundant with是)\n\nScene to review:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好",
+    "corrected": "神农听说一个远远的地方有一种植物，什么病人吃了都会觉得身体更好",
+    "errors": [
+     {
+      "original": "吃",
+      "correction": "吃了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "Use 了 after 吃 to show that eating the plant is completed before the patient feels better."
+     }
+    ]
+   },
+   {
+    "clause": "神农三个月走去，找到有植物的地方",
+    "corrected": "神农走了三个月，找到了有植物的地方",
+    "errors": [
+     {
+      "original": "三个月走去",
+      "correction": "走了三个月",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "A duration normally follows the verb: 走了三个月 means “walked for three months.”"
+     },
+     {
+      "original": "找到",
+      "correction": "找到了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "Use 了 on the final action in this completed sequence."
+     }
+    ]
+   },
+   {
+    "clause": "他看到一个很漂亮的植物，又香又好看",
+    "corrected": "他看到一棵很漂亮的植物，又香又好看",
+    "errors": [
+     {
+      "original": "一个",
+      "correction": "一棵",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 棵, not 个, as the measure word for a plant."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1156,
+  "completion_tokens": 2047,
+  "total_tokens": 3203,
+  "prompt_tokens_details": {
+   "cached_tokens": 1153,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1708,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

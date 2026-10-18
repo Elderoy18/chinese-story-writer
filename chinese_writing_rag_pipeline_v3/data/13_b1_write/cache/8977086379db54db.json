@@ -1,0 +1,47 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “他离墓地住很近”: 离墓地住很近 → 住在离墓地很近的地方\n- in “这是一个神农的古代故事”: 一个神农的 → 关于神农的\n- in “有一天孟子才四岁”: 有一天 → (deleted)\n- in “他有的时候只要跟朋友玩儿”: 有的时候 → (deleted)   [her note: wrong conjunctions, 他只要跟朋友玩儿]\n- in “也有他的妈妈”: 也有他的妈妈 → 和妈妈住在一起\n\nScene to review:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子小的时候，他的爸爸很早就去世了。",
+    "corrected": "有一个小男孩叫孟子，小的时候，爸爸很早就去世了。",
+    "explanation": "When a character appears for the first time, introduce who they are, not only their name. After mentioning 孟子 in the same sentence, Chinese normally leaves out the repeated possessive pronoun, so say 爸爸 rather than 他的爸爸."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "每天老是",
+    "corrected": "每天",
+    "explanation": "每天 and 老是 both express repeated action. Use only one of them here."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "从早到晚去墓地跟朋友们玩玩儿",
+    "corrected": "从早到晚去墓地跟朋友们玩儿",
+    "explanation": "玩玩儿 means to play only briefly or casually. It does not fit an action that lasts from morning until evening."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1271,
+  "completion_tokens": 1781,
+  "total_tokens": 3052,
+  "prompt_tokens_details": {
+   "cached_tokens": 1268,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1535,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

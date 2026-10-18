@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他跟很多人打交道，结果他取得生活经验。\nquote: 他跟很多人打交道，结果他取得生活经验\npart p0: fix [ref p0/k0] 打过交道 ; notes: “过” for “have done, experience”\npart p1: fix [ref p1/k0-1] 所以，取得了很多生活经验 ; notes: “结果” for unexpected result, 了completed",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "打交道",
+    "corrected": "打过交道",
+    "before": "跟很多人",
+    "after": "，结果他取",
+    "note": "“过” for “have done, experience”",
+    "confidence": "high",
+    "reason": "adds experiential 过 to 打交道"
+   },
+   {
+    "ref": "p1/k0-1",
+    "op": "replace",
+    "original": "结果他取得生活经验",
+    "corrected": "所以，取得了很多生活经验",
+    "before": "人打交道，",
+    "after": "",
+    "note": "“结果” for unexpected result, 了completed",
+    "confidence": "high",
+    "reason": "replaces 结果 with 所以, removes 他, and adds 了 and 很多"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1036,
+  "completion_tokens": 159,
+  "total_tokens": 1195,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1033,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,66 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 孟子和孟子的妈妈一直住在墓地的旁边  →  孟子 → (delete)\n- 古代的时候  →  古代的时候 → 在古代\n- 墓地的人真影响孟子  →  真 → 很  (“真” is usually used in conversation)\n- 他们新的家在商店的旁边  →  他们新的家 → 他们的新家\n- 所以妈妈跟孟子一起搬家  →  所以 → (delete)\n- 可是孟子的妈妈一直很控制他  →  可是 → (delete)\n\nScene to review:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "可是孟母注意，住在墓地的旁边影响孟子",
+    "corrected": "孟母注意到，住在墓地的旁边影响孟子",
+    "errors": [
+     {
+      "original": "可是",
+      "correction": "",
+      "dimension": "coherence",
+      "coherence_type": "connectors",
+      "explanation": "可是 means “but” and needs a contrast with the previous clause. There is no contrast here."
+     },
+     {
+      "original": "注意",
+      "correction": "注意到",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 注意到 when someone notices a fact or situation."
+     }
+    ]
+   },
+   {
+    "clause": "他常常跟朋友们祭拜玩，所以孟母决定他们会搬家",
+    "corrected": "他常常跟朋友们玩祭拜的游戏，所以孟母决定搬家",
+    "errors": [
+     {
+      "original": "祭拜玩",
+      "correction": "玩祭拜的游戏",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 玩 + activity + 的游戏 to say that children play a game involving an activity."
+     },
+     {
+      "original": "他们会",
+      "correction": "",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "决定 is followed by the action that is decided. Say 决定搬家, not 决定他们会搬家."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1135,
+  "completion_tokens": 2018,
+  "total_tokens": 3153,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1132,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1726,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

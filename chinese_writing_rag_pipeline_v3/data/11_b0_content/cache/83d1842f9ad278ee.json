@@ -1,0 +1,119 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n这是一个神农的古代故事。他的朋友太糟糕了，他们常常饿死了，所以他看什么就吃什么。比方说他吃植物和花，可是有一天，他吃花的时候生病了。夹竹桃有毒，但是他们不知道这个花有毒，所以肚子疼死了。神农的朋友告诉神农，麻烦你去找药。他上了山，看到了灵芝，灵芝看上伞。你喜欢不喜欢灵芝？这就要看你的口味了。神农不喜欢菜，特别是灵芝。可是他不知道灵芝是药。所以他一吃，肚子就疼死了。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "ancient people unknown edible plants become sick",
+    "verdict": "told",
+    "evidence": [
+     "这是一个神农的古代故事。",
+     "夹竹桃有毒，但是他们不知道这个花有毒，所以肚子疼死了。"
+    ],
+    "missing_part": "",
+    "details_left_out": [
+     "People often became sick after eating plants."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 decides to test safe and unsafe plants",
+    "verdict": "partly",
+    "evidence": [
+     "所以他看什么就吃什么。",
+     "比方说他吃植物和花，可是有一天，他吃花的时候生病了。",
+     "他上了山，看到了灵芝，灵芝看上伞。"
+    ],
+    "missing_part": "神农's decision to discover which plants are safe to eat and which are not",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 finds 茶 and takes a record of it",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints",
+    "verdict": "partly",
+    "evidence": [
+     "比方说他吃植物和花，可是有一天，他吃花的时候生病了。",
+     "夹竹桃有毒，但是他们不知道这个花有毒，所以肚子疼死了。"
+    ],
+    "missing_part": "神农 faints after trying 夹竹桃",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "blue person gives 灵芝; 神农 recovers",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "A person in blue gives 灵芝 to 神农, and 神农 feels better after eating it",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "brown person talks with 神农",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "Another person in brown comes by and has a conversation with 神农",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃",
+    "verdict": "missing",
+    "evidence": [],
+    "missing_part": "神农 takes a record of both 灵芝 and 夹竹桃",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [
+   {
+    "learner_text": "夹竹桃有毒，但是他们不知道这个花有毒，所以肚子疼死了。",
+    "problem": "After trying 夹竹桃, the story says 神农 faints, not that he has stomach pain."
+   },
+   {
+    "learner_text": "可是他不知道灵芝是药。所以他一吃，肚子就疼死了。",
+    "problem": "After eating 灵芝, the story says 神农 feels better, not that he gets stomach pain."
+   }
+  ],
+  "feedback": [
+   "Before finding 茶, add that 神农 wants to learn which plants are safe to eat and which are not.",
+   "Before he tries 夹竹桃, add that 神农 finds 茶 and writes it down.",
+   "After trying 夹竹桃, say that 神农 faints.",
+   "After he faints, add that a person in blue gives him 灵芝 and he feels better after eating it.",
+   "After 神农 feels better, add a conversation with another person in brown.",
+   "After the conversation, add that 神农 records both 灵芝 and 夹竹桃."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1060,
+  "completion_tokens": 2645,
+  "total_tokens": 3705,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1057,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1890,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

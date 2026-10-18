@@ -1,0 +1,47 @@
+{
+ "input": "CURRENT SCENE:\n一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。\n\nITEMS:\n\n[I99] 【麻烦】我们可以吃什么植物？神农说   correction: 麻烦 → 请问   strength: error\n  checker's note: 请问 is the appropriate polite question opener\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 神农[-开始]找我们可以吃的植物\n  her past correction: 神农开始[-找]我们可以吃的植物\n  her past correction: 神农开始找[-我们]可以吃的植物\n\n[I100] 这就要【看】你想不想生病了   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 他[看→看到]很多病人 — her note: 看look vs.看到see\n  her past correction: 他看到很多人[很病→生病]了 — her note: “病” is not a normal Adj., so it cannot be with 很 or 不\n  her past correction: 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n\n[I101] 一些【植物】不能吃   correction: 植物 → (delete)   strength: suggestion\n  rule card (question_patterns, Grammar): Use 是……吗, V不V, or a Wh-question for an indirect question, not 如果. For “wh-ever…, will do that…”, repeat the Wh-word: 哪一筐……就……哪一筐.  Pattern: <wrong> → <correct>: this asks <whether/what/where>, so use <question pattern>, not 如果.  Her terms: repeated Wh-Q\n  her past correction: [因为→这样]大家知道什么植物不能吃 — her note: not “because”\n  her past correction: 他们不知道什么植物[-能吃]不能吃\n  her past correction: 中国人不知道什么植物[可能还是不可能→能吃，什么植物不能]吃",
+ "salt": "repeat-run3",
+ "output": {
+  "items": [
+   {
+    "item_id": "I99",
+    "explanation": "麻烦 means “trouble,” not a polite question opener. Use 请问 to begin a polite question.",
+    "dimension": "word_choice",
+    "corrected": "请问",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I100",
+    "explanation": "Here 看 means “depend on” in 要看……, so it is already correct. Do not change it to 看到, which means actually “see.”",
+    "dimension": "word_choice",
+    "corrected": "看",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I101",
+    "explanation": "It would be more natural to omit 植物 here because it is repeated from the earlier phrase 一些植物能吃.",
+    "dimension": "grammar",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1079,
+  "completion_tokens": 547,
+  "total_tokens": 1626,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1076,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 372,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

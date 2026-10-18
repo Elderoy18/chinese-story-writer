@@ -1,0 +1,107 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThis scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's feedback items:\n1. [Grammar, error] 但是生病时候告诉人什… → 但是生病的时候告诉人什… -- Use 的 before 时候 in this time phrase: 生病的时候.\n2. [Vocabulary, error] 一百岁时候 → 一百岁的时候 -- 一百岁的时候 is the established time expression. Use 的 before 时候.\n3. [Vocabulary, error] 不小心吃了毒的花 → 不小心吃了有毒的花 -- Here the structure needs an adjective before 花, but 毒 is a noun. Use 有毒的花.\n4. [Vocabulary, suggestion] 什么植物是毒 → 什么是毒 -- It would be more natural to avoid repeating 植物. After 什么植物是药, you can say 什么是毒.\n5. [Vocabulary, error] 什么植物是毒 → 什么植物有毒 -- Here the structure needs an adjective, but 毒 is a noun. Use 有毒: 什么植物有毒.\n6. [Coherence: reference, suggestion] 一吃就开始死 → 一吃就会死 -- It would be more natural to say 一吃就会死. 会 shows the result that will happen after eating it.\n7. [Content, suggestion] 一吃就开始死 → 一吃就开始死亡 -- It would be more natural to use 开始死亡 here; 死 is not normally used after 开始 for one person.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors",
+     "Coherence: temporality"
+    ],
+    "reason": "Adding 的 correctly repairs 生病的时候, but the sentence still needs the teacher's 即使……也 structure and completed-state marking."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "一百岁的时候 correctly requires 的 before 时候."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "毒 is a noun here, so 有毒的花 is the correct modifier-noun expression."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Removing 植物 does not repair the intended meaning that the plants are poisonous; this requires 有毒."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "什么植物有毒 correctly expresses which plants are poisonous."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "开始死 is inappropriate because 死 is instantaneous, and 一吃就会死 wrongly makes it a future/general result rather than the narrator's illness."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "死亡 is also an instantaneous event in this context, so 开始死亡 does not fix 开始死."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2237,
+  "completion_tokens": 1743,
+  "total_tokens": 3980,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 586,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1302,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他们去了一个房子，在购物中心的旁边。\nquote: 他们去了一个房子，在购物中心的旁边\npart p0: fix [ref p0/k0] 他们搬到了一个在购物中心旁边的房子",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "去了",
+    "corrected": "搬到了",
+    "before": "他们",
+    "after": "一个房子，",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 去了 with 搬到了"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "一个房子，在购物中心的旁边",
+    "corrected": "一个在购物中心旁边的房子",
+    "before": "他们去了",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "moves the location into the house noun phrase and removes 的"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 995,
+  "completion_tokens": 125,
+  "total_tokens": 1120,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

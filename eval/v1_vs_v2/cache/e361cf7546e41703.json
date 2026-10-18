@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他难怪抱怨：难怪他抱怨，难怪 should introduce the reason or explanation before the subject and verb.\n2. [Grammar & Vocabulary, error] 他的妈妈找到孟子一个老师：他的妈妈给孟子找了一个老师，找 does not take two objects in this pattern; use 给 to show who the teacher is for, and use 了 for the completed action.\n3. [Grammar & Vocabulary, error] 跟老师孟子学最重要的文学：孟子跟老师学最重要的文学，place the subject before the 跟老师 phrase.\n4. [Coherence: reference, error] Coherence (Reference): 他成为哲学家：孟子后来成为了哲学家，repeat the name after another character, 老师, has appeared, because the pronoun could otherwise refer to either person.\n5. [Coherence: temporality, error] Coherence (Temporality): 成为哲学家：后来成为了哲学家，use 了 for the completed change of state, and use 后来 to show that this happened later in the narrative.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "难怪应当引出一个完整的解释性分句，不能直接放在主语他前面。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "找到不能用“孟子一个老师”这样的双宾语结构，需要用给来标明受益者。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "系统正确调整了主语位置，但保留的“学最重要的文学”不是老师所要求的自然表达，未改成“学习文学”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚刚是上一句的主语，老师只是跟短语中的对象，代词他不会自然地指向老师。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "叙述一连串已完成的动作时，最后的“成为”应使用了来标示完成的状态变化。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2147,
+  "completion_tokens": 1475,
+  "total_tokens": 3622,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 496,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1121,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

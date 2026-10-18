@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 在照片可以看一个很老的人，他看到很多人很病了，所以他一去爬山就试很多植物。\nquote: 在照片可以看一个很老的人\npart p0: fix [ref p0/k0] 在照片上可以看到 ; notes: 看look vs.看到see\npart p1: fix [ref p1/k0] 老人\npart p2: comment [ref p2/note] please introduce神农",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "上",
+    "before": "在照片",
+    "after": "可以看一",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the location particle from her fix"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "看",
+    "corrected": "看到",
+    "before": "在照片上可以",
+    "after": "一个很老的",
+    "note": "看look vs.看到see",
+    "confidence": "high",
+    "reason": "changes 看 to 看到"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "一个很老的人",
+    "corrected": "老人",
+    "before": "可以看到",
+    "after": "，他看到",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the descriptive noun phrase with 老人"
+   },
+   {
+    "ref": "p2/note",
+    "op": "comment",
+    "original": "一个很老的人",
+    "corrected": "",
+    "before": "在照片可以看",
+    "after": "，他看到很",
+    "note": "please introduce神农",
+    "confidence": "high",
+    "reason": "requests introducing 神农 for this character"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1038,
+  "completion_tokens": 221,
+  "total_tokens": 1259,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1035,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,40 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “他叫孟子”: 他 → (deleted)\n- in “他们在墓地住”: 他们 → (deleted)   [her note: redundant]\n- in “孟子决定了祭拜”: 了 → (deleted)   [her note: 决定is a mental state verb, no了]\n- in “而是他喜欢这个城市的人”: 他 → (deleted)\n- in “他跟他的妈妈住在一个小房子”: 他 → (deleted)\n\nScene to review:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to say that something happened in ancient times. 古代的时候 is not the usual form here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "他很喜欢他的城市，但是城市有才两个学校，都很小。",
+    "corrected": "他很喜欢他的城市，但是才有两所学校，都很小。",
+    "explanation": "Do not repeat 城市 in the same sentence when it has already been mentioned; use no subject in the second clause. Also, 才 comes before 有, and 所 is the measure word for schools."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1275,
+  "completion_tokens": 1567,
+  "total_tokens": 2842,
+  "prompt_tokens_details": {
+   "cached_tokens": 1272,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1395,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

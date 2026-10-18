@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 对他来说，这个植物的味道是最好。\nquote: 这个植物的味道是最好\npart p0: comment [ref p0/note] “这个植物“ is not unclear, which one? Delete 是，Adj. can be predicate, without是",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "这个植物",
+    "corrected": "",
+    "before": "",
+    "after": "的味道是最",
+    "note": "“这个植物“ is not unclear, which one?",
+    "confidence": "high",
+    "reason": "teacher says the plant reference is unclear"
+   },
+   {
+    "ref": "p0/note",
+    "op": "delete",
+    "original": "是",
+    "corrected": "",
+    "before": "物的味道",
+    "after": "最好",
+    "note": "Adj. can be predicate, without是",
+    "confidence": "high",
+    "reason": "deletes 是 before adjectival predicate"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 999,
+  "completion_tokens": 124,
+  "total_tokens": 1123,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

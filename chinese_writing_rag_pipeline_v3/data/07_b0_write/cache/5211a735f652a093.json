@@ -1,0 +1,66 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 在古代有一个神农  →  一个神农 → 一个叫神农的老人\n- 神农发现很多植物  →  ∅ → 了  (了completed)\n- 他偶然看到了一朵美丽的黄花  →  他 → (delete)  (redundant)\n- 他找到了很多有用植物  →  有用植物 → 有用的植物\n- 晚上神农去了  →  晚上神农去了 → 神农是晚上去的\n- 他现在是当医生  →  当 → (delete)  (redundant with是)\n\nScene to review:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "神农三个月走去",
+    "corrected": "神农走了三个月",
+    "errors": [
+     {
+      "original": "三个月走去",
+      "correction": "走三个月",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Put the verb before the duration phrase: 走三个月, not 三个月走去."
+     },
+     {
+      "original": "走",
+      "correction": "走了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "Use 了 for the completed walk in this past event."
+     }
+    ]
+   },
+   {
+    "clause": "他看到一个很漂亮的植物",
+    "corrected": "他看到了一株很漂亮的植物",
+    "errors": [
+     {
+      "original": "看到",
+      "correction": "看到了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "Use 了 because seeing the plant is a completed event in the story."
+     },
+     {
+      "original": "一个",
+      "correction": "一株",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "株 is an appropriate measure word for a plant."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1156,
+  "completion_tokens": 2715,
+  "total_tokens": 3871,
+  "prompt_tokens_details": {
+   "cached_tokens": 1153,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2464,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，use 在古代 for the general historical time setting; 古代的时候 is not the appropriate form here.\n2. [Grammar & Vocabulary, error] 有才两个：只有两个，才 cannot follow 有 in this position; use 只有 before the number to express that the city has only two schools.\n3. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子。：一个叫孟子的男孩子跟他的妈妈住在中国。，On first mention, introduce the character with both the name and a full noun phrase, rather than naming him only in the following sentence.\n4. [Coherence: reference, error] Coherence (Reference): 城市：∅，Within the same sentence, use zero form for the second mention of the same noun: after 他的城市, the repeated 城市 is unnecessary.\n5. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜，就是跟朋友聊天。：他不是祭拜，就是跟朋友聊天。，Use a pronoun for a close re-occurrence when the referent is clear and no other character competes with it.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代和“的时候”重复表示时间；这里应说“在古代”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "表示“only”应使用“只有”，不能说“有才两个”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "人物第一次出现时应在完整名词短语中说明名字，如“一个叫孟子的男孩子”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "此处应改为“这个城市”来指回前面的城市，删掉“城市”不符合老师给出的改法，且剩余句子仍有“有才两个”的错误。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚在上一句出现，近距离再次指称应使用“他”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2024,
+  "completion_tokens": 1223,
+  "total_tokens": 3247,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 373,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 893,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun phrase such as “凉山” cannot be directly followed by another noun phrase; use “是” and a measure word to identify it as a mountain.\n2. [Grammar & Vocabulary, error] 你跟黄色的花做茶：用黄色的花做茶，“用” introduces the material used to make something; “跟” cannot introduce the plant material in this verb phrase.\n3. [Grammar & Vocabulary, error] 你的头发疼死：你的头疼死了，“头发” is hair and cannot normally feel pain; use “头” for a headache. The result complement needs “了” in this completed, intense state.\n4. [Grammar & Vocabulary, error] 这冰茶：这种茶，A demonstrative before a noun needs a measure word: “这/那 + measure word + noun.”\n5. [Coherence: reference, error] Coherence (Reference): 这也找植物：他也在凉山找植物，The demonstrative “这” refers most naturally to the mountain, which cannot perform the action. Use the pronoun “他” to refer back to the already introduced character.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original lacks the copula and classifier needed to state that 凉山 is a large mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "跟 is not appropriate for introducing the material used to make tea, and the generic 你 should be omitted here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "头发 cannot hurt, but the correction still retains the inappropriate generic possessive 你的 that the teacher removed."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 needs a classifier before the noun, and 这种茶 is grammatical."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 should be expressed as a locative such as 在这儿; the system's alternative is grammatical, although it changes the intended meaning from plants being findable there to him searching there."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2124,
+  "completion_tokens": 2315,
+  "total_tokens": 4439,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 473,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1974,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

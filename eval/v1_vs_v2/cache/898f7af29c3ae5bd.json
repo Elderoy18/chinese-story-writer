@@ -1,0 +1,116 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun predicate needs 是, and a single mountain is counted with the measure word 座.\n2. [Grammar & Vocabulary, error] 你跟黄色的花做茶：用黄色的花做茶，Use 用 to introduce the material used to make something. 你 has no referent here, and 跟 does not mean “using” in this structure.\n3. [Grammar & Vocabulary, error] 头发疼死：头疼得要死，头发 means “hair,” which cannot ache; use 头疼 for a headache. A degree complement also requires 得 before 要死.\n4. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative before a countable noun follows the pattern 这/那 + measure word + noun.\n5. [Coherence: reference, error] Coherence (Reference): 这也找植物：他也在这儿找植物，Use a pronoun for the previously introduced character 神农; 这 refers to a place, so 在这儿 is needed to show where the searching happens.\n6. [Coherence: reference, error] Coherence (Reference): 黄色的花：一些黄色的花，This is the first mention of these flowers, so introduce them as an indefinite group rather than as an already known, specific object.\n7. [Coherence: temporality, error] Coherence (Temporality): 找到黄色的花：找到了一些黄色的花，Use 了 after 找到 because this is a completed discovery in the story.\n8. [Coherence: connectors, error] Coherence (Conjunction): 头疼得要死，这杯冰茶是药：头疼得要死的时候，这杯冰茶是药，Use 的时候 to connect the headache condition with the tea’s use.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "凉山很大的山缺少判断动词，凉山是一座很大的山是正确的句子。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "这里应使用用来表示材料，且无所指的你需要删除。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "头发不能疼，头疼得要死是正确且自然的说法。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这冰茶缺少合适的量词或类别词，而这杯冰茶本身语法正确。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这不能作找植物的人，需用他并用在这儿表示地点。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "一些黄色的花语法正确，但没有解决老师指出的“哪一种花”过于笼统的问题；一种黄色的花更合适。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "叙述中这次找到花是完成的事件，找到了一些黄色的花正确标出了完成体。"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "在比方说引出的例子里，两个分句的条件关系可以由语境理解，不加的时候不构成必须改正的错误。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1420,
+  "completion_tokens": 2373,
+  "total_tokens": 3793,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1417,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1842,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0d4672217c"
+}

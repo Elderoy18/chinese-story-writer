@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这是不合适的地方让孩子玩：这不是一个适合孩子玩的地方，Use the pattern “适合 + person + verb” to say that a place is suitable for an activity; “不合适的地方让孩子玩” does not form a natural modifier structure.\n2. [Grammar & Vocabulary, error] 所以她决定了他们会搬家找更好的地方：所以她决定带着孟子搬家，找一个更好的地方，Mental-state verbs such as “决定” normally take the zero particle, not “了”; also, “决定” should be followed by the action she decides to do, rather than “他们会 + verb.”\n3. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，“恐怕” means “I am afraid that” and cannot take another subject such as “她” in this structure; use “担心” to express that she is worried.\n4. [Coherence: reference, error] Coherence (Reference): 有一天孟子去了墓地玩儿：有一天，有一个小男孩叫孟子。他去了墓地玩儿，On a character’s first mention, introduce the character with a full noun phrase and name; after that, the pronoun can refer back clearly.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“不合适的地方让孩子玩” has an unnatural modifier structure, and the revised sentence is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "“决定了他们会……” incorrectly uses 了 after a mental-state verb and does not properly follow 决定 with the intended action."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“恐怕” is not appropriate with 她 as the subject here; “担心” correctly expresses her worry."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first mentioned here and should be introduced with a fuller noun phrase before using 他."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2203,
+  "completion_tokens": 716,
+  "total_tokens": 2919,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 552,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 451,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

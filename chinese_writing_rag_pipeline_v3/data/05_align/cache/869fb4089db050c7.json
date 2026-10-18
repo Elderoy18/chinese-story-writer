@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孩子叫孟子，孟子是淘气的孩子，因为老是去墓地吃祭品。\nquote: 因为老是去墓地吃祭品\npart p0: instruction [ref p0/k0] add他, wrong information, not “eating the sacrifices”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "他",
+    "before": "因为",
+    "after": "老是去墓",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the missing subject"
+   },
+   {
+    "ref": "p0/note",
+    "op": "comment",
+    "original": "吃祭品",
+    "corrected": "",
+    "before": "是去墓地",
+    "after": "。",
+    "note": "wrong information, not “eating the sacrifices”",
+    "confidence": "high",
+    "reason": "flags the factual error identified in the note"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1005,
+  "completion_tokens": 302,
+  "total_tokens": 1307,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 182,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 然后他认识他在山上吃的花，让服务员给他那个花。\nquote: 然后他认识他在山上吃的花\npart p0: instruction [ref p0/k0] delete “然后”, add “因为”\npart p1: instruction [ref p1/k0] delete the second他, redundant",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "然后",
+    "corrected": "",
+    "before": "",
+    "after": "他认识他在",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes 然后 as instructed"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "因为",
+    "before": "",
+    "after": "然后他认识",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 因为 at the sentence start"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "然后他认识",
+    "after": "在山上吃的",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the second 他 as instructed"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1015,
+  "completion_tokens": 253,
+  "total_tokens": 1268,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 96,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

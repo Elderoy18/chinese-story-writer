@@ -1,0 +1,68 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “孟子跟朋友看很多的大人在墓地祭拜”: 看 → 看到   [her note: 看look vs.看到see]\n- in “跟孟母一起搬家三次”: (nothing) → 就   [her note: 才 Num.就V.]\n- in “有一天孟子才四岁”: 有一天 → (deleted)\n- in “开始祭拜”: (nothing) → 就   [her note: 才 Num.就V.]\n- in “他有的时候只要跟朋友玩儿”: 有的时候 → (deleted)   [her note: wrong conjunctions, 他只要跟朋友玩儿]\n- in “现在孟子和孟母不是打算搬家”: 是 → (deleted)   [her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong]\n\nScene to review:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子小的时候，从早到晚都跟朋友玩。",
+    "corrected": "有一个小男孩叫孟子，他小的时候，从早到晚都跟朋友玩。",
+    "explanation": "The first time a character appears, introduce who they are, not only their name. After introducing 孟子, use 他 because he is the same person."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子和他的朋友",
+    "corrected": "他和他的朋友",
+    "explanation": "孟子 was named in the previous sentence, so use 他 when referring to him again."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "喜欢玩在墓地里",
+    "corrected": "喜欢在墓地里玩",
+    "explanation": "A place phrase with 在 comes before the verb in Chinese. Say 在墓地里玩."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "装祭拜",
+    "corrected": "假装祭拜",
+    "explanation": "装 cannot directly be followed by the verb 祭拜 here. Use 假装 to mean “pretend to.”"
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子五岁的时候",
+    "corrected": "他五岁的时候",
+    "explanation": "孟子 was just mentioned, and no other singular male character competes with him here, so use 他."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "跟妈妈搬家",
+    "corrected": "跟妈妈搬了家",
+    "explanation": "This is a completed move in the past, so 搬家 needs 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1319,
+  "completion_tokens": 2352,
+  "total_tokens": 3671,
+  "prompt_tokens_details": {
+   "cached_tokens": 1045,
+   "cache_write_tokens": 271,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1976,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

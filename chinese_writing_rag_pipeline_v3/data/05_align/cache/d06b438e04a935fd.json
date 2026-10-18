@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他们住在一个墓地的旁边，孟轲老是看看别的人，从早到晚祭拜、哭哭啼啼的人。\nquote: 孟轲老是看看别的人\npart p0: instruction [ref p0/k0] delete别的人 ; fix [ref p0/k1] 老是去看",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "别的人",
+    "corrected": "",
+    "before": "老是看看",
+    "after": "，从早到",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the specified phrase"
+   },
+   {
+    "ref": "p0/k1",
+    "op": "replace",
+    "original": "老是看看",
+    "corrected": "老是去看",
+    "before": "孟轲",
+    "after": "别的人",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the verb phrase with her fix"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1016,
+  "completion_tokens": 208,
+  "total_tokens": 1224,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 90,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

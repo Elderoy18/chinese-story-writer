@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar, error] 住离墓地太近 → 住得离墓地太近 -- Use 得 after 住 before a distance complement: 住得离墓地太近.\n2. [Grammar, suggestion] …子思老师的家，跟子思老师住 → …子思老师的家住 -- It would be more natural to delete 跟子思老师, because 搬到子思老师的家 already makes the location and living arrangement clear.\n3. [Vocabulary, error] 害得孟子的心气 → 影响孟子的心气 -- 害得 needs a harmful result after the person or noun. 影响 can directly take an object here.\n4. [Vocabulary, suggestion] 害得孟子的心气 → 害得孟子的心情 -- It would be more natural to say 心情 for a person's emotional state here.\n5. [Coherence: reference, error] 孟子和⟦孟母⟧搬到子思老师… -- 孟母 appears for the first time here, so please briefly introduce her, for example as 孟子的妈妈.\n6. [Coherence: connectors, suggestion] 他老是读书 → 所以他老是读书 -- It would be more natural to add 所以 to show that having no friends is the reason he reads often.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住离墓地太近 lacks the needed complement structure, and 住得离墓地太近 fixes that part, but the remaining 害得孟子的心气 is still wrong."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "跟子思老师住 is acceptable and adds the meaning of living together with him, so deleting it is only an optional stylistic change."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "害得 cannot be followed merely by 孟子的心气; changing it to 影响 repairs the causative structure, but 影响孟子的心气 is still not an appropriate expression here."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "心情 is more suitable than 心气, but 害得孟子的心情 still lacks the harmful result required after 害得."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟母 is a clear conventional way to refer to 孟子的妈妈 in this context and does not require a separate introduction."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The intended relation is that he has no friends because he always studies, whereas adding 所以 preserves the incorrect reverse causal relation."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2174,
+  "completion_tokens": 1807,
+  "total_tokens": 3981,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 523,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1367,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

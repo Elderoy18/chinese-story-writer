@@ -1,0 +1,75 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “在古代的时候”: 在古代的时候 → 在古代\n- in “神农看了很多生病的人”: 看了 → 看到了   [her note: 看look vs.看到see]\n- in “他找有的花”: 找有的花 → 找到一种植物   [her note: 找look for vs.找到find]\n- in “神农现在知道哪个植物是毒”: 是毒 → 有毒\n- in “他们吃毒植物”: 毒植物 → 有毒的植物\n- in “他找到了很多有用植物”: 有用植物 → 有用的植物\n\nScene to review:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他们找到了很多植物对药",
+    "corrected": "他们找到了很多能当药的植物",
+    "explanation": "Use 当药 for plants that can be used as medicine. 对药 is not the correct expression here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "神农先看到很多病人",
+    "corrected": "有一个医生叫神农，他先看到了很多病人",
+    "explanation": "When a character appears for the first time, introduce who they are, not only their name. 看见 is a completed event here, so say 看到了."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他们吃很多植物对药",
+    "corrected": "他们把很多植物当药吃了",
+    "explanation": "Say 把植物当药吃, meaning “eat plants as medicine.” 对药 is not used for “as medicine.”"
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "但是我觉得他们的吃的植物，让他们病人",
+    "corrected": "但是我觉得他们吃的植物让他们生病了",
+    "explanation": "Use 他们吃的植物, without 的 after 他们. To say that something causes illness, say 让他们生病了."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "这个植物可能特别是毒",
+    "corrected": "有一种植物可能特别有毒",
+    "explanation": "这个植物 is unclear because no particular plant has been introduced yet, so introduce it as 有一种植物. Say 特别有毒, not 特别是毒."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "所以他想找一个植物对药，他们可以吃对药",
+    "corrected": "所以他想找一种植物给病人当药吃",
+    "explanation": "Use 当药 to mean “as medicine,” and 一种植物 for one kind of plant. 病人 makes clear who will eat the medicine; 他们 is unclear here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "正好，他找到了一把花，他想把花放在茶里，对药",
+    "corrected": "正好，他找到了一把花，想把花放在茶里当药",
+    "explanation": "When the same subject continues in one sentence, do not repeat 他; leave the second subject out. Use 当药, not 对药, for using the flower as medicine."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1318,
+  "completion_tokens": 2962,
+  "total_tokens": 4280,
+  "prompt_tokens_details": {
+   "cached_tokens": 1078,
+   "cache_write_tokens": 237,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2418,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

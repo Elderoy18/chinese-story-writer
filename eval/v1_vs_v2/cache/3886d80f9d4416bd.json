@@ -1,0 +1,126 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近：住在离墓地太近的地方，The verb pattern is “住在 + place”; the location needs “在” and a noun phrase such as “地方.”\n2. [Grammar & Vocabulary, error] 害得孟子的心气：影响孟子的学习，“心气” means morale or ambition and cannot stand alone as the result after “害得” here; “影响孟子的学习” clearly states the negative effect.\n3. [Grammar & Vocabulary, error] 老是：一直，“老是” usually carries a negative, complaining tone. Use “一直” for the neutral idea that he keeps studying.\n4. [Coherence: reference, error] Coherence (Reference): 跟子思老师住：跟他住，Use a pronoun for a close re-occurrence when the previously named person has no competing referent.\n5. [Coherence: reference, error] Coherence (Reference): 孟母帮子思打扫房间和做饭：孟母帮他打扫房间和做饭，Use a pronoun for a close re-occurrence of the recently mentioned person.\n6. [Coherence: temporality, error] Coherence (Temporality): 孟子和孟母搬到子思老师的家：孟子和孟母搬到了子思老师的家，Add “了” to mark the completed move in this narrative sequence.\n7. [Coherence: temporality, error] Coherence (Temporality): 孟母帮子思打扫房间和做饭：孟母帮他打扫房间和做了饭，For a completed series of actions, only the last verb takes “了.”\n8. [Coherence: temporality, error] Coherence (Temporality): 子思帮孟母教她的儿子：子思帮孟母教了她的儿子，Add “了” to mark the completed helping action in the sequence.\n9. [Coherence: connectors, error] Coherence (Conjunction): 因为孟子现在没有朋友，：因为孟子现在没有朋友，所以，Use the paired connector “因为……所以……” to show the cause-and-effect relation.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住 needs 在 before the location, and the location needs a noun phrase such as 地方."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "害得 must be followed by a person and a harmful result clause, and 孟子的心气 is not a suitable result here."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是 can be used here and is not an error merely because it may carry a mildly negative tone."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思老师 was just mentioned and 他 clearly refers to him, so the repeated full name should be replaced by a pronoun."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思 was mentioned immediately before, so 他 is the appropriate close re-reference."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed narrative event, so 搬到 should take 了 as 搬到了."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "For the completed action series, the final verb should take 了: 打扫房间和做了饭."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "This is a completed helping action in the story sequence, so 教 should take 了."
+   },
+   {
+    "n": 9,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The problem is the reversed causal relation—he has no friends because he always studies—not merely a missing 所以."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2364,
+  "completion_tokens": 1949,
+  "total_tokens": 4313,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 713,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1384,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

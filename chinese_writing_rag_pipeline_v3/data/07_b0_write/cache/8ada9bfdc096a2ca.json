@@ -1,0 +1,137 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 在古代的时候  →  在古代的时候 → 在古代\n- 神农看了很多生病的人  →  看了 → 看到了  (看look vs.看到see)\n- 他找有的花  →  找有的花 → 找到一种植物  (找look for vs.找到find)\n- 神农现在知道哪个植物是毒  →  是毒 → 有毒\n- 他们吃毒植物  →  毒植物 → 有毒的植物\n- 他找到了很多有用植物  →  有用植物 → 有用的植物\n\nScene to review:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。",
+ "salt": "run3",
+ "output": {
+  "items": [
+   {
+    "clause": "所以他们找到了很多植物对药",
+    "corrected": "所以他们找到了很多植物当药",
+    "errors": [
+     {
+      "original": "对药",
+      "correction": "当药",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "当药 means “to use as medicine.” 对药 is not the correct expression here."
+     }
+    ]
+   },
+   {
+    "clause": "神农先看到很多病人",
+    "corrected": "神农先看到了很多病人",
+    "errors": [
+     {
+      "original": "看到",
+      "correction": "看到了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "This is a completed event in the sequence, so use 了 with 看到."
+     }
+    ]
+   },
+   {
+    "clause": "但是我觉得他们的吃的植物，让他们病人",
+    "corrected": "但是我觉得他们的吃的植物，让他们生病",
+    "errors": [
+     {
+      "original": "病人",
+      "correction": "生病",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "病人 is a noun meaning “patient.” Use 生病 for “become ill.”"
+     }
+    ]
+   },
+   {
+    "clause": "神农觉得这个植物可能特别是毒",
+    "corrected": "神农觉得这个植物可能特别有毒",
+    "errors": [
+     {
+      "original": "是毒",
+      "correction": "有毒",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 有毒 to say that a plant is poisonous."
+     }
+    ]
+   },
+   {
+    "clause": "所以他想找一个植物对药",
+    "corrected": "所以他想找一个植物当药",
+    "errors": [
+     {
+      "original": "对药",
+      "correction": "当药",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "当药 means “to use as medicine.”"
+     }
+    ]
+   },
+   {
+    "clause": "他们可以吃对药",
+    "corrected": "他们可以吃它当药",
+    "errors": [
+     {
+      "original": "吃",
+      "correction": "吃它",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "Use 它 to refer back to the plant mentioned in the previous clause."
+     },
+     {
+      "original": "对药",
+      "correction": "当药",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 当药, not 对药, for “as medicine.”"
+     }
+    ]
+   },
+   {
+    "clause": "他想把花放在茶里",
+    "corrected": "他想把它放在茶里",
+    "errors": [
+     {
+      "original": "花",
+      "correction": "它",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "The flower was just mentioned, so use the pronoun 它 here."
+     }
+    ]
+   },
+   {
+    "clause": "对药",
+    "corrected": "用来当药",
+    "errors": [
+     {
+      "original": "对药",
+      "correction": "用来当药",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "用来当药 means “to use as medicine.” 对药 is not correct here."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1152,
+  "completion_tokens": 4575,
+  "total_tokens": 5727,
+  "prompt_tokens_details": {
+   "cached_tokens": 1149,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3937,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

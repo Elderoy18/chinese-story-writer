@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，this/that + measure word + noun requires a measure word; “朵” is the appropriate measure word for a flower.\n2. [Grammar & Vocabulary, error] 特别是毒：特别有毒，“毒” is a noun here, so it cannot serve as the adjective predicate after “是”; use “有毒” to describe a poisonous plant.\n3. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝和夹竹桃，“的” makes one noun modify another and cannot join two separate plants; use “和” to coordinate the two nouns.\n4. [Grammar & Vocabulary, error] 写一个课文的植物：把这些植物记下来，“写” cannot take plants themselves as its object when the meaning is to record information; “记下” means to write down and preserve a record of the plants.\n5. [Coherence: temporality, error] Coherence (Temporality): 吃完了，也写：吃，也写了，when a series of completed actions is connected, only the last verb takes “了”; here the recording is the final completed action.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher requires 这/那 to be followed by a measure word and noun, and 朵 is correct for a flower."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "毒 is not an adjective predicate here; 特别有毒 is a correct way to describe the flower."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The intended meaning is that he ate lingzhi which can be used as an antidote to oleander, not that he ate two coordinated plants."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original wrongly makes 植物 the object of 写, while 把这些植物记下来 is grammatical and expresses recording them."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The excerpt ends mid-verb phrase, but the aspect change follows the teacher's rule that only the final action in a completed series takes 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2140,
+  "completion_tokens": 2405,
+  "total_tokens": 4545,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 489,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 神农的朋友给他这植物，和他没病了。\nquote: 神农的朋友给他这植物，和他没病了\npart p0: fix [ref p0/k0] 给了 ; notes: 了completed\npart p1: fix [ref p1/k0] 灵芝\npart p2: instruction [ref p2/k0] delete和, 和cannot link clauses\npart p3: fix [ref p3/k0] 病好了 ; notes: 没 +V., no了, the verb is an action verb",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "给",
+    "corrected": "给了",
+    "before": "农的朋友",
+    "after": "他这植物",
+    "note": "了completed",
+    "confidence": "high",
+    "reason": "adds completed-action 了 to 给"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "这植物",
+    "corrected": "灵芝",
+    "before": "朋友给他",
+    "after": "，和他没",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the plant reference with 灵芝"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "delete",
+    "original": "和",
+    "corrected": "",
+    "before": "这植物，",
+    "after": "他没病了",
+    "note": "和cannot link clauses",
+    "confidence": "high",
+    "reason": "deletes 和 between clauses"
+   },
+   {
+    "ref": "p3/k0",
+    "op": "replace",
+    "original": "没病了",
+    "corrected": "病好了",
+    "before": "物，和他",
+    "after": "",
+    "note": "没 +V., no了, the verb is an action verb",
+    "confidence": "high",
+    "reason": "replaces the illness phrase with the teacher's action-verb wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1062,
+  "completion_tokens": 514,
+  "total_tokens": 1576,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1059,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 273,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

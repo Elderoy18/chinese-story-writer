@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他难怪抱怨：难怪他抱怨，the sentence adverb 难怪 normally comes before the subject to introduce an understandable conclusion.\n2. [Grammar & Vocabulary, error] 想他的朋友：想念朋友，想 followed directly by a person usually means “think about”; 想念 expresses missing someone.\n3. [Grammar & Vocabulary, error] 不要离开：不想离开，use 不想 to express that a character does not want to do something; 不要 is usually a prohibition or refusal.\n4. [Grammar & Vocabulary, error] 找到孟子一个老师：给孟子找一个老师，when someone finds or seeks something for a recipient, place 给 + recipient before the verb.\n5. [Coherence: temporality, error] Coherence (Temporality): 找到：找到了，this is a completed past event, so add 了 after the result complement 到.\n6. [Coherence: temporality, error] Coherence (Temporality): 成为哲学家：成为了哲学家，use 了 to mark the completed change of state in this past narrative outcome.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "难怪 should precede the clause it comments on, so 难怪他抱怨 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The teacher explicitly accepts 想他的朋友 here, so replacing it with 想念 is only an optional wording change."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "不想离开 expresses that he did not want to leave, whereas 不要 is not appropriate here."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "给孟子 correctly places the recipient before the verb, but 给孟子找一个老师 still lacks the completed-event marking needed in this past narration."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Finding the teacher is a completed narrative event, so 找到了 correctly marks completion."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Becoming a philosopher is the completed outcome of the preceding events, so 成为了 is appropriate."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2153,
+  "completion_tokens": 1260,
+  "total_tokens": 3413,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 502,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 884,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

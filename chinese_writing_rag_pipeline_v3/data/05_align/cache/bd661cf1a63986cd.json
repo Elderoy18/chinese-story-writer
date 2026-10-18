@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 孟子的家人不是富有的，而是他们很穷。\nquote: 孟子的家人不是富有的，而是他们很穷\npart p0: fix [ref p0/k0] 很穷\npart p1: comment [ref p1/note] “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "不是富有的，而是他们",
+    "corrected": "",
+    "before": "孟子的家人",
+    "after": "很穷。",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix retains only 很穷"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "不是富有的，而是他们很穷",
+    "corrected": "",
+    "before": "孟子的家人",
+    "after": "。",
+    "note": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+    "confidence": "high",
+    "reason": "explains the inappropriate contrast construction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1027,
+  "completion_tokens": 144,
+  "total_tokens": 1171,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1024,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 吃灵芝以后，他可以再走。\nquote: 吃灵芝以后，他可以再走\npart p0: fix [ref p0/k0] 吃了 ; notes: 了completed\npart p1: fix [ref p1/k0] 又可以走了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "吃",
+    "corrected": "吃了",
+    "before": "",
+    "after": "灵芝以后",
+    "note": "了completed",
+    "confidence": "high",
+    "reason": "adds completed-action 了 to 吃"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "可以再走",
+    "corrected": "又可以走了",
+    "before": "灵芝以后，他",
+    "after": "。",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces 再 with 又 and adds sentence-final 了"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1002,
+  "completion_tokens": 119,
+  "total_tokens": 1121,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

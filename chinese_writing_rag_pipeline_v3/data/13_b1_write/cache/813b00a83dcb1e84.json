@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “孟子和孟子的妈妈一直住在墓地的旁边”: 孟子 → (deleted)\n- in “古代的时候”: 古代的时候 → 在古代\n- in “墓地的人真影响孟子”: 真 → 很   [her note: “真” is usually used in conversation]\n- in “他们新的家在商店的旁边”: 他们新的家 → 他们的新家\n- in “所以妈妈跟孟子一起搬家”: 所以 → (deleted)\n- in “可是孟子的妈妈一直很控制他”: 可是 → (deleted)\n\nScene to review:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子跟孟母住在墓地的旁边",
+    "corrected": "有一个孩子叫孟子，跟他的妈妈住在墓地的旁边",
+    "explanation": "孟子 is appearing for the first time, so introduce him with a noun phrase that says who he is. Then use 他的妈妈 to show who 孟母 is."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "可是",
+    "corrected": "",
+    "explanation": "可是 introduces a contrast, but there is no contrast between the two sentences."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "孟母注意，住在墓地的旁边影响孟子",
+    "corrected": "孟母注意到住在墓地的旁边影响孟子",
+    "explanation": "Use 注意到 when someone notices or becomes aware of a fact."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "祭拜玩",
+    "corrected": "玩祭拜的游戏",
+    "explanation": "玩 comes before the activity or game being played. 祭拜 cannot be placed before 玩 in this sentence."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "孟母决定他们会搬家",
+    "corrected": "孟母决定搬家",
+    "explanation": "After 决定, use the action that is decided. 会 is not used after 决定 here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1262,
+  "completion_tokens": 2370,
+  "total_tokens": 3632,
+  "prompt_tokens_details": {
+   "cached_tokens": 1259,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2049,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

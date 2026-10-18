@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “在古代有一个神农”: 一个神农 → 一个叫神农的老人\n- in “神农发现很多植物”: (nothing) → 了   [her note: 了completed]\n- in “他偶然看到了一朵美丽的黄花”: 他 → (deleted)   [her note: redundant]\n- in “他找到了很多有用植物”: 有用植物 → 有用的植物\n- in “晚上神农去了”: 晚上神农去了 → 神农是晚上去的\n- in “他现在是当医生”: 当 → (deleted)   [her note: redundant with是]\n\nScene to review:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他需要当上医",
+    "corrected": "他需要当医生",
+    "explanation": "上医 is not the usual word for a doctor in a beginner story. Say 医生 for “doctor.”"
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "神农听说一个远远的地方有一种植物",
+    "corrected": "神农听说在一个很远的地方有一种植物",
+    "explanation": "A location needs 在 before it here. 很远的地方 is the usual way to say “a very far-away place.”"
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "什么病人吃都会觉得身体更好",
+    "corrected": "病人吃了这种植物以后都会觉得身体更好",
+    "explanation": "什么病人 means “what kind of patient” and does not mean “all patients.” Include the plant as the object of 吃, and use 了以后 to show that they feel better after eating it."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "神农三个月走去，找到有植物的地方",
+    "corrected": "神农走了三个月，找到了有植物的地方",
+    "explanation": "Put the duration 三个月 after the verb 走. Use 了 because the walking and finding are completed actions."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "他看到一个很漂亮的植物",
+    "corrected": "看到一株很漂亮的植物",
+    "explanation": "神农 is already the subject in this sentence, so do not repeat him with 他. Use the measure word 株 for a plant."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1289,
+  "completion_tokens": 2221,
+  "total_tokens": 3510,
+  "prompt_tokens_details": {
+   "cached_tokens": 1045,
+   "cache_write_tokens": 241,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1848,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

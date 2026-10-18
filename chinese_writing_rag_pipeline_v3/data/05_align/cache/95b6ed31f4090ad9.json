@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 妈妈认为他们拿东西，所以她问了，他们为什么拿水果？\nquote: 所以她问了，他们为什么拿水果\npart p0: fix [ref p0/k0] 问 ; notes: no 了for speaking word\npart p1: fix [ref p1/k0] 你们 ; notes: in quoted speech",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "所以她问",
+    "after": "，他们为什么",
+    "note": "no 了for speaking word",
+    "confidence": "high",
+    "reason": "removes 了 after 问"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "他们",
+    "corrected": "你们",
+    "before": "以她问了，",
+    "after": "为什么拿水",
+    "note": "in quoted speech",
+    "confidence": "high",
+    "reason": "changes third person to second person in direct speech"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1015,
+  "completion_tokens": 123,
+  "total_tokens": 1138,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

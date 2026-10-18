@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 古代的生活很多的人吃很多的植物，可是一些的人一吃植物，就难受，肚子疼。\nquote: 古代的生活很多的人吃很多的植物\npart p0: fix [ref p0/k0-1] 古代，很多人每天都吃很多植物",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "古代的生活",
+    "corrected": "古代，",
+    "before": "",
+    "after": "很多的人",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix shortens the opening phrase and adds a pause comma"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "的",
+    "corrected": "",
+    "before": "古代的生活很多",
+    "after": "人吃很多的",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix uses 很多人"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "每天都",
+    "before": "生活很多的人",
+    "after": "吃很多的植",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix adds 每天都 before 吃"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "的",
+    "corrected": "",
+    "before": "的人吃很多",
+    "after": "植物，可是",
+    "note": "",
+    "confidence": "high",
+    "reason": "her fix uses 很多植物"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1005,
+  "completion_tokens": 349,
+  "total_tokens": 1354,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 127,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

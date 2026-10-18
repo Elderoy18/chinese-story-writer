@@ -1,0 +1,47 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\nScene 2: 他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections in other learners' similar clauses:\n- in “然后”: 然后 → (deleted)\n- in “夹竹桃是毒”: 是毒 → 有毒\n- in “神农吃以后”: (nothing) → 了   [her note: 了completed]\n- in “给他一个灵芝”: (nothing) → 了   [her note: 了completed]\n- in “然后另外一个人看见他”: 另外一个人 → 另外一个穿着棕色衣服的人   [her note: otherwise it will be ambiguous, as if there are two persons to see and ask 神农]\n- in “让每个人都知道什么植物能不能吃”: 什么植物能不能吃 → 什么植物能吃，什么植物不能吃\n\nScene to review:\n发现了夹竹桃有毒。别人看到他，很快给他吃一个灵芝。神农一吃就觉得比较好。然后，他继续写他发现的信息。会告诉他的朋友哪一个植物能不能吃。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "发现了夹竹桃有毒。",
+    "corrected": "他发现了夹竹桃有毒。",
+    "explanation": "Shennong was mentioned in the immediately preceding sentence, so use 他 to show clearly that he is the person who discovered this."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "别人看到他，很快给他吃一个灵芝。",
+    "corrected": "别人看到他，很快给他吃了一个灵芝。",
+    "explanation": "These are completed actions in a sequence. Only the last action takes 了, so use 吃了."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "会告诉他的朋友哪一个植物能不能吃。",
+    "corrected": "他会告诉他的朋友什么植物能吃，什么植物不能吃。",
+    "explanation": "After a recent mention of Shennong, use 他 as the subject. Also, say what plants can be eaten and what plants cannot be eaten; do not use 哪一个植物能不能吃."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1414,
+  "completion_tokens": 2611,
+  "total_tokens": 4025,
+  "prompt_tokens_details": {
+   "cached_tokens": 1411,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2345,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

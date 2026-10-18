@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “古代的时候”: 古代的时候 → 在古代\n- in “古代时候有一个男孩名叫孟子”: 古代时候 → 在古代\n- in “孟子和孟母住在小的城”: 小的城 → 一个小城市\n- in “在墓地做祭拜”: 做 → (deleted)\n- in “孟子和孟母才住在两个月”: 才住在 → 才住了   [her note: 了completed]\n- in “他们在墓地住”: 他们 → (deleted)   [her note: redundant]\n\nScene to review:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。",
+ "salt": "run1",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "古代的时候",
+    "corrected": "在古代",
+    "explanation": "Use 在古代 to mean “in ancient times.” 古代的时候 is not the usual expression here."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子和孟子的妈妈两个人",
+    "corrected": "孟子和妈妈两个人",
+    "explanation": "After saying 孟子 once in the same phrase, do not repeat his name to refer to his mother. Say 孟子和妈妈."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子和孟子的妈妈住在这里才一个星期就觉得受不了了",
+    "corrected": "孟子和妈妈住在这里才一个星期就觉得受不了了",
+    "explanation": "孟子 needs to be named again after the intervening information, but his mother can be called 妈妈 without repeating 孟子 in the same phrase."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "住在这里才一个星期就觉得受不了了",
+    "corrected": "在这里才住了一个星期就觉得受不了了",
+    "explanation": "They had lived there for one completed week before they felt they could not stand it, so 住 needs 了."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "而且害得孟子的学习",
+    "corrected": "而且这里的哭声影响了孟子的学习",
+    "explanation": "害得 must be followed by a result clause, not directly by a noun phrase such as 孟子的学习. Use 影响了孟子的学习 to say that something negatively affected his studies."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1279,
+  "completion_tokens": 4030,
+  "total_tokens": 5309,
+  "prompt_tokens_details": {
+   "cached_tokens": 1045,
+   "cache_write_tokens": 231,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3629,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nITEMS:\n\n[I0] 【孟子】小的时候   correction: (comment, no correction)   strength: error\n  checker's note: first appearance of 孟子: briefly introduce who this is\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦孟子⟧小的时候 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子⟧出生以后 — her note: better to briefly introduce “孟子” when this character first appears\n  her past correction: ⟦孟子是孩子⟧ — her note: no logic relationship with the preceding or following sentences\n\n[I1] 孟子和他的朋友喜欢【玩在墓地里】   correction: 玩在墓地里 → 在墓地里玩   strength: error\n  checker's note: 在 + Place comes before the action: 在Place + V.\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: ⟦孟子从早到晚想玩玩儿，所以他和朋友坐墓地在祭拜⟧ — her note: loosely connected with the preceding sentence\n  her past correction: 孟子一直跟他的朋友⟦去了⟧墓地祭拜 — her note: no了for routine/habit\n  her past correction: 孟子跟朋友[看→看到]很多的大人在墓地祭拜 — her note: 看look vs.看到see\n\n[I2] 装【^】祭拜   correction: ∅ → 作   strength: error\n  checker's note: 装作 means “pretend to”\n  rule card (conditional_jiu, Coherence: connectors): Use 只要……就 for an “as long as” condition, and use Subj. + 就 + V. to show the natural result; for an action that happens at an early age/number, use 才 Num.就V. Do not use 会 for this result, because 会 means “will” for the future.  Pattern: <wrong> → <correct>: <meaning/condition> leads naturally to <result>, so use 只要……就 or put the subject before 就 (Subj. + 就 + V.).  Her terms: 只要……就, Subj. + 就, Subj.+就, 才 Num.就V., 才Num.就V.\n  her past correction: [+就]开始祭拜 — her note: 才 Num.就V.\n  her past correction: 在墓地[-做]祭拜\n  her past correction: 而是[-他]祭拜\n\n[I3] 跟妈妈搬【^】家   correction: ∅ → 了   strength: error\n  checker's note: a completed move needs 了\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 跟孟母[-一起]搬家三次\n  her past correction: 跟孟母一起[搬家三次→搬了三次家] — her note: 了completed，V. + Num. + MW. + Obj.\n  her past correction: [+就]跟孟母一起搬家三次 — her note: 才 Num.就V.\n\n[I4] 而是【因为】妈妈认为他们的家离墓地太近   correction: 因为 → (delete)   strength: suggestion\n  rule card (modal_and_control_verb_complements, Grammar): 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了.  Pattern: <wrong> → <correct>: 想 needs a following action (想 + V.); use 想让 + <person> + <V.> if the person is meant to do the action.  Her terms: 想 + V., 叫/让 is a modal verb, no了\n  her past correction: 他的妈妈[不想跟他的朋友去墓地→不想让他跟朋友去墓地] — her note: otherwise it means his mother didn’t want to go with his friend to the graveyard.\n  her past correction: 孟子和他的妈妈住在离墓地很近[+的地方] — her note: 住在+Place\n  her past correction: 妈妈认为他们[拿东西→拿了墓地的东西] — her note: “东西” is too general and vague",
+ "salt": "repeat-run3",
+ "output": {
+  "items": [
+   {
+    "item_id": "I0",
+    "explanation": "This character appears for the first time, so please introduce 孟子 briefly with an identifying noun phrase, not only his name.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I1",
+    "explanation": "墓地里 is the location, so use 在+Place before the action: 在墓地里玩.",
+    "dimension": "grammar",
+    "corrected": "在墓地里玩",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I2",
+    "explanation": "装 needs 作 to mean “pretend to.” Use 装作+V., as in 装作祭拜.",
+    "dimension": "word_choice",
+    "corrected": "作",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I3",
+    "explanation": "This move was completed in the past, so add 了 after 搬: 搬了家.",
+    "dimension": "grammar",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I4",
+    "explanation": "It would be more natural to delete 因为, because 而是 already introduces the real reason.",
+    "dimension": "coherence_connectors",
+    "corrected": "因为 → (delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1721,
+  "completion_tokens": 472,
+  "total_tokens": 2193,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1718,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 201,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

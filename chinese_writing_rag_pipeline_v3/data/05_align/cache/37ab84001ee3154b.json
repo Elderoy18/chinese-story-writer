@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 不知道如果有毒，这就要看他的运气了。\nquote: 不知道如果有毒\npart p0: fix [ref p0/k0] 有没有毒 ; notes: the “if” in “not know if + clause” is not 如果",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "如果有毒",
+    "corrected": "有没有毒",
+    "before": "不知道",
+    "after": "，这就要",
+    "note": "the “if” in “not know if + clause” is not 如果",
+    "confidence": "high",
+    "reason": "replaces conditional 如果 with alternative-question 有没有"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 996,
+  "completion_tokens": 80,
+  "total_tokens": 1076,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nITEMS:\n\n[I41] 而是想【^】孟子有很好的教育   correction: ∅ → 让   strength: error\n  checker's note: 想 needs 让 before a person who is to do something\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 教育做完以后[+，]孟子考虑\n  her past correction: [教育做完→学完]以后孟子考虑\n  her past correction: 孟母一直想[+让]她的孩子受到良好的教育 — her note: 想 + V., cannot be followed by N.\n\n[I42] 而是想孟子【有】很好的教育   correction: 有 → 接受   strength: error\n  checker's note: one normally 接受 good education\n  rule card (laoshi_negative_repetition, Vocabulary): 老是 means “always” and is used for something negative or to complain; for a neutral or positive repeated action, use 一直 or 常常 instead.  Pattern: <老是 + action> → <一直/常常 + action>: the action is neutral or positive, not something negative to complain about, so do not use 老是.  Her terms: 老是\n  her past correction: 所以孟子[老是→一直]在学习 — her note: “老是“ for something negative, used to complain\n  her past correction: 教育做完以后[+，]孟子考虑\n  her past correction: [教育做完→学完]以后孟子考虑\n\n[I43] 他们搬【家】到有很多学校的城市   correction: 家 → (delete)   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他们搬到[+了]城市 — her note: 了completed\n  her past correction: [-他们]搬家每次学到了比较多\n  her past correction: 他们搬家每次学到了[比较多→很多知识]\n\n[I44] 他们搬家到【^】有很多学校的城市   correction: ∅ → 了   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他们搬到[+了]城市 — her note: 了completed\n  her past correction: [-他们]搬家每次学到了比较多\n  her past correction: 他们搬家每次学到了[比较多→很多知识]\n\n[I45] 【他难怪】抱怨   correction: 他难怪 → 难怪他   strength: suggestion\n  checker's note: 难怪 normally comes before the subject it explains\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 他[看得很麻烦的事情→看到很麻烦的情况]\n  her past correction: 因为他这么[无→无聊] — her note: 无聊？add所以\n  her past correction: ⟦害得他不高兴⟧ — her note: 害得 + harmful result, “不高兴” is not that “harmful”",
+ "salt": "repeat-run3",
+ "output": {
+  "items": [
+   {
+    "item_id": "I41",
+    "explanation": "想 cannot be followed directly by a person and a noun here. Use 想让 + person + verb: 想让孟子接受很好的教育.",
+    "dimension": "word_choice",
+    "corrected": "让",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I42",
+    "explanation": "We normally say 接受很好的教育, not 有很好的教育. Use 接受 for receiving an education.",
+    "dimension": "word_choice",
+    "corrected": "接受",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I43",
+    "explanation": "It would be more natural to say 搬到有很多学校的城市. Here 搬到 already expresses moving to the city.",
+    "dimension": "coherence_temporality",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I44",
+    "explanation": "It would be more natural to add 了 because the move is completed in the story: 搬到了. This is 了completed.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I45",
+    "explanation": "It would be more natural to put 难怪 before the subject: 难怪他抱怨. 难怪 introduces the reason that explains the subject's action.",
+    "dimension": "word_choice",
+    "corrected": "难怪他",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1491,
+  "completion_tokens": 534,
+  "total_tokens": 2025,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1488,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 237,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一看很多人正在吃一些植物：看到，一……就\n- 神农想帮别人：帮他们，“别(的)” is for “a different type”, and “all else except the spoken one”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This time expression is not idiomatic here; use the fixed historical-time phrase shown in the correction.\n2. [Grammar & Vocabulary, error] 看：看到，Use 看到 when the meaning is “see/notice”; 看 means “look at.”\n3. [Grammar & Vocabulary, error] 别人：人们，别人 distinguishes other people from the speaker or a previously mentioned person, while the sentence means people in general.\n4. [Coherence: connectors, error] Coherence (Conjunction): 一：delete 一，The pattern 一 + verb must be followed by 就; deleting 一 lets the sentence describe the next event normally after the ongoing action.\n5. [Coherence: connectors, error] Coherence (Conjunction): 神农想帮人们。所以想知道哪些植物能吃，哪些植物不能吃。：因为神农想帮人们，所以想知道哪些植物能吃，哪些植物不能吃。，Use 因为……所以…… to connect the cause with its result.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already expresses a historical time, so 古代的时候 is redundantly formed under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Here the intended meaning is noticing something, for which 看到 is the appropriate verb."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Vocabulary"
+    ],
+    "reason": "别人 is wrong here, but the recently mentioned group should be referred to as 他们 rather than the generic 人们."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "一 needs the matching 就 in the 一……就…… construction, and merely deleting it leaves the intended seeing event unfixed."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "Adding 因为 correctly completes the causal connector, but the displayed corrected sentence still uses 人们 where 他们 is required by the reference context."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2009,
+  "completion_tokens": 1851,
+  "total_tokens": 3860,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 358,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1516,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

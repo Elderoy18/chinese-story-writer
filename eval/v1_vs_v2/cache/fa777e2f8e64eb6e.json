@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar, error] 古代的时候 → 在古代 -- 古代 is the time/location setting, so use 在+Place before the action: 在古代。\n2. [Vocabulary, suggestion] 但是城市有才两个学校 → 但是城市只有才两个学校 -- It would be more natural to use 只 to mean “only” for the small number of schools.\n3. [Vocabulary, suggestion] 但是城市有才两个学校 → 但是城市有两个学校 -- It would be more natural to delete 才 here; 只 already expresses “only.”\n4. [Coherence: reference, error] 一个男孩子跟⟦他⟧的妈妈住在中… -- This character appears for the first time, so please introduce the boy briefly with a noun phrase before using 他.\n5. [Content, error] 所以孟子老是祭拜 → 所以孟子老是模仿别人办丧事 -- Here, 孟子 is copying funeral rituals, not actually worshipping. Use 模仿别人办丧事.\n6. [Content, error] 孟子不是祭拜 → 孟子不是模仿别人办丧事 -- Here, 孟子 is copying funeral rituals, not actually worshipping. Use 模仿别人办丧事.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代的时候 is redundant under the teacher's rule; 在古代 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "只有 should replace 有才, but 只有才两个学校 is still incorrect and 城市 should be 这个城市."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "Deleting 才 loses the intended meaning of “only” and still leaves the reference problem with 城市."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "一个男孩子 already introduces the boy, and 他的妈妈 is natural within that same noun phrase."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "祭拜 does not express that Mengzi is imitating other people holding funerals; 模仿别人办丧事 does."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "祭拜 is the wrong action here, while 模仿别人办丧事 gives the intended meaning."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2045,
+  "completion_tokens": 1402,
+  "total_tokens": 3447,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 394,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “而是她望子成龙”: 她 → (deleted)   [her note: Subj.不是……而是……]\n- in “他们搬到城市”: 搬到 → 搬到了   [her note: 了completed]\n- in “孟子在墓地和祭拜跟其他孩子”: 和 → (deleted)\n- in “所以他们要搬家”: 他们 → 我们   [her note: in quoted speech]\n- in “而是她觉得墓地不合适孩子们玩”: 不合适 → 不适合\n- in “每次搬家她都辛苦地工作，为了给孟子提供更好的学习环境”: 每次搬家她都辛苦地工作，为了给孟子提供更好的学习环境 → 为了给孟子提供更好的学习环境，每次搬家她都辛苦地工作   [her note: “为了……” cannot be in the latter clause]\n\nScene to review:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "有一天孟子去了墓地玩儿",
+    "corrected": "有一天，有一个孩子叫孟子，他去了墓地玩儿",
+    "explanation": "This is Mengzi's first appearance in the story, so introduce him with a noun phrase that says who he is, rather than using only his name."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "这是不合适的地方让孩子玩",
+    "corrected": "这是不适合孩子玩儿的地方",
+    "explanation": "Use 适合 for something being suitable for an activity or person. Say 不适合孩子玩儿的地方, with the activity before 的地方."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "她决定了他们会搬家找更好的地方",
+    "corrected": "她决定搬家，找更好的地方",
+    "explanation": "决定 is a mental-state verb, so it does not take 了 here. After 决定, use the action that was decided, such as 搬家, rather than 他们会搬家."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "住在这儿教育不太好",
+    "corrected": "这儿的教育不太好",
+    "explanation": "To say that the education in a place is not good, use the place phrase with 的 before 教育."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "她会一直搬家才能找到质量好的教育",
+    "corrected": "她要一直搬家，才能找到质量好的教育",
+    "explanation": "Use 要……才能…… to say that an action is necessary in order to achieve a result. 会 means “will” and does not fit this necessary-condition pattern."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1385,
+  "completion_tokens": 2268,
+  "total_tokens": 3653,
+  "prompt_tokens_details": {
+   "cached_tokens": 1382,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1874,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

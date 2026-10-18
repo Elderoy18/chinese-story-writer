@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nITEMS:\n\n[I167] 【旅行很远】找到很多植物   correction: 旅行很远 → 走了很远   strength: error\n  checker's note: 走了很远 is the natural way to express travelling a long distance here.\n  rule card (collocation_selection, Vocabulary): Use words with their normal collocations: a word must naturally match the noun, person, thing, action, or situation it describes. A grammatically possible combination may still sound unnatural in Chinese.  Pattern: <wrong> → <correct>: <word/expression> does not normally collocate with <noun/action/situation>; use <correct> instead.  Her terms: Time + 期间, V.得很厉害, 着durative, no了for habit/routine\n  her past correction: 所以他[走路旅行找足多→步行去找很多]不同的植物\n  her past correction: [-他]在这个旅程尝了很多植物 — her note: redundant\n  her past correction: 他尝[+了]很多植物 — her note: 了completed\n\n[I168] 旅行很远【找到】很多植物   correction: 找到 → 找到了   strength: error\n  checker's note: the completed discovery needs 了.\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction: 所以他[走路旅行找足多→步行去找很多]不同的植物\n  her past correction: 他找到了很多[-的]中国的植物\n\n[I169] 神农写【^】他的主意   correction: ∅ → 了   strength: error\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农吃[+了]以后 — her note: 了completed\n  her past correction: 他给[+了]神农灵芝 — her note: 了completed\n  her past correction: 神农就想到了一个好[-的]主意\n\n[I170] 神农遇到了一【个】黄色的花   correction: 个 → 朵   strength: error\n  checker's note: 朵 is the measure word for flowers.\n  rule card (search_find, Vocabulary): 找 means “look for.” Use 找到 when the person successfully finds something.  Pattern: <wrong> → <correct>: the person successfully finds <object>, so use 找到, not 找.  Her terms: 找look for vs.找到find\n  her past correction: 神农找[+到]了一个很漂亮的花 — her note: 找look for vs.找到find\n  her past correction: [-他]偶然看到了一朵美丽的黄花 — her note: redundant\n  her past correction: 他发现[-了]黄色花有毒 — her note: 发现is a mental state verb, no了",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I167",
+    "explanation": "旅行很远 does not normally collocate with this action here; use 走了很远 instead.",
+    "dimension": "word_choice",
+    "corrected": "走了很远",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I168",
+    "explanation": "Finding the plants is completed in the story, so it takes 了 (了completed): 找到了.",
+    "dimension": "coherence_temporality",
+    "corrected": "找到了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I169",
+    "explanation": "Writing down his ideas is completed in the story, so it takes 了 (了completed): 写了.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I170",
+    "explanation": "Use 朵 as the measure word for flowers, not 个.",
+    "dimension": "word_choice",
+    "corrected": "朵",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1298,
+  "completion_tokens": 231,
+  "total_tokens": 1529,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1295,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 25,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

@@ -1,0 +1,126 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar, error] 凉山很大的山 → 凉山是一座很大的山 -- For one mountain, use 是一座 before the description.\n2. [Grammar, error] 他找到黄色的花 → 他找到一朵黄色的花 -- A single flower needs the measure word 朵. Say 一朵黄色的花.\n3. [Grammar, error] …跟黄色的花做茶很有用 → …跟黄色的花做的茶很有用 -- The phrase before 茶 modifies it, so add 的: 做的茶.\n4. [Grammar, error] 你的头发疼死 → 你的头发疼死了 -- Add 了 after 疼死 to show the resulting state.\n5. [Vocabulary, error] 他听说你跟黄色的花做茶… → 他听说用黄色的花做茶… -- Use 用 to say “use yellow flowers to make tea.”\n6. [Vocabulary, error] 你的头发疼死 → 你的头疼死 -- 头发 means “hair.” For a headache, say 头疼.\n7. [Vocabulary, suggestion] 他一喝茶就很不舒服 → 他一喝茶就觉得很不舒服 -- It would be more natural to say 觉得很不舒服 to describe how he feels after drinking the tea.\n8. [Coherence: reference, error] 这也找植物 → 他也找植物 -- 这 refers to a thing, but the person looking for plants is Shennong. Use 他.\n9. [Coherence: reference, error] 这冰茶是药 → 这种茶是药 -- 这种茶 means “this kind of tea” and clearly refers to the tea just mentioned.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original lacks the copular and measure-word structure needed to identify Liangshan as a mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The teacher requires 一种黄色的花 because 黄色的花 remains too vague; 一朵 changes it to one individual flower without resolving that problem."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The intended construction is 用黄色的花做茶, while 跟黄色的花做的茶 is not a correct way to express using the flowers to make tea."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发 means hair, and adding 了 does not correct the wrong body-part word."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Changing 你跟 to 用 correctly expresses using flowers to make tea, but 黄色的花 remains too vague under the teacher's correction."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Changing 头发 to 头 correctly addresses the hair/head confusion, but the shown wording still retains 你 and is not the teacher's fully correct expression."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "他一喝茶就很不舒服 is already grammatical and natural; 觉得 is optional rather than required."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The original should refer to the location as 在这儿 and say that plants can be found there, not change the meaning to him looking for plants."
+   },
+   {
+    "n": 9,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这种茶 is a correct this-kind-of-tea reference and fixes the missing measure word after 这."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2229,
+  "completion_tokens": 2322,
+  "total_tokens": 4551,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 578,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1728,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,47 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “孟子跟他的妈妈已经搬家了”: 已经 → 就又\n- in “孟子的妈妈每天从早到晚做工作”: 做 → (deleted)\n- in “他的妈妈告诉他”: 他的 → 孟子的   [her note: “他的” is ambiguous]\n- in “在墓地做祭拜”: 做 → (deleted)\n- in “孟子决定他可以学习和高兴”: 孟子决定 → (deleted)\n- in “从早到晚看和写文章”: 看和写文章 → 看书、写文章   [her note: 和cannot connect verb phrases]\n\nScene to review:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "孟子和他妈妈住在中国",
+    "corrected": "有一个小男孩叫孟子，和妈妈住在中国",
+    "explanation": "When a character appears for the first time, introduce who they are, not only their name. Here, say that Mengzi is a little boy."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "孟子不高兴，因为他说我们老是搬家，为什么？",
+    "corrected": "孟子不高兴，说：“我们为什么老是搬家？”",
+    "explanation": "These are Mengzi's direct words, so introduce them with 说 and quotation marks. In this question, 为什么 comes before the action 搬家."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "很多墓地得我祭拜",
+    "corrected": "我得在很多墓地祭拜",
+    "explanation": "The person who must do something comes before 得. A place phrase with 在 comes before the verb 祭拜."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1300,
+  "completion_tokens": 3176,
+  "total_tokens": 4476,
+  "prompt_tokens_details": {
+   "cached_tokens": 1297,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2916,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

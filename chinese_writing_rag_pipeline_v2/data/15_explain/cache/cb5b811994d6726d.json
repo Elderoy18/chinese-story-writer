@@ -1,0 +1,103 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nITEMS:\n\n[I298] 【古代的时候】有一个人叫神农   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: ⟦很久以前，在古代⟧有一个叫神农的老人 — her note: “很久以前“ and ”在古代” are redundant, only keep one\n  her past correction: 在古代[有一个神农→有一个叫神农的老人]\n  her past correction: 这是一个⟦神农⟧的古代故事 — her note: better to briefly introduce “神农” when this character first appears\n\n[I299] 他需要当【上】医   correction: 上 → (delete)   strength: suggestion\n  rule card (redundant_words, Other): Delete words, names, time phrases, or repeated structures when they add no new meaning or repeat information already given. For example, do not add 当 after 是, and do not use two words that express the same time or idea.  Pattern: <wrong> → <correct>: <deleted part> is redundant because <the remaining word(s)> already expresses this meaning.  Her terms: redundant, redundant with是, redundant with看起来\n  her past correction: 他现在是[-当]医生 — her note: redundant with是\n  her past correction: [+他]就生病了 — her note: otherwise it is ambiguous who gets sick\n  her past correction: [-和]他没病了 — her note: 和cannot link clauses\n\n[I300] 他需要当上【医】   correction: 医 → 医生   strength: error\n  checker's note: 医 alone is not the usual word for a doctor here\n  rule card (missing_or_unclear_subject, Grammar): State the Subj. when leaving it out would make it unclear who does the action. Restate the Subj. after a different Subj. or an inserted “narrator comment” before returning to the main story.  Pattern: <wrong> → <correct>: Add <Subj.> because otherwise it is unclear who <action>; the previous <Subj./narrator comment> cannot continue here.  Her terms: Subj., narrator comment\n  her past correction: [+他]就生病了 — her note: otherwise it is ambiguous who gets sick\n  her past correction: 他现在是[-当]医生 — her note: redundant with是\n  her past correction: 人[+是]正好生病还是百草让他们生病了\n\n[I301] 一【看】别的人就想帮助他们   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 他[+就]想帮忙\n  her past correction: 他一[看→看到]神农就帮他 — her note: 看look vs.看到see\n  her past correction: [-他]想帮他们 — her note: redundant\n\n[I302] 【他】不知道什么东西能做药   correction: 他 → (delete)   strength: error\n  checker's note: 他 repeats the subject of the clause before: zero form\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-他]看到了药 — her note: redundant\n  her past correction: 所以⟦他⟧走路走了很长的时间找药 — her note: use神农instead of他to avoid ambiguity\n  her past correction: ⟦它⟧可以做药 — her note: “它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine\n\n[I303] 神农听说【^】一个远远的地方有一种植物   correction: ∅ → 在   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农的朋友给[+了]他这植物 — her note: 了completed\n  her past correction: 神农找[+到]了一个很漂亮的花 — her note: 找look for vs.找到find\n  her past correction: 神农加下去很多[-的]植物\n\n[I304] 神农听说一个【远远】的地方有一种植物   correction: 远远 → 很远   strength: suggestion\n  checker's note: 很远的地方 is the standard expression\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 神农在他[远走→远行]的过程中碰见了一个长得像太阳的花儿 — her note: “远走” indicates leave something behind and go to a place far away\n  her past correction: 神农加下去很多[-的]植物\n  her past correction: 所以神农走了很长的时间找到[植物药→能做药的植物]\n\n[I305] 什么病人吃【^】都会觉得身体更好   correction: ∅ → 了   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 有的人吃的生病[+了]\n  her past correction: 感觉得身体健康[+了]\n  her past correction: 他问那些生病人[+吃了什么，]觉得这儿应该有毒\n\n[I306] 神农三个月【走去】   correction: 走去 → 走着   strength: error\n  checker's note: her pattern: 走去 -> 走着 (corrected 5/5 in train)\n  rule card (zhe_durative, Coherence: temporality (了/着/在)): Use 着 for a durative, accompanying, or static state. When one action accompanies the main action, use V.着 + V2 (for example, 牵着驴走).  Pattern: <wrong> → <correct>: <V> is a durative/accompanying action while <main action> happens, so use 着 (着durative).  Her terms: 着durative, 了completed, V.着\n  her past correction: 神农一走路就[-走]到了\n  her past correction: 神农很常[走去→走着]找饭 — her note: 走着durative\n  her past correction: 神农[+去]爬山\n\n[I307] 找到有【^】植物的地方   correction: ∅ → 这种   strength: error\n  checker's note: it should refer to the specific plant mentioned earlier\n  rule card (demonstrative_reference, Coherence: reference): Use 这个/这种/这些/有的 + N. only when the preceding context makes exactly which person, thing, place, or set clear. If it is already a known event, use 这样的 + N.; if the reference is unclear, name it more specifically.  Pattern: <wrong reference> → <correct reference>: the preceding context does not identify exactly which <person/thing/place/set> this refers to.\n  her past correction: 因为我们不知道[+这个]植物是什么\n  her past correction: 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction: 他找到了很多[-的]中国的植物\n\n[I308] 他看到一【个】很漂亮的植物   correction: 个 → 株   strength: error\n  checker's note: 株 is the measure word for plants\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 他一[看→看到]植物就吃 — her note: 看look vs.看到see\n  her past correction: 然后他们[看了→看到了]很多植物 — her note: 看look vs.看到see\n  her past correction: 他一[看→看到]花 — her note: 看look vs.看到see",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I298",
+    "explanation": "古代 is the location/time setting, so use 在+Place before the action: 在古代有一个人叫神农。",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I299",
+    "explanation": "It would be more natural to delete 上 because 当 already expresses becoming a doctor here.",
+    "dimension": "other",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I300",
+    "explanation": "医 alone is not the usual word for a doctor here. Use 医生.",
+    "dimension": "word_choice",
+    "corrected": "医生",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I301",
+    "explanation": "He actually sees the other people, so use 看到see, not 看look.",
+    "dimension": "word_choice",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I302",
+    "explanation": "他 is already clear from the previous clause, so delete it; Chinese uses zero form here.",
+    "dimension": "coherence_reference",
+    "corrected": "(delete)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I303",
+    "explanation": "It would be more natural to use 在 before the place: 听说在一个远远的地方有一种植物。",
+    "dimension": "grammar",
+    "corrected": "在",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I304",
+    "explanation": "It would be more natural to say 很远的地方; this is the standard expression for a faraway place.",
+    "dimension": "word_choice",
+    "corrected": "很远",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I305",
+    "explanation": "It would be more natural to use 了completed after 吃, because feeling better happens after the patient has eaten the plant.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I306",
+    "explanation": "走 is a durative action while he finds the place, so use 着durative: 走着。",
+    "dimension": "coherence_temporality",
+    "corrected": "走着",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I307",
+    "explanation": "The plant was mentioned earlier, so use 这种 to refer to that specific kind of plant.",
+    "dimension": "coherence_reference",
+    "corrected": "这种",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I308",
+    "explanation": "Use 株 as the measure word for a plant.",
+    "dimension": "word_choice",
+    "corrected": "株",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2936,
+  "completion_tokens": 832,
+  "total_tokens": 3768,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2933,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 301,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜。\nquote: 他的妈妈告诉孟子他们不是做画画儿，就是做祭拜\npart p0: fix [ref p0/k0-1] 不是在画画儿，而是在祭拜\npart p1: comment [ref p1/note] 不是……就是…… is “either…or…”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "不是做画画儿，就是做祭拜",
+    "corrected": "不是在画画儿，而是在祭拜",
+    "before": "告诉孟子他们",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the either-or action phrase with the teacher's contrast construction"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "不是做画画儿，就是做祭拜",
+    "corrected": "",
+    "before": "告诉孟子他们",
+    "after": "",
+    "note": "不是……就是…… is “either…or…”",
+    "confidence": "high",
+    "reason": "explains the meaning of the original 不是……就是…… construction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1026,
+  "completion_tokens": 150,
+  "total_tokens": 1176,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

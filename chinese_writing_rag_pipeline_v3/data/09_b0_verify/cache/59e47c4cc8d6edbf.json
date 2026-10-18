@@ -1,0 +1,74 @@
+{
+ "input": "Scene:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。\n\nCorrections to check:\n1. 他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处  →  他看到了有很多人不知道哪种植物好吃，也不知道什么植物对他们的身体有好处   [grammar]\n2. 所以神农去了吃每种植物  →  所以去吃每种植物   [coherence: reference]\n3. 他吃了一种植物以后，就写了这个植物对你有没有好处  →  他吃了一种植物以后，就写了它对人的身体有没有好处   [coherence: reference]\n4. 有的时候，神农吃了很好吃的植物  →  有的时候，神农吃很好吃的植物   [coherence: temporality]\n5. 有的时候，他吃了很危险的植物  →  有的时候，他吃很危险的植物   [coherence: temporality]\n6. 他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了  →  他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物   [coherence: temporality]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "“哪个植物” and generic “你” are acceptable here, though the revision is more natural."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "“去了吃” is not a natural verb sequence here; it should be “去吃.”"
+   },
+   {
+    "n": 3,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "“这个植物” and generic “你” can both refer appropriately in this context."
+   },
+   {
+    "n": 4,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "Perfective “了” can describe the individual past occasions introduced by “有的时候.”"
+   },
+   {
+    "n": 5,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "Perfective “了” is acceptable for past instances of eating dangerous plants."
+   },
+   {
+    "n": 6,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "temporality",
+    "reason": "The final “了” is not definitely wrong, although removing it makes the habitual reading smoother."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 734,
+  "completion_tokens": 1909,
+  "total_tokens": 2643,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1596,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

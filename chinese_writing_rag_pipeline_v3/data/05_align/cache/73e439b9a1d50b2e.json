@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 我妈妈常常说：“人类就是这样，我们地位低的水果，虽然是世界上最美丽的梨子，但人类总是会把我们算是小吃而已”。\nquote: 我们地位低的水果，虽然是世界上最美丽的梨子，但人类总是会把我们算是小吃而已\npart p0: fix [ref p0/k1] 虽然是世界上最美丽的 ; notes: 水果是……梨子 is not very precise, 我们地位低的水果\npart p1: comment [ref p1/note] 把我们只算作小吃而已：只/不过/才(+num.) + 而已，Subj.算是Obj., “算是”usually is not used in “把”",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k1",
+    "op": "delete",
+    "original": "梨子",
+    "corrected": "",
+    "before": "最美丽的",
+    "after": "，但人类",
+    "note": "水果是……梨子 is not very precise, 我们地位低的水果",
+    "confidence": "high",
+    "reason": "her fix omits 梨子 after 的"
+   },
+   {
+    "ref": "p1/note",
+    "op": "replace",
+    "original": "把我们算是小吃而已",
+    "corrected": "把我们只算作小吃而已",
+    "before": "但人类总是会",
+    "after": "。",
+    "note": "把我们只算作小吃而已：只/不过/才(+num.) + 而已，Subj.算是Obj., “算是”usually is not used in “把”",
+    "confidence": "high",
+    "reason": "the comment supplies the corrected phrasing"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1119,
+  "completion_tokens": 386,
+  "total_tokens": 1505,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1116,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 191,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

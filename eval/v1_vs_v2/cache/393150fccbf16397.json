@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThis scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's feedback items:\n1. [Vocabulary, error] 而是想孟子有很好的… → 而是想让孟子有很好的… -- 想 cannot be followed directly by a person and a noun here. Use 想让 + person + verb: 想让孟子接受很好的教育.\n2. [Vocabulary, error] 而是想孟子有很好的教育 → 而是想孟子接受很好的教育 -- We normally say 接受很好的教育, not 有很好的教育. Use 接受 for receiving an education.\n3. [Vocabulary, suggestion] 他难怪抱怨 → 难怪他抱怨 -- It would be more natural to put 难怪 before the subject: 难怪他抱怨. 难怪 introduces the reason that explains the subject's action.\n4. [Coherence: 了 / 着 / 在, suggestion] 他们搬家到有很多学校… → 他们搬到有很多学校… -- It would be more natural to say 搬到有很多学校的城市. Here 搬到 already expresses moving to the city.\n5. [Coherence: 了 / 着 / 在, suggestion] 他们搬家到有很多学校的… → 他们搬家到了有很多学校的… -- It would be more natural to add 了 because the move is completed in the story: 搬到了. This is 了completed.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "想 cannot directly take 孟子有很好的教育; adding 让 fixes that structure, but the shown text is truncated and still does not use the needed education collocation."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "接受很好的教育 is the appropriate collocation, but 想孟子接受…… still lacks 让 and is not fully correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "难怪 should introduce the whole clause, so 难怪他抱怨 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "搬家到某地 is acceptable Chinese; removing 家 is only an optional rewording, and the shown correction is cut off."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The completed move needs perfective 了 in this narrative, and 搬家到了 can express this, but the shown corrected text is cut off."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2231,
+  "completion_tokens": 1783,
+  "total_tokens": 4014,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 580,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1428,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

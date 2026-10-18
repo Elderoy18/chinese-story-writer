@@ -1,0 +1,54 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “人们不知道什么植物是不是能吃的”: 什么植物是不是能吃的 → 什么植物是能吃的，什么植物是不能吃的\n- in “因为他们常常生病了”: 了 → (deleted)   [her note: no了for routine/habit]\n- in “在古代有一个神农”: 一个神农 → 一个叫神农的老人\n- in “神农开始找我们可以吃的植物”: 找我们可以吃的植物 → 找到可以吃的植物\n- in “他们搬家每次学到了比较多”: 他们搬家每次学到了比较多 → 每次搬家都学到了很多知识\n- in “比方说”: 比方说 → (deleted)   [her note: 是不是有用了。比方说is used to express “for example”, delete it]\n\nScene to review:\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。",
+ "salt": "run3",
+ "output": {
+  "errors": [
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "神农和他的家人住在古代",
+    "corrected": "有一个叫神农的人，他和家人生活在古代",
+    "explanation": "神农 appears for the first time here, so introduce him with a noun phrase that says who he is. Use 生活在古代, because 古代 is a time period, not a place where someone 住."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "常常生病了",
+    "corrected": "常常生病",
+    "explanation": "常常 shows a routine or repeated situation, so do not use 了, which marks a completed action."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他们去很多不一样的地方",
+    "corrected": "他们去了很多不一样的地方",
+    "explanation": "This describes completed visits during their trip, so 去 needs 了."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "比方说高山、山谷和沙漠",
+    "corrected": "高山、山谷和沙漠",
+    "explanation": "Here the places are the list of places they went to, so 比方说 is not needed."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1312,
+  "completion_tokens": 1817,
+  "total_tokens": 3129,
+  "prompt_tokens_details": {
+   "cached_tokens": 1309,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

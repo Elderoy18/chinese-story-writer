@@ -1,0 +1,50 @@
+{
+ "input": "Scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nCorrections to check:\n1. 古代的时候  →  在古代   [grammar]\n2. 他叫孟子  →  叫孟子   [coherence: reference]\n3. 他很喜欢他的城市，但是城市有才两个学校，都很小  →  他很喜欢他的城市，但是城市才有两个学校，都很小   [grammar]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "古代的时候 is already grammatical and acceptable, though 在古代 is more concise."
+   },
+   {
+    "n": 2,
+    "is_error": "no",
+    "correction_ok": "yes",
+    "dimension": "coherence",
+    "coherence_type": "reference",
+    "reason": "Using 他 to introduce the boy's name is natural and does not need correction."
+   },
+   {
+    "n": 3,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "才 should precede 有 in this sentence to mean that the city has only two schools."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 514,
+  "completion_tokens": 434,
+  "total_tokens": 948,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 285,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

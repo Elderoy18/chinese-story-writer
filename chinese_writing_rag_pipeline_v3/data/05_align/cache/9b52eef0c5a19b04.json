@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 有一位餐馆的老板决定世界旅行找新植物做饭。\nquote: 有一位餐馆的老板决定世界旅行找新植物做饭\npart p0: fix [ref p0/k0] 环球旅行\npart p1: comment [ref p1/note] please introduce 神农",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "世界旅行",
+    "corrected": "环球旅行",
+    "before": "老板决定",
+    "after": "找新植物做饭",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the travel phrase with her correction"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "有一位餐馆的老板决定世界旅行找新植物做饭",
+    "corrected": "",
+    "before": "",
+    "after": "",
+    "note": "please introduce 神农",
+    "confidence": "high",
+    "reason": "comment requests introducing 神农 without a narrower text span"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1007,
+  "completion_tokens": 193,
+  "total_tokens": 1200,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 62,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

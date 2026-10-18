@@ -1,0 +1,108 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun predicate needs the linking verb 是 here, and mountains are counted with the measure word 座.\n2. [Grammar & Vocabulary, error] 这也找植物：神农也在这里找植物，Use 这里 for a location. After the sentence changes from describing 凉山 to describing the character’s action, name the character again to make the subject clear.\n3. [Grammar & Vocabulary, error] 一天，他找到黄色的花：一天，他找到了一种黄色的花，Use 一种 to introduce one kind of flower, and add 了 because the finding is completed.\n4. [Grammar & Vocabulary, error] 你跟黄色的花做茶很有用：用黄色的花做的茶很有用，跟 cannot mean “use” in this verb phrase. Use 用 for the material, and add 的 after 做 to describe the tea made from the flowers.\n5. [Grammar & Vocabulary, error] 你的头发疼死：你的头疼死了，头发 cannot feel pain; 头 means “head.” Add 了 after 疼死 to show the painful state has occurred.\n6. [Grammar & Vocabulary, error] 这冰茶是药：这种茶是药，冰茶 means “iced tea,” but the context refers to the tea made from the yellow flowers. 种 is the appropriate measure word for a kind of tea.\n7. [Coherence: connectors, error] Coherence (Conjunction): 他一喝茶就很不舒服：可是，他一喝茶就很不舒服，Use 可是 to mark contrast: the tea was said to be useful, but it makes him feel uncomfortable.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original lacks 是 and the required measure word for a mountain; 一座很大的山 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这 cannot serve as the location/subject in this clause; 神农也在这里找植物 is a correct replacement."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "一种 properly introduces the flower type, and 找到了 marks the completed finding."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "用 and 做的 correctly repair the construction, but 黄色的花 remains the overly vague flower reference the teacher corrected."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "头 replaces the incorrect 头发, but the unexplained 你的 remains instead of the contextually appropriate zero reference."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 needs a measure word before the noun, and 这种茶是药 is grammatical and fits the context."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The contrast is understandable without 可是, so adding it is optional rather than a correction of an error."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2232,
+  "completion_tokens": 3325,
+  "total_tokens": 5557,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 581,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2860,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

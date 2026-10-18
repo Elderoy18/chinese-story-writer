@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n别的人给了神农一个灵芝。这个植物可以让神农更好。比方说，他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。\n\nITEMS:\n\n[I271] 别的人给了神农一【个】灵芝   correction: 个 → 朵   strength: error\n  checker's note: 灵芝 normally uses the measure word 朵\n  rule card (ask_request_verbs, Vocabulary): 问 is for asking a question. For “ask for help,” use 请人 or 找别人帮忙; for “ask somebody to do something,” use 请 or 让.  Pattern: <wrong> → <correct>: here “ask” means <ask for help / ask somebody to do something>, not asking a question, so do not use 问.\n  her past correction: 他给[+了]神农灵芝 — her note: 了completed\n  her past correction: 神农[问人帮他→请人]给他灵芝 — her note: the “ask” in “ask for help” is not问\n  her past correction: 他们给[+了]神农灵芝 — her note: 了completed\n\n[I272] 这个植物可以让神农【^】更好   correction: ∅ → 变得   strength: suggestion\n  rule card (modifier_de_structure, Grammar): Use 的 after a modifier when it describes a noun, especially a longer phrase such as 人类创造的文明 or 能吃的植物. Do not add 的 after quantity words or fixed modifiers where it is not needed, such as 很多人, 一些人, 今天清晨, 蓝色衣服, and 好主意.  Pattern: <wrong> → <correct>: <modifier> describes the noun <noun>, so use 的; or <modifier> does not need 的 here, so omit it.  Her terms: no的\n  her past correction: 神农的朋友给[+了]他这植物 — her note: 了completed\n  her past correction: 神农加下去很多[-的]植物\n  her past correction: 所以神农去找[一些植物，对身体有好处→一些对身体有好处的植物]\n\n[I273] 【吃】灵芝以后   correction: 吃 → 吃了   strength: error\n  checker's note: a specific completed eating action usually takes 了\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农[吃→吃了]灵芝以后 — her note: 了completed\n  her past correction: 灵芝一吃[+灵芝]就正好\n  her past correction: 灵芝一吃[就正好→身体就好了]\n\n[I274] 现在他觉得更好【^】   correction: ∅ → 了   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: [神农→感觉]越来越好\n  her past correction: [-他们的]身体越来越好 — her note: redundant\n  her past correction: 感觉得身体健康[+了]\n\n[I275] 他可以【用对药】   correction: 用对药 → 用来做药   strength: error\n  checker's note: 用 needs 用来做药 here\n  rule card (ambiguous_pronoun, Coherence: reference): Use 他/她/它/他们 only when it is clear who or what they refer to. If more than one person or thing is possible, repeat the name or use a clear noun phrase.  Pattern: <wrong pronoun> → <clear name/noun phrase>: <pronoun> is ambiguous; it can refer to <possible referent(s)>.\n  her past correction: [给→给了]他一些药 — her note: 了completed\n  her past correction: ⟦它⟧可以做药 — her note: “它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine\n  her past correction: [-他]看到了药 — her note: redundant",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I271",
+    "explanation": "灵芝 normally uses the measure word 朵, not 个.",
+    "dimension": "word_choice",
+    "corrected": "朵",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I272",
+    "explanation": "It would be more natural to say 变得更好 to show that Shennong’s condition changes.",
+    "dimension": "grammar",
+    "corrected": "变得",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I273",
+    "explanation": "吃 is completed before 以后 in the story, so it takes 了completed: 吃了灵芝以后.",
+    "dimension": "coherence_temporality",
+    "corrected": "吃了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I274",
+    "explanation": "It would be more natural to add 了completed/change: 他现在觉得更好了.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I275",
+    "explanation": "Use 用这些植物来做药 here. 用来做药 needs a clear object—the plants—to show what Shennong uses.",
+    "dimension": "word_choice",
+    "corrected": "用这些植物来做药",
+    "correction_changed": true
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1505,
+  "completion_tokens": 494,
+  "total_tokens": 1999,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1502,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 234,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

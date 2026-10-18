@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代时候，人不知道他们能吃什么植物：古代的时候，人们\n- 所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears\n- 告诉人什么植物是安全什么是危险：是安全的，是危险的\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n\nThe system's feedback items:\n1. [Grammar, error] …么植物是安全什么是危险 → …么植物是安全的什么是危险 -- 安全 describes 植物, so use 的: 安全的植物.\n2. [Grammar, error] …全什么是危险 → …全什么是危险的 -- 危险 describes 植物, so use 的: 危险的植物.\n3. [Vocabulary, error] 所以有一天 → 于是有一天 -- Use 于是 to introduce the resulting action naturally here, not 所以.\n4. [Vocabulary, error] 神农出去试一试很多种植物 → 神农出去尝一尝很多种植物 -- 试一试 does not naturally collocate with plants in this situation. Use 尝一尝 to mean tasting plants to find out whether they are edible.\n5. [Coherence: reference, error] 人不知道他们能吃什么植物 → 人不知道自己能吃什么植物 -- With generic 人, use 自己 to refer back to the same people, not 他们.\n6. [Coherence: reference, error] ⟦神农⟧出去试一试很… -- 神农 appears for the first time, so please briefly introduce him, for example as a person who tried plants.\n7. [Other, error] 古代时候 → 古代 -- 时候 is redundant because 古代 already expresses the time.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“安全” here needs the structural particle 的, but the displayed correction still leaves the later “危险” without 的 (and lacks separation)."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“危险” also needs 的 here, but the displayed correction still contains the earlier uncorrected “安全” without 的."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“所以有一天” is acceptable in this narrative context; “于是” is only an optional stylistic alternative."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“试一试很多种植物” can mean testing different plants and is acceptable here, although “尝一尝” is more specific."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "For the same generic people as the subject, “自己” is the appropriate reference, but the correction still leaves the concrete-group use of “人” instead of “人们”."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 is first introduced here and should be briefly identified rather than appearing without introduction."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“古代时候” lacks the required 的; replacing the whole phrase with “古代” is also grammatical and correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2135,
+  "completion_tokens": 1659,
+  "total_tokens": 3794,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 484,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1186,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

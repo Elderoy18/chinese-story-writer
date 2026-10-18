@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不合适的地方让孩子玩：不适合孩子玩耍的地方，适合 takes the person or activity it is suitable for as its object; this phrase needs to say that the place is unsuitable for a child’s play.\n2. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，use a possessive phrase to show that the education belongs to this place; otherwise, the location phrase cannot clearly function as the subject of 教育.\n3. [Grammar & Vocabulary, error] 会一直搬家才能：得一直搬家，才能，得 expresses a necessary condition, which matches the following 才 clause; 会 only predicts a future action.\n4. [Coherence: reference, error] Coherence (Reference): 有一天孟子去了墓地玩儿：有一个小男孩叫孟子。一天，他去了墓地玩儿，follow the first-mention rule by introducing the character with both an identity and a name before using him in the action.\n5. [Coherence: reference, error] Coherence (Reference): 他妈妈：孟母，follow the first-mention rule by naming Mengzi’s mother when she first appears rather than introducing her only through a pronoun-based relationship.\n6. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，决定 is a mental-state verb, so it normally takes the zero particle rather than 了.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“不合适的地方让孩子玩” is not a well-formed way to say that the place is unsuitable for children to play."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“住在这儿教育不太好” is understandable and grammatically possible, though “这儿的教育不太好” is clearer."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "“会一直搬家才能” incorrectly combines 会 with the 才能 condition structure, but the displayed replacement itself ends unfinished at 才能."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is a first-mentioned story character and should be briefly introduced before the narrative refers to him."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他妈妈” clearly identifies Mengzi’s mother after 孟子 has just been named; replacing it with “孟母” is optional, not required."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "决定 is a mental-state verb here and should not take perfective 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2234,
+  "completion_tokens": 1500,
+  "total_tokens": 3734,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 583,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1084,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

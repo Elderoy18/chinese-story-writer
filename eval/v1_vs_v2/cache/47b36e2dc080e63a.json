@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar, error] 他找到黄色的花 → 他找了到黄色的花 -- The discovery is completed in the story, so add 了: 找到了.\n2. [Grammar, error] 你的头发疼死 → 你的头发疼得要死 -- Use 得 before the degree complement: 疼得要死.\n3. [Vocabulary, error] 他听说你跟黄色的花做茶… → 他听说你用黄色的花做茶… -- Use 用 to say that the tea is made with yellow flowers.\n4. [Vocabulary, error] 你的头发疼死 → 你的头疼死 -- Use 头疼 for “have a headache.” 发 means “hair,” so delete it here.\n5. [Vocabulary, suggestion] 他一喝茶就很不舒服 → 他一喝茶就觉得很不舒服 -- It would be more natural to say 觉得很不舒服 to show that he feels uncomfortable.\n6. [Coherence: reference, error] 这也找植物 → 他也找植物 -- Use 他 because this refers to Shennong, not to “this.”\n7. [Coherence: reference, error] 你的头发疼死 → 的头发疼死 -- No second-person subject is intended here, so delete 你.\n8. [Coherence: reference, error] 这冰茶是药 → 这种茶是药 -- Use 这种茶 to refer to this kind of tea from the previous context.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“黄色的花” is too vague for a first mention, and “找了到” is ungrammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“疼死” needs the degree-complement structure “疼得要死,” but the corrected text still incorrectly says that hair hurts."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“用黄色的花做茶” correctly replaces the inappropriate 跟, but the unnecessary 你 remains."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Deleting 发 correctly changes “hair hurts” to “have a headache,” but “疼死” remains unfixed."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“他一喝茶就很不舒服” is already acceptable, so adding 觉得 is only an optional stylistic change."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "“这也找植物” incorrectly uses 这 as the actor, but “他也找植物” changes the intended meaning instead of saying that plants can also be found there."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The generic 你 is acceptable in the example, and deleting it leaves the ungrammatical phrase “的头发疼死.”"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“这种茶” correctly uses 这 + measure word + noun to refer back to the tea."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2175,
+  "completion_tokens": 2496,
+  "total_tokens": 4671,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 524,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1959,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

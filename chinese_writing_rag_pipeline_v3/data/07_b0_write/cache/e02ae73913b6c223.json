@@ -1,0 +1,52 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 古代的时候  →  古代的时候 → 在古代\n- 他找到了很多有用植物  →  有用植物 → 有用的植物\n- 一个老先生叫神农  →  一个老先生叫神农 → 有一个叫神农的老先生\n- 他吃了以后  →  他 → (delete)  (redundant)\n- 这就要看什么植物吃了  →  ∅ → 会不会生病？\n- 植物他觉得好吃得很  →  植物 → 什么植物？一种绿色的植物\n\nScene to review:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "古代的时候，一个男人觉得植物很有意思",
+    "corrected": "在古代，一个男人觉得植物很有意思",
+    "errors": [
+     {
+      "original": "古代的时候",
+      "correction": "在古代",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "Use 在古代 to say “in ancient times” in this story setting."
+     }
+    ]
+   },
+   {
+    "clause": "他找很多植物",
+    "corrected": "他找了很多植物",
+    "errors": [
+     {
+      "original": "找",
+      "correction": "找了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "This is a completed action in the sequence, so use 了."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1108,
+  "completion_tokens": 1490,
+  "total_tokens": 2598,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1105,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1325,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

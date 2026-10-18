@@ -1,0 +1,42 @@
+{
+ "input": "Scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nCorrections to check:\n1. 他发现这个口味，一百岁时候，不小心吃了毒的花  →  他发现这个口味，一百岁的时候，不小心吃了有毒的花   [grammar]\n2. 什么植物是毒  →  什么植物有毒   [vocabulary]",
+ "salt": "",
+ "output": {
+  "checks": [
+   {
+    "n": 1,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "grammar",
+    "coherence_type": "",
+    "reason": "Standard written Chinese requires 的 after 一百岁, and 有毒的花 is a natural expression."
+   },
+   {
+    "n": 2,
+    "is_error": "yes",
+    "correction_ok": "yes",
+    "dimension": "vocabulary",
+    "coherence_type": "",
+    "reason": "毒 is not naturally used as the predicate here; 有毒 correctly means poisonous."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 485,
+  "completion_tokens": 286,
+  "total_tokens": 771,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 180,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "3baea1adb5"
+}

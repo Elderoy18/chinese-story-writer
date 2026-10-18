@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 神农一天尝了一朵有毒的花，这朵花他一吃就很生病，快要死。\nquote: 这朵花他一吃就很生病，快要死\npart p0: fix [ref p0/k0] 就病得很重 ; notes: “生病”cannot be with “很”\npart p1: fix [ref p1/k0] 快要死了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "很生病",
+    "corrected": "病得很重",
+    "before": "他一吃就",
+    "after": "，快要死",
+    "note": "“生病”cannot be with “很”",
+    "confidence": "high",
+    "reason": "replaces 很生病 with 病得很重"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "了",
+    "before": "，快要死",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds sentence-final 了 after 死"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1034,
+  "completion_tokens": 382,
+  "total_tokens": 1416,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1031,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 249,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

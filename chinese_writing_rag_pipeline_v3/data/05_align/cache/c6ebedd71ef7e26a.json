@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 有一时找到了一株黄色的花像太阳一样的，也找到了一个绿色的植物。\nquote: 有一时找到了一株黄色的花像太阳一样的\npart p0: fix [ref p0/k0-1] 有一天，像太阳一样的黄色的花",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "一时",
+    "corrected": "一天，",
+    "before": "有",
+    "after": "找到了一株",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the time expression and adds the comma"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "找到了一株黄色的花像太阳一样的",
+    "corrected": "像太阳一样的黄色的花",
+    "before": "有一时",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "moves the descriptive phrase before 黄色的花 and omits the verb-plus-classifier phrase"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1003,
+  "completion_tokens": 136,
+  "total_tokens": 1139,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

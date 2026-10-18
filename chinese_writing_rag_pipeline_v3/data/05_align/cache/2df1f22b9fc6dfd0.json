@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 小王在马路骑自行车一看到别个人，一下子就撞自行车。\nquote: 小王在马路骑自行车一看到别个人\npart p0: fix [ref p0/k0] 在马路上 ; notes: 在+ place\npart p1: fix [ref p1/k0] 骑着自行车 ; notes: “着” is for “durative”\npart p2: fix [ref p2/k0] 另外一个人/一个女孩子 ; notes: there is no “别个人”.",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "上",
+    "before": "小王在马路",
+    "after": "骑自行车一",
+    "note": "在+ place",
+    "confidence": "high",
+    "reason": "adds 上 after the place noun"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "着",
+    "before": "在马路骑",
+    "after": "自行车一看",
+    "note": "“着” is for “durative”",
+    "confidence": "high",
+    "reason": "adds durative 着 after 骑"
+   },
+   {
+    "ref": "p2/k0",
+    "op": "replace",
+    "original": "别个人",
+    "corrected": "另外一个人/一个女孩子",
+    "before": "车一看到",
+    "after": "",
+    "note": "there is no “别个人”.",
+    "confidence": "high",
+    "reason": "replaces the nonstandard expression with the teacher's alternatives"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1059,
+  "completion_tokens": 187,
+  "total_tokens": 1246,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1056,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

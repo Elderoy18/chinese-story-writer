@@ -1,0 +1,37 @@
+{
+ "input": "learner text: 但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。\nquote: 但是孟子老是跟这些卖东西的人常常玩儿\npart p0: instruction [ref p0/k0] delete常常 ; notes: redundant with老是",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "常常",
+    "corrected": "",
+    "before": "些卖东西的人",
+    "after": "玩儿",
+    "note": "redundant with老是",
+    "confidence": "high",
+    "reason": "explicit delete instruction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1018,
+  "completion_tokens": 63,
+  "total_tokens": 1081,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

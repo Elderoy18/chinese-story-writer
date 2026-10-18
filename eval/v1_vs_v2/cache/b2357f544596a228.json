@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不合适的地方让孩子玩：一个不适合孩子玩的地方，use “适合 + person + verb phrase” to describe whether a place suits an activity.\n2. [Grammar & Vocabulary, error] 他们会搬家找更好的地方：搬到一个更好的地方，after “决定,” use the intended action directly; “搬到” is followed by the destination.\n3. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，use a possessive structure to show that the education in this place is not good.\n4. [Coherence: reference, error] Coherence (Reference): 孟子：一个叫孟子的小男孩，on first mention, introduce a character with a full noun phrase that gives the name and identity.\n5. [Coherence: reference, error] Coherence (Reference): 他妈妈：孟子的妈妈，on first mention, use a full noun phrase rather than a pronoun-based description, even when the relationship is understandable.\n6. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，“决定” is a mental-state verb, so it normally takes the zero particle rather than completed-action “了.”",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“不合适的地方让孩子玩” does not properly express that the place is unsuitable for children to play, while “一个不适合孩子玩的地方” does."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "After 决定, using a direct action phrase such as “搬到一个更好的地方” is correct and includes the needed destination marker."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original lacks a clear structural link between living here and the local education; “这儿的教育不太好” is grammatical."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first introduced here, so the teacher’s reference rule requires an identifying noun phrase rather than only a name."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 was named in the immediately preceding clause, so “他妈妈” is an acceptable close reference under the teacher’s rule."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "决定 is a mental-state verb and should not take perfective 了 in this context."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2190,
+  "completion_tokens": 1237,
+  "total_tokens": 3427,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 539,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 829,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

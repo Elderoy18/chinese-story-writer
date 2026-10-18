@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\nScene 2: 他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections in other learners' similar clauses:\n- 然后  →  然后 → (delete)\n- 夹竹桃是毒  →  是毒 → 有毒\n- 神农吃以后  →  ∅ → 了  (了completed)\n- 给他一个灵芝  →  ∅ → 了  (了completed)\n- 然后另外一个人看见他  →  另外一个人 → 另外一个穿着棕色衣服的人  (otherwise it will be ambiguous, as if there are two persons to see and ask 神农)\n- 让每个人都知道什么植物能不能吃  →  什么植物能不能吃 → 什么植物能吃，什么植物不能吃\n\nScene to review:\n发现了夹竹桃有毒。别人看到他，很快给他吃一个灵芝。神农一吃就觉得比较好。然后，他继续写他发现的信息。会告诉他的朋友哪一个植物能不能吃。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "发现了夹竹桃有毒",
+    "corrected": "他发现了夹竹桃有毒",
+    "errors": [
+     {
+      "original": "发现",
+      "correction": "他发现",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "Across clauses, use a pronoun to refer back to the nearby character, 神农."
+     }
+    ]
+   },
+   {
+    "clause": "别人看到他，很快给他吃一个灵芝",
+    "corrected": "别人看到他，很快给他吃了一个灵芝",
+    "errors": [
+     {
+      "original": "给他吃",
+      "correction": "给他吃了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "Use 了 because giving him the lingzhi is a completed action in the story."
+     }
+    ]
+   },
+   {
+    "clause": "会告诉他的朋友哪一个植物能不能吃",
+    "corrected": "他会告诉他的朋友哪一种植物能吃，哪一种植物不能吃",
+    "errors": [
+     {
+      "original": "会告诉",
+      "correction": "他会告诉",
+      "dimension": "coherence",
+      "coherence_type": "reference",
+      "explanation": "Use 他 to refer back to 神农 at the start of this new clause."
+     },
+     {
+      "original": "哪一个植物能不能吃",
+      "correction": "哪一种植物能吃，哪一种植物不能吃",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Do not combine 哪一个 with 能不能. State separately which kinds of plants can be eaten and which cannot."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1279,
+  "completion_tokens": 1341,
+  "total_tokens": 2620,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1276,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

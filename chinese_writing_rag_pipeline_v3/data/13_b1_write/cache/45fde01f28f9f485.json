@@ -1,0 +1,61 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “在古代有一个神农”: 一个神农 → 一个叫神农的老人\n- in “神农发现很多植物”: (nothing) → 了   [her note: 了completed]\n- in “他偶然看到了一朵美丽的黄花”: 他 → (deleted)   [her note: redundant]\n- in “他找到了很多有用植物”: 有用植物 → 有用的植物\n- in “晚上神农去了”: 晚上神农去了 → 神农是晚上去的\n- in “他现在是当医生”: 当 → (deleted)   [her note: redundant with是]\n\nScene to review:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他需要当上医",
+    "corrected": "他需要当医生",
+    "explanation": "医生 is the usual word for a doctor. 上医 is not the normal word for this job in a beginner story."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "reference",
+    "original": "他有一个问题，他不知道什么东西能做药",
+    "corrected": "他有一个问题，不知道什么东西能做药",
+    "explanation": "Both actions have the same subject, 他. In the same sentence, do not repeat the pronoun; omit it after the comma."
+   },
+   {
+    "section": "coherence",
+    "coherence_type": "temporality",
+    "original": "什么病人吃都会觉得身体更好",
+    "corrected": "什么病人吃了都会觉得身体更好",
+    "explanation": "The patients must finish eating the plant before they feel better. Use 了 after 吃 to show that completed action."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "神农三个月走去，找到有植物的地方",
+    "corrected": "神农走了三个月，找到了有植物的地方",
+    "explanation": "A duration such as 三个月 comes after the verb, and 走了三个月 means “walked for three months.” 找到 is also a completed action here, so it needs 了."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他看到一个很漂亮的植物",
+    "corrected": "他看到了一株很漂亮的植物",
+    "explanation": "Use 株, not 个, for a plant. The seeing is a completed event, so 看到 needs 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1289,
+  "completion_tokens": 2874,
+  "total_tokens": 4163,
+  "prompt_tokens_details": {
+   "cached_tokens": 1286,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2497,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "10d92b7b81"
+}

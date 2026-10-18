@@ -1,0 +1,85 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，When a noun phrase describes what something is, use 是; 座 is the appropriate measure word for a mountain.\n2. [Grammar & Vocabulary, error] 跟黄色的花做茶：用黄色的花做茶，跟 does not introduce the material used to make something; use 用 to show that the yellow flowers are the ingredient.\n3. [Grammar & Vocabulary, error] 头发疼死：头疼得厉害，头发 means “hair,” while 头疼 means “to have a headache.” Use the degree-complement pattern verb + 得 + adjective to describe severe pain.\n4. [Coherence: reference, error] Coherence (Reference): 这也找植物：他也找植物，Use 他 for the established character 神农. The recurrence rule calls for a pronoun here; 这 refers to a thing or place, not to a person.\n5. [Coherence: temporality, error] Coherence (Temporality): 找到黄色的花：找到了黄色的花，Use 了 after 找到 because finding the flowers is a completed event in the narrative.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original lacks 是 and the mountain measure word 座; the correction is a complete correct sentence."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "跟 cannot introduce the material used for making tea here, while 用黄色的花做茶 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "头发 is hair rather than the head, and 头疼得厉害 correctly expresses a severe headache."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "这 refers to the place 凉山 and should be expressed as 在这儿也能找到植物, not changed to a new action by 他."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Under the teacher's series-of-actions rule, 找到 need not take 了 here, and the proposed text still leaves 黄色的花 too vague."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2117,
+  "completion_tokens": 1266,
+  "total_tokens": 3383,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 466,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 927,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,54 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- in “一个老先生叫神农”: 一个老先生叫神农 → 有一个叫神农的老先生\n- in “神农看了很多生病的人”: 看了 → 看到了   [her note: 看look vs.看到see]\n- in “看很多植物”: 看很多植物 → 看到了很多植物   [her note: 看look vs.看到see]\n- in “神农发现很多植物”: (nothing) → 了   [her note: 了completed]\n- in “他爬山”: 爬山 → 爬了很多山\n- in “他看到了药”: 他 → (deleted)   [her note: redundant]\n\nScene to review:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。",
+ "salt": "run2",
+ "output": {
+  "errors": [
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "每一天看到了别的小镇人生病",
+    "corrected": "每一天看到别的小镇人生病",
+    "explanation": "每一天 shows a routine, so do not use 了. Use 看到 for something that happens regularly."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "生病还是不舒服",
+    "corrected": "生病或者不舒服",
+    "explanation": "Use 或者 to connect alternatives in a statement. 还是 is normally used in a question."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "他下一天开始爬当地的山脉",
+    "corrected": "他第二天开始爬当地的山脉",
+    "explanation": "第二天 means “the next day” in a story. 下一天 is not the usual expression for this meaning."
+   },
+   {
+    "section": "grammar_vocab",
+    "coherence_type": "",
+    "original": "神农试一试每个植物",
+    "corrected": "神农试了每一种植物",
+    "explanation": "This is a completed action in the story, so use 了 instead of 试一试. Use 一种 as the measure word for kinds of plants."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1313,
+  "completion_tokens": 1765,
+  "total_tokens": 3078,
+  "prompt_tokens_details": {
+   "cached_tokens": 1310,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1495,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "ba6d45ef8e"
+}

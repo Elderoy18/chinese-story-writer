@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 他等了三个小时以后，直到小鸟扑飞回上山，所以，他吃一个香香的花， 而且那个花的味道很好。\nquote: 直到小鸟扑飞回上山\npart p0: fix [ref p0/k0-1] 飞回来，他才上山",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "直到",
+    "corrected": "",
+    "before": "",
+    "after": "小鸟扑飞",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction omits 直到"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "delete",
+    "original": "扑",
+    "corrected": "",
+    "before": "直到小鸟",
+    "after": "飞回上山",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction omits 扑"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "来",
+    "before": "鸟扑飞回",
+    "after": "上山",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 飞回 to 飞回来"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "上山",
+    "corrected": "，他才上山",
+    "before": "小鸟扑飞回",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the main clause after the bird returns"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1008,
+  "completion_tokens": 566,
+  "total_tokens": 1574,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 354,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

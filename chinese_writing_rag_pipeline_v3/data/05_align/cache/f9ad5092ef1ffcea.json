@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 我一会儿死了一会儿身体最好的。\nquote: 我一会儿死了一会儿身体最好的\npart p0: fix [ref p0/k0] 一会儿很难受一会儿觉得好一点儿了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "死了",
+    "corrected": "很难受",
+    "before": "我一会儿",
+    "after": "一会儿身体",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the first state with the teacher's wording"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "身体最好的",
+    "corrected": "觉得好一点儿了",
+    "before": "死了一会儿",
+    "after": "",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the second state with the teacher's wording"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 994,
+  "completion_tokens": 123,
+  "total_tokens": 1117,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

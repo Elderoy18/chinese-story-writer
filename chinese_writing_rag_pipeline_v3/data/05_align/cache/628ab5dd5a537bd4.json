@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\nquote: 他没有病\npart p0: instruction [ref p0/k0] delete他 ; notes: redundant\npart p1: fix [ref p1/k0] 病好了",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "了以后，",
+    "after": "没有病，",
+    "note": "redundant",
+    "confidence": "high",
+    "reason": "deletes the redundant subject"
+   },
+   {
+    "ref": "p1/k0",
+    "op": "replace",
+    "original": "没有病",
+    "corrected": "病好了",
+    "before": "以后，他",
+    "after": "，想起来",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the stated condition with the teacher's correction"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1007,
+  "completion_tokens": 196,
+  "total_tokens": 1203,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 77,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

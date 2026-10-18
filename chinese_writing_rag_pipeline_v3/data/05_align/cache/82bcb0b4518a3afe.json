@@ -1,0 +1,70 @@
+{
+ "input": "learner text: 可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。\nquote: 如果他们还怕吃毒，不会吃他喜欢的植物\npart p0: fix [ref p0/k0-1] 吃到有毒的植物，就不会吃到好吃的植物 ; instruction [ref p0/k2] delete他",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "如果他们还怕吃毒",
+    "corrected": "吃到有毒的植物",
+    "before": "",
+    "after": "，不会吃",
+    "note": "",
+    "confidence": "high",
+    "reason": "replaces the conditional phrase with the corrected condition"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "insert",
+    "original": "",
+    "corrected": "就",
+    "before": "还怕吃毒，",
+    "after": "不会吃他",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds 就 after the conditional clause"
+   },
+   {
+    "ref": "p0/k0-1",
+    "op": "replace",
+    "original": "喜欢",
+    "corrected": "到好吃",
+    "before": "不会吃他",
+    "after": "的植物",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 喜欢 to 到好吃 in the object phrase"
+   },
+   {
+    "ref": "p0/k2",
+    "op": "delete",
+    "original": "他",
+    "corrected": "",
+    "before": "，不会吃",
+    "after": "喜欢的植",
+    "note": "",
+    "confidence": "high",
+    "reason": "deletes the standalone 他 before 喜欢"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1016,
+  "completion_tokens": 659,
+  "total_tokens": 1675,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 431,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

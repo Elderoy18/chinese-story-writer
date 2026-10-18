@@ -1,0 +1,54 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nITEMS:\n\n[I190] 【古代的时候】   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I191] 【他】叫神农   correction: (comment, no correction)   strength: error\n  checker's note: the story starts with a pronoun: introduce the character first\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: [-他]正好看神农\n  her past correction: 神农回[-他的]家 — her note: redundant\n  her past correction: [神农→他]可能会死 — her note: use他to replace神农，otherwise it is ambiguous, as if there are three persons referred here, in fact there are only two\n\n[I192] 可是有的吃了【以】后很舒服   correction: 以 → 之   strength: suggestion\n  rule card (time_sequence_markers, Coherence: temporality (了/着/在)): Use Time + 以后 after a completed time or action to show “after”; when moving to a later event in the story, use 后来 or 然后 rather than 以后 by itself. Do not add 以后 when the time phrase already says the time clearly.  Pattern: <wrong> → <correct>: use <Time/action> + 以后 for “after <Time/action>”; if the action is finished, use 了completed before 以后. Use 后来/然后 for the next story event, or delete a redundant 以后.  Her terms: Time+以后, Time + 以后, 了completed\n  her past correction: 有的人吃[的→了以后]生病\n  her past correction: 有些人[吃得好→吃了以后没事儿]\n  her past correction: [-他]吃了以后 — her note: redundant\n\n[I193] 他找【^】很多植物   correction: ∅ → 了   strength: error\n  checker's note: completed past action needs 了\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他尝[+了]很多植物 — her note: 了completed\n  her past correction: 神农的朋友给[+了]他这植物 — her note: 了completed\n  her past correction: 他找到了很多[-的]中国的植物",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I190",
+    "explanation": "古代 is the location/time setting, so use 在+Place before the action: 在古代。",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I191",
+    "explanation": "This character appears for the first time, so please introduce him briefly with an identifying noun phrase, such as 一个男人, before using 他 or 神农。",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I192",
+    "explanation": "It would be more natural to use 吃了之后 for “after eating.” Use action + 了 + 以后/之后 after a completed action.",
+    "dimension": "coherence_temporality",
+    "corrected": "之",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I193",
+    "explanation": "找 is completed in the story, so it takes 了 (了completed).",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1281,
+  "completion_tokens": 226,
+  "total_tokens": 1507,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1278,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

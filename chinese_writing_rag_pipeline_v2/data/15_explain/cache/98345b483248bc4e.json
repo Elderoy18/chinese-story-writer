@@ -1,0 +1,61 @@
+{
+ "input": "CURRENT SCENE:\n一个爬山的男人正好看到神农的麻烦，然后给了他一些药。神农最终他的小镇回到，跟别的人分享他的发现。你认为神农的故事真的吗？这就要看你相信中药对身体有好处。\n\nITEMS:\n\n[I228] 神农最终【他的小镇回到】   correction: 他的小镇回到 → 回到他的小镇   strength: error\n  checker's note: word order with 回到 is incorrect\n  rule card (directional_complements, Grammar): Use V. + directional complement + Place + 来/去: put the place after the directional complement and before 来/去. For walking to a place, use 走到place来/去, not 走去 or 走来Place.  Pattern: <wrong> → <correct>: put the place after the directional complement; use V. + directional complement + Place + 来/去 (or 走到place来/去).  Her terms: V. + directional complement + Place + 来/去, 走到place来/去, 走去/来Place, 拿起来, 拿上去\n  her past correction: 神农[回→回到]他的家\n  her past correction: 神农回[-他的]家 — her note: redundant\n  her past correction: 他[回了→回到了]他的城市\n\n[I229] 跟【别的人】分享他的发现   correction: 别的人 → (delete)   strength: error\n  checker's note: her pattern: 别的人 -> (delete) (corrected 8/8 in train)\n  rule card (other_vs_additional, Vocabulary): 别的 is for a different type or for all others except the one already mentioned. 另外 is for an additional quantity, or for another/the other; say 另外一个人, not 别个人.  Pattern: <wrong> → <correct>: this means an additional/another <noun>, so use 另外, not 别的.  Her terms: 别的, 另外\n  her past correction: 告诉[别的人→其他人] — her note: “别的” is for “a different type”, and “all else except the spoken one”\n  her past correction: 原来他想给[别的人→别人]建议\n  her past correction: 孟轲老是看看[-别的人]\n\n[I230] 你认为神农的故事【^】真的吗？这就要看你相信中药对身体有好处   correction: ∅ → 是   strength: error\n  checker's note: 是 is needed before the adjective question\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: 所以⟦神农⟧一看病人就想找药 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 所以神农吃[+了]以后就生病了 — her note: 了completed\n  her past correction: 这是一个⟦神农⟧的古代故事 — her note: better to briefly introduce “神农” when this character first appears\n\n[I231] 你认为神农的故事真的吗？这就要【看】你相信中药对身体有好处   correction: 看 → 看到   strength: error\n  checker's note: her pattern: 看 -> 看到 (corrected 37/71 in train)\n  rule card (perception_look_see, Vocabulary): 看 is “look”; 看到 is “see/catch sight of” and shows that the person actually sees something. Use 看到 when the narrative gives the result of seeing.  Pattern: <wrong> → <correct>: the person actually sees/catches sight of <thing or situation>, so use 看到, not 看.  Her terms: 看look vs.看到see, no了, 看look, 看到see\n  her past correction: 所以神农一[看→看到]病人就想找药 — her note: 看look vs.看到see\n  her past correction: 神农[一看→一看到]朋友就想找药 — her note: 看look vs.看到see\n  her past correction: 所以⟦神农⟧一看病人就想找药 — her note: better to briefly introduce “神农” when this character first appears\n\n[I232] 你认为神农的故事真的吗？这就要看你【^】相信中药对身体有好处   correction: ∅ → 是否   strength: suggestion\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: 所以⟦神农⟧一看病人就想找药 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 所以神农去找[一些植物，对身体有好处→一些对身体有好处的植物]\n  her past correction: ⟦神农⟧看到人一吃百草就生病 — her note: better to briefly introduce “神农” when this character first appears",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I228",
+    "explanation": "Put the place after the directional complement: 回到他的小镇.",
+    "dimension": "grammar",
+    "corrected": "回到他的小镇",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I229",
+    "explanation": "Here, use 别人 for “other people.” 别的 is for a different type or all others except one already mentioned.",
+    "dimension": "word_choice",
+    "corrected": "别人",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I230",
+    "explanation": "Use 是 before the adjective question: 故事是真的吗？",
+    "dimension": "grammar",
+    "corrected": "是",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I231",
+    "explanation": "Here 看 means “depends on,” not “look,” so keep 看: 这就要看你相信中药对身体有好处。",
+    "dimension": "word_choice",
+    "corrected": "看",
+    "correction_changed": true
+   },
+   {
+    "item_id": "I232",
+    "explanation": "It would be more natural to say 看你是否相信… to introduce the “whether” idea.",
+    "dimension": "grammar",
+    "corrected": "是否",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1659,
+  "completion_tokens": 760,
+  "total_tokens": 2419,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1656,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

@@ -1,0 +1,73 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “这是不合适的地方让孩子玩” / Formula: 这 + 不是 + 适合 + 谁 + 做什么 + 的地方 / Correct: “这不是适合孩子玩耍的地方。”   “让孩子玩” is understandable, but “适合孩子玩耍的地方” is the more natural modifier structure.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “她决定了他们会搬家找更好的地方” / Formula: 谁 + 决定 + 做什么；决定 + verb phrase (usually no 了 before the verb phrase) / Correct: “她决定带孟子搬家，找一个更好的地方。”   After 决定, use a verb phrase directly. “决定了他们会……” sounds unnatural here.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “而且住在这儿教育不太好” / Formula: 在/住在 + 地点，+ 这里的 + 名词 + 怎么样 / Correct: “而且这里的教育条件不太好。”   The sentence needs a clear subject: it is the education conditions in this place that are not good.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “所以她会一直搬家才能找到质量好的教育” / Formula: 谁 + 要/得 + 做什么 + 才能 + 达到结果 / Correct: “所以她觉得要继续搬家，才能找到更好的教育环境。”   “才能” expresses a necessary condition. “会一直搬家才能” is not natural; use 要/得 before the action.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“不合适的地方让孩子玩” has an unidiomatic modifier structure, and the correction is grammatical and natural."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "“决定了他们会……” is not appropriate here because 决定 takes a verb phrase directly and should not take 了 as a mental-state verb."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“住在这儿，教育不太好” is somewhat less explicit but can mean that education is not good if one lives here, so it is not necessarily an error."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original “会一直搬家才能” construction is not appropriate here, and the revised 要……才能…… structure is grammatical and uses a suitable education-related expression."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2263,
+  "completion_tokens": 1368,
+  "total_tokens": 3631,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 612,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1060,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

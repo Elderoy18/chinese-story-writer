@@ -1,0 +1,46 @@
+{
+ "input": "The teacher's corrections in other learners' similar clauses:\n- 孟子跟朋友看很多的大人在墓地祭拜  →  看 → 看到  (看look vs.看到see)\n- 跟孟母一起搬家三次  →  ∅ → 就  (才 Num.就V.)\n- 有一天孟子才四岁  →  有一天 → (delete)\n- 开始祭拜  →  ∅ → 就  (才 Num.就V.)\n- 他有的时候只要跟朋友玩儿  →  有的时候 → (delete)  (wrong conjunctions, 他只要跟朋友玩儿)\n- 现在孟子和孟母不是打算搬家  →  是 → (delete)  (“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong)\n\nScene to review:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。",
+ "salt": "run2",
+ "output": {
+  "items": [
+   {
+    "clause": "孟子和他的朋友喜欢玩在墓地里，装祭拜",
+    "corrected": "孟子和他的朋友喜欢在墓地里玩，装作祭拜",
+    "errors": [
+     {
+      "original": "玩在墓地里",
+      "correction": "在墓地里玩",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "The place phrase 在墓地里 normally comes before the action verb 玩."
+     },
+     {
+      "original": "装",
+      "correction": "装作",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 装作 before a verb to mean “pretend to do something.”"
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1175,
+  "completion_tokens": 657,
+  "total_tokens": 1832,
+  "prompt_tokens_details": {
+   "cached_tokens": 1172,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

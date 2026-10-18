@@ -1,0 +1,124 @@
+{
+ "input": "required scenes (story order):\nS1: in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants\nS2: 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants\nS3: 神农found茶and took a record\nS4: 神农tried 夹竹桃 and fainted\nS5: a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝\nS6: another person in brown came by and had a conversation with 神农\nS7: 神农takes record of灵芝and夹竹桃\n\nlearner's story:\n在中国古代，人们不知道什么植物是不是能吃的。到处都是人们因吃有毒植物生病了。突然，出现了一个叫神农的人，又勇敢又身体健康。他想通过尝试很多植物来发现什么可以吃。神农什么想尝，就什么尝。无论是花还是树叶，他都想吃。他有一天找到一朵花。他一看花，就觉得是很漂亮的。他以为这样的植物很好吃，所以他吃完了这朵花，吃得很快。漂亮是漂亮，可是他马上生病了，然后下躺了。以后一个穿着蓝色衣服的人找到了神农。他担心神农生病了。穿蓝色衣服的人问：“你发烧了，你得吃药。”神农说：”对，我吃了有毒的植物。请给我那个看起来像伞的植物，或许是药。”穿蓝色衣服的人就给神农吃那个植物。神农的身体一些小时以后变得越来越健康，然后另外一个人看见他。穿着棕色的人问神农：“发生什么事了？”神农解释了，看起来像伞的植物就是灵芝，很健康。另外一个植物是叫夹竹桃，是有毒的，不要吃。神农把什么经历都记下，因为他希望未来的人们可以区分健康和有毒的植物。",
+ "salt": "run1",
+ "output": {
+  "scenes": [
+   {
+    "id": "S1",
+    "core": "Ancient people eat unknown plants and get sick",
+    "verdict": "told",
+    "evidence": [
+     "在中国古代，人们不知道什么植物是不是能吃的。",
+     "到处都是人们因吃有毒植物生病了。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S2",
+    "core": "神农 decides to identify safe and unsafe plants by trying plants",
+    "verdict": "partly",
+    "evidence": [
+     "他想通过尝试很多植物来发现什么可以吃。",
+     "神农什么想尝，就什么尝。",
+     "无论是花还是树叶，他都想吃。"
+    ],
+    "missing_part": "His aim to find which plants are unsafe to eat is not stated.",
+    "details_left_out": [
+     "He climbed mountains."
+    ],
+    "out_of_order": false
+   },
+   {
+    "id": "S3",
+    "core": "神农 finds 茶 and records it",
+    "verdict": "partly",
+    "evidence": [
+     "他有一天找到一朵花。",
+     "神农把什么经历都记下，因为他希望未来的人们可以区分健康和有毒的植物。"
+    ],
+    "missing_part": "茶 is not named.",
+    "details_left_out": [],
+    "out_of_order": true
+   },
+   {
+    "id": "S4",
+    "core": "神农 tries 夹竹桃 and faints",
+    "verdict": "partly",
+    "evidence": [
+     "所以他吃完了这朵花，吃得很快。",
+     "漂亮是漂亮，可是他马上生病了，然后下躺了。",
+     "另外一个植物是叫夹竹桃，是有毒的，不要吃。"
+    ],
+    "missing_part": "神农 faints after eating 夹竹桃.",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S5",
+    "core": "A person in blue gives 神农 灵芝, and he feels better after eating it",
+    "verdict": "told",
+    "evidence": [
+     "以后一个穿着蓝色衣服的人找到了神农。",
+     "穿蓝色衣服的人就给神农吃那个植物。",
+     "神农的身体一些小时以后变得越来越健康，然后另外一个人看见他。",
+     "看起来像伞的植物就是灵芝，很健康。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S6",
+    "core": "A person in brown comes by and talks with 神农",
+    "verdict": "told",
+    "evidence": [
+     "然后另外一个人看见他。",
+     "穿着棕色的人问神农：“发生什么事了？”",
+     "神农解释了，看起来像伞的植物就是灵芝，很健康。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   },
+   {
+    "id": "S7",
+    "core": "神农 records 灵芝 and 夹竹桃",
+    "verdict": "told",
+    "evidence": [
+     "神农解释了，看起来像伞的植物就是灵芝，很健康。",
+     "另外一个植物是叫夹竹桃，是有毒的，不要吃。",
+     "神农把什么经历都记下，因为他希望未来的人们可以区分健康和有毒的植物。"
+    ],
+    "missing_part": "",
+    "details_left_out": [],
+    "out_of_order": false
+   }
+  ],
+  "wrong_information": [],
+  "feedback": [
+   "Before 神农 starts trying plants, add that he wants to find both plants that are safe and plants that are unsafe to eat.",
+   "When 神农 first finds the plant before he becomes sick, name it 茶 and say that he records it there.",
+   "After 神农 eats 夹竹桃 and before the person in blue arrives, say that he faints."
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1218,
+  "completion_tokens": 2301,
+  "total_tokens": 3519,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1215,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1537,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "b2931ef374"
+}

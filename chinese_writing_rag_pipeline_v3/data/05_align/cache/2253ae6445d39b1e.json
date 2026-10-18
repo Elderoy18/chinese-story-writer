@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药。\nquote: 以后他知道灵芝没有毒，夹竹桃有毒，它可以做药\npart p0: fix [ref p0/k0] 后来 ; notes: Time+以后\npart p1: comment [ref p1/note] “它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "以后",
+    "corrected": "后来",
+    "before": "",
+    "after": "他知道灵芝",
+    "note": "Time+以后",
+    "confidence": "high",
+    "reason": "replaces the time expression as given"
+   },
+   {
+    "ref": "p1/note",
+    "op": "comment",
+    "original": "它",
+    "corrected": "",
+    "before": "夹竹桃有毒，",
+    "after": "可以做药。",
+    "note": "“它“ is unclear, it seems that it refers to夹竹桃，which is a poison, not a medicine",
+    "confidence": "high",
+    "reason": "flags the unclear pronoun reference"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1039,
+  "completion_tokens": 136,
+  "total_tokens": 1175,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1036,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

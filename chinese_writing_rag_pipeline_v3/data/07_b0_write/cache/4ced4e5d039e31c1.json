@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes (context only):\nScene 1: 古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\nScene 2: 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections in other learners' similar clauses:\n- 他成为哲学家  →  ∅ → 后来\n- 孟子的妈妈告诉孟子  →  孟子的妈妈 → (delete)  (redundant)\n- 他朋友帮他  →  ∅ → 的\n- 他回了他的城市  →  回了 → 回到了\n- 孟子跟老师老是学习中文  →  跟老师老是学习中文 → 一直学习中文  (“老是“ for something negative, used to complain)\n- 难怪他不喜欢常常学习  →  常常学习 → 学习/一直学习\n\nScene to review:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。",
+ "salt": "run1",
+ "output": {
+  "items": [
+   {
+    "clause": "因为他不要离开他的城市",
+    "corrected": "因为他不想离开他的城市",
+    "errors": [
+     {
+      "original": "不要",
+      "correction": "不想",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "不想 means “do not want to.” 不要 is usually used for commands or refusals."
+     }
+    ]
+   },
+   {
+    "clause": "他的妈妈找到孟子一个老师",
+    "corrected": "他的妈妈给孟子找到了一个老师",
+    "errors": [
+     {
+      "original": "妈妈",
+      "correction": "妈妈给",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "Use 给 to show that the teacher is found for 孟子."
+     },
+     {
+      "original": "找到",
+      "correction": "找到了",
+      "dimension": "coherence",
+      "coherence_type": "temporality",
+      "explanation": "了 marks that the mother completed the action of finding a teacher."
+     }
+    ]
+   },
+   {
+    "clause": "跟老师孟子学最重要的文学",
+    "corrected": "孟子跟老师学最重要的文学作品",
+    "errors": [
+     {
+      "original": "跟老师孟子学",
+      "correction": "孟子跟老师学",
+      "dimension": "grammar",
+      "coherence_type": "",
+      "explanation": "The subject 孟子 should come before 跟老师学."
+     },
+     {
+      "original": "文学",
+      "correction": "文学作品",
+      "dimension": "vocabulary",
+      "coherence_type": "",
+      "explanation": "文学 is the field of literature. Use 文学作品 for the literary works that he studied."
+     }
+    ]
+   },
+   {
+    "clause": "所以他成为哲学家",
+    "corrected": "所以后来他成为哲学家",
+    "errors": [
+     {
+      "original": "所以",
+      "correction": "所以后来",
+      "dimension": "coherence",
+      "coherence_type": "connectors",
+      "explanation": "后来 shows that becoming a philosopher happened after his period of study."
+     }
+    ]
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1225,
+  "completion_tokens": 2956,
+  "total_tokens": 4181,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1222,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2560,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "713ace4e78"
+}

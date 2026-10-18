@@ -1,0 +1,48 @@
+{
+ "input": "learner text: 他的同学们老是对他开玩笑了。\nquote: 他的同学们老是对他开玩笑了\npart p0: fix [ref p0/k0] 跟他开玩笑 ; notes: no了for routine/habit",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "replace",
+    "original": "对",
+    "corrected": "跟",
+    "before": "他的同学们老是",
+    "after": "他开玩笑了",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes the preposition to 跟"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "了",
+    "corrected": "",
+    "before": "对他开玩笑",
+    "after": "",
+    "note": "no了for routine/habit",
+    "confidence": "high",
+    "reason": "removes 了 for a habitual action"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 999,
+  "completion_tokens": 118,
+  "total_tokens": 1117,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

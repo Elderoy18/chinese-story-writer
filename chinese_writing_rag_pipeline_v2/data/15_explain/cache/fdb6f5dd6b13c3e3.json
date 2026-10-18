@@ -1,0 +1,68 @@
+{
+ "input": "CURRENT SCENE:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nITEMS:\n\n[I130] 【古代的时候】   correction: 古代的时候 → 在古代   strength: error\n  checker's note: her pattern: 古代的时候 -> 在古代 (corrected 18/30 in train)\n  rule card (location_with_zai, Grammar): Use 在+Place for a location: put the location before the action as 在Place + V., or use 住在+Place. Add 里/上 when needed to make the place clear.  Pattern: <wrong> → <correct>: <place> is the location, so use 在+Place before the action.  Her terms: 在+Place, 在Place住, 住在+Place, 在Place + V., 在Place V1.着V2\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n  her past correction: [古代的时候→在古代]\n\n[I131] 一个男孩子跟【他】的妈妈住在中国   correction: (comment, no correction)   strength: error\n  checker's note: the story starts with a pronoun: introduce the character first\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: [-他]跟他的妈妈住在一个小房子\n  her past correction: 他[-一直]住跟他的妈妈\n  her past correction: 他一直[住跟他的妈妈→跟妈妈住]\n\n[I132] 所以孟子老是【祭拜】   correction: 祭拜 → 模仿别人办丧事   strength: error\n  checker's note: In this story, Mencius imitates funeral rituals rather than actually worshipping.\n  rule card (zero_redundant_pronoun, Coherence: reference): When the same person or thing is already clear in the same clause or close continuation, delete the repeated subject or possessive: use zero form. In 不是……而是……, put the subject before 不是 and do not repeat it after 而是.  Pattern: <wrong> → <correct>: <subject/possessive> is already clear, so delete it; Chinese uses zero form here.  Her terms: redundant, too many他, Subj.不是……而是……, Subj. before “不是……而是……”\n  her past correction: [-所以他们]祭拜 — her note: there is no cause-effect relationship\n  her past correction: 而是[-他]祭拜\n  her past correction: [-他]叫孟子\n\n[I133] 孟子不是【祭拜】   correction: 祭拜 → 模仿别人办丧事   strength: error\n  checker's note: He is described as imitating funerals, not performing worship.\n  rule card (he_scope_coordination, Coherence: connectors): 和/跟 + noun connects multiple nouns that share the same action. Do not use 和/跟 to connect clauses, verb phrases, or adjectives; if the noun is an accompanying object and does not do the action, use V.着 instead.  Pattern: <wrong> → <correct>: 和/跟 cannot connect <clauses/verb phrases/adjectives>. Use <correct connector or structure> instead.  Her terms: 和cannot connect clauses, 和cannot link clauses, 和cannot connect verb phrases, 和cannot connect Adj., 跟/和+noun., 和+noun., V.着\n  her past correction: 孟子在墓地和[祭拜跟其他孩子→跟其他孩子祭拜]\n  her past correction: 孟子在墓地[-和]祭拜跟其他孩子\n  her past correction: 可是小孩子孟子[老是祭拜的时候→在祭拜的时候]行为不端\n\n[I134] 但是城市【^】有才两个学校   correction: ∅ → 只   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: [去→去了]一个最好的学校 — her note: 了completed\n  her past correction: 而是学多[+很]文章\n  her past correction: 而是因为[学校→学业]很难\n\n[I135] 但是城市有【才】两个学校   correction: 才 → (delete)   strength: suggestion\n  rule card (not_but_refutation, Coherence: connectors): Use 不是……而是…… only to correct a conventional or mistaken idea with an unexpected alternative. Put the subject before 不是……而是…… when both alternatives have the same subject.  Pattern: <wrong> → <correct>: 不是……而是…… must refute a mistaken or expected idea and give its correction; <first alternative> is not conventionally related to <second alternative>.  Her terms: 不是……而是……, Subj.\n  her past correction: ⟦不是商店而是学校⟧ — her note: “不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 商店is not conventionally related to对教育有好处\n  her past correction: 而是因为[学校→学业]很难\n  her past correction: [去→去了]一个最好的学校 — her note: 了completed",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I130",
+    "explanation": "古代 is the time/place setting, so use 在+Place before the action: 在古代。",
+    "dimension": "grammar",
+    "corrected": "在古代",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I131",
+    "explanation": "When a character appears for the first time, introduce the person with a clear noun phrase before using a pronoun such as 他. Make the relationship clear when introducing the mother.",
+    "dimension": "coherence_reference",
+    "corrected": "(comment, no correction)",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I132",
+    "explanation": "In this story, 孟子 imitates funeral rituals; he does not actually 祭拜. Use 模仿别人办丧事 here.",
+    "dimension": "content",
+    "corrected": "模仿别人办丧事",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I133",
+    "explanation": "Here 孟子 is imitating funeral rituals, not performing worship. Use 模仿别人办丧事.",
+    "dimension": "content",
+    "corrected": "模仿别人办丧事",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I134",
+    "explanation": "It would be more natural to say 只有两个学校 to emphasize that the city has only two schools.",
+    "dimension": "word_choice",
+    "corrected": "只",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I135",
+    "explanation": "It would be more natural to use 只有两个学校. After 只有, 才 is unnecessary here.",
+    "dimension": "word_choice",
+    "corrected": "(delete)",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1755,
+  "completion_tokens": 806,
+  "total_tokens": 2561,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1752,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 463,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}

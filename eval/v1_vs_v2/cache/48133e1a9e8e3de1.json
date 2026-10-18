@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar, error] 住离墓地太近 → 住得离墓地太近 -- Use 得 after 住 to introduce the degree result: 住得离墓地太近.\n2. [Grammar, suggestion] …子思老师的家，跟子思老师住 → …子思老师的家住 -- It would be more natural to delete 跟子思老师 because 搬到子思老师的家 already shows where they will live.\n3. [Vocabulary, error] 害得孟子的心气 → 伤了孟子的心气 -- 害得 needs a harmful result after 孟子的心气. Here, 伤了孟子的心气 is the natural expression.\n4. [Coherence: reference, error] 孟子和⟦孟母⟧搬到子思老师… -- 孟母 appears for the first time, so please introduce her briefly, for example 孟子的妈妈孟母.\n5. [Coherence: connectors, suggestion] 他老是读书 → 所以他老是读书 -- It would be more natural to add 所以 to show that having no friends is the reason for reading books often.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住得离墓地太近 is a grammatical degree-complement construction and fixes the missing 得."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "跟子思老师住 is already grammatical and natural; deleting it is optional rather than a correction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 cannot be followed directly by the noun phrase 孟子的心气, while 伤了孟子的心气 is grammatical."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟母 clearly refers to the previously mentioned 妈妈 and does not require a new introduction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "Adding 所以 leaves the causal direction unchanged, whereas the intended meaning is that he has no friends because he always studies."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1296,
+  "completion_tokens": 2682,
+  "total_tokens": 3978,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1293,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2347,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "0d4672217c"
+}

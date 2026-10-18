@@ -1,0 +1,59 @@
+{
+ "input": "learner text: 他们住在离墓地很近的地方，从早到晚孟子跟小朋友看祭拜。\nquote: 从早到晚孟子跟小朋友看祭拜\npart p0: fix [ref p0/k0] 孟子跟朋友看别人祭拜",
+ "salt": "",
+ "output": {
+  "edits": [
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "从早到晚",
+    "corrected": "",
+    "before": "",
+    "after": "孟子跟小朋",
+    "note": "",
+    "confidence": "high",
+    "reason": "her correction omits the time phrase"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "delete",
+    "original": "小",
+    "corrected": "",
+    "before": "孟子跟",
+    "after": "朋友看祭拜",
+    "note": "",
+    "confidence": "high",
+    "reason": "changes 小朋友 to 朋友"
+   },
+   {
+    "ref": "p0/k0",
+    "op": "insert",
+    "original": "",
+    "corrected": "别人",
+    "before": "朋友看",
+    "after": "祭拜",
+    "note": "",
+    "confidence": "high",
+    "reason": "adds the object of 看 before 祭拜"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1002,
+  "completion_tokens": 420,
+  "total_tokens": 1422,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 262,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "93779976b8"
+}

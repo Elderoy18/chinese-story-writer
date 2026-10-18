@@ -1,0 +1,96 @@
+{
+ "input": "CURRENT SCENE:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nITEMS:\n\n[I209] 有一个【老男人】叫神农   correction: 老男人 → 老人   strength: error\n  checker's note: 老人 is the normal term for an elderly man.\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: [一个老先生叫神农→有一个叫神农的老先生]\n  her past correction: 在古代[有一个神农→有一个叫神农的老人]\n  her past correction: [一个中国老人的名字是神农→一个叫神农的中国老人]\n\n[I210] 神农在古代每一天【看到了】别的小镇人生病还是不舒服   correction: 看到了 → 看到   strength: error\n  checker's note: a habitual action with 每一天 does not take completed 了.\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n  her past correction: ⟦神农⟧看到很多人生病了 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 神农不喜欢看[他的城市→人们]生病了\n\n[I211] 神农在古代每一天看到了别的【小镇人】生病还是不舒服   correction: 小镇人 → 镇上的人   strength: error\n  checker's note: 小镇人 is not the normal expression for townspeople.\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦神农⟧看到很多人生病了 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 神农不喜欢看[他的城市→人们]生病了\n  her past correction: 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n\n[I212] 神农在古代每一天看到了别的小镇人生病【还是】不舒服   correction: 还是 → 或者   strength: error\n  checker's note: a declarative alternative uses 或者, not 还是.\n  rule card (first_mention_introduction, Coherence: reference): When a character first appears, briefly introduce the person with an identifying noun phrase, not only a name or pronoun. The first appearing noun should not be specific.  Pattern: <name/pronoun> → <brief introduction to the person>: this character appears for the first time, so please introduce <person> briefly.\n  her past correction: ⟦神农⟧看到很多人生病了 — her note: better to briefly introduce “神农” when this character first appears\n  her past correction: 神农[看了→看到了]很多生病的人 — her note: 看look vs.看到see\n  her past correction: ⟦神农⟧看了很多生病的人 — her note: better to briefly introduce “神农” when this character first appears\n\n[I213] 他【下】一天开始爬当地的山脉   correction: 下 → 第   strength: suggestion\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他[到山→到了山上]以后 — her note: 了completed, 山上is a place\n  her past correction: 他[爬山→爬了很多山]\n  her past correction: [-所以]他去了又空又高的山 — her note: “所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”\n\n[I214] 他下一天开始爬当地的【山脉】   correction: 山脉 → 山   strength: suggestion\n  checker's note: 爬山 is the usual expression; one does not normally 爬 a whole mountain range.\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 他[到山→到了山上]以后 — her note: 了completed, 山上is a place\n  her past correction: 他[爬山→爬了很多山]\n  her past correction: [-所以]他去了又空又高的山 — her note: “所以” is inappropriate because here is not a result, delete it, add “为了找到没有毒的植物”\n\n[I215] 【找了】各种各样的植物   correction: 找了 → 找到了   strength: error\n  checker's note: her pattern: 找了 -> 找到了 (corrected 3/5 in train)\n  rule card (search_find, Vocabulary): 找 means “look for.” Use 找到 when the person successfully finds something.  Pattern: <wrong> → <correct>: the person successfully finds <object>, so use 找到, not 找.  Her terms: 找look for vs.找到find\n  her past correction: 他[找有的花→找到一种植物] — her note: 找look for vs.找到find\n  her past correction: 他找到了很多[-的]中国的植物\n  her past correction: 他找到了很多[有用植物→有用的植物]\n\n[I216] 神农【试一试】每个植物   correction: 试一试 → 试了试   strength: error\n  checker's note: a completed past action needs 了 in this verb reduplication.\n  rule card (modal_and_control_verb_complements, Grammar): 想 must be followed by a verb phrase, not a noun; use 想让 + person + V. when you mean “want someone to do something.” 叫/让 + V. expresses an action someone is told or made to do, so do not add 了.  Pattern: <wrong> → <correct>: 想 needs a following action (想 + V.); use 想让 + <person> + <V.> if the person is meant to do the action.  Her terms: 想 + V., 叫/让 is a modal verb, no了\n  her past correction: 神农[什么想尝→想尝什么植物]\n  her past correction: 神农[发现→发现了]很多植物 — her note: 了completed\n  her past correction: 神农[加→吃]下去很多的植物\n\n[I217] 神农试一试每【个】植物   correction: 个 → 种   strength: error\n  checker's note: plants take the measure word 种 here.\n  rule card (near_synonym_precision, Vocabulary): Choose the near-synonym that matches the intended event, duration, possibility, degree, or meaning; similar words are not interchangeable. For example, 高兴 is short-term and can change quickly, while 幸福 is for long-term, life-related happiness.  Pattern: <wrong> → <correct>: use <correct> because it means <intended meaning/context>; <wrong> is used for <different meaning/context>.  Her terms: 了completed\n  her past correction: 就[测试→尝试]更植物\n  her past correction: 神农[什么想尝→想尝什么植物]\n  her past correction: 他测试[别的→各种]植物 — her note: “别的” is for “a different type”, and “all else except the spoken one”\n\n[I218] 知道【^】有什么好处   correction: ∅ → 了   strength: error\n  checker's note: knowing is a completed change of state in this narrative.\n  rule card (le_completed, Coherence: temporality (了/着/在)): Use 了 for an action completed in the narrative or for a change of state (了completed). Do not use 了 merely because there is an action verb.  Pattern: <wrong> → <correct>: <action/change> is completed in the story, so it takes 了 (了completed).  Her terms: 了completed, 了completed/change, 着durative, 把\n  her past correction: 学了很多[东西→知识]\n  her past correction: 但是他学到了很多[学习→知识]\n  her past correction: 有的[食品→植物]很有用 — her note: “食品” is usually for processed food",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "item_id": "I209",
+    "explanation": "老人 is the normal term for an elderly man. This character appears for the first time, so introduce him briefly as 一个叫神农的老人.",
+    "dimension": "word_choice",
+    "corrected": "老人",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I210",
+    "explanation": "每一天 shows a habitual action, not a completed event. Use 看到, without 了completed.",
+    "dimension": "coherence_temporality",
+    "corrected": "看到",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I211",
+    "explanation": "Use 镇上的人 for people who live in a town. 小镇人 is not the normal expression.",
+    "dimension": "word_choice",
+    "corrected": "镇上的人",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I212",
+    "explanation": "Use 或者 for alternatives in this statement. 还是 is usually used in a question.",
+    "dimension": "grammar",
+    "corrected": "或者",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I213",
+    "explanation": "It would be more natural to say 第二天 for “the next day” in this story.",
+    "dimension": "coherence_temporality",
+    "corrected": "第",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I214",
+    "explanation": "It would be more natural to say 爬山. 山脉 is a mountain range, so it is not usually used after 爬.",
+    "dimension": "word_choice",
+    "corrected": "山",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I215",
+    "explanation": "He successfully finds the plants, so use 找到, not 找. 找 is “look for,” while 找到 is “find.”",
+    "dimension": "word_choice",
+    "corrected": "找到了",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I216",
+    "explanation": "This is a completed action in the story, so use 试了试 with 了completed.",
+    "dimension": "grammar",
+    "corrected": "试了试",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I217",
+    "explanation": "Use 种 for types of plants. 个 is not the usual measure word for 植物 here.",
+    "dimension": "word_choice",
+    "corrected": "种",
+    "correction_changed": false
+   },
+   {
+    "item_id": "I218",
+    "explanation": "Knowing what benefits the plants have is a completed change of state in the story, so add 了completed: 知道了.",
+    "dimension": "coherence_temporality",
+    "corrected": "了",
+    "correction_changed": false
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2662,
+  "completion_tokens": 508,
+  "total_tokens": 3170,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2659,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "8d9c9d4bc0"
+}
