@@ -44,14 +44,14 @@ from build_iteration_chunks import (  # noqa: E402
     build_ai_critique_chunks, build_ai_error_cards, build_vocab_chunks,
     build_scene_list_chunks, build_vocab_suggestion_chunks, build_teacher_rule_chunks,
     VOCAB_PATH, SCENES_PATH, EXTRA_RULES_PATH,
-    SUGGESTION_EXAMPLES_PATH, CRITIQUE_LABELS_PATH, CRITIQUE_DOCS, ITERATION_DIR,
+    SUGGESTION_EXAMPLES_PATH, CRITIQUE_LABELS_PATH, CRITIQUE_REVISIONS_PATH, CRITIQUE_DOCS, ITERATION_DIR,
 )
 from parse_corpus import load_registry  # noqa: E402
 
 INPUTS = ["extracted/basic_corpus.json", "raw/stories.json", "raw/correction_rules.json",
           str(VOCAB_PATH), str(SCENES_PATH), str(SUGGESTION_EXAMPLES_PATH), str(EXTRA_RULES_PATH),
-          str(CRITIQUE_LABELS_PATH), *(str(ITERATION_DIR / d) for d in CRITIQUE_DOCS),
-          "scripts/rule_descriptions.py"]
+          str(CRITIQUE_LABELS_PATH), str(CRITIQUE_REVISIONS_PATH), *(str(ITERATION_DIR / d) for d in CRITIQUE_DOCS),
+          "raw/aligned_edits_train.jsonl", "scripts/rule_descriptions.py"]
 
 
 def sha(path):

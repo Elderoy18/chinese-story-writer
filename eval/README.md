@@ -41,6 +41,7 @@ the app uses.
 |---|---|---|
 | `base-v4` | S6's | 6 (`test_set.json`) |
 | `base-v4-h20` | S6's, exactly (chunks verified identical) | 20 (`test_set_h20.json`); her suggestion example 1 dropped (quotes shennong_samples#4) |
+| `base-v5` | S7: S6's + her exact edits on training stories, her 12 new rules, her critique-label revisions (see `S7_plan.md` Phase 1) | 20, as above |
 
 ## Running
 

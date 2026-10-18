@@ -49,6 +49,8 @@ SCENES_PATH = ITERATION_DIR / "story_scenes.md"
 OUT_PATH = "chunks/iteration_chunks.jsonl"
 CHECKLISTS_PATH = "chunks/scene_checklists.json"
 CRITIQUE_LABELS_PATH = ITERATION_DIR / "critique_labels.json"
+# Her later revisions of those labels (latest verdict wins); see the file's _about.
+CRITIQUE_REVISIONS_PATH = ITERATION_DIR / "critique_label_revisions.json"
 # AI-critique docs to read, listed by name: other docs in the folder can also
 # contain "AI feedback" headings (e.g. her comments on the critique tags) and
 # are not student-sample critiques. Add a new critique doc here.
@@ -104,12 +106,30 @@ def load_critique_labels():
     return labels
 
 
+def load_critique_revisions(labels):
+    """Her revisions of critique labels, keyed by the same item text. Each one
+    replaces the item's labels (labels_after + tentative_labels) and carries her
+    revision comments, which the AI-error cards show next to her first comment."""
+    revisions = json.load(open(require(CRITIQUE_REVISIONS_PATH), encoding="utf-8"))["revisions"]
+    out = {}
+    for r in revisions:
+        where = f"{CRITIQUE_REVISIONS_PATH} entry {r['entry']}"
+        if r["item_text"] not in labels:
+            raise FormatError(f"{where}: item text not in {CRITIQUE_LABELS_PATH.name}")
+        unknown = sorted(set(r["labels_after"] + r["tentative_labels"]) - set(AI_EVAL_DESC))
+        if unknown:
+            raise FormatError(f"{where}: labels with no description in rule_descriptions.py: {unknown}")
+        out[r["item_text"]] = r
+    return out
+
+
 def build_ai_critique_chunks(registry, samples_by_id):
     """ai_feedback_item chunks from every AI-critique doc, each linked to the
     graded basic-data sample it reviews (same story, same student number).
     The doc's own copy of the teacher feedback is not re-read."""
     chunks = []
     labels = load_critique_labels()
+    revisions = load_critique_revisions(labels)
     for name in CRITIQUE_DOCS:
         path = require(ITERATION_DIR / name)
         paras = extract(path)
@@ -130,7 +150,14 @@ def build_ai_critique_chunks(registry, samples_by_id):
             for idx, item in enumerate(parse_ai_items(split[1], f"{where} Student {num}")):
                 comment = item["my_comment"] or ""
                 text = item["raw_text"] + ("\n" + comment if comment else "")
-                if text in labels:
+                revision = {}
+                if text in revisions:
+                    r = revisions[text]
+                    eval_tags = list(dict.fromkeys(r["labels_after"] + r["tentative_labels"]))
+                    tag_source = "label+revision"
+                    revision = {"teacher_revision": " / ".join(c["text"] for c in r["her_comments"]),
+                                "teacher_revision_date": max(c["date"] for c in r["her_comments"])}
+                elif text in labels:
                     eval_tags, tag_source = labels[text], "label"
                 else:
                     eval_tags, tag_source = (tag_ai_eval_text(comment) if comment else []), "regex_fallback"
@@ -142,6 +169,7 @@ def build_ai_critique_chunks(registry, samples_by_id):
                     teacher_comment=comment,
                     eval_tags=eval_tags, tag_source=tag_source,
                     grammar_tags=tag_grammar_text(item["raw_text"]),
+                    **revision,
                 ))
                 n += 1
         print(f"{path.name}: {n} critiqued AI items -> {story['story_id']}")
@@ -170,6 +198,8 @@ def build_ai_error_cards(ai_items):
             md = ex["metadata"]
             lines.append(f"  - AI: {md['ai_raw_text']}")
             lines.append(f"    Teacher: {md['teacher_comment']}")
+            if md.get("teacher_revision"):
+                lines.append(f"    Teacher, revised {md['teacher_revision_date']}: {md['teacher_revision']}")
         cards.append(make_chunk(
             f"ai_error_card:{tag}", "ai_error_card", "\n".join(lines),
             eval_tag=tag, description=desc, n_examples_total=len(exs),

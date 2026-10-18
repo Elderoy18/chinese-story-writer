@@ -48,7 +48,30 @@ must report "identical".
 | 0.4 | `build_iteration_chunks.py` and `make_snapshot.py` stop with an error when a source file is missing, instead of silently returning no chunks. AI-critique docs are read from an explicit list (`CRITIQUE_DOCS`): her new `AI_Feedback_Tags_and_Teacher_Critiques with comments.docx` has "AI feedback" headings but no story and was crashing the build. | 10 | done |
 | 0.5 | Check: rebuilding from today's sources reproduces `base-v4` exactly (1,246 chunks, same ids, content and order); the pipeline's own `build_iteration_chunks.py` writes a file identical to the committed `chunks/iteration_chunks.jsonl`. | 10 | done |
 
-## Phase 1 -- data: snapshot `base-v5`
+## Phase 1 -- data: snapshot `base-v5` -- BUILT 18 Oct (review sheets pending)
+
+**What can go in (consequence of D1).** All 20 test stories are held out, and her newest
+item-level feedback is *about* them: every align-test note and all 104 S0_v2 comments (6
+stories, all in the test set). Those stay in the answer key. `base-v5` gets what is not about a
+test story: her general rules (`more rules.docx`), her revisions of the critique labels (Pear
+Story), and everything built from her corrections on the 87 training stories. Some general rules
+were probably prompted by her comments on test stories (e.g. why 古代的时候 is redundant); they
+contain no test sentence and are kept -- a limitation to state in the paper. Production (Phase 5)
+uses everything, including the test-story feedback.
+
+| Step | Status (18 Oct) |
+|---|---|
+| 1.1 | Done as `raw/iteration data/critique_label_revisions.json`: her 40 comments of 15 Oct on 30 critiqued AI items, verbatim, with Claude's reading as label changes (26 change labels; 3 'perhaps' labels kept as tentative). Two new labels: `overcorrection`, `wrong_or_missing_explanation`. Review: `chinese_writing_rag_pipeline/review/critique_revisions_review.csv`. Align-test / S0_v2 verdicts stay in `eval/test_set_h20.json` / v3 (test stories). |
+| 1.2 | Done: `raw/aligned_edits_train.jsonl` (frozen copy of v2's 1,196 training edits; all match a v1 correction line exactly and carry its rule labels). 659 of 729 training corrections get exact edits; rule-card examples show the student's whole clause before and after her fix. Her align-test notes, missed items and alternatives are test-only. |
+| 1.3 | Done: `extra_rules.json` 8 -> 20 rules (12 new from `more rules.docx`; 一V就 reworded to her latest; 5 marked restated). The refined 告诉 / 住在 / 别+Num+MW rules exist only in test-story notes -> production only. Over-correction card from 1.1. |
+| 1.4 | Done as rule-card metadata `standard_fix` (shown only when S7-2's flag is on). Only 13 of 49 cards have a fix she makes 2+ times (e.g. +了 x15 / -了 x7, 看->看到 x6, -他 x10, 是毒->有毒 x3); most of her fixes are clause rewrites. |
+| 1.5 | Done: `scripts/mine_triggers.py` -> `review/triggers/`: 22 proposed rule-card triggers (9 rules, 14 suggested) + all 27 teacher-rule triggers measured. Teacher-rule triggers of the **new** rules below 0.5 precision are held in `triggers_pending_review` (rule shown, no pointer); S6's 8 original rules unchanged. Rule-card triggers enter a snapshot only after review (S7-4). |
+| 1.6 | Done: 920 `rule_example` chunks (student's clause -> parent rule card). Inert until S7-5 searches them. |
+| 1.7 | Changed to a review report: `scripts/find_opposite_fixes.py` -> `review/contradictions/` -- 11 patterns where her own corrections go both ways in the same context (e.g. +了 / -了 after 吃: completed vs 没+V). Not a build blocker: both directions are her real corrections; the deciding condition belongs in the rule. |
+| 1.8 | Done: `base-v5` (2,018 chunks, embedded). vs `base-v4-h20`: 48 rule cards, 11 AI-error cards, 1 teacher rule rewritten; +920 rule_example, +12 teacher rules, +2 AI-error cards. S6 and S6-h20 still identical. |
+| -- | Note: the two new AI-error cards are not in S6's pinned card list (code), so they reach prompts only via a flag (S7-0b, below). |
+
+Original plan for Phase 1:
 
 All new inputs are frozen copies inside `chinese_writing_rag_pipeline/raw/iteration data/`
 (with their hashes in the snapshot manifest), never read across from v2/v3 folders.
@@ -132,6 +155,7 @@ Generator side first (that is where the rerun gap is), then retrieval, then the 
 | Stage | Change | Mechanism | Expect to move |
 |---|---|---|---|
 | S7-0 | S6 on `base-v5` (new data, no code change) | 1, 5, 10, 12 | accuracy; a bit of b |
+| S7-0b | + the two new AI-error cards (over-correction, wrong/missing explanation) pinned like S6's others -- a flag adding them to the pinned list | 1 | incorrect corrections, explanations |
 | S7-1 | reasoning effort low -> medium | 14 | b, reruns |
 | S7-2 | each correction names its rule card (or past correction); the card's standard fix and explanation pattern are to be reused, not reworded | 8, 11 | b (lexical + information), "explanation needed", attribution of wrong items |
 | S7-3 | content check returns a fixed verdict per required scene (told / missing / wrong) before the notes | 13 | content agreement across runs |
@@ -194,6 +218,17 @@ are used to re-check the judge (how often the judge agrees with her).
   identical. Note: `base-v4-h20`'s manifest hashes differ from `base-v4` for
   `story_scenes.md` (Windows line endings from git; same bytes otherwise) and
   `extra_rules.json` (rebuilt file) -- the chunks they produce are identical.
+
+- **18 Oct -- Phase 1 data.** Added `chinese_writing_rag_pipeline/scripts/aligned_edits.py`
+  (exact-edit helpers), `mine_triggers.py`, `find_opposite_fixes.py`; data
+  `raw/aligned_edits_train.jsonl` (+ `.about.json`), `raw/iteration data/critique_label_revisions.json`;
+  changed `chunk_builder.py` (exact edits, clause examples, standard fixes, rule_example chunks),
+  `build_iteration_chunks.py` (applies revisions; cards show her revised comments),
+  `rule_descriptions.py` (2 new labels; false-positive description no longer says
+  "over-correction"), `extra_rules.json` (20 rules), `eval/make_snapshot.py` (new inputs). Review
+  sheets in `chinese_writing_rag_pipeline/review/`: `critique_revisions_review.csv`,
+  `triggers/`, `contradictions/`. Built and embedded `base-v5`. Production chunk files
+  (`chunks/*.jsonl`) and the live database are untouched until Phase 5.
 
 ## Decisions
 

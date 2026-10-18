@@ -1,5 +1,5 @@
 {
- "_about": "The teacher's additional rules, shown to the model with the places their regex triggers match in the student's text (teacher_rule chunks, build_iteration_chunks.py). A trigger match marks a place to check, not an error. Reconstructed on 2026-10-18 from snapshot eval/snapshots/base-v4 (the S6 snapshot): the original file was never committed. Sources: 'extra rules.docx' (since replaced by 'more rules.docx') and her S5 feedback comments.",
+ "_about": "The teacher's additional rules, shown to the model with the places their regex triggers match in the student's text (teacher_rule chunks, build_iteration_chunks.py). A trigger match marks a place to check, not an error. Reconstructed on 2026-10-18 from snapshot eval/snapshots/base-v4 (the S6 snapshot): the original file was never committed. Sources: 'extra rules.docx' (since replaced by 'more rules.docx') and her S5 feedback comments. Updated 2026-10-18 with 'more rules.docx' (2026-10-17): 12 new rules (triggers drafted by Claude, measured and listed for review in review/triggers/), yi_jiu reworded to her latest wording, and the 5 rules she restated marked 'restated_in'.",
  "rules": [
   {
    "id": "bieren",
@@ -8,7 +8,8 @@
     "别人",
     "别的人"
    ],
-   "source": "extra rules.docx"
+   "source": "extra rules.docx",
+   "restated_in": "more rules.docx (2026-10-17)"
   },
   {
    "id": "zhe_na_mw",
@@ -16,7 +17,8 @@
    "triggers": [
     "[这那](?![个种位只条些样里儿么时边天次件本张家座棵就是也都才会还])[\\u4e00-\\u9fff]"
    ],
-   "source": "extra rules.docx"
+   "source": "extra rules.docx",
+   "restated_in": "more rules.docx (2026-10-17)"
   },
   {
    "id": "de_shihou",
@@ -24,7 +26,8 @@
    "triggers": [
     "(?<![的小古那这有])时候"
    ],
-   "source": "extra rules.docx"
+   "source": "extra rules.docx",
+   "restated_in": "more rules.docx (2026-10-17)"
   },
   {
    "id": "ren_renmen",
@@ -32,7 +35,8 @@
    "triggers": [
     "(?:^|[，。！？、：])人(?!们)"
    ],
-   "source": "extra rules.docx"
+   "source": "extra rules.docx",
+   "restated_in": "more rules.docx (2026-10-17)"
   },
   {
    "id": "du_youdu",
@@ -43,7 +47,8 @@
     "是毒",
     "(?<!有)毒的"
    ],
-   "source": "extra rules.docx"
+   "source": "extra rules.docx",
+   "restated_in": "more rules.docx (2026-10-17)"
   },
   {
    "id": "kongpa",
@@ -55,11 +60,12 @@
   },
   {
    "id": "yi_jiu",
-   "rule": "一V must be followed by 就……",
+   "rule": "一V就……：“就“ is needed",
    "triggers": [
     "一(?:看|吃|听|喝|走|到|进|回|说|想)(?![^。！？]*就)"
    ],
-   "source": "S5 feedback check.docx"
+   "source": "S5 feedback check.docx",
+   "updated": "more rules.docx (2026-10-17)"
   },
   {
    "id": "wei_polite",
@@ -68,6 +74,124 @@
     "一位"
    ],
    "source": "S5 feedback check.docx"
+  },
+  {
+   "id": "zhiyou_caiyou",
+   "rule": "只有：not才有",
+   "triggers": [
+    "才有"
+   ],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)"
+  },
+  {
+   "id": "nanguai_yuanlai",
+   "rule": "难怪……，原来……",
+   "triggers": [],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)",
+   "triggers_pending_review": [
+    "难怪"
+   ]
+  },
+  {
+   "id": "ziji_possessor",
+   "rule": "自己 (coherence/reference): When the possessor is the same person as the subject, often use 自己的 to make that relationship clear.",
+   "triggers": [
+    "(他们|她们|他|她)[^，。！？]{1,8}\\1的"
+   ],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)"
+  },
+  {
+   "id": "zhe_jiu_yao_kan_le",
+   "rule": "Mix 这就要看……了 and 了：“了” in “这就要看……了” is just part of this structure, not about completion or not.",
+   "triggers": [],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)",
+   "triggers_pending_review": [
+    "要看"
+   ]
+  },
+  {
+   "id": "gudai_de_shihou_why",
+   "rule": "Why 古代的时候 is problematic: 古代 is a time, ……的时候 also means “time of”, it is redundant.",
+   "triggers": [
+    "古代的时候"
+   ],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)"
+  },
+  {
+   "id": "zai_structure",
+   "rule": "再 structure: modal verb + 再 + V. + Num. + MW. + Obj.",
+   "triggers": [
+    "(?:要|得|会|想|应该)又"
+   ],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)",
+   "triggers_pending_review": [
+    "又一?个?次",
+    "再[^，。！？]{0,4}了"
+   ]
+  },
+  {
+   "id": "le_placement",
+   "rule": "了 placement: V. + Resultative + 了 (wrong: V. 了Resultative), 去V. + 了 (wrong: 去了V.)",
+   "triggers": [
+    "了(?:到|在|给|成|完)",
+    "去了(?:吃|看|找|买|玩|做|学|拿|问|帮|摘)"
+   ],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)"
+  },
+  {
+   "id": "haide_structure",
+   "rule": "害得structure: 害得 + someone + harmful result (clause)",
+   "triggers": [],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)",
+   "triggers_pending_review": [
+    "害得"
+   ]
+  },
+  {
+   "id": "cong_kaishi",
+   "rule": "从Time开始",
+   "triggers": [],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)",
+   "triggers_pending_review": [
+    "从[^，。！？]{1,8}一直"
+   ]
+  },
+  {
+   "id": "jueding_vp",
+   "rule": "决定 + VP.: no need to repeat pronouns/reference after “决定”",
+   "triggers": [
+    "决定了?(?:他们|我们|她|他|我|会)"
+   ],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)"
+  },
+  {
+   "id": "bushi_ershi",
+   "rule": "“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong",
+   "triggers": [],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)",
+   "triggers_pending_review": [
+    "不是[^。！？]{1,40}而是"
+   ]
+  },
+  {
+   "id": "ye_vp",
+   "rule": "也 + VP.: 也 cannot be directly followed by noun or clause.",
+   "triggers": [
+    "也(?:什么|哪|谁|我|你|他|她|它|人)"
+   ],
+   "source": "more rules.docx (2026-10-17)",
+   "triggers_status": "drafted 2026-10-18; triggers below 50% precision on training stories held in triggers_pending_review until reviewed (review/triggers/triggers_review.csv)"
   }
  ]
 }

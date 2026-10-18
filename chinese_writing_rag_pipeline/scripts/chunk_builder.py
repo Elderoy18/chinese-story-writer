@@ -14,9 +14,16 @@ Chunk types (see docs/design.md for full rationale):
   correction_item-- one atomic teacher gold correction (original -> corrected, why)
   content_flag   -- one structured content-coverage/coherence/factual flag
   rule_card      -- aggregated exemplars of one grammar/linguistic point across the corpus
+  rule_example   -- one student sentence she corrected under one rule (the student's own
+                     words); parent_id = its rule_card, so a similarity hit on a student
+                     sentence with the same error leads to the card
 
 Grammar rules per correction come from raw/correction_rules.json (labels keyed by
-the correction's text). A correction with no label there falls back to the
+the correction's text). Where the correction has exact edits on the story text
+(raw/aligned_edits_train.jsonl), the correction_item carries them, rule-card
+examples show the student's whole clause before and after her fix, and each
+rule card gets her standard fix (metadata `standard_fix`, from corrections with
+that rule only). A correction with no label there falls back to the
 regex tagger (tagging.py) and is listed in extracted/unlabelled_corrections.json
 so it can be labelled.
 
@@ -35,6 +42,7 @@ from collections import defaultdict, Counter
 sys.path.insert(0, "scripts")
 from tagging import tag_grammar_text, parse_content_flag, split_correction
 from rule_descriptions import GRAMMAR_RULE_DESC, NO_RULE_CARD
+from aligned_edits import load_aligned_edits, before_after, standard_fix
 
 CORPUS_PATH = "extracted/basic_corpus.json"
 RULE_LABELS_PATH = "raw/correction_rules.json"
@@ -121,9 +129,12 @@ def make_chunk(chunk_id, chunk_type, text, **meta):
     return {"chunk_id": chunk_id, "chunk_type": chunk_type, "text": text, "metadata": meta}
 
 
-def build_chunks(corpus, rule_labels):
+def build_chunks(corpus, rule_labels, aligned=None):
+    """aligned: her exact edits by (sample_id, correction line) -- load_aligned_edits()."""
     chunks = []
     unlabelled = []
+    aligned = load_aligned_edits() if aligned is None else aligned
+    texts = {s["sample_id"]: s["raw_text"] for s in corpus["samples"]}
 
     model_by_story = {m["story_id"]: m for m in corpus["model_stories"]}
     missed_scenes = build_scene_checklists(corpus)
@@ -158,12 +169,19 @@ def build_chunks(corpus, rule_labels):
                 gtags, tag_source = tag_grammar_text(raw), "regex_fallback"
                 unlabelled.append({"sample_id": sid, "text": raw, "regex_tags": gtags})
             story_stats[s["story_id"]]["grammar_tags"].update(gtags)
+            exact = {}
+            edits = aligned.get((sid, raw), [])
+            if edits:
+                before, after = before_after(s["raw_text"], edits)
+                exact = {"edits": [{k: e[k] for k in ("op", "start", "end", "original", "corrected")} for e in edits],
+                         "clause_before": before, "clause_after": after}
             chunks.append(make_chunk(
                 f"correction_item:{sid}::c{idx}", "correction_item", raw,
                 source_doc=s["source_doc"], doc_type=s["doc_type"], story_id=s["story_id"],
                 sample_id=sid, parent_id=f"sample:{sid}",
                 original_span=split["original_span"], corrected_span=split["corrected_span"],
                 explanation=split["explanation"], grammar_tags=gtags, tag_source=tag_source,
+                **exact,
             ))
 
         for idx, raw in enumerate(s["content_flags"]):
@@ -216,17 +234,38 @@ def build_chunks(corpus, rule_labels):
         for ex in picked:
             md = ex["metadata"]
             story_ids.add(md["story_id"])
-            orig = md.get("original_span") or "(see raw)"
-            corr = md.get("corrected_span") or ""
+            if md.get("clause_before"):  # her exact edits: the student's whole clause, before and after
+                orig, corr = md["clause_before"], md["clause_after"]
+            else:
+                orig = md.get("original_span") or "(see raw)"
+                corr = md.get("corrected_span") or ""
             expl = md.get("explanation") or ""
             lines.append(f"  - {orig} -> {corr}" + (f"  [{expl}]" if expl else ""))
         text = "\n".join(lines)
+        # her standard fix: from corrections labelled with this rule only (edit -> rule is unambiguous)
+        single = [(e, texts[ex["metadata"]["sample_id"]]) for ex in examples if ex["metadata"]["grammar_tags"] == [tag]
+                  for e in aligned.get((ex["metadata"]["sample_id"], ex["text"]), [])]
         chunks.append(make_chunk(
             f"rule_card:{tag}", "rule_card", text,
             grammar_tag=tag, description=desc, n_examples_total=len(examples),
             example_sample_ids=[e["metadata"]["sample_id"] for e in picked],
             story_ids=sorted(story_ids),
+            **({"standard_fix": fix} if (fix := standard_fix(single)) else {}),
         ))
+
+    # ---- rule_example chunks (index rule cards by the student sentences she corrected) --
+    cards = {ch["metadata"]["grammar_tag"] for ch in chunks if ch["chunk_type"] == "rule_card"}
+    for ch in [c for c in chunks if c["chunk_type"] == "correction_item"]:
+        md = ch["metadata"]
+        if not md.get("clause_before"):
+            continue
+        for tag in md["grammar_tags"]:
+            if tag in cards:
+                chunks.append(make_chunk(
+                    f"rule_example:{ch['chunk_id'].split(':', 1)[1]}::{tag}", "rule_example", md["clause_before"],
+                    parent_id=f"rule_card:{tag}", grammar_tag=tag, story_id=md["story_id"],
+                    sample_id=md["sample_id"], correction_id=ch["chunk_id"], clause_after=md["clause_after"],
+                ))
 
     return chunks, unlabelled
 

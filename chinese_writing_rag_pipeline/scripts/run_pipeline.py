@@ -10,11 +10,14 @@ Two separate builds, one per kind of data:
   Basic data -- raw/basic data/ (graded samples + model stories, before any AI round)
     1. extract_json.py    raw/basic data/*              -> extracted/basic/*.json
     2. parse_corpus.py    + raw/stories.json (corpus IDs) -> extracted/basic_corpus.json
-    3. chunk_builder.py                                  -> chunks/basic_chunks.jsonl
+    3. chunk_builder.py   + raw/aligned_edits_train.jsonl -> chunks/basic_chunks.jsonl
+                          (her corrections as exact edits: whole-clause rule-card
+                          examples, standard fixes, rule_example chunks)
 
   Human-in-the-loop data -- raw/iteration data/ (the teacher's review of the system)
     4. build_iteration_chunks.py  the AI-critique docs listed in its CRITIQUE_DOCS,
-                                  critique_labels.json, vocab_errors.json,
+                                  critique_labels.json + critique_label_revisions.json,
+                                  vocab_errors.json,
                                   extra_rules.json, vocab_suggestion_examples.txt,
                                   story_scenes.md
                                                          -> chunks/iteration_chunks.jsonl
@@ -34,6 +37,10 @@ Adding basic data:
     and give the title a corpus ID in raw/stories.json.
 Then re-run this script. Any layout problem stops the run with the file and the
 sample it is in.
+
+Review sheets (not build steps; their output goes to review/ for a person to check):
+  scripts/mine_triggers.py        -> review/triggers/       regex triggers, measured
+  scripts/find_opposite_fixes.py  -> review/contradictions/ her corrections that go both ways
 
 Grammar rules for each correction come from raw/correction_rules.json. New
 corrections have no label yet: they fall back to the regex tagger and are listed
