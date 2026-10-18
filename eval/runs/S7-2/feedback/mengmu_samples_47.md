@@ -13,9 +13,9 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 - 安排 -- “孟子的妈妈安排他的生活”：规划，emphasizes that she makes a deliberate, long-term plan for his daily life and future.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 这个男孩子叫孟子，孟子是古代的人：在古代，有一个叫孟子的男孩子，At a character’s first mention, use an indefinite noun phrase that introduces both the character and his name, rather than starting with a specific phrase. [rule: character_introduction_first_mention]
-- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action takes the zero particle; 了 is for a completed action, not a routine. [rule: aspect_le_completed]
-- Coherence (Reference): 所以孟子的妈妈安排他的生活：所以安排他的生活，After the mother has just been referred to as 她 in the same sentence, use zero form rather than repeating her full noun phrase. [rule: none]
+- Coherence (Reference): 这个男孩子叫孟子，孟子是古代的人：在古代，有一个叫孟子的男孩子，At a character’s first mention, use an indefinite noun phrase that introduces both the character and his name, rather than starting with a specific phrase.
+- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action takes the zero particle; 了 is for a completed action, not a routine.
+- Coherence (Reference): 所以孟子的妈妈安排他的生活：所以安排他的生活，After the mother has just been referred to as 她 in the same sentence, use zero form rather than repeating her full noun phrase.
 - Expressiveness: At “她望子成龙,” add a small action showing the mother’s concern, such as “她皱着眉头，想了很久。”
 - Expressiveness: After the mother’s reason for arranging his life, add a short line of inner speech, such as “她心想：‘我得给孟子找一个适合学习的地方。’”
 
@@ -27,14 +27,14 @@ You clearly show the mother’s motivation with “望子成龙,” and the caus
 > 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。
 
 ### Grammar & Vocabulary Corrections
-- 先她让：她先让，The temporal adverb must follow the subject and come before the verb it modifies. [rule: none]
-- 又便宜又好质量的东西：又便宜又质量好的东西，质量 is a noun; use the predicate phrase 质量好 plus 的 to modify 东西. [rule: none]
+- 先她让：她先让，The temporal adverb must follow the subject and come before the verb it modifies.
+- 又便宜又好质量的东西：又便宜又质量好的东西，质量 is a noun; use the predicate phrase 质量好 plus 的 to modify 东西.
 
 ### Vocabulary Suggestions
 - 很多 -- “妈妈教孟子很多技能”：不少，still means a considerable number while sounding more specific and natural for skills learned over time；各种，emphasizes that the skills are of different kinds.
 
 ### Coherence & Expressiveness
-- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action uses the zero particle, not 了, because it does not describe one completed move. [rule: aspect_le_completed]
+- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action uses the zero particle, not 了, because it does not describe one completed move.
 - Expressiveness: At the sentence about teaching, add the mother’s purpose to show her care, for example: “妈妈希望孟子学会照顾自己。”
 - Expressiveness: At the shopping lesson, add a short line of advice from the mother, for example: “买东西的时候，要看价钱和质量。”
 

@@ -7,16 +7,16 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。
 
 ### Grammar & Vocabulary Corrections
-- 古代的时候：在古代，Both parts express time, so the original is redundant. [vocab list]
-- 一看：一看到，Here the verb means successfully seeing the people, so it needs the resultative complement 到. [rule: resultative_complement]
-- 别人：人们，别人 means “other people” in contrast with a specified person or group; this scene refers to the group of people who are becoming ill. [teacher rule: bieren]
+- 古代的时候：在古代，Both parts express time, so the original is redundant.
+- 一看：一看到，Here the verb means successfully seeing the people, so it needs the resultative complement 到.
+- 别人：人们，别人 means “other people” in contrast with a specified person or group; this scene refers to the group of people who are becoming ill.
 
 ### Vocabulary Suggestions
 - No suggestions.
 
 ### Coherence & Expressiveness
-- Coherence (Temporality): 一些人一吃植物就生病了：一些人一吃植物就生病，This describes a repeated condition, not one completed illness event, so use the zero particle rather than 了. [rule: aspect_le_completed]
-- Coherence (Conjunction): 一看很多人正在吃一些植物。一些人一吃植物就生病了：一看到很多人正在吃一些植物，就发现一些人一吃植物就生病，Use 一……就…… to connect the immediate observation with what Shennong discovers. [teacher rule: yi_jiu]
+- Coherence (Temporality): 一些人一吃植物就生病了：一些人一吃植物就生病，This describes a repeated condition, not one completed illness event, so use the zero particle rather than 了.
+- Coherence (Conjunction): 一看很多人正在吃一些植物。一些人一吃植物就生病了：一看到很多人正在吃一些植物，就发现一些人一吃植物就生病，Use 一……就…… to connect the immediate observation with what Shennong discovers.
 - Expressiveness: After the people become ill, add Shennong’s concern: “神农很担心他们。”
 - Expressiveness: At the point where he sees the plants, describe one visible detail: “那些植物有绿色的叶子，还有黄色的小花。”
 - Expressiveness: Add an internal thought before his goal: “神农心想：我一定要弄清楚哪些植物能吃。”
@@ -29,8 +29,8 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。
 
 ### Grammar & Vocabulary Corrections
-- 一些植物吃真好：一些植物吃起来真好，When describing how food tastes, add 起来 after the verb to form an evaluative expression. [rule: none]
-- 一些植物毒得很：一些植物有毒，毒 cannot be modified with 得很; 有毒 describes a plant that contains poison. [teacher rule: du_youdu]
+- 一些植物吃真好：一些植物吃起来真好，When describing how food tastes, add 起来 after the verb to form an evaluative expression.
+- 一些植物毒得很：一些植物有毒，毒 cannot be modified with 得很; 有毒 describes a plant that contains poison.
 
 ### Vocabulary Suggestions
 - 很多 -- “神农开始尝很多植物”：各种各样的，specifies that the plants are of many different kinds, matching the examples that follow.
@@ -48,10 +48,10 @@ You clearly contrast plants that are good to eat with plants that are dangerous,
 > 一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。
 
 ### Grammar & Vocabulary Corrections
-- 麻烦：请问，麻烦 means “trouble” or “to inconvenience someone”; it cannot by itself introduce a polite question. [rule: none]
-- 以后：后来，sentence-initial 以后 cannot mean “afterwards” in this context; use 后来 to introduce the next event. [vocab list]
-- 别人：人们，别人 distinguishes other people from the speaker, while this sentence refers generally to the people whom 神农 taught. [teacher rule: bieren]
-- 告诉：告诉了，this is a completed narrative action, so the verb needs 了. [rule: aspect_le_completed]
+- 麻烦：请问，麻烦 means “trouble” or “to inconvenience someone”; it cannot by itself introduce a polite question.
+- 以后：后来，sentence-initial 以后 cannot mean “afterwards” in this context; use 后来 to introduce the next event.
+- 别人：人们，别人 distinguishes other people from the speaker, while this sentence refers generally to the people whom 神农 taught.
+- 告诉：告诉了，this is a completed narrative action, so the verb needs 了.
 
 ### Vocabulary Suggestions
 - No suggestions.
@@ -65,15 +65,6 @@ You clearly contrast plants that are good to eat with plants that are dangerous,
 You used the A-not-A form “想不想” correctly after “这就要看……了.” You also clearly contrasted plants that can be eaten with plants that cannot.
 
 ## End of story
-
-### Scene check
-- in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants -- told
-- 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants -- partly told
-- 神农found茶and took a record -- missing
-- 神农tried 夹竹桃 and fainted -- partly told
-- a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝 -- missing
-- another person in brown came by and had a conversation with 神农 -- partly told
-- 神农takes record of灵芝and夹竹桃 -- missing
 
 ### Content & Completeness
 - You need to show 神农 climbing mountains to try the plants after he decides to help people.

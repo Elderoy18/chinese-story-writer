@@ -7,15 +7,15 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 > 古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。
 
 ### Grammar & Vocabulary Corrections
-- 古代的时候：在古代，The original repeats the time meaning because 古代 already refers to a historical time period. [vocab list]
-- 别人：他们，别人 distinguishes other people from the speaker or a stated group; here the reference is specifically the people 神农 has just seen. [teacher rule: bieren]
+- 古代的时候：在古代，The original repeats the time meaning because 古代 already refers to a historical time period.
+- 别人：他们，别人 distinguishes other people from the speaker or a stated group; here the reference is specifically the people 神农 has just seen.
 
 ### Vocabulary Suggestions
 - No suggestions.
 
 ### Coherence & Expressiveness
-- Coherence (Conjunction): 一看很多人正在吃一些植物：看到很多人正在吃一些植物，The intended meaning is a completed perception. If using the pattern 一V, it needs a following result clause with 就; without that result, use 看到 instead. [teacher rule: yi_jiu]
-- Coherence (Conjunction): 。所以：，所以，The wish to learn which plants are safe is the result of wanting to help the people, so these clauses should be linked with the cause-and-effect connector. [rule: none]
+- Coherence (Conjunction): 一看很多人正在吃一些植物：看到很多人正在吃一些植物，The intended meaning is a completed perception. If using the pattern 一V, it needs a following result clause with 就; without that result, use 看到 instead.
+- Coherence (Conjunction): 。所以：，所以，The wish to learn which plants are safe is the result of wanting to help the people, so these clauses should be linked with the cause-and-effect connector.
 - Expressiveness: After the illness is mentioned, add a physical detail to show how the people feel: “一些人捂着肚子，难受得不得了。”
 - Expressiveness: Add 神农’s inner thought after he sees the problem: “神农心想：我一定要弄清楚哪些植物能吃。”
 
@@ -27,8 +27,8 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 > 然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。
 
 ### Grammar & Vocabulary Corrections
-- 一些植物吃真好：一些植物很好吃，Use the adjective phrase to describe the plants’ taste; the verb order in the original does not form a natural predicate. [rule: none]
-- 毒得很：有毒，Toxicity is expressed with 有毒; 毒 cannot be intensified with 得很. [teacher rule: du_youdu]
+- 一些植物吃真好：一些植物很好吃，Use the adjective phrase to describe the plants’ taste; the verb order in the original does not form a natural predicate.
+- 毒得很：有毒，Toxicity is expressed with 有毒; 毒 cannot be intensified with 得很.
 
 ### Vocabulary Suggestions
 - No suggestions.
@@ -45,10 +45,10 @@ You use clear examples of different plants, which helps the reader understand th
 > 一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。
 
 ### Grammar & Vocabulary Corrections
-- 说，麻烦我们可以吃什么植物？：说：“麻烦问一下，我们可以吃什么植物？”，Use a colon and quotation marks to introduce direct speech; as a polite request before a question, 麻烦 needs a following action such as 问一下. [rule: none]
-- 说，这就要看你想不想生病了。：说：“这就要看你想不想生病了。”，Use a colon and quotation marks to introduce direct speech. [rule: none]
-- 以后，神农告诉别人一些植物能吃：后来，神农告诉别人一些植物能吃，At the beginning of a sentence meaning “afterwards,” use 后来 rather than 以后. [vocab list]
-- 告诉别人：告诉人们，别人 distinguishes other people from the speaker or another specified person; here the general group being told is 人们. [teacher rule: bieren]
+- 说，麻烦我们可以吃什么植物？：说：“麻烦问一下，我们可以吃什么植物？”，Use a colon and quotation marks to introduce direct speech; as a polite request before a question, 麻烦 needs a following action such as 问一下.
+- 说，这就要看你想不想生病了。：说：“这就要看你想不想生病了。”，Use a colon and quotation marks to introduce direct speech.
+- 以后，神农告诉别人一些植物能吃：后来，神农告诉别人一些植物能吃，At the beginning of a sentence meaning “afterwards,” use 后来 rather than 以后.
+- 告诉别人：告诉人们，别人 distinguishes other people from the speaker or another specified person; here the general group being told is 人们.
 
 ### Vocabulary Suggestions
 - 说 -- “一个人对神农说”：问，more exactly identifies this line as a question rather than general speech

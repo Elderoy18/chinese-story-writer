@@ -13,8 +13,8 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 - 重要 -- “住在哪儿对童年很重要”：影响很大，specifies that the place where a child lives has a strong effect on childhood development.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 她望子成龙，所以孟子的妈妈安排他的生活：她望子成龙，所以安排他的生活，when the same subject continues across two closely linked clauses, use zero form rather than repeating the full noun phrase. [rule: redundancy_delete]
-- Coherence (Temporality): 常常搬了家：常常搬家，habitual actions with “常常” use the zero particle rather than completed-action “了”. [rule: aspect_le_completed]
+- Coherence (Reference): 她望子成龙，所以孟子的妈妈安排他的生活：她望子成龙，所以安排他的生活，when the same subject continues across two closely linked clauses, use zero form rather than repeating the full noun phrase.
+- Coherence (Temporality): 常常搬了家：常常搬家，habitual actions with “常常” use the zero particle rather than completed-action “了”.
 - Expressiveness: After the mother’s thought about moving, add an inner thought to show her concern, such as: 孟母心想：“住在这儿会不会影响孟子？”
 - Expressiveness: Make the repeated moves more vivid by adding a small detail about the family’s experience, such as: 每次搬家，孟子都要收拾自己的东西。
 
@@ -26,16 +26,16 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。
 
 ### Grammar & Vocabulary Corrections
-- 常常搬了家：常常搬家，A habitual action takes the zero aspect particle; 了 is not used for a routine. [rule: aspect_le_completed]
-- 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，The subject comes before a sequence adverb such as 先. [rule: adverbial_word_order]
-- 又便宜又好质量的东西：又便宜又质量好的东西，质量好 is the correct adjective phrase; 好 cannot directly modify 质量 in this position. [rule: none]
+- 常常搬了家：常常搬家，A habitual action takes the zero aspect particle; 了 is not used for a routine.
+- 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，The subject comes before a sequence adverb such as 先.
+- 又便宜又好质量的东西：又便宜又质量好的东西，质量好 is the correct adjective phrase; 好 cannot directly modify 质量 in this position.
 
 ### Vocabulary Suggestions
 - 朋友 -- “让孟子跟朋友玩儿”：小伙伴，specifically suggests friends of a similar age, fitting a child character in this scene.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence when the mother was just mentioned and no female character competes as the referent. [rule: none]
-- Coherence (Conjunction): 因为他们常常搬家，中国人说，孟母三迁：因为他们常常搬家，所以中国人说，孟母三迁，Add 所以 to complete the cause-and-effect connection introduced by 因为. [rule: coherence_connectives]
+- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence when the mother was just mentioned and no female character competes as the referent.
+- Coherence (Conjunction): 因为他们常常搬家，中国人说，孟母三迁：因为他们常常搬家，所以中国人说，孟母三迁，Add 所以 to complete the cause-and-effect connection introduced by 因为.
 - Expressiveness: After the moving sentence, add Mengzi’s feeling about arriving somewhere new, such as “孟子看着新家，觉得有一点不习惯。”
 - Expressiveness: When the mother teaches him about buying things, add a short line of advice, such as “孟母说：‘买东西的时候，要看价钱，也要看东西好不好。’”
 - Expressiveness: Add one concrete action to show the lesson, such as “孟子认真地看着东西的价钱，慢慢学会了怎么选。”
@@ -62,13 +62,6 @@ You give clear examples of what the mother teaches Mengzi, especially playing wi
 You used the character references clearly: the pronouns naturally continue from the earlier scenes. The final sentence also gives a strong, simple ending by showing that Mencius became well known.
 
 ## End of story
-
-### Scene check
-- 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day -- missing
-- 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子 -- missing
-- 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day -- partly told
-- 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day -- partly told
-- 孟子becomes a famous philosopher -- partly told
 
 ### Content & Completeness
 - Missing scene: At the beginning, add that Mengzi and his mother lived near a graveyard, where he copied people offering sacrifices every day.

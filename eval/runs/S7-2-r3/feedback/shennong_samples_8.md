@@ -7,15 +7,15 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 > 古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。
 
 ### Grammar & Vocabulary Corrections
-- 古代的时候：在古代，this phrase redundantly combines two time expressions; use the shorter time expression here. [vocab list]
-- 一看很多人正在吃一些植物：看到很多人正在吃一些植物，use 看到 when the meaning is “see”; 看 means “look at.” [vocab list]
-- 帮别人：帮助他们，别人 distinguishes other people from a stated speaker or person, while 他们 clearly refers to the people who are becoming ill. [teacher rule: bieren]
+- 古代的时候：在古代，this phrase redundantly combines two time expressions; use the shorter time expression here.
+- 一看很多人正在吃一些植物：看到很多人正在吃一些植物，use 看到 when the meaning is “see”; 看 means “look at.”
+- 帮别人：帮助他们，别人 distinguishes other people from a stated speaker or person, while 他们 clearly refers to the people who are becoming ill.
 
 ### Vocabulary Suggestions
 - 知道 -- “所以想知道哪些植物能吃，哪些植物不能吃”：弄清楚，emphasizes finding a clear answer after observing the problem.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 一天，神农正在路上走：一天，他正在路上走，because the name appeared in the immediately preceding sentence and no competing character has appeared, use a pronoun for this close re-occurrence. [rule: none]
+- Coherence (Reference): 一天，神农正在路上走：一天，他正在路上走，because the name appeared in the immediately preceding sentence and no competing character has appeared, use a pronoun for this close re-occurrence.
 - Expressiveness: After the people become ill, add a concrete symptom to show why the situation worries Shennong, for example: “他们常常肚子疼，难受得不得了。”
 - Expressiveness: After Shennong decides to investigate, add his thought as quoted speech, for example: “我一定要找出哪些植物能吃！”
 - Expressiveness: Describe the plants he notices on the road, for example: “路边长着各种各样的花草，有的又大又漂亮。”
@@ -29,8 +29,8 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 > 然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。
 
 ### Grammar & Vocabulary Corrections
-- 一些植物吃真好：一些植物很好吃，Use the adjective-complement pattern with the food/plant as the subject: 很好吃 describes that it tastes good; 吃真好 does not form a natural predicate here. [rule: none]
-- 一些植物毒得很：一些植物有毒，毒 cannot be modified with 得很; use 有毒 to describe poisonous plants. [teacher rule: du_youdu]
+- 一些植物吃真好：一些植物很好吃，Use the adjective-complement pattern with the food/plant as the subject: 很好吃 describes that it tastes good; 吃真好 does not form a natural predicate here.
+- 一些植物毒得很：一些植物有毒，毒 cannot be modified with 得很; use 有毒 to describe poisonous plants.
 
 ### Vocabulary Suggestions
 - 吃过 -- “比方说他吃过生姜、芥兰和菠菜”：尝过，emphasizes tasting these plants as part of an investigation rather than simply eating them.
@@ -48,16 +48,16 @@ You clearly contrast plants that are safe to eat with plants that are dangerous,
 > 一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。
 
 ### Grammar & Vocabulary Corrections
-- 麻烦我们可以吃什么植物？：请问，我们可以吃什么植物？，麻烦 can introduce a request for someone to do something, but it does not mean “excuse me” before a question. 请问 politely introduces a question. [rule: none]
-- 这就要看你想不想生病了：这就要看是哪种植物了，this response must use the 这就要看……了 structure to answer the earlier question about which plants are edible. The part after 看 should identify the relevant uncertain condition. [rule: zhe_jiu_yao_kan]
-- 以后，神农告诉别人一些植物能吃，一些植物不能吃：后来，他告诉人们哪些植物能吃，哪些植物不能吃，别人 means people other than a particular speaker or group, but no such contrast is intended here; 人们 refers to people generally. 哪些植物 makes clear that he is explaining the categories of plants. [teacher rule: bieren]
-- 以后：后来，at the beginning of a sentence meaning “afterwards,” use 后来 rather than 以后. [vocab list]
+- 麻烦我们可以吃什么植物？：请问，我们可以吃什么植物？，麻烦 can introduce a request for someone to do something, but it does not mean “excuse me” before a question. 请问 politely introduces a question.
+- 这就要看你想不想生病了：这就要看是哪种植物了，this response must use the 这就要看……了 structure to answer the earlier question about which plants are edible. The part after 看 should identify the relevant uncertain condition.
+- 以后，神农告诉别人一些植物能吃，一些植物不能吃：后来，他告诉人们哪些植物能吃，哪些植物不能吃，别人 means people other than a particular speaker or group, but no such contrast is intended here; 人们 refers to people generally. 哪些植物 makes clear that he is explaining the categories of plants.
+- 以后：后来，at the beginning of a sentence meaning “afterwards,” use 后来 rather than 以后.
 
 ### Vocabulary Suggestions
 - No suggestions.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 神农告诉人们：他告诉人们，神农 was the subject in the immediately preceding sentence, and no competing male character has become the topic, so a pronoun is more natural for a close re-occurrence. [rule: redundancy_delete]
+- Coherence (Reference): 神农告诉人们：他告诉人们，神农 was the subject in the immediately preceding sentence, and no competing male character has become the topic, so a pronoun is more natural for a close re-occurrence.
 - Expressiveness: At the question, add the person’s worried feeling: “一个人着急地问：‘什么植物能吃？’”
 - Expressiveness: Make Shennong’s reply sound helpful and knowledgeable: “神农耐心地说：‘要看是哪种植物。’”
 

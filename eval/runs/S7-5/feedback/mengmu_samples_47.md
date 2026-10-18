@@ -13,9 +13,9 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 - 重要 -- “住在哪儿对童年很重要”：关键，shows that the place of living has an especially decisive effect on childhood.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 这个男孩子叫孟子，孟子是古代的人：在古代，有一个叫孟子的男孩子。The first mention should introduce the character with an indefinite full noun phrase rather than using “这个,” which suggests that the boy has already been introduced. [rule: character_introduction_first_mention]
-- Coherence (Reference): 她望子成龙，所以孟子的妈妈安排他的生活：她望子成龙，所以安排他的生活。The mother has already been named, and she remains the subject in the same sentence, so the repeated noun should be omitted. [rule: redundancy_delete]
-- Coherence (Temporality): 常常搬了家：常常搬家。“常常” describes a habitual action, so it takes the zero aspect particle rather than completed-action “了.” [rule: aspect_le_completed]
+- Coherence (Reference): 这个男孩子叫孟子，孟子是古代的人：在古代，有一个叫孟子的男孩子。The first mention should introduce the character with an indefinite full noun phrase rather than using “这个,” which suggests that the boy has already been introduced.
+- Coherence (Reference): 她望子成龙，所以孟子的妈妈安排他的生活：她望子成龙，所以安排他的生活。The mother has already been named, and she remains the subject in the same sentence, so the repeated noun should be omitted.
+- Coherence (Temporality): 常常搬了家：常常搬家。“常常” describes a habitual action, so it takes the zero aspect particle rather than completed-action “了.”
 - Expressiveness: After the mother’s thought about the child’s future, add an inner thought to show her concern. Example: “住在哪儿会影响孟子的成长。”
 - Expressiveness: Make the mother’s care more concrete by adding one small example of how she organizes the child’s daily life. Example: “她每天安排孟子读书和休息。”
 
@@ -27,17 +27,17 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。
 
 ### Grammar & Vocabulary Corrections
-- 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，The subject comes before the time-order adverbial; place or manner adverbials then come before the verb. [rule: adverbial_word_order]
-- 又便宜又好质量的东西：又便宜、质量又好的东西，质量 is a noun, so 好 cannot directly modify it in this position; use 质量好 to describe the quality of the things. [rule: none]
+- 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，The subject comes before the time-order adverbial; place or manner adverbials then come before the verb.
+- 又便宜又好质量的东西：又便宜、质量又好的东西，质量 is a noun, so 好 cannot directly modify it in this position; use 质量好 to describe the quality of the things.
 
 ### Vocabulary Suggestions
 - 很多 -- “妈妈教孟子很多技能”：许多生活技能，specifies that these are practical abilities for daily life；各种生活技能，emphasizes a range of different useful abilities.
 - 从这儿到那儿 -- “从这儿到那儿，妈妈教孟子很多技能”：搬来搬去，more specifically shows repeated moves between homes.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence when the mother was named in the immediately preceding sentence and no other female character competes as the referent. [rule: character_introduction_first_mention]
-- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action takes the zero particle rather than 了, which marks a completed event. [rule: aspect_le_completed]
-- Coherence (Temporality): 然后教他怎么买又便宜又好质量的东西：然后教了他怎么买又便宜、质量又好的东西，In a completed series of actions, only the final verb takes 了; here 教 is the final action after 让. [rule: aspect_le_completed]
+- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence when the mother was named in the immediately preceding sentence and no other female character competes as the referent.
+- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action takes the zero particle rather than 了, which marks a completed event.
+- Coherence (Temporality): 然后教他怎么买又便宜又好质量的东西：然后教了他怎么买又便宜、质量又好的东西，In a completed series of actions, only the final verb takes 了; here 教 is the final action after 让.
 - Expressiveness: At the final sentence, add a short line of advice from the mother to make her teaching more vivid: “妈妈说：‘买东西的时候，要看价格，也要看质量。’”
 - Expressiveness: After the sentence about the mother’s importance, add her caring hope for Mengzi: “她希望孟子长大以后能照顾自己。”
 
@@ -63,13 +63,6 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 You used the pronouns clearly because both characters were established in the earlier scenes. The sentence “他不是写作就是看书” effectively shows that Mengzi studies in two different ways.
 
 ## End of story
-
-### Scene check
-- 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day -- missing
-- 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子 -- partly told
-- 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day -- wrong
-- 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day -- partly told
-- 孟子becomes a famous philosopher -- partly told
 
 ### Content & Completeness
 - Missing scene: At the beginning, show that 孟子 and his mother lived near a graveyard and that he copied people offering sacrifices every day.

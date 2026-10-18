@@ -13,7 +13,7 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 - 不高兴 -- “孟子不高兴”：感到不满，identifies his feeling more precisely as dissatisfaction about having to move repeatedly.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 孟子和他妈妈：有一个小男孩叫孟子，他和妈妈，At a character’s first mention, introduce the name together with who the character is, rather than naming the character without an introduction. [rule: character_introduction_first_mention]
+- Coherence (Reference): 孟子和他妈妈：有一个小男孩叫孟子，他和妈妈，At a character’s first mention, introduce the name together with who the character is, rather than naming the character without an introduction.
 - Expressiveness: When mentioning the worship work, add one sensory detail about the setting, such as “墓地里不时传来哭声，还有人拿着花来祭拜。”
 - Expressiveness: Before the mother explains her work, show that she is tired after a long day, such as “她叹了一口气，说……”
 - Expressiveness: Make Mengzi’s question more lively by adding an action and direct speech, such as “孟子皱着眉头问：‘我们为什么老是搬家？’”
@@ -32,7 +32,7 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 - 地方 -- “孟子也觉得新的地方不是太热就是太冷”：新住处，specifies that this is the home the family has moved into and fits the details about its size and temperature；陌生的地方，emphasizes that each new location feels unfamiliar to Mengzi.
 
 ### Coherence & Expressiveness
-- Coherence (Conjunction): “在哪的地方，他都不高兴”：“不管在哪个地方，他都不高兴”，a free-choice meaning needs the paired structure “不管……都……”, and “哪个地方” is the correct phrase for “which place.” [rule: none]
+- Coherence (Conjunction): “在哪的地方，他都不高兴”：“不管在哪个地方，他都不高兴”，a free-choice meaning needs the paired structure “不管……都……”, and “哪个地方” is the correct phrase for “which place.”
 - Expressiveness: After “很难找到朋友,” add a concrete detail about the repeated separation, such as “他刚认识一个朋友，就又要搬走了。”
 - Expressiveness: At “孟子想帮助妈妈祭拜,” show his feeling with a short line of speech, such as “孟子小声说：‘妈妈，我也想帮你。’”
 - Expressiveness: Before his final thought, add a small action that shows disappointment, such as “孟子低下头，觉得很难过。”
@@ -45,14 +45,14 @@ You used “难怪……原来……” well to show Mengzi realizing why the fa
 > 四年后，孟子开始帮妈妈祭拜。他画画很厉害，他越来越喜欢祭拜，所以他祭拜不是想帮妈妈工作，而是他很喜欢画画。孟子成为很著名的古代画家。今天很多中国人很喜欢孟子。
 
 ### Grammar & Vocabulary Corrections
-- 不是想帮妈妈工作，而是他很喜欢画画：不是为了帮妈妈工作，而是因为他很喜欢画画，This contrast explains two different motivations, so each side needs a matching purpose/cause phrase: use 为了 for the intended purpose and 因为 for the reason. [teacher rule: bushi_ershi]
+- 不是想帮妈妈工作，而是他很喜欢画画：不是为了帮妈妈工作，而是因为他很喜欢画画，This contrast explains two different motivations, so each side needs a matching purpose/cause phrase: use 为了 for the intended purpose and 因为 for the reason.
 
 ### Vocabulary Suggestions
 - 很厉害 -- “他画画很厉害”：擅长画画, identifies painting as a skill in which he is especially capable
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 他画画很厉害，他越来越喜欢祭拜，所以他祭拜：他画画很厉害，越来越喜欢祭拜，所以祭拜，Once the same person has been named at the start of this sentence and no other character competes as the subject, use zero form rather than repeating the pronoun. [rule: redundancy_delete]
-- Coherence (Temporality): 成为：成为了，This describes a completed change in Mengzi’s life, so the verb takes 了 to mark completion. [rule: aspect_le_completed]
+- Coherence (Reference): 他画画很厉害，他越来越喜欢祭拜，所以他祭拜：他画画很厉害，越来越喜欢祭拜，所以祭拜，Once the same person has been named at the start of this sentence and no other character competes as the subject, use zero form rather than repeating the pronoun.
+- Coherence (Temporality): 成为：成为了，This describes a completed change in Mengzi’s life, so the verb takes 了 to mark completion.
 - Expressiveness: At the point where he is good at painting, add one visual detail about his work, such as “他画的花和鸟都像真的一样。”
 - Expressiveness: After he becomes famous, add his feeling or a short thought, such as “孟子看到大家喜欢他的画，心里非常高兴。”
 
@@ -60,13 +60,6 @@ You used “难怪……原来……” well to show Mengzi realizing why the fa
 You create a clear time jump and show a change in the character’s interests and later reputation. The final sentence also gives the scene a strong link between the past and the present.
 
 ## End of story
-
-### Scene check
-- 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day -- wrong
-- 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子 -- wrong
-- 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day -- missing
-- 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day -- missing
-- 孟子becomes a famous philosopher -- wrong
 
 ### Content & Completeness
 - You need to change the opening so that Mengzi and his mother live near a graveyard, and Mengzi copies the sacrifice rituals every day.

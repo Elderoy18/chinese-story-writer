@@ -13,10 +13,10 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 - No suggestions.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 神农：一个叫神农的人，On a character’s first mention, introduce the character with a fuller noun phrase so the reader knows who he is. [rule: character_introduction_first_mention]
-- Coherence (Temporality): 常常生病了：常常生病，A habitual action takes the zero particle; it does not use completed-action 了. [rule: aspect_le_completed]
-- Coherence (Temporality): 他们去很多不一样的地方：他们去了很多不一样的地方，This is a completed event in the narrative, so the verb needs 了. [rule: aspect_le_completed]
-- Coherence (Conjunction): 神农和他的家人住在古代，所以不知道什么植物能吃：因为神农和他的家人住在古代，所以不知道什么植物能吃，Use 因为……所以…… to mark the cause-and-effect relationship clearly. [rule: none]
+- Coherence (Reference): 神农：一个叫神农的人，On a character’s first mention, introduce the character with a fuller noun phrase so the reader knows who he is.
+- Coherence (Temporality): 常常生病了：常常生病，A habitual action takes the zero particle; it does not use completed-action 了.
+- Coherence (Temporality): 他们去很多不一样的地方：他们去了很多不一样的地方，This is a completed event in the narrative, so the verb needs 了.
+- Coherence (Conjunction): 神农和他的家人住在古代，所以不知道什么植物能吃：因为神农和他的家人住在古代，所以不知道什么植物能吃，Use 因为……所以…… to mark the cause-and-effect relationship clearly.
 - Expressiveness: After the family’s illness, add one concrete symptom and Shen Nong’s feeling, such as: “他的家人常常肚子疼，神农很担心。”
 - Expressiveness: When describing the journey, add sensory details about the places: “高山上风很大，沙漠里又热又干。”
 - Expressiveness: Add a short line of dialogue when the brothers decide to travel: “哥哥说：‘我们一起去找一找吧！’”
@@ -30,8 +30,8 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 > 他们在很漂亮的河找夹竹桃。神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要看你想要安全还是接近知道了。“神农一吃夹竹桃就生病了。哥哥说：“太麻烦了。
 
 ### Grammar & Vocabulary Corrections
-- 在很漂亮的河找：在很漂亮的河边找，A place noun is needed after 在 to show that the search happens beside the river. [rule: none]
-- 这就要看你想要安全还是接近知道了。“：这就要看你想要安全，还是想知道答案了。”，接近 must take a noun phrase, so it cannot be followed by the verb 知道. The revision also creates the required parallel choice after 看, and the final 了 belongs to the fixed 这就要看……了 structure; direct speech must end with a closing quotation mark. [rule: zhe_jiu_yao_kan]
+- 在很漂亮的河找：在很漂亮的河边找，A place noun is needed after 在 to show that the search happens beside the river.
+- 这就要看你想要安全还是接近知道了。“：这就要看你想要安全，还是想知道答案了。”，接近 must take a noun phrase, so it cannot be followed by the verb 知道. The revision also creates the required parallel choice after 看, and the final 了 belongs to the fixed 这就要看……了 structure; direct speech must end with a closing quotation mark.
 
 ### Vocabulary Suggestions
 - No suggestions.
@@ -49,15 +49,15 @@ You used dialogue to show what Shen Nong and his brother are thinking, which mak
 > 夹竹桃是毒的，我想知道灵芝会帮他。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你帮得真好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“
 
 ### Grammar & Vocabulary Corrections
-- 毒的：有毒的，毒 is a noun; use 有毒的 as the adjective phrase to describe that the plant contains poison. [vocab list]
-- 。“：。”，The sentence-final punctuation should come before the closing Chinese quotation mark. [rule: none]
+- 毒的：有毒的，毒 is a noun; use 有毒的 as the adjective phrase to describe that the plant contains poison.
+- 。“：。”，The sentence-final punctuation should come before the closing Chinese quotation mark.
 
 ### Vocabulary Suggestions
 - 吃 -- “神农吃完了以后”：服下灵芝以后，specifies that he took the medicinal plant, rather than simply ate something.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 他：神农，The pronoun is unclear because both 神农 and 哥哥 are male characters in the nearby context; repeat the name to make clear that 灵芝 is helping 神农. [rule: ambiguous_reference]
-- Coherence (Temporality): 哥哥给神农灵芝：哥哥给了神农灵芝，This is a completed action, so use 了 after 给. [rule: aspect_le_completed]
+- Coherence (Reference): 他：神农，The pronoun is unclear because both 神农 and 哥哥 are male characters in the nearby context; repeat the name to make clear that 灵芝 is helping 神农.
+- Coherence (Temporality): 哥哥给神农灵芝：哥哥给了神农灵芝，This is a completed action, so use 了 after 给.
 - Expressiveness: After 神农 receives the medicine, add a physical detail about his recovery, such as “神农觉得肚子慢慢不疼了。”
 - Expressiveness: When 哥哥 gives the medicine, describe the plant briefly to make the moment more vivid, such as “哥哥拿起一棵像伞一样的灵芝，给了神农。”
 - Expressiveness: In 神农’s thanks, add relief or emotion, such as “哥哥，谢谢你！我刚才真的很害怕。”

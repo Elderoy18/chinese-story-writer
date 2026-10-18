@@ -7,16 +7,16 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。
 
 ### Grammar & Vocabulary Corrections
-- 对童年：对孩子的成长，童年 names a period of life, while this pattern needs the person or area affected; “a child’s growth” is the natural object of importance here. [rule: none]
+- 对童年：对孩子的成长，童年 names a period of life, while this pattern needs the person or area affected; “a child’s growth” is the natural object of importance here.
 
 ### Vocabulary Suggestions
 - 常常 -- “所以他们常常搬了家”：多次，identifies the moves as a repeated series of relocations rather than a general habit.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 这个男孩子叫孟子：有一个男孩子叫孟子，A first-mentioned character should be introduced with an indefinite full noun phrase; “this boy” has no earlier referent. [rule: character_introduction_first_mention]
-- Coherence (Reference): 孟子是古代的人：他是古代的人，After the name has just appeared and no other male character competes, use a pronoun for the close re-occurrence. [rule: character_introduction_first_mention]
-- Coherence (Reference): 所以孟子的妈妈安排他的生活：所以她安排他的生活，The mother was named in the immediately preceding clause, so a pronoun is natural for the close re-occurrence. [rule: character_introduction_first_mention]
-- Coherence (Temporality): 常常搬了家：常常搬家，A routine or habitual action with “often” takes the zero particle, not completed-action 了. [rule: aspect_le_completed]
+- Coherence (Reference): 这个男孩子叫孟子：有一个男孩子叫孟子，A first-mentioned character should be introduced with an indefinite full noun phrase; “this boy” has no earlier referent.
+- Coherence (Reference): 孟子是古代的人：他是古代的人，After the name has just appeared and no other male character competes, use a pronoun for the close re-occurrence.
+- Coherence (Reference): 所以孟子的妈妈安排他的生活：所以她安排他的生活，The mother was named in the immediately preceding clause, so a pronoun is natural for the close re-occurrence.
+- Coherence (Temporality): 常常搬了家：常常搬家，A routine or habitual action with “often” takes the zero particle, not completed-action 了.
 - Expressiveness: After the mother thinks about where to live, add her inner thought to show her concern: “她想：‘住的地方会影响孩子的成长。’”
 - Expressiveness: At the end, add a small detail showing how she manages him, such as “她每天让孟子读书，也教他要有礼貌。”
 
@@ -28,16 +28,16 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。
 
 ### Grammar & Vocabulary Corrections
-- 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，The time-order word should come after the subject in this sentence. [rule: none]
-- 又便宜又好质量的东西：又便宜又质量好的东西，质量 is a noun, so the description should use 质量好 rather than 好质量. [rule: none]
+- 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，The time-order word should come after the subject in this sentence.
+- 又便宜又好质量的东西：又便宜又质量好的东西，质量 is a noun, so the description should use 质量好 rather than 好质量.
 
 ### Vocabulary Suggestions
 - 从这儿到那儿 -- “从这儿到那儿，妈妈教孟子很多技能”：搬来搬去，makes the repeated relocations more specific and connects clearly to the earlier moving; 来回搬家，emphasizes that the family moved repeatedly between places.
 - 技能 -- “妈妈教孟子很多技能”：生活技能, specifies that these are useful everyday abilities such as playing with others and buying things; 本领, gives the skills a more practical, capable feeling.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence: the mother was named in the immediately preceding sentence, and 她 clearly refers to her. [rule: character_introduction_first_mention]
-- Coherence (Temporality): 常常搬了家：常常搬家，常常 describes a routine, so use the zero particle rather than 了, which marks a completed action. [rule: aspect_le_completed]
+- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence: the mother was named in the immediately preceding sentence, and 她 clearly refers to her.
+- Coherence (Temporality): 常常搬了家：常常搬家，常常 describes a routine, so use the zero particle rather than 了, which marks a completed action.
 - Expressiveness: After the final sentence, add a market detail to make the setting vivid, such as “街上到处都是商人的叫卖声，热闹极了。”
 - Expressiveness: At the point where Mengzi learns to buy things, show his action or speech, such as “孟子学着商人说：‘这个能不能便宜一点？’”
 
@@ -55,7 +55,7 @@ You used clear sequence words, including 先 and 然后, to show the order of th
 - No suggestions.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 孟子很有名：他很有名，Mengzi was named very recently and there is no competing male character, so a pronoun is more natural for this close re-occurrence. [rule: ambiguous_reference]
+- Coherence (Reference): 孟子很有名：他很有名，Mengzi was named very recently and there is no competing male character, so a pronoun is more natural for this close re-occurrence.
 - Expressiveness: After “她让孟子学写作”, add a small action detail to show his effort, such as “他每天坐在桌前，认真地写几句话。”
 - Expressiveness: At “难怪他很聪明”, show the mother’s positive feeling with a short quotation, such as “孟母看着他，高兴地说：‘这样很好。’”
 - Expressiveness: Make “很有名” more concrete by adding how people know him, such as “现在在中国，很多人都知道孟子。”
@@ -64,13 +64,6 @@ You used clear sequence words, including 先 and 然后, to show the order of th
 - You used “最后” clearly to show the final step in the mother’s teaching. Your paired structure “不是……就是……” also makes Mengzi’s daily learning routine easy to understand.
 
 ## End of story
-
-### Scene check
-- 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day -- missing
-- 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子 -- missing
-- 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day -- partly told
-- 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day -- partly told
-- 孟子becomes a famous philosopher -- partly told
 
 ### Content & Completeness
 - Missing scene: At the beginning, explain that Mengzi and his mother lived near a graveyard and that he copied people offering sacrifices every day.

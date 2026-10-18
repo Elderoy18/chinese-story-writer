@@ -79,26 +79,44 @@ export async function withRetry(fn, label) {
 // Embedding cache: one vector per (model, text), shared by every snapshot and
 // by query embeddings, so re-runs cost nothing and use identical vectors.
 // ---------------------------------------------------------------------------
+// Several runs can share the cache at once (stages run in parallel). The first vector saved
+// for a text wins: before embedding, re-read the file for texts other processes added; when
+// saving, merge with the file, keeping its vectors. (Otherwise two processes embedding the
+// same new text got slightly different API vectors and the last writer won.)
 let cache = null;
-function loadCache() {
-    if (cache) return cache;
-    cache = new Map();
+function readCacheFile() {
+    const m = new Map();
     if (fs.existsSync(CACHE_INDEX)) {
         const hashes = readJson(CACHE_INDEX).hashes;
         const buf = fs.readFileSync(CACHE_VECTORS);
         const all = new Float32Array(buf.buffer, buf.byteOffset, buf.byteLength / 4);
-        hashes.forEach((h, i) => cache.set(h, all.slice(i * EMBED_DIM, (i + 1) * EMBED_DIM)));
+        if (all.length < hashes.length * EMBED_DIM) return m; // caught mid-write: treat as unchanged
+        hashes.forEach((h, i) => m.set(h, all.slice(i * EMBED_DIM, (i + 1) * EMBED_DIM)));
     }
+    return m;
+}
+
+function loadCache() {
+    if (!cache) cache = readCacheFile();
     return cache;
+}
+
+/** Add vectors other processes saved since we loaded (theirs win for the same text). */
+function refreshCache() {
+    for (const [h, v] of readCacheFile()) cache.set(h, v);
 }
 
 function saveCache() {
     fs.mkdirSync(CACHE_DIR, { recursive: true });
+    refreshCache();
     const hashes = [...cache.keys()];
     const all = new Float32Array(hashes.length * EMBED_DIM);
     hashes.forEach((h, i) => all.set(cache.get(h), i * EMBED_DIM));
-    fs.writeFileSync(CACHE_VECTORS, Buffer.from(all.buffer));
-    writeJson(CACHE_INDEX, { model: EMBED_MODEL, dim: EMBED_DIM, hashes });
+    // vectors first, then the index: a reader never sees an index longer than its vectors
+    fs.writeFileSync(CACHE_VECTORS + ".tmp", Buffer.from(all.buffer));
+    fs.renameSync(CACHE_VECTORS + ".tmp", CACHE_VECTORS);
+    fs.writeFileSync(CACHE_INDEX + ".tmp", JSON.stringify({ model: EMBED_MODEL, dim: EMBED_DIM, hashes }));
+    fs.renameSync(CACHE_INDEX + ".tmp", CACHE_INDEX);
 }
 
 const keyOf = (text) => sha(`${EMBED_MODEL}\n${text}`);
@@ -106,6 +124,7 @@ const keyOf = (text) => sha(`${EMBED_MODEL}\n${text}`);
 /** Vectors for texts, embedding only those not cached yet. */
 export async function embedTexts(texts) {
     const c = loadCache();
+    if (texts.some((t) => !c.has(keyOf(t)))) refreshCache(); // another run may have embedded them
     const todo = [...new Set(texts.filter((t) => !c.has(keyOf(t))))];
     for (let i = 0; i < todo.length; i += 128) {
         const batch = todo.slice(i, i + 128);

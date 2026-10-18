@@ -356,6 +356,18 @@ are used to re-check the judge (how often the judge agrees with her).
   matches REPLACE the 4 whole-scene similarity cards instead of adding cards, and no example
   sentences are shown -- to test whether better-targeted retrieval helps without the extra material.
 
+- **18-19 Oct -- floor and variants.** `S0-h20` (no teacher input, 20 stories): FP 1.27/scene, incorrect 0.57,
+  fully right 58%, recall 92%, card reach 17%, flagged missing scenes caught 25%. Variant reports
+  (`eval/reports/S7_variants_<stage>.md`, 156 target errors): retrieval Jaccard original vs variant S0 0.81 ->
+  S7-4 0.95; information consistency, rerun noise floor / generation-only / end-to-end: S0 65/69/65%,
+  S7-4 72/75/73%; lexical 22/17/22% -> 38/34/45%; lexical accuracy (her exact fix) 8-10% -> 29-32%. In both,
+  generation-only and end-to-end sit at the rerun noise floor: changing the surrounding text (and the
+  retrieval it brings) does not make answers less consistent than rerunning; what is left is model
+  randomness. Fixed: `eval/lib.mjs` embedding cache -- parallel runs could save different API vectors
+  for the same text (last writer won); now the first saved vector wins (re-read before embedding,
+  merge on save, atomic writes). S7-5's guard reports one changed scene because of that race (its runs
+  used the other vector); no verdict depends on it.
+
 ## Decisions
 
 - **D1 (18 Oct): 20 held-out stories.** S6 re-baselined on `base-v4-h20`.
@@ -371,6 +383,11 @@ are used to re-check the judge (how often the judge agrees with her).
   events (already required by `noSceneNumbers`, inherited by every S7 stage). Phase 5: the content route
   streams the model's text straight to the learner, so hiding the Scene check means buffering until
   "## Content & Completeness" starts, or producing the verdicts in a separate call.
+- **D6 (19 Oct): no rule citations or Scene check in anything people read.** Learners and the teacher
+  never see `[rule: ...]` / `[teacher rule: ...]` / `[vocab list]` or the "## Scene check" section. They stay
+  in the raw feedback stored in the run JSON (and, in the app, in the stored scene record) for evaluation.
+  Removed by `lib/rag/displayFeedback.ts` (`feedbackForDisplay`, for the app in Phase 5) and by the same
+  rules in `eval/export_feedback.py` (review markdown; all S7 feedback folders re-exported).
 - **D5 (18 Oct): consistency vs accuracy.** A consistency drop is acceptable when accuracy rose,
   especially when the stage changed nothing the measure depends on (e.g. S7-3 changed only the
   end-of-story prompt). Accuracy (her priority: no false positives / incorrect corrections) wins.

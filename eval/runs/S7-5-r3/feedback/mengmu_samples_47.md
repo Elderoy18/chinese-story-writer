@@ -13,9 +13,9 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 - 重要 -- “住在哪儿对童年很重要”：影响很大，more specifically expresses that where a child lives can strongly affect childhood development.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 这个男孩子：一个男孩子，A first-mentioned character should use an indefinite noun phrase rather than a demonstrative that suggests the reader already knows him. [rule: character_introduction_first_mention]
-- Coherence (Reference): 所以孟子的妈妈：所以她，Use a pronoun for a close re-occurrence when the mother was just mentioned and no competing female character is present. [rule: redundancy_delete]
-- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action with a frequency marker uses the zero particle, not completed-action 了. [rule: aspect_le_completed]
+- Coherence (Reference): 这个男孩子：一个男孩子，A first-mentioned character should use an indefinite noun phrase rather than a demonstrative that suggests the reader already knows him.
+- Coherence (Reference): 所以孟子的妈妈：所以她，Use a pronoun for a close re-occurrence when the mother was just mentioned and no competing female character is present.
+- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action with a frequency marker uses the zero particle, not completed-action 了.
 - Expressiveness: After the mother’s thought about childhood, add a short internal thought to show her concern, for example: 孟子的妈妈心想：“住的地方会影响孩子的成长。”
 - Expressiveness: Make the mother’s wish more personal by adding a feeling before the final action, for example: 她很着急，想让孟子有一个更好的未来。
 
@@ -27,17 +27,17 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。
 
 ### Grammar & Vocabulary Corrections
-- 先她：她先，The time-order adverb should follow the subject and come before the verb. [rule: adverbial_word_order]
-- 又便宜又好质量的东西：又便宜又质量好的东西，质量 is a noun, so it should be followed by 好; the two descriptions can then be coordinated naturally. [rule: none]
+- 先她：她先，The time-order adverb should follow the subject and come before the verb.
+- 又便宜又好质量的东西：又便宜又质量好的东西，质量 is a noun, so it should be followed by 好; the two descriptions can then be coordinated naturally.
 
 ### Vocabulary Suggestions
 - 技能 -- “妈妈教孟子很多技能”：生活技能，specifies that these are useful everyday abilities, fitting the lesson about buying things.
 - 东西 -- “又便宜又好质量的东西”：商品，more precisely means goods being bought or sold.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，The mother was mentioned in the immediately preceding sentence, with no competing female character, so a pronoun is more natural for close re-occurrence. [rule: ambiguous_reference]
-- Coherence (Temporality): 他们常常搬了家：他们常常搬家，常常 describes a repeated habit, so the verb takes the zero particle rather than completed-action 了. [rule: aspect_le_completed]
-- Coherence (Conjunction): ，中国人说：，所以中国人说，Because the frequent moving is presented as the reason for the saying, use the paired connector 因为……所以…… to show cause and effect. [rule: coherence_connectives]
+- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，The mother was mentioned in the immediately preceding sentence, with no competing female character, so a pronoun is more natural for close re-occurrence.
+- Coherence (Temporality): 他们常常搬了家：他们常常搬家，常常 describes a repeated habit, so the verb takes the zero particle rather than completed-action 了.
+- Coherence (Conjunction): ，中国人说：，所以中国人说，Because the frequent moving is presented as the reason for the saying, use the paired connector 因为……所以…… to show cause and effect.
 - Expressiveness: At the play scene, add Mengzi’s feeling to make the action more vivid, for example: “孟子跟朋友玩儿，开心得一直笑。”
 - Expressiveness: When the mother teaches him to shop, add a short line of dialogue showing her advice, for example: “妈妈说：‘买东西要看质量，也要看价钱。’”
 - Expressiveness: At the shopping spot, add one sensory detail about the setting, for example: “街上有很多商人，叫卖声很热闹。”
@@ -56,7 +56,7 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 - 有名 -- “现在在中国，孟子很有名”：广为人知，emphasizes that many people across China know him.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 孟子很有名：他很有名，Use a pronoun for a recently mentioned character when no other male character competes as the referent. [rule: none]
+- Coherence (Reference): 孟子很有名：他很有名，Use a pronoun for a recently mentioned character when no other male character competes as the referent.
 - Expressiveness: After “她让孟子学写作,” add the mother’s feeling or speech, such as “妈妈看着他认真写字，心里很高兴。”
 - Expressiveness: At “他不是写作就是看书,” add a small routine detail to make his effort vivid, such as “他每天一有空就坐下来读书。”
 - Expressiveness: At the final sentence, add a concrete sign of his fame, such as “很多人都知道他是一位聪明的哲学家。”
@@ -65,13 +65,6 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 - You used the pattern “不是……就是……” naturally to show Mengzi’s regular study habits. The scene also gives a clear reason for why he became intelligent.
 
 ## End of story
-
-### Scene check
-- 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day -- missing
-- 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子 -- missing
-- 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day -- partly told
-- 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day -- partly told
-- 孟子becomes a famous philosopher -- partly told
 
 ### Content & Completeness
 - Missing scene: After introducing Mencius and his mother, tell that they lived near a graveyard and that Mencius copied people offering sacrifices every day.

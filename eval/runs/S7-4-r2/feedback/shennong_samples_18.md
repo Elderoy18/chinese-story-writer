@@ -7,15 +7,15 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。
 
 ### Grammar & Vocabulary Corrections
-- 住在古代：在古代生活，古代 is a time setting, so use 在古代 rather than treating it as a place where someone lives. [rule: time_expression]
+- 住在古代：在古代生活，古代 is a time setting, so use 在古代 rather than treating it as a place where someone lives.
 
 ### Vocabulary Suggestions
 - 找 -- “去旅行找可以吃的植物”：寻找, emphasizes deliberately looking for plants; 探寻, emphasizes exploring many places to discover plants.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 神农：一个叫神农的人，A character’s first mention should introduce the person with a name and a brief identifying noun phrase. [rule: character_introduction_first_mention]
-- Coherence (Temporality): 常常生病了：常常生病，A habitual action or state uses the zero particle; 了 is not used with routines marked by 常常. [rule: aspect_le_completed]
-- Coherence (Temporality): 他们去很多不一样的地方：他们去了很多不一样的地方，This trip is a completed past action, so 去 needs 了. [rule: aspect_le_completed]
+- Coherence (Reference): 神农：一个叫神农的人，A character’s first mention should introduce the person with a name and a brief identifying noun phrase.
+- Coherence (Temporality): 常常生病了：常常生病，A habitual action or state uses the zero particle; 了 is not used with routines marked by 常常.
+- Coherence (Temporality): 他们去很多不一样的地方：他们去了很多不一样的地方，This trip is a completed past action, so 去 needs 了.
 - Expressiveness: After the family’s illness, add Shennong’s feeling to show his motivation: “神农看着生病的家人，心里很担心。”
 - Expressiveness: Make the journey more vivid with actions connected to the landscapes: “他们翻过高山，穿过山谷，走进干燥的沙漠。”
 - Expressiveness: Add a short line of speech before the journey: “神农说：‘我要找到能治病的植物。’”
@@ -28,10 +28,10 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 他们在很漂亮的河找夹竹桃。神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要看你想要安全还是接近知道了。“神农一吃夹竹桃就生病了。哥哥说：“太麻烦了。
 
 ### Grammar & Vocabulary Corrections
-- 在很漂亮的河：在一条很漂亮的河边，A location with a river needs a locative noun such as 河边; 一条 also naturally introduces the single river. [rule: none]
-- 这就要看你想要安全还是接近知道了：这就要看这种植物能不能吃了，The part after 看 needs an uncertain question form. “接近知道” is not a well-formed alternative, while 能不能吃 directly answers the question about whether the plant should be eaten. [rule: zhe_jiu_yao_kan]
-- 。“神农：。”神农，The direct speech needs a closing quotation mark after the sentence-ending punctuation. [rule: none]
-- 哥哥说：“太麻烦了。：哥哥说：“太麻烦了。”，The final line of direct speech also needs its closing quotation mark. [rule: none]
+- 在很漂亮的河：在一条很漂亮的河边，A location with a river needs a locative noun such as 河边; 一条 also naturally introduces the single river.
+- 这就要看你想要安全还是接近知道了：这就要看这种植物能不能吃了，The part after 看 needs an uncertain question form. “接近知道” is not a well-formed alternative, while 能不能吃 directly answers the question about whether the plant should be eaten.
+- 。“神农：。”神农，The direct speech needs a closing quotation mark after the sentence-ending punctuation.
+- 哥哥说：“太麻烦了。：哥哥说：“太麻烦了。”，The final line of direct speech also needs its closing quotation mark.
 
 ### Vocabulary Suggestions
 - 麻烦 -- “太麻烦了”：棘手，more specifically shows that the situation is difficult to handle.
@@ -49,16 +49,16 @@ You clearly show the immediate consequence of eating the plant, and the dialogue
 > 夹竹桃是毒的，我想知道灵芝会帮他。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你帮得真好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“
 
 ### Grammar & Vocabulary Corrections
-- 是毒的：是有毒的，Use the adjectival phrase “有毒” to describe a poisonous plant; “毒” alone is a noun here. [rule: word_class_misuse]
-- 开始痊愈了：开始好转了，“痊愈” means that recovery is complete, so it does not fit naturally after “开始,” which describes the beginning of improvement. [rule: none]
-- 夹竹桃。“：夹竹桃。”，The final punctuation mark must be placed inside the closing quotation mark. [rule: none]
+- 是毒的：是有毒的，Use the adjectival phrase “有毒” to describe a poisonous plant; “毒” alone is a noun here.
+- 开始痊愈了：开始好转了，“痊愈” means that recovery is complete, so it does not fit naturally after “开始,” which describes the beginning of improvement.
+- 夹竹桃。“：夹竹桃。”，The final punctuation mark must be placed inside the closing quotation mark.
 
 ### Vocabulary Suggestions
 - 吃完 -- “神农吃完了以后”：服下灵芝，identifies the plant more specifically as medicine being taken and makes the object clear.
 - 真好 -- “你帮得真好”：很及时，emphasizes that the help came at the moment it was needed.
 
 ### Coherence & Expressiveness
-- Coherence (Temporality): 哥哥给神农灵芝：哥哥给了神农灵芝，The giving is a completed action before the next sentence, so it needs “了.” [rule: aspect_le_completed]
+- Coherence (Temporality): 哥哥给神农灵芝：哥哥给了神农灵芝，The giving is a completed action before the next sentence, so it needs “了.”
 - Expressiveness: After the recovery sentence, add a physical detail to show how the medicine changes him: “神农觉得肚子没有那么疼了，脸色也好了起来。”
 - Expressiveness: Add a brief thought to show his relief after his brother helps: “神农心想：还好哥哥找到了灵芝！”
 
@@ -66,15 +66,6 @@ You clearly show the immediate consequence of eating the plant, and the dialogue
 You clearly show a helpful sequence: the brother gives medicine, Shennong takes it, and then he begins to recover. The thank-you dialogue also makes the characters’ relationship feel warm.
 
 ## End of story
-
-### Scene check
-- in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants -- partly told
-- 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants -- partly told
-- 神农found茶and took a record -- missing
-- 神农tried 夹竹桃 and fainted -- partly told
-- a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝 -- wrong
-- another person in brown came by and had a conversation with 神农 -- missing
-- 神农takes record of灵芝and夹竹桃 -- missing
 
 ### Content & Completeness
 - You need to explain at the beginning that many people did not know which plants were safe and often became sick after eating the wrong plants.

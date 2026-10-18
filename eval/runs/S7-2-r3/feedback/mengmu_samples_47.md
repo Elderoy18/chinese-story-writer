@@ -13,10 +13,10 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 - 安排 -- “孟子的妈妈安排他的生活”：规划，emphasizes that she is thoughtfully making plans for his daily life and future.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 这个男孩子：有一个男孩子，A first-mentioned character should be introduced with an indefinite full noun phrase; 这个 suggests that the reader already knows which boy is meant. [rule: character_introduction_first_mention]
-- Coherence (Reference): 孟子是古代的人：他是古代的人，After the name has just appeared, use a pronoun for a close re-occurrence rather than repeating the name. [rule: ambiguous_reference]
-- Coherence (Reference): 孟子的妈妈安排他的生活：安排他的生活，The mother is already the subject of the first clause in the same sentence, so use zero form instead of repeating her full name. [rule: ambiguous_reference]
-- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action uses the zero particle; 了 marks a completed event, not a repeated routine. [rule: aspect_le_completed]
+- Coherence (Reference): 这个男孩子：有一个男孩子，A first-mentioned character should be introduced with an indefinite full noun phrase; 这个 suggests that the reader already knows which boy is meant.
+- Coherence (Reference): 孟子是古代的人：他是古代的人，After the name has just appeared, use a pronoun for a close re-occurrence rather than repeating the name.
+- Coherence (Reference): 孟子的妈妈安排他的生活：安排他的生活，The mother is already the subject of the first clause in the same sentence, so use zero form instead of repeating her full name.
+- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action uses the zero particle; 了 marks a completed event, not a repeated routine.
 - Expressiveness: After “他们常常搬家,” add a short contrast between the places, such as “有的地方很安静，有的地方很热闹。” This makes the repeated moves easier to picture.
 - Expressiveness: After “她望子成龙,” show the mother’s thought in quotation: “她心想：‘我要给孟子找一个适合学习的地方。’” This gives her motivation a more personal voice.
 
@@ -28,16 +28,16 @@ You clearly introduce the main family relationship and use a cause-and-effect co
 > 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。
 
 ### Grammar & Vocabulary Corrections
-- 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，The time adverb should follow the subject and directly modify the verb phrase. [rule: none]
-- 又便宜又好质量的东西：又便宜又质量好的东西，To describe the quality of an object, use the modifier structure with the noun followed by the adjective; “好质量” is not a natural Chinese noun phrase. [rule: none]
+- 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，The time adverb should follow the subject and directly modify the verb phrase.
+- 又便宜又好质量的东西：又便宜又质量好的东西，To describe the quality of an object, use the modifier structure with the noun followed by the adjective; “好质量” is not a natural Chinese noun phrase.
 
 ### Vocabulary Suggestions
 - 东西 -- “教他怎么买又便宜又好质量的东西”：商品，specifies that these are goods being bought and sold rather than unspecified objects；日用品，specifies everyday items, fitting practical skills taught by a parent
 - 从这儿到那儿 -- “从这儿到那儿，妈妈教孟子很多技能”：搬来搬去，states more precisely that the repeated movement was moving house from place to place
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence: the mother was named in the immediately preceding sentence, and no other female character competes as the referent. [rule: character_introduction_first_mention]
-- Coherence (Temporality): 常常搬了家：常常搬家，Use the zero particle for a habitual action; 了 marks a completed event, while 常常 describes a routine. [rule: aspect_le_completed]
+- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence: the mother was named in the immediately preceding sentence, and no other female character competes as the referent.
+- Coherence (Temporality): 常常搬了家：常常搬家，Use the zero particle for a habitual action; 了 marks a completed event, while 常常 describes a routine.
 - Expressiveness: After “孟子没有爸爸”, add the mother’s feeling to show why she takes responsibility, for example: “她觉得自己要更努力地照顾孟子。”
 - Expressiveness: After the shopping lesson, add a short line of dialogue to make the teaching scene livelier, for example: “妈妈说：‘买东西要先看看价钱，也要看看质量。’”
 

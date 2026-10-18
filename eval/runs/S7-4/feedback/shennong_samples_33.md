@@ -7,18 +7,18 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。
 
 ### Grammar & Vocabulary Corrections
-- 古代时候：在古代，using both a time noun and the time expression is redundant; this setting is naturally introduced with the shorter form. [teacher rule: gudai_de_shihou_why]
-- 人：人们，this refers to a concrete group of people, so the plural collective noun is needed. [teacher rule: ren_renmen]
-- 人：人们，this refers to the people whom the character will inform, not people in general. [teacher rule: ren_renmen]
-- 什么植物是安全什么是危险：什么植物是安全的，什么植物是危险的，when adjectives follow 是 in these parallel descriptive clauses, they need 的. [rule: none]
+- 古代时候：在古代，using both a time noun and the time expression is redundant; this setting is naturally introduced with the shorter form.
+- 人：人们，this refers to a concrete group of people, so the plural collective noun is needed.
+- 人：人们，this refers to the people whom the character will inform, not people in general.
+- 什么植物是安全什么是危险：什么植物是安全的，什么植物是危险的，when adjectives follow 是 in these parallel descriptive clauses, they need 的.
 
 ### Vocabulary Suggestions
 - 试一试 -- “神农出去试一试很多种植物”：尝一尝, specifies that he tastes the plants to learn about them；试吃, specifies that he eats small amounts in order to test whether they are safe.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 他们能吃什么植物：什么植物能吃，after the people have been named in the same sentence, use zero form rather than repeating a pronoun for the same referent. [rule: ambiguous_reference]
-- Coherence (Reference): 神农：一个叫神农的人，at a character’s first mention, introduce the name together with a short noun phrase identifying the person. [rule: character_introduction_first_mention]
-- Coherence (Temporality): 告诉：告诉了，this is the final completed action in the narrated sequence, so it takes 了. [rule: aspect_le_completed]
+- Coherence (Reference): 他们能吃什么植物：什么植物能吃，after the people have been named in the same sentence, use zero form rather than repeating a pronoun for the same referent.
+- Coherence (Reference): 神农：一个叫神农的人，at a character’s first mention, introduce the name together with a short noun phrase identifying the person.
+- Coherence (Temporality): 告诉：告诉了，this is the final completed action in the narrated sequence, so it takes 了.
 - Expressiveness: At the point where the character sets out, add a journey detail such as `走啊走啊，去了很多高山` to show persistence and make the action easier to picture.
 - Expressiveness: Before the plant-testing action, add an inner purpose such as `想帮大家找出能吃的植物` to show why the character chooses this difficult task.
 
@@ -30,9 +30,9 @@ You clearly establish the danger people faced and give the character a meaningfu
 > 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。
 
 ### Grammar & Vocabulary Corrections
-- 清楚：舒服，清楚 describes whether information or a situation is clear; it cannot describe a physical feeling in the stomach. [rule: none]
-- 这就要看你的口味：这就要看你喜欢什么口味了，The structure 这就要看……了 must be followed by a question form; 你喜欢什么口味 provides the needed wh-question. [rule: zhe_jiu_yao_kan]
-- 什么都花想吃：什么花都想吃，With an interrogative determiner, use the order 什么 + noun + 都 + verb to mean “every kind of.” [rule: none]
+- 清楚：舒服，清楚 describes whether information or a situation is clear; it cannot describe a physical feeling in the stomach.
+- 这就要看你的口味：这就要看你喜欢什么口味了，The structure 这就要看……了 must be followed by a question form; 你喜欢什么口味 provides the needed wh-question.
+- 什么都花想吃：什么花都想吃，With an interrogative determiner, use the order 什么 + noun + 都 + verb to mean “every kind of.”
 
 ### Vocabulary Suggestions
 - 好 -- “有的植物对身体非常好”：有益，states more precisely that the plants benefit health；有好处，gives a clear everyday expression for a health benefit.
@@ -51,17 +51,17 @@ You clearly establish the danger people faced and give the character a meaningfu
 > 他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。
 
 ### Grammar & Vocabulary Corrections
-- 一百岁时候：一百岁的时候，The time phrase needs 的 before 时候 when the preceding expression has more than one syllable. [teacher rule: de_shihou]
-- 毒的花：有毒的花，Use 有毒的 to describe a poisonous plant; 毒 cannot directly modify the noun in this way. [vocab list]
-- 一吃就开始死：一吃就快要死了，开始 normally introduces an action that can continue, while 死 is an endpoint or change of state; 快要……了 expresses that death is imminent. [rule: none]
-- 告诉人：告诉人们，Here the narrator means a concrete group of people, so 人们 is needed rather than the generic noun 人. [teacher rule: ren_renmen]
-- 什么植物是毒：什么植物有毒，Use 有毒 to say that a plant is poisonous; 是毒 is not the natural predicate here. [vocab list]
+- 一百岁时候：一百岁的时候，The time phrase needs 的 before 时候 when the preceding expression has more than one syllable.
+- 毒的花：有毒的花，Use 有毒的 to describe a poisonous plant; 毒 cannot directly modify the noun in this way.
+- 一吃就开始死：一吃就快要死了，开始 normally introduces an action that can continue, while 死 is an endpoint or change of state; 快要……了 expresses that death is imminent.
+- 告诉人：告诉人们，Here the narrator means a concrete group of people, so 人们 is needed rather than the generic noun 人.
+- 什么植物是毒：什么植物有毒，Use 有毒 to say that a plant is poisonous; 是毒 is not the natural predicate here.
 
 ### Vocabulary Suggestions
 - 不小心吃了 -- “不小心吃了毒的花”：误食了，This combines “accidentally” and “ate” into one precise verb for accidentally eating something harmful.
 
 ### Coherence & Expressiveness
-- Coherence (Temporality): 发现：发现了，The discovery is a completed past event before the later incident, so it needs 了. [rule: aspect_le_completed]
+- Coherence (Temporality): 发现：发现了，The discovery is a completed past event before the later incident, so it needs 了.
 - Expressiveness: At the moment he eats the flower, add a physical reaction to show the danger more vividly: “他肚子疼了起来，难受得不得了。”
 - Expressiveness: When he warns others, add a short line of speech to show that he wants to help: “这种花有毒，不能吃！”
 - Expressiveness: Describe the flower before he eats it, so the reader can understand why it attracts him: “黄色的花像星星一样，又大又漂亮。”
@@ -70,15 +70,6 @@ You clearly establish the danger people faced and give the character a meaningfu
 You clearly show a cause-and-effect sequence with “一……就……,” which makes the dangerous event easy to follow. You also include the important contrast between plants that are medicine and plants that are poisonous.
 
 ## End of story
-
-### Scene check
-- in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants -- wrong
-- 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants -- partly told
-- 神农found茶and took a record -- partly told
-- 神农tried 夹竹桃 and fainted -- wrong
-- a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝 -- missing
-- another person in brown came by and had a conversation with 神农 -- missing
-- 神农takes record of灵芝and夹竹桃 -- missing
 
 ### Content & Completeness
 - You need to say that people became sick after eating unknown plants, rather than dying, at the beginning of the story.

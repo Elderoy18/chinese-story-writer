@@ -7,8 +7,8 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。
 
 ### Grammar & Vocabulary Corrections
-- 古代的时候：在古代，Both parts mean “in ancient times,” so using them together is redundant. [teacher rule: gudai_de_shihou_why]
-- 一看：看到，Here the meaning is that Shen Nong successfully perceives the people eating plants; 看 describes looking, while 看到 expresses seeing. [vocab list]
+- 古代的时候：在古代，Both parts mean “in ancient times,” so using them together is redundant.
+- 一看：看到，Here the meaning is that Shen Nong successfully perceives the people eating plants; 看 describes looking, while 看到 expresses seeing.
 
 ### Vocabulary Suggestions
 - 想知道 -- “所以想知道哪些植物能吃，哪些植物不能吃”：弄清，emphasizes finding a clear answer after observing people become ill.
@@ -26,8 +26,8 @@ You clearly introduce Shen Nong and establish his reason for investigating the p
 > 然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。
 
 ### Grammar & Vocabulary Corrections
-- 一些植物吃真好：一些植物很好吃，Use the adjective compound “好吃” to describe food or plants that taste good; a verb cannot be followed directly by this adjective in this meaning. [rule: none]
-- 毒得很：有毒，“毒” does not combine with “得很” to mean “very poisonous”; use “有毒” to describe poisonous plants. [teacher rule: du_youdu]
+- 一些植物吃真好：一些植物很好吃，Use the adjective compound “好吃” to describe food or plants that taste good; a verb cannot be followed directly by this adjective in this meaning.
+- 毒得很：有毒，“毒” does not combine with “得很” to mean “very poisonous”; use “有毒” to describe poisonous plants.
 
 ### Vocabulary Suggestions
 - 尝 -- “神农开始尝很多植物”：尝试，emphasizes that he is testing plants to learn whether they are safe or useful.
@@ -45,9 +45,9 @@ Your scene has a clear sequence from testing plants to noticing the difference b
 > 一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。
 
 ### Grammar & Vocabulary Corrections
-- 麻烦：请问，麻烦 means “trouble” or “to ask someone to do a favor”; it cannot by itself introduce a question in this way. 请问 is the polite question-opening expression. [rule: none]
-- 以后：后来，sentence-initial 以后 cannot mean “afterwards” here; use 后来 to introduce the next event. [vocab list]
-- 别人：人们，别人 means “other people” in contrast with a particular person or group. Here Shen Nong is speaking generally to people, so 人们 is appropriate. [teacher rule: bieren]
+- 麻烦：请问，麻烦 means “trouble” or “to ask someone to do a favor”; it cannot by itself introduce a question in this way. 请问 is the polite question-opening expression.
+- 以后：后来，sentence-initial 以后 cannot mean “afterwards” here; use 后来 to introduce the next event.
+- 别人：人们，别人 means “other people” in contrast with a particular person or group. Here Shen Nong is speaking generally to people, so 人们 is appropriate.
 
 ### Vocabulary Suggestions
 - 说 -- “一个人对神农说”：问，more precisely shows that the person is asking a question rather than simply speaking.
@@ -60,15 +60,6 @@ Your scene has a clear sequence from testing plants to noticing the difference b
 You used a clear question-and-answer structure in this scene. You also used the A-not-A pattern correctly in “想不想生病,” which is a useful Chinese question form.
 
 ## End of story
-
-### Scene check
-- in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants -- told
-- 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants -- partly told
-- 神农found茶and took a record -- missing
-- 神农tried 夹竹桃 and fainted -- partly told
-- a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝 -- missing
-- another person in brown came by and had a conversation with 神农 -- partly told
-- 神农takes record of灵芝and夹竹桃 -- missing
 
 ### Content & Completeness
 - You need to add that 神农 climbs mountains while trying the plants.

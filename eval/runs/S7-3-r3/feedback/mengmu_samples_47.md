@@ -13,10 +13,10 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 - 生活 -- “安排他的生活”：日常生活，specifies that the mother plans his everyday routines and activities.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 这个男孩子：一个男孩子，This is the character’s first mention, so an indefinite noun phrase introduces him clearly. [rule: character_introduction_first_mention]
-- Coherence (Reference): 孟子是古代的人：他是古代的人，After the name has just appeared and no other character competes as the referent, use a pronoun for close re-occurrence. [rule: none]
-- Coherence (Reference): 所以孟子的妈妈安排他的生活：所以安排他的生活，The mother is already the subject in the first clause of the same sentence, so use zero form rather than repeating her noun phrase. [rule: none]
-- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action uses the zero particle; 了 marks a completed action and does not fit with 常常 here. [rule: aspect_le_completed]
+- Coherence (Reference): 这个男孩子：一个男孩子，This is the character’s first mention, so an indefinite noun phrase introduces him clearly.
+- Coherence (Reference): 孟子是古代的人：他是古代的人，After the name has just appeared and no other character competes as the referent, use a pronoun for close re-occurrence.
+- Coherence (Reference): 所以孟子的妈妈安排他的生活：所以安排他的生活，The mother is already the subject in the first clause of the same sentence, so use zero form rather than repeating her noun phrase.
+- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action uses the zero particle; 了 marks a completed action and does not fit with 常常 here.
 - Expressiveness: After “她望子成龙”, add the mother’s inner thought to show her motivation: “她心想：‘我希望孟子长大以后有出息。’”
 - Expressiveness: Make “安排他的生活” more concrete by naming one daily activity: “她每天让孟子读书学习。”
 - Expressiveness: Add the mother’s feeling about moving to make the scene more vivid: “每次搬家，她都希望找到一个更适合孟子的地方。”
@@ -29,16 +29,16 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 > 因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。
 
 ### Grammar & Vocabulary Corrections
-- 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，With an expressed subject, the sequencing adverb should follow the subject; placing it directly before the pronoun is not grammatical here. [rule: none]
-- 又便宜又好质量的东西：又便宜又质量好的东西，The two descriptions must be parallel: 便宜 is an adjective, while 质量好 is the correct phrase for saying that an item has good quality. [rule: none]
+- 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，With an expressed subject, the sequencing adverb should follow the subject; placing it directly before the pronoun is not grammatical here.
+- 又便宜又好质量的东西：又便宜又质量好的东西，The two descriptions must be parallel: 便宜 is an adjective, while 质量好 is the correct phrase for saying that an item has good quality.
 
 ### Vocabulary Suggestions
 - 技能 -- “妈妈教孟子很多技能”：生活技能，specifies that these are practical abilities for everyday life；生活本领，emphasizes useful abilities that help a child manage daily situations.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence when the mother was named in the immediately preceding sentence and no other female character competes as the referent. [rule: ambiguous_reference]
-- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action takes the zero particle, not 了, because it is not one completed moving event. [rule: aspect_le_completed]
-- Coherence (Conjunction): 中国人说：所以中国人说，The first clause gives the cause, so add 所以 to complete the 因为……所以…… cause-and-effect connection. [rule: coherence_connectives]
+- Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence when the mother was named in the immediately preceding sentence and no other female character competes as the referent.
+- Coherence (Temporality): 常常搬了家：常常搬家，A habitual action takes the zero particle, not 了, because it is not one completed moving event.
+- Coherence (Conjunction): 中国人说：所以中国人说，The first clause gives the cause, so add 所以 to complete the 因为……所以…… cause-and-effect connection.
 - Expressiveness: After the mother teaches Mengzi, add her purpose or thought, such as: “孟母想：‘我要教孟子一些生活本领。’”
 - Expressiveness: Make the shopping lesson more concrete with a short line of dialogue, such as: “她指着两件东西说：‘这个便宜，可是质量不好。’”
 
@@ -63,13 +63,6 @@ You clearly show the mother’s important role in Mengzi’s life, and the final
 You used “不是……就是……” correctly to show Mengzi’s regular study activities. The phrase “难怪他很聪明” also connects his hard work and result clearly.
 
 ## End of story
-
-### Scene check
-- 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day -- missing
-- 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子 -- missing
-- 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day -- partly told
-- 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day -- partly told
-- 孟子becomes a famous philosopher -- partly told
 
 ### Content & Completeness
 - Missing scene: At the beginning, explain that Mengzi and his mother lived near a graveyard and that he copied people offering sacrifices every day.

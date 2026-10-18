@@ -7,14 +7,14 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 > 古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。
 
 ### Grammar & Vocabulary Corrections
-- 古代的时候：在古代，古代 already expresses a time period, so adding 的时候 is redundant. [teacher rule: gudai_de_shihou_why]
-- 一看很多人：一看到很多人，here the meaning is “see,” so 看 must be changed to 看到 rather than using 看, which means “look.” [vocab list]
+- 古代的时候：在古代，古代 already expresses a time period, so adding 的时候 is redundant.
+- 一看很多人：一看到很多人，here the meaning is “see,” so 看 must be changed to 看到 rather than using 看, which means “look.”
 
 ### Vocabulary Suggestions
 - No suggestions.
 
 ### Coherence & Expressiveness
-- Coherence (Conjunction): 一看到很多人正在吃一些植物。一些人一吃植物就生病了：一看到很多人正在吃一些植物，就发现一些人一吃植物就生病了，use 一V就…… to connect the immediate sequence: after seeing the people eating plants, Shennong notices that some become ill. [teacher rule: yi_jiu]
+- Coherence (Conjunction): 一看到很多人正在吃一些植物。一些人一吃植物就生病了：一看到很多人正在吃一些植物，就发现一些人一吃植物就生病了，use 一V就…… to connect the immediate sequence: after seeing the people eating plants, Shennong notices that some become ill.
 - Expressiveness: After the illness, add a concrete symptom to make the danger clearer, for example: “他们肚子疼得很厉害。”
 - Expressiveness: At “神农想帮别人,” add Shennong’s concerned thought or feeling, for example: “神农很担心，心想：我一定要弄清楚哪些植物能吃。”
 
@@ -27,8 +27,8 @@ Model gpt-5.6-terra (medium), snapshot base-v5, 2026-10-18
 > 然后，神农开始尝很多植物，比方说他吃过生姜、芥兰和菠菜。一些植物吃真好，特别是黄瓜。但是，一些植物毒得很，特别是夹竹桃。
 
 ### Grammar & Vocabulary Corrections
-- 一些植物吃真好：一些植物很好吃，Use the adjective compound 好吃 to describe that something tastes good; 吃 cannot directly be followed by 真好 in this structure. [rule: none]
-- 一些植物毒得很：一些植物有毒，毒 cannot be intensified with 得很; 有毒 is the appropriate predicate for plants that contain poison. [teacher rule: du_youdu]
+- 一些植物吃真好：一些植物很好吃，Use the adjective compound 好吃 to describe that something tastes good; 吃 cannot directly be followed by 真好 in this structure.
+- 一些植物毒得很：一些植物有毒，毒 cannot be intensified with 得很; 有毒 is the appropriate predicate for plants that contain poison.
 
 ### Vocabulary Suggestions
 - 很多 -- “神农开始尝很多植物”：很多种，specifies that he tried many different kinds of plants.
@@ -45,15 +45,15 @@ You use clear sequence and contrast connectors to organize the scene. The specif
 > 一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。
 
 ### Grammar & Vocabulary Corrections
-- 麻烦我们可以吃什么植物？：请问，我们可以吃什么植物？，麻烦 means “trouble” or “inconvenience” and cannot by itself introduce a polite question; 请问 is the appropriate polite question opener. [rule: none]
-- 以后：后来，at the beginning of a sentence meaning “afterwards,” use 后来; 以后 normally refers to a future time or follows a specific stated time/event. [vocab list]
-- 别人：人们，别人 distinguishes other people from a particular person, but the intended meaning here is people in general. [teacher rule: bieren]
+- 麻烦我们可以吃什么植物？：请问，我们可以吃什么植物？，麻烦 means “trouble” or “inconvenience” and cannot by itself introduce a polite question; 请问 is the appropriate polite question opener.
+- 以后：后来，at the beginning of a sentence meaning “afterwards,” use 后来; 以后 normally refers to a future time or follows a specific stated time/event.
+- 别人：人们，别人 distinguishes other people from a particular person, but the intended meaning here is people in general.
 
 ### Vocabulary Suggestions
 - 说 -- “一个人对神农说”：问神农，specifies that the person is asking a question rather than simply speaking.
 
 ### Coherence & Expressiveness
-- Coherence (Temporality): 告诉：告诉了，this is a completed later event in the narrative, so the verb needs 了 to mark completion. [rule: aspect_le_completed]
+- Coherence (Temporality): 告诉：告诉了，this is a completed later event in the narrative, so the verb needs 了 to mark completion.
 - Expressiveness: At the person’s question, add a polite or worried tone through dialogue, for example: “请问，哪些植物可以吃？”
 - Expressiveness: Make Shennong’s reply more informative by naming the key difference between plants, for example: “这就要看你吃的是哪种植物了。”
 

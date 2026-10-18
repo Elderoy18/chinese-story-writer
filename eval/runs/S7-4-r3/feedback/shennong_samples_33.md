@@ -7,15 +7,15 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。
 
 ### Grammar & Vocabulary Corrections
-- 安全什么是危险：安全的，什么植物是危险的，When an adjective follows 是 to describe an omitted noun, add 的; repeat the noun phrase to make the two indirect questions parallel. [rule: none]
+- 安全什么是危险：安全的，什么植物是危险的，When an adjective follows 是 to describe an omitted noun, add 的; repeat the noun phrase to make the two indirect questions parallel.
 
 ### Vocabulary Suggestions
 - No suggestions.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 他们能吃什么植物：什么植物能吃，After referring to 人们 in the same sentence, use zero form rather than repeating a pronoun; this also states clearly that the question is which plants are edible. [rule: ambiguous_reference]
-- Coherence (Reference): 神农：一个叫神农的人，This is the character’s first mention, so introduce him with a full noun phrase rather than assuming the reader already knows him. [rule: character_introduction_first_mention]
-- Coherence (Temporality): 出去试一试很多种植物：出去试了很多种植物，The testing happens before he tells people the results, so use 了 to mark the completed action; the directional complement 出去 does not need its own 了. [rule: aspect_le_completed]
+- Coherence (Reference): 他们能吃什么植物：什么植物能吃，After referring to 人们 in the same sentence, use zero form rather than repeating a pronoun; this also states clearly that the question is which plants are edible.
+- Coherence (Reference): 神农：一个叫神农的人，This is the character’s first mention, so introduce him with a full noun phrase rather than assuming the reader already knows him.
+- Coherence (Temporality): 出去试一试很多种植物：出去试了很多种植物，The testing happens before he tells people the results, so use 了 to mark the completed action; the directional complement 出去 does not need its own 了.
 - Expressiveness: After the first sentence, add one concrete result of eating a poisonous plant, such as “有人吃了有毒的植物，肚子疼得不得了。” This makes the danger easier for the reader to imagine.
 - Expressiveness: At the point where Shennong begins testing plants, add his purpose or thought, such as “神农想：我要找出哪些植物能吃。” This gives his action a clear personal motivation.
 - Expressiveness: Describe his journey briefly, such as “他走过很多高山，寻找各种植物。” This adds movement and setting to the scene.
@@ -28,9 +28,9 @@ You clearly establish the main problem: people do not know which plants are safe
 > 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。
 
 ### Grammar & Vocabulary Corrections
-- 清楚：舒服，清楚 describes information or thinking that is clear, not a physical sensation in the stomach; 舒服 describes bodily comfort. [rule: none]
-- 你吃哪种植物，这就要看你的口味：你吃哪种植物，要看你的口味，this use of 这就要看……了 is not a response to an uncertain question, and the part after 看 is not in a question form. [rule: zhe_jiu_yao_kan]
-- 什么都花想吃：什么花都想吃，when a noun is modified by 什么 in a “whatever…” meaning, the noun stays with 什么 before 都. [rule: none]
+- 清楚：舒服，清楚 describes information or thinking that is clear, not a physical sensation in the stomach; 舒服 describes bodily comfort.
+- 你吃哪种植物，这就要看你的口味：你吃哪种植物，要看你的口味，this use of 这就要看……了 is not a response to an uncertain question, and the part after 看 is not in a question form.
+- 什么都花想吃：什么花都想吃，when a noun is modified by 什么 in a “whatever…” meaning, the noun stays with 什么 before 都.
 
 ### Vocabulary Suggestions
 - 非常好 -- “有的植物对身体非常好”：非常有益，specifies that the plants benefit health rather than being generally good.
@@ -48,17 +48,17 @@ You used direct speech to show the character explaining his idea, which makes th
 > 他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。
 
 ### Grammar & Vocabulary Corrections
-- 一百岁时候：一百岁的时候，A multi-syllable time expression before 时候 needs 的. [teacher rule: de_shihou]
-- 毒的花：有毒的花，毒 is a noun; use 有毒的 to describe a flower that contains poison. [vocab list]
-- 生病时候：生病的时候，The verb phrase before 时候 needs 的. [teacher rule: de_shihou]
-- 告诉人：告诉人们，Here the audience is a concrete group, so 人们 is needed rather than the generic noun 人. [teacher rule: ren_renmen]
-- 什么植物是毒：什么植物有毒，毒 is a noun, while 有毒 describes a plant that contains poison. [vocab list]
+- 一百岁时候：一百岁的时候，A multi-syllable time expression before 时候 needs 的.
+- 毒的花：有毒的花，毒 is a noun; use 有毒的 to describe a flower that contains poison.
+- 生病时候：生病的时候，The verb phrase before 时候 needs 的.
+- 告诉人：告诉人们，Here the audience is a concrete group, so 人们 is needed rather than the generic noun 人.
+- 什么植物是毒：什么植物有毒，毒 is a noun, while 有毒 describes a plant that contains poison.
 
 ### Vocabulary Suggestions
 - 不小心 -- “不小心吃了毒的花”：误食，more precisely describes accidentally eating something that should not be eaten.
 
 ### Coherence & Expressiveness
-- Coherence (Temporality): 一吃就开始死：一吃就开始死了，This is a completed narrative event and a change into the dying state; in a series of actions, the final verb takes 了. [rule: aspect_le_completed]
+- Coherence (Temporality): 一吃就开始死：一吃就开始死了，This is a completed narrative event and a change into the dying state; in a series of actions, the final verb takes 了.
 - Expressiveness: At the flower, add visual detail to show why it seemed safe or attractive, for example: “黄色的花像星星一样，又大又漂亮。”
 - Expressiveness: Describe his physical reaction after eating it, for example: “他肚子疼了起来，躺在地上，难受得不得了。”
 - Expressiveness: Add his worried thought at the moment he becomes ill, for example: “我会死吗？”
@@ -67,15 +67,6 @@ You used direct speech to show the character explaining his idea, which makes th
 - You clearly show the dangerous result of eating the flower, and the contrast between plants that are medicine and plants that are poisonous is easy to understand.
 
 ## End of story
-
-### Scene check
-- in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants -- wrong
-- “神农” decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants -- partly told
-- “神农” found “茶” and took a record -- partly told
-- “神农” tried “夹竹桃” and fainted -- wrong
-- a person in blue stopped by and gave “灵芝” to “神农”，“神农” felt better after eating “灵芝” -- missing
-- another person in brown came by and had a conversation with “神农” -- missing
-- “神农” takes record of “灵芝” and “夹竹桃” -- missing
 
 ### Content & Completeness
 - You need to say that people became sick after eating unknown plants, rather than dying, in the opening.

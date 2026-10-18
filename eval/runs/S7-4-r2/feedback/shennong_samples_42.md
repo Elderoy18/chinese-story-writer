@@ -7,21 +7,21 @@ Model gpt-5.6-terra (medium), snapshot base-v6, 2026-10-18
 > 古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。
 
 ### Grammar & Vocabulary Corrections
-- 古代的时候：在古代，this phrase redundantly combines two time expressions; use the shorter time expression. [rule: time_expression]
-- 当上医：当上医生，医 is not the usual standalone noun for this occupation; 医生 means “doctor.” [rule: word_choice]
-- 别的人：别人，别的 is used to distinguish other items or people from a stated one; here the intended general meaning is “other people.” [teacher rule: bieren]
-- 一看：一看到，看 describes looking, while 看到 expresses the result of seeing someone. [rule: resultative_complement]
-- 听说一个远远的地方有：听说在一个很远的地方有，use 在 to introduce the location; 很远的 is the natural modifier for a distant place in this sentence. [rule: none]
-- 一个很漂亮的植物：一株很漂亮的植物，株 is an appropriate measure word for one individual plant. [rule: none]
+- 古代的时候：在古代，this phrase redundantly combines two time expressions; use the shorter time expression.
+- 当上医：当上医生，医 is not the usual standalone noun for this occupation; 医生 means “doctor.”
+- 别的人：别人，别的 is used to distinguish other items or people from a stated one; here the intended general meaning is “other people.”
+- 一看：一看到，看 describes looking, while 看到 expresses the result of seeing someone.
+- 听说一个远远的地方有：听说在一个很远的地方有，use 在 to introduce the location; 很远的 is the natural modifier for a distant place in this sentence.
+- 一个很漂亮的植物：一株很漂亮的植物，株 is an appropriate measure word for one individual plant.
 
 ### Vocabulary Suggestions
 - 更好 -- “都会觉得身体更好”：好些，specifies that the patients feel somewhat better after eating the plant
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 神农听说：他听说，after the immediately preceding reference to him and with no competing character, use a pronoun for this re-occurrence. [rule: none]
-- Coherence (Reference): 神农三个月走去：他三个月走去，he is still the only active character, so repeating the name so soon is unnecessary; use a pronoun. [rule: none]
-- Coherence (Temporality): 什么病人吃都会：什么病人吃了都会，eating is completed before the patients feel better, so use 了 for the completed action. [rule: aspect_le_completed]
-- Coherence (Temporality): 三个月走去，找到有植物的地方：走了三个月，找到了有植物的地方，place the duration after the verb and use 了 to show that the journey and the finding were completed. [rule: aspect_le_completed]
+- Coherence (Reference): 神农听说：他听说，after the immediately preceding reference to him and with no competing character, use a pronoun for this re-occurrence.
+- Coherence (Reference): 神农三个月走去：他三个月走去，he is still the only active character, so repeating the name so soon is unnecessary; use a pronoun.
+- Coherence (Temporality): 什么病人吃都会：什么病人吃了都会，eating is completed before the patients feel better, so use 了 for the completed action.
+- Coherence (Temporality): 三个月走去，找到有植物的地方：走了三个月，找到了有植物的地方，place the duration after the verb and use 了 to show that the journey and the finding were completed.
 - Expressiveness: At the point where he wants to become a doctor, add his motivation or inner thought, such as “他想：我要帮助生病的人。” This makes his wish to help feel more personal.
 - Expressiveness: When describing the journey, add a small travel detail, such as “他走啊走啊，去了很多高山。” This helps the reader feel that the search took effort.
 - Expressiveness: At the beautiful plant, add a more concrete visual detail, such as “那儿开着黄色的像星星一样的花。” This gives the plant a memorable appearance.
@@ -34,17 +34,17 @@ You clearly introduce 神农 and explain both his wish to help people and the pr
 > 他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。
 
 ### Grammar & Vocabulary Corrections
-- 以前一个人：以前有人，An unspecified person needs the existential word 有 in this position; 以前有人 introduces that person naturally. [rule: none]
+- 以前一个人：以前有人，An unspecified person needs the existential word 有 in this position; 以前有人 introduces that person naturally.
 
 ### Vocabulary Suggestions
 - 有好处 -- “灵芝对身体有好处”：有益健康，more specifically identifies the benefit as supporting health; this would make the sentence “灵芝有益健康”.
 
 ### Coherence & Expressiveness
-- Coherence (Reference): 他：∅，After 神农 is named in the time clause, use zero form for the same person in the main clause rather than repeating a pronoun. [rule: redundancy_delete]
-- Coherence (Temporality): 快生病：很快就生病了，Use 很快 to mean “very quickly,” and add 了 because becoming ill is a completed change of state in this narrative. [rule: aspect_le_completed]
-- Coherence (Temporality): 快给：赶快给了，赶快 describes acting without delay, and 给了 marks the completed action of giving in the past narrative. [rule: aspect_le_completed]
-- Coherence (Temporality): 没有病：没有病了，Add 了 to show the change from being ill to no longer being ill. [rule: aspect_le_completed]
-- Coherence (Temporality): 想起来：想起了，For a completed act of remembering, place 了 after the resultative complement. [teacher rule: le_placement]
+- Coherence (Reference): 他：∅，After 神农 is named in the time clause, use zero form for the same person in the main clause rather than repeating a pronoun.
+- Coherence (Temporality): 快生病：很快就生病了，Use 很快 to mean “very quickly,” and add 了 because becoming ill is a completed change of state in this narrative.
+- Coherence (Temporality): 快给：赶快给了，赶快 describes acting without delay, and 给了 marks the completed action of giving in the past narrative.
+- Coherence (Temporality): 没有病：没有病了，Add 了 to show the change from being ill to no longer being ill.
+- Coherence (Temporality): 想起来：想起了，For a completed act of remembering, place 了 after the resultative complement.
 - Expressiveness: After the illness begins, add a concrete symptom to show Shen Nong’s discomfort, such as “他的肚子疼得不得了。”
 - Expressiveness: When the blue-clothed person arrives, add a short line of dialogue to make the rescue more lively, such as “快吃这个，它能帮你！”
 - Expressiveness: Show Shen Nong’s surprise when he remembers the benefit of the herb, such as “神农又惊又喜，觉得灵芝真有用。”
@@ -58,15 +58,15 @@ You clearly introduce 神农 and explain both his wish to help people and the pr
 > 啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。
 
 ### Grammar & Vocabulary Corrections
-- 写下怎么做药在书上：把做药的方法写在书上了，The content being written should be the noun phrase “做药的方法”; in a 把 structure, that object comes before the verb, while the location follows the verb. [rule: none]
-- 那红灵芝：那种红灵芝，A demonstrative such as “那” needs a measure word before a noun; “种” identifies the kind of mushroom. [teacher rule: zhe_na_mw]
-- 对身体好处：对身体有好处，The expression requires “有”: “对身体有好处” means beneficial to the body. [vocab list]
+- 写下怎么做药在书上：把做药的方法写在书上了，The content being written should be the noun phrase “做药的方法”; in a 把 structure, that object comes before the verb, while the location follows the verb.
+- 那红灵芝：那种红灵芝，A demonstrative such as “那” needs a measure word before a noun; “种” identifies the kind of mushroom.
+- 对身体好处：对身体有好处，The expression requires “有”: “对身体有好处” means beneficial to the body.
 
 ### Vocabulary Suggestions
 - 放 -- “他把灵芝放在包里”：装进，specifies that he puts the lingzhi inside the bag.
 
 ### Coherence & Expressiveness
-- Coherence (Temporality): 他把灵芝放在包里：他把灵芝放在包里了，This is a completed action in the narrative, so use “了” to mark completion. [rule: aspect_le_completed]
+- Coherence (Temporality): 他把灵芝放在包里：他把灵芝放在包里了，This is a completed action in the narrative, so use “了” to mark completion.
 - Expressiveness: After “他怎么忘记了？”, add a brief moment of realization, such as “他突然想起以前那个人说过的话。”
 - Expressiveness: At the point where he tells others, add a short quotation to show his excitement, such as “灵芝对身体有好处！”
 - Expressiveness: Describe the writing more vividly with one small detail, such as “他认真地把做药的方法写在书上。”
@@ -75,15 +75,6 @@ You clearly introduce 神农 and explain both his wish to help people and the pr
 You clearly connect the lingzhi to its benefit for people’s health, and “一回家就” gives the scene a quick, energetic sequence.
 
 ## End of story
-
-### Scene check
-- in ancient times, people did not know which plants can be eaten, so people often got sick after eating some plants -- missing
-- 神农decided to find out which plants are safe to eat and which are not, so he climbed mountains to try different plants -- wrong
-- 神农found茶and took a record -- missing
-- 神农tried 夹竹桃 and fainted -- wrong
-- a person in blue stopped by and gave灵芝to 神农，神农felt better after eating灵芝 -- told
-- another person in brown came by and had a conversation with 神农 -- missing
-- 神农takes record of灵芝and夹竹桃 -- partly told
 
 ### Content & Completeness
 - Missing scene: At the beginning, explain that people often became sick because they did not know which plants were safe to eat.
