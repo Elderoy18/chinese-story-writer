@@ -3,6 +3,9 @@
 
     chinese_writing_rag_pipeline_v2/.venv/Scripts/python eval/v1_vs_v2/v2_repeat.py 2 3
         -> eval/v1_vs_v2/v2_runs/r<k>/feedback.json   (same format as v2's runs/S0/feedback.json)
+    ... v2_repeat.py 2 3 --test-set eval/test_set_h20.json
+        -> eval/v1_vs_v2/v2_runs_h20/r<k>/feedback.json   (the 20-story S7 test set; calls already
+           made for the 6-story runs are reused from their cache)
 
 v2 S0 = flags from three finders -> one explanation call per scene (step 15) ->
 enrichment per scene (step 16) -> assembled with the content check (steps 10, 17).
@@ -25,7 +28,13 @@ REPO = HERE.parent.parent
 V2 = REPO / "chinese_writing_rag_pipeline_v2"
 sys.path.insert(0, str(V2 / "scripts"))
 
-STORIES = {s["sample_id"] for s in json.load(open(REPO / "eval" / "test_set.json", encoding="utf-8"))["samples"]}
+TEST_SET = "eval/test_set.json"
+if "--test-set" in sys.argv:
+    i = sys.argv.index("--test-set")
+    TEST_SET = sys.argv[i + 1]
+    del sys.argv[i:i + 2]
+STORIES = {s["sample_id"] for s in json.load(open(REPO / TEST_SET, encoding="utf-8"))["samples"]}
+RUNS_DIR = HERE / ("v2_runs" if TEST_SET == "eval/test_set.json" else "v2_runs_h20")
 
 
 def load(name):
@@ -36,8 +45,16 @@ def load(name):
 
 
 def run(k):
-    out = HERE / "v2_runs" / f"r{k}"
+    out = RUNS_DIR / f"r{k}"
     out.mkdir(parents=True, exist_ok=True)
+    if RUNS_DIR.name != "v2_runs":  # reuse the cached calls of the 6-story runs (same prompts, same salt)
+        for step in ("15_explain", "16_enrich"):
+            src, dst = HERE / "v2_runs" / f"r{k}" / step / "cache", out / step / "cache"
+            if src.exists():
+                dst.mkdir(parents=True, exist_ok=True)
+                for f in src.glob("*.json"):
+                    if not (dst / f.name).exists():
+                        shutil.copy(f, dst / f.name)
     split = json.load(open(V2 / "data" / "03_split" / "split.json", encoding="utf-8"))
     split["test"] = [t for t in split["test"] if t["sample_id"] in STORIES]
     (out / "split.json").write_text(json.dumps(split, ensure_ascii=False), encoding="utf-8")

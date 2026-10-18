@@ -44,6 +44,20 @@ import score as S  # noqa: E402  (parsing + judge, shared with the v1-vs-v2 repo
 RUNS = REPO / "eval" / "runs"
 OUT = HERE / "out"
 
+# v2 (chinese_writing_rag_pipeline_v2, round S0) on the 20 stories: run 1 is v2's own run; runs
+# 2-3 come from eval/v1_vs_v2/v2_repeat.py --test-set eval/test_set_h20.json. v2 records no
+# retrieved chunks, so card reach, Jaccard and retrieval attribution do not apply.
+V2_RUNS = {"v2-S0": REPO / "chinese_writing_rag_pipeline_v2" / "runs" / "S0" / "feedback.json",
+           "v2-r2": REPO / "eval" / "v1_vs_v2" / "v2_runs_h20" / "r2" / "feedback.json",
+           "v2-r3": REPO / "eval" / "v1_vs_v2" / "v2_runs_h20" / "r3" / "feedback.json"}
+_v2_cache = {}
+
+
+def v2_story(run, sample_id):
+    if run not in _v2_cache:
+        _v2_cache[run] = {d["sample_id"]: d for d in json.load(open(V2_RUNS[run], encoding="utf-8"))}
+    return _v2_cache[run][sample_id]
+
 # Judge prompts OpenAI's content filter refuses (a story about poisonous plants can
 # trip it). The scene (or the story's content check) is then left out of the
 # metrics for every run, so stages stay comparable; the report lists it.
@@ -157,6 +171,8 @@ def scene_checks(runs, test_set):
     """S7-3 onward: the verdict per required scene from each run's "## Scene check"
     section -> {sample_id: [[verdict per scene] per run]}; {} if no run has the section."""
     out = {}
+    if any(run in V2_RUNS for run in runs):
+        return out  # v2 has no scene-check section
     for s in test_set["samples"]:
         per_run = []
         for run in runs:
@@ -234,12 +250,18 @@ def run_one(run, test_set, key, scene_lists):
     """Judge one run of a stage on every story -> (item/expr/content records, retrieved ids per scene)."""
     recs, retrieved = [], {}
     def one(s):
-        r = json.load(open(RUNS / run / f"{s['sample_id'].replace('#', '_')}.json", encoding="utf-8"))
-        for sc in r["scenes"]:
-            retrieved[(s["sample_id"], sc["scene"])] = sc["retrieved"]
         sl = scene_lists[s["story_id"]]
         smp = {"sample_id": s["sample_id"], "text": s["raw_text"], "scenes": s["scenes"],
                "content_flags": [{"raw": f} for f in s["gold"]["content_flags"]], "scene_list": sl["scenes"], "title": sl["title"]}
+        if run in V2_RUNS:
+            story = v2_story(run, s["sample_id"])
+            assert [x["text"] for x in story["scenes"]] == s["scenes"], f"v2 scene split differs: {s['sample_id']}"
+            for i in range(len(s["scenes"])):
+                retrieved[(s["sample_id"], i + 1)] = []
+            return S.build(run, smp, S.load_v2(story), key)
+        r = json.load(open(RUNS / run / f"{s['sample_id'].replace('#', '_')}.json", encoding="utf-8"))
+        for sc in r["scenes"]:
+            retrieved[(s["sample_id"], sc["scene"])] = sc["retrieved"]
         return S.build(run, smp, S.load_v1(run, s["sample_id"], s["scenes"]), key)
     with ThreadPoolExecutor(8) as pool:
         for rs in pool.map(one, test_set["samples"]):
@@ -368,7 +390,8 @@ def main():
     key = load_key(test_set)
     corpus = json.load(open(S.CORPUS, encoding="utf-8"))
     scene_lists = {s["story_id"]: s for s in corpus["scene_lists"]}
-    snapshot = json.load(open(RUNS / args.runs[0] / "stage.json", encoding="utf-8"))["snapshot"]
+    is_v2 = args.runs[0] in V2_RUNS
+    snapshot = "base-v4-h20" if is_v2 else json.load(open(RUNS / args.runs[0] / "stage.json", encoding="utf-8"))["snapshot"]
     cards = {json.loads(l)["chunk_id"] for l in open(REPO / "eval" / "snapshots" / snapshot / "chunks.jsonl", encoding="utf-8")
              if '"chunk_type": "rule_card"' in l}
     sids = [s["sample_id"] for s in test_set["samples"]]
@@ -394,7 +417,7 @@ def main():
 
     # retrieval: Jaccard between runs, card reach per rule (first run)
     jac = [len(set(retrieved[a][k]) & set(retrieved[b][k])) / len(set(retrieved[a][k]) | set(retrieved[b][k]))
-           for a, b in combinations(args.runs, 2) for k in retrieved[a]]
+           for a, b in combinations(args.runs, 2) for k in retrieved[a] if retrieved[a][k] or retrieved[b][k]] or [float("nan")]
     reach = defaultdict(lambda: [0, 0])
     for row in attr[args.runs[0]]:
         for c in row["cards_wanted"]:
