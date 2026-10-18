@@ -39,6 +39,27 @@ Each run file keeps, per scene, the exact user prompt, the retrieved chunk
 ids and the feedback; `runs/<stage>/stage.json` keeps the resolved stage, the
 full system prompt, the model and the snapshot manifest.
 
+`make_snapshot.py` stops if any source file is missing (and records the hash of
+each input, including the AI-critique docs and `critique_labels.json`, in the
+manifest).
+
+## Guard: earlier stages stay unchanged
+
+Later stages share code with earlier ones (`lib/rag/promptStages.ts`, the
+pipeline scripts). After any change there, check that the stages kept for
+comparison still render exactly the prompts their stored runs used:
+
+```
+node eval/check_stage_unchanged.mjs            # S6 (the S7 baseline)
+node eval/check_stage_unchanged.mjs S6 S5 S4
+```
+
+It re-renders every scene and content prompt (system, user, retrieved chunk
+ids) from the current code and the stage's frozen snapshot and compares them
+with `runs/<stage>/`. No LLM calls. "identical" = the stage is preserved; any
+difference is listed and the exit code is 1. New behaviour must go behind a new
+flag (default off) or in a new snapshot, never into an existing stage.
+
 ## Teacher in the loop: refining a stage
 
 The report `reports/<before>_vs_<after>.md` shows the teacher's own

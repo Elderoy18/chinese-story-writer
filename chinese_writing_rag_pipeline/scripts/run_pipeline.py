@@ -13,8 +13,14 @@ Two separate builds, one per kind of data:
     3. chunk_builder.py                                  -> chunks/basic_chunks.jsonl
 
   Human-in-the-loop data -- raw/iteration data/ (the teacher's review of the system)
-    4. build_iteration_chunks.py  AI critiques, vocab_errors.json, story_scenes.md
+    4. build_iteration_chunks.py  the AI-critique docs listed in its CRITIQUE_DOCS,
+                                  critique_labels.json, vocab_errors.json,
+                                  extra_rules.json, vocab_suggestion_examples.txt,
+                                  story_scenes.md
                                                          -> chunks/iteration_chunks.jsonl
+       Every one of these is required: a missing file stops the run (it used to
+       be skipped silently, and step 5's --prune would then have deleted its
+       chunks from Atlas).
 
   5. (--embed) embed-to-mongo.mjs --prune -> rag_chunks in Atlas: re-embeds
      every chunk in both files and deletes chunks that are in neither.

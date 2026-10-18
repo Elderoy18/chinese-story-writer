@@ -1,0 +1,73 @@
+{
+ "_about": "The teacher's additional rules, shown to the model with the places their regex triggers match in the student's text (teacher_rule chunks, build_iteration_chunks.py). A trigger match marks a place to check, not an error. Reconstructed on 2026-10-18 from snapshot eval/snapshots/base-v4 (the S6 snapshot): the original file was never committed. Sources: 'extra rules.docx' (since replaced by 'more rules.docx') and her S5 feedback comments.",
+ "rules": [
+  {
+   "id": "bieren",
+   "rule": "别人：别人/别的 is to distinguish all others from the spoken one",
+   "triggers": [
+    "别人",
+    "别的人"
+   ],
+   "source": "extra rules.docx"
+  },
+  {
+   "id": "zhe_na_mw",
+   "rule": "这/那 + MW. + Noun.",
+   "triggers": [
+    "[这那](?![个种位只条些样里儿么时边天次件本张家座棵就是也都才会还])[\\u4e00-\\u9fff]"
+   ],
+   "source": "extra rules.docx"
+  },
+  {
+   "id": "de_shihou",
+   "rule": "……的时候：的is needed, except monosyllabic + 时候 (小时候，古时候)",
+   "triggers": [
+    "(?<![的小古那这有])时候"
+   ],
+   "source": "extra rules.docx"
+  },
+  {
+   "id": "ren_renmen",
+   "rule": "人：人 is a generic noun, not used to refer to a concrete group of people. Use 人们.",
+   "triggers": [
+    "(?:^|[，。！？、：])人(?!们)"
+   ],
+   "source": "extra rules.docx"
+  },
+  {
+   "id": "du_youdu",
+   "rule": "毒：cannot be used with 很，非常，太，得很，for Adj. use 有毒的",
+   "triggers": [
+    "(?:很|非常|太|特别|多么)毒",
+    "毒得很",
+    "是毒",
+    "(?<!有)毒的"
+   ],
+   "source": "extra rules.docx"
+  },
+  {
+   "id": "kongpa",
+   "rule": "恐怕 cannot take other Subj. except for 我 before it. The correct structure is: 我恐怕…… or 恐怕 + Clause (Subj. + VP.). 恐怕 in Chinese means \"I'm afraid that...\", not just \"be afraid of\". So 担心 and 害怕 are correct to express Subj. is afraid that....",
+   "triggers": [
+    "[^我，。！？\\s]恐怕"
+   ],
+   "source": "S5 feedback check.docx"
+  },
+  {
+   "id": "yi_jiu",
+   "rule": "一V must be followed by 就……",
+   "triggers": [
+    "一(?:看|吃|听|喝|走|到|进|回|说|想)(?![^。！？]*就)"
+   ],
+   "source": "S5 feedback check.docx"
+  },
+  {
+   "id": "wei_polite",
+   "rule": "\"位\" is very polite and formal, not appropriate for an ordinary person in a story (一个叫神农的男人, not 一位叫神农的男人).",
+   "triggers": [
+    "一位"
+   ],
+   "source": "S5 feedback check.docx"
+  }
+ ]
+}

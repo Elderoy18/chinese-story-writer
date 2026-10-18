@@ -34,12 +34,13 @@ from build_iteration_chunks import (  # noqa: E402
     build_ai_critique_chunks, build_ai_error_cards, build_vocab_chunks,
     build_scene_list_chunks, build_vocab_suggestion_chunks, build_teacher_rule_chunks,
     VOCAB_PATH, SCENES_PATH, EXTRA_RULES_PATH,
-    SUGGESTION_EXAMPLES_PATH,
+    SUGGESTION_EXAMPLES_PATH, CRITIQUE_LABELS_PATH, CRITIQUE_DOCS, ITERATION_DIR,
 )
 from parse_corpus import load_registry  # noqa: E402
 
 INPUTS = ["extracted/basic_corpus.json", "raw/stories.json", "raw/correction_rules.json",
           str(VOCAB_PATH), str(SCENES_PATH), str(SUGGESTION_EXAMPLES_PATH), str(EXTRA_RULES_PATH),
+          str(CRITIQUE_LABELS_PATH), *(str(ITERATION_DIR / d) for d in CRITIQUE_DOCS),
           "scripts/rule_descriptions.py"]
 
 
@@ -54,6 +55,10 @@ def main():
     out_dir = ROOT / "eval/snapshots" / name
     if out_dir.exists():
         sys.exit(f"{out_dir} already exists -- snapshots are frozen; pick a new name")
+
+    missing_inputs = [p for p in INPUTS if not Path(p).exists()]
+    if missing_inputs:
+        sys.exit(f"source files missing: {missing_inputs} -- restore them before building a snapshot")
 
     test_set = json.load(open(ROOT / "eval/test_set.json", encoding="utf-8"))
     held_out = {s["sample_id"] for s in test_set["samples"]}

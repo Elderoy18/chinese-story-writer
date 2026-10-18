@@ -11,9 +11,10 @@ in `eval/stages.json` + a frozen snapshot (`eval/snapshots/base-v4`). Every chan
 stage extending S6, switched on by a new flag that defaults to **off**, so S6 and the app are
 unchanged until a stage is promoted. The only copy is the data: a new snapshot `base-v5`.
 
-Guardrail: `eval/check_s6_unchanged.mjs` re-renders S6's system and user prompts for all 18
-scenes from the current code and compares them with the prompts stored in `eval/runs/S6/`. Run
-it after every code change; it must report "identical".
+Guardrail: `eval/check_stage_unchanged.mjs` re-renders S6's system and user prompts and
+retrieved chunks for all 18 scenes (and the 6 content prompts) from the current code and
+compares them with the prompts stored in `eval/runs/S6/`. Run it after every code change; it
+must report "identical".
 
 ## What we know going in
 
@@ -37,14 +38,15 @@ it after every code change; it must report "identical".
 
 ---
 
-## Phase 0 -- housekeeping (before anything else)
+## Phase 0 -- housekeeping (before anything else) -- DONE 18 Oct
 
-| Step | What | Mechanism |
-|---|---|---|
-| 0.1 | Commit the current state; note the commit in this file. | -- |
-| 0.2 | `eval/check_s6_unchanged.mjs` (above). | guard |
-| 0.3 | Recreate `raw/iteration data/extra_rules.json` from `more rules.docx` (17 rules, each with id, rule text, regex triggers, source, date). Commit it -- the old file was never committed and is gone. | 10 |
-| 0.4 | `build_iteration_chunks.py` and `make_snapshot.py` stop with an error when a source file is missing, instead of silently returning no chunks. | 10 |
+| Step | What | Mechanism | Status |
+|---|---|---|---|
+| 0.1 | Starting commit. | -- | `1426465` ("v2 and v3 additions") |
+| 0.2 | `eval/check_stage_unchanged.mjs` (above). | guard | done; S6, S5, S4 identical; a deliberately altered S6 prompt is caught |
+| 0.3 | Restore the missing sources of S6's snapshot. `extra_rules.json` (never committed) rebuilt from the 8 teacher-rule chunks in `base-v4`; `story_scenes.md` (deleted in `6383630`) restored from `87cb456` -- byte-identical to the version `base-v4` was built from. The new rules in `more rules.docx` are added in 1.3, not here, so the restored file is exactly S6's. | 10 | done |
+| 0.4 | `build_iteration_chunks.py` and `make_snapshot.py` stop with an error when a source file is missing, instead of silently returning no chunks. AI-critique docs are read from an explicit list (`CRITIQUE_DOCS`): her new `AI_Feedback_Tags_and_Teacher_Critiques with comments.docx` has "AI feedback" headings but no story and was crashing the build. | 10 | done |
+| 0.5 | Check: rebuilding from today's sources reproduces `base-v4` exactly (1,246 chunks, same ids, content and order); the pipeline's own `build_iteration_chunks.py` writes a file identical to the committed `chunks/iteration_chunks.jsonl`. | 10 | done |
 
 ## Phase 1 -- data: snapshot `base-v5`
 
@@ -170,6 +172,15 @@ are used to re-check the judge (how often the judge agrees with her).
   retrieval modes = ~1,000 feedback calls, plus judge calls (cached). Nine runs (baseline + 8
   stages) ~ 9,000 feedback calls. To cut this: run variants A/B only for the stages that target
   retrieval (S7-4 to S7-6); reruns + original for the rest (~180 calls each).
+
+## Progress log
+
+- **18 Oct -- Phase 0.** Added `eval/check_stage_unchanged.mjs`; restored
+  `raw/iteration data/extra_rules.json` and `story_scenes.md`; `build_iteration_chunks.py`
+  (missing sources stop the build; critique docs listed in `CRITIQUE_DOCS`) and
+  `eval/make_snapshot.py` (checks inputs first; records critique docs and labels in the
+  manifest). Docs: `eval/README.md` (guard section), `run_pipeline.py` docstring, `design.md`
+  §10. Result: S6 is reproducible from source and guarded; the v1 pipeline builds again.
 
 ## Decisions
 

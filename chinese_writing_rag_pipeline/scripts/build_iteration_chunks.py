@@ -5,8 +5,8 @@ Build the human-in-the-loop chunks -> chunks/iteration_chunks.jsonl, kept
 apart from the basic-data build (chunk_builder.py). Everything here comes from
 the supervising teacher reviewing the system, in raw/iteration data/:
 
-  1. Critiques of AI feedback -- any doc with "Student N" / "AI feedback:" and
-     the teacher's "My comment" after each AI item:
+  1. Critiques of AI feedback -- the docs listed in CRITIQUE_DOCS, each with
+     "Student N" / "AI feedback:" and the teacher's "My comment" after each AI item:
        ai_feedback_item -- one AI item + the teacher's critique of it
        ai_error_card    -- all critiques sharing a failure-mode tag, aggregated
                            (the app pins these into every feedback prompt)
@@ -20,7 +20,9 @@ the supervising teacher reviewing the system, in raw/iteration data/:
   3. Prompt updates live in lib/rag/assembleFeedbackPrompt.ts, not here.
 
 vocab_errors.json and story_scenes.md are hand-converted from the teacher's
-docx in the same folder. This script reads basic_corpus.json only to link AI
+docx in the same folder. Every source file is required: a missing one stops the
+build with an error (it used to be skipped silently, which would have dropped
+its chunks from the live database on the next --embed --prune). This script reads basic_corpus.json only to link AI
 critiques to their graded sample and to count missed scenes; it never changes
 the basic corpus.
 """
@@ -33,7 +35,7 @@ from pathlib import Path
 sys.path.insert(0, "scripts")
 from tagging import tag_grammar_text, tag_ai_eval_text
 from rule_descriptions import AI_EVAL_DESC
-from extract_json import READERS, extract
+from extract_json import extract
 from parse_corpus import (FormatError, load_registry, story_by_filename, sample_id,
                           split_blocks, take_until, STUDENT_HEADER)
 from chunk_builder import make_chunk, dedup_key, build_scene_checklists
@@ -47,6 +49,10 @@ SCENES_PATH = ITERATION_DIR / "story_scenes.md"
 OUT_PATH = "chunks/iteration_chunks.jsonl"
 CHECKLISTS_PATH = "chunks/scene_checklists.json"
 CRITIQUE_LABELS_PATH = ITERATION_DIR / "critique_labels.json"
+# AI-critique docs to read, listed by name: other docs in the folder can also
+# contain "AI feedback" headings (e.g. her comments on the critique tags) and
+# are not student-sample critiques. Add a new critique doc here.
+CRITIQUE_DOCS = ["Pear Story with AI and Teacher feedback.docx"]
 MAX_AI_ERROR_CARD_EXAMPLES = 6
 
 AI_MARKER = re.compile(r"^AI feedback\s*[:：]?$", re.I)
@@ -80,10 +86,17 @@ def parse_ai_items(body, where):
     return items
 
 
+def require(path):
+    """Stop the build if a source file is missing (never skip it silently)."""
+    if not Path(path).exists():
+        raise FormatError(f"{path}: source file missing -- restore it (git history, or the snapshot "
+                          f"it was built into) before rebuilding")
+    return path
+
+
 def load_critique_labels():
     """Failure-mode labels per critiqued AI item, keyed by the chunk text."""
-    if not CRITIQUE_LABELS_PATH.exists():
-        return {}
+    require(CRITIQUE_LABELS_PATH)
     labels = json.load(open(CRITIQUE_LABELS_PATH, encoding="utf-8"))["labels"]
     unknown = sorted({t for tags in labels.values() for t in tags} - set(AI_EVAL_DESC))
     if unknown:
@@ -97,13 +110,12 @@ def build_ai_critique_chunks(registry, samples_by_id):
     The doc's own copy of the teacher feedback is not re-read."""
     chunks = []
     labels = load_critique_labels()
-    for path in sorted(ITERATION_DIR.iterdir()):
-        if path.suffix.lower() not in READERS or path.name.startswith("~$"):
-            continue
+    for name in CRITIQUE_DOCS:
+        path = require(ITERATION_DIR / name)
         paras = extract(path)
-        if not any(AI_MARKER.match(p) for p in paras):
-            continue  # not an AI-critique doc
         where = str(path)
+        if not any(AI_MARKER.match(p) for p in paras):
+            raise FormatError(f'{where}: listed in CRITIQUE_DOCS but has no "AI feedback:" heading')
         story = story_by_filename(registry, path.stem, where)
         n = 0
         for m, body in split_blocks(paras, STUDENT_HEADER, where):
@@ -174,7 +186,7 @@ def build_vocab_chunks(registry):
     """One chunk per entry. `triggers` are regexes the app matches against the
     student's text (lexical retrieval); the chunk text is embedded for
     semantic retrieval."""
-    vocab = json.load(open(VOCAB_PATH, encoding="utf-8"))
+    vocab = json.load(open(require(VOCAB_PATH), encoding="utf-8"))
     titles = {s["story_id"]: s["title"] for s in registry}
     chunks = []
     for e in vocab["entries"]:
@@ -195,8 +207,7 @@ def build_teacher_rule_chunks():
     """One chunk per rule in extra_rules.json (the teacher's additional rules).
     `triggers` mark where a student's text may break the rule -- candidates for
     the model to check, not errors by themselves."""
-    if not EXTRA_RULES_PATH.exists():
-        return []
+    require(EXTRA_RULES_PATH)
     chunks = []
     for r in json.load(open(EXTRA_RULES_PATH, encoding="utf-8"))["rules"]:
         for t in r["triggers"]:
@@ -214,8 +225,7 @@ SUGGESTION_EXAMPLE = re.compile(r"^(\S+) -- “([^”]+)”：(.+)$")
 def build_vocab_suggestion_chunks():
     """One chunk per line of the teacher's list of good vocabulary suggestions:
     <student's word> -- “<phrase>”：<alternative>，<why>；<alternative>，<why>"""
-    if not SUGGESTION_EXAMPLES_PATH.exists():
-        return []
+    require(SUGGESTION_EXAMPLES_PATH)
     chunks = []
     lines = [l.strip() for l in SUGGESTION_EXAMPLES_PATH.read_text(encoding="utf-8").splitlines()]
     for n, line in enumerate((l for l in lines if l and not l.startswith("#")), 1):
@@ -242,7 +252,7 @@ def parse_story_scenes(registry):
 
     Returns {story_id: [scene, ...]} in story order. The stated scene count is
     checked against the split so a stray or missing separator fails loudly."""
-    text = SCENES_PATH.read_text(encoding="utf-8")
+    text = require(SCENES_PATH).read_text(encoding="utf-8")
     title_to_id = {s["title"]: s["story_id"] for s in registry}
     scenes_by_story = {}
     for m in re.finditer(r"\*\*Story \d+:\s*(.+?)\*\*\s*\n+\s*(\w+) scenes:\s*(.+)", text):

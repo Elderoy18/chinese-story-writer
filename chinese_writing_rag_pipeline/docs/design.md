@@ -149,7 +149,9 @@ python chinese_writing_rag_pipeline/scripts/run_pipeline.py
 #   basic data (raw/basic data/ + raw/stories.json):
 #     extract_json.py -> parse_corpus.py -> extracted/basic_corpus.json
 #     chunk_builder.py                   -> chunks/basic_chunks.jsonl
-#   human-in-the-loop data (raw/iteration data/: AI critiques, vocab_errors.json, story_scenes.md):
+#   human-in-the-loop data (raw/iteration data/: the AI-critique docs in CRITIQUE_DOCS,
+#   critique_labels.json, vocab_errors.json, extra_rules.json, vocab_suggestion_examples.txt,
+#   story_scenes.md -- all required; a missing one stops the build):
 #     build_iteration_chunks.py          -> chunks/iteration_chunks.jsonl
 # How to add documents: see the docstring at the top of run_pipeline.py.
 
