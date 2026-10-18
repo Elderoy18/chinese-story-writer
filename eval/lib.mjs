@@ -195,6 +195,8 @@ export function resolveStage(id, stages = readJson(path.join(EVAL_DIR, "stages.j
         snapshot: def.snapshot ?? base.snapshot,
         // Which held-out stories the stage runs on (file in eval/); inherited like snapshot.
         testSet: def.testSet ?? base.testSet,
+        // Reasoning effort for the feedback model; inherited; unset = REASONING_EFFORT.
+        reasoningEffort: def.reasoningEffort ?? base.reasoningEffort,
         overrides: { fragments, extraRules: [...base.overrides.extraRules, ...(def.extraRules ?? [])] },
         note: def.note ?? "",
     };

@@ -41,6 +41,17 @@ export interface StageFlags {
     /** Two-pass RAG with structured JSON output (lib/rag/twoPass.ts); used by the
      *  evaluation harness, not by assembleStagePrompt. */
     twoPass?: boolean;
+    /** S7-0b: also pin the AI-error cards built from the teacher's revisions of her
+     *  critique labels (over-correction; wrong or missing explanation). */
+    revisedCritiqueCards?: boolean;
+    /** S7-2: every error item names the rule it applies ([rule: name] / [teacher rule: id] /
+     *  [vocab list] / [rule: none]); rule cards show the teacher's standard fix (from her
+     *  exact edits, when she makes the same fix 2+ times) to reuse instead of rewording. */
+    citeRules?: boolean;
+    /** S7-3: for a retelling, the end-of-story check first gives a fixed verdict for every
+     *  required scene (told / partly told / missing / wrong) in a "Scene check" section, and
+     *  the content notes follow from those verdicts ("Missing scene: ..." / "You need to ..."). */
+    sceneVerdicts?: boolean;
 }
 
 export const PRODUCTION_FLAGS: StageFlags = {
@@ -74,6 +85,12 @@ export interface RetrievedChunk {
     story_ids?: string[];
     triggers?: string[];
     grammar_tags?: string[];
+    /** rule_card: the teacher's usual fix, from her exact edits (S7-2). Eval snapshots
+     *  carry it; production's retrieve.ts does not fetch it yet. */
+    standard_fix?: {
+        signatures: { fix: string; count: number }[];
+        examples: { before: string; after: string; note: string }[];
+    };
 }
 
 /** The three lookups the assembler needs; production backs them with Atlas.
@@ -193,6 +210,7 @@ function systemFragments(f: StageFlags): Record<string, string> {
         rule6: RULE_6,
         rule7: RULE_7,
         rule8: RULE_8,
+        citeRule: f.citeRules ? CITE_RULE : "",
         rule9: f.sceneList
             ? "9. Do NOT comment on plot, story content, missing events, or whether the story is complete -- that is assessed separately once the whole story is finished." +
               (f.coherence
@@ -269,6 +287,7 @@ export function buildSystemPrompt(f: StageFlags, overrides: PromptOverrides = {}
     const rules = ["rule1", "rule2", "rule3", "rule4", "rule5", "rule6", "rule7", "rule8", "rule9"]
         .map((k) => frag[k])
         .filter(Boolean);
+    if (frag.citeRule) rules.push(`${rules.length + 1}. ${frag.citeRule}`);
     for (const extra of overrides.extraRules ?? []) rules.push(`${rules.length + 1}. ${extra}`);
 
     const blocks = [frag.intro + "\n\n" + rules.join("\n")];
@@ -333,6 +352,12 @@ export const PRIORITY_EVAL_CARD_IDS = [
     "ai_error_card:miscategorized_error_type",
 ];
 
+/** Pinned as well when `revisedCritiqueCards` is on (cards from her 15 Oct revisions). */
+export const REVISED_EVAL_CARD_IDS = [
+    "ai_error_card:overcorrection",
+    "ai_error_card:wrong_or_missing_explanation",
+];
+
 /**
  * Rule cards injected on EVERY request, ahead of the similarity-retrieved ones:
  * the teacher's own reference and temporality corrections, aggregated. They
@@ -366,8 +391,32 @@ function formatCritique(hit: RetrievedChunk): string {
     return `### Past AI feedback and the teacher's verdict (${tags})\n${hit.text}`;
 }
 
-export function formatRuleCard(hit: RetrievedChunk): string {
-    return `### Rule: ${hit.grammar_tag ?? hit.chunk_id}\n${hit.text}`;
+/** S7-2 (citeRules): the citation instruction, added after rule 9. */
+const CITE_RULE =
+    "Every item in Grammar Corrections and every Coherence item ends with the rule it applies, in square brackets: " +
+    "[rule: <name>] with the name of a rule card shown below (the name after \"### Rule:\"), [teacher rule: <id>] for one of " +
+    "the teacher's additional rules, [vocab list] for an entry of her vocabulary error list, or [rule: none] if none of " +
+    "them covers it. Cite only rules shown in this prompt; never invent a rule name. When the cited rule card gives the " +
+    "teacher's standard fix and it fits the student's sentence, use that fix and explain it in the card's terms instead " +
+    "of rewording it, so the same error always gets the same fix and the same explanation.";
+
+/** '+了' -> 'add 了'; '-了' -> 'delete 了'; '给→给了' stays. */
+function describeFix(fix: string): string {
+    if (fix.startsWith("+")) return `add ${fix.slice(1)}`;
+    if (fix.startsWith("-")) return `delete ${fix.slice(1)}`;
+    return fix.replace("→", " → ");
+}
+
+/** A rule card; with showStandardFix, also the teacher's standard fix for it (S7-2). */
+export function formatRuleCard(hit: RetrievedChunk, showStandardFix = false): string {
+    const lines = [`### Rule: ${hit.grammar_tag ?? hit.chunk_id}`, hit.text];
+    const sf = showStandardFix ? hit.standard_fix : undefined;
+    if (sf?.signatures.length) {
+        lines.push("The teacher's standard fix for this rule (how she usually corrects it, with how often): " +
+            sf.signatures.map((s) => `${describeFix(s.fix)} (${s.count}x)`).join("; "));
+        for (const ex of sf.examples) lines.push(`  e.g. ${ex.before} -> ${ex.after}` + (ex.note ? `  [${ex.note}]` : ""));
+    }
+    return lines.join("\n");
 }
 
 export function formatErrorCard(hit: RetrievedChunk): string {
@@ -394,10 +443,11 @@ export function findTeacherRuleHits(studentText: string, rules: RetrievedChunk[]
     return hits;
 }
 
-export function formatTeacherRules(rules: RetrievedChunk[], hits: TriggerHit[]): string {
+export function formatTeacherRules(rules: RetrievedChunk[], hits: TriggerHit[], showIds = false): string {
+    const id = (r: RetrievedChunk) => (showIds ? `[teacher rule: ${r.chunk_id.replace(/^teacher_rule:/, "")}] ` : "");
     const lines = [
         "## The teacher's additional rules (apply them when giving feedback)",
-        ...rules.map((r) => `- ${r.text}`),
+        ...rules.map((r) => `- ${id(r)}${r.text}`),
     ];
     if (hits.length) {
         lines.push(
@@ -445,7 +495,9 @@ export async function assembleStagePrompt(
             f.coherence ? r.byIds(PRIORITY_RULE_CARD_IDS) : none,
             r.search(studentText, { chunkTypes: ["rule_card"], k: topRules }),
             r.search(studentText, { chunkTypes: ["correction_item"], k: topExamples, storyId: storyId || undefined }),
-            f.critique ? r.byIds(PRIORITY_EVAL_CARD_IDS) : none,
+            f.critique
+                ? r.byIds(f.revisedCritiqueCards ? [...PRIORITY_EVAL_CARD_IDS, ...REVISED_EVAL_CARD_IDS] : PRIORITY_EVAL_CARD_IDS)
+                : none,
             f.vocab ? r.search(studentText, { chunkTypes: ["vocab_error"], k: VOCAB_SEMANTIC_K }) : none,
             f.vocab ? r.byType("vocab_error") : none,
             // Retellings: the model story is the reference for expressiveness ideas
@@ -480,7 +532,7 @@ export async function assembleStagePrompt(
                 ? "## Relevant grammar rule cards (ground your explanations in these; the first are the teacher's reference and 了 corrections, always included)"
                 : "## Relevant grammar rule cards (ground your explanations in these)"
         );
-        for (const hit of ruleHits) parts.push(formatRuleCard(hit));
+        for (const hit of ruleHits) parts.push(formatRuleCard(hit, Boolean(f.citeRules)));
     }
 
     if (calibrationHits.length) {
@@ -503,7 +555,7 @@ export async function assembleStagePrompt(
     }
 
     const teacherRuleHits = findTeacherRuleHits(studentText, teacherRules);
-    if (teacherRules.length) parts.push(formatTeacherRules(teacherRules, teacherRuleHits));
+    if (teacherRules.length) parts.push(formatTeacherRules(teacherRules, teacherRuleHits, Boolean(f.citeRules)));
 
     if (suggestionExamples.length) {
         parts.push(
@@ -561,6 +613,15 @@ export const CONTENT_INSTRUCTIONS_UNNUMBERED = CONTENT_INSTRUCTIONS.replace(
     "- one missing, unclear, or underdeveloped part of the story per line, saying what the story needs and where it belongs"
 );
 
+/** S7-3 (sceneVerdicts): decide every required scene first, then write notes from the verdicts. */
+export const SCENE_VERDICT_NOTE = `Before writing "Content & Completeness", decide each required scene in a "Scene check" section: one line per required scene, in the order given, copying the scene's description and ending with exactly one verdict -- told (the student tells this event), partly told (the event is there but a key part of it is missing), missing (the event is not in the story), or wrong (the student tells it differently from the story). Decide from what the student actually wrote; a scene counts as told even if it is short or spread over several sentences. Then "Content & Completeness" has exactly one line for each scene you marked partly told, missing or wrong, and nothing else about the required scenes: start a missing scene with "Missing scene:" and say what happens in it and where it belongs; start the others with "You need to" and say what to add or fix.`;
+
+const SCENE_CHECK_OUTPUT = `## Scene check
+- <required scene, as given> -- told | partly told | missing | wrong
+- (one line per required scene, in the given order)
+
+`;
+
 export const RETELLING_NOTE_UNNUMBERED = `This is a RETELLING of a known story. The supervising teacher's list of required scenes (in story order) is given below. In "Content & Completeness", check the student's whole retelling against every required scene: describe each required scene that is missing, out of order, or misremembered in words -- never by number. Scenes the student covered correctly do NOT need to be listed. A required scene may be spread over several parts of the student's story, or several required scenes may be combined into one -- judge the story as a whole.`;
 
 export async function assembleStageContentPrompt(
@@ -587,6 +648,8 @@ export async function assembleStageContentPrompt(
             parts.push(`### Required scenes\n${storyCards[0].text}`);
         }
     }
+    const verdicts = Boolean(f.sceneVerdicts) && storyCards.length > 0;
+    if (verdicts) parts.push(SCENE_VERDICT_NOTE);
     parts.push(
         unnumbered
             ? `## Student's complete story to review\n${scenes.join("\n")}`
@@ -595,7 +658,10 @@ export async function assembleStageContentPrompt(
     );
 
     return {
-        system: fragments.contentInstructions ?? (unnumbered ? CONTENT_INSTRUCTIONS_UNNUMBERED : CONTENT_INSTRUCTIONS),
+        system: verdicts
+            ? (fragments.contentInstructions ?? (unnumbered ? CONTENT_INSTRUCTIONS_UNNUMBERED : CONTENT_INSTRUCTIONS))
+                  .replace("Output format -- Markdown, exactly this structure:\n\n", "Output format -- Markdown, exactly this structure:\n\n" + SCENE_CHECK_OUTPUT)
+            : fragments.contentInstructions ?? (unnumbered ? CONTENT_INSTRUCTIONS_UNNUMBERED : CONTENT_INSTRUCTIONS),
         user: parts.join("\n\n"),
         retrievedChunkIds: storyCards.map((h) => h.chunk_id),
     };

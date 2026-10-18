@@ -252,6 +252,55 @@ are used to re-check the judge (how often the judge agrees with her).
   not change behaviour, as expected (most of it is only used by later stages). Kept as the base
   for S7-0b onward, since those stages need base-v5.
 
+- **18 Oct -- S7-0b measured** (`eval/reports/S7_S7-0b.md`): pinning her two revised critique cards
+  (over-correction, wrong/missing explanation). FP 0.57 (0.48-0.65), incorrect 0.43 (0.38-0.50) --
+  lower than S7-0's 0.48 but inside both stages' run-to-run ranges; fully right 69%; information
+  consistency 60% (S7-0 64%, S6 62%), same error identified 67% (74%). **Verdict: not accepted**
+  (no consistency gain; accuracy within noise). Flag `revisedCritiqueCards` kept for later
+  combination; S7-1 re-pointed to extend S7-0. Note: with 3 runs x 60 scenes, differences of a
+  few points in consistency are within run-to-run noise.
+
+- **18 Oct -- S7-1 measured** (`eval/reports/S7_S7-1.md`): reasoning effort medium (extends S7-0).
+  Information consistency 69% (S7-0 64%, S6 62%), same error identified 77% (74%, 73%), places
+  flagged in every run 66% (62%), lexical 33%; incorrect 0.43 (0.40-0.47), FP 0.61 (0.57-0.65,
+  under S7-0's highest run 0.62), fully right 70%, recall 77%. Cost: median 30 s per scene vs 22 s
+  (+8 s), ~40% more output tokens. **Verdict: accepted (provisionally)** -- the first stage whose
+  consistency gain (+5 points) is at the edge of run-to-run noise rather than inside it, with
+  accuracy unchanged; FP is at the top of the allowed range, to watch. Later stages extend S7-1.
+
+- **18 Oct -- S7-2 built** (extends S7-1). `lib/rag/promptStages.ts`: flag `citeRules` -- instruction 10
+  (every error item ends with `[rule: name]` / `[teacher rule: id]` / `[vocab list]` / `[rule: none]`;
+  reuse the cited card's standard fix and terms when it fits); rule cards render her standard fix
+  (`formatRuleCard(hit, showStandardFix)`); teacher rules carry ids (`formatTeacherRules(..., showIds)`);
+  `RetrievedChunk.standard_fix` type. Production's `retrieve.ts` does not fetch `standard_fix` yet,
+  and the app must strip the citation from what learners see (Phase 5). `eval/s7/evaluate.py`: a
+  Citations section (items citing a rule that was / was not in the prompt, `[rule: none]`, accuracy
+  by citation kind, same citation across runs). Guards: S6, S6-h20, S7-0, S7-1 identical.
+
+- **18 Oct -- S7-2 measured** (`eval/reports/S7_S7-2.md`): **information consistency 77%** (S7-1 69%),
+  same error identified 87% (77%), lexical 37% (33%); FP 0.56 (0.48-0.62) vs 0.61; incorrect 0.43
+  (0.42-0.45, narrower); fully right 72%; recall 73% (-4, within the 5-point limit). Citations: 99-100%
+  of items cite; 0-1 per run cite a rule not in the prompt; ~30% cite [rule: none]; the same rule is
+  cited at the same place in every run 77%. Items citing [rule: none] are wrong 21-27% vs 17-19% for
+  rule-card citations -- so hiding [rule: none] items (S7-7) would drop ~3x more correct items than
+  wrong ones: S7-7 as planned is unlikely to pass. **Verdict: accepted** -- the largest consistency
+  gain so far, accuracy unchanged or better. Later stages extend S7-2.
+
+- **18 Oct -- S7-3 measured** (`eval/reports/S7_S7-3.md`): end-of-story scene check. Content notes worded
+  "Missing scene:" / "You need to" **100%** (S7-2 43%, S6 49%) -- her explicit request; her flagged scenes
+  still caught 98% (44-46 of 46); same verdict for a required scene in all 3 runs 72% (no same-measure
+  baseline: earlier stages have no per-scene verdicts; the S6 6-story judge-based figure was 69%).
+  The checker is strict: of 360 verdicts only 14% "told", 37% "partly told", 29% "missing", 20% "wrong";
+  ~5 notes per story in every stage vs her 46 flags over 20 stories -- the content judge marks ~100% of
+  notes correct in every stage, so it cannot tell whether notes go beyond her standard: needs her check.
+  **Verdict: accepted** (wording as she asked, nothing lost). Learners see only the notes (D4).
+  **Noise check:** S7-3's scene prompts are byte-identical to S7-2's, so their scene numbers differ only
+  by chance: information consistency 77% vs 71%, same error 87% vs 80%, FP 0.56 vs 0.49. Run-to-run
+  noise on these is ~6 points, more than assumed. Pooling the 6 runs, the S7-2 configuration gives
+  information consistency ~74% and same error ~83% vs S7-1's 69% / 77% -- still a gain, about half
+  what S7-2 alone suggested. From here, judge a stage on its pooled runs where prompts repeat, and
+  treat differences under ~6 points as noise.
+
 ## Decisions
 
 - **D1 (18 Oct): 20 held-out stories.** S6 re-baselined on `base-v4-h20`.
@@ -259,3 +308,11 @@ are used to re-check the judge (how often the judge agrees with her).
   their own section, no "(suggestion)" tag in the corrections list.
 - **D3 (18 Oct): triggers go to `chinese_writing_rag_pipeline/review/triggers/`** for review;
   sent on to her if needed.
+- **D4 (18 Oct): what learners see at END STORY** -- only a bulleted list of the missed content (the
+  "Content & Completeness" notes). The "Scene check" section from S7-3 is internal: kept in the stored
+  feedback for analysis, stripped by the app before display (Phase 5). The evaluation already judges
+  only the "Content & Completeness" notes, so scoring is unaffected. No scene numbers: bullets never say
+  "Scene 2:" or number the required scenes; where content belongs is described by the surrounding
+  events (already required by `noSceneNumbers`, inherited by every S7 stage). Phase 5: the content route
+  streams the model's text straight to the learner, so hiding the Scene check means buffering until
+  "## Content & Completeness" starts, or producing the verdicts in a separate call.

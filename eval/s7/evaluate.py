@@ -115,6 +115,59 @@ def clean_after(after):
     return S.squash(after)
 
 
+CITE = re.compile(r"\[(rule|teacher rule|vocab list)(?::\s*([^\]]*))?\]")
+
+
+def citation(item):
+    """The rule an item cites (S7-2 onward): ('rule', 'aspect_le_completed'), ('teacher rule', 'bieren'),
+    ('vocab list', ''), ('rule', 'none'); None if the item has no citation."""
+    m = CITE.findall(item["shown"])
+    return (m[-1][0], m[-1][1].strip()) if m else None
+
+
+def cited_chunk(c):
+    if c is None or c[1] == "none":
+        return None
+    return {"rule": f"rule_card:{c[1]}", "teacher rule": f"teacher_rule:{c[1]}"}.get(c[0])
+
+
+def citation_stats(runs, recs, retrieved, places):
+    """Per run: share of error items with a citation, citing a chunk that was in the prompt,
+    citing none; accuracy of cited vs uncited items. Across runs: same citation at places in every run."""
+    out = {}
+    for run in runs:
+        items = [r for r in recs if r["kind"] == "item" and r["system"] == run]
+        rows = []
+        for r in items:
+            c = citation(r)
+            ch = cited_chunk(c)
+            in_prompt = ch is not None and ch in retrieved[run].get((r["sample_id"], r["scene"]), [])
+            f = S.item_flags(r)
+            rows.append({"cite": c, "kind": "none" if c is None else ("rule: none" if c[1] == "none" else c[0]),
+                         "in_prompt": in_prompt, "invented": ch is not None and not in_prompt,
+                         "wrong": f["false_positive"] or f["incorrect"]})
+        out[run] = rows
+    return out
+
+
+VERDICT = re.compile(r"(told|partly told|missing|wrong)\s*\W*$", re.I)
+
+
+def scene_checks(runs, test_set):
+    """S7-3 onward: the verdict per required scene from each run's "## Scene check"
+    section -> {sample_id: [[verdict per scene] per run]}; {} if no run has the section."""
+    out = {}
+    for s in test_set["samples"]:
+        per_run = []
+        for run in runs:
+            r = json.load(open(RUNS / run / f"{s['sample_id'].replace('#', '_')}.json", encoding="utf-8"))
+            sec = S.section(r["content"]["feedback"], "Scene check")
+            per_run.append([(m.group(1).lower() if (m := VERDICT.search(b)) else "?") for b in S.bullets(sec)])
+        if any(per_run):
+            out[s["sample_id"]] = per_run
+    return out
+
+
 def load_key(test_set):
     key = defaultdict(list)
     for s in test_set["samples"]:
@@ -202,7 +255,10 @@ def consistency(runs, recs, test_set, key):
             row = [g[run][0] if run in g else None for run in runs]
             n = sum(x is not None for x in row)
             lexical = n == len(runs) and len({clean_after(x["after"]) for x in row}) == 1
+            cites = [citation(x) if x else None for x in row]
             places.append({"sample_id": sid, "scene": sc, "n_runs": n, "lexical": lexical,
+                           "same_citation": n == len(runs) and all(cites) and len(set(cites)) == 1,
+                           "cited": any(cites),
                            "wrong_any": any(x and (S.item_flags(x)["false_positive"] or S.item_flags(x)["incorrect"]) for x in row),
                            "shown": [x["shown"] if x else None for x in row]})
             if n >= 2:
@@ -344,6 +400,40 @@ def main():
     for c, (got, tot) in sorted(reach.items(), key=lambda x: (x[1][0] / x[1][1], -x[1][1])):
         if tot >= 2:
             L.append(f"| {c.split(':', 1)[1]} | {got}/{tot} |")
+    cs = citation_stats(args.runs, recs, retrieved, places)
+    if any(r["cite"] for rows in cs.values() for r in rows):
+        L += ["", "## Citations (each error item names the rule it applies)", "",
+              "| | " + " | ".join(args.runs) + " |", "|---|" + "---|" * len(args.runs)]
+        def col(fn):
+            return " | ".join(fn(cs[run]) for run in args.runs)
+        L.append("| Items with a citation | " + col(lambda rs: pct(sum(r["cite"] is not None for r in rs), len(rs))) + " |")
+        L.append("| ... citing a rule card / teacher rule that was in the prompt | " + col(lambda rs: pct(sum(r["in_prompt"] for r in rs), len(rs))) + " |")
+        L.append("| ... citing a card or rule that was NOT in the prompt | " + col(lambda rs: pct(sum(r["invented"] for r in rs), len(rs))) + " |")
+        L.append("| ... citing the vocabulary list | " + col(lambda rs: pct(sum(r["kind"] == "vocab list" for r in rs), len(rs))) + " |")
+        L.append("| ... citing [rule: none] | " + col(lambda rs: pct(sum(r["kind"] == "rule: none" for r in rs), len(rs))) + " |")
+        for kind in ("rule", "teacher rule", "vocab list", "rule: none", "none"):
+            label = {"none": "no citation"}.get(kind, kind)
+            L.append(f"| Wrong (false positive or incorrect) among items citing {label} | " +
+                     col(lambda rs: pct(sum(r["wrong"] for r in rs if r["kind"] == kind), sum(r["kind"] == kind for r in rs))) + " |")
+        full_cited = [p for p in places if p["n_runs"] == len(args.runs) and p["cited"]]
+        L += ["", f"Places flagged in every run that cite the same rule in every run: "
+              f"{pct(sum(p['same_citation'] for p in full_cited), len(full_cited))}."]
+    sc_checks = scene_checks(args.runs, test_set)
+    if sc_checks:
+        same = tot = 0
+        counts = Counter()
+        for per_run in sc_checks.values():
+            n = min(len(v) for v in per_run)
+            for i in range(n):
+                tot += 1
+                same += len({v[i] for v in per_run}) == 1
+            for v in per_run:
+                counts.update(v)
+        L += ["", "## Scene check (end of story, one verdict per required scene)", "",
+              f"- Required scenes given the same verdict in every run: {pct(same, tot)}",
+              f"- Verdicts over all runs: {dict(counts)}",
+              f"- Stories where the runs listed different numbers of scenes: "
+              f"{sum(len({len(v) for v in pr}) > 1 for pr in sc_checks.values())}/{len(sc_checks)}"]
     L += ["", "## Attribution: why her corrections were missed or got a wrong fix", "",
           "| | " + " | ".join(args.runs) + " |", "|---|" + "---|" * len(args.runs)]
     labels = sorted({r["blame"] for rows in attr.values() for r in rows})

@@ -31,6 +31,7 @@ const sIdx = args.indexOf("--samples");
 const only = sIdx > -1 ? new Set(args[sIdx + 1].split(",")) : null;
 
 const stage = resolveStage(stageId);
+const effort = stage.reasoningEffort ?? REASONING_EFFORT;
 const testSet = readJson(path.join(EVAL_DIR, stage.testSet));
 const snap = await loadSnapshot(stage.snapshot);
 const retriever = makeRetriever(snap);
@@ -40,7 +41,7 @@ const systemPrompt = buildSystemPrompt(stage.flags, stage.overrides);
 writeJson(path.join(runDir(stageId), "stage.json"), {
     ...stage,
     model: FEEDBACK_MODEL,
-    reasoning_effort: REASONING_EFFORT,
+    reasoning_effort: effort,
     snapshot_manifest: snap.manifest,
     system_prompt_sha: sha(systemPrompt),
     system_prompt: systemPrompt,
@@ -51,7 +52,7 @@ async function complete(prompt) {
     const res = await withRetry(
         () => openai().chat.completions.create({
             model: FEEDBACK_MODEL,
-            reasoning_effort: REASONING_EFFORT,
+            reasoning_effort: effort,
             messages: [
                 { role: "system", content: prompt.system },
                 { role: "user", content: prompt.user },
@@ -69,7 +70,7 @@ async function completeJson({ pass, system, user, schemaName, schema }) {
     const res = await withRetry(
         () => openai().chat.completions.create({
             model: FEEDBACK_MODEL,
-            reasoning_effort: REASONING_EFFORT,
+            reasoning_effort: effort,
             messages: [
                 { role: "system", content: system },
                 { role: "user", content: user },
@@ -120,7 +121,7 @@ async function runSample(sample) {
         git_commit: commit,
         snapshot: stage.snapshot,
         model: FEEDBACK_MODEL,
-        reasoning_effort: REASONING_EFFORT,
+        reasoning_effort: effort,
         scenes,
         content: { prompt: { system: cprompt.system, user: cprompt.user }, retrieved: cprompt.retrievedChunkIds,
             feedback: cres.text, usage: cres.usage, ms: cres.ms },
