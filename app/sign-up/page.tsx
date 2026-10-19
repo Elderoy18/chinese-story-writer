@@ -80,14 +80,13 @@ export default function SignUp(){
                             id="username"
                             type="text"
                             autoComplete="username"
-                            placeholder="lily_wang"
+                            placeholder="R2A_shennong"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             required
                             minLength={3}
                             maxLength={30}
                             pattern="[A-Za-z0-9_.]+"
-                            title="3-30 letters, numbers, _ or ."
                             className="border-gray-300 focus:border-primary focus:ring-primary">
                             </Input>
                             <p className="text-xs text-gray-500">3-30 letters, numbers, _ or . -- remember it to sign in.</p>
@@ -100,7 +99,7 @@ export default function SignUp(){
                             id="password"
                             type="password"
                             autoComplete="new-password"
-                            placeholder="at least 8 characters"
+                            placeholder="changbaicao123"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required

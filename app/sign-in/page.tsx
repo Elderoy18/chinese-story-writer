@@ -73,7 +73,7 @@ export default function SignIn(){
                             id="username"
                             type="text"
                             autoComplete="username"
-                            placeholder="R3A_Shennong"
+                            placeholder="R2A_shennong"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             required
