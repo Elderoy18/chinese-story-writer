@@ -9,7 +9,9 @@ import mongoose, { Schema, Document } from "mongoose";
  * Chunk types (see chinese_writing_rag_pipeline/docs/design.md):
  *   basic data:        model_story | sample | correction_item |
  *                      content_flag | story_prompt | rule_card
- *   human-in-the-loop: ai_feedback_item | ai_error_card | vocab_error | scene_list
+ *                      rule_example (a student sentence she corrected -> its rule_card)
+ *   human-in-the-loop: ai_feedback_item | ai_error_card | vocab_error | scene_list |
+ *                      teacher_rule | vocab_suggestion_example
  */
 export interface IRagChunk extends Document<string> {
     _id: string;
@@ -29,7 +31,9 @@ export interface IRagChunk extends Document<string> {
     title?: string;
     description?: string;
     story_ids?: string[];
-    triggers?: string[];  // vocab_error: regexes matched against the student's text
+    triggers?: string[];  // vocab_error / teacher_rule / rule_card: regexes matched against the student's text
+    standard_fix?: unknown;  // rule_card: the teacher's usual fix (S7-2)
+    clause_after?: string;   // rule_example: the sentence after her fix
 }
 
 const RagChunkSchema = new Schema<IRagChunk>(
@@ -51,6 +55,8 @@ const RagChunkSchema = new Schema<IRagChunk>(
         description: { type: String },
         story_ids: { type: [String] },
         triggers: { type: [String] },
+        standard_fix: { type: Schema.Types.Mixed },
+        clause_after: { type: String },
         // `embedding` is stored but never selected into the app — large and unused at read time.
     },
     { collection: "rag_chunks", strict: false }

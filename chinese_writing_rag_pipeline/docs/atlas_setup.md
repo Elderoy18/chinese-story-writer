@@ -7,6 +7,9 @@ Search index so `lib/rag/retrieve.ts` can run `$vectorSearch`.
 
 ## Index definition
 
+(The live index, checked 19 Oct 2026, has filters on `chunk_type`, `story_id` and `grammar_tags`
+only -- not `eval_tags`, which nothing queries. That is all S7-6 needs.)
+
 - **Database / collection:** `chinese-writer-data` / `rag_chunks`
 - **Index name:** `rag_vec` (must match `VECTOR_INDEX` in `lib/rag/retrieve.ts`)
 - **Type:** Vector Search (not the classic Search index)

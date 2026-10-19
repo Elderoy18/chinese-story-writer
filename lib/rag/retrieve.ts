@@ -22,6 +22,14 @@ export interface RetrievedChunk {
     title?: string;
     story_ids?: string[];
     triggers?: string[];
+    grammar_tags?: string[];
+    /** rule_card (S7-2): the teacher's usual fix. */
+    standard_fix?: {
+        signatures: { fix: string; count: number }[];
+        examples: { before: string; after: string; note: string }[];
+    };
+    /** rule_example (S7-5/6): the student sentence after her fix. */
+    clause_after?: string;
 }
 
 interface SearchOpts {
@@ -45,7 +53,32 @@ const PROJECTION = {
     corrected_span: 1,
     explanation: 1,
     title: 1,
+    grammar_tags: 1,
+    story_ids: 1,
+    triggers: 1,
+    standard_fix: 1,
+    clause_after: 1,
     score: { $meta: "vectorSearchScore" },
+} as const;
+
+/** Fields returned by the id / type lookups: everything the prompt assembler reads
+ *  (the evaluation's local retriever returns whole chunks; this keeps production equal). */
+const LOOKUP_FIELDS = {
+    _id: 0,
+    chunk_id: 1,
+    chunk_type: 1,
+    text: 1,
+    story_id: 1,
+    parent_id: 1,
+    grammar_tag: 1,
+    grammar_tags: 1,
+    eval_tag: 1,
+    eval_tags: 1,
+    title: 1,
+    story_ids: 1,
+    triggers: 1,
+    standard_fix: 1,
+    clause_after: 1,
 } as const;
 
 /**
@@ -90,21 +123,7 @@ export async function searchChunks(
 export async function getChunksByIds(ids: string[]): Promise<RetrievedChunk[]> {
     if (ids.length === 0) return [];
     await connectDB();
-    const docs = await RagChunk.find(
-        { _id: { $in: ids } },
-        {
-            _id: 0,
-            chunk_id: 1,
-            chunk_type: 1,
-            text: 1,
-            story_id: 1,
-            parent_id: 1,
-            grammar_tag: 1,
-            eval_tag: 1,
-            eval_tags: 1,
-            title: 1,
-        }
-    ).lean<RetrievedChunk[]>();
+    const docs = await RagChunk.find({ _id: { $in: ids } }, LOOKUP_FIELDS).lean<RetrievedChunk[]>();
 
     const byId = new Map(docs.map((d) => [d.chunk_id, d]));
     return ids
@@ -120,10 +139,7 @@ export async function getChunksByIds(ids: string[]): Promise<RetrievedChunk[]> {
  */
 export async function getChunksByType(chunkType: string): Promise<RetrievedChunk[]> {
     await connectDB();
-    const docs = await RagChunk.find(
-        { chunk_type: chunkType },
-        { _id: 0, chunk_id: 1, chunk_type: 1, text: 1, story_ids: 1, triggers: 1 }
-    )
+    const docs = await RagChunk.find({ chunk_type: chunkType }, LOOKUP_FIELDS)
         .sort({ chunk_id: 1 })
         .lean<RetrievedChunk[]>();
     return docs.map((d) => ({ ...d, score: 1 }));

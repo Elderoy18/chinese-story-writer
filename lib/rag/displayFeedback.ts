@@ -27,3 +27,39 @@ export function stripSceneCheck(text: string): string {
 export function feedbackForDisplay(text: string): string {
     return stripSceneCheck(stripCitations(text)).replace(/\n{3,}/g, "\n\n").trim();
 }
+
+/**
+ * The same clean-up for text that arrives in pieces (a streamed model response).
+ * Text is passed on a whole line at a time, so a citation is never shown half-written
+ * and the "## Scene check" section is held back until the next "## " heading.
+ *   const f = displayStreamFilter();  out(f.push(delta)) ... out(f.flush())
+ */
+export function displayStreamFilter() {
+    let pending = "";
+    let inSceneCheck = false;
+    const line = (l: string): string => {
+        if (/^##\s*Scene check/i.test(l)) {
+            inSceneCheck = true;
+            return "";
+        }
+        if (/^##\s/.test(l)) inSceneCheck = false;
+        return inSceneCheck ? "" : stripCitations(l) + "\n";
+    };
+    return {
+        push(delta: string): string {
+            pending += delta;
+            let out = "";
+            let nl: number;
+            while ((nl = pending.indexOf("\n")) >= 0) {
+                out += line(pending.slice(0, nl));
+                pending = pending.slice(nl + 1);
+            }
+            return out;
+        },
+        flush(): string {
+            const out = pending ? line(pending).replace(/\n$/, "") : "";
+            pending = "";
+            return out;
+        },
+    };
+}

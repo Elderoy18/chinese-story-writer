@@ -19,6 +19,8 @@ export interface IScene {
     sceneCompletedAt: Date;
     feedback: string;
     feedbackChunkIds: string[];       // RAG chunk_ids retrieved for this scene's feedback
+    feedbackRaw?: string;             // the model's text incl. rule citations (feedback = what the learner sees)
+    feedbackConfig?: string;          // FEEDBACK_CONFIG that produced it ("s7-6" | "s4")
     regenerateUsed: boolean;
     status: "draft" | "complete";
     wasEdited: boolean;
@@ -44,6 +46,8 @@ export interface IStory extends Document {
     storyCompletedAt: Date;
     contentFeedback: string;         // end-of-story content & completeness feedback
     contentFeedbackChunkIds: string[];
+    contentFeedbackRaw?: string;     // the model's text incl. the internal scene check
+    contentFeedbackConfig?: string;
 }
 
 // Mongoose schemas
@@ -66,6 +70,8 @@ const SceneSchema = new Schema<IScene>({
 
     feedback: { type: String, default: "" },
     feedbackChunkIds: { type: [String], default: [] },
+    feedbackRaw: { type: String, default: "" },
+    feedbackConfig: { type: String, default: "" },
     imageUrl: { type: String, default: "" },
     imagePrompt: { type: String, default: "" },
     regenerateUsed: { type: Boolean, default: false },
@@ -107,6 +113,8 @@ const StorySchema = new Schema<IStory>(
         // end-of-story feedback on overall content completeness (generated after END STORY)
         contentFeedback: { type: String, default: "" },
         contentFeedbackChunkIds: { type: [String], default: [] },
+        contentFeedbackRaw: { type: String, default: "" },
+        contentFeedbackConfig: { type: String, default: "" },
     },
     { timestamps: true }
 );

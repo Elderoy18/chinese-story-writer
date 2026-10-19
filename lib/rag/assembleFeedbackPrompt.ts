@@ -6,24 +6,48 @@ import {
     PRODUCTION_FLAGS,
     type AssembleOpts,
     type AssembledPrompt,
+    type PromptOverrides,
     type Retriever,
+    type StageFlags,
 } from "@/lib/rag/promptStages";
+import { S7_6_FLAGS, S7_6_OVERRIDES, S7_6_REASONING_EFFORT } from "@/lib/rag/s7_6Config";
 
 export { CONTENT_INSTRUCTIONS } from "@/lib/rag/promptStages";
 export type { AssembledPrompt } from "@/lib/rag/promptStages";
 
 /**
- * The per-scene feedback prompt the app sends: every human-in-the-loop
- * iteration switched on (see lib/rag/promptStages.ts for each stage's pieces).
- * Rules 1-6 map directly to the 5 failure modes the supervising teacher
- * identified in her review of the old feedback system. Rules 7-8 are her later
- * notes: keep prose in English, and keep vocabulary suggestions matched to the
- * student's own demonstrated level. The coherence rules and the Coherence &
- * Expressiveness section come from her "metrics/scale" notes. Plot/content
- * completeness is NOT checked per scene -- that happens once, after END STORY
- * (CONTENT_INSTRUCTIONS).
+ * Which evaluated configuration the app runs, chosen by the FEEDBACK_CONFIG
+ * environment variable:
+ *   "s7-6" (default) -- stage S7-6, the configuration the supervising teacher chose
+ *                       after the S7 evaluation (eval/S7_plan.md): her rules and
+ *                       critique cards, rule citations and standard fixes, the
+ *                       end-of-story scene check, rule-card triggers and rule cards
+ *                       found through the student sentences she corrected; reasoning
+ *                       effort medium. Flags and prompt text are generated from the
+ *                       evaluated stage (lib/rag/s7_6Config.ts).
+ *   "s4"             -- the previous production setup (S1-S4 iterations, low effort),
+ *                       kept as an instant fallback: set FEEDBACK_CONFIG=s4 and
+ *                       restart, no code change.
+ * Rules 1-6 of the system prompt map to the 5 failure modes the teacher found in
+ * the old feedback system; plot/content completeness is checked once, after END
+ * STORY (assembleContentPrompt), not per scene.
  */
-export const SYSTEM_INSTRUCTIONS = buildSystemPrompt(PRODUCTION_FLAGS);
+interface FeedbackConfig {
+    name: "s7-6" | "s4";
+    flags: StageFlags;
+    overrides: PromptOverrides;
+    reasoningEffort: "low" | "medium";
+}
+
+const CONFIGS: Record<FeedbackConfig["name"], FeedbackConfig> = {
+    "s7-6": { name: "s7-6", flags: S7_6_FLAGS, overrides: S7_6_OVERRIDES, reasoningEffort: S7_6_REASONING_EFFORT },
+    s4: { name: "s4", flags: PRODUCTION_FLAGS, overrides: {}, reasoningEffort: "low" },
+};
+
+export const FEEDBACK_CONFIG: FeedbackConfig =
+    CONFIGS[(process.env.FEEDBACK_CONFIG ?? "s7-6").trim().toLowerCase() as FeedbackConfig["name"]] ?? CONFIGS["s7-6"];
+
+export const SYSTEM_INSTRUCTIONS = buildSystemPrompt(FEEDBACK_CONFIG.flags, FEEDBACK_CONFIG.overrides);
 
 /** Production retrieval: Atlas $vectorSearch over rag_chunks. */
 const atlasRetriever: Retriever = {
@@ -33,18 +57,15 @@ const atlasRetriever: Retriever = {
 };
 
 /**
- * Given one student scene, always-inject the reference/temporality rule cards,
- * retrieve the relevant grammar rule cards + nearby correction exemplars,
- * always-inject the calibration guardrails, include the earlier scenes as
- * coherence context, add the teacher's vocabulary error entries that match the
- * scene, then assemble the final prompt for the feedback LLM. Plot/content
- * checking is left to assembleContentPrompt.
+ * The prompt for one student scene under the active configuration: pinned and
+ * retrieved rule cards, calibration guardrails, the teacher's rules, vocabulary
+ * entries, correction exemplars, earlier scenes and the model story.
  */
 export function assembleFeedbackPrompt(
     studentText: string,
     opts: AssembleOpts = {}
 ): Promise<AssembledPrompt> {
-    return assembleStagePrompt(studentText, opts, PRODUCTION_FLAGS, atlasRetriever);
+    return assembleStagePrompt(studentText, opts, FEEDBACK_CONFIG.flags, atlasRetriever, FEEDBACK_CONFIG.overrides);
 }
 
 /**
@@ -56,5 +77,5 @@ export function assembleContentPrompt(
     scenes: string[],
     opts: { storyId?: string } = {}
 ): Promise<AssembledPrompt> {
-    return assembleStageContentPrompt(scenes, opts, PRODUCTION_FLAGS, atlasRetriever);
+    return assembleStageContentPrompt(scenes, opts, FEEDBACK_CONFIG.flags, atlasRetriever, FEEDBACK_CONFIG.overrides);
 }

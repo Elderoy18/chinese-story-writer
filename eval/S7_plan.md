@@ -368,6 +368,38 @@ are used to re-check the judge (how often the judge agrees with her).
   merge on save, atomic writes). S7-5's guard reports one changed scene because of that race (its runs
   used the other vector); no verdict depends on it.
 
+## Phase 5 -- production = S7-6 (19 Oct, the teacher's choice)
+
+Found live before the change: the app ran **S4** (`PRODUCTION_FLAGS`: S1-S4 iterations, low effort; the
+S5/S6 prompt overrides and flags were eval-only), on an early-October `rag_chunks` (1,269 docs: 31 rule
+cards; no scene_list, teacher_rule, vocab_suggestion_example or rule_example chunks; old critique labels)
+-- so the end-of-story check had no required-scene list and there were no teacher rules.
+
+Done:
+- `lib/rag/s7_6Config.ts` -- S7-6's flags, prompt overrides and reasoning effort, GENERATED from the
+  evaluated stage by `eval/s7/export_production_config.mjs` (regenerate, never hand-edit).
+- `lib/rag/assembleFeedbackPrompt.ts` -- `FEEDBACK_CONFIG` env var: `s7-6` (default) or `s4` (the old
+  setup, an instant fallback without a code change). `PRODUCTION_FLAGS` untouched (= the s4 fallback).
+- `lib/rag/retrieve.ts`, `ragChunk.ts` -- id/type lookups and searches return every field the assembler
+  reads (grammar_tag, triggers, standard_fix, parent_id, clause_after, ...), as the eval retriever does.
+- Routes `feedback`, `content-feedback` -- reasoning effort from the config; the live stream passes
+  through `displayStreamFilter` (no rule citations, no Scene check, D6); `feedback`/`contentFeedback`
+  store the learner-facing text, new `feedbackRaw`/`contentFeedbackRaw` + `*Config` keep the model's
+  text and the config (`lib/story.ts`); `maxDuration = 120` (S7-6 scenes took up to ~60 s).
+- Data: live collection backed up (`chinese_writing_rag_pipeline/scripts/backup-rag-chunks.mjs` ->
+  `backups/`, git-ignored; `--restore <file>` undoes); chunk files rebuilt from all sources
+  (`run_pipeline.py`) = base-v6's recipe on all 107 samples (all 2,018 evaluated chunks present; extra:
+  the 20 test stories' samples / corrections / flags and the one held-out suggestion example); loaded
+  with `embed-to-mongo.mjs --prune` -> 2,242 docs (1,137 inserted, 1,089 updated, 164 stale removed).
+  Index `rag_vec` unchanged (filters chunk_type, story_id, grammar_tags suffice).
+- Checks: `npx tsx eval/s7/check_production.ts` -- system prompt byte-identical to evaluated S7-6
+  (sha 6478a6d525f70c01); live retrieval brings pinned, triggered and sentence-matched cards, standard
+  fixes, named cards, 20 teacher rules, the scene list; stream filter == whole-text clean-up on real
+  S7-6 output; `npm run build` passes; S6/S6-h20/S7-4/S7-6 stages still identical.
+
+Not yet (later, each a measured step): her test-story feedback (align-test notes, S0_v2 comments,
+refined 告诉/住在/别 rules) and exact edits for the 20 test stories -- never part of evaluated S7-6.
+
 ## Decisions
 
 - **D1 (18 Oct): 20 held-out stories.** S6 re-baselined on `base-v4-h20`.

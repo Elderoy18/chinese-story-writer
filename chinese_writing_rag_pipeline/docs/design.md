@@ -135,6 +135,12 @@ This corpus itself needs no anonymization — samples are already just numbers (
 
 ## 10. App integration — what was actually wired up
 
+> **Since 19 Oct 2026 the app runs stage S7-6** (eval/S7_plan.md, Phase 5): configuration in
+> `lib/rag/s7_6Config.ts` (generated from the evaluated stage), selected in
+> `lib/rag/assembleFeedbackPrompt.ts` by `FEEDBACK_CONFIG` (`s7-6` default, `s4` = previous setup);
+> reasoning effort medium; learners see feedback without rule citations or the internal scene check
+> (`lib/rag/displayFeedback.ts`). The description below is the original S1-S4 wiring.
+
 The Chroma/sentence-transformers "production track" in §6 is one valid deployment. The deployed Next.js app uses a different stack it already has:
 
 - **Embeddings:** OpenAI `text-embedding-3-small` (1536-dim), for both the corpus and the query. Set once in `scripts/embed-to-mongo.mjs` and `lib/rag/embed.ts` — change one, change both, re-embed.
