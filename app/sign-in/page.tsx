@@ -73,7 +73,7 @@ export default function SignIn(){
                             id="username"
                             type="text"
                             autoComplete="username"
-                            placeholder="lily_wang"
+                            placeholder="R3A_Shennong"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             required
@@ -88,7 +88,7 @@ export default function SignIn(){
                             id="password"
                             type="password"
                             autoComplete="current-password"
-                            placeholder="your password"
+                            placeholder="changbaicao123"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
