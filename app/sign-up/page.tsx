@@ -87,9 +87,9 @@ export default function SignUp(){
                             minLength={3}
                             maxLength={30}
                             pattern="[A-Za-z0-9_.]+"
+                            title="3-30 letters, numbers, _ or ."
                             className="border-gray-300 focus:border-primary focus:ring-primary">
                             </Input>
-                            <p className="text-xs text-gray-500">3-30 letters, numbers, _ or . -- remember it to sign in.</p>
                         </div>
                         <div className="space-y-2">
                             <Label htmlFor="password" className="text-gray-700">
