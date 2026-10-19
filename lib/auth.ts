@@ -3,6 +3,7 @@ dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
+import { username } from "better-auth/plugins";
 import { MongoClient } from "mongodb";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
@@ -28,9 +29,16 @@ export const auth = betterAuth({
     database: mongodbAdapter(db, {
         client,
     }),
+    // Students sign up and sign in with a username and password only. Better Auth
+    // still stores an email on every user, so sign-up fills it with a hidden
+    // placeholder (lib/auth-client.ts: placeholderEmail); nothing is ever sent to it.
+    // Email sign-in stays enabled so accounts created before this change still work.
     emailAndPassword: {
         enabled: true
     },
+    plugins: [
+        username({ minUsernameLength: 3, maxUsernameLength: 30 }),
+    ],
 });
 
 export async function getSession(){

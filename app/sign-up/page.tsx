@@ -7,11 +7,10 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { signUp } from "@/lib/auth-client";
+import { signUp, placeholderEmail } from "@/lib/auth-client";
 
 export default function SignUp(){
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const [error, setError] = useState("");
@@ -25,14 +24,25 @@ export default function SignUp(){
         setLoading(true);
 
         try {
+            // Username + password only; Better Auth's required name and email are filled
+            // from the username (the email is a hidden placeholder, see lib/auth-client.ts).
+            const name = username.trim();
             const result = await signUp.email({
                 name,
-                email,
-                password,                
+                username: name,
+                email: placeholderEmail(name),
+                password,
             });
 
             if(result.error){
-                setError(result.error.message ?? "Failed to sign up");
+                const code = result.error.code ?? "";
+                setError(
+                    code === "USERNAME_IS_ALREADY_TAKEN" || code === "USER_ALREADY_EXISTS"
+                        ? "That username is already taken -- please choose another."
+                        : code === "INVALID_USERNAME"
+                            ? "Usernames can only use letters, numbers, _ and ."
+                            : result.error.message ?? "Failed to sign up"
+                );
             }else{
                 router.push("/dashboard");
             }
@@ -63,32 +73,24 @@ export default function SignUp(){
                         </div>
                         )}
                         <div className="space-y-2">
-                            <Label htmlFor="name" className="text-gray-700">
-                                Name
+                            <Label htmlFor="username" className="text-gray-700">
+                                Username
                             </Label>
                             <Input
-                            id="name"
+                            id="username"
                             type="text"
-                            placeholder="John Doe"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            autoComplete="username"
+                            placeholder="lily_wang"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                             required
+                            minLength={3}
+                            maxLength={30}
+                            pattern="[A-Za-z0-9_.]+"
+                            title="3-30 letters, numbers, _ or ."
                             className="border-gray-300 focus:border-primary focus:ring-primary">
                             </Input>
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="email" className="text-gray-700">
-                                Email
-                            </Label>
-                            <Input
-                            id="email"
-                            type="email"
-                            placeholder="JohnDoe@email.com"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                            className="border-gray-300 focus:border-primary focus:ring-primary">
-                            </Input>
+                            <p className="text-xs text-gray-500">3-30 letters, numbers, _ or . -- remember it to sign in.</p>
                         </div>
                         <div className="space-y-2">
                             <Label htmlFor="password" className="text-gray-700">
@@ -97,7 +99,8 @@ export default function SignUp(){
                             <Input
                             id="password"
                             type="password"
-                            placeholder="JohnDoePassword123"
+                            autoComplete="new-password"
+                            placeholder="at least 8 characters"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required

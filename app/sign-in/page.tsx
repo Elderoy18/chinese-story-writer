@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { signIn } from "@/lib/auth-client";
 
 export default function SignIn(){
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const [error, setError] = useState("");
@@ -24,13 +24,18 @@ export default function SignIn(){
         setLoading(true);
 
         try {
-            const result = await signIn.email({
-                email,
-                password,                
-            });
+            const id = username.trim();
+            // Accounts created before usernames existed sign in with their email.
+            const result = id.includes("@")
+                ? await signIn.email({ email: id, password })
+                : await signIn.username({ username: id, password });
 
             if(result.error){
-                setError(result.error.message ?? "Failed to sign in");
+                setError(
+                    result.error.status === 401 || result.error.code === "INVALID_USERNAME_OR_PASSWORD"
+                        ? "Wrong username or password."
+                        : result.error.message ?? "Failed to sign in"
+                );
             }else{
                 router.push("/dashboard");
             }
@@ -50,7 +55,7 @@ export default function SignIn(){
                         Sign In
                     </CardTitle>
                     <CardDescription className="text-gray-600">
-                        Enter your credentials to access your account 
+                        Enter your credentials to access your account
                     </CardDescription>
                 </CardHeader>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -61,15 +66,16 @@ export default function SignIn(){
                         </div>
                         )}
                         <div className="space-y-2">
-                            <Label htmlFor="email" className="text-gray-700">
-                                Email
+                            <Label htmlFor="username" className="text-gray-700">
+                                Username
                             </Label>
                             <Input
-                            id="email"
-                            type="email"
-                            placeholder="JohnDoe@email.com"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            id="username"
+                            type="text"
+                            autoComplete="username"
+                            placeholder="lily_wang"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                             required
                             className="border-gray-300 focus:border-primary focus:ring-primary">
                             </Input>
@@ -81,7 +87,8 @@ export default function SignIn(){
                             <Input
                             id="password"
                             type="password"
-                            placeholder="JohnDoePassword123"
+                            autoComplete="current-password"
+                            placeholder="your password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
@@ -98,7 +105,7 @@ export default function SignIn(){
                             {loading ? "Signing in..." : "Sign In"}
                         </Button>
                         <p className="text-center text-sm text-gray-600">
-                            Don't have an account? <Link href="/sign-up">Sign Up</Link>
+                            Don&apos;t have an account? <Link href="/sign-up">Sign Up</Link>
                         </p>
                     </CardFooter>
                 </form>
