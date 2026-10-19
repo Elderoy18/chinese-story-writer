@@ -118,7 +118,7 @@ const stories: Story[] = [
         id: 3,
         title: "《张骞出使西域》",
         description: "“Zhang Qian’s Mission to the Western Regions” is a famous historical story from ancient China. It is recorded mainly in the Records of the Grand Historian (Shiji, 《史记》), written by Sima Qian (司马迁) during the Western Han dynasty (西汉).",
-        videoId: "0R55VdnZ-Ec",
+        videoId: "RkapQFm8jWc",
         retellId: "zhang_qian_chu_shi_xi_yu",
         questions: [
             {
@@ -152,7 +152,7 @@ const stories: Story[] = [
         id: 4,
         title: "《嫦娥奔月》",
         description: "“Chang’e Flies to the Moon” is an ancient Chinese myth with no known author. One of its earlier records appears in the Huainanzi (《淮南子》), compiled by Liu An (刘安) and others during the Western Han dynasty (西汉)",
-        videoId: "0R55VdnZ-Ec",
+        videoId: "zwv3J5E9gcs",
         retellId: "chang_e_ben_yue",
         questions: [
             {
