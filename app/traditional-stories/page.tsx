@@ -31,12 +31,12 @@ const stories: Story[] = [
             {
                 question: "How made writing modes are there on this website?",
                 options: ["Only 1 - Retelling Stories", "2 Modes - Retelling Stories or Free Write", "No modes"],
-                correctIndex: 0,
+                correctIndex: 1,
             },
             {
                 question: "How do I enter story telling mode (for my assignment)?",
                 options: ["Click on 'Traditional Stories' in the dashboard, select the story I want to retell", "Select 'Write Your Own' in dashboard and the system guesses what story", "Ask Siri to open telekinesis mode and mentally enter"],
-                correctIndex: 2,
+                correctIndex: 0,
             },
             {
                 question: "What is the purpose of the 'free write' mode?",
@@ -51,7 +51,7 @@ const stories: Story[] = [
             {
                 question: "Do I need to fix every point the AI tutor brings up?",
                 options: ["Yes, learn this language overnight", "Yes, I should rewrite until the story is no longer my own", "No, I should use my own discretion on how much new information I can handle and how much of the story I want to change"],
-                correctIndex: 0,
+                correctIndex: 2,
             },
             // {
             //     question: "Which plant is poisonous?",
