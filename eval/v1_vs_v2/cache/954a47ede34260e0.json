@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不合适的地方让孩子玩：不适合让孩子玩儿的地方，When a verb phrase describes a place, it needs to modify the noun with 的; this version clearly means a place that is unsuitable for a child to play in.\n2. [Grammar & Vocabulary, error] 决定了他们会搬家找更好的地方：决定带着孟子搬家，找更好的地方，决定 is a mental-state verb and normally takes the zero aspect marker, not 了. It is also followed naturally by the action that is decided, rather than by a prediction with 会.\n3. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，恐怕 means “I am afraid that” and cannot use another subject in this pattern. 担心 correctly expresses that the mother is worried about her son’s future.\n4. [Grammar & Vocabulary, error] 会一直搬家才能：得一直搬家，才能，Before 才能, use 得 or 要 to express a necessary condition. 会 expresses a future prediction, rather than necessity.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original lacks the proper modifier structure for a place where children can play, and the correction is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "决定 should not take completed 了 here and should directly introduce the decided action rather than 他们会."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "恐怕 is not appropriate with 她 as the worried subject here, while 担心 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The excerpt ends incompletely at 才能, and changing it to 得一直搬家，才能 retains the inappropriate idea that she must keep moving house."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2161,
+  "completion_tokens": 1800,
+  "total_tokens": 3961,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 510,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1522,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

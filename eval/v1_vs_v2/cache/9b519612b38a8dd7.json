@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 这个男孩子叫孟子，孟子是古代的人：在古代，有一个叫孟子的男孩子，At a character’s first mention, use an indefinite noun phrase that introduces both the character and his name, rather than starting with a specific phrase. [rule: character_introduction_first_mention]\n2. [Coherence: temporality, error] Coherence (Temporality): 常常搬了家：常常搬家，A habitual action takes the zero particle; 了 is for a completed action, not a routine. [rule: aspect_le_completed]\n3. [Coherence: reference, error] Coherence (Reference): 所以孟子的妈妈安排他的生活：所以安排他的生活，After the mother has just been referred to as 她 in the same sentence, use zero form rather than repeating her full noun phrase. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“这个男孩子” is too specific for introducing a character for the first time, and the replacement correctly introduces him."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“常常” marks a habitual action, so 搬家 should not take perfective 了."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The full-name repetition should be removed, but the correction leaves the preceding “她” unresolved; the mother should first be named as the subject of 望子成龙."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2013,
+  "completion_tokens": 781,
+  "total_tokens": 2794,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 362,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 560,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

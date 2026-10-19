@@ -1,0 +1,60 @@
+{
+ "input": "Earlier scenes:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThis scene:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 因为他们常常搬了家：搬家，no了for routine/habit\n- 妈妈教孟子很多技能：教了，了completed\n- 先她让孟子跟朋友玩儿：她先让……，Subj.先……\n- 然后教他怎么买又便宜又好质量的东西：质量又好\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，The subject comes before the time-order adverbial; place the subject before 先. [rule: adverbial_word_order]\n2. [Grammar & Vocabulary, error] 又便宜又好质量的东西：又便宜又质量好的东西，质量 is a noun, so it needs the adjective 好 after it in the phrase 质量好. [rule: none]\n3. [Coherence: temporality, error] Coherence (Temporality): 常常搬了家：常常搬家，常常 describes a habitual action, so use the zero particle rather than completed-action 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "先 should follow the subject here: 她先让孟子跟朋友玩儿。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "好质量 has incorrect modifier order; 又便宜又质量好的东西 is grammatical."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 describes a habitual action, so 搬家 should not take perfective 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2035,
+  "completion_tokens": 317,
+  "total_tokens": 2352,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 384,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 132,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

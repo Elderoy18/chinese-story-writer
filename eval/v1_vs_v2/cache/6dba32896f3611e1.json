@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不要：不想，The negative form 不要 is used for prohibition or refusal; 不想 expresses that he does not want to leave. [rule: none]\n2. [Grammar & Vocabulary, error] 找到孟子一个老师：给孟子找一个老师，Put the beneficiary after 给 before the verb; 找到 cannot take both a person and a thing as consecutive objects in this pattern. [rule: none]\n3. [Grammar & Vocabulary, error] 跟老师孟子学：孟子跟老师学，The subject should come before the prepositional phrase 跟老师. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 他的朋友：自己的朋友，Use 自己的 when the possessor is the same person as the subject, so the friends are clearly Mengzi’s own friends. [teacher rule: ziji_possessor]\n5. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，Use 自己的 to show clearly that the city belongs to the subject of the clause. [teacher rule: ziji_possessor]\n6. [Coherence: temporality, error] Coherence (Temporality): 找一个老师：找了一个老师，Finding the teacher is a completed event, so the verb needs 了. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 成为哲学家：成为了哲学家，This is a completed change of state in the narrative, so use 了. [rule: aspect_le_completed]\n8. [Coherence: connectors, error] Coherence (Conjunction): 他难怪抱怨，他想：难怪他抱怨，原来他想，Use 难怪……，原来…… to introduce an understandable result and then explain its reason. [teacher rule: nanguai_yuanlai]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "不要 does not express Mengzi's unwillingness here; 不想 does."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original needs 给孟子找到一个老师; 给孟子找一个老师 loses the completed/resultative meaning."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "孟子 must precede the 跟老师 phrase as the subject."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的朋友 is already clear because 孟子 has just been mentioned, so 自己的 is optional rather than required."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的城市 clearly refers to Mengzi's city in this context, and the teacher retained this wording."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The student wrote 找到, whose resultative complement already presents the finding as completed; the displayed before-text is not the student's actual wording."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Becoming a philosopher is a completed change in this narrative, so 成为了 is appropriate."
+   },
+   {
+    "n": 8,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The correction improves 难怪/原来 but ends with the incomplete predicate 原来他想 and does not show the required explanation."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2321,
+  "completion_tokens": 1845,
+  "total_tokens": 4166,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 670,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1345,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

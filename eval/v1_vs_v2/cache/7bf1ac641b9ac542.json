@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene:\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 这也找植物：神农也在凉山找植物，After the sentence shifts to the location, 这 does not clearly identify the person doing the searching; repeat the established character’s name after this shift. [rule: ambiguous_reference]\nRun 2: 这也找植物：他也在这儿找植物，The person doing the action must be a character, and a location before the action needs 在 + place. [rule: location_zai_place]\nRun 3: 这也找植物：他也在这里找植物，The demonstrative cannot refer to the character who performs the action; use the established character pronoun and a location phrase. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs address the misuse of 这 as the actor and recast it with the established person plus a proper location phrase."
+ },
+ "usage": {
+  "prompt_tokens": 533,
+  "completion_tokens": 400,
+  "total_tokens": 933,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 346,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 建议你不是学金融，而是学政治：建议学生不要学金融，而要学政治，After “建议,” use a person plus an action; for advice not to do one thing but to do another, use “不要……而要……” rather than “不是……而是……”.\n2. [Grammar & Vocabulary, error] 会成为高薪：会拿到高薪，“高薪” is a noun meaning a high salary, so it cannot follow “成为”; use “拿到” to express receiving a high salary.\n3. [Coherence: temporality, error] Coherence (Temporality): 孟子长大：孟子长大了，Use “了” after a completed change of state: growing up has been completed before he begins solving problems.\n4. [Coherence: temporality, error] Coherence (Temporality): 后来孟子成为教授：后来孟子成为了教授，Use “了” for the completed action of becoming a professor.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "“建议你不是……而是……” is not an appropriate advice structure here; “建议学生不要……而要……” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“高薪” cannot be the complement of “成为”; “拿到高薪” is grammatical and natural."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Growing up is completed before he begins solving problems, so “长大了” correctly marks the completed change."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Becoming a professor is a completed narrative event before he teaches students, so “成为了教授” is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2160,
+  "completion_tokens": 1627,
+  "total_tokens": 3787,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 509,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1347,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

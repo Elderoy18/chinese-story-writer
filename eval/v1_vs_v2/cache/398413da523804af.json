@@ -1,0 +1,60 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThis scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 想孟子有很好的教育：想让孟子有很好的教育，Use 想让 + person + verb phrase when someone wants another person to have or do something. [rule: none]\n2. [Coherence: temporality, error] Coherence (Temporality): 他们搬家到有很多学校的城市：他们搬到了有很多学校的城市，Use 搬到 + place for moving to a destination, and add 了 because this move is presented as a completed story event. [rule: preposition_dao_place] [rule: aspect_le_completed]\n3. [Coherence: connectors, error] Coherence (Conjunction): 教育。他们：教育，所以他们，The mother’s wish for Mencius’s education is the cause of the move, so use 所以 to show the cause-and-effect relation. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "想 cannot directly take 孟子有很好的教育 as its object; 想让 fixes that structure, but 有很好的教育 is not the teacher's fully appropriate education expression."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed narrative event, so 搬到了 is a correct form."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The two sentences can already express the motivation and result without an obligatory 所以, and the displayed text is only a cut-off fragment."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2125,
+  "completion_tokens": 1228,
+  "total_tokens": 3353,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 474,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1008,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

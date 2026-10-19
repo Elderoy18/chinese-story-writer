@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThis scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 想孟子有很好的教育：想让孟子受到很好的教育，想 needs a verb phrase or a full clause after it; 想让……受到…… clearly expresses that the mother wants him to receive an education. [rule: none]\n2. [Grammar & Vocabulary, error] 搬家到：搬到，搬家 is a verb-object phrase for changing residence; use 搬到 + place to state the destination. [rule: preposition_dao_place]\n3. [Coherence: temporality, error] Coherence (Temporality): 他们搬到有很多学校的城市：他们搬到了有很多学校的城市，this move is a completed event in the narrative, so the verb needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "想不能直接接“孟子有很好的教育”这样的名词性表达，想让孟子受到很好的教育是正确的。"
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“搬家到有很多学校的城市”可以成立，搬家到并非错误，而显示的“搬到”也被截断而没有地点宾语。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "搬家是叙事中已完成的事件，按该标准应使用完成体“搬到了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2102,
+  "completion_tokens": 1027,
+  "total_tokens": 3129,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 451,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 802,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

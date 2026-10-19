@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟母注意：孟母注意到，`到` is a result complement here: it shows that she became aware of the fact that living near the cemetery affects Mengzi. [rule: none]\n2. [Grammar & Vocabulary, error] 跟朋友们祭拜玩：跟朋友们一起学别人祭拜，`祭拜` is a solemn ritual, so it cannot be followed by `玩` to express pretending or imitating; `学别人祭拜` expresses that meaning. [rule: word_choice]\n3. [Grammar & Vocabulary, error] 决定他们会搬家：决定搬家，`决定` takes a verb phrase directly, so the people who will move do not need to be repeated after it. [teacher rule: jueding_vp]\n4. [Coherence: reference, error] Coherence (Reference): 古代，孟子跟孟母住在墓地的旁边：古代，有一个小男孩叫孟子，他和妈妈住在墓地的旁边，at first mention, briefly introduce the main character with both a name and who he is. [rule: character_introduction_first_mention]\n5. [Coherence: connectors, error] Coherence (Conjunction): 可是孟母注意到：孟母注意到，`可是` introduces contrast, but noticing the harmful effect is a natural result of living beside a cemetery, not a contrasting event. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "注意到 correctly expresses that Mengmu came to notice the result."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original needs 着 in the V着玩儿 construction; the replacement is also a grammatical way to express imitation."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "决定 takes the verb phrase 搬家 directly, without repeating the future movers."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The revision introduces Mengzi appropriately, but it leaves 古代 without the required 在古代 in the shown sentence."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "可是 can naturally contrast the initial living situation with Mengmu's later realization, and the shown replacement ends incomplete after 注意到."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2177,
+  "completion_tokens": 1635,
+  "total_tokens": 3812,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 526,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1316,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

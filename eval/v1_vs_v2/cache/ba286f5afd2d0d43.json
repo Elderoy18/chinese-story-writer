@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 神农和他的家人住在古代：better to briefly introduce “神农” when this character first appears\n- 因为他的家人常常生病了：常常生病，no了for routine/habit\n- 他们去很多不一样的地方：去了，了completed\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住在古代：生活在古代，住在 usually takes a place as its complement, while 生活在 can describe living in a historical period. [rule: word_choice]\n2. [Coherence: reference, error] Coherence (Reference): 神农：有一位叫神农的人，This is the character’s first mention, so introduce him with a full noun phrase rather than assuming the reader already knows who he is. [rule: character_introduction_first_mention]\n3. [Coherence: temporality, error] Coherence (Temporality): 常常生病了：常常生病，A habitual action or state with 常常 uses the zero particle; 了 is for a completed action or change of state. [rule: aspect_le_completed]\n4. [Coherence: temporality, error] Coherence (Temporality): 他们去很多不一样的地方：他们去了很多不一样的地方，The visits to these places are completed events in the narrative, so the verb needs 了. [rule: aspect_le_completed]\n5. [Coherence: connectors, error] Coherence (Conjunction): 所以不知道：不知道，Living in an ancient period establishes the time setting; it does not by itself express a cause-and-effect relationship, so 所以 is not needed. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“住在古代” is acceptable Chinese here, although “生活在古代” is another possible wording."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "This is the first mention of the character, so the teacher requires an introducing noun phrase."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 describes a habitual situation and should not take completed-event 了."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The trip to the places is a completed narrative event, so 去 needs 了."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "所以 can appropriately link the ancient-time setting with not knowing which plants were edible."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2103,
+  "completion_tokens": 1006,
+  "total_tokens": 3109,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 452,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 701,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

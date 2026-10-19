@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThis scene:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这种一定是做药的花：这一定是一种做药的花\n- 原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result\n- 神农快生病：很快就生病了\n- 快给他一种红的灵芝：很快地给了，快V: to give order, 了completed\n- 他没有病：delete他，redundant; 病好了\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 神农吃了以后，他没有病：神农吃了以后，没有病，after naming the same character in the first clause, use zero form rather than repeating a pronoun in the same sentence. [rule: redundancy_delete]\n2. [Coherence: temporality, error] Coherence (Temporality): 神农快生病：神农很快就生病了，use 很快 to show that the illness began rapidly, and use 了 because becoming ill is a completed change of state. [rule: aspect_le_completed]\n3. [Coherence: temporality, error] Coherence (Temporality): 快给他一种红的灵芝：赶快给了他一种红的灵芝，the giving is a completed action; in this action series, the final verb takes 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他” is redundant after 神农 in the same sentence, but “没有病” should still be changed to “病好了” to express recovery."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Becoming ill is a completed change of state, so 很快就生病了 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "赶快给了他一种红的灵芝 correctly makes the giving a completed action."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2140,
+  "completion_tokens": 857,
+  "total_tokens": 2997,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 489,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 646,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

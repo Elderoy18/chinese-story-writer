@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nThis scene:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 不是人吵架，就是都叫：不是常常有人吵架，就是很多人都大声说话\n- 在那儿，孟母也找不到工作：wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n- 孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred\n- 孟母找到工作，在商店做衣服：找到了，了completed\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 又一个次搬了家：再搬一次家，After the modal verb 要, a future repeated action uses 再 and follows the pattern V. + number + measure word + object; because the move has not happened yet, completed-action 了 is not used. [teacher rule: zai_structure]\n2. [Coherence: reference, error] Coherence (Reference): 孟子和妈妈：他们，Both characters were mentioned recently and no other possible pair competes as the referent, so the plural pronoun is more natural. [rule: ambiguous_reference]\n3. [Coherence: temporality, error] Coherence (Temporality): 孟母找到工作：孟母找到了工作，Finding the job is a completed action before the ongoing work in the shop, so it needs completed-action 了. [rule: aspect_le_completed]\n4. [Coherence: connectors, error] Coherence (Conjunction): 不是人吵架，就是都叫：不是有人吵架，就是有人大叫，The paired connector expresses alternative noisy events; each half needs a complete event with a clear subject. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The phrase is erroneous, but the move has already happened, so changing it to the future-plan form 再搬一次家 does not fit the story context."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子和妈妈 clearly and correctly refers to the two characters, and replacing it with 他们 is only an optional stylistic change."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Finding the job is a completed event, so 找到了工作 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original has an unclear subject and an unsuitable 都叫 expression, while 不是有人吵架，就是有人大叫 is grammatical and clear."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2187,
+  "completion_tokens": 1045,
+  "total_tokens": 3232,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 536,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 761,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

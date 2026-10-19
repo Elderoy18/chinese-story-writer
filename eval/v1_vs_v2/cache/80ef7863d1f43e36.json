@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene:\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's item in each run:\nRun 1: (nothing flagged here)\nRun 2: Coherence (Reference): 他的学习和他的旅行经验：他的学习和旅行经验，apply the zero-form rule within one noun phrase: once the possessor has been stated, do not repeat the pronoun before the second item.\nRun 3: Coherence (Reference): 他的学习和他的旅行经验：自己的学习和自己的旅行经验，Use 自己的 when the possessor is the same person as the subject, so the relationship clearly refers back to Mengzi.",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "Both flagged runs address the repeated possessive, but Run 3 introduces unnecessary repeated 自己的 rather than the teacher's accepted deletion."
+ },
+ "usage": {
+  "prompt_tokens": 503,
+  "completion_tokens": 50,
+  "total_tokens": 553,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

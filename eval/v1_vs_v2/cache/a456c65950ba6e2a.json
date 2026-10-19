@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThis scene:\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子才十一岁，成为一个哲学家：就成为，才Num.就V.\n- 孟子不是祭拜，而是看政治文章：“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 祭拜is not conventionally related to哲学家\n- 不过，看过很多政治文章对他害得，他有很多问题：delete对他；害得他有很多问题，害得Sb. + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “孟子才十一岁，成为一个哲学家。” / Formula: 谁 + 才 + 年龄 + 就 + 动词 + 了 / Correct: “孟子才十一岁就成为了一位哲学家。” “才……就……” emphasizes that he became a philosopher at a very young age.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “孟子不是祭拜，而是看政治文章” / Formula: 谁 + 不是 + 动作A +，而是 + 动作B / Correct: “孟子不是在祭拜，而是在看政治文章。” Use 在 with ongoing actions here. Also, “祭拜” is usually something one does *to* an ancestor, god, or grave, so the meaning should be clear from the context.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “难怪他成为了哲学家。” / Formula: 难怪 + result / Correct: “难怪他后来成为了一位哲学家。” Adding “后来” makes the timeline more coherent: first he read political articles, and later he became a philosopher.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “看过很多政治文章对他害得” / Formula: 做某事 + 对 + 某人 + 有害 / Correct: “看了很多政治文章对他有害。” “害得” needs a result after it, such as “害得他有很多问题.” However, the intended meaning seems to be that reading gave him many questions, which is not necessarily harmful.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “他有很多问题。” / Formula: 因为/所以 + 谁 + 对 + 什么 + 有很多问题 / Correct: “所以他对政治有很多问题。” “有很多问题” can mean “has many problems.” To say that he has many questions about a topic, use “对……有很多问题.”",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "才十一岁后需要用就来连接成为这一结果。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "这里的不是……而是……本身不适合这个语境，加入在并没有解决这一问题。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "难怪他成为了哲学家本身正确，后来只是可选的润色。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得后面必须接受害者及其不好的结果，而改成对他有害在语法上正确。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "在害得他的语境中，他有很多问题可以表示他有许多麻烦，并非错误。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2334,
+  "completion_tokens": 1056,
+  "total_tokens": 3390,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 683,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 741,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

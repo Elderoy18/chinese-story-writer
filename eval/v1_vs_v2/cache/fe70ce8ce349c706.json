@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThe teacher's corrections on this scene:\n- 他不知道如果这把花对你的身体好：不知道这种花对身体好不好，the “if” in “not know if + clause” is not 如果\n- 这就要看如果这把花毒不毒了：the “if” in “not know if + clause” is not 如果, delete如果，有没有毒\n- 正好，他找到了别的花：另外一种花，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n- 神农不知道他吃不吃灵芝或者夹竹桃：要不要吃……\n- 别的人给了神农一个灵芝：另外一个人，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 他吃不吃灵芝或者夹竹桃：吃的是灵芝还是夹竹桃，The subject is already 神农 in the same sentence, so use zero form rather than repeating a pronoun; the two possible plants should be linked as alternatives. [rule: character_introduction_first_mention]\nRun 2: 他吃不吃灵芝或者夹竹桃：他吃的是灵芝还是夹竹桃，This asks which of two plants he ate, so use “是……还是……” rather than “吃不吃……或者……”. [rule: a_not_a_question]\nRun 3: 吃不吃灵芝或者夹竹桃：吃的是灵芝还是夹竹桃，When choosing between two possibilities, use 是……还是…… rather than combining an A-not-A question with 或者. [rule: a_not_a_question]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "The runs all address the question construction, but Run 1 additionally flags pronoun repetition, and all revisions change the intended “whether to eat” meaning rather than correcting it to 要不要吃."
+ },
+ "usage": {
+  "prompt_tokens": 701,
+  "completion_tokens": 269,
+  "total_tokens": 970,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 201,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

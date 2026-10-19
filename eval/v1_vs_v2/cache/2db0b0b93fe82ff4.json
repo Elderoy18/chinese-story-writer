@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThis scene:\n别的人给了神农一个灵芝。这个植物可以让神农更好。比方说，他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 别的人给了神农一个灵芝：另外一个人，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n- 这个植物可以让神农更好：身体更好\n- 比方说，他会觉得更健康：比方说is used to express “for example”, delete it\n- 吃灵芝以后，他可以再走：吃了，了completed; 又可以走了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 别的人给了神农一个灵芝：一个人给了神农一个灵芝，别的人 identifies people as “others” in contrast with a stated person or group; here the giver is an unknown new character, so introduce this person as 一个人. [teacher rule: bieren]\n2. [Grammar & Vocabulary, error] 这个植物可以让神农更好：这个植物可以让神农身体好一些，when describing recovery, 更好 alone is too vague for a person; 身体好一些 clearly describes an improvement in health. [rule: none]\n3. [Grammar & Vocabulary, error] 最后，神农找到了很多植物，他可以用对药：最后，神农找到了很多可以用来做药的植物，用来做药 expresses that the plants have the purpose of being made into medicine; 对药 does not form a correct phrase here. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 神农想跟很多人分享他的新药：他想跟很多人分享他的新药，神农 was mentioned in the immediately preceding sentence and no other male character competes for the reference, so a pronoun is more natural for close re-occurrence. [rule: redundancy_delete]\n5. [Coherence: temporality, error] Coherence (Temporality): 吃灵芝以后：吃了灵芝以后，eating is completed before he is able to continue walking, so use 了 for the completed earlier action. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "别的人 does not appropriately introduce a single additional person here, and 一个人 is grammatical and suitable."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "更好 needs the health-related noun here, and 身体好一些 correctly expresses physical recovery."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "用对药 is not a valid collocation here, while 可以用来做药的植物 is grammatical and conveys the intended meaning."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 was just mentioned and there is no competing male referent, so 他 follows the required close re-reference pattern."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The eating is completed before the later walking, so 吃了灵芝以后 correctly marks completion."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2371,
+  "completion_tokens": 790,
+  "total_tokens": 3161,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 720,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 478,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

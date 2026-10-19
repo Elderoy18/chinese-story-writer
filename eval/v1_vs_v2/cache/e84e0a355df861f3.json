@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this phrase redundantly combines a time period with another “time of” expression. [vocab list]\n2. [Grammar & Vocabulary, error] 人：人们，this refers to a concrete group of people in that period, so the plural noun is needed. [teacher rule: ren_renmen]\n3. [Grammar & Vocabulary, error] 看了：看到了，here the mother perceives an effect; 看 means “look,” while 看到 means “see/perceive.” [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟子妈妈搬家了：孟子和他的妈妈搬家了，after the mother has already been mentioned, use a pronoun-based possessive phrase instead of repeating the full name. [rule: ambiguous_reference]\n5. [Coherence: temporality, error] Coherence (Temporality): 老是对他开玩笑了：老是对他开玩笑，老是 describes a habitual action, so it takes the zero particle rather than completed-action 了. [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：因为他每天只祭拜，所以他没有朋友，this is a cause-and-effect relationship, so use 因为……所以…… rather than mixing 虽然 with 因为. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundantly phrased."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "人 is too generic here; 人们 correctly refers to the people in that historical period."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "看到 correctly expresses perceiving something, but the shown sentence still lacks 有 in 对孟子有不好的影响."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The teacher requires deleting the redundant repeated subject after 所以, whereas the proposed revision still unnecessarily states 孟子和他的妈妈."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Removing 了 correctly marks a habitual action, but the remaining 对他开玩笑 should be 跟他开玩笑 under the teacher's correction."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The revision correctly expresses the intended cause-and-result relationship with 因为……所以……."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2250,
+  "completion_tokens": 1404,
+  "total_tokens": 3654,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 599,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

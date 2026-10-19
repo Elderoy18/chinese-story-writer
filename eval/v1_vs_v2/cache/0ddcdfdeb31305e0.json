@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很不知道：不知道，The adverb 很 does not naturally modify the negative mental-state verb phrase 不知道; use the verb phrase without 很. [rule: none]\n2. [Grammar & Vocabulary, error] 也什么植物不能吃：什么植物不能吃，Also cannot directly introduce a noun phrase or clause here; it must be followed by a verb phrase. [teacher rule: ye_vp]\n3. [Grammar & Vocabulary, error] 很麻烦的情况：是很麻烦的情况，A noun phrase cannot serve as the predicate after the comma by itself here; add 是 to link the situation to its description. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 但是一个人，神农，要解决这个问题。：但是，一个叫神农的人要解决这个问题。，On first mention, introduce the character with a full noun phrase that includes the name, rather than placing the name after a vague noun. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 对你的身体有坏处：对人们的身体有坏处，The pronoun 你 has no clear referent in this third-person story; repeat the noun for the affected group. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很 cannot modify 不知道 here, so deleting it is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "也 is incorrectly placed before the question-like noun phrase, and deleting it gives a correct clause."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The predicate needs 是 before the noun phrase 很麻烦的情况."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 is mentioned for the first time and should be introduced as a full noun phrase."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你的 shifts to an unintroduced addressee, whereas 人们的 clearly refers to the affected people."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2105,
+  "completion_tokens": 723,
+  "total_tokens": 2828,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 454,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 437,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

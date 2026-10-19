@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，A demonstrative noun phrase needs a measure word between 这 and the noun.\n2. [Grammar & Vocabulary, error] 特别是毒：特别有毒，毒 is a noun; use 有毒 as the adjective for “poisonous,” which can be modified by 特别.\n3. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝和夹竹桃，Use 和 to coordinate two plant names. 的 introduces an attributive modifier and cannot connect two items in a list.\n4. [Grammar & Vocabulary, error] 一个课文的植物：一篇关于这些植物的课文，课文 takes the measure word 篇, and the topic should be introduced with 关于 before 课文.\n5. [Coherence: temporality, error] Coherence (Temporality): 也写一个课文的植物：也写了一篇关于这些植物的课文，The writing is presented as a completed action in the past, so the 了 perfective marker is needed.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher requires a measure word between 这 and a countable noun, and 朵 is appropriate for flowers."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "特别是毒 is not acceptable here; 特别有毒 correctly expresses that the flower is especially poisonous."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The intended meaning is that lingzhi can be an antidote to oleander, not that lingzhi and oleander are simply two coordinated plants."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The correction fixes the measure word and phrase order but wrongly retains 课文, whereas Shennong should write an 文章 about plants."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Adding 了 correctly marks the final writing action as completed, but the corrected clause still incorrectly uses 课文 instead of 文章."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2119,
+  "completion_tokens": 1614,
+  "total_tokens": 3733,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 468,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1270,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,75 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，Demonstratives such as 这 need a matching measure word before a countable noun; 朵 is the measure word for flowers. [teacher rule: zhe_na_mw]\n2. [Grammar & Vocabulary, error] 特别是毒：它的毒特别厉害，特别是 must introduce an example after a general statement; it cannot mean “very” before 毒. This revision uses 毒 as a noun and lets 特别 modify 厉害. [rule: example_marker_tebie_bifang]\n3. [Grammar & Vocabulary, error] 正好在这儿，灵芝药的：这儿正好有灵芝，灵芝是药；的 cannot connect the independent ideas that lingzhi is medicine and that oleander is a plant. State the existence of lingzhi and its function in separate clauses. [rule: none]\n4. [Grammar & Vocabulary, error] 也写一个课文的植物：他还写了一篇关于这两种植物的课文，Use 篇, not 个, for an essay or text. 关于植物的课文 means “a text about plants,” while 课文的植物 gives the incorrect meaning “plants belonging to a text.” The completed writing action also needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "按老师的规则，指示词这后面接可数名词时需要量词，花应使用朵。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "特别是不能在这里表示“很”，而它的毒特别厉害是正确通顺的表达。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原文的灵芝药的结构有误，但系统改句没有表达灵芝可以做夹竹桃的解药，未正确修复原意。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "原文的量词、定语结构和完成体都有问题，但写一篇课文不如写一篇有关植物的文章恰当，课文这一用词仍不合适。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2175,
+  "completion_tokens": 1318,
+  "total_tokens": 3493,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 524,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1011,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

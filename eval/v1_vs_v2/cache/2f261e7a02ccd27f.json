@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This expression is redundant because 古代 already gives the time period. [vocab list]\n2. [Grammar & Vocabulary, error] 有一个男孩名字叫孟子：有一个叫孟子的男孩，The naming phrase should function as a modifier before the noun, using 的. [rule: attributive_modifier_de]\n3. [Grammar & Vocabulary, error] 害得孟子的学习：影响了孟子的学习，害得 must be followed by a person and a harmful result clause; it cannot take only a noun phrase as its result. [teacher rule: haide_structure]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈：孟子和他的妈妈，After the name has just been established and no competing male character is present, use a pronoun instead of repeating the name inside the same noun phrase. [rule: none]\n5. [Coherence: temporality, error] Coherence (Temporality): 住在这里才一个星期：才在这里住了一个星期，The one-week stay is completed by the time they cannot tolerate the place, so use 了 with the completed action. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already expresses a time period, so 古代的时候 is redundantly formed under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "有一个男孩名字叫孟子 is understandable and grammatically acceptable, although 有一个叫孟子的男孩 is a more concise alternative."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 cannot end with only the noun phrase 孟子的学习; 影响了孟子的学习 is a correct alternative repair."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After 孟子 has just been introduced, the repeated possessive name should be replaced with 他的."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The bounded one-week stay before they became unable to bear it needs perfective 了: 才在这里住了一个星期。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2070,
+  "completion_tokens": 1108,
+  "total_tokens": 3178,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 419,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 776,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

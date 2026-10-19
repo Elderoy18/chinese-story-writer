@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很不知道：不知道，Degree adverbs such as “很” do not normally modify the negative knowledge verb “不知道.”\n2. [Grammar & Vocabulary, error] 也什么植物不能吃：也不知道什么植物不能吃，The adverb “也” must modify a verb phrase; it cannot be followed directly by a noun clause.\n3. [Grammar & Vocabulary, error] ，很麻烦的情况：，是一件很麻烦的事，A noun phrase such as “很麻烦的情况” cannot stand alone as the predicate here; add “是” and use “事” for the problematic matter.\n4. [Coherence: reference, error] Coherence (Reference): 但是一个人，神农：有一个叫神农的人，This is the first mention of the character, so introduce him clearly with a full noun phrase rather than placing his name after the vague noun “一个人.”\n5. [Coherence: reference, error] Coherence (Reference): 对你的身体：对身体，The sentence makes a general statement about many people, so “你的” shifts unexpectedly to the reader; use a general reference instead.\n6. [Coherence: connectors, error] Coherence (Conjunction): 但是一个人，神农，要解决这个问题：有一个叫神农的人要解决这个问题，“但是” marks contrast, but the arrival of someone who wants to solve the problem does not contrast with the previous sentence. Use no contrast connector here.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很不能修饰不知道，删去后正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "也不能直接修饰后面的名词性内容，需要有不知道这样的动词。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很麻烦的情况不能直接单独作谓语，需要加是。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农首次出现时需要用更清楚的名词短语介绍。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这里是在说一般人的情况，你的会不恰当地指向听者。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "但是可表示困境与神农想解决问题之间的转折，因此原句的连接词可以接受。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2140,
+  "completion_tokens": 1182,
+  "total_tokens": 3322,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 489,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 833,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

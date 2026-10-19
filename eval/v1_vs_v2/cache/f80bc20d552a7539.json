@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候人：在古代，人们，古代 already functions as a time expression, so adding 的时候 is redundant; 人们 is needed for a concrete group of people rather than generic 人.\n2. [Grammar & Vocabulary, error] 看了：看到了，when the meaning is “noticed/saw the effect,” use 看到 rather than 看; 到 marks reaching the result of seeing.\n3. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：有一个叫孟子的小男孩。他很小的时候，first mention should briefly introduce the character with a full noun phrase before using the name alone.\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟子妈妈：孟子和他的妈妈，when the same character has already been mentioned nearby, use a pronoun rather than repeating the name inside the same phrase.\n5. [Coherence: temporality, error] Coherence (Temporality): 老是对他开玩笑了：老是对他开玩笑，老是 describes a habitual action, so the zero particle is required rather than completed-action 了.\n6. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：因为他每天只祭拜，所以没有朋友，虽然 requires a contrasting second clause with 但是 or 可是; this sentence expresses cause and effect, so use 因为……所以……",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“古代的时候” is redundantly time-marked, and “人” should be “人们” for this concrete group."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Here the intended meaning is noticing the effect, for which “看到” is required rather than merely “看了.”"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "A first mention should introduce 孟子, but the proposed “他很小的时候” is an unfinished temporal phrase without its main clause."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The subject phrase is redundant after the preceding clause, so changing only the second 孟子 to “他的” does not make the intended sentence fully correct."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "Removing 了 correctly fixes the habitual aspect, but “对他开玩笑” still needs the teacher’s collocation “跟他开玩笑.”"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The original wrongly uses 虽然 without a contrasting result, while the 因为……所以 construction correctly expresses cause and result."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2247,
+  "completion_tokens": 1907,
+  "total_tokens": 4154,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 596,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1482,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

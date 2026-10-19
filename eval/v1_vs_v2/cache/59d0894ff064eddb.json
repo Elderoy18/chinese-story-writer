@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene:\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's item in each run:\nRun 1: Coherence (Conjunction): 他难怪抱怨：难怪他抱怨，原来，Use `难怪……，原来……` to present the complaint first and then reveal its reason. [teacher rule: nanguai_yuanlai]\nRun 2: Coherence (Conjunction): 他难怪抱怨：难怪他抱怨，原来，The result follows 难怪, and 原来 introduces the reason that explains it. [teacher rule: nanguai_yuanlai]\nRun 3: 他难怪：难怪他，The evaluative expression must come before the clause it comments on: it is “no wonder he complains,” not “he no wonder complains.” [teacher rule: nanguai_yuanlai]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1–2 address the 难怪……原来…… discourse construction, while Run 3 only corrects the word order of 难怪 and does not fix the missing reason marker."
+ },
+ "usage": {
+  "prompt_tokens": 528,
+  "completion_tokens": 520,
+  "total_tokens": 1048,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 451,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

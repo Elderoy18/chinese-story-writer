@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThis scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 觉得在墓地玩儿，害得：觉得孟子在墓地玩儿会害得他学坏，害得 must be followed by the affected person and a harmful result; the corrected version states who is harmed and what the result is. [teacher rule: haide_structure]\n2. [Grammar & Vocabulary, error] 帮妈妈的工作：帮妈妈做事，帮 needs a person plus an action phrase here; the original phrase treats the action as a noun phrase and does not clearly express what Mengzi does to help. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 他的妈妈：孟子的妈妈，when Mengzi’s mother appears for the first time, use a full noun phrase to introduce her clearly rather than a possessive pronoun. [rule: character_introduction_first_mention]\n4. [Coherence: temporality, error] Coherence (Temporality): 所以他们搬家：所以他们搬家了，the move is a completed event, so the final verb needs 了. [rule: aspect_le_completed]\n5. [Coherence: connectors, error] Coherence (Conjunction): 他才五岁，可是每天不是写字就是帮妈妈做事：他才五岁，就每天不是写字就是帮妈妈做事，才五岁 introduces an unexpectedly early age, so it pairs with 就 rather than a contrast connector. [rule: cai_jiu_construction]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 is left without its required affected person and harmful result, while the proposed sentence supplies both."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "帮妈妈的工作 is not the correct structure for helping someone do work; 帮妈妈做事 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "For the mother's first introduction, 孟子的妈妈 identifies her more clearly than 他的妈妈 under the stated reference rule."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed story event, so 搬家了 is required."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "可是 acceptably contrasts Mengzi's young age with his daily duties, although 就 is also a grammatical alternative."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2132,
+  "completion_tokens": 1562,
+  "total_tokens": 3694,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 481,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1240,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

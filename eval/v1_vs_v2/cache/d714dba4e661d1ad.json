@@ -1,0 +1,77 @@
+{
+ "input": "Required scenes:\n1. 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n2. 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n3. 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n4. 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n5. 孟子becomes a famous philosopher\n\nThe learner's story:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。他很聪明的人，难怪他成为有名的人。\n\nThe teacher's content flags:\n- Miss two scenes: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day; 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n\nThe system's content notes:\n1. After the family lives near the graveyard, the story needs to say that 孟子 copied the way people offered sacrifices every day; playing with friends at the graveyard is a different event.\n2. After 孟母 decides the graveyard is not a good place for him, the story needs the move to the neighborhood near the market and the event that 孟子 imitates buying and selling there.\n3. After the market, the story needs to explain that 孟母 moves again, this time near a school, and that 孟子 begins studying every day. Writing and helping his mother do not show this required part of the story.\n4. Before the ending that he becomes famous, the story should identify him as becoming a famous philosopher, not only “a famous person.”",
+ "salt": "",
+ "output": {
+  "scenes": [
+   {
+    "n": 1,
+    "teacher": "none",
+    "system": "wrong"
+   },
+   {
+    "n": 2,
+    "teacher": "none",
+    "system": "none"
+   },
+   {
+    "n": 3,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 4,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 5,
+    "teacher": "none",
+    "system": "wrong"
+   }
+  ],
+  "notes": [
+   {
+    "n": 1,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner says Mengzi played at the graveyard, not that he imitated sacrificial offerings."
+   },
+   {
+    "n": 2,
+    "correct": true,
+    "clear": true,
+    "reason": "The story omits both the move near the market and Mengzi's imitation of buying and selling."
+   },
+   {
+    "n": 3,
+    "correct": true,
+    "clear": true,
+    "reason": "The story omits the later move near a school and Mengzi beginning to study there."
+   },
+   {
+    "n": 4,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner calls him a famous person rather than a famous philosopher."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 792,
+  "completion_tokens": 349,
+  "total_tokens": 1141,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 133,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "47505bee5c"
+}

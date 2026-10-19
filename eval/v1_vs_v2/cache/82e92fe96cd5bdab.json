@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears\n- 孟子妈妈的工作是祭拜：wrong information, it’s not his mother’s job\n- 孟子不高兴，因为他说我们老是搬家：delete因为\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一天，很久很久以前：很久很久以前的一天，The time phrase needs to modify “一天” with “的”; this order clearly means one day in the distant past. [rule: time_expression]\n2. [Grammar & Vocabulary, error] 他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。：他妈妈说：“从早到晚，我得去很多墓地祭拜。”，Direct speech needs a colon and quotation marks. Also, the person who has an obligation must be the subject of the modal verb “得”: “我得 + verb phrase,” not “很多墓地得我祭拜.” [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 孟子和他妈妈：有一个小男孩叫孟子，他和妈妈，This is the first mention of the main character, so introduce him clearly with his name and identity before using a pronoun for his mother. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 孟子妈妈的工作：她的工作，For a close re-occurrence, use a pronoun when the referent is clear; “她” clearly refers to Mengzi’s mother here. [rule: none]\n5. [Coherence: connectors, error] Coherence (Conjunction): 因为他说我们老是搬家，为什么？：说：“我们老是搬家，为什么？”，“因为” should introduce a cause, but this question expresses Mengzi’s complaint rather than a cause. Use direct speech to show what he says. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original time expression is awkward and redundant under the teacher’s correction, while 很久很久以前的一天 is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很多墓地得我祭拜 has incorrect modal-verb structure, and the proposed wording fixes that, but it still wrongly states that the mother must go worship at many cemeteries."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 should be introduced clearly on first mention, but 有一个小男孩叫孟子，他和妈妈 is an incomplete clause."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The mother was just mentioned, so 她的工作 follows the teacher’s close re-reference rule and is a correct phrase."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "因为 does not appropriately introduce Mengzi’s quoted complaint here, and the revision correctly presents it as direct speech."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2189,
+  "completion_tokens": 1889,
+  "total_tokens": 4078,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 538,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n孟子跟他的老师从早到晚学习，难怪他的成绩很快就进步了很多。孟子学习的时候，孟子的妈妈不是待在家里就是编织衣服赚钱。以后孟子成为了中国有名的哲学家。\n\nThe teacher's corrections on this scene:\n- 以后孟子成为了中国有名的哲学家：后来，Time+以后\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “孟子学习的时候，孟子的妈妈不是待在家里就是编织衣服赚钱。” / Formula: 当/在……的时候，谁 + 不是 + V1 + 就是 + V2；the two options should be parallel and logical / Correct: “孟子学习的时候，孟子的妈妈不是在家里做家务，就是编织衣服赚钱。” “待在家里” describes a location, while “编织衣服赚钱” is an action. “在家里做家务” makes the two parts more parallel.\nRun 2: Incorrect phrase: “孟子学习的时候，孟子的妈妈不是待在家里就是编织衣服赚钱。” / Formula: 不是 + V1 + 就是 + V2; the two alternatives should be parallel and logically contrasting / Correct: “孟子学习的时候，孟子的妈妈不是在家做家务，就是编织衣服赚钱。” “待在家里” is a state, while “编织衣服赚钱” is an action, so they are not fully parallel. Also, being at home does not contrast naturally with weaving clothes, since she could weave at home.\nRun 3: Incorrect phrase: “孟子学习的时候，孟子的妈妈不是待在家里就是编织衣服赚钱。” Formula: 不是 + A + 就是 + B; the two choices should be parallel and logically contrasting. Correct: “孟子学习的时候，孟子的妈妈要么待在家里，要么编织衣服赚钱。” “不是……就是……” is possible, but it suggests only two alternatives. More importantly, staying at home and weaving clothes are not necessarily opposite choices, because she may weave at home. A more coherent version is: “孟子学习的时候，孟子的妈妈待在家里编织衣服赚钱。”",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs flag the nonparallel/nonexclusive alternatives, but Run 3's stated “要么……要么……” correction still leaves the same logical issue before offering a different rewrite."
+ },
+ "usage": {
+  "prompt_tokens": 705,
+  "completion_tokens": 370,
+  "total_tokens": 1075,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 305,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

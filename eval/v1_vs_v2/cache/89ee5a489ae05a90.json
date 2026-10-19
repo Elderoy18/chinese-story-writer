@@ -1,0 +1,105 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不是学金融，而是学政治：不要学金融，而要学政治，After the verb “suggest,” use a negative command such as “不要” to say what someone should not study; “不是……而是……” does not fit naturally as the content of this advice.\n2. [Grammar & Vocabulary, error] 会成为高薪：会有高薪，“高薪” is a noun phrase meaning high pay, not a role that someone can become. Use “有” to express receiving high pay.\n3. [Coherence: reference, error] Coherence (Reference): 孟子：他，Use a pronoun for a close re-occurrence when the same character was mentioned in the preceding sentence and no other character competes as the referent.\n4. [Coherence: reference, error] Coherence (Reference): 你：学生，This is the first mention of the people receiving the advice, so introduce them with a full noun phrase rather than using an unexplained pronoun.\n5. [Coherence: temporality, error] Coherence (Temporality): 长大：长大了，Use “了” for the completed change of state: the character has grown up before beginning to solve problems.\n6. [Coherence: temporality, error] Coherence (Temporality): 成为教授：成为了教授，Use “了” to mark the completed event of becoming a professor in the later stage of the narrative.\n7. [Coherence: connectors, error] Coherence (Conjunction): 孟子长大，他开始能解决问题：他长大了以后，开始能解决问题，“以后” marks the sequence: first he grows up, and then he begins to be able to solve problems.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Here “不是……而是……” is not appropriate for phrasing Mengzi's advice; “不要……而要……” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“高薪” is pay rather than a position one can become, and “会有高薪” is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The teacher retained “孟子” and instead deleted the later redundant “他,” so changing this name to “他” is not required."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The first-mentioned advice recipients should not be introduced as unexplained “你”; “学生” is a possible full noun phrase, but the remaining “不是……而是……” error is still present."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors",
+     "Coherence: temporality"
+    ],
+    "reason": "The growth must be presented as preceding the next event, and “长大了” gives completed growth, but the shown full sentence still has a redundant “他.”"
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Becoming a professor is a completed later narrative event, so “成为了教授” is correct."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors",
+     "Coherence: temporality"
+    ],
+    "reason": "“长大了以后” correctly marks that growing up happened before he began to solve problems."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2313,
+  "completion_tokens": 2656,
+  "total_tokens": 4969,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 662,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2149,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

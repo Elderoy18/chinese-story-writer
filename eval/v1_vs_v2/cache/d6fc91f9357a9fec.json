@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，古代 already expresses a time period, so adding 的时候 is redundant. [vocab list]\n2. [Grammar & Vocabulary, error] 城市有才两个学校：城市才有两个学校，才 must come before the verb 有 to limit the number of schools. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜，就是跟朋友聊天：他不是祭拜，就是跟朋友聊天，孟子 was named in the immediately preceding sentence and no other male character competes as the subject, so use a pronoun for a close re-occurrence. [rule: redundancy_delete]\n4. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，when the subject and the possessor are the same person, 自己的 makes that relationship clear. [teacher rule: ziji_possessor]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代已经表示时间，古代的时候重复，改为在古代正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原句中才的位置不对，且按老师的标准应使用只有，不能改成才有。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚在上一句出现，没有其他男性角色竞争时，应改用他。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的城市在这里指代清楚且表达自然，改成自己的城市可以但不是必须修改。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1970,
+  "completion_tokens": 729,
+  "total_tokens": 2699,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 319,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 480,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

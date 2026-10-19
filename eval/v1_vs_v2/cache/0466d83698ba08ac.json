@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nThe teacher's corrections on this scene:\n- 他一次试一试有些植物的叶，吃得又新鲜又甜：有一次；试了试，了completed; 叶子；吃起来\n- 煮这些叶以后，他一喝就知道他发现新的茶叶：煮了，了completed; 叶子\n- 虽然他找到了很多的新的植物：很多新的植物\n- 但是他的旅程有的时候特别是危险：特别危险，”特别是+N, + Clause” is used to single out a typical example\n- 他一吃灵芝就开始生病：wrong information, 灵芝is a medicine\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “煮这些叶以后，他一喝就知道他发现新的茶叶” / Formula: Subject + 煮了 + object + 以后，+ subject + 一 + verb + 就 + result; use 自己 to make the reference clear / Correct: “煮了这些叶子以后，他喝了一口，就知道自己发现了一种新的茶叶了。”\nRun 2: Incorrect phrase: “他一喝就知道他发现新的茶叶” / Formula: 谁 + 一 + 动词 + 就 + 知道/发现 + 一种 + 名词；use 了 for a completed discovery / Correct: “煮了这些叶子以后，他一喝就知道自己发现了一种新的茶叶。”\nRun 3: Incorrect phrase: “煮这些叶以后” / Formula: 把 + object + verb + 了 + 以后 / Correct: “把这些叶子煮了以后……” This makes the action and its object clearer.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 2 address the full discovery sentence, while Run 3 only corrects the earlier cooking phrase."
+ },
+ "usage": {
+  "prompt_tokens": 655,
+  "completion_tokens": 178,
+  "total_tokens": 833,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 125,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

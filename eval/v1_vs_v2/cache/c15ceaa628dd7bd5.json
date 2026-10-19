@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThis scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 想孟子有很好的教育：想让孟子受到很好的教育，想 needs a verb phrase as its object; use 让 + person + verb to express wanting someone to receive something.\n2. [Grammar & Vocabulary, error] 搬家：搬，use 搬到 + place for changing residence; 搬家 cannot be followed directly by 到 + destination in this structure.\n3. [Coherence: temporality, error] Coherence (Temporality): 搬到有很多学校的城市：搬到了有很多学校的城市，use 了 after 搬到 to mark the completed move.\n4. [Coherence: temporality, error] Coherence (Temporality): 从早到晚走路：从早到晚都在走路，use 都在 for an action that continues throughout the period from morning to evening.\n5. [Coherence: connectors, error] Coherence (Conjunction): 他们搬到了有很多学校的城市。他们从早到晚都在走路：他们搬家时，从早到晚都在走路，孟子一直抱怨，use a temporal connector to show that the walking and complaining happened during the move.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "想 cannot directly take the noun-based expression 孟子有很好的教育; 想让孟子受到很好的教育 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "搬家到有很多学校的城市 is acceptable Chinese, so replacing 搬家 with 搬 is not needed."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed narrative event, so 搬到了 appropriately marks completion."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "从早到晚走路 is acceptable here, and the teacher specifically retained this wording in her correction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The complaint needs its causal relation expressed with 因为……所以, while 搬家时 gives only a temporal relation."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2192,
+  "completion_tokens": 1529,
+  "total_tokens": 3721,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 541,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1193,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

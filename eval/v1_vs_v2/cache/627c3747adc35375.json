@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThis scene:\n他很聪明的人，难怪他成为有名的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他很聪明的人，难怪他成为有名的人：很聪明\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他很聪明的人：他是个很聪明的人，A noun phrase such as “a very intelligent person” needs a linking verb and a measure word after the subject. [rule: adjective_predicate]\n2. [Grammar & Vocabulary, error] 成为有名的人：成为了有名的人，The becoming is presented as a completed result, so add 了 after the verb. [rule: aspect_le_completed]\n3. [Coherence: reference, error] Coherence (Reference): 难怪他成为了有名的人：难怪成为了有名的人，After the same person has just been named in the preceding clause, omit the repeated pronoun. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“他很聪明的人” incorrectly combines an adjective predicate with the noun 人; adding 是个 makes it a grammatical noun predicate."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“成为有名的人” can be used without 了 here, so adding 了 is optional rather than a required correction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating 他 in the new clause is natural and clear, so it does not need to be omitted."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1963,
+  "completion_tokens": 920,
+  "total_tokens": 2883,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 312,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 708,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

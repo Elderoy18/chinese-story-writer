@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，Demonstratives such as 这 need a measure word before a countable noun; 朵 is the suitable measure word for a flower. [teacher rule: zhe_na_mw]\n2. [Grammar & Vocabulary, error] 特别是毒：特别有毒，特别是 must introduce an example from a preceding general group; it cannot mean “very.” Use 有毒 after 特别 to describe the flower’s poisonous quality. [rule: example_marker_tebie_bifang]\n3. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝是药，夹竹桃有毒，The particle 的 makes a modifier relationship, so this phrase incorrectly makes 夹竹桃 seem to belong to 灵芝药. Separate the two classifications into complete clauses. [rule: none]\n4. [Grammar & Vocabulary, error] 一个课文：一篇课文，课文 takes the measure word 篇 rather than 个. [rule: none]\n5. [Grammar & Vocabulary, error] 写一个课文的植物：把这些植物写到了书上，Writing a plant name is not the same as recording information about plants. This revised structure clearly means that the plant information was recorded in a book. [vocab list]\n6. [Coherence: temporality, error] Coherence (Temporality): 吃完了，也把这些植物写到了书上：吃完，也把这些植物写到了书上，For a connected series of completed actions, only the final verb takes 了; 吃完 already shows the result of finishing the eating action. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这修饰可数名词花时，按老师的规则需要使用量词朵。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "特别是毒不能表达“very poisonous”，特别有毒是正确的改法。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原短语错误地把灵芝药和夹竹桃构成定中关系，但改文没有表达“灵芝可以做夹竹桃的解药”这一意思。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "课文的正确量词是篇，不是个。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "把植物写到书上搭配不自然，应该写下有关植物的文章或把植物信息记录下来。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "按老师的系列动作规则，前面的吃完不应带了，而后面的完成动作应带了；但改后仍有“把植物写到书上”的搭配问题。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2244,
+  "completion_tokens": 1733,
+  "total_tokens": 3977,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 593,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1325,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

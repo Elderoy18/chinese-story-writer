@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThis scene:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 因为他们常常搬了家：搬家，no了for routine/habit\n- 妈妈教孟子很多技能：教了，了completed\n- 先她让孟子跟朋友玩儿：她先让……，Subj.先……\n- 然后教他怎么买又便宜又好质量的东西：质量又好\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 常常搬了家：常常搬家，A habitual action takes no 了 because it does not describe one completed move. [rule: aspect_le_completed]\n2. [Grammar & Vocabulary, error] 又便宜又好质量的东西：又便宜、质量又好的东西，质量 is a noun, so it needs 好 to describe its quality; the corrected form makes the two descriptions parallel. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，The mother was named in the immediately preceding sentence and no other female character intervenes, so a pronoun is more natural for a close re-occurrence. [rule: character_introduction_first_mention]\n4. [Coherence: temporality, error] Coherence (Temporality): 然后教他怎么买又便宜、质量又好的东西：然后教了他怎么买又便宜、质量又好的东西，This is the final action in a completed sequence introduced by 先……然后……, so the last verb takes 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 describes a habitual action, so 搬家 should not take completed-action 了."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "好 cannot directly modify 质量 in this order; 质量又好 correctly makes the descriptions parallel."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The mother was just mentioned, so 她 is required by the close re-reference rule, but the corrected clause still needs 教了 for completion."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "In the 先……然后…… completed action sequence, the final action should take 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2121,
+  "completion_tokens": 1000,
+  "total_tokens": 3121,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 470,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 734,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

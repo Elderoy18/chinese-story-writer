@@ -1,0 +1,85 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，A demonstrative such as 这 needs a matching measure word before a countable noun; 朵 is the measure word for flowers. [teacher rule: zhe_na_mw]\n2. [Grammar & Vocabulary, error] 特别是毒：特别有毒，毒 cannot be used as an adjectival predicate after a degree expression; 有毒 means “poisonous” and can follow 特别. [teacher rule: du_youdu]\n3. [Grammar & Vocabulary, error] 正好在这儿，灵芝：这儿正好有灵芝，The original places a location phrase before a noun but has no predicate to state that the plant is present; use 有 to introduce something existing in a place. [rule: none]\n4. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝是药，夹竹桃有毒，的 must link a modifier to a noun; it cannot join two separate statements about what lingzhi and oleander are. [rule: attributive_modifier_de]\n5. [Grammar & Vocabulary, error] 也写一个课文的植物：也把这些植物写进了一本书里，When the meaning is to record plants, 写 cannot directly take 植物 as its object; use a recording structure such as 写进……里. The original noun phrase also does not correctly express a book about plants. [vocab list]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这后面接可数名词花时，按教师规则需要量词朵。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "毒不能直接受特别修饰，特别有毒是正确的说法。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "原片段在灵芝处断开且缺少说明灵芝存在的谓语，有灵芝可修正这一处。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原来的的字结构错误，但改句没有表达灵芝可以做夹竹桃解药这一原意。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "一个课文的植物不能正确表达写有关植物的内容，改后的把字结构和书的表达都正确。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2200,
+  "completion_tokens": 1463,
+  "total_tokens": 3663,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 549,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1133,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

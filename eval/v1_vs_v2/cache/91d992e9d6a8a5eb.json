@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n别的人给了神农一个灵芝。这个植物可以让神农更好。比方说，他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。\n\nThe teacher's corrections on this scene:\n- 别的人给了神农一个灵芝：另外一个人，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n- 这个植物可以让神农更好：身体更好\n- 比方说，他会觉得更健康：比方说is used to express “for example”, delete it\n- 吃灵芝以后，他可以再走：吃了，了completed; 又可以走了\n\nThe system's item in each run:\nRun 1: 这个植物可以让神农更好：这个植物可以让神农身体好一些，when describing recovery, 更好 alone is too vague for a person; 身体好一些 clearly describes an improvement in health. [rule: none]\nRun 2: Coherence (Reference): 这个植物可以让神农更好：它可以让神农更好，Use a pronoun for an object mentioned in the immediately preceding sentence when no other possible referent competes with it. [rule: redundancy_delete]\nRun 3: (nothing flagged here)",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 addresses the vague description of health, while Run 2 only changes the noun to a pronoun and Run 3 gives no correction."
+ },
+ "usage": {
+  "prompt_tokens": 554,
+  "completion_tokens": 53,
+  "total_tokens": 607,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

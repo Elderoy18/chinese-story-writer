@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nThis scene:\n你不是当数学家，而是当哲学家，不能当卖东西的人。所以他们又搬家。在他们第三个家，孟子学了怎么祭拜。妈妈感觉这个地方适合他们，告诉了孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 你不是当数学家，而是当哲学家，不能当卖东西的人：不是要当商人，而是要当哲学家，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong\n- 所以他们又搬家：又搬家了，了completed\n- 在他们第三个家，孟子学了怎么祭拜：在他们的第三个家，学会了/学习了，wrong information, it’s not about learning to offer sacrifices\n- 告诉了孟子：告诉，no了for speaking word\n- 他难怪成为有名的哲学家：难怪后来他成为……\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] ：我们找到了最后的家：：“我们找到了最后的家。”，Direct speech should be enclosed in quotation marks, with the full stop placed inside the closing quotation mark. [rule: none]\n2. [Grammar & Vocabulary, error] 他难怪：难怪他，Place 难怪 before the subject to introduce the conclusion that follows from the preceding reason. [teacher rule: nanguai_yuanlai]\n3. [Coherence: temporality, error] Coherence (Temporality): 又搬家：又搬家了，This is a completed move in the story, so the final verb needs 了. [rule: aspect_le_completed]\n4. [Coherence: temporality, error] Coherence (Temporality): 告诉了孟子：告诉孟子，A speaking verb that introduces direct speech takes the zero particle, not 了. [rule: aspect_le_completed]\n5. [Coherence: temporality, error] Coherence (Temporality): 成为有名的哲学家：成为了有名的哲学家，Becoming a famous philosopher is presented as a completed change of state, so use 了 after the verb. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "A colon can introduce direct speech without quotation marks, so the missing quotation marks are not an error."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "难怪 should precede the subject here, and 难怪他成为有名的哲学家 is grammatical."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The second move is a completed story event, so 又搬家了 is required."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "告诉 introduces the quoted speech and should not take 了 under the teacher's rule."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The teacher did not require 了 after 成为; the main problem was the placement of 难怪 and the missing 后来."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2327,
+  "completion_tokens": 829,
+  "total_tokens": 3156,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 676,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

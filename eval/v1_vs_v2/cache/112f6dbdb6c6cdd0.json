@@ -1,0 +1,60 @@
+{
+ "input": "Earlier scenes:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThis scene:\n城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得孟母只好一直陪孟子：add something like “不能出去工作”, “害得“ + harmful result, 一直陪孟子itself is not harmful\n- 住在商店的旁边不是适合孟子，而是让他觉得很伤心：不是适合孟子的环境\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 孟子也没有朋友：他也没有朋友，Use a pronoun for a close re-occurrence when the referent was named in the immediately preceding sentence and no other male character competes. [rule: ambiguous_reference]\n2. [Coherence: reference, error] Coherence (Reference): 适合孟子：适合他，Use a pronoun because the previous sentence has already established that the discussion is about Mengzi. [rule: ambiguous_reference]\n3. [Coherence: connectors, error] Coherence (Conjunction): 住在商店的旁边不是适合孟子，而是让他觉得很伤心：住在商店的旁边不但不适合他，而且让他觉得很伤心，The two ideas strengthen each other rather than refuting one idea and replacing it with another, so use a paired additive connector instead of “不是……而是……”. [teacher rule: bushi_ershi]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子在前文刚出现过，且这里用全名清楚自然，不是必须改成“他”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“适合孟子”本身是可成立的短语；原句的问题是缺少“的环境”，改成“他”没有解决这个问题。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "原句的“不是……而是……”不合这里的递进关系且结构不完整，改后的“不但不适合他，而且让他觉得很伤心”正确通顺。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2092,
+  "completion_tokens": 983,
+  "total_tokens": 3075,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 441,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 739,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

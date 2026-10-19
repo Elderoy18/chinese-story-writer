@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun-predicate sentence identifying what something is needs 是, and mountains take the measure word 座.\n2. [Grammar & Vocabulary, error] 你跟黄色的花：用黄色的花，Use 用 to introduce the material used to make something; 你 is a pronoun, and 跟 does not introduce a material in this structure.\n3. [Grammar & Vocabulary, error] 头发：头，Hair itself cannot ache; 头疼 expresses having a headache.\n4. [Coherence: reference, error] Coherence (Reference): 这也找植物：他也在这儿找植物，After introducing the mountain, use the pronoun 他 to return to the already established character; otherwise, the omitted subject may seem to refer to the mountain. Add 在这儿 to make the location clear.\n5. [Coherence: temporality, error] Coherence (Temporality): 疼死：疼死了，Use 了 after the resultative expression to show the new state of pain after the event.\n6. [Coherence: temporality, error] Coherence (Temporality): 他一喝茶就很不舒服：他一喝茶就很不舒服了，Use 了 to mark the change of state: he became uncomfortable after drinking the tea.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original lacks the copula and an appropriate measure word for identifying 凉山 as a mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "你 is inappropriate here, and 用 correctly introduces the material used to make the tea."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发 cannot ache; the intended body part is 头."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "这 cannot naturally be the subject who searches for plants here, while 他也在这儿找植物 is clear and grammatical."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The intended expression is 头很疼, so merely adding 了 to 疼死 misses the teacher-marked wording problem."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "他一喝茶就很不舒服 is already grammatical and can describe what happens whenever he drinks tea, so 了 is not required."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2156,
+  "completion_tokens": 1695,
+  "total_tokens": 3851,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 505,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1310,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

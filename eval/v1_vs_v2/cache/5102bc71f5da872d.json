@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 喜欢玩在墓地里：喜欢在墓地里玩，A location phrase should come before the action verb it modifies. [rule: none]\n2. [Grammar & Vocabulary, error] 装祭拜：装作祭拜，装作 is used before a verb phrase to express pretending to do an action. [rule: none]\n3. [Grammar & Vocabulary, error] 跟妈妈搬家：妈妈带着他搬家了，The mother is the person who takes the child when the family moves, so 带着 expresses the correct relationship; this single move is completed, so it also needs 了. [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和他的朋友：他和朋友，Use a pronoun for a recently mentioned character when no other possible referent has appeared. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 孟子五岁的时候：他五岁的时候，Use a pronoun for a close re-occurrence of the same character. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "地点短语应放在动词“玩”前面。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“装祭拜”搭配不完整，“装作祭拜”可以正确表示假装进行祭拜。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "“跟妈妈搬家”本身正确，并不需要改成妈妈带着他搬家或强加“了”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚在前一句出现，按该参考规则此处应使用“他”而非重复姓名。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子在紧邻的语境中已被提到，此处用“他五岁的时候”符合近距离重复时使用代词的规则。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2059,
+  "completion_tokens": 842,
+  "total_tokens": 2901,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 408,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟母注意：孟母注意到，The verb needs the result complement 到 when it means “notice” a fact or situation.\n2. [Grammar & Vocabulary, error] 他常常跟朋友们祭拜玩：他常常跟朋友们学着别人祭拜，祭拜 is the action of paying respects and cannot be followed by 玩 to mean “imitate for fun”; 学着别人祭拜 clearly expresses copying what other people do.\n3. [Coherence: reference, error] Coherence (Reference): 古代，孟子跟孟母住在墓地的旁边：在古代，有一个小男孩叫孟子，他和妈妈住在墓地的旁边，first mention should briefly introduce a character with a name and identifying information before using the character in the story.\n4. [Coherence: reference, error] Coherence (Reference): 他们会搬家：带着孟子搬家，after 决定, use a verb phrase directly; the mother’s decision can naturally include 带着孟子 without repeating the pronoun reference.\n5. [Coherence: connectors, error] Coherence (Conjunction): 他常常跟朋友们祭拜玩，所以孟母决定他们会搬家：因为他常常跟朋友们学着别人祭拜，所以孟母决定带着孟子搬家，use 因为……所以…… to mark the cause-and-effect relation between Mengzi’s behaviour and his mother’s decision.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "注意 here needs 注意到 to express that Meng Mu noticed a situation, but the displayed correction still lacks its object."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "祭拜玩 is not the required V着玩儿 structure; 学着别人祭拜 is a grammatical alternative that conveys imitation."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first mentioned here and should be briefly introduced rather than appearing only as an unexplained name."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "决定 should take a verb phrase directly, and 带着孟子搬家 correctly avoids the unnecessary 他们会."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The original 所以 already forms an acceptable causal link with the preceding clause, so adding 因为 is optional rather than a required correction."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2182,
+  "completion_tokens": 1121,
+  "total_tokens": 3303,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 531,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 785,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

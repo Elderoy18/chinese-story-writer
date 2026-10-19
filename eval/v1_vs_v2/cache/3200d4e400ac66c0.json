@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nThis scene:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 不是人吵架，就是都叫：不是常常有人吵架，就是很多人都大声说话\n- 在那儿，孟母也找不到工作：wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n- 孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred\n- 孟母找到工作，在商店做衣服：找到了，了completed\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 人吵架，就是都叫：有人吵架，就是有人大叫，\\(人\\) is a generic noun and cannot refer to a concrete group in this scene; \\(都\\) does not provide a subject, and \\(大叫\\) clearly means shouting loudly.\n2. [Grammar & Vocabulary, error] 又：再，\\(要\\) shows that the move has not happened yet, so \\(再\\) is used for a future repeated action; \\(又\\) is for a repetition that has already happened.\n3. [Grammar & Vocabulary, error] 一个次：一次，A number plus measure word uses the order number + measure word, so \\(一次\\), not \\(一个次\\).\n4. [Grammar & Vocabulary, error] 搬了家：搬家，After the modal verb \\(要\\), use the zero aspect form; do not add \\(了\\) to an action that is still planned.\n5. [Grammar & Vocabulary, error] 找到工作：找到了工作，\\(找到\\) means “find”; use \\(找到了\\) here because finding the job is a completed result.\n6. [Coherence: connectors, error] Coherence (Conjunction): 孟母也找不到工作。孟子和妈妈要再搬一次家。：因为孟母也找不到工作，所以孟子和妈妈要再搬一次家，Use the paired connector \\(因为……所以……\\) to show the cause-and-effect relation between not finding work and moving again.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The excerpt starts after the omitted “不是”, but the original has the errors of using generic 人 for a concrete group and lacking a subject after 都."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "又 is appropriate because the move already happened; the erroneous word is 要, not 又."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The measure expression must be 一次, not 一个次."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "搬了家 is not itself wrong for the completed move; 要 is the word that incorrectly presents the move as a future plan."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The job was found as a completed event, so 找到了工作 correctly supplies perfective 了."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The proposed sentence retains the teacher-marked wrong reason for moving and the incorrect future 要 despite the move already having occurred."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2260,
+  "completion_tokens": 1926,
+  "total_tokens": 4186,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 609,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代时候，人不知道他们能吃什么植物：古代的时候，人们\n- 所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears\n- 告诉人什么植物是安全什么是危险：是安全的，是危险的\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 安全什么是危险：安全的，什么植物是危险的，When an adjective follows 是 to describe an omitted noun, add 的; repeat the noun phrase to make the two indirect questions parallel. [rule: none]\n2. [Coherence: reference, error] Coherence (Reference): 他们能吃什么植物：什么植物能吃，After referring to 人们 in the same sentence, use zero form rather than repeating a pronoun; this also states clearly that the question is which plants are edible. [rule: ambiguous_reference]\n3. [Coherence: reference, error] Coherence (Reference): 神农：一个叫神农的人，This is the character’s first mention, so introduce him with a full noun phrase rather than assuming the reader already knows him. [rule: character_introduction_first_mention]\n4. [Coherence: temporality, error] Coherence (Temporality): 出去试一试很多种植物：出去试了很多种植物，The testing happens before he tells people the results, so use 了 to mark the completed action; the directional complement 出去 does not need its own 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The predicates after 是 need 的 here, and the replacement gives parallel, grammatical indirect questions in the original sentence."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他们 can acceptably refer back to the immediately preceding 人们, so this is not a required reference correction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 is first introduced here, so 一个叫神农的人 correctly supplies an introductory noun phrase."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The testing is a completed event before the results are reported, and 出去试了很多种植物 correctly marks it as completed."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2097,
+  "completion_tokens": 1759,
+  "total_tokens": 3856,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 446,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1485,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

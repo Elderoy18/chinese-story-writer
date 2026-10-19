@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThis scene:\n他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他们住才一月就又搬家：才住了一个月，了completed\n- 古代的时候：那时候\n- 但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是\n- 因为她恐怕儿子会成为跟他们很像：怕/担心，恐怕usually does not take Subj. except 我；跟他们一样/很像的人，成为+ noun\n- 她告诉了孟子：告诉，no了for speaking word\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他们住才一月：他们才住了一个月，In a 才……就…… pattern, 才 comes before the verb phrase; the completed period of living there takes 了. [rule: cai_jiu_construction]\n2. [Grammar & Vocabulary, error] 古代的时候：在古代，The two time expressions are redundant because 古代 already refers to a time period. [vocab list]\n3. [Grammar & Vocabulary, error] 孟子老是跟这些卖东西的人常常玩儿：孟子老是跟这些卖东西的人玩儿，Do not use both 老是 and 常常 together before the same habitual action; either one alone expresses repetition. [rule: none]\n4. [Grammar & Vocabulary, error] 她恐怕儿子会：她担心儿子会，恐怕 means “I am afraid that” and cannot follow another subject in this structure; 担心 expresses that she is worried. [teacher rule: kongpa]\n5. [Grammar & Vocabulary, error] 成为跟他们很像：变得跟他们很像，成为 introduces an identity or role, while 变得 is used for a change into a state or quality. [rule: none]\n6. [Coherence: temporality, error] Coherence (Temporality): 又搬家：又搬家了，The move is a completed event, so the final verb needs 了. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 告诉了孟子：告诉孟子，A saying verb that introduces quoted speech uses the zero particle rather than 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "才应放在动词短语前，且这里“住”表示已完成的一段时间，需要“了”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "古代本身已表示时间，“古代的时候”重复；“在古代”是正确说法。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是”和“常常”都表示反复发生，不能在这里叠用。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“恐怕”不应在这里带“她”作主语，改为“担心”正确，但所示改后文字在“会”处截断。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“成为”应接身份或名词性成分，而“变得跟他们很像”正确表示状态变化。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "搬家是叙事中完成的最后一个动作，按该规则应说“又搬家了”。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "引出直接引语的“告诉”按教师规则不用完成体“了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2325,
+  "completion_tokens": 1198,
+  "total_tokens": 3523,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 674,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 738,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

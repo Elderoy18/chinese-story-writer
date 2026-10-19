@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun predicate identifying a place needs the copula 是, and mountains use the measure word 座. [rule: none]\n2. [Grammar & Vocabulary, error] 你跟黄色的花做茶很有用：用黄色的花做的茶很有用，Use 用 to show the material used to make tea; the modifier 用黄色的花做的 needs 的 before the noun 茶. [rule: none]\n3. [Grammar & Vocabulary, error] 头发疼死：头疼死了，头发 means “hair,” which cannot be the body part that hurts here; 头疼 expresses a headache, and 了 marks the painful state as having occurred. [rule: aspect_le_completed]\n4. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative before a countable noun needs a measure word; 杯 is the appropriate measure word for a drink. [teacher rule: zhe_na_mw]\n5. [Coherence: reference, error] Coherence (Reference): 这也找植物：他也在这里找植物，After the sentence introduces 凉山, the zero subject could incorrectly seem to be the mountain; repeat the established character with 他 and use 在这里 for the location. [rule: ambiguous_reference]\n6. [Coherence: temporality, error] Coherence (Temporality): 找到黄色的花：找到了黄色的花，This is a completed discovery on that day, so the completed action takes 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "凉山作判断句需要是，山的量词应为座。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这里应用用表示材料，并且用黄色的花做的要作茶的定语。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发不能疼，表达头痛应说头疼或头很疼。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这后面需要量词，杯可以用于一杯冰茶。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这作主语会错误地指向凉山，改为他并明确地点是正确的。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "找到是当天完成的发现，应加了，但黄色的花仍然过于笼统，未改成一种黄色的花。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2211,
+  "completion_tokens": 1522,
+  "total_tokens": 3733,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 560,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1147,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

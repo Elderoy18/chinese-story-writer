@@ -1,0 +1,106 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远：到很远的地方旅行，A destination should be expressed with a place phrase after 到; 旅行很远 does not clearly show where he travelled. [rule: none]\n2. [Grammar & Vocabulary, error] 写他的主意：写下了自己的想法，写下 means to record an idea in writing; 写 by itself is not natural for recording a thought in this context. [rule: none]\n3. [Grammar & Vocabulary, error] 遇到了一个黄色的花：看到了一朵黄色的花，Use the measure word 朵 for an individual flower, and 看到 is the natural verb for noticing a flower during a journey. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 然后，神农写下了自己的想法：然后，他写下了自己的想法，Use a pronoun because 神农 was the clear subject in the preceding sentence and no other character competes as the referent. [rule: redundancy_delete]\n5. [Coherence: reference, error] Coherence (Reference): 神农看到了一朵黄色的花：他看到了一朵黄色的花，Use a pronoun for the same character when he was mentioned in the immediately preceding sentence. [rule: redundancy_delete]\n6. [Coherence: temporality, error] Coherence (Temporality): 找到很多植物：找到了很多植物，The finding is a completed event in the narrative, so the final verb in this action sequence takes 了. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 一吃就觉得不舒服：一吃这种花，就觉得不舒服了，The final 了 marks the change into an uncomfortable state; it does not attach to the mental-state verb 觉得. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "旅行很远 does not naturally express travelling to a distant place; 到很远的地方旅行 does."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "写下了自己的想法 naturally expresses recording his own ideas in writing."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "An individual flower normally takes the measure word 朵, and 看到了一朵黄色的花 is natural."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 has not been named recently, so repeating his name here is an appropriate reference reset rather than an error."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After the immediately preceding sentence about him, 他 is the appropriate close reference."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Finding the plants is the completed final action in this sequence, so 找到了 is required."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "觉得 is a mental-state verb for which zero aspect marking is allowed, and the implied object is clear from the preceding flower."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2239,
+  "completion_tokens": 2495,
+  "total_tokens": 4734,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 588,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

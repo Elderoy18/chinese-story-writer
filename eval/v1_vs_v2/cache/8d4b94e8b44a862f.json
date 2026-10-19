@@ -1,0 +1,106 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 找了到：找到了，A resultative complement is needed here: 找 means “look for,” while 找到 means “find.” The completion marker follows the resultative complement: 找到了.\n2. [Grammar & Vocabulary, error] 孟子学习馆学了十五年：孟子在学习馆学习了十五年，A place where an action happens needs 在 before it, and 学习馆 must be followed by the verb 学习.\n3. [Grammar & Vocabulary, error] 对他很多好处：对他有很多好处，The pattern is 对……有好处; 有 is required to state that something brings benefits.\n4. [Grammar & Vocabulary, error] 他是大人的时候：他长大以后，Use 长大以后 to express the time after a child becomes an adult; 是大人 describes a state and does not naturally mark this life-stage change.\n5. [Grammar & Vocabulary, error] 成为很有名：成为了很有名，Use 了 after 成为 to show that becoming a philosopher was a completed change of state.\n6. [Coherence: reference, error] Coherence (Reference): 他的学习和他的旅行经验：自己的学习和旅行经验，Use 自己的 when the possessor is the same person as the recent subject, so the connection to 孟子 is especially clear.\n7. [Coherence: reference, error] Coherence (Reference): 他是大人的时候，他成为：他是大人的时候，成为，Within the same sentence, use zero form rather than repeating the same subject pronoun.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "找到了 correctly uses the resultative complement 到 before 了."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "在 and 学习 are needed, but 学习馆 should also be corrected to 学校."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "对他有很多好处 is the required grammatical pattern."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "长大以后 correctly expresses the life-stage change intended here."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为 is a completed change in the narrative, so 成为了 correctly supplies 了."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "自己的学习和旅行经验 clearly links both possessions back to 孟子 without repeating 他的."
+   },
+   {
+    "n": 7,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Deleting the repeated second subject is a valid zero-anaphora fix, but the displayed corrected text ends after 成为 and is incomplete."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2314,
+  "completion_tokens": 2243,
+  "total_tokens": 4557,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 663,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1820,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

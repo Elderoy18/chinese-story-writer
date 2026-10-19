@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远找到很多植物：到很远的地方去旅行，找到了很多植物，A distance cannot directly modify the verb phrase this way; use a destination phrase to show where the travel went, and use 了 for the completed finding action. [rule: none]\n2. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，朵 is the appropriate measure word for a flower. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 然后，神农写他的主意：然后，他写他的主意，After the recent reference to him as 他, use the pronoun because no other character competes as the referent. [rule: ambiguous_reference]\n4. [Coherence: reference, error] Coherence (Reference): 神农遇到了：他遇到了，Use a pronoun for this close re-occurrence because the previous sentence already refers to 神农 as 他. [rule: ambiguous_reference]\n5. [Coherence: temporality, error] Coherence (Temporality): 写他的主意：写下了他的主意，This is a completed action in the sequence introduced by 然后, so it needs 了; 写下 also shows the result that the idea was recorded. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "旅行很远 is not a natural way to express travelling a great distance, while the proposed destination phrase and completed finding action are correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Flowers take the measure word 朵, not the general classifier 个."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the teacher's close-reference rule, 他 should be used here, but 写他的主意 remains an error in the corrected text."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The name should be replaced by 他 under the close-reference rule, but the displayed correction 他遇到了 is cut off and cannot stand as a grammatical correction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "写下了 correctly improves the writing action, but 他的主意 remains wrong here because the teacher requires 他的发现."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2120,
+  "completion_tokens": 1801,
+  "total_tokens": 3921,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 469,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1461,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun used as the predicate needs the linking verb and an appropriate measure word here.\n2. [Grammar & Vocabulary, error] 这也找植物：他也在那里找植物，A place should be expressed with a location phrase such as 在那里, and the action needs a clear actor. [rule: none]\n3. [Grammar & Vocabulary, error] 跟黄色的花做茶：用黄色的花做茶，跟 means “with/together with” a person or thing, while 用 marks the material used to make something. [rule: none]\n4. [Grammar & Vocabulary, error] 头发疼死：头疼得要命，头发 means “hair,” which cannot feel pain; use 头疼 for a headache, and use 得 to link the degree complement. [rule: none]\n5. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，Demonstratives such as 这 need a measure word before a countable noun. [teacher rule: zhe_na_mw]\n6. [Coherence: reference, error] Coherence (Reference): 黄色的花：一种黄色的花，This is the first mention of this flower, so introduce it as a new object with a measure word. [rule: character_introduction_first_mention]\n7. [Coherence: reference, error] Coherence (Reference): 你：删除，你 refers to the listener, but no listener has been introduced; removing it keeps the statement about making tea general. [rule: ambiguous_reference]\n8. [Coherence: temporality, error] Coherence (Temporality): 找到：找到了，Finding the flower is a completed event in the story, so the completed-action marker 了 is needed. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "A noun predicate here needs 是 and a suitable measure word, as in 一座很大的山."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 cannot serve as the location/subject in this clause; the revision gives a grammatical actor and location."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "用, not 跟, marks the flower as the material used to make tea."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "头发 is hair rather than the body part that hurts, and 头疼得要命 is a correct degree construction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "This use of 这 before a countable drink requires a measure word such as 杯."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The flower is first introduced here and should be introduced as 一种黄色的花 rather than the vague 黄色的花."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你 incorrectly refers to an unintroduced listener and should be deleted."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Finding the flower is a completed story event, so 找到了 is required under the teacher's aspect rule."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2258,
+  "completion_tokens": 1074,
+  "total_tokens": 3332,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 607,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 592,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

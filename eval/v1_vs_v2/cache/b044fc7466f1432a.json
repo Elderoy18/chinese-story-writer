@@ -1,0 +1,105 @@
+{
+ "input": "Earlier scenes:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThis scene:\n他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他们住才一月就又搬家：才住了一个月，了completed\n- 古代的时候：那时候\n- 但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是\n- 因为她恐怕儿子会成为跟他们很像：怕/担心，恐怕usually does not take Subj. except 我；跟他们一样/很像的人，成为+ noun\n- 她告诉了孟子：告诉，no了for speaking word\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This expression is redundant because both parts express time; use the shorter time expression. [vocab list]\n2. [Grammar & Vocabulary, error] 老是跟这些卖东西的人常常：老是跟这些卖东西的人，Do not use two frequency adverbs together when both mean that an action happens repeatedly. [rule: none]\n3. [Grammar & Vocabulary, error] 她恐怕儿子会：她担心儿子会，恐怕 means “I am afraid that...” and cannot take another subject before it in this structure. [teacher rule: kongpa]\n4. [Grammar & Vocabulary, error] 成为跟他们很像：变得跟他们很像，成为 needs a noun phrase describing a new role or identity; use 变得 before an adjective phrase describing a change of state. [rule: none]\n5. [Coherence: temporality, error] Coherence (Temporality): 他们住才一月就又搬家。：他们才住了一个月，就又搬家了。Put 才 before the verb, and use 了 to show that the one-month stay and the later move were completed events. [rule: aspect_le_completed]\n6. [Coherence: temporality, error] Coherence (Temporality): 她告诉了孟子：她告诉孟子：A speaking verb that introduces quoted speech takes the zero particle, not 了. [rule: aspect_le_completed]\n7. [Coherence: connectors, error] Coherence (Conjunction): 他们不是朋友，而是不好的人。：他们不是好人，你不能老跟他们玩儿。Use 不是……而是…… when correcting a conventional or mistaken idea; here a direct warning expresses the mother’s meaning more naturally. [teacher rule: bushi_ershi]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代和……的时候重复表达时间，改为“在古代”正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是和常常语义重复，但改后的片段仍缺少中心动词。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "恐怕不适合在这里带“儿子”作主语，担心可以，但所示片段仍未完成。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "成为后应接身份或类别名词，变得可以接“跟他们很像”的状态。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "才应放在住前，住了一个月和后来搬家都应标示完成。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "引出引语的告诉不用了。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "原句可以理解为母亲纠正孟子把这些人当朋友的想法，不能仅因有更自然的说法就判错。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2348,
+  "completion_tokens": 1245,
+  "total_tokens": 3593,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 697,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 808,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

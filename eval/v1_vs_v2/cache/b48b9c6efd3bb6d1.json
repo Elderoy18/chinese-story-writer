@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，the time expression is redundant because 古代 already refers to a time period.\n2. [Grammar & Vocabulary, error] 人觉得：人们觉得，use 人们 for a concrete group of people in general; 人 by itself is too generic here.\n3. [Grammar & Vocabulary, error] 看了：看到了，看 means “look at,” while 看到 means “see/notice.” The resultative complement 到 shows that she noticed the completed effect.\n4. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：一个叫孟子的小男孩很小的时候，follow the first-mention rule: introduce a new character with a full noun phrase before later using pronouns or the name alone.\n5. [Coherence: reference, error] Coherence (Reference): 孟子和孟子妈妈：孟子和妈妈，within the same clause, do not repeat the same name inside a close possessive reference; use the shorter repeated reference.\n6. [Coherence: temporality, error] Coherence (Temporality): 老是对他开玩笑了：老是对他开玩笑，老是 describes a habitual action, so it takes the zero particle rather than completed-action 了.\n7. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：因为他每天只祭拜，所以没有朋友，use 因为……所以…… to show the cause-and-effect relationship.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already expresses a time period, so 古代的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Here 人们 is needed for the concrete general group of people rather than generic 人."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "看到, not 看, expresses that the mother noticed the bad influence."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first introduced here, so the teacher requires a fuller introduction of the character."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The teacher treats the repeated subject phrase after 所以 as redundant, and changing it to 孟子和妈妈 does not remove that redundancy."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "老是 describes a habitual action, so it should not take completed-action 了."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The original incorrectly uses 虽然 with 因为, while 因为……所以 correctly expresses the intended cause and result."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2257,
+  "completion_tokens": 1216,
+  "total_tokens": 3473,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 606,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 792,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

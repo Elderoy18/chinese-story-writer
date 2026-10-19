@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene:\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 他们会：，After “决定”, use the verb phrase directly; the subject is already understood as the family, so repeating it is unnecessary. [teacher rule: jueding_vp]\nRun 2: 决定了他们会搬家找：决定搬家，找，A decision should take the action phrase directly; a mental-state verb such as 决定 does not take 了, and the repeated subject is unnecessary. [teacher rule: jueding_vp]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 only targets the unnecessary “他们会”, while Run 2 also targets the incorrect “了” after 决定, so they do not address the same full error set."
+ },
+ "usage": {
+  "prompt_tokens": 472,
+  "completion_tokens": 242,
+  "total_tokens": 714,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 175,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

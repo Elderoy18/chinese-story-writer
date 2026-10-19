@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 找了到：找到了，A result complement follows the verb before the completion marker: use “找到了” for a completed action of finding a job.\n2. [Grammar & Vocabulary, error] 孟子学习馆学了十五年：孟子在学校学习了十五年，Use “在” before a place where an action happens. “学习馆” is not a natural place word in this sentence; “学校” fits the meaning of studying for many years.\n3. [Grammar & Vocabulary, error] 对他很多好处：对他有很多好处，The verb “有” is required in this pattern: something “has many benefits” for someone.\n4. [Grammar & Vocabulary, error] 是大人的时候：长大以后，“大人” is a noun, so it cannot directly follow “是” to express growing up. Use “长大以后” for the time after someone becomes an adult.\n5. [Coherence: reference, error] Coherence (Reference): 他的学习和他的旅行经验：他的学习和旅行经验，Use zero form for the repeated possessor within the same noun phrase when nothing competes with the referent.\n6. [Coherence: temporality, error] Coherence (Temporality): 成为很有名的哲人：成为了很有名的哲人，Use “了” after “成为” to mark the completed change of state.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Resultative 到 must come before 了: 找到了。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The location needs 在, and 学校 is the appropriate place word here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "对他有很多好处 requires the verb 有."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "是大人的时候 does not naturally express the time after he grew up; 长大以后 does."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated possessor in the same noun phrase should be omitted: 他的学习和旅行经验。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The completed change of becoming a philosopher needs 了: 成为了很有名的哲人。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2280,
+  "completion_tokens": 549,
+  "total_tokens": 2829,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 629,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 212,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThis scene:\n啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一回家就告诉别人：家人\n- 他找到药以后他写下怎么做药在书上：delete the second他，redundant; 在书上写下……\n- 所以人们都知道，那红灵芝对身体好处：这样，有好处\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他把灵芝放在包里：他把灵芝放在包里了，This is a completed placement action in the past narrative, so 了 marks its completion. [rule: aspect_le_completed]\n2. [Grammar & Vocabulary, error] 一回家就告诉别人：一回家就告诉了别人，The telling is a completed action after returning home, so it needs 了. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 写下怎么做药在书上：把做药的方法写在书上了，Use 把 to introduce the thing being written, and place the resulting location after the verb; 做药的方法 is a noun phrase that can be written down. [rule: none]\n4. [Grammar & Vocabulary, error] 那红灵芝：那种红灵芝，A demonstrative such as 那 needs a measure word before a noun. [teacher rule: zhe_na_mw]\n5. [Grammar & Vocabulary, error] 对身体好处：对身体有好处，The expression for being beneficial to the body is 对身体有好处; 好处 needs 有 in this predicate pattern. [vocab list]\n6. [Coherence: reference, error] Coherence (Reference): 以后他写：以后，写，The same character has already been named in the first part of this sentence, so use zero form rather than repeating 他 in the main clause. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The placement is a completed past action, so adding sentence-final 了 is appropriate."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "了 correctly marks the completed telling, but 别人 should be 家人 in this story context."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original places 在书上 after the object incorrectly, while the correction gives a grammatical writing construction."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Under the teacher's rule, 那 before a noun requires a measure word, and 种 is correct here."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "有好处 is the required predicate expression; 对身体好处 is not grammatical."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The second 他 is redundant after the same subject has already been established, but the displayed correction is only a fragment and leaves the rest of the sentence uncorrected."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2268,
+  "completion_tokens": 1302,
+  "total_tokens": 3570,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 617,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 924,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

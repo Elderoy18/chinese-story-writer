@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，A demonstrative before a countable noun needs a matching measure word. [teacher rule: zhe_na_mw]\n2. [Grammar & Vocabulary, error] 特别是毒：特别有毒，毒 cannot function as the predicate adjective here; 有毒 means “toxic” and can be modified by 特别. [teacher rule: du_youdu]\n3. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝是药，夹竹桃，The original incorrectly joins three nouns with 的. 灵芝 needs 是药 to state that it is medicine, while 夹竹桃 begins a separate phrase. [rule: none]\n4. [Grammar & Vocabulary, error] 写一个课文的植物：记下这两种植物，写 directly with plants does not express recording information about them; 记下 means to record them, and the revised phrase clearly identifies the two plants. [vocab list]\n5. [Coherence: temporality, error] Coherence (Temporality): 也写一个课文的植物：也记下了这两种植物，This is another completed action after 吃完了, so the final verb needs 了. [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 正好在这儿：这时，Use 这时 to introduce a new event that interrupts or follows the previous action; 正好在这儿 only gives a location and does not connect the events clearly. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这/那后面接可数名词时需要量词，\"这朵黄色的花\"正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "这里应说\"特别有毒\"，不能把\"特别是\"和\"毒\"这样连接。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原句的名词关系错误，但\"灵芝是药，夹竹桃\"留下孤立的\"夹竹桃\"，且没有表达灵芝是夹竹桃的解药。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "\"写一个课文的植物\"搭配和名词结构都不对，\"记下这两种植物\"是可用的改法。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这是叙述中完成的后续动作，\"也记下了这两种植物\"的完成体表达正确。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "\"正好在这儿\"本身不是必须改成\"这时\"的连接词错误，而改后其后的名词结构错误仍然存在。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2227,
+  "completion_tokens": 2491,
+  "total_tokens": 4718,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 576,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2047,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

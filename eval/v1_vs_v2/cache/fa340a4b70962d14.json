@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一看很多人正在吃一些植物：看到，一……就\n- 神农想帮别人：帮他们，“别(的)” is for “a different type”, and “all else except the spoken one”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This expression redundantly combines a time period with a “time of” structure; use the shorter time expression. [teacher rule: gudai_de_shihou_why]\n2. [Grammar & Vocabulary, error] 一看：一看到，The verb needs a resultative complement because the sentence means that Shennong successfully saw the people, not that he merely looked. [rule: resultative_complement]\n3. [Grammar & Vocabulary, error] 别人：人们，The word refers to “other people” in contrast with a particular person already under discussion; here Shennong wants to help people in general. [teacher rule: bieren]\n4. [Coherence: connectors, error] Coherence (Conjunction): 神农想帮别人。所以想知道：神农想帮人们，所以想知道，Use the connector to join the motivation and its result: wanting to help people is the cause of wanting to learn which plants are safe. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher requires both 看到 and the 一……就 structure here, but 一看到 alone leaves that structure incomplete."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "别人 is wrong here, but the recently mentioned sick people should be referred to as 他们 rather than the less specific 人们."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The span contains the real reference error 别人, but 人们 does not correctly refer back to the people just mentioned; the connector itself was acceptable."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2007,
+  "completion_tokens": 1042,
+  "total_tokens": 3049,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 356,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 770,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

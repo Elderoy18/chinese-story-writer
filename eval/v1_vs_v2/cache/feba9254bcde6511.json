@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this phrase redundantly combines a time period with another “time of” expression. [vocab list]\n2. [Grammar & Vocabulary, error] 城市有才两个学校：城市才有两个学校，才 must come before the verb 有 when it limits the number that exists. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，at first mention, introduce the main character with both a name and a noun phrase rather than naming him only in the next sentence. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 他很喜欢他的城市：他很喜欢自己的城市，when the possessor is the same person as the subject, use 自己的 to make that relationship clear. [teacher rule: ziji_possessor]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundantly formed under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original has an incorrect 才 placement, but the teacher's required expression is 只有 rather than 才有."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Introducing him as 一个男孩子 and naming him in the immediately following sentence is already clear and acceptable."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Because the city belongs to the subject 他, the teacher's 自己的 rule calls for 自己的城市 to make the possessor clear."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1984,
+  "completion_tokens": 644,
+  "total_tokens": 2628,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 333,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 381,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

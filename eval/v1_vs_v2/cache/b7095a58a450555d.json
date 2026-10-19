@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This expression redundantly combines a time period with “the time of”; use the concise time expression instead. [vocab list]\n2. [Grammar & Vocabulary, error] 人：人们，This refers to a concrete group of people in the past, so use the plural human-group noun. [teacher rule: ren_renmen]\n3. [Grammar & Vocabulary, error] 看了：看到了，Here the mother notices an effect; 看 means “look,” while 看到 means “see” or “notice.” [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：有一个小男孩叫孟子。他很小的时候，This is the character’s first mention, so introduce him with a full noun phrase before using a pronoun. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 所以孟子和孟子妈妈搬家了：所以他们搬家了，Both characters were named in the immediately preceding sentence, so a pronoun avoids unnecessarily repeating their names. [rule: ambiguous_reference]\n6. [Coherence: temporality, error] Coherence (Temporality): 他的同学们老是对他开玩笑了：他的同学们老是对他开玩笑，A habitual action with 老是 takes the zero particle, not completed-action 了. [rule: aspect_le_completed]\n7. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：他没有朋友，因为他每天只祭拜，虽然 needs a contrasting result clause with 但是 or 可是; this sentence expresses a cause, so use 因为 to connect the reason. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundantly formed under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "人 cannot refer to this concrete group of people here; 人们 is required by the teacher's rule."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "看到 means to see or notice an effect, whereas 看 only means to look."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first introduced here, so the character needs an introductory noun phrase before later pronoun reference."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The two people have just been identified, so 他们 is a clear and non-redundant reference."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "老是 marks a habitual action, so sentence-final 了 is not appropriate."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "Although there is no concessive contrast here, deleting 虽然 correctly leaves a cause-and-result explanation with 因为."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2325,
+  "completion_tokens": 1451,
+  "total_tokens": 3776,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 674,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1023,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

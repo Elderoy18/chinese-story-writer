@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThis scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 想孟子有很好的教育：想让孟子受到很好的教育，When expressing a wish for another person to receive or do something, use 想让 + person + verb phrase; 受到教育 is the natural verb phrase for receiving an education. [rule: none]\n2. [Coherence: temporality, error] Coherence (Temporality): 搬家到：搬家到了，The move is a completed event in the story, so add 了 after the resultative complement 到. [rule: aspect_le_completed]\n3. [Coherence: connectors, error] Coherence (Conjunction): 。他们搬家：，所以他们搬家，The mother’s wish for better education is the cause of the move, so use 所以 to show the cause-and-effect connection. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "想 cannot directly take 孟子有很好的教育; 想让孟子受到很好的教育 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "搬家到 is cut off in the excerpt, but 搬家到了 correctly marks the completed move."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The two clauses can be juxtaposed without 所以, though adding it is grammatical; the shown rewrite still lacks completion marking for the move in this past narrative."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2114,
+  "completion_tokens": 1731,
+  "total_tokens": 3845,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 463,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1509,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

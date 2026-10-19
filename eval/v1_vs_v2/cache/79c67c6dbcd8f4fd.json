@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThis scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 在墓地玩儿，害得：他在墓地玩儿会惹麻烦，The structure with “害得” must be followed by the person affected and a harmful result; it cannot stand alone before a comma. [teacher rule: haide_structure]\n2. [Grammar & Vocabulary, error] 帮妈妈的工作：帮妈妈工作，“帮” can take a person followed by an action; “妈妈的工作” is a noun phrase and does not fit as the object here. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 他的妈妈：孟子的妈妈，This is the mother’s first mention in the story, so introduce her with a full noun phrase rather than a possessive pronoun. [rule: character_introduction_first_mention]\n4. [Coherence: temporality, error] Coherence (Temporality): 所以他们搬家：所以他们搬家了，This move is a completed event in the narrative, so the final verb takes 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“害得” must be followed by the affected person and a harmful result, and the replacement is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“帮妈妈工作” is the correct structure; “帮妈妈的工作” is not."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The mother is first introduced here, so she should be identified as “孟子的妈妈” rather than “他的妈妈.”"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed story event, so “搬家了” is required."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2048,
+  "completion_tokens": 531,
+  "total_tokens": 2579,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 397,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 282,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

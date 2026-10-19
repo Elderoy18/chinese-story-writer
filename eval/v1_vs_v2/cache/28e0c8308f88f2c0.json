@@ -1,0 +1,116 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 也不知道什么植物对你的身体有好处：对身体有好处，not你的\n- 这个问题神农觉得很糟糕，所以神农去了吃每种植物：很严重better，usually糟糕for情况situations; 去吃了\n- 就写了这个植物对你有没有好处：写下了，delete“对你”\n- 有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物：吃到了，V + resultative\n- 会来跟他的朋友聊到他吃的植物了：会跟……，no了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，The time word already identifies the historical period, so adding the time phrase is redundant. [vocab list]\n2. [Grammar & Vocabulary, error] 写了：写下了，This action records information about the plant; 写下 means to write information down and keep a record of it. [vocab list]\n3. [Coherence: reference, error] Coherence (Reference): 神农 → 他，After 神农 has been named in the first clause of this sentence, use a pronoun for the same character in the following clause rather than repeating the name. [rule: redundancy_delete]\n4. [Coherence: reference, error] Coherence (Reference): 神农 → 他，The previous sentence already names 神农, and no other character competes as the referent, so a pronoun is more natural for this close re-occurrence. [rule: redundancy_delete]\n5. [Coherence: temporality, error] Coherence (Temporality): 去了吃每种植物 → 去吃了每种植物，With 去 followed by an action, the completed-action marker follows that action: 去 + V. + 了. [teacher rule: le_placement]\n6. [Coherence: temporality, error] Coherence (Temporality): 有的时候，神农吃了很好吃的植物 → 有的时候，他吃很好吃的植物，A repeated or habitual action introduced by 有的时候 uses the zero particle, not 了. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 有的时候，他吃了很危险的植物 → 有的时候，他吃很危险的植物，A repeated or habitual action introduced by 有的时候 uses the zero particle, not 了. [rule: aspect_le_completed]\n8. [Coherence: temporality, error] Coherence (Temporality): 会来跟他的朋友聊到他吃的植物了 → 会来跟他的朋友聊到他吃的植物，A modal verb such as 会 takes the zero particle; the final 了 is not needed here. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代的时候 is redundant under the teacher's rule, and 在古代 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "写下了 correctly expresses recording the information in writing."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The second 神农 in the same sentence is a close re-reference and can correctly be replaced with 他."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "This 神农 appropriately reintroduces the character, and the teacher herself retained it in this sentence."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The 了 must follow the action after 去, as in 去吃了每种植物."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "With 有的时候, the zero-particle habitual reading is grammatical, so the proposed sentence is a valid correction."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "Removing 了 gives a grammatical habitual reading with 有的时候."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Removing the final 了 fixes the modal/aspect error, but the teacher's correction also requires 会跟 rather than 会来跟."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2384,
+  "completion_tokens": 3056,
+  "total_tokens": 5440,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 733,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2561,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

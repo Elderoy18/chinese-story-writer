@@ -1,0 +1,60 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这是古代的故事：这是一个古代的故事\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 从他的家到墓地很近：他的家离墓地很近\n- 所以他每天老是从早到晚去墓地跟朋友们玩玩儿：delete老是；玩儿，V.V. is used to make requests or plans\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 从他的家到墓地很近：他的家离墓地很近，Use 离 to describe the distance between two places; 从……到…… normally needs a distance expression such as a length or 不远. [vocab list]\n2. [Grammar & Vocabulary, error] 玩玩儿：玩，Verb reduplication here suggests doing something briefly or casually, which conflicts with an activity lasting from morning to evening. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 这是古代的故事。孟子小的时候，他的爸爸很早就去世了。：在古代，有一个小男孩叫孟子。他小时候，爸爸很早就去世了。Introduce the main character clearly as a boy named Mengzi at his first mention before using pronouns or family references. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“从……到……”不能直接搭配“很近”表示两地距离，改为“离”正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "从早到晚的持续活动不适合用“玩玩儿”这种动词重叠形式。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子首次出现时应先清楚介绍人物，改写后的指代和人物介绍都正确。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2020,
+  "completion_tokens": 612,
+  "total_tokens": 2632,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 369,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 410,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

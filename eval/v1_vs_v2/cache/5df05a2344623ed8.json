@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThis scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 害得：会带来麻烦，害得 must be followed by the person affected and a harmful result; it cannot stand alone before a cause-and-effect clause.\n2. [Grammar & Vocabulary, error] 帮妈妈的工作：帮妈妈做事，帮 needs a person plus a verb phrase here; 妈妈的工作 is a noun phrase, so it cannot directly complete this meaning.\n3. [Coherence: temporality, error] Coherence (Temporality): 他们搬家：他们搬家了，use 了 for the completed action of moving house.\n4. [Coherence: connectors, error] Coherence (Conjunction): 他才五岁，可是每天不是写字就是帮妈妈的工作：他才五岁，就每天不是写字就是帮妈妈做事，use 才……就…… to show that he began doing these things at an unexpectedly young age; 可是 does not express this relationship.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得不能单独使用，后面需要接受害者和有害结果。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这里应说帮妈妈工作或帮妈妈做事，不能用名词短语“妈妈的工作”作“帮”的补足语。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "搬家是已经完成的叙事事件，应使用完成体“了”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“才五岁”后用“就”表示年纪很小却已经每天做这些事，而“可是”不表达这种关系。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2021,
+  "completion_tokens": 526,
+  "total_tokens": 2547,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 370,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 252,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

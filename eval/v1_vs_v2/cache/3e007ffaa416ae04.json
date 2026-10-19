@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun sentence identifying what a place is needs the copula and a suitable measure word before the noun. [rule: none]\n2. [Grammar & Vocabulary, error] 这也找植物：他也在这里找植物，The demonstrative cannot refer to the character who performs the action; use the established character pronoun and a location phrase. [rule: none]\n3. [Grammar & Vocabulary, error] 你跟黄色的花做茶：用黄色的花做的茶，Use 用 to introduce the material used to make something, and add 的 so the whole verb phrase modifies 茶. [rule: attributive_modifier_de]\n4. [Grammar & Vocabulary, error] 头发：头，头发 means “hair,” while a painful head is expressed with 头疼. [rule: word_choice]\n5. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative before a countable noun needs a measure word. [teacher rule: zhe_na_mw]\n6. [Coherence: temporality, error] Coherence (Temporality): 疼死：疼死了，Use 了 to show the resulting painful state has occurred. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "凉山后需要系词和合适的量词来构成完整的判断句。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "原句应表达“在这儿也能找到植物”，而“他也在这里找植物”改变了原意。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "表示材料应使用“用”，而“用黄色的花做的茶”能正确修饰后面的“茶”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发是hair，表示头疼应使用“头”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“这”后面的可数名词需要量词，“这杯冰茶”语法正确。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "问题是“头发疼死”的表达不合适，应改为“头很疼”，加“了”仍保留错误的“头发疼”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2145,
+  "completion_tokens": 1709,
+  "total_tokens": 3854,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 494,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1318,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

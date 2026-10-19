@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不是学金融，而是学政治：不要学金融，而要学政治，After 建议, use 不要……而要…… to state the action he advises against and the action he recommends; 不是……而是…… is for refuting or correcting a proposition. [teacher rule: bushi_ershi]\n2. [Grammar & Vocabulary, error] 成为高薪：拿到高薪， 高薪 refers to high pay and cannot directly follow 成为; 拿到高薪 expresses earning a high salary. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 孟子长大：他长大，孟子 was named in the immediately previous sentence and no other character competes as the referent, so a pronoun is more natural for close re-occurrence. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 孟子成为教授：他成为教授，The same character was just referred to as 他, so repeating the name is unnecessary in this close context. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 你：人们，The pronoun has no introduced referent in this narrative; use a full generic noun when referring to people in general. [rule: ambiguous_reference]\n6. [Coherence: temporality, error] Coherence (Temporality): 长大：长大了，Growing up is a completed change of state before he becomes able to solve problems, so it needs 了. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 成为教授：成为了教授，Becoming a professor is presented as a completed later event, so add 了 after the verb. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "In this advice context, 不要……而要…… is the appropriate contrast, rather than 不是……而是……."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "高薪 is pay, so it cannot be the complement of 成为; 拿到高薪 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is acceptable here, especially as the topic of the new growth stage, and the teacher did not replace it with 他."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is acceptable after the intervening advice material and is not an unnecessary reference error."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你 has no established addressee in this narration, while 人们 correctly gives the intended generic reference."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The growing-up change is completed before the next event, so 长大了 correctly marks that completion."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为教授 is a completed later story event, so 成为了教授 correctly supplies perfective 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2349,
+  "completion_tokens": 1403,
+  "total_tokens": 3752,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 698,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 962,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

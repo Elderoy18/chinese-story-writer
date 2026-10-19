@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一个老男人叫神农：老人，“老男人“ has negative meaning\n- 神农在古代每一天看到了别的小镇人生病还是不舒服：delete “在古代”, it implies that 神农can travel between 古代 and 现代modern times; 都看到，no了for routine/habit; 别的小镇上的人；生病或者不舒服\n- 他下一天开始爬当地的山脉：第二天，当地的大山，山脉is for geography\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他下一天开始：第二天，他开始，Use the standard narrative time expression for the day after the previous event; the time phrase should come before the subject and action. [rule: time_expression]\n2. [Grammar & Vocabulary, error] 爬当地的山脉：爬当地的山，The verb phrase for climbing mountains is used with individual mountains; a mountain range is more naturally crossed or traversed rather than climbed in this context. [rule: none]\n3. [Grammar & Vocabulary, error] 找了各种各样的植物：找到了各种各样的植物，The verb means “look for”; when he successfully finds the plants, use the result complement. [vocab list]\n4. [Grammar & Vocabulary, error] 每个植物：每种植物，Use the matching measure word for types of plants. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 神农试一试每个植物：他试一试每个植物，Use a pronoun because the same character was mentioned in the immediately preceding sentence and no other character competes as the referent. [rule: none]\n6. [Coherence: temporality, error] Coherence (Temporality): 每一天看到了：每天看到，A routine action takes the zero particle rather than completed-action 了. [rule: aspect_le_completed]\n7. [Coherence: connectors, error] Coherence (Conjunction): 生病还是不舒服：生病或者感到不舒服，Use the declarative alternative connector here; 还是 is normally used for a question or an indirect question. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“下一天” should be “第二天,” and the time expression should precede the subject, but the shown correction ends before the required action."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“山脉” is a geographical range rather than the individual mountain intended for 爬."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“找了各种各样的植物” can mean that he looked for various plants and does not necessarily require a result complement."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Plants classified by type take the measure word “种,” not “个.”"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After the recent mention of 神农, the teacher's reference rule requires “他,” but the corrected text still contains “每个植物.”"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“每一天” describes a routine, so it takes zero aspect rather than completed-action 了."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "This is a declarative alternative, so “或者” is required rather than “还是.”"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2219,
+  "completion_tokens": 1205,
+  "total_tokens": 3424,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 568,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 766,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

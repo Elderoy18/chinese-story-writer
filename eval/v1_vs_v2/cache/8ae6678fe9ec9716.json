@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 建议你不是学金融，而是学政治：建议你学政治，不要学金融，The pattern “不是……而是……” is for rejecting a stated or conventional idea and replacing it; here the intended meaning is advice about what to study. [teacher rule: bushi_ershi]\n2. [Grammar & Vocabulary, error] 你会成为高薪：你会拿到高薪，A person cannot “become” a salary; “高薪” is the amount of pay, so “拿到” correctly expresses receiving it. [rule: word_choice]\n3. [Grammar & Vocabulary, error] 后来孟子成为教授：后来孟子成为了教授，This is a completed change of status in the narrative, so add 了 after the verb. [rule: aspect_le_completed]\n4. [Coherence: reference, error] Coherence (Reference): 他开始能解决问题：开始能解决问题，After “孟子” appears in the same sentence, use zero form rather than repeating a pronoun. [rule: character_introduction_first_mention]\n5. [Coherence: connectors, error] Coherence (Conjunction): 孟子长大：孟子长大以后，Use 以后 to show the sequence: his ability to solve problems begins after he grows up. [rule: time_expression]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这里的“不是……而是……”不符合老师规定的用法，改成建议学习政治、不要学金融是正确的。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“高薪”不能作“成为”的宾语；“拿到高薪”表达获得高工资是正确的。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“成为教授”是叙事中完成的身份变化，按老师的时体规则应加“了”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "同一句中已经说出“孟子”，后面的“他”重复，使用零形式更符合老师的指代规则。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“长大以后”正确标明了长大和开始能解决问题之间的先后关系。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2232,
+  "completion_tokens": 847,
+  "total_tokens": 3079,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 581,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

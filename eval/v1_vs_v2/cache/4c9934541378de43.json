@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 有才两个学校：才有两个学校，Place + 才 + 有 + quantity expresses that the place has only that small number; 才 cannot follow 有 in this structure. [rule: none]\n2. [Grammar & Vocabulary, error] 古代的时候：在古代，古代 already names a time period, so adding 的时候 redundantly repeats the meaning of “time.” [vocab list]\n3. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，Introduce a character by name and role at the first mention rather than introducing him first with a general noun and naming him only afterward. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，When the subject and the possessor are the same person, 自己的 makes that relationship clear. [teacher rule: ziji_possessor]\n5. [Coherence: reference, error] Coherence (Reference): 但是城市才有两个学校：但是它才有两个学校，The city was mentioned immediately before, and no competing object appears, so use a pronoun for this close re-occurrence. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "有才两个学校 has the wrong placement of 才, but the teacher's required expression here is 只有两个学校, not 才有两个学校."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "古代 already expresses a time period, so 古代的时候 is redundant; 在古代 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the teacher's first-mention rule, the character should be introduced with his name at his first appearance."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的城市 is acceptable and unambiguous here; 自己的城市 is possible but not required."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The immediately repeated city should be referred to as 它, but the corrected clause still uses the non-required 才有 rather than 只有 and does not fully correct the shown sentence."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2052,
+  "completion_tokens": 1075,
+  "total_tokens": 3127,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 401,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 731,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

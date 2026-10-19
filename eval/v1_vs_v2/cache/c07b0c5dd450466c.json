@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun phrase needs a verb such as 是 to state what something is, and 山 takes the measure word 座 in this meaning. [rule: none]\n2. [Grammar & Vocabulary, error] 你跟黄色的花做茶很有用：用黄色的花做的茶很有用，Use 用 to show the material used for making something; 的 connects the action of making tea to the noun 茶. [rule: none]\n3. [Grammar & Vocabulary, error] 你的头发疼死：头疼得要死，头发 means “hair” and cannot feel pain; use 头疼 for a headache and 得要死 as a degree complement. [rule: none]\n4. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative must be followed by a measure word before a countable noun. [teacher rule: zhe_na_mw]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original lacks 是 and the required measure word 座, while the correction is a correct complete sentence."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "The original has an inappropriate 你 and uses 跟 rather than 用 for the material, and the correction gives a grammatical way to express the intended meaning."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发 cannot be the body part that hurts in a headache, and 头疼得要死 is grammatical Chinese."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 needs a measure word before the countable noun 杯冰茶, and 这杯冰茶 is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2078,
+  "completion_tokens": 1042,
+  "total_tokens": 3120,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 427,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 771,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

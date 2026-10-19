@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近：住在离墓地太近的地方，The verb phrase “住在” needs a location after it; “离墓地太近的地方” is the complete location phrase. [rule: none]\n2. [Grammar & Vocabulary, error] 害得孟子的心气：害得孟子心情不好，The structure “害得” must be followed by the affected person and a harmful result; “孟子的心气” is only a noun phrase and does not state a result. [teacher rule: haide_structure]\n3. [Grammar & Vocabulary, error] 老是读书：一直读书，“老是” often expresses an annoying or undesirable repeated action, while “一直” neutrally describes continuing to read. [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟母：他们，Both characters were identified in the previous sentence, so the collective pronoun is more natural for this close re-occurrence. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 跟子思老师住：跟他住，After “子思老师” has just been named, use a pronoun rather than repeating the name in the same sentence. [rule: none]\n6. [Coherence: temporality, error] Coherence (Temporality): 搬到：搬到了，Moving to the teacher’s home is a completed narrative action, so “搬到” needs “了.” [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住 needs the location marker 在 and a complete location phrase here."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "害得 requires an affected person followed by a harmful result, and 心情不好 supplies such a result."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是读书 is acceptable here and does not need to be changed to 一直读书."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 and 孟母 have just been identified, so 他们 is the required close re-reference."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思老师 was already named in the same sentence, so repeating the name should be replaced by 他."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The moving event is completed in the narrative, so 搬到 needs 了, but the shown student text is cut off before its destination."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2227,
+  "completion_tokens": 1397,
+  "total_tokens": 3624,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 576,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

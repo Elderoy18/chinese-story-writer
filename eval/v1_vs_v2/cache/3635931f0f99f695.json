@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n别的人给了神农一个灵芝。这个植物可以让神农更好。比方说，他会觉得更健康。吃灵芝以后，他可以再走。现在他觉得更好。最后，神农找到了很多植物，他可以用对药。这些植物让神农很高兴。神农想跟很多人分享他的新药。\n\nThe teacher's corrections on this scene:\n- 别的人给了神农一个灵芝：另外一个人，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n- 这个植物可以让神农更好：身体更好\n- 比方说，他会觉得更健康：比方说is used to express “for example”, delete it\n- 吃灵芝以后，他可以再走：吃了，了completed; 又可以走了\n\nThe system's item in each run:\nRun 1: 很多植物，他可以用对药：很多可以用来做药的植物，an action phrase modifying 植物 must come before the noun and end with 的; 用来做药 means “use [something] to make medicine,” while 对药 does not fit this meaning. [rule: attributive_modifier_de]\nRun 2: 很多植物，他可以用对药：很多可以用来做药的植物，use 用来做药 to express the plants’ purpose; this modifier belongs before 植物 and describes which plants Shennong found. [rule: attributive_modifier_de]\nRun 3: 很多植物，他可以用对药：很多能做药的植物，Use “能做药的” before “植物” to describe plants that can be made into medicine; “用对药” is not a valid expression for this meaning. [rule: attributive_modifier_de]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the invalid phrase “用对药” and correctly recast it as a pre-nominal modifier meaning plants usable for making medicine."
+ },
+ "usage": {
+  "prompt_tokens": 627,
+  "completion_tokens": 116,
+  "total_tokens": 743,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 57,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

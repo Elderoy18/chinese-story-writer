@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 决定了他们会搬家找：决定搬家，找，A decision should take the action phrase directly; a mental-state verb such as 决定 does not take 了, and the repeated subject is unnecessary. [teacher rule: jueding_vp]\n2. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，恐怕 means “I am afraid that” and cannot take another subject before it; use 担心 when the mother is afraid about her son’s future. [teacher rule: kongpa]\n3. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，The place needs to be marked as the possessor of 教育 with 的; otherwise 住在这儿 cannot naturally serve as the subject of 教育不太好. [rule: none]\n4. [Grammar & Vocabulary, error] 会一直搬家才能：得一直搬家，才能，才能 expresses a required condition, so the earlier clause should use 得 or 要 rather than the future marker 会. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "决定后不该用完成了，且“决定搬家，找”中的“找”没有宾语，仍是不完整的表达。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "恐怕不能这样带“儿子的童年”作主语，改为“她担心儿子的童年不会幸福”正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“住在这儿教育不太好”缺少自然的地点定语结构，改为“这儿的教育不太好”正确。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“会一直搬家才能”需要改成条件结构，但“得一直搬家，才能”本身仍未完成，且后文“找到质量好的教育”也不自然。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2167,
+  "completion_tokens": 1330,
+  "total_tokens": 3497,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 516,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1023,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

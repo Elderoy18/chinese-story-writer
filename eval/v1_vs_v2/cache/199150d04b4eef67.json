@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene:\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 孟子和孟子的妈妈住在这里：孟子和妈妈住在这里，Within the same noun phrase, omit the repeated possessor when the relationship is already clear and no other mother has been mentioned. [rule: none]\nRun 2: 住在这里才一个星期：才住了一个星期，The week of living there is a completed duration before the later reaction, so the action needs 了. [rule: aspect_le_completed]\nRun 3: Coherence (Reference): 孟子和孟子的妈妈住在这里：孟子和他的妈妈住在这里，use a pronoun for the closely repeated possessor after the character has already been named. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 2 corrects the duration/aspect phrase, while Runs 1 and 3 address repeated possession with different rewrites."
+ },
+ "usage": {
+  "prompt_tokens": 515,
+  "completion_tokens": 83,
+  "total_tokens": 598,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 28,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

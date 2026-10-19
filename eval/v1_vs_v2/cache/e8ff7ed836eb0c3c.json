@@ -1,0 +1,83 @@
+{
+ "input": "Required scenes:\n1. 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n2. 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n3. 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n4. 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n5. 孟子becomes a famous philosopher\n\nThe learner's story:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's content flags:\n- Miss two scenes: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day; 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n\nThe system's content notes:\n1. You need to add that Mengzi and his mother lived near a graveyard before he copied the sacrifice rituals every day.\n2. You need to fix why they moved: after Mengzi copied the sacrifice rituals, his mother worried that this habit would affect him badly, so she moved away from the graveyard.\n3. Missing scene: After they leave the graveyard, they move near a market, and Mengzi copies people buying and selling every day.\n4. Missing scene: After leaving the market, they move near a school, where Mengzi begins to study every day.\n5. You need to fix the ending: after growing up and studying, Mengzi becomes a famous philosopher, rather than becoming a philosopher at eleven.",
+ "salt": "",
+ "output": {
+  "scenes": [
+   {
+    "n": 1,
+    "teacher": "none",
+    "system": "missing"
+   },
+   {
+    "n": 2,
+    "teacher": "none",
+    "system": "wrong"
+   },
+   {
+    "n": 3,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 4,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 5,
+    "teacher": "none",
+    "system": "wrong"
+   }
+  ],
+  "notes": [
+   {
+    "n": 1,
+    "correct": true,
+    "clear": true,
+    "reason": "The story mentions sacrifice rituals but never says Mengzi and his mother lived near a graveyard."
+   },
+   {
+    "n": 2,
+    "correct": true,
+    "clear": true,
+    "reason": "The story says they moved because of classmates' bad influence, not because his mother feared his sacrifice imitation would harm him."
+   },
+   {
+    "n": 3,
+    "correct": true,
+    "clear": true,
+    "reason": "The market move and Mengzi's imitation of buying and selling are absent."
+   },
+   {
+    "n": 4,
+    "correct": true,
+    "clear": true,
+    "reason": "The move from the market to a school neighborhood and Mengzi beginning to study are absent."
+   },
+   {
+    "n": 5,
+    "correct": true,
+    "clear": true,
+    "reason": "The story makes Mengzi a philosopher at eleven and later a professor, rather than a famous philosopher after growing up and studying."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 859,
+  "completion_tokens": 436,
+  "total_tokens": 1295,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 175,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "47505bee5c"
+}

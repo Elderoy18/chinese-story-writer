@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThis scene:\n他很聪明的人，难怪他成为有名的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他很聪明的人，难怪他成为有名的人：很聪明\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他很聪明的人：他是一个很聪明的人，The noun phrase needs the copula 是 to serve as the predicate; 一个 also makes the reference to one person natural. [rule: none]\n2. [Grammar & Vocabulary, error] 成为：成为了，This describes a completed outcome in the narrative, so add 了 after the verb. [rule: aspect_le_completed]\n3. [Coherence: reference, error] Coherence (Reference): 难怪他成为了有名的人：难怪成为了有名的人，Use zero form for the same subject in the second part of the same sentence; the reader can still understand that the subject is 孟子. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“他很聪明的人” lacks a valid predicate structure, and adding 是一个 makes it grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The becoming-famous event is a completed narrative outcome, so 成为了 is appropriate."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating 他 in the second clause is natural and clear, so zero reference is optional rather than required."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1961,
+  "completion_tokens": 702,
+  "total_tokens": 2663,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 310,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,117 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 学习馆学：在学校学习，学习馆 is not a conventional word for a school in this context; use 学校 as the place noun and 在 to introduce the location.\n2. [Grammar & Vocabulary, error] 对他很多好处：对他有很多好处，when something benefits someone, the structure is 对 + person + 有 + 好处.\n3. [Grammar & Vocabulary, error] 是大人的时候：长大以后，长大以后 expresses the transition from childhood to adulthood; 是大人的时候 only describes the state of being an adult and does not fit this change-of-state context.\n4. [Coherence: reference, error] Coherence (Reference): 孟子：他，use a pronoun for a close re-occurrence when no other male character competes as the referent.\n5. [Coherence: reference, error] Coherence (Reference): 他的旅行经验：旅行经验，within the same noun phrase, use zero form rather than repeating the same possessor pronoun.\n6. [Coherence: reference, error] Coherence (Reference): 他成为：成为，after the subject has already appeared in the same sentence, use zero form rather than repeating the pronoun.\n7. [Coherence: temporality, error] Coherence (Temporality): 找了到：找到了，place 了 after the resultative complement: 找到 + 了 marks that the finding was completed.\n8. [Coherence: temporality, error] Coherence (Temporality): 成为：成为了，use 了 after 成为 to mark the completed change of state.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "学习馆 is not the appropriate place noun here, and 在学校学习 correctly expresses studying at school."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "对他有很多好处 is the required structure, but the corrected displayed clause still contains the unnecessary second 他的."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "是大人的时候 does not express the intended transition, while 长大以后 does, but the larger corrected sentence still has other errors."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is appropriate because this is a return to him after the preceding scene focused on 孟母, so 他 would not be the clearer reference."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The second possessive pronoun is unnecessarily repeated within the coordinated noun phrase."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated pronoun is across a temporal subordinate clause and its main clause, and the teacher instead deleted the first 他."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "了 must follow the resultative complement 到, so 找到了 is correct."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为 is a completed change of state in this narrative, so 成为了 correctly marks completion."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2321,
+  "completion_tokens": 1889,
+  "total_tokens": 4210,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 670,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1376,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

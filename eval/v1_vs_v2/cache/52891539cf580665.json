@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不合适的地方让孩子玩：不适合孩子玩的地方，适合 must take the person or thing it suits as its object; this phrase means a place that is not suitable for a child to play in. [vocab list]\n2. [Grammar & Vocabulary, error] 他们会搬家找更好的地方：搬家，去找更好的地方，after 决定, use the action phrase directly; do not repeat a new subject before the action. [teacher rule: jueding_vp]\n3. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，恐怕 means “I am afraid that” and cannot follow another subject in this way; 担心 expresses that she is worried about her son’s future. [teacher rule: kongpa]\n4. [Grammar & Vocabulary, error] 而且住在这儿教育不太好：而且这儿的教育环境不太好，use a clear noun phrase for the quality of education in this place; 这儿的教育环境 identifies what is not good. [rule: none]\n5. [Grammar & Vocabulary, error] 她会一直搬家才能找到质量好的教育：她得一直搬家，才能找到质量好的教育，才能 introduces a necessary condition, so use 得 to express “has to” rather than 会 to express a future prediction. [rule: none]\n6. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，决定 is a mental-state verb, so it normally takes the zero particle rather than 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“适合” should take the child/activity as its object, so “不适合孩子玩的地方” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "After “决定,” the action phrase can follow directly without repeating “他们会.”"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“恐怕” is not appropriate here with “她” as the subject, while “担心” correctly expresses her concern."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“住在这儿，教育不太好” is understandable and acceptable; “教育环境” is only a more specific wording."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "The correction still keeps “才能,” although the teacher requires it to be deleted rather than recast as a necessary-condition construction."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“决定” is a mental-state verb and should not take perfective “了” here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2280,
+  "completion_tokens": 1460,
+  "total_tokens": 3740,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 629,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1064,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

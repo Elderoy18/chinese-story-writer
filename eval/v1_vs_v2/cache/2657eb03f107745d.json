@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 哪儿：那儿，In this declarative clause, the place is already being discussed, so use the demonstrative place word rather than the question word.\n2. [Grammar & Vocabulary, error] 对童年很重要：对孩子的成长很重要，This context needs the person or development that the living environment affects; the original word refers to a period of life rather than the child’s development.\n3. [Coherence: reference, error] Coherence (Reference): 这个男孩子叫孟子：有一个男孩子叫孟子，On first mention, introduce a new character with an indefinite noun phrase rather than using a demonstrative form that suggests the reader already knows him.\n4. [Coherence: reference, error] Coherence (Reference): 孟子是古代的人：是古代的人，Use zero form for the same character in the same sentence instead of repeating the name.\n5. [Coherence: reference, error] Coherence (Reference): 所以孟子的妈妈安排他的生活：所以她安排他的生活，Use a pronoun for a close re-occurrence when no other female character competes as the referent.\n6. [Coherence: temporality, error] Coherence (Temporality): 常常搬了家：常常搬家，Use the zero particle for a habitual action; the adverb shows that this happened repeatedly, rather than marking one completed move.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“住在哪儿” can naturally mean where one lives and is not an error in this general statement."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“对童年很重要” is acceptable; “对孩子的成长很重要” is only a possible rewording."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "A first-mentioned story character should not be introduced with the specific demonstrative “这个” here."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating “孟子” in a new clause is acceptable and is not prohibited by the zero-reference rule."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Replacing the repeated full noun phrase with “她” makes the reference consistent with the preceding clause."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“常常” describes a habitual action, so “搬家” should not take perfective “了”."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2118,
+  "completion_tokens": 1589,
+  "total_tokens": 3707,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 467,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1204,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

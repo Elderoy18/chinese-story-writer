@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不合适的地方让孩子玩：不适合孩子玩的地方，use “适合” to say that a place suits a person or activity; this phrase means a place that is not suitable for children to play in. [vocab list]\n2. [Grammar & Vocabulary, error] 住在这儿教育不太好：住在这儿，孩子受到的教育不太好，“住在这儿” needs a complete following clause; adding “孩子受到的” makes clear whose education is being discussed. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 有一天孟子去了墓地玩儿：有一天，有一个小男孩叫孟子。他去了墓地玩儿，at the first mention, introduce the character with both a role and a name; after that close re-occurrence, use a pronoun. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 他们会搬家找更好的地方：搬家，找更好的地方，after “决定,” use the same subject in zero form and follow it directly with the verb phrase; do not repeat the subject or add “会.” [teacher rule: jueding_vp]\n5. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，“决定” is a mental-state verb, so it normally takes the zero particle rather than “了.” [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 她会一直搬家才能找到质量好的教育：她得不断搬家，才能找到质量好的教育，“得……才能……” clearly links a necessary condition with its result; “会” does not express that necessary condition. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“不合适的地方让孩子玩” does not correctly express that the place is unsuitable for children to play."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The original is somewhat terse but can mean that the education available while living here is not very good, so it is not necessarily an error."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first introduced here, so the teacher requires a brief character introduction before using the name and then a pronoun."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "Deleting 他们会 after 决定 is right, but “搬家，找更好的地方” does not clearly correct the intended meaning of moving to a better place (搬家到更好的地方)."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "决定 is a mental-state verb here and should not take perfective 了 under the teacher's rule."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "得……才能…… correctly supplies the necessary-condition structure, but “找到质量好的教育” remains an unnatural collocation; one would normally say 受到良好的教育."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2312,
+  "completion_tokens": 1974,
+  "total_tokens": 4286,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 661,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1535,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

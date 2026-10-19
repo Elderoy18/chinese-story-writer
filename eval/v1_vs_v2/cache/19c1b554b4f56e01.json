@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很不知道：不知道，The degree adverb 很 does not normally modify the negative knowledge verb 不知道 in this context. [rule: none]\n2. [Grammar & Vocabulary, error] 很麻烦的情况：是一种很麻烦的情况，After the preceding clause, this noun phrase needs 是 to form a complete predicate that identifies the situation. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 你的身体：他们的身体，The pronoun should refer back to the many people who eat the plants, rather than addressing the reader directly. [rule: ambiguous_reference]\n4. [Coherence: reference, error] Coherence (Reference): 但是一个人，神农，要解决这个问题：但是有一个叫神农的人要解决这个问题，On a character’s first mention, introduce the character with a clear full noun phrase including the name. [rule: character_introduction_first_mention]\n5. [Coherence: connectors, error] Coherence (Conjunction): 也什么植物不能吃：什么植物不能吃，Also cannot directly be followed by a noun phrase or clause; here the two embedded questions can simply be placed side by side. [teacher rule: ye_vp]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很 cannot modify 不知道 in this context, and deleting it gives correct Chinese."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The noun phrase needs 是 to serve as the predicate after the preceding clause."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你的 incorrectly addresses the reader rather than referring to the people who ate the unsafe plants; 他们的 is a correct repair."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 is first introduced here and should be introduced in a clear full noun phrase such as 一个叫神农的人."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "也 cannot directly precede the embedded question clause here, so deleting it is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2092,
+  "completion_tokens": 810,
+  "total_tokens": 2902,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 441,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

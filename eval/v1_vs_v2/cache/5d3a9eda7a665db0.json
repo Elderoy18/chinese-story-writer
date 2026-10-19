@@ -1,0 +1,77 @@
+{
+ "input": "Required scenes:\n1. 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n2. 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n3. 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n4. 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n5. 孟子becomes a famous philosopher\n\nThe learner's story:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。他很聪明的人，难怪他成为有名的人。\n\nThe teacher's content flags:\n- Miss two scenes: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day; 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n\nThe system's content notes:\n1. You need to change the graveyard event: before his mother decides to move, Mencius should imitate people offering sacrifices every day, not only play with friends.\n2. Missing scene: After the family leaves the graveyard area, they move near a market, and Mencius imitates people buying and selling every day.\n3. Missing scene: After his mother leaves the market area, they move near a school, where Mencius begins to study every day.\n4. You need to say that, after studying, Mencius becomes a famous philosopher, not only a famous person.",
+ "salt": "",
+ "output": {
+  "scenes": [
+   {
+    "n": 1,
+    "teacher": "none",
+    "system": "wrong"
+   },
+   {
+    "n": 2,
+    "teacher": "none",
+    "system": "none"
+   },
+   {
+    "n": 3,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 4,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 5,
+    "teacher": "none",
+    "system": "wrong"
+   }
+  ],
+  "notes": [
+   {
+    "n": 1,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner says Mencius played at the graveyard rather than imitating sacrifice offerings."
+   },
+   {
+    "n": 2,
+    "correct": true,
+    "clear": true,
+    "reason": "The move near a market and imitation of buying and selling are absent."
+   },
+   {
+    "n": 3,
+    "correct": true,
+    "clear": true,
+    "reason": "The move from the market to a school and Mencius studying are absent."
+   },
+   {
+    "n": 4,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner says only that he became famous, not that he became a famous philosopher."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 753,
+  "completion_tokens": 276,
+  "total_tokens": 1029,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 66,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "47505bee5c"
+}

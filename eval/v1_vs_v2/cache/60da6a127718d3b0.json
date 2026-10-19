@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，古代 already expresses a time period, so adding 的时候 redundantly repeats the time meaning. [vocab list]\n2. [Grammar & Vocabulary, error] 人：人们，this sentence refers to people collectively, so 人们 is the appropriate noun. [teacher rule: ren_renmen]\n3. [Grammar & Vocabulary, error] 看了：看到了，the mother is meant to perceive the classmates’ effect on Mengzi; 看 means “look,” while 看到 expresses successfully seeing or noticing something. [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟子妈妈：孟子和妈妈，within the same sentence, do not repeat the name inside the second noun phrase when 妈妈 clearly refers to Mengzi’s mother. [rule: redundancy_delete]\n5. [Coherence: temporality, error] Coherence (Temporality): 老是对他开玩笑了：老是对他开玩笑，老是 describes a habitual action, so it takes the zero particle rather than 了. [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：因为他每天只祭拜，所以他没有朋友，this is a cause-and-effect relationship, so use 因为……所以…… rather than 虽然. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "人 is too generic for this concrete collective group; 人们 is required by the teacher's rule."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "看到 correctly expresses that Mengzi's mother noticed the negative effect, unlike 看了."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The teacher treats the whole repeated subject 孟子和孟子妈妈 as redundant after 孟子妈妈, so changing it to 孟子和妈妈 does not fully make the needed zero-reference correction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "老是 marks a habitual action, so sentence-final 了 should not be used."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "This is a cause-and-effect relation, and 因为他每天只祭拜，所以他没有朋友 is a correct restructuring."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2245,
+  "completion_tokens": 1173,
+  "total_tokens": 3418,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 594,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 786,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

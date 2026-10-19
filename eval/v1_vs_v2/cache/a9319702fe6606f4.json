@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟母注意，住在墓地的旁边影响孟子：孟母注意到住在墓地的旁边会影响孟子，use the result complement 到 with 注意 to show that she noticed or discovered something; the following clause is the content she noticed.\n2. [Grammar & Vocabulary, error] 跟朋友们祭拜玩：跟朋友们一起学着别人祭拜，祭拜 is a ritual action, so it cannot be followed by 玩 to mean “play at doing it”; 学着别人祭拜 clearly expresses copying the ritual.\n3. [Coherence: reference, error] Coherence (Reference): 孟子跟孟母：有一个小男孩叫孟子，他和妈妈，at first mention, introduce the character with a name and role; after introducing 孟子, use 他 rather than repeating the name.\n4. [Coherence: reference, error] Coherence (Reference): 孟母决定他们会搬家：孟母决定搬家，after 决定, use a verb phrase directly; the moving group is already clear, so repeating it as 他们 is unnecessary.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "注意 needs 到 here to express that Meng's mother noticed the result/content."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "祭拜玩 is not an appropriate verb construction here, and 学着别人祭拜 correctly expresses imitating the ritual."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 needs an introductory identification at his first mention, but the displayed replacement ends with the unfinished phrase 他和妈妈."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "决定 should directly take 搬家, without repeating 他们会."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2109,
+  "completion_tokens": 1056,
+  "total_tokens": 3165,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 458,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 802,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

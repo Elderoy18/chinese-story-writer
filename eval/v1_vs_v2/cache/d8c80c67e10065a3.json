@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThis scene:\n孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 所以孟子的妈妈认为这样的地方对儿子的教育不太好：replace孟子的妈妈with她\n- 不是搬到城市，而是搬到了孟子老师的家：家里\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 取得良好的教育：接受良好的教育，The verb does not naturally collocate with education in this meaning; this expression means receiving a good education. [rule: none]\n2. [Grammar & Vocabulary, error] 跟孟子搬家：带着孟子搬家，This wording means that the mother takes her son with her when she moves; 跟 expresses moving together rather than taking someone along. [vocab list]\n3. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈（sentence opening）：她，The mother was mentioned in the immediately preceding scene, so a pronoun is natural when no other female character competes as the referent. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 孟子（in “觉得孟子取得”）：他，孟子 was also mentioned in the preceding scene, and the pronoun is clear here because it contrasts with his mother. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈（after “所以”）：她，Use a pronoun when the same character has just been named and no competing referent has appeared. [rule: character_introduction_first_mention]\n6. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈带孟子：她带他，Both characters have already been named nearby, so pronouns make this repeated reference smoother and remain clear. [rule: character_introduction_first_mention]\n7. [Coherence: connectors, error] Coherence (Conjunction): 不是搬到城市，而是搬到了孟子老师的家：搬到了孟子老师的家，This situation does not need to correct or refute an expected destination, so the contrast pair is unnecessary. [rule: bushi_ershi_construction]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "取得 does not collocate naturally with 良好的教育 in the intended sense; 接受良好的教育 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "跟孟子搬家 can correctly mean that the mother and Mencius move house together, so it is not an error."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The mother was the salient referent at the end of the preceding scene, so the teacher's reference rule calls for 她 here."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is a recently established, unambiguous referent, so 他 is required by the stated reference rule."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "This repeats the just-mentioned mother, and the teacher explicitly corrected it to 她."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Both characters were just named and are unambiguous, so 她带他 follows the stated reference rule."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "不是……而是…… acceptably contrasts the expected city destination with the teacher's home, and the proposed text still retains the teacher-marked 家 error."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2278,
+  "completion_tokens": 1729,
+  "total_tokens": 4007,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 627,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1269,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

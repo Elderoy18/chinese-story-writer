@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 这个男孩子叫孟子，孟子是古代的人：在古代，有一个叫孟子的男孩子。A first-mentioned character needs an unambiguous full introduction; “这个” normally points to someone already introduced, while this is the first mention. [rule: character_introduction_first_mention]\n2. [Coherence: temporality, error] Coherence (Temporality): 他们常常搬了家：他们常常搬家，“常常” describes a routine, so use the zero particle rather than completed-action 了. [rule: aspect_le_completed]\n3. [Coherence: reference, error] Coherence (Reference): 她望子成龙，所以孟子的妈妈安排他的生活：她望子成龙，所以安排他的生活。The mother was just mentioned as “她,” so use zero form rather than repeating her full noun phrase in the same connected sentence. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“这个” cannot introduce a character on first mention under the teacher’s reference rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“常常” describes a habitual action, so 搬家 should not take completed-action 了."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating 孟子的妈妈 after 她 in the same connected sentence creates the reference problem the teacher marked."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2024,
+  "completion_tokens": 285,
+  "total_tokens": 2309,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 373,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 90,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

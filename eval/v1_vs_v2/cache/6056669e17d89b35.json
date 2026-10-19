@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 对童年很重要：对孩子的成长很重要，童年 is a time period, while the sentence means that the living place affects the child’s development. [rule: none]\n2. [Coherence: reference, error] Coherence (Reference): 这个男孩子叫孟子，孟子是古代的人：在古代，有一个叫孟子的男孩子，At first mention, use an indefinite full noun phrase rather than “这个”, which suggests the boy has already been identified. [rule: character_introduction_first_mention]\n3. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈安排他的生活：安排他的生活，After “她” has already referred to Mengzi’s mother in the same sentence, use zero form instead of repeating the full noun phrase. [rule: none]\n4. [Coherence: temporality, error] Coherence (Temporality): 常常搬了家：常常搬家，A habitual action introduced by “常常” takes the zero particle, not completed-action 了. [rule: aspect_le_completed]\n5. [Coherence: connectors, error] Coherence (Conjunction): 所以他们常常搬家：因为孟子的妈妈觉得住在哪儿对孩子的成长很重要，所以他们常常搬家，Use 因为……所以…… to show the cause-and-effect relationship between the mother’s belief and the repeated moves. [rule: none]\n6. [Coherence: connectors, error] Coherence (Conjunction): 所以：因为她望子成龙，所以，Use 因为……所以…… to connect her hope for her son with her decision to organize his life. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“住在哪儿对童年很重要” is acceptable; “童年” need not be replaced with “孩子的成长”."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“这个” improperly treats Mengzi as already identified on his first introduction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After identifying Mengzi’s mother as the subject, repeating “孟子的妈妈” creates the reference problem the teacher marked."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“常常” describes a habitual action, so 搬家 should not take completed-action 了."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The original cause-and-effect connection with “所以” is acceptable, and the teacher did not require adding 因为."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“所以” alone is not a complete unit here, and the proposed text is incomplete and retains the unclear pronoun “她”."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2183,
+  "completion_tokens": 1120,
+  "total_tokens": 3303,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 532,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 729,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。\n\nThe teacher's corrections on this scene:\n- 也不知道什么植物对你的身体有好处：对身体有好处，not你的\n- 这个问题神农觉得很糟糕，所以神农去了吃每种植物：很严重better，usually糟糕for情况situations; 去吃了\n- 就写了这个植物对你有没有好处：写下了，delete“对你”\n- 会来跟他的朋友聊到他吃的植物了：会跟……，no了\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 所以神农去了吃每种植物：所以去吃了每种植物，Use zero form for a re-occurring character in the same sentence: 神农 was already named in the preceding clause.\nRun 2: Coherence (Reference): 所以神农去了吃每种植物：所以他去吃了每种植物，use a pronoun for a close re-occurrence; 神农 was named in the immediately preceding sentence.\nRun 3: 去了吃每种植物：去吃了每种植物，when 去 is followed by another verb, the completion marker follows the main action: 去 + V. + 了.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": true,
+  "reason": "All runs correctly change 去了吃 to 去吃了, but Runs 1 and 2 additionally treat the repeated subject 神农 as a coherence issue whereas Run 3 only addresses 了 placement."
+ },
+ "usage": {
+  "prompt_tokens": 594,
+  "completion_tokens": 344,
+  "total_tokens": 938,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 275,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

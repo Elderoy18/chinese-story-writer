@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，古代 already refers to a time period, so adding 的时候 is redundant. [vocab list]\n2. [Grammar & Vocabulary, error] 有一个男孩名字叫孟子：有一个叫孟子的男孩，use 叫孟子 as an attributive phrase before 男孩 to introduce the character naturally. [rule: character_introduction_first_mention]\n3. [Grammar & Vocabulary, error] 而且害得孟子的学习：而且墓地旁的哭声影响了孟子的学习，害得 must be followed by the person affected and a harmful result; it cannot directly take 学习 as its object. [teacher rule: haide_structure]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈两个人：孟子和他的妈妈两个人，within one noun phrase, use a pronoun for the repeated possessor after naming 孟子 once. [rule: ambiguous_reference]\n5. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈住在这里：孟子和他的妈妈住在这里，after naming 孟子, use 他的 to avoid unnecessarily repeating his name in the same phrase. [rule: ambiguous_reference]\n6. [Coherence: temporality, error] Coherence (Temporality): 住在这里才一个星期：才在这里住了一个星期，the one-week stay is a completed duration before they reach the point of not being able to bear it, so use 了 with the completed action. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "古代已经表示时间段，古代的时候在这里重复，改为在古代正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "有一个男孩名字叫孟子本身语法正确，也能自然地首次介绍人物。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得后面需要说明受害者及其不良结果，害得孟子的学习不完整。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子和孟子的妈妈是正常且清楚的首次提及母亲的说法，重复名字并不构成错误。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子和孟子的妈妈住在这里指代清楚，改用他的虽更简洁但不是必须修改。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "住在这里才一个星期就觉得受不了了中的住不加了也自然，才……就……结构不要求这里必须用完成体。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2151,
+  "completion_tokens": 1329,
+  "total_tokens": 3480,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 500,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 928,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

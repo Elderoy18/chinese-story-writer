@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 玩在墓地里：在墓地里玩，A location phrase with 在 should come before the action verb when it tells where the action happens. [rule: none]\n2. [Grammar & Vocabulary, error] 装祭拜：假装祭拜，假装 means pretending to carry out an action; 装 does not naturally combine with 祭拜 in this context. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 孟子小的时候：有一个小男孩叫孟子。孟子小的时候，On a character’s first mention, introduce both the name and who the character is, rather than assuming the reader already knows the name. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和他的朋友：他和朋友，For a close re-occurrence, use a pronoun for the already mentioned main character; the possessive pronoun is unnecessary because the friends are already clear from the sentence. [rule: none]\n5. [Coherence: temporality, error] Coherence (Temporality): 跟妈妈搬家：跟妈妈搬了家，This is a completed move, so the separable verb takes 了 after the verb: 搬了家. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Location phrases indicating where an action happens normally precede the verb: 在墓地里玩。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "装祭拜 is not a natural collocation here, while 假装祭拜 correctly expresses pretending to perform worship."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "As the character's first mention, 孟子 should be briefly introduced before the narrative refers to him by name."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 was just mentioned, so using 他 and the simpler 朋友 follows the close re-reference rule."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed past event, so 搬家 needs the perfective form 搬了家."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2099,
+  "completion_tokens": 826,
+  "total_tokens": 2925,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 448,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears\n- 孟子妈妈的工作是祭拜：wrong information, it’s not his mother’s job\n- 孟子不高兴，因为他说我们老是搬家：delete因为\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一天，很久很久以前：很久很久以前的一天，The broad time period should come before the specific day; this combined phrase gives a natural narrative time setting. [rule: time_expression]\n2. [Coherence: reference, error] Coherence (Reference): 孟子和他妈妈：有一个小男孩叫孟子，他和妈妈，A character’s first mention should introduce the character clearly with a name and a brief description, rather than assuming the reader already knows him. [rule: character_introduction_first_mention]\n3. [Coherence: reference, error] Coherence (Reference): 孟子妈妈的工作：她的工作，The mother was mentioned in the immediately preceding sentence, so a pronoun is more natural for a close re-occurrence. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 他妈妈说：她说，The mother remains the clear referent, so use a pronoun rather than repeating the relationship noun. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The teacher requires deleting 一天 here, and 很久很久以前的一天 is a correct narrative time expression."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 needs a clearer first introduction, and the replacement works with the following 住在中国, but the shown replacement itself ends with an unfinished subject phrase."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The mother has just been mentioned, so 她的工作 follows the required close re-reference pattern."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The mother is the clear recent referent, so 她说 is the required pronoun reference."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2055,
+  "completion_tokens": 1082,
+  "total_tokens": 3137,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 404,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 808,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

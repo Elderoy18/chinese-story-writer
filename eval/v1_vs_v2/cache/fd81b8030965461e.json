@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他需要当上医：医生\n- 一看别的人就想帮助他们：看到，看look vs.看到see; 病人，“别的” is for “a different type”, and “all else except the spoken one”\n- 什么病人吃都会觉得身体更好：吃了以后\n- 神农三个月走去：走了三个月\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，The phrase repeats the time meaning because 古代 already names a time period. [teacher rule: gudai_de_shihou_why]\n2. [Grammar & Vocabulary, error] 别的人：别人，别的人 distinguishes people from a previously mentioned person or group, but no such comparison has been established here; 别人 means other people in general. [teacher rule: bieren]\n3. [Grammar & Vocabulary, error] 什么病人吃都会觉得身体更好：不管得什么病的人吃了这种植物都会觉得身体更好，什么病人 does not by itself mean “any patient” in this structure; 不管……的人 clearly expresses that all kinds of patients are included. [rule: none]\n4. [Grammar & Vocabulary, error] 一个很漂亮的植物：一株很漂亮的植物，Plants use a matching measure word such as 株 when referring to one individual plant; 个 is too general here. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 有植物的地方：有这种植物的地方，This refers back to the plant just mentioned, so a demonstrative noun phrase makes the connection specific and clear. [rule: ambiguous_reference]\n6. [Coherence: temporality, error] Coherence (Temporality): 神农三个月走去，找到：神农走了三个月，才找到了，A completed duration takes 了 after the verb, and the completed result of finding also takes 了; 才 shows that the finding happened only after the long journey. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "别的人 is not appropriate here under the teacher's 别人/别的 rule, and 别人 is a correct replacement."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The original needs a completed-action expression after 吃, and the proposed rewrite is grammatical and expresses the intended meaning."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "个 is not the appropriate measure word for an individual plant here, while 株 is correct."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "有植物的地方 is understandable and adequately refers to the recently mentioned plant, although 有这种植物的地方 is also clearer."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "走了三个月 correctly marks the completed duration, and 才找到了 gives a grammatical completed result after the journey."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2198,
+  "completion_tokens": 1411,
+  "total_tokens": 3609,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 547,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

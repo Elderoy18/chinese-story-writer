@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThis scene:\n他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他们住才一月就又搬家：才住了一个月，了completed\n- 古代的时候：那时候\n- 但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是\n- 因为她恐怕儿子会成为跟他们很像：怕/担心，恐怕usually does not take Subj. except 我；跟他们一样/很像的人，成为+ noun\n- 她告诉了孟子：告诉，no了for speaking word\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住才一月：才住了一个月，Place 才 before the duration, and use a measure word with the number; this pattern is 才 + duration + 就 + action. [rule: cai_jiu_construction]\n2. [Grammar & Vocabulary, error] 又搬家：又搬家了，The move is a completed past action, so the final verb needs 了. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 古代的时候：在古代，The original is redundant because both 古代 and 的时候 express time. [vocab list]\n4. [Grammar & Vocabulary, error] 老是跟这些卖东西的人常常玩儿：老是跟这些卖东西的人玩儿，老是 and 常常 both mark frequent actions, so using both is redundant. [rule: none]\n5. [Grammar & Vocabulary, error] 害得妈妈着急得很：让妈妈很着急，害得 requires a clearly harmful result after the affected person; ordinary worry is better expressed with 让. [rule: haide_harmful_result]\n6. [Grammar & Vocabulary, error] 她恐怕：她担心，恐怕 means “I am afraid that” and normally cannot take another person as its subject; use 担心 for a mother’s worry. [teacher rule: kongpa]\n7. [Grammar & Vocabulary, error] 成为跟他们很像：变得跟他们很像，成为 is used for becoming an identity or role, while 变得 introduces a change into a described state. [rule: word_choice]\n8. [Coherence: temporality, error] Coherence (Temporality): 告诉了：告诉，A speaking verb that introduces direct speech takes the zero particle rather than 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "才 should precede the completed duration, and 一月 needs the measure word 个."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "In this completed sequence, the final action 搬家 needs sentence-final 了."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundantly formed."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是 and 常常 both express frequent repetition here, so one should be deleted."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得妈妈着急得很 is a valid 害得 construction with 妈妈着急得很 as the harmful result."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "With 她 as the subject, 担心 rather than 恐怕 is required for the mother's worry."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "成为 requires a noun-like identity, whereas 变得 can introduce the state 跟他们很像."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "告诉 introducing direct speech should take the zero particle rather than 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2351,
+  "completion_tokens": 1768,
+  "total_tokens": 4119,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 700,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1294,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

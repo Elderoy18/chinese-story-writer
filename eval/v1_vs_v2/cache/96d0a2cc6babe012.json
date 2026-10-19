@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一看很多人正在吃一些植物：看到，一……就\n- 神农想帮别人：帮他们，“别(的)” is for “a different type”, and “all else except the spoken one”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，Both parts express time, so the original is redundant. [vocab list]\n2. [Grammar & Vocabulary, error] 一看：一看到，Here the verb means successfully seeing the people, so it needs the resultative complement 到. [rule: resultative_complement]\n3. [Grammar & Vocabulary, error] 别人：人们，别人 means “other people” in contrast with a specified person or group; this scene refers to the group of people who are becoming ill. [teacher rule: bieren]\n4. [Coherence: temporality, error] Coherence (Temporality): 一些人一吃植物就生病了：一些人一吃植物就生病，This describes a repeated condition, not one completed illness event, so use the zero particle rather than 了. [rule: aspect_le_completed]\n5. [Coherence: connectors, error] Coherence (Conjunction): 一看很多人正在吃一些植物。一些人一吃植物就生病了：一看到很多人正在吃一些植物，就发现一些人一吃植物就生病，Use 一……就…… to connect the immediate observation with what Shennong discovers. [teacher rule: yi_jiu]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代已经是时间词，古代的时候重复，改为在古代正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "一看这里应改为看到并构成一……就……结构，单独改成一看到会使原句缺少后项。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "别人不能指前文已经提到的那群人，这里应说帮他们而不是帮人们。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里可叙述一些人吃了植物后生病的已完成事件，生病了没有错误。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors",
+     "Coherence: temporality"
+    ],
+    "reason": "一……就……确实需要补出，但改写不应删去叙述一些人生病这一完成事件的了。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2059,
+  "completion_tokens": 1739,
+  "total_tokens": 3798,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 408,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1384,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

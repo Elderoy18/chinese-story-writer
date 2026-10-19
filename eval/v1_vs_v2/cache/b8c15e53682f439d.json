@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene:\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's item in each run:\nRun 1: 学习馆学了：在学习馆学习了，A location should be introduced with 在 before the action; 学习 is the verb that can take the duration phrase 十五年. [rule: none]\nRun 2: 学习馆学了十五年：在学校学习了十五年，The location should be introduced with a location phrase, and “学校” is the usual word for the place where formal learning happens. [rule: word_choice]\nRun 3: 孟子学习馆学了十五年：孟子在学习馆学了十五年，A place where an action happens needs the locative structure with 在; the original sentence lacks 在 before the place phrase. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs address the missing 在 before the study location, and their corrected sentences are acceptable ways to express that meaning."
+ },
+ "usage": {
+  "prompt_tokens": 543,
+  "completion_tokens": 168,
+  "total_tokens": 711,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 116,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

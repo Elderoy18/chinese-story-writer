@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThis scene:\n他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他们住才一月就又搬家：才住了一个月，了completed\n- 古代的时候：那时候\n- 但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是\n- 因为她恐怕儿子会成为跟他们很像：怕/担心，恐怕usually does not take Subj. except 我；跟他们一样/很像的人，成为+ noun\n- 她告诉了孟子：告诉，no了for speaking word\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this expression redundantly combines two time expressions; use the shorter time phrase. [vocab list]\n2. [Grammar & Vocabulary, error] 老是跟这些卖东西的人常常玩儿：老是跟这些卖东西的人玩儿，both frequency adverbs modify the same verb, so using both together is redundant and unnatural. [rule: none]\n3. [Grammar & Vocabulary, error] 害得妈妈着急得很：让妈妈很着急，害得 requires a clearly harmful result, while being worried is better expressed with 让. [rule: haide_harmful_result]\n4. [Grammar & Vocabulary, error] 她恐怕儿子会成为跟他们很像：她担心儿子会变得跟他们很像，恐怕 cannot take 她 as its subject in this meaning; use 担心 for a person’s fear, and use 变得 for becoming similar in a quality. [teacher rule: kongpa]\n5. [Coherence: temporality, error] Coherence (Temporality): 他们住才一月就又搬家：他们才住了一个月，就又搬家了，才 should come before the verb phrase; 一个月 is the usual duration expression, and 了 marks both the completed period of living there and the completed move. [rule: aspect_le_completed] [rule: measure_word]\n6. [Coherence: temporality, error] Coherence (Temporality): 告诉了孟子：告诉孟子，remove 了 because a saying verb that introduces quoted speech normally takes the zero particle rather than marking completion. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "按教师标准，“古代的时候”时间表达重复，改为“在古代”正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是”和“常常”同作频率副词重复，删去“常常”正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“害得妈妈着急得很”符合“害得＋某人＋不良结果”的结构，本身正确。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "“恐怕”不宜以“她”为主语，且“成为”后应接名词；改句正确。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "原句的时长表达和完成体位置不符合要求，改为“才住了一个月，就又搬家了”正确。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "引出直接引语的“告诉”按教师规则不用完成体“了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2318,
+  "completion_tokens": 1055,
+  "total_tokens": 3373,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 667,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 661,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

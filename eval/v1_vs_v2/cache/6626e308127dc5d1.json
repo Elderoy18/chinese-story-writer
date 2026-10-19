@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他难怪抱怨：难怪他抱怨，Place the subject after the pattern headed by 难怪; the explanation can then be introduced with 原来. [teacher rule: nanguai_yuanlai]\n2. [Grammar & Vocabulary, error] 他的妈妈找到孟子一个老师：他的妈妈给孟子找到了一个老师，The person who receives the help needs to be introduced with 给 rather than placed as a second bare object; 找到了 also marks that the finding was completed. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 跟老师孟子学：孟子跟老师学，Put the subject before the 跟 phrase so that it is clear that Mengzi is learning from the teacher. [rule: none]\n4. [Coherence: temporality, error] Coherence (Temporality): 成为哲学家：成为了哲学家，Becoming a philosopher is a completed change of state in this past narrative, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "难怪 should introduce the whole clause, so the subject follows it."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "给 is needed to introduce Mengzi as the recipient of the finding action."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "孟子 must be placed before 跟老师 to make him clearly the subject of 学."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Becoming a philosopher is presented as a completed change in the past narrative, so 成为了 is appropriate."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2133,
+  "completion_tokens": 1001,
+  "total_tokens": 3134,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 482,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 763,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThis scene:\n他很聪明的人，难怪他成为有名的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他很聪明的人，难怪他成为有名的人：很聪明\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他很聪明的人：他是一个很聪明的人，When a noun phrase ending in 人 is the predicate, it needs 是; 很聪明 alone can be an adjective predicate, but 很聪明的人 means “a very clever person.”\n2. [Grammar & Vocabulary, error] 成为有名的人：成为了有名的人，Use 了 after 成为 to show that this change of status was completed.\n3. [Coherence: reference, error] Coherence (Reference): 他：孟子，Repeat the name when the previous scene has mentioned both 孟子 and his mother, because the pronoun 他 could otherwise make the referent unclear.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很聪明的人不能直接作谓语；加是一个后句子正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里说的是孟子后来成为名人的完成事件，成为后应加了。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他明确指男性孟子，不会与前文的妈妈混淆，因此不必重复名字。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1950,
+  "completion_tokens": 702,
+  "total_tokens": 2652,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 299,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

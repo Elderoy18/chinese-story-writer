@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “他难怪抱怨” / Formula: 难怪 + subject + verb / Correct: “难怪他抱怨。” Alternatively: “他抱怨也难怪。” This means it is understandable that he complains.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “他想他的朋友” / Formula: 想念 + person / Correct: “他想念他的朋友。” “想” can mean “to think” or “to want”; use “想念” specifically for missing someone.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “因为他不要离开他的城市” / Formula: 因为 + subject + 不想 + verb / Correct: “因为他不想离开他的城市。” 不要 usually means “don’t!” as a command, while 不想 expresses “does not want to.”\n4. [Grammar & Vocabulary, error] Incorrect phrase: “他的妈妈找到孟子一个老师” / Formula: subject + 给 + person + 找 + 一个 + noun / Correct: “孟子的妈妈给孟子找了一个老师。” Use 给孟子 to show who the teacher was found for.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “跟老师孟子学最重要的文学” / Formula: subject + 跟 + person + 学习 + object / Correct: “孟子跟老师学习重要的文学作品。” The subject, 孟子, should come before 跟老师.\n6. [Grammar & Vocabulary, error] Incorrect phrase: “所以他成为哲学家” / Formula: 后来 + subject + 成为了 + identity / Correct: “后来，他成为了一位哲学家。” 后来 is more natural for a later event in a narrative.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "难怪应放在整句前面，构成“难怪他抱怨”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里的“想他的朋友”可表示想念朋友，教师也保留了“想”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "陈述不愿离开时应说“不想离开”，而不是“不要离开”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "为某人找东西需要用“给孟子找”，原句缺少“给”且“找到”的结构不当。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "孟子应作句首主语，且“学习重要的文学作品”是正确的搭配。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“所以他成为哲学家”本身正确，教师没有要求添加“后来”或“了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2280,
+  "completion_tokens": 1187,
+  "total_tokens": 3467,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 629,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 808,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

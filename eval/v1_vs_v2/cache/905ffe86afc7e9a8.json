@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThis scene:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这种一定是做药的花：这一定是一种做药的花\n- 原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result\n- 神农快生病：很快就生病了\n- 快给他一种红的灵芝：很快地给了，快V: to give order, 了completed\n- 他没有病：delete他，redundant; 病好了\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 他 -- 神农，Two male characters are present in this sentence, so the recipient of the herb should be named rather than using an ambiguous pronoun. [rule: ambiguous_reference]\n2. [Coherence: reference, error] Coherence (Reference): 他没有病 -- 没有病，After “神农” has appeared earlier in the same sentence and no new subject intervenes, use zero form instead of repeating the pronoun. [rule: redundancy_delete]\n3. [Coherence: reference, error] Coherence (Reference): 以前一个人告诉他 -- 以前有一个人告诉过他，A newly mentioned, unspecified person needs the introductory form “有一个人”; “过” marks the earlier experience that Shen Nong now remembers. [rule: character_introduction_first_mention]\n4. [Coherence: temporality, error] Coherence (Temporality): 快生病 -- 很快就生病了，“很快就” shows that the illness began soon after the eating, and “了” marks the completed change into being ill. [rule: aspect_le_completed]\n5. [Coherence: temporality, error] Coherence (Temporality): 给 -- 给了，Giving the herb is a completed action in this event sequence, so the verb needs “了”. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他” clearly refers to 神农 after “帮神农”, so replacing it with the name is unnecessary."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated subject pronoun is redundant, but “没有病” should also be changed to “病好了” in this context."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "A newly introduced unspecified person needs “有一个人”, and the corrected clause is grammatical."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“快生病” needs “很快就” and sentence-final “了” to express the quick completed change of state."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Adding “了” correctly marks the completed giving action, but the remaining “快给了” still needs correction to “很快地给了”."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2240,
+  "completion_tokens": 1529,
+  "total_tokens": 3769,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 589,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1180,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

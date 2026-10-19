@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 这个男孩子叫孟子，孟子是古代的人：在古代，有一个男孩子叫孟子，the first mention rule requires a new character to be introduced with an unambiguous full noun phrase; “这个男孩子” sounds as if the boy has already been mentioned.\n2. [Coherence: reference, error] Coherence (Reference): 她望子成龙，所以孟子的妈妈安排他的生活：她望子成龙，所以安排他的生活，under the zero-form rule, do not repeat the same character’s name within the same sentence when the subject remains clear.\n3. [Coherence: temporality, error] Coherence (Temporality): 常常搬了家：常常搬家，use the zero particle for a habitual action; “常常” describes a routine, so it does not take completed-action “了”.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“这个男孩子” incorrectly suggests that the boy has already been introduced."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating “孟子的妈妈” after “她” makes the reference unnecessarily confusing; zero subject is clear here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“常常” describes a habitual action, so 搬家 should not take perfective 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2011,
+  "completion_tokens": 331,
+  "total_tokens": 2342,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 360,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 137,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

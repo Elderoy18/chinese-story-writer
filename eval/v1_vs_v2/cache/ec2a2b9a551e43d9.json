@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun used as the predicate needs the linking verb and an appropriate measure word here.\n2. [Grammar & Vocabulary, error] 这也找植物：在这儿找植物，The character 也 is miswritten for 儿, and a location before an action is introduced with 在.\n3. [Grammar & Vocabulary, error] 你跟黄色的花做茶：用黄色的花做茶，跟 means “with/together with” and cannot introduce the material used to make something; 用 marks the material or means.\n4. [Grammar & Vocabulary, error] 你的头发疼死：头疼得要命，头发 means “hair,” not “head”; for an extremely painful condition, use a degree complement with 得.\n5. [Coherence: temporality, error] Coherence (Temporality): 找到黄色的花：找到了黄色的花，The finding is a completed event in the past narrative, so it needs the perfective marker 了.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The noun-predicate sentence needs 是 and an appropriate measure word such as 座."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The original needs the location expression 在这儿 and the intended meaning is that plants can also be found there; 在这儿找植物 changes that meaning and omits 也能找到."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "用, not 跟, introduces the material for making tea, and the unexplained 你 should be deleted."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发 means hair, whereas the intended body part is 头; 头疼得要命 is a correct replacement."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The completed finding event needs 了, but the corrected text still leaves 黄色的花 too vague and should be 一种黄色的花."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2092,
+  "completion_tokens": 1093,
+  "total_tokens": 3185,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 441,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 747,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

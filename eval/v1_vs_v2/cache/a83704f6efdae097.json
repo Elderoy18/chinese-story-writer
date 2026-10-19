@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThis scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 想孟子有：想让孟子受到，After 想, use 让 before another subject when expressing what someone wants that person to experience or do.\n2. [Coherence: temporality, error] Coherence (Temporality): 搬家：搬，Use 搬到 for moving to a destination; 搬家 does not directly take a destination introduced by 到.\n3. [Coherence: temporality, error] Coherence (Temporality): 到：到了，Add 了 because the move to the new city is presented as a completed action.\n4. [Coherence: connectors, error] Coherence (Conjunction): 他们搬家到有很多学校的城市：所以，他们搬到了有很多学校的城市，Use 所以 to show the cause-and-effect relation: the mother wants better education, so they move.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "想不能直接接“孟子有……”这样的结构，需用让引出孟子；但“想让孟子受到”本身缺少宾语。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "搬家不能直接带“到＋地点”，改为搬到可以带目的地。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里搬到新城市是已完成的事件，应用“到了”，但单独加了后仍保留“搬家到了”的结构问题。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "前句已经表达母亲想让孟子受更好教育，未加“所以”不构成必须改正的衔接错误。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2118,
+  "completion_tokens": 2081,
+  "total_tokens": 4199,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 467,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1778,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

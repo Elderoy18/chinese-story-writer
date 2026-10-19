@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，Use the fixed time expression “在古代”; “古代的时候” is not the natural form for this meaning.\n2. [Grammar & Vocabulary, error] 城市有才两个学校：城市里才有两个学校，For a small quantity, “才” must come before the verb “有”; add “里” to show that the schools are located in the city.\n3. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，Use the character’s name in the first mention rather than introducing him first with a vague noun phrase and naming him only in the next sentence.\n4. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜，就是跟朋友聊天：他不是祭拜，就是跟朋友聊天，Use a pronoun for a close re-occurrence because “孟子” was named in the immediately preceding sentence.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“古代的时候” is redundant under the teacher's time-expression rule; “在古代” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original wrongly uses “有才”; however, the teacher requires “只有”, not “才有”, for this meaning."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The character should be identified as 孟子 at his first introduction, and the revised noun phrase does so correctly."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 was mentioned in the immediately preceding sentence, so the teacher's close re-reference rule calls for “他”."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1990,
+  "completion_tokens": 997,
+  "total_tokens": 2987,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 339,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 728,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

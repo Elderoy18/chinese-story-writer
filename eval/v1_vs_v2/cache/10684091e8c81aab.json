@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this phrase redundantly combines a time period with another “time of” expression; use the shorter time expression. [vocab list]\n2. [Grammar & Vocabulary, error] 有才：才有，才 is an adverb and must come before the verb 有 in an “only has” statement. [rule: none]\n3. [Grammar & Vocabulary, error] 两个学校：两所学校，schools use the measure word 所 rather than the general measure word 个. [rule: measure_word]\n4. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，at first mention, introduce the character with both the name and a full noun phrase rather than naming him only in the next sentence. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜：他不是祭拜，孟子 was named in the immediately preceding sentence and no competing male character is present, so a pronoun is more natural on close re-occurrence. [rule: redundancy_delete]\n6. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，when the possessor is the same person as the subject, 自己的 makes that relationship explicit. [teacher rule: ziji_possessor]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代已经表示时间段，后面再加的时候造成时间表达重复。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这里应使用“只有”表示数量少；“才有”不符合教师对此处“只有”的要求。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“两个学校”中的“个”是可接受的通用量词，不是错误。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "先说“一个男孩子”再紧接着说明“他叫孟子”已经清楚地介绍了人物，不必合并成一个名词短语。"
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚在前一句出现，按教师的近距离重复规则应改用“他”，但所展示的片段截断了“不是……就是……”结构。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "主语和所属者都是“他”时，用“自己的城市”能明确所属关系，符合教师的自己规则。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2081,
+  "completion_tokens": 2518,
+  "total_tokens": 4599,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 430,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2092,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

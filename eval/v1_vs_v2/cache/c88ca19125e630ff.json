@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 注意：注意到，the result complement 到 is needed here because the mother has become aware of the following fact; 注意 by itself usually means “pay attention” or “be careful.”\n2. [Grammar & Vocabulary, error] 跟朋友们祭拜玩：跟朋友们一起学别人祭拜，祭拜 and 玩 cannot be placed together as consecutive verbs in this way. 学着/学别人 + verb expresses copying an action for fun.\n3. [Grammar & Vocabulary, error] 决定他们会搬家：决定带着孟子搬家，决定 should be followed directly by the action the subject decides to do. 孟母 is deciding her own action, so 她 does not need to repeat 他们, and 会 is not used for a decided plan.\n4. [Coherence: connectors, error] Coherence (Conjunction): 可是：后来，the two ideas do not form a contrast: living near the cemetery leads to the mother noticing its effect. 后来 gives the sequence relation.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "注意到 correctly marks that 孟母 came to notice the effect."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original verb sequence is inappropriate here, and 跟朋友们一起学别人祭拜 is a grammatical way to express imitating worship."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "决定 should take the action directly, and 决定带着孟子搬家 is a correct repair without the unnecessary repeated subject."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "可是 can acceptably introduce the narrative turn that孟母 noticed the harmful effect, so replacing it with 后来 is only a stylistic preference."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2084,
+  "completion_tokens": 1263,
+  "total_tokens": 3347,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 433,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 991,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

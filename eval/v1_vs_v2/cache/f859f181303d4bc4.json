@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不是学金融，而是学政治：不要学金融，而是学政治，After a verb of advice, use a negative directive to tell the listener not to do something; this is not a correction of a previously stated fact. [teacher rule: bushi_ershi]\n2. [Grammar & Vocabulary, error] 成为高薪：有一份高薪工作，High salary describes a job or income, so a person cannot “become” high salary. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 你：人们，This listener is introduced for the first time and has no clear identity in the third-person narrative; use a full noun phrase for a general group. [rule: ambiguous_reference]\n4. [Coherence: reference, error] Coherence (Reference): 他：删除，After the subject has been named in the same sentence, use zero form for the continuing action rather than repeating the pronoun. [rule: character_introduction_first_mention]\n5. [Coherence: temporality, error] Coherence (Temporality): 成为教授：成为了教授，This later event is presented as a completed change of role, so it needs 了. [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 孟子长大，：孟子长大后，Use 后 to show the sequence: first he grows up, and then he can solve problems. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这里是在提出建议，不是在纠正一种已知说法，所以应说“不要学金融，而是学政治”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“高薪”不能作“成为”的宾语；“有一份高薪工作”表达正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "第三人称叙事中泛指被建议的人时，用“人们”比未引入的“你”清楚。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“孟子”已经作主语出现，后面的“他”应省略；但删除后的单独展示没有可判断为完整语法文本的内容。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“后来”引出的成为教授是已完成的身份变化，应为“成为了教授”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“长大后”正确标明先长大、后能解决问题的顺序。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2271,
+  "completion_tokens": 1412,
+  "total_tokens": 3683,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 620,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1007,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

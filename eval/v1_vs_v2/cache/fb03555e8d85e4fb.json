@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很不知道：不知道，The adverb 很 cannot modify the mental-state verb 不知道 in this way. [rule: none]\n2. [Grammar & Vocabulary, error] 也什么植物不能吃：什么植物不能吃，When contrasting two embedded categories, use parallel clauses; 也 cannot directly introduce this noun clause. [teacher rule: ye_vp]\n3. [Grammar & Vocabulary, error] 很麻烦的情况：是一件很麻烦的事，The original is only a noun phrase and cannot finish the sentence after the statement about harm; add a predicate with 是. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 你的身体：他们的身体，The previous sentence names 很多人, so the pronoun should refer back to that group rather than unexpectedly address the reader. [rule: ambiguous_reference]\n5. [Coherence: reference, error] Coherence (Reference): 一个人，神农：有一个人叫神农，他，A character’s first mention should introduce the person clearly with a full noun phrase and name. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很 cannot modify 不知道 in this construction."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "也 cannot directly precede the embedded noun clause 什么植物不能吃."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很麻烦的情况 is only a noun phrase here and needs a predicate such as 是."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你的 unexpectedly addresses the listener instead of referring to the people just mentioned; 他们的 is a valid repair."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 needs a clearer first introduction, but the proposed replacement ends with 他 and is incomplete as shown."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2070,
+  "completion_tokens": 1164,
+  "total_tokens": 3234,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 419,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 872,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

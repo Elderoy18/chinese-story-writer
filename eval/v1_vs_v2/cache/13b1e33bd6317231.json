@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不合适的地方让孩子玩：一个不适合孩子玩儿的地方，适合 needs to introduce who or what is suited; this structure says that the place is suitable or unsuitable for a child to play in. [vocab list]\n2. [Grammar & Vocabulary, error] 他们会搬家找更好的地方：搬家，找更好的地方，after 决定, use the action phrase directly; do not repeat a new subject before the action. [teacher rule: jueding_vp]\n3. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，恐怕 means “I am afraid that” and cannot follow another subject in this way; 担心 expresses that she is worried about her son’s future. [teacher rule: kongpa]\n4. [Grammar & Vocabulary, error] 她会一直搬家才能找到：她得一直搬家，才能找到，得 expresses the necessary condition before 才能; 会 only predicts a future action and does not express this requirement. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 孟子：一个叫孟子的小男孩，at a character’s first mention, briefly introduce the character with a full noun phrase rather than using only the name. [rule: character_introduction_first_mention]\n6. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，决定 is a mental-state verb, so it normally uses the zero particle rather than 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“不合适的地方让孩子玩” lacks the appropriate “适合……玩”的 structure, and the correction is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "After 决定 the subject/modal should be omitted, but the proposed correction still says 搬家找更好的地方 rather than 搬家到更好的地方."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "恐怕 is not appropriate with 她 as the experiencer here, while 她担心儿子的童年不会幸福 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The excerpt cuts off after 找到, and the correction retains 才能 despite the teacher's required rewrite of this future-intention expression."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first introduced here, so the teacher requires an introductory noun phrase such as 一个叫孟子的小男孩."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "决定 is a mental-state verb in this context and should not take perfective 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2270,
+  "completion_tokens": 1423,
+  "total_tokens": 3693,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 619,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1010,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

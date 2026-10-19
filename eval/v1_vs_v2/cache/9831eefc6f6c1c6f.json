@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很不知道：不知道，The mental-state verb “知道” is not naturally modified by “很” in this negative form; use “不知道” to state that the ancient people lacked this knowledge. [rule: none]\n2. [Grammar & Vocabulary, error] 也什么植物不能吃：也不知道什么植物不能吃，“也” must be followed by a verb phrase here, so repeat “不知道” before the second embedded question. [teacher rule: ye_vp]\n3. [Grammar & Vocabulary, error] 很麻烦的情况：是一种很麻烦的情况，This noun phrase needs the copular verb “是” and a measure word to function as the predicate after the previous clause. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 一个人，神农：有一个叫神农的人，This is Shennong’s first mention, so introduce him clearly with a full noun phrase containing both his name and who he is. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很 cannot naturally modify the negative mental-state expression 不知道 here."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "也 cannot directly precede the embedded question 什么植物不能吃 without a verb phrase."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很麻烦的情况 is only a noun phrase and needs 是 to serve as the predicate."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 is first mentioned here and should be introduced with a clear full noun phrase."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2049,
+  "completion_tokens": 1039,
+  "total_tokens": 3088,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 398,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 804,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

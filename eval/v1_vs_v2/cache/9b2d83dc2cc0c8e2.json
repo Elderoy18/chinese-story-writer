@@ -1,0 +1,114 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 难怪：删除，this word introduces a “no wonder” conclusion and normally works with a later explanation introduced by 原来; it does not fit before the direct statement of his complaint here. [teacher rule: nanguai_yuanlai]\n2. [Grammar & Vocabulary, error] 不要离开：不想离开，the sentence describes his personal wish, so 不想 expresses that he does not want to leave; 不要 is more often used for a prohibition or refusal. [rule: word_choice]\n3. [Grammar & Vocabulary, error] 找到孟子一个老师：给孟子找了一个老师，use 给 to mark Mengzi as the person receiving the teacher; this structure means that his mother found a teacher for him. [rule: none]\n4. [Grammar & Vocabulary, error] 跟老师孟子学：孟子跟老师学，put the subject before the phrase beginning with 跟老师. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 他的朋友：自己的朋友，when the friends belong to the same person as the subject, 自己的 makes the possessor clearly refer back to him. [teacher rule: ziji_possessor]\n6. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，自己的 clearly shows that the city is the one he considers his own, rather than another male person’s city. [teacher rule: ziji_possessor]\n7. [Coherence: connectors, error] Coherence (Conjunction): 他抱怨，他想他的朋友：他抱怨，因为他想他的朋友，use 因为 to connect his missing friends as a reason for his complaint. [rule: none]\n8. [Coherence: temporality, error] Coherence (Temporality): 成为哲学家：成为了哲学家，becoming a philosopher is a completed change of state in the story, so use 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "难怪应当引出“难怪他抱怨”这样的结论，直接删去它可以消除这个误用，但余下句子仍有别的问题。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里说的是孟子不愿离开，应该用“不想离开”而不是“不​​要离开”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "孟子是接受老师的人，需要用“给孟子找了一个老师”这样的结构。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "主语“孟子”应放在“跟老师学”之前。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前文刚提到孟子， “他的朋友”指孟子的朋友已经清楚，不必强制改成“自己的朋友”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他的城市”在这个上下文中清楚地指孟子的城市，不能算错误。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "两个短句并列叙述可以理解，未必必须在这里加入“因为”。"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为哲学家是故事中完成的状态变化，应该说“成为了哲学家”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2336,
+  "completion_tokens": 1427,
+  "total_tokens": 3763,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 685,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 915,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

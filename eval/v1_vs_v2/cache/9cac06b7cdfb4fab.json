@@ -1,0 +1,127 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun predicate needs the copula 是 here, and 一座 is the appropriate measure word for a mountain. [rule: none]\n2. [Grammar & Vocabulary, error] 这也找植物：他也在这里找植物，Here the location needs 在这里, and the action needs a clear subject. [rule: none]\n3. [Grammar & Vocabulary, error] 找到：找到了，The discovery is a completed event in this scene, so add 了 after the resultative complement. [rule: aspect_le_completed]\n4. [Grammar & Vocabulary, error] 跟黄色的花做茶：用黄色的花做茶，Use 用 to introduce the material used to make something; 跟 does not express that relationship here. [rule: none]\n5. [Grammar & Vocabulary, error] 头发：头，头发 means “hair”; a headache is expressed with 头疼. [rule: none]\n6. [Grammar & Vocabulary, error] 疼死：疼得要死，Use 得 to introduce an extreme degree complement after 疼. [rule: none]\n7. [Grammar & Vocabulary, error] 这冰茶：这杯茶，A demonstrative before a countable noun needs a measure word: 这 + 杯 + 茶. [teacher rule: zhe_na_mw]\n8. [Coherence: reference, error] Coherence (Reference): 你（in “他听说你跟黄色的花做茶很有用”）：delete it，No second-person listener has been introduced; the reported general information can begin directly with 用黄色的花做茶. [rule: ambiguous_reference]\n9. [Coherence: reference, error] Coherence (Reference): 你的：他，The narration has been following 神农, while 你 has no established referent; repeat the recent character with 他. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "凉山 needs 是 and the mountain measure word 座 in this noun-predicate sentence."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "这 cannot serve as the location and actor in this clause; 他也在这里找植物 is grammatical."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The finding is a completed story event, so 找到了 is required."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "用 introduces the material used to make tea, whereas 跟 is not appropriate here."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发 is hair, while a headache is expressed with 头疼."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "疼得要死 is a correct degree-complement construction for extreme pain."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "A demonstrative before 茶 needs a measure word, and 这杯茶 is grammatical."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The unintroduced second-person pronoun 你 should be deleted."
+   },
+   {
+    "n": 9,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Changing 你的 to 他 does not correctly repair the possessive construction or the intended correction; the sentence should instead be recast as 头很疼."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2283,
+  "completion_tokens": 2002,
+  "total_tokens": 4285,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 632,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1471,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

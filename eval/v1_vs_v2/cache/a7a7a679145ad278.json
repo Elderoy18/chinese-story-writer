@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这是不合适的地方让孩子玩：这不是适合孩子玩的地方，The adjective “适合” needs to describe what the place is suitable for; “孩子玩的” correctly modifies “地方.” [vocab list]\n2. [Grammar & Vocabulary, error] 而且住在这儿教育不太好：而且觉得这儿的教育不太好，“住在这儿” cannot directly modify “教育”; use “这儿的” to show that the education belongs to this location. [rule: none]\n3. [Grammar & Vocabulary, error] 会一直搬家才能找到质量好的教育：要不断搬家，才能找到优质的教育环境，“要……才能……” expresses a necessary condition, and “找到” needs a findable object such as an educational environment rather than “教育” by itself. [rule: verb_object_collocation]\n4. [Coherence: reference, error] Coherence (Reference): 她决定了他们会搬家找更好的地方：她决定搬家，找一个更好的地方，After “决定,” use the action directly rather than repeating the people who will do it. [teacher rule: jueding_vp]\n5. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，“决定” is a mental-state verb, so it normally takes the zero particle rather than “了.” [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 因为她望子成龙，她要不断搬家：因为她望子成龙，所以她要不断搬家，Use “因为……所以……” to make the cause-and-effect relationship explicit. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“不合适的地方让孩子玩” is not a natural structure for saying that a place is unsuitable for children to play."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“住在这儿” cannot directly serve as the modifier of “教育”; “这儿的教育” is needed."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original incorrectly combines “会” with “才能” here and uses an awkward object for “找到”; the revision is grammatical."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "After “决定,” the decision-maker can directly take the action phrase, without “他们会.”"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“决定” is a mental-state verb here and should not take completed-event “了.”"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The actual student sentence already contains the required “因为……所以……” connector pair."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2291,
+  "completion_tokens": 1498,
+  "total_tokens": 3789,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 640,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1109,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

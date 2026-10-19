@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this time expression is the natural form for a historical setting; “古代的时候” is not used here.\n2. [Grammar & Vocabulary, error] 城市有才两个学校：这个城市里才有两所学校，place nouns take “里” here, “才” comes before “有” to emphasize the small number, and schools use the measure word “所”.\n3. [Grammar & Vocabulary, error] 老是祭拜：常常祭拜，老是 usually carries a negative or complaining tone; use 常常 for a neutral repeated action.\n4. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：有一个叫孟子的男孩子跟他的妈妈住在中国，follow the first-mention rule by introducing the character with his name and identity together.\n5. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜，就是跟朋友聊天：他不是祭拜，就是跟朋友聊天，follow the pronoun rule: after the immediately preceding sentence has clearly identified him, use a pronoun rather than repeating his name.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“古代的时候” redundantly combines two time expressions; “在古代” is the required form."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original has incorrect quantity wording and lacks the school measure word, but the proposed “才有” violates the teacher's required “只有” rule."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是祭拜” is acceptable here; replacing it with “常常” only changes the nuance slightly."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The next sentence immediately identifies the boy as 孟子, so the original introduction is clear and does not require combining the two sentences."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Since 孟子 was just mentioned in the preceding sentence, the teacher's reference rule requires the close pronoun “他” rather than repeating the name."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2021,
+  "completion_tokens": 1128,
+  "total_tokens": 3149,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 370,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 787,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

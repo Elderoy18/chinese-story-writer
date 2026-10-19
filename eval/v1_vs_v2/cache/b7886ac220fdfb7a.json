@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很不知道：不知道，A negative mental-state verb such as 不知道 cannot be modified by 很 in this way; use 不知道 to state a lack of knowledge. [rule: none]\n2. [Grammar & Vocabulary, error] 也什么植物不能吃：什么植物不能吃，Also cannot directly be followed by a noun phrase here; the two parallel question phrases can be placed side by side without it. [teacher rule: ye_vp]\n3. [Grammar & Vocabulary, error] 吃不安全的植物对你的身体有坏处，很麻烦的情况：吃不安全的植物对你的身体有坏处，这是一种很麻烦的情况，The final noun phrase needs a subject and predicate; adding this structure makes it a complete sentence. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 一个，神农：有一个叫神农的人，On a character’s first mention, introduce the person clearly with a full noun phrase rather than placing the name after an unclear noun phrase. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很 cannot modify 不知道 here, and 不知道 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "也 cannot directly introduce the noun phrase 什么植物 in this construction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "这是一种很麻烦的情况 repairs the sentence fragment, but 你的 remains redundant and inappropriate in the corrected text."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 is first mentioned here and should be introduced with a clear noun phrase, but the displayed source fragment omits 人 and is incomplete."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2061,
+  "completion_tokens": 1024,
+  "total_tokens": 3085,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 410,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 771,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

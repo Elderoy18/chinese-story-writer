@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene:\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's item in each run:\nRun 1: 他发现这个口味，一百岁时候：他一百岁的时候发现这种味道，The age phrase should come before the action it modifies, and a multi-syllable time phrase before 时候 needs 的. Also, 口味 usually means someone’s preference in food, while 味道 is the taste that someone senses. [teacher rule: de_shihou]\nRun 2: 一百岁时候：一百岁的时候，Multi-syllable time expressions before “时候” require the particle “的.” [teacher rule: de_shihou]\nRun 3: 一百岁时候：一百岁的时候，A multi-syllable time expression before 时候 needs 的. [teacher rule: de_shihou]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 2 and 3 only correct the missing 的, while Run 1 also rewrites the clause and changes 口味 to 味道."
+ },
+ "usage": {
+  "prompt_tokens": 541,
+  "completion_tokens": 188,
+  "total_tokens": 729,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 128,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

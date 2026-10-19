@@ -1,0 +1,118 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun sentence describing what a place is needs the linking verb and an appropriate measure word. [rule: none]\n2. [Grammar & Vocabulary, error] 这也找植物：神农在这座山上找植物，A mountain cannot be the person doing the action; use the character as the subject and mark the mountain as the location with 在. [rule: none]\n3. [Grammar & Vocabulary, error] 跟黄色的花做茶：用黄色的花做的茶，Use 用 to introduce the material used to make something; 跟 does not mark the material here. The added 的 connects the action of making the tea to the tea that is useful. [rule: none]\n4. [Grammar & Vocabulary, error] 头发疼死：头疼得要命，Hair itself does not feel pain. Use 头疼 for a headache, and use 得 to introduce the degree complement. [rule: none]\n5. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，This/that before a countable noun needs a measure word. [teacher rule: zhe_na_mw]\n6. [Coherence: reference, error] Coherence (Reference): 你（in “他听说你跟黄色的花做茶很有用”）：人们，The addressee has not been introduced, so the pronoun has no clear referent. A general group fits the reported information. [rule: ambiguous_reference]\n7. [Coherence: reference, error] Coherence (Reference): 你（in “比方说，你的头发疼死”）：他，The narration has been following 神农, while this new addressee has not been introduced. Use the close re-occurring character pronoun. [rule: ambiguous_reference]\n8. [Coherence: temporality, error] Coherence (Temporality): 找到黄色的花：找到了黄色的花，This is a completed event on that day, so the verb needs 了 to mark completion. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original lacks the copula and an appropriate measure word for identifying 凉山 as a mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这 cannot appropriately be the agent of 找植物; the character needs to be the subject and the mountain a location."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "跟 does not introduce the material used to make tea, whereas 用黄色的花做的茶 is a correct noun phrase."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "头发 does not hurt in this meaning; 头疼得要命 correctly expresses a very severe headache."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这 before a countable noun requires a measure word, and 杯 is appropriate for tea."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The addressee 你 has not been introduced, while 人们 can correctly refer to people in general."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "A new addressee is not established here, and 他 can refer back to the recently mentioned 神农."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Finding the flower is a completed event on that day, so 找到了 correctly marks completion."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2319,
+  "completion_tokens": 2430,
+  "total_tokens": 4749,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 668,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1923,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

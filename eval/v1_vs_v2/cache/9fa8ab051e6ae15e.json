@@ -1,0 +1,107 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun used to identify or describe another noun needs the linking verb and an appropriate measure word here.\n2. [Grammar & Vocabulary, error] 这也找植物：他也在这儿找植物，After the sentence shifts to the mountain, the actor must be stated, and a location needs a location expression.\n3. [Grammar & Vocabulary, error] 你跟黄色的花做茶很有用：用黄色的花做的茶很有用，Use 用 to introduce the material used to make something; 跟 means “with/and” and cannot introduce the material in this structure.\n4. [Grammar & Vocabulary, error] 头发疼死：头疼得要死，The intended body part is the head, not hair; a degree complement uses 得 before the result or degree phrase.\n5. [Grammar & Vocabulary, error] 这冰茶：这杯茶，A demonstrative before a countable noun needs a measure word; 杯 is the suitable measure word for tea.\n6. [Coherence: reference, error] Coherence (Reference): 你的：他的，The pronoun rule requires a pronoun to refer to an established character; there is no addressee introduced as “you,” while the sentence is about the male character.\n7. [Coherence: connectors, error] Coherence (Conjunction): 他一喝茶就很不舒服：可是，他一喝茶就很不舒服，Use a contrast connector because feeling unwell is unexpected after hearing that the tea is useful.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original lacks 是 and the required measure word for describing 凉山 as a mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 cannot serve naturally as the location here; the sentence needs a locative expression such as 在这儿."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "跟 is not the appropriate word for the material used to make tea, and 你 has no established referent."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "头发 is the wrong body part, and 头疼得要死 is a correct way to express an extremely bad headache."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "Under the teacher's 这/那 rule, a measure word is required before a countable noun, and 杯 is suitable for tea."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The original 你 refers to an unintroduced addressee, whereas 他 can refer back to the established male character."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "A contrast connector could be added, but it is not required here, so its absence is not an error."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2204,
+  "completion_tokens": 2512,
+  "total_tokens": 4716,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 553,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

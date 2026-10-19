@@ -1,0 +1,126 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 所以他们找到了很多植物对药：来做药\n- 神农先看到很多病人，他们吃很多植物对药：better to briefly introduce “神农” when this character first appears；吃了很多植物，了completed\n- 但是我觉得他们的吃的植物，让他们病人：他们吃的植物让他们生病，让Sb. + V./Adj.\n- 神农觉得这个植物可能特别是毒：可能毒性特别强，”特别是+N, + Clause” is used to single out a typical example\n- 所以他想找一个植物对药，他们可以吃对药：找一个可以做药的植物；这样，他们可以……\n- 他想把花放在茶里，对药：做成药\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很多植物对药：很多可以做药的植物，The phrase “对药” cannot describe what the plants are used for; “可以做药” clearly means that the plants can be used as medicine. [rule: none]\n2. [Grammar & Vocabulary, error] 他们的吃的植物：他们吃的植物，A relative clause before a noun uses the verb phrase directly; the extra possessive marker after “他们” does not fit this structure. [rule: none]\n3. [Grammar & Vocabulary, error] 特别是毒：特别有毒，“有毒” is the adjectival expression for “toxic”; bare “毒” cannot be used this way after “是” or modified by “特别.” [teacher rule: du_youdu]\n4. [Grammar & Vocabulary, error] 想找一个植物对药，他们可以吃对药：想找一种可以做药、人们可以吃的植物，“对药” cannot follow either “找” or “吃.” The two correct properties of the plant are that it can be medicine and that people can eat it. [rule: none]\n5. [Grammar & Vocabulary, error] 把花放在茶里，对药：把花放在茶里做药，“做药” means to use something as medicine; “对药” does not form a verb phrase here. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 神农先看到很多病人：一个叫神农的人先看到很多病人，This is the character’s first mention, so introduce him with a full noun phrase rather than using only his name. [rule: character_introduction_first_mention]\n7. [Coherence: temporality, error] Coherence (Temporality): 神农先看到很多病人：神农先看到了很多病人，This is a completed event in the narrative, so “看到” takes 了. [rule: aspect_le_completed]\n8. [Coherence: temporality, error] Coherence (Temporality): 他们吃很多植物：他们吃了很多植物，The eating happened before the plants made the patients ill, so it needs 了 to mark the completed action. [rule: aspect_le_completed]\n9. [Coherence: temporality, error] Coherence (Temporality): 让他们病人：让他们生病了，After “让,” use a verb phrase to show the result; “生病了” marks the resulting change of state. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“对药” cannot express that plants are used to make medicine, whereas “可以做药” can."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The possessive marker in “他们的吃的植物” is wrongly inserted; “他们吃的植物” is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“特别是毒” misuses “特别是”; “特别有毒” is a correct description of toxicity."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: connectors"
+    ],
+    "reason": "The correction is grammatical but changes the intended meaning: the people should be able to 吃药, and “这样” should link this result to finding a plant for medicine."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“对药” is not a usable verb phrase here, while “做药” is grammatical in this context."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Since 神农 is first introduced here, “一个叫神农的人” correctly introduces him, but the displayed correction still lacks the needed 了 in “看到了.”"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Seeing the patients is a completed narrative event, so “看到了” is correct."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The eating is completed before the plants cause illness, so “吃了” is needed."
+   },
+   {
+    "n": 9,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "After “让他们” a predicate is required; “生病了” is a correct resulting predicate."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2478,
+  "completion_tokens": 2112,
+  "total_tokens": 4590,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 827,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1531,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

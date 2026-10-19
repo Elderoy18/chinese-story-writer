@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 找了到：找到了，when “find” is the meaning, use the result complement 到 after 找; the completion marker 了 comes after the result complement.\n2. [Grammar & Vocabulary, error] 孟子学习馆学了十五年：孟子在学习馆学了十五年，use 在 before a place noun to show where the action happened.\n3. [Grammar & Vocabulary, error] 对他很多好处：对他有很多好处，use 对……有好处; 有 is the verb that expresses that something brings benefits.\n4. [Coherence: reference, error] Coherence (Reference): 他的学习和他的旅行经验：他的学习和旅行经验，apply the zero-form rule within one noun phrase: once the possessor has been stated, do not repeat the pronoun before the second item.\n5. [Coherence: reference, error] Coherence (Reference): 他是大人的时候，他成为很有名的哲人：他是大人的时候，成为很有名的哲人，apply the zero-form rule when the subject of the following clause is the same person.\n6. [Coherence: temporality, error] Coherence (Temporality): 成为很有名的哲人：成为了很有名的哲人，use 了 after 成为 to mark the completed change of becoming a philosopher.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "找到了 has the result complement 到 before the perfective marker 了."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "在 is needed before the location, but 学习馆 is still not the intended correct place word 学校."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The construction is 对某人有很多好处."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated possessor 他 is unnecessary within this coordinated noun phrase."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The second 他 should be omitted, but 他是大人的时候 remains an unsuitable expression for the intended meaning 长大以后."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为了 correctly marks the completed change in the past narrative."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2270,
+  "completion_tokens": 1015,
+  "total_tokens": 3285,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 619,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 669,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

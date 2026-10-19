@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThis scene:\n孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 所以孟子的妈妈认为这样的地方对儿子的教育不太好：replace孟子的妈妈with她\n- 不是搬到城市，而是搬到了孟子老师的家：家里\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 取得良好的教育：接受良好的教育，接受教育 is the standard verb–object collocation; 取得 is used for achievements or results, not for receiving education. [rule: none]\n2. [Grammar & Vocabulary, error] 带孟子不是搬到城市：带孟子搬家，不是搬到城市，Add 搬家 so that both parts of the paired contrast describe where the move was made. [teacher rule: bushi_ershi]\n3. [Grammar & Vocabulary, error] 孟子老师的家：孟子的老师的家，The first 的 is needed to show that the teacher belongs to 孟子; without it, the phrase normally means a teacher named 孟子. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈认为：她认为，After 孟子的妈妈 has just been named and no other female character competes as the referent, use a pronoun for close re-occurrence. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈带孟子搬家：她带孟子搬家，The mother is still the clear subject from the previous sentence, so a pronoun makes the connection smoother. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "取得良好的教育搭配不自然，应说接受良好的教育。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "带孟子后需要有搬家，才能与后面的不是……而是……结构对应。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "老师的修改只要求把家改为家里，并未要求在孟子和老师之间补的；系统把可按“孟子老师”理解的说法误判为错误。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子的妈妈刚刚提到，重复出现时应使用她。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "母亲仍是紧接着的明确主语，使用她能保持近距离指代一致。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2160,
+  "completion_tokens": 1198,
+  "total_tokens": 3358,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 509,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 877,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候，孟子和孟母住了在靠墓地的家：在古代，better to briefly introduce “孟子” when this character first appears；住在靠近墓地的地方/墓地附近，delete了，在+Place\n- 孩子才五岁就每天在墓地祭拜了：孟子，孩子is vague and unclear\n- 难怪她跟孩子搬家，原来买不了房：wrong information, 搬家因为孟母觉得it is not good to imitate how to offer sacrifices\n- 他们搬了到别一个城市找工作：搬到了，另外一个城市，“别（的）” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，The original redundantly combines two time expressions: the historical-period noun already expresses the time meaning. [teacher rule: gudai_de_shihou_why]\n2. [Grammar & Vocabulary, error] 跟孩子搬家：带着孩子搬家，This action means that the mother takes her child along when moving; the original phrase suggests that they move together as equal participants. [vocab list]\n3. [Grammar & Vocabulary, error] 别一个城市：另一个城市，Use this phrase to mean one different city; the original combination is not the standard way to express “another one.” [teacher rule: bieren]\n4. [Coherence: temporality, error] Coherence (Temporality): 住了在：住在，This is a continuing living situation, so it takes the zero particle rather than completed-action 了; the locative marker must directly follow the verb. [rule: aspect_le_completed]\n5. [Coherence: temporality, error] Coherence (Temporality): 每天在墓地祭拜了：每天在墓地祭拜，A daily routine takes the zero particle because it is habitual rather than a completed single action. [rule: aspect_le_completed]\n6. [Coherence: temporality, error] Coherence (Temporality): 搬了到：搬到了，The resultative complement comes before 了: the move is completed only after reaching the new place. [teacher rule: le_placement]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "跟孩子搬家 is an acceptable way to say that the mother and child moved together; 带着孩子 is only a stylistic alternative."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "别一个城市 is not the appropriate expression for another city; 另一个城市 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "住了在 has both an incorrectly placed 了 and an unfinished locative structure; 住在 fixes the marked placement but cannot stand alone without a place complement."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "每天 marks a habitual action, so 祭拜 should not take completed-action 了."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The directional complement must precede 了, so 搬到了 is the correct form."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2266,
+  "completion_tokens": 1926,
+  "total_tokens": 4192,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 615,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1529,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

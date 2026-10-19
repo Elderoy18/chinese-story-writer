@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会影响孟子的心情，A location after 住 needs 在 and a complete place phrase. Also, 害得 must be followed by a person and a harmful result clause; it cannot take the noun phrase 孟子的心气 as its result.\n2. [Grammar & Vocabulary, error] 老是读书：一直读书，老是 usually carries a negative, complaining tone. For a neutral routine of studying, 一直 is the fitting word.\n3. [Coherence: reference, error] Coherence (Reference): 孟子和孟母：他们，Use a pronoun for close re-occurrence: both characters were mentioned in the immediately preceding sentence, and no competing pair has appeared.\n4. [Coherence: reference, error] Coherence (Reference): 孟母帮子思：她帮他，Use pronouns for close re-occurrence when the people have just been named and the referents are clear.\n5. [Coherence: reference, error] Coherence (Reference): 子思帮孟母教她的儿子：他帮她教儿子，Use pronouns for recently mentioned characters, then use zero form for the repeated possessor within the same clause.\n6. [Coherence: temporality, error] Coherence (Temporality): 跟子思老师住：跟子思老师住了，This is a completed move-and-settle sequence. In a series of actions, only the last verb takes 了.\n7. [Coherence: connectors, error] Coherence (Conjunction): 因为孟子现在没有朋友，他：因为孟子现在没有朋友，所以他，Use 因为……所以…… to mark the cause-and-effect relationship between having no friends and studying.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "住 needs 在 before the location, and 害得 cannot take 孟子的心气 as its result."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是读书 is acceptable here, and the teacher retained it in her correction; 一直读书 is only an alternative wording."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Using 孟子和孟母 here is acceptable, especially since the immediately preceding sentence mentions only 妈妈 rather than both people."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The two people have just been introduced and 她帮他 is a clear close re-reference under the teacher's rule."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Recently mentioned characters should be referred to with pronouns, and 儿子 can omit the repeated possessor in this clause."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The final action in this completed move-and-settle sequence should take 了, so 跟子思老师住了 is correct."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The original has an inappropriate causal relation, but adding 所以 preserves the wrong meaning; the teacher's correction reverses the cause and result."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2283,
+  "completion_tokens": 1493,
+  "total_tokens": 3776,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 632,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

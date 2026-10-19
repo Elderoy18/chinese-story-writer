@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n可是夹竹桃的毒很重，让他肚子很痛。他在地上躺着，觉得他快会死了。可是正好有别人找到他了，给了他一个像伞的植物，叫灵芝。他吃灵芝以后就觉得很好，不再生病了。他测量起来了，像星星的植物是毒，像伞的植物是药。\n\nThe teacher's corrections on this scene:\n- 可是夹竹桃的毒很重：很强\n- 觉得他快会死了：快要死了\n- 可是正好有别人找到他了：有人，“别(的)” is for “a different type”, and “all else except the spoken one”\n- 他吃灵芝以后就觉得很好：吃了，了completed\n- 他测量起来了：写下来了\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 他：自己，After the same character is the subject of “觉得,” “他” can sound like another male person; “自己” clearly refers back to the subject. [rule: ambiguous_reference]\nRun 2: Coherence (Reference): 他：自己，When the person who feels something and the person who may die are the same, use 自己 to make the self-reference clear. [rule: ambiguous_reference]\nRun 3: Coherence (Reference): 他：自己，when the person who feels something and the person who may die are the same person, 自己 makes that reference clear. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs flag the same pronoun-reference issue, but 自己 is unnecessary here and does not match the teacher’s accepted correction 快要死了."
+ },
+ "usage": {
+  "prompt_tokens": 556,
+  "completion_tokens": 53,
+  "total_tokens": 609,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

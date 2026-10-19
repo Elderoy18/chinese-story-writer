@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 神农和他的家人住在古代：better to briefly introduce “神农” when this character first appears\n- 因为他的家人常常生病了：常常生病，no了for routine/habit\n- 他们去很多不一样的地方：去了，了completed\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “神农和他的家人住在古代” / Formula: 在 + time + subject + verb / Correct: “在古代，神农和家人住在一起。” “古代” is a time expression, so use 在古代 rather than 住在古代.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “所以不知道什么植物能吃” / Formula: 在古代，人们 + 不知道 + 什么 + noun + 能 + verb / Correct: “在古代，人们不知道什么植物能吃。” The subject is unclear here. “人们” clearly refers to people in ancient times.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “他的家人常常生病了” / Formula: subject + 常常 + verb / Correct: “他的家人常常生病。” “常常” describes a repeated habit or situation, so do not use 了.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “他们去很多不一样的地方” / Formula: subject + 去了 + 很多 + different places / Correct: “他们去了很多不同的地方。” Use 了 because this is a completed event in the story. “不同的地方” is also more natural than “不一样的地方” here.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“住在古代” can correctly mean living in ancient times, so it does not need to be changed to “住在一起”."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The subject can be omitted here and understood as 神农和他的家人, so it is not unclear or erroneous."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 describes a habitual situation, so 生病 should not take completed-event 了."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "This completed story event needs 去了; “不同的地方” is also a correct wording."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2096,
+  "completion_tokens": 517,
+  "total_tokens": 2613,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 445,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 254,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

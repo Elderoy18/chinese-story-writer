@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远：到很远的地方旅行，To express travelling to a distant place, use a location phrase with 到; 很远 cannot directly modify 旅行 in this way. [rule: none]\n2. [Grammar & Vocabulary, error] 特别是花：特别是花的味道，特别是 should introduce an item in the same category as the earlier phrase; here the sentence is about 味道, so 花 needs 味道 after it. [rule: none]\n3. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，The appropriate measure word for an individual flower is 朵, not the general measure word 个. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 神农：他，After the same character has remained the clear subject across nearby sentences, use a pronoun rather than repeating the name. [rule: redundancy_delete]\n5. [Coherence: reference, error] Coherence (Reference): 神农：他，The character is still the clear, nearby referent, so a pronoun creates a smoother connection between the sentences. [rule: redundancy_delete]\n6. [Coherence: temporality, error] Coherence (Temporality): 找到很多植物：找到了很多植物，Finding the plants is a completed event; in this series of actions, only the final verb takes 了. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 写：写下了，This is a completed next action after 然后. Use the resultative complement 下 before 了: 写下了. [teacher rule: le_placement]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "旅行很远 is not the appropriate way to express travelling to a faraway place here."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "特别是花 is acceptable ellipsis for 特别是花的味道 and is not an error."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Flowers take the measure word 朵 rather than the general measure word 个."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The referent is already clear from the immediately preceding clauses, so 他 is required by the stated reference rule."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The same nearby and unambiguous character should be referred to with 他 rather than repeating 神农."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Finding the plants is the final completed action in the sequence, so 找到了 is appropriate."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "写下了 correctly supplies the resultative and completion marking, but 他的主意 remains incorrect because the teacher requires 他的发现."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2201,
+  "completion_tokens": 1816,
+  "total_tokens": 4017,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 550,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1382,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

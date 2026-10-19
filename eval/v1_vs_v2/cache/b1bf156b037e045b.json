@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远：到很远的地方旅行，The verb phrase needs a destination expression; use a place after 到 rather than placing a distance directly after 旅行. [rule: word_choice]\n2. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，朵 is the matching measure word for a flower. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 神农写他的主意：他写他的主意，Use a pronoun for a close re-occurrence when the previous sentence already clearly refers to the same character and no other character competes as the referent. [rule: ambiguous_reference]\n4. [Coherence: reference, error] Coherence (Reference): 神农遇到了一个黄色的花：他遇到了一朵黄色的花，Use a pronoun for this close re-occurrence because the preceding sentences still clearly refer to the same character. [rule: ambiguous_reference]\n5. [Coherence: temporality, error] Coherence (Temporality): 找到很多植物：找到了很多植物，Finding the plants is a completed action in this past narrative, so it needs 了. [rule: aspect_le_completed]\n6. [Coherence: temporality, error] Coherence (Temporality): 然后，神农写他的主意：然后，他写下了自己的主意，This is the next completed event in the sequence, so use the completed form 写下了; 下 shows that the idea was successfully recorded. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“旅行很远” is acceptable Chinese for travelling a long distance, so this is not an error."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "A flower requires the measure word 朵, so 一朵黄色的花 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "The pronoun improves close reference, but 写他的主意 does not correctly express writing down his discoveries."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "The close repeated name should be 他, and 花 needs the measure word 朵."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "找到 is the final action in this action sequence and needs 了 for completion."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "写下了 correctly fixes the completed-event form, but 主意 remains inappropriate here because Shen Nong writes down his discoveries."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2173,
+  "completion_tokens": 1398,
+  "total_tokens": 3571,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 522,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

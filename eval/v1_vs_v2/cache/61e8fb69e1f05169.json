@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一看很多人正在吃一些植物：看到，一……就\n- 神农想帮别人：帮他们，“别(的)” is for “a different type”, and “all else except the spoken one”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this expression repeats the time meaning because both parts refer to a time period. [vocab list]\n2. [Grammar & Vocabulary, error] 一看：一看到，when the meaning is “see,” use the resultative verb rather than the verb meaning “look.” [vocab list]\n3. [Grammar & Vocabulary, error] 别人：人们，this refers to the group of people already mentioned, not to “other people” contrasted with a speaker. [teacher rule: bieren]\n4. [Coherence: reference, error] Coherence (Reference): 一天，神农正在路上走：一天，他正在路上走，after a recent mention of the same character with no competing character, use a pronoun. [rule: ambiguous_reference]\n5. [Coherence: reference, error] Coherence (Reference): 所以想知道：所以他想知道，after the previous sentence ends, use a pronoun to make the continuing subject clear. [rule: ambiguous_reference]\n6. [Coherence: connectors, error] Coherence (Conjunction): 很多人正在吃一些植物。一些人一吃植物就生病了：很多人正在吃一些植物，就发现一些人一吃植物就生病了，add “就” to complete the “一…就…” pattern: seeing the people leads directly to discovering that some become ill. [teacher rule: yi_jiu]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "By the teacher's rule, 古代的时候 redundantly expresses the time period twice, and 在古代 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里是“看到”而不是“看”，一看到 correctly fixes that verb choice."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "别人 is wrong for the previously mentioned group, but 人们 does not make the intended reference as clearly as 帮他们."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the teacher's reference rule, the recently introduced 神农 should be referred to as 他 here."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The continuing subject after the previous sentence should be made explicit with 他."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The original needs an 一……就 connection, but the proposed rewrite makes 很多人 the apparent subject of 发现 and is not correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2098,
+  "completion_tokens": 1765,
+  "total_tokens": 3863,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 447,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1381,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

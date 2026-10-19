@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 喜欢玩在墓地里：喜欢在墓地里玩，Location phrases normally come before the main verb they modify. [rule: none]\n2. [Grammar & Vocabulary, error] 装祭拜：假装祭拜，装 does not mean “pretend to do an action” in this structure; 假装 + VP expresses pretending to perform that action. [rule: none]\n3. [Grammar & Vocabulary, error] 跟妈妈搬家：跟妈妈搬了家，This is one completed move at a specific age, so the action verb needs 了. [rule: aspect_le_completed]\n4. [Coherence: reference, error] Coherence (Reference): 孟子小的时候：有一个小男孩叫孟子。他小的时候，A character’s first mention should introduce both the character and who he is; afterwards, the close re-occurrence can use a pronoun. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 孟子和他的朋友喜欢：他们喜欢，The previous sentence has just mentioned孟子and his friends, so a pronoun naturally refers back to this group. [rule: reference_form]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "地点短语应放在动词“玩”前面。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“装祭拜”搭配不对，“假装祭拜”可以正确表达假扮进行祭拜。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "五岁时的一次搬家是完成事件，应说“搬了家”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "首次出现角色需要先介绍孟子是谁，但箭头后的“他小的时候”本身仍是未完成的时间短语。"
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他的朋友”在这里是首次引入，不能直接改成没有先行所指的“他们”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2072,
+  "completion_tokens": 826,
+  "total_tokens": 2898,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 421,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

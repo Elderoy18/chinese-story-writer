@@ -1,0 +1,60 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThis scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 想孟子有很好的教育：想让孟子有很好的教育，When a person wants another person to do or have something, use 想让 + person + verb phrase. [rule: none]\n2. [Grammar & Vocabulary, error] 搬家到：搬到，Use 搬到 + destination for moving to a place; 搬家 cannot directly take 到 + place in this structure. [rule: preposition_dao_place]\n3. [Coherence: connectors, error] Coherence (Conjunction): 他们从早到晚走路，孟子一直抱怨：他们从早到晚走路，所以孟子一直抱怨，Add 所以 to show the cause-and-effect relation: the long walk causes Mengzi’s complaining. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“想”不能直接接“孟子有很好的教育”，而“让孟子有很好的教育”仍不如“让孟子接受良好的教育”正确自然。"
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“搬家到有很多学校的城市”可以说；而项目截出的“搬家到／搬到”都在处所宾语前中断了。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "加“所以”正确补出了因果连接，但按教师的修改，前面的“他们”也应删除。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2110,
+  "completion_tokens": 1163,
+  "total_tokens": 3273,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 459,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 927,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

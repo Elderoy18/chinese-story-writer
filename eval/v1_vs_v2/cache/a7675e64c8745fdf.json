@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近：住得离墓地太近，Use 得 after 住 to introduce the degree or distance description. [rule: none]\n2. [Grammar & Vocabulary, error] 害得孟子的心气：害得孟子心情不好，害得 must be followed by the affected person and a harmful result clause; a possessive noun phrase alone does not state the result. [teacher rule: haide_structure]\n3. [Grammar & Vocabulary, error] 老是读书：一直读书，老是 has a negative, complaining tone, while this sentence neutrally describes Mengzi’s regular reading. [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟母搬到子思老师的家：他们搬到子思老师的家，Mengzi and his mother were both mentioned in the immediately preceding sentence, and no other pair competes as the referent, so a pronoun is more natural for close re-occurrence. [rule: character_introduction_first_mention]\n5. [Coherence: temporality, error] Coherence (Temporality): 搬到子思老师的家：搬到了子思老师的家，The move is a completed story event, so 搬到 takes 了 after the resultative complement. [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 因为孟子现在没有朋友，他老是读书：因为孟子现在没有朋友，所以他老是读书，Add 所以 to complete the cause-and-effect connector pair. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“住” needs a complement structure such as “住得离墓地太近” or “住在离墓地太近的地方.”"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“害得” must be followed by the affected person plus a harmful result clause, and “孟子心情不好” supplies that result."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是读书” is acceptable here, and the teacher did not object to “老是.”"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Both people have just been referred to, so “他们” is required by the teacher’s close re-reference rule, but the corrected clause still lacks completion marking for the move."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "This move is a completed narrative event, so “搬到了” correctly places 了 after the resultative complement."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The teacher’s correction shows that the intended relation is that he has no friends because he always studies, not that he always studies because he has no friends."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2248,
+  "completion_tokens": 1659,
+  "total_tokens": 3907,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 597,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1239,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

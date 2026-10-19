@@ -1,0 +1,116 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候，孟子和孟母住了在靠墓地的家：在古代，better to briefly introduce “孟子” when this character first appears；住在靠近墓地的地方/墓地附近，delete了，在+Place\n- 孩子才五岁就每天在墓地祭拜了：孟子，孩子is vague and unclear\n- 难怪她跟孩子搬家，原来买不了房：wrong information, 搬家因为孟母觉得it is not good to imitate how to offer sacrifices\n- 他们搬了到别一个城市找工作：搬到了，另外一个城市，“别（的）” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this expression redundantly combines a historical time period with a “time of” phrase. [vocab list]\n2. [Grammar & Vocabulary, error] 住了在靠墓地的家：住在靠近墓地的家里，use 在 before a location phrase with 住; this sentence describes a living situation, so 了 is not needed. [rule: location_zai_place]\n3. [Grammar & Vocabulary, error] 跟孩子搬家：带着孩子搬家，跟 means “together with,” while the mother is the person taking the child to a new home. [vocab list]\n4. [Grammar & Vocabulary, error] 别一个城市：另一个城市，另一个 is the standard expression for one other city; 别一个 is not a natural noun phrase here. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 害得孟母没有钱：害得她没有钱，孟母 was named earlier in the same sentence, so a pronoun is more natural for this close re-occurrence. [rule: none]\n6. [Coherence: temporality, error] Coherence (Temporality): 每天在墓地祭拜了：每天在墓地祭拜，remove 了 because 每天 marks a routine action, which uses the zero particle. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 从早到晚都找工作：从早到晚都在找工作，add 在 to show the ongoing dynamic action across the whole day. [rule: aspect_le_completed]\n8. [Coherence: temporality, error] Coherence (Temporality): 搬了到：搬到了，place 了 after the resultative element 到, not between the verb and it. [teacher rule: le_placement]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "古代已经表示时间，古代的时候重复，应该说“在古代”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "住表示居住状态时应说“住在……”，且地点应表达为“靠近墓地的家里”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“跟孩子搬家”可以正确表示母亲和孩子一起搬家，不必改成“带着孩子搬家”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里表示另一个城市，应使用“另一个”而不是“别一个”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟母在同一句前面刚出现，按该标准后面应改用“她”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“每天”表示日常重复的行为，祭拜后不应加完成体“了”。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“从早到晚都找工作”可以表达日常或持续的找工作行为，不加“在”并非错误。"
+   },
+   {
+    "n": 8,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "“搬了到”把“了”放在趋向结果成分“到”前面，应该是“搬到了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2356,
+  "completion_tokens": 1146,
+  "total_tokens": 3502,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 705,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 634,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

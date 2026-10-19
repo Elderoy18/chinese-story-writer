@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThis scene:\n他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他们住才一月就又搬家：才住了一个月，了completed\n- 古代的时候：那时候\n- 但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是\n- 因为她恐怕儿子会成为跟他们很像：怕/担心，恐怕usually does not take Subj. except 我；跟他们一样/很像的人，成为+ noun\n- 她告诉了孟子：告诉，no了for speaking word\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住才一月：才住一个月，In a pattern with a short duration followed by an early next action, place 才 before the verb; 一个月 is the usual duration phrase here. [rule: cai_jiu_construction]\n2. [Grammar & Vocabulary, error] 古代的时候：在古代，This expression redundantly combines two time expressions; use one time expression instead. [vocab list]\n3. [Grammar & Vocabulary, error] 老是跟这些卖东西的人常常玩儿：老是跟这些卖东西的人玩儿，老是 and 常常 are both frequency adverbs, so using both for the same action is redundant and unnatural. [rule: none]\n4. [Grammar & Vocabulary, error] 她恐怕儿子会：她担心儿子会，恐怕 means “I am afraid that” and cannot follow a different subject in this structure; 担心 expresses that she is worried about her son. [teacher rule: kongpa]\n5. [Grammar & Vocabulary, error] 成为跟他们很像：变得跟他们很像，成为 introduces a new identity or role, while 变得 is used for a change into an adjective-like state such as being similar to someone. [rule: none]\n6. [Coherence: temporality, error] Coherence (Temporality): 他们住才一月就又搬家。：他们才住了一个月，就又搬家了。Both the stay and the move are completed events in the narrative, so use 了 to mark completion. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 告诉了孟子：告诉孟子：A speaking verb that introduces quoted speech takes the zero particle, not 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "才的位置应提前，但叙述中已完成的“住”还需要“了”，应为“才住了一个月”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“古代的时候”按老师的标准重复了时间表达，“在古代”是正确的改法。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是”和“常常”都表示频率，同时使用重复。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“恐怕”不适合以“她”为主语表达她的担忧，改为“担心”正确，但所示文字在“会”后截断。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“成为”应接身份或名词性成分，表示变得相像应使用“变得”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "两个动作都是叙事中完成的事件，加入“了”后表达正确。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "引出引语的“告诉”按老师的规则不用完成体“了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2351,
+  "completion_tokens": 1435,
+  "total_tokens": 3786,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 700,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 982,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

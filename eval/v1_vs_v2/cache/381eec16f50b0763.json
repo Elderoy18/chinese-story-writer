@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，The original repeats the time meaning because 古代 already refers to a historical time period, while 的时候 also means “at the time of.” [vocab list]\n2. [Grammar & Vocabulary, error] 而且害得孟子的学习：而且影响了孟子的学习，害得 must be followed by a person and a harmful result clause; it cannot directly take a noun phrase such as 孟子的学习. [teacher rule: haide_structure]\n3. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈两个人：孟子和妈妈两个人，Use zero form for the repeated possessor within the same noun phrase; once 孟子 is named, 妈妈 naturally refers to his mother. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈住在这里：孟子和妈妈住在这里，Use zero form for the repeated possessor in the same sentence; repeating 孟子 inside the phrase is unnecessary. [rule: none]\n5. [Coherence: temporality, error] Coherence (Temporality): 住在这里才一个星期就觉得受不了了：才在这里住了一个星期，就觉得受不了了，In the 才…就… construction, 才 introduces the short duration before the action, and 了 marks the one-week stay as completed. [rule: cai_jiu_construction]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already expresses a historical time, so 的时候 is redundantly added under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 cannot directly take the noun phrase 孟子的学习; 影响了孟子的学习 is grammatical."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the teacher's zero-reference rule, repeating 孟子 as the possessor within the same phrase is unnecessary."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated possessor 孟子的 is unnecessary within the same sentence under the teacher's reference rule."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "住在这里才一个星期就觉得受不了了 is already a grammatical and natural 才…就… sentence, though the revision is also acceptable."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2125,
+  "completion_tokens": 1250,
+  "total_tokens": 3375,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 474,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 923,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

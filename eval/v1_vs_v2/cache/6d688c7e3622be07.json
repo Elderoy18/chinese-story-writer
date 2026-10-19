@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThis scene:\n发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n- 这就要看你的口味：这就要看……了\n- 什么都花想吃：什么花都想吃\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 肚子感觉又暖和又清楚：人感觉又暖和又舒服，清楚 describes whether information or thoughts are clear; it cannot describe a bodily feeling from the stomach. 舒服 appropriately describes a pleasant physical sensation.\n2. [Grammar & Vocabulary, error] 什么都花想吃：什么花都想吃，when 什么花 means “every kind of flower,” the noun 花 must come directly after 什么, followed by 都 and the verb.\n3. [Coherence: reference, error] Coherence (Reference): 告诉朋友：告诉他的一个朋友，朋友 is a new character here, so the first-mention rule requires a clear full noun phrase rather than a bare noun.\n4. [Coherence: temporality, error] Coherence (Temporality): 发现有的植物：发现了有的植物，了 marks the completed discovery in this narrative sequence.\n5. [Coherence: connectors, error] Coherence (Conjunction): 你吃哪种植物，这就要看你的口味：你想吃哪种植物？这就要看你的口味了，this use of 这就要看……了 needs an uncertain question before it, and the phrase after 看 should answer what the choice depends on.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“清楚” is wrong for a bodily sensation, and the proposed wording wrongly retains 感觉, which the teacher requires deleting here."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The noun must follow 什么 directly in the pattern 什么花都想吃."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "A newly introduced concrete friend needs a clearer noun phrase under the teacher’s first-mention rule."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "发现 is a completed discovery in this narrative sequence, so 了 is needed."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The required structure is 这就要看……了, and the revised question plus this structure is grammatical."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2193,
+  "completion_tokens": 1186,
+  "total_tokens": 3379,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 542,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 876,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

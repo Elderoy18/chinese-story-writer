@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene:\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “他们从早到晚走路” / Formula: Subject + 从早到晚 + 走路/赶路 / Correct: “他们从早到晚都在赶路。” The original is understandable, but 都在赶路 sounds more natural if you mean they spent the whole day travelling on foot.\nRun 2: Incorrect phrase: “他们从早到晚走路，孟子一直抱怨。” Formula: 因为/为了 + reason，Subject + action， 所以/因此 + result Correct: “为了搬到新城市，他们从早到晚赶路，因此孟子一直抱怨。” The original sentences are understandable, but adding a connector makes the cause-and-effect relationship clearer.\nRun 3: (nothing flagged here)",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "The runs do not all flag the same issue, since Run 3 gives no correction and Runs 1 and 2 target different aspects of the sentence."
+ },
+ "usage": {
+  "prompt_tokens": 597,
+  "completion_tokens": 222,
+  "total_tokens": 819,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 162,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

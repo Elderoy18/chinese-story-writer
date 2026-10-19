@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “孟子长大，他开始能解决问题。” Formula: Subject + 长大以后/后来 + 就/开始 + 能 + Verb + Object Correct: “孟子长大以后，就开始能解决这些问题了。” “长大” needs a time connection such as “以后,” and “这些问题” refers more clearly to the questions mentioned before.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “他常常建议你不是学金融，而是学政治” Formula: 建议 + someone + 不要/别 + Verb A，+ 而要/而是 + Verb B Correct: “他常常建议你不要学金融，而要学政治。” After “建议你,” use “不要……而要……” for advice. “不是……而是……” is generally used to correct or contrast a statement, rather than directly give advice.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “因为如果你懂政治” Formula: If + condition, + result / 因为 + reason, + result Correct: “因为他认为，如果你懂政治，你就会……” Do not normally put “因为” directly before “如果” in this structure. Add “他认为” to make the reason and logic clearer.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “你会成为高薪。” Formula: Subject + 会 + 成为 + noun/person role; or Subject + 会 + 获得/找到 + 高薪的 + noun Correct: “你会找到一份高薪的工作。” “高薪” is an adjective-like word meaning “high salary,” so it cannot be the object of “成为.”\n5. [Grammar & Vocabulary, error] Incorrect phrase: “他教学生很厉害。” Formula: Subject + 教得 + adjective / Subject + 很会 + Verb + Object Correct: “他教得很好。” / “他很会教学生。” Use “教得很好” to describe how well someone teaches.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "“孟子长大” needs a time linker such as “以后,” and repeating “他” after the topic is redundant."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "“建议你不要……而要……” correctly fixes the advice construction, but the unexplained generic “你” should be “人们” in this narration."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“因为如果……” is acceptable here, and the proposed correction is unfinished after “你就会…….”"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“成为高薪” is incorrect because “高薪” is not a role one can become; “找到一份高薪的工作” is correct."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“他教学生很厉害” is acceptable colloquial Chinese for being very good at teaching students."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2361,
+  "completion_tokens": 1553,
+  "total_tokens": 3914,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 710,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1201,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

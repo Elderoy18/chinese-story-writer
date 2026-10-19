@@ -1,0 +1,85 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，A demonstrative before a countable noun needs a matching measure word; use 朵 for a flower.\n2. [Grammar & Vocabulary, error] 特别是毒：特别有毒，Use 有毒 to describe a plant that contains poison. 毒 is a noun here and cannot follow 特别是 in this meaning.\n3. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝和夹竹桃，The original combines nouns with 的, which creates an incorrect modifier relationship. Use 和 to coordinate the two plant names.\n4. [Grammar & Vocabulary, error] 也写一个课文的植物：也把这些植物写进一本书里，课文 is a lesson text, not a book for recording plant information. Use 一本书, and use 写进 to show that the information is recorded in the book.\n5. [Coherence: temporality, error] Coherence (Temporality): 写进：写进了，Use 了 after the resultative complement 进 to show that the recording action was completed: 写进了.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这/那后面按老师的规则需要量词，朵黄色的花正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "毒不能受特别修饰来作形容词，特别有毒正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原来的定语关系有误，但灵芝和夹竹桃他吃完了既不通顺，也错误地说他吃了夹竹桃。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "一个课文的植物搭配和结构错误，改成把这些植物写进一本书里是正确的表达。"
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "学生原文没有写进，系统不能把自己在上一项提出的改写再当作学生的时体错误。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2131,
+  "completion_tokens": 1488,
+  "total_tokens": 3619,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 480,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1145,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

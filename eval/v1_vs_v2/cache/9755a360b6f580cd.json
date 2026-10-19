@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene:\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “孟子很小的时候，从早到晚一直祭拜” Formula: When first introducing a character: 在古代，有一个叫……的人；Subject + 在/从……到…… + verb + object Correct: “在古代，有一个叫孟子的孩子。他很小的时候，就从早到晚祭拜祖先。” Introduce 孟子 briefly on his first mention. Also, “祭拜” usually needs an object, such as “祖先.”\nRun 2: Incorrect phrase: “孟子很小的时候” (first mention of 孟子) / Formula: First mention = 有一个 + identity + 叫 + name; later use the name / Correct: “有一个男孩叫孟子。孟子小时候，……” This introduces the character clearly before using his name.\nRun 3: Incorrect phrase: “孟子很小的时候” / Formula: First mention: name + identity + background information / Correct: “有一个叫孟子的男孩，他很小的时候……” It is clearer to briefly introduce 孟子 when he first appears.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 2 and 3 address only the first introduction of 孟子, while Run 1 also flags the missing object of 祭拜."
+ },
+ "usage": {
+  "prompt_tokens": 714,
+  "completion_tokens": 180,
+  "total_tokens": 894,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 121,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

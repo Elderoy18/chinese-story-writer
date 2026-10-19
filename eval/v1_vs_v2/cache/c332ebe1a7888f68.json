@@ -1,0 +1,117 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远：走很远，Use “走很远” to describe covering a long distance on foot; “旅行” does not directly take a distance phrase in this way. [rule: none]\n2. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，Flowers take the measure word “朵,” not the general measure word “个.” [rule: none]\n3. [Grammar & Vocabulary, error] 特别是花：特别是花的味道，“特别是” should introduce the specific kind of taste being discussed; adding “花的味道” completes the noun phrase. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 神农写他的主意：他写他的主意，Use a pronoun because the same character was mentioned in the immediately preceding sentence and no other person competes as the referent. [rule: redundancy_delete]\n5. [Coherence: reference, error] Coherence (Reference): 神农遇到了一个黄色的花：他遇到了一朵黄色的花，Use a pronoun for the same character after several nearby references to him. [rule: redundancy_delete]\n6. [Coherence: temporality, error] Coherence (Temporality): 找到很多植物：找到了很多植物，This is the final action in a completed sequence, so it needs “了” to mark completion. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 写他的主意：写下了自己的主意，“然后” presents this as the next completed story action, so use “写下了”; “写下” means to record an idea in writing, and “了” marks the completed action. [rule: aspect_le_completed]\n8. [Coherence: connectors, error] Coherence (Conjunction): 旅行很远找到很多植物：走了很远以后，找到了很多植物，Use “以后” to show the sequence: after travelling a long distance, he found many plants. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "旅行不能直接这样带“很远”表示路程，走很远是正确的说法。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "花的量词应为“朵”，不能用“个”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“他喜欢植物的味道，特别是花”中的“花”可以自然地指花的味道，不是不完整的短语。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这里重新说“神农”可以帮助恢复指称，并非必须改成代词，而且改后仍保留了“写他的主意”的问题。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Vocabulary"
+    ],
+    "reason": "前文已近距离提到神农，此处应使用“他”，并且“花”也应使用量词“朵”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这是叙述中完成的发现动作，应用“找到了”标明完成。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "“写下了”正确补出了完成体，但“主意”仍没有改成此处应写下的“发现”。"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "原文的“旅行很远”不自然且完成动作缺少“了”；改句语法正确，但“以后”不是原句必须补的连接词。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2286,
+  "completion_tokens": 1982,
+  "total_tokens": 4268,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 635,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1430,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

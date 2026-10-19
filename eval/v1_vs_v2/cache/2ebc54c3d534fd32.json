@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene:\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's item in each run:\nRun 1: 找到黄色的花：找到了黄色的花，This is a completed discovery in a past event, so the verb needs 了. [rule: aspect_le_completed]\nRun 2: Coherence (Temporality): 他找到黄色的花：他找到了黄色的花，This is a completed, one-time discovery, so 了 follows the resultative complement 到. [rule: aspect_le_completed]\nRun 3: (nothing flagged here)",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 3 flags nothing, while Runs 1 and 2 both add 了 for the completed discovery."
+ },
+ "usage": {
+  "prompt_tokens": 479,
+  "completion_tokens": 45,
+  "total_tokens": 524,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThe teacher's corrections on this scene:\n- 古代时候，人不知道他们能吃什么植物：古代的时候，人们\n- 所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears\n- 告诉人什么植物是安全什么是危险：是安全的，是危险的\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n\nThe system's item in each run:\nRun 1: 试一试很多种植物：尝试很多种植物，The reduplicated verb suggests trying something briefly, while trying many kinds of plants calls for the verb 尝试. [rule: word_choice]\nRun 2: 试一试很多种植物：尝试很多种植物，试一试 suggests a brief trial, while 尝试 naturally describes testing many different kinds of plants. [rule: word_choice]\nRun 3: Coherence (Temporality): 出去试一试很多种植物：出去试了很多种植物，This is a completed testing action in a past narrative, so use 了 after 试; the repeated-verb form suggests only a brief trial and does not fit testing many kinds. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs flag the unsuitable brief-trial form 试一试, but Run 3 changes it to 试了 rather than the accepted word-choice fix 尝试."
+ },
+ "usage": {
+  "prompt_tokens": 563,
+  "completion_tokens": 58,
+  "total_tokens": 621,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

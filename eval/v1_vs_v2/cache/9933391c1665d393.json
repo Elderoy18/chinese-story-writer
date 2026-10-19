@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThis scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 害得：害得自己很担心，The structure requires an affected person followed by a harmful result; here, “自己” clearly refers to the mother, and “很担心” supplies the result. [teacher rule: haide_structure]\n2. [Grammar & Vocabulary, error] 帮妈妈的工作：帮妈妈做事，The verb “帮” can take a person plus a verb phrase, but it cannot directly take “工作” as the object in this structure. [rule: verb_object_collocation]\n3. [Coherence: temporality, error] Coherence (Temporality): 所以他们搬家：所以他们搬家了，The move is a completed event in the narrative, so the verb needs “了” to mark completion. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“害得” needs an affected person and a harmful result, and “害得自己很担心” supplies both."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“帮妈妈的工作” is not the correct collocation; “帮妈妈做事” is grammatical and suitable."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed narrative event, so “搬家了” correctly marks completion."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1991,
+  "completion_tokens": 574,
+  "total_tokens": 2565,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 340,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 378,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThis scene:\n他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他们住才一月就又搬家：才住了一个月，了completed\n- 古代的时候：那时候\n- 但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是\n- 因为她恐怕儿子会成为跟他们很像：怕/担心，恐怕usually does not take Subj. except 我；跟他们一样/很像的人，成为+ noun\n- 她告诉了孟子：告诉，no了for speaking word\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this expression is redundant because 古代 already names a time period, while 的时候 also means “at the time of.”\n2. [Grammar & Vocabulary, error] 老是跟这些卖东西的人常常玩儿：老是跟这些卖东西的人玩儿，老是 and 常常 are both frequency adverbs modifying the same verb, so only one should be used.\n3. [Grammar & Vocabulary, error] 她恐怕儿子会成为跟他们很像：她担心儿子会变得跟他们很像，恐怕 cannot take 她 as its subject in this structure; use 担心 for her fear. Also, 成为 normally takes a noun phrase, while 变得 can be followed by the adjective phrase 跟他们很像.\n4. [Coherence: temporality, error] Coherence (Temporality): 他们住才一月就又搬家：他们才住了一个月，就又搬家了，use 才 before the completed duration phrase, and use 了 after 住 and 搬家 to mark the two completed actions in this sequence.\n5. [Coherence: temporality, error] Coherence (Temporality): 告诉了孟子：告诉孟子，use the zero particle with a saying verb that introduces quoted speech.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already expresses a time period, so 古代的时候 is redundant; 在古代 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "老是 and 常常 redundantly modify the same verb, and deleting 常常 produces a correct phrase."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "恐怕 is inappropriate with 她 as the fearing subject here, and 成为 cannot take 跟他们很像 as its complement."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "才住了一个月 and the completed final action 搬家了 correctly express the completed sequence."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "A saying verb introducing direct speech takes the zero particle, so 告诉孟子 is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2245,
+  "completion_tokens": 799,
+  "total_tokens": 3044,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 594,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 483,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

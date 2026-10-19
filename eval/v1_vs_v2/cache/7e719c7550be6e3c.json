@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThis scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 在墓地玩儿，害得：孟子在墓地玩儿会带来麻烦，The original use of 害得 is incomplete: this structure must be followed by the person affected and a harmful result. [teacher rule: haide_structure]\n2. [Grammar & Vocabulary, error] 他们搬家：他们搬了家，This is a completed move, so the separable verb needs 了 after 搬. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 帮妈妈的工作：帮妈妈做事，After 帮妈妈, use a verb phrase to state what help is given; 的工作 makes it sound as though the help is directed at “Mother’s work” rather than at Mother. [rule: none]\n4. [Coherence: connectors, error] Coherence (Conjunction): 他才五岁，可是每天不是写字就是帮妈妈的工作：他才五岁，就每天不是写字就是帮妈妈做事，After 才 + age, use 就 to introduce an action that happens at such an early age; 可是 is not the needed connector here. [rule: cai_jiu_construction]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得后面缺少受害者和有害结果，改后的句子完整且正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "这里叙述的是已经完成的搬家事件，应该说“搬了家”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“帮妈妈的工作”结构不对；“帮妈妈做事”是正确的动宾表达。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“才五岁，可是……”可以表示“虽然年纪小却……”，并不必须改成“就”；改文虽顺便改正了“帮妈妈的工作”，但错误地把可接受的连接词当成错误。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2071,
+  "completion_tokens": 1454,
+  "total_tokens": 3525,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 420,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1155,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

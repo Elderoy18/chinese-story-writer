@@ -1,0 +1,114 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThis scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一百岁时候：一百岁的时候，Multi-syllable age expressions need 的 before 时候. [teacher rule: de_shihou]\n2. [Grammar & Vocabulary, error] 毒的花：有毒的花，Use 有毒的 to describe a poisonous plant; 毒的 is not the normal modifier here. [vocab list]\n3. [Grammar & Vocabulary, error] 开始死：快要死了，For one person, 死 is a change-of-state verb and does not naturally follow 开始 as an ongoing action; this expression shows that death was imminent. [rule: none]\n4. [Grammar & Vocabulary, error] 人：人们，Use 人们 for a concrete group of people being told this information; 人 is a generic noun. [teacher rule: ren_renmen]\n5. [Grammar & Vocabulary, error] 什么植物是毒：什么植物有毒，Use 有毒 to describe that a plant contains poison; 是毒 does not fit this predicate pattern. [vocab list]\n6. [Coherence: reference, error] Coherence (Reference): 这个口味：一种味道，This is the first mention of this particular taste, so introduce it with an indefinite noun phrase rather than a demonstrative that has no clear antecedent. [rule: character_introduction_first_mention]\n7. [Coherence: temporality, error] Coherence (Temporality): 发现：发现了，This discovery is a completed event in the narrative, so it needs 了. [rule: aspect_le_completed]\n8. [Coherence: temporality, error] Coherence (Temporality): 告诉：告诉了，Telling people the information is a completed action in this past event sequence, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "一百岁是多音节年龄表达，时候前需要的。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "描述花有毒时应说有毒的花，不说毒的花。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "死是瞬间变化，不能自然地说开始死；快要死了是正确表达。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里指被告知的一群具体的人，应使用人们。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "植物的性质应说有毒，不能说植物是毒。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这个口味没有明确所指，且改成一种味道后整个发现味道的内容仍与上下文不连贯。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "若保留这个发现事件，在叙述中应使用完成体发现了。"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "告诉在教师改写的即使……也告诉结构中可以不用了，补了只是另一种可行说法而非必须修改。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2333,
+  "completion_tokens": 1500,
+  "total_tokens": 3833,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 682,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1023,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 这个男孩子：一个男孩子，A first-mentioned character should use an indefinite full noun phrase rather than a demonstrative phrase that presents him as already known. [rule: character_introduction_first_mention]\n2. [Coherence: reference, error] Coherence (Reference): 所以孟子的妈妈安排他的生活：所以安排他的生活，When the same subject continues across linked clauses, use zero form instead of repeating the full noun phrase. [rule: redundancy_delete]\n3. [Coherence: temporality, error] Coherence (Temporality): 常常搬了家：常常搬家，A habitual action uses the zero particle, not completed-action 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "This is Mengzi's first mention, so 这个男孩子 improperly presents him as already established."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After the same mother remains the subject, omitting the repeated noun phrase gives the required clearer reference pattern."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 describes a habitual action, so 搬家 should not take completed-action 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1979,
+  "completion_tokens": 485,
+  "total_tokens": 2464,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 328,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 290,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

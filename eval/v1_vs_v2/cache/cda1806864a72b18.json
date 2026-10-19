@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene:\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's item in each run:\nRun 1: 会成为高薪：会得到高薪，high salary is something a person receives or earns; a person cannot become a salary.\nRun 2: 成为高薪：拿到高薪，\"高薪\" means a high salary, so it is something a person receives rather than a position or identity that someone can become.\nRun 3: 成为高薪：获得高薪，The verb “become” needs an identity or role as its complement, while “high salary” is payment that a person receives.",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify 成为高薪 as the same verb-object error and replace it with an acceptable verb meaning receive/earn a high salary."
+ },
+ "usage": {
+  "prompt_tokens": 488,
+  "completion_tokens": 51,
+  "total_tokens": 539,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

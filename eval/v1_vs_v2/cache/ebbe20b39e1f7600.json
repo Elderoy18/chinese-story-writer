@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears\n- 孟子妈妈的工作是祭拜：wrong information, it’s not his mother’s job\n- 孟子不高兴，因为他说我们老是搬家：delete因为\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “一天，很久很久以前” Formula: 在 + time expression + 的 + noun Correct: “在很久很久以前的一天，……” “很久很久以前” is a time expression, so it sounds smoother with “在……的一天.”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “孟子和他妈妈住在中国” Formula: Name + 和 + 他的/她的 + family member Correct: “孟子和他的妈妈住在中国。” “He妈妈” is understandable in speech, but “他的妈妈” is clearer and more standard in writing.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “孟子妈妈的工作是祭拜” Formula: 某人的职责/工作是 + verb phrase Correct: “孟子的妈妈的职责是祭祀。” “祭拜” is usually an action done toward ancestors or gods; “祭祀” is more natural for a person’s regular duty or occupation.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “孟子不高兴，因为他说我们老是搬家，为什么？” Formula: 谁 + 情绪 +，问 + 谁 + ：“question” Correct: “孟子很不高兴，问妈妈：‘我们为什么老是搬家？’” Use quotation marks for direct speech. Here, “老是” is appropriate because Mengzi is complaining about moving repeatedly.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “很多墓地得我祭拜” Formula: Object + 需要 + person + 去 + verb / 谁 + 得 + verb + object Correct: “很多墓地需要我去祭拜。” / “我得祭拜很多墓地。” “得” should normally follow the person who must do something, not the object.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“一天，很久很久以前” is an ill-formed redundant time opening, and the revised time phrase is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“孟子和他妈妈” is acceptable Chinese; adding “他的” is optional rather than a correction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The error is the false claim that his mother’s work was worshipping, which changing 祭拜 to 祭祀 does not fix."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors",
+     "Grammar"
+    ],
+    "reason": "The original wrongly uses 因为 before Mengzi’s speech, and the revision gives a grammatical direct question without it."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“得” must follow the person who has the obligation, and both supplied alternatives correct this placement."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2215,
+  "completion_tokens": 952,
+  "total_tokens": 3167,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 564,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 623,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

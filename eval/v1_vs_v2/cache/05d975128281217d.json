@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThe teacher's corrections on this scene:\n- 这是古代的故事：这是一个古代的故事\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 从他的家到墓地很近：他的家离墓地很近\n- 所以他每天老是从早到晚去墓地跟朋友们玩玩儿：delete老是；玩儿，V.V. is used to make requests or plans\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 他的家：孟子的家，After the father was mentioned, this pronoun could refer to either Mengzi or his father; repeat Mengzi’s name to make the possessor clear. [rule: ambiguous_reference]\nRun 2: 从他的家到墓地很近：他的家离墓地很近，Static proximity is expressed with 离 + place + 很近; 从……到…… describes a route or distance instead. [vocab list]\nRun 3: 从他的家到墓地很近：他的家离墓地很近，Use 离 to state that one place is close to another; 从…到… describes a route or distance range rather than this location relationship. [vocab list]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 addresses the ambiguous pronoun 他的, while Runs 2 and 3 correct the proximity expression 从……到……很近 to 离……很近."
+ },
+ "usage": {
+  "prompt_tokens": 541,
+  "completion_tokens": 145,
+  "total_tokens": 686,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 81,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

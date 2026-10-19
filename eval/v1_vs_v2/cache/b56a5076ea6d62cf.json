@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他很聪明的人，难怪他成为有名的人。\n\nThe teacher's corrections on this scene:\n- 他很聪明的人，难怪他成为有名的人：很聪明\n\nThe system's item in each run:\nRun 1: 他很聪明的人：他很聪明，An adjective can serve as the predicate by itself; do not add a following noun unless the sentence uses a full noun phrase such as “是一个很聪明的人”. [rule: adjective_predicate]\nRun 2: 他很聪明的人：他是一个很聪明的人，This is a noun phrase; to say that he is such a person, use a copula plus an indefinite classifier phrase. [rule: none]\nRun 3: 很聪明的人：很聪明，an adjective can serve directly as the predicate after the subject; adding 人 makes the predicate incomplete. [rule: adjective_predicate]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs address the incomplete predicate 很聪明的人; Runs 1 and 3 remove 人, while Run 2 correctly rewrites it as a copular noun phrase."
+ },
+ "usage": {
+  "prompt_tokens": 419,
+  "completion_tokens": 203,
+  "total_tokens": 622,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 139,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

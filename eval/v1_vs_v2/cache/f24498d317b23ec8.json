@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this expression is redundant because both parts express time; use the shorter time expression instead. [vocab list]\n2. [Grammar & Vocabulary, error] 城市有才两个学校：城市里才有两所学校，place 才 before the verb it modifies, and use 所 as the measure word for schools. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，Introduce the main character’s name in the first mention rather than naming him only after a pronoun. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜：他不是祭拜，Use a pronoun when the same character was named in the immediately preceding sentence and no competing male character has appeared. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，Use the reflexive possessor to make clear that the city belongs to the subject of the sentence. [teacher rule: ziji_possessor]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already expresses the time meaning, so 古代的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original has wrong 才 placement and the wrong school measure word, but the teacher's required expression is 只有 rather than 才有."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Naming the boy in the following sentence with 他叫孟子 is clear and acceptable, not a reference error."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "A pronoun is required by the teacher's close-reference rule here, but the excerpt cuts off the paired 不是……就是…… structure."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的城市 is clear and grammatical; 自己的 is possible but not required here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2033,
+  "completion_tokens": 1813,
+  "total_tokens": 3846,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 382,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1480,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

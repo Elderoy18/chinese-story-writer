@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThis scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 觉得在墓地玩儿：觉得孟子在墓地玩儿，The embedded action needs its own subject; without it, the sentence incorrectly suggests that the mother is playing at the cemetery. [rule: none]\n2. [Grammar & Vocabulary, error] 害得：害得她得老是道歉，This structure requires the person affected and a harmful result after it. [teacher rule: haide_structure]\n3. [Grammar & Vocabulary, error] 帮妈妈的工作：帮妈妈干活，After 帮妈妈, use a verb phrase to state what help he gives; 干活 means doing work or chores. [rule: none]\n4. [Coherence: temporality, error] Coherence (Temporality): 所以他们搬家：所以他们搬家了，The move is presented as a completed result of the earlier problem, so use 了 for completion. [rule: aspect_le_completed]\n5. [Coherence: connectors, error] Coherence (Conjunction): 他才五岁，可是每天不是写字就是帮妈妈的工作：他才五岁，就每天不是写字就是帮妈妈干活，Use 才五岁就 to show that he began doing these things at an unusually young age; 可是 is not needed for this early-action relationship. [rule: cai_jiu_construction]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "“妈妈觉得在墓地玩儿” can mean that she thinks playing in the cemetery is problematic; the omitted embedded subject is not necessarily an error."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 must be followed by the affected person and a harmful result, and the proposed continuation supplies both."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "帮妈妈工作 needs a verb phrase after 帮妈妈, and 帮妈妈干活 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed narrative event, so 搬家了 correctly marks completion."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "可是 can correctly contrast his being only five with his daily duties; changing it to 就 is optional stylistic improvement, not a required correction."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2108,
+  "completion_tokens": 1301,
+  "total_tokens": 3409,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 457,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 968,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。所以，他上山下山找植物，吃了很多样子的植物。他是第一人，找到了茶。他把所有的植物写下来了。他一直都吃了，他连毒都能吃。可是他还没吃了一个叫夹竹桃的植物。他找到了那个像星星的植物，觉得很漂亮，马上就吃下了。\n\nThis scene:\n可是夹竹桃的毒很重，让他肚子很痛。他在地上躺着，觉得他快会死了。可是正好有别人找到他了，给了他一个像伞的植物，叫灵芝。他吃灵芝以后就觉得很好，不再生病了。他测量起来了，像星星的植物是毒，像伞的植物是药。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 可是夹竹桃的毒很重：很强\n- 觉得他快会死了：快要死了\n- 可是正好有别人找到他了：有人，“别(的)” is for “a different type”, and “all else except the spoken one”\n- 他吃灵芝以后就觉得很好：吃了，了completed\n- 他测量起来了：写下来了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 快会死了：快要死了，Use this imminent-change pattern to say that death seems very near; 会 is for a future prediction and is not natural here with 快. [rule: none]\n2. [Grammar & Vocabulary, error] 别人：有人，别人 distinguishes other people from a specified person or group, but this sentence introduces an unspecified person who finds him. [teacher rule: bieren]\n3. [Grammar & Vocabulary, error] 像星星的植物是毒：像星星的植物有毒，毒 is a noun here; 有毒 describes a plant as poisonous. [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 觉得他快会死了：觉得自己快会死了，Use 自己 when the person who has the thought and the person who may die are the same; 他 can suggest that he is thinking about someone else. [rule: ambiguous_reference]\n5. [Coherence: temporality, error] Coherence (Temporality): 吃灵芝以后：吃了灵芝以后，The eating is completed before the later feeling of improvement, so use 了 for the completed action. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "快会死了 does not use the natural imminent-event pattern; 快要死了 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "别人 is inappropriate for introducing an unspecified person here; 有人 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The plant should be described as poisonous with 有毒 rather than identified as poison with 是毒."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Using 自己 correctly makes the person who is thinking and dying unambiguously the same, but 快会死了 remains unfixed."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The eating is completed before he feels better, so 吃了灵芝以后 is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2284,
+  "completion_tokens": 811,
+  "total_tokens": 3095,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 633,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 509,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

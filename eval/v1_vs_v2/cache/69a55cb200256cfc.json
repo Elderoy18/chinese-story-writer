@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，A demonstrative such as 这 needs a matching measure word before a countable noun; 朵 is the measure word for flowers.\n2. [Grammar & Vocabulary, error] 特别是毒：特别有毒，毒 is a noun meaning poison, while 有毒 is the adjective phrase meaning poisonous; 特别 modifies the adjective phrase.\n3. [Grammar & Vocabulary, error] 正好在这儿，灵芝药的夹竹桃他吃完了：这儿正好有灵芝这种药；他吃完夹竹桃以后，The original strings several nouns together with 的 without showing their relationships. Use 有 to introduce the medicine, and use separate clauses to state that 灵芝 is a medicine and that he finished eating 夹竹桃.\n4. [Grammar & Vocabulary, error] 一个课文的植物：一篇关于植物的课文，Use the measure word 篇 for a written text, and place 关于植物 before 课文 to show that the text is about plants.\n5. [Coherence: temporality, error] Coherence (Temporality): 也写：也写了，Use 了 for the completed action of writing in this past sequence; the action of eating is already marked as completed by 吃完.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这修饰可数的花时按教师标准需要量词，朵用得正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "毒不能直接受特别修饰，特别有毒是正确的说法。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原句的名词结构有误，但改文误说他吃完了夹竹桃，且第二分句以以后悬空结束。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原短语的量词和修饰关系都有问题，一篇关于植物的课文在语法上是完整正确的名词短语。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "叙述中最后的写作动作应标示完成，写了修正了这一点，但完整改后句仍含有其他未改正的问题。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2169,
+  "completion_tokens": 1297,
+  "total_tokens": 3466,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 518,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 949,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

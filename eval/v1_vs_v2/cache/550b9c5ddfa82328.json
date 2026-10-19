@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家。\n\nThe teacher's corrections on this scene:\n- 所以孟子的妈妈认为这样的地方对儿子的教育不太好：replace孟子的妈妈with她\n- 不是搬到城市，而是搬到了孟子老师的家：家里\n\nThe system's item in each run:\nRun 1: 孟子老师：孟子的老师，的 is needed to show that the teacher belongs to孟子 rather than referring to a person called孟子老师. [rule: none]\nRun 2: 不是搬到城市，而是搬到了：搬到了，This paired structure is for correcting a conventional or previously stated mistaken idea, but no such idea is being refuted here. [rule: bushi_ershi_construction]\nRun 3: 不是搬到城市，而是搬到了孟子的老师的家：搬到了孟子的老师的家，this construction is for correcting a conventional or previously assumed claim; here the sentence only needs to state the new destination. [rule: bushi_ershi_construction]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 flags the possessive wording in “孟子老师,” while Runs 2 and 3 flag the “不是……而是……” construction, so they address different errors."
+ },
+ "usage": {
+  "prompt_tokens": 497,
+  "completion_tokens": 137,
+  "total_tokens": 634,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 71,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

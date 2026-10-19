@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他需要当上医：医生\n- 一看别的人就想帮助他们：看到，看look vs.看到see; 病人，“别的” is for “a different type”, and “all else except the spoken one”\n- 什么病人吃都会觉得身体更好：吃了以后\n- 神农三个月走去：走了三个月\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 当上医：当上医生，医 is usually a bound morpheme in this meaning; the full noun for a person who practises medicine is 医生.\n2. [Grammar & Vocabulary, error] 一看别的人：一看到别的人，when 看 means “see/notices,” use 看到 rather than 看; this also correctly forms the conditional pattern 一……就…….\n3. [Grammar & Vocabulary, error] 什么病人吃都会觉得身体更好：病人一吃这种植物，就会觉得身体好多了，什么病人 asks “what kind of patients” and cannot mean all patients here; use the conditional pattern 一……就…… to express what happens whenever a patient eats the plant.\n4. [Coherence: reference, error] Coherence (Reference): 但是，他有一个问题，他不知道什么东西能做药：但是，他有一个问题：不知道什么东西能做药，after the subject has already appeared in the same sentence, use zero form rather than repeating the pronoun.\n5. [Coherence: temporality, error] Coherence (Temporality): 神农三个月走去，找到有植物的地方：神农走了三个月，才找到了有植物的地方，completed narrative actions need 了, and a duration such as 三个月 follows the verb it measures; 才 also connects the long journey with the later result.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "医 cannot by itself mean a doctor; 医生 is the correct noun."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "看到 correctly fixes 看, but 别的人 is still inappropriate here and should be 病人."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The revised sentence correctly expresses that patients feel better after eating the plant."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating 他 in a new clause here is acceptable and does not violate the reference rule."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "走了三个月 has the correct duration order, and the revision correctly marks the completed journey and result."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2146,
+  "completion_tokens": 1197,
+  "total_tokens": 3343,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 495,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 894,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

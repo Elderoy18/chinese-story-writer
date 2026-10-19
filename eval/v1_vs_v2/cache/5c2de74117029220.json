@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThis scene:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 因为他们常常搬了家：搬家，no了for routine/habit\n- 妈妈教孟子很多技能：教了，了completed\n- 先她让孟子跟朋友玩儿：她先让……，Subj.先……\n- 然后教他怎么买又便宜又好质量的东西：质量又好\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 常常搬了家：常常搬家，A habitual action takes no 了 because it does not describe one completed move. [rule: aspect_le_completed]\n2. [Grammar & Vocabulary, error] 先她让：她先让，The subject should come before the time-order adverb 先. [rule: none]\n3. [Grammar & Vocabulary, error] 又便宜又好质量的东西：又便宜、质量又好的东西，质量好 is the correct predicate for “good quality”; 好质量 cannot directly modify a noun in this structure. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence: 孟子的妈妈 was named in the immediately preceding sentence, and no other female character competes as the referent. [rule: character_introduction_first_mention]\n5. [Coherence: temporality, error] Coherence (Temporality): 然后教他：然后教了他，In a completed series of actions, only the final verb takes 了; here 教 is the final action after 让. [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 因为他们常常搬家，中国人说，孟母三迁：因为他们常常搬家，所以中国人说“孟母三迁”，Use 因为……所以…… to show that the repeated moves are the cause of this saying. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 describes a habitual action, so 搬家 should not take completed-event 了."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "先 should follow the subject here, but the shown correction is still cut off after 让."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "质量好, not 好质量, is the correct way to express that the quality is good."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the reference rule, the recently mentioned mother should be referred to as 她, but the corrected text still lacks the required completed-action 了."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "教 is the final action in this sequence and should take 了."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The teacher's required causal pattern is 因为……所以……, and the correction supplies it correctly."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2218,
+  "completion_tokens": 1654,
+  "total_tokens": 3872,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 567,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1276,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

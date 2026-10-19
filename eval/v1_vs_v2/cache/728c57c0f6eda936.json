@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThis scene:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这种一定是做药的花：这一定是一种做药的花\n- 原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result\n- 神农快生病：很快就生病了\n- 快给他一种红的灵芝：很快地给了，快V: to give order, 了completed\n- 他没有病：delete他，redundant; 病好了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 快：赶快，In this narrative position, “赶快” clearly means doing the next action without delay; “快” alone does not naturally modify this completed giving action. [rule: none]\n2. [Grammar & Vocabulary, error] 以前一个人：以前有一个人，An indefinite person in this past event needs “有” to introduce that person naturally. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 他：delete it，The name was already used in the same sentence, so zero form is more natural than repeating a pronoun. [rule: redundancy_delete]\n4. [Coherence: temporality, error] Coherence (Temporality): 神农快生病：神农很快就生病了，This is a completed event after eating, so the verb needs “了”; “很快就” also clearly marks that the illness happened soon afterwards. [rule: aspect_le_completed]\n5. [Coherence: temporality, error] Coherence (Temporality): 给：给了，The blue-clothed person completed the action of giving the medicine, so “给” needs the completion marker “了.” [rule: aspect_le_completed]\n6. [Coherence: temporality, error] Coherence (Temporality): 没有病：病就好了，The sentence describes a change from being ill to recovering, so use “好了” with “了” to show the completed change of state. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "Here 快 gives an inappropriate imperative-like reading, and 赶快 is a possible replacement, but the resulting giving event still needs 给了."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "以前有一个人 correctly introduces an indefinite person in the earlier event."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他 is redundant after 神农 in this sentence, but deleting it alone still leaves 没有病 rather than the needed recovery expression."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "很快就生病了 correctly expresses the soon-completed illness event."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "给了 correctly marks the completed act of giving."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "病就好了 correctly expresses the change from illness to recovery."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2275,
+  "completion_tokens": 2582,
+  "total_tokens": 4857,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 624,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2201,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

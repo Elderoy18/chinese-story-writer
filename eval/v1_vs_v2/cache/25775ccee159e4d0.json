@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene:\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 后来孟子成为教授：后来，他成为教授，Use a pronoun for a close re-occurrence because no other character has intervened.\nRun 2: Coherence (Reference): 后来孟子成为教授，他教学生很厉害：后来，他成为了教授，很会教学生，Use a pronoun for a close re-occurrence, and use zero form when the same subject continues within the sentence.\nRun 3: Coherence (Temporality): 后来孟子成为教授：后来孟子成为了教授，Use 了 to mark that becoming a professor is a completed later event.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 2 address repeated-subject reference, whereas Run 3 addresses missing aspect marker 了."
+ },
+ "usage": {
+  "prompt_tokens": 511,
+  "completion_tokens": 80,
+  "total_tokens": 591,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 28,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

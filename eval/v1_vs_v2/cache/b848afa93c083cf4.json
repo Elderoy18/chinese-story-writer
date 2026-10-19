@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nThis scene:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他一次试一试有些植物的叶，吃得又新鲜又甜：有一次；试了试，了completed; 叶子；吃起来\n- 煮这些叶以后，他一喝就知道他发现新的茶叶：煮了，了completed; 叶子\n- 虽然他找到了很多的新的植物：很多新的植物\n- 但是他的旅程有的时候特别是危险：特别危险，”特别是+N, + Clause” is used to single out a typical example\n- 他一吃灵芝就开始生病：wrong information, 灵芝is a medicine\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] “他一次试一试有些植物的叶”：“他尝了有些植物的叶子”，verb reduplication in “试一试” is for a light, tentative try, not for an action that was actually carried out; “尝了” expresses that he tasted the leaves.\n2. [Grammar & Vocabulary, error] “吃得又新鲜又甜”：“这些叶子吃起来又新鲜又甜”，“新鲜、甜” describe the leaves’ taste, not the manner of eating; use “吃起来” to describe how food tastes.\n3. [Grammar & Vocabulary, error] “知道他发现”：“知道自己发现”，“自己” is needed when the subject knows something about himself; “他” would normally refer to another male person.\n4. [Grammar & Vocabulary, error] “有的时候特别是危险”：“有的时候特别危险”，“特别是” must introduce a specific item, time, or situation; it cannot directly modify an adjective such as “危险”.\n5. [Coherence: temporality, error] Coherence (Temporality): “煮这些叶以后”：“煮了这些叶以后”，use 了 for the completed action that happens before the later action introduced by “以后”.\n6. [Coherence: temporality, error] Coherence (Temporality): “发现新的茶叶”：“发现了新的茶叶”，use 了 for a completed discovery in the “一……就……” sequence.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original needs a completed verb and 叶子; the replacement is grammatical, though “试一试” itself is not inherently impossible for a real attempt."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "吃得 cannot introduce the food's inherent taste here, while 叶子吃起来又新鲜又甜 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "In this context the second 他 can refer to the same person, so 自己 is not required; moreover, the full discovery still needs 了."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "特别是 cannot directly modify 危险, whereas 特别危险 is correct."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "煮了 correctly marks the prior completed action, but the shown correction still retains 叶 instead of the required 叶子."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "发现了 correctly marks the completed discovery in this event sequence."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2272,
+  "completion_tokens": 2615,
+  "total_tokens": 4887,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 621,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2205,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

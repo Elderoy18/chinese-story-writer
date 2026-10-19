@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。一个人问神农，哪个植物好吃。神农说，这就要看你的口味了。要是你喜欢吃甜的，有很多甜的水果，比方说苹果、西瓜和梨。一个别的人问神农，哪个植物对你的身体有好处。神农说，有很多种植物对你的身体有好处，比方说小白菜、黄瓜、茶和菠菜。一个别的人问神农，哪个植物对你的身体有坏处。\n\nThis scene:\n神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物：吃到了，V + resultative\n- 对我的脑有坏处：大脑\n- 一个灵芝和一个男人正好在我的旁边：“男人” is moving to神农(dynamic) while “灵芝” is next to神农(static), so it’s better not to combine the two，一个男人正好过来，看到我的旁边长着一个灵芝\n- 你得小心吃植物，因为有的植物对你的健康有坏处：吃植物得小心，delete“对你”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，朵 is the appropriate measure word for an individual flower; 个 is too general here.\n2. [Grammar & Vocabulary, error] 我的脑：我的大脑，脑 is usually used in compounds, while 大脑 is the natural noun for the brain in this meaning.\n3. [Grammar & Vocabulary, error] 一个灵芝：一株灵芝，株 is the appropriate measure word for an individual medicinal plant.\n4. [Coherence: connectors, error] Coherence (Conjunction): 可是，一个灵芝和一个男人正好在我的旁边：这时，一个灵芝和一个男人正好在我的旁边，this is an interruption by a new event, so 这时 is the suitable connector; 可是 introduces contrast, but there is no contrasting idea here.\n5. [Coherence: connectors, error] Coherence (Conjunction): 所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。：所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃，因为它有毒。，因为 introduces a cause and cannot stand alone as a separate sentence here; attach it to the preceding result and use 它 for the closely repeated noun.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "朵 is the appropriate measure word for an individual flower, rather than the overly general 个."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "大脑 is the appropriate noun here, as the teacher specifically corrected 脑."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "一个灵芝 is acceptable; 一株灵芝 is also possible but is not required."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "可是 is not suitable here, but merely replacing it with 这时 leaves the problematic combination of the moving man and the static lingzhi in one coordinated phrase."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "Joining the final 因为-clause is a valid connector fix, but the revised text still retains the teacher-marked wording 你得小心吃植物 rather than 吃植物得小心."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2415,
+  "completion_tokens": 1529,
+  "total_tokens": 3944,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 764,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1185,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，Ancient times is already a time expression, so adding this phrase makes the time reference redundant. [vocab list]\n2. [Grammar & Vocabulary, error] 名字叫：叫，Use the verb directly to introduce a person’s name in this noun phrase. [rule: none]\n3. [Grammar & Vocabulary, error] 害得孟子的学习：这里的环境影响了孟子的学习，This use of the harmful-result structure is incomplete: it needs a person followed by a harmful result clause. The verb shown can take the noun phrase about study directly. [teacher rule: haide_structure]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈两个人：孟子和他的妈妈两个人，After the name has just been given, use a pronoun for the close re-occurrence; the possessor is clear here. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈住在这里：孟子和他的妈妈住在这里，Use a pronoun for the repeated possessor when the referent remains clear. [rule: none]\n6. [Coherence: temporality, error] Coherence (Temporality): 住在这里才一个星期：才在这里住了一个星期，The one-week stay is completed before the later reaction, so this duration uses completed-action 了; this also forms the natural 才……就…… pattern. [rule: aspect_le_completed]\n7. [Coherence: connectors, error] Coherence (Conjunction): 因为人们在祭拜，他们一直在哭：因为人们在祭拜，所以他们一直在哭，Use the paired connector to show that the crying is the result of the worship activity. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "古代 already expresses a time period, so 古代的时候 is redundantly formed under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "名字叫孟子 is an acceptable way to introduce a person's name, so no correction is required."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 must be followed by the affected person and a harmful result, so 害得孟子的学习 is incomplete."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子和孟子的妈妈 is a clear and acceptable coordinated noun phrase, especially as his mother is being introduced."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The second 孟子 is a close repeated possessor and should be replaced by 他的 under the reference rule."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "住在这里才一个星期就觉得受不了了 is acceptable, since the final result verb already carries 了."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The teacher's conjunction rule requires 所以 with 因为 in this causal structure."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2200,
+  "completion_tokens": 1670,
+  "total_tokens": 3870,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 549,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1226,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

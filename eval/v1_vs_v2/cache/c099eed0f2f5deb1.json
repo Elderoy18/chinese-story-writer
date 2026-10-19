@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这是不合适的地方让孩子玩：这是一个不适合孩子玩儿的地方，Use the pattern “适合 + person + verb phrase” to say that a place is suitable for someone to do something; the verb phrase modifies “地方” with “的”.\n2. [Grammar & Vocabulary, error] 她决定了他们会搬家找更好的地方：她决定带着孟子搬到一个更好的地方，Mental-state verbs such as “决定” normally take the zero particle rather than “了”, and “决定” should be followed directly by the action phrase it decides on.\n3. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，“恐怕” means “I am afraid that” and cannot take another subject after it in this pattern; use “担心” when the mother is afraid about her son’s future.\n4. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，Use “place + 的 + noun” to show that the education belongs to or is available in that place.\n5. [Grammar & Vocabulary, error] 她会一直搬家才能找到质量好的教育：她得一直搬家，才能找到质量好的教育，“得……才能……” expresses a necessary condition; “会” cannot introduce the condition before “才能” in this structure.\n6. [Coherence: reference, error] Coherence (Reference): 有一天孟子去了墓地玩儿：有一天，一个叫孟子的小男孩去了墓地玩儿，On a first mention, introduce a character with a full noun phrase that gives both the name and who the character is.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“不合适的地方让孩子玩” needs the modifying structure “适合孩子玩的地方.”"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "“决定” should not take completed 了 here and should be followed by the decided action."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“恐怕” is not appropriate with “儿子的童年” as its following subject here; “担心” is appropriate."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original can be read as “living here, the education is not very good”; the revision is clearer but not required."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Coherence: connectors"
+    ],
+    "reason": "The revision makes repeated moving a necessary condition and retains the inappropriate story logic instead of expressing her wish for Mengzi to receive a good education."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "On first mention, the teacher requires a fuller introduction of the character rather than using only the name."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2289,
+  "completion_tokens": 1938,
+  "total_tokens": 4227,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 638,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

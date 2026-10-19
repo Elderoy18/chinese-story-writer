@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。\n\nThe teacher's corrections on this scene:\n- 有很多人吃植物以后就吃坏肚子了，因为他们吃了毒：吃了植物以后，了completed; 吃了有毒的植物\n- 他希望别人也可以吃好吃的植物：吃到，with result\n- 如果他们还怕吃毒，不会吃他喜欢的植物：吃到有毒的植物，就不会吃到好吃的植物，delete他\n\nThe system's item in each run:\nRun 1: 吃了毒：吃了有毒的植物，毒 by itself is a noun meaning poison; here the intended meaning is that people ate plants that were poisonous.\nRun 2: (nothing flagged here)\nRun 3: 毒：有毒的植物，毒 alone refers to poison or toxicity; here the people are eating plants, so the phrase should specify that the plants are toxic.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 identify the same missing modifier in “吃了毒,” but Run 2 flags nothing and therefore does not provide a correction."
+ },
+ "usage": {
+  "prompt_tokens": 500,
+  "completion_tokens": 111,
+  "total_tokens": 611,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 51,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

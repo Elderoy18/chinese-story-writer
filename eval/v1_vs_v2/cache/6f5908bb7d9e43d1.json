@@ -1,0 +1,126 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThis scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他发现这个口味，一百岁时候：他一百岁的时候发现这个口味，The age expression needs 的 before 时候, and a time adverbial normally comes before the main verb. [rule: adverbial_word_order]\n2. [Grammar & Vocabulary, error] 发现：发现了，This discovery is presented as a completed event in the past, so it needs 了. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 毒的花：有毒的花，毒 is a noun; use 有毒的 before a noun to describe a poisonous plant or flower. [vocab list]\n4. [Grammar & Vocabulary, error] 开始死：快要死了，死 is a change of state rather than an action that normally “begins”; 快要……了 expresses that he was close to dying. [rule: none]\n5. [Grammar & Vocabulary, error] 生病时候：生病的时候，A multi-syllable phrase before 时候 needs 的. [teacher rule: de_shihou]\n6. [Grammar & Vocabulary, error] 人：人们，Use 人们 for the concrete group of people whom he informed. [teacher rule: ren_renmen]\n7. [Grammar & Vocabulary, error] 是毒：有毒，Use 有毒 to say that a plant is poisonous. [vocab list]\n8. [Coherence: reference, error] Coherence (Reference): 这个口味：一种花，This is a new object in the scene, but 这个 does not clearly refer to a previously identified taste. Introduce the flower with a full noun phrase on its first mention. [rule: character_introduction_first_mention]\n9. [Coherence: temporality, error] Coherence (Temporality): 告诉：告诉了，This is a single completed action in the past, so the verb needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "“一百岁的时候” needs 的, but the corrected sentence still retains the unrelated “发现这个口味” clause."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The teacher deletes this clause rather than requiring 了, and “发现” is not independently an aspect error here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Before a noun, 毒 should be expressed as 有毒的."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "死 is an instantaneous change and cannot naturally follow 开始; “快要死了” is a grammatical repair."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The multisyllabic phrase 生病 needs 的 before 时候."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "This refers to a concrete group of people, so the teacher's rule requires 人们 rather than generic 人."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "A plant is described as 有毒, not 是毒."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The teacher deletes the unrelated “发现这个口味” material; replacing 这个口味 with 一种花 does not repair the clause's connection to the scene."
+   },
+   {
+    "n": 9,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The teacher's correction uses “也告诉” without 了, so adding 了 is not required here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2361,
+  "completion_tokens": 2271,
+  "total_tokens": 4632,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 710,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1714,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

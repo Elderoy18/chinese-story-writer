@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene:\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's item in each run:\nRun 1: Coherence (Temporality): 他的妈妈找到孟子一个老师：他的妈妈给孟子找到了一个老师，This is a completed event in the narrative, so “找到了” needs “了”; “给” marks Mengzi as the person for whom the teacher was found. [rule: aspect_le_completed]\nRun 2: Coherence (Temporality): 他的妈妈找到孟子一个老师：他的妈妈给孟子找到了一个老师，Finding a teacher is a completed action here, so the verb needs 了; 给 marks Mengzi as the person who benefits from the action. [rule: aspect_le_completed]\nRun 3: 找到孟子一个老师：给孟子找到了一个老师，Use 给 to mark 孟子 as the person who receives the benefit of the action, and use 了 because the mother has completed finding a teacher. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the missing 给 construction and completed-action 了, and provide the same acceptable correction."
+ },
+ "usage": {
+  "prompt_tokens": 557,
+  "completion_tokens": 43,
+  "total_tokens": 600,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

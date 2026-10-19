@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代：在古代，A historical time expression should use the preposition before the time phrase. [rule: time_expression]\n2. [Grammar & Vocabulary, error] 孟母注意：孟母注意到，When noticing a fact expressed by a following clause, use the result complement 到 to show that the fact was noticed. [rule: none]\n3. [Grammar & Vocabulary, error] 跟朋友们祭拜玩：跟朋友们一起学着祭拜，The verb 祭拜 cannot be directly followed by 玩 to mean “play at doing something”; 学着 + verb clearly expresses imitating an action. [rule: none]\n4. [Grammar & Vocabulary, error] 决定他们会搬家：决定搬家，决定 should be followed directly by a verb phrase; the subject of the moving action is understood from the context. [teacher rule: jueding_vp]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher requires 在 before 古代 in this time expression."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "注意到 correctly marks that Meng’s mother noticed the following fact."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "祭拜玩 is not the correct way to express playing at or imitating a ritual, and 学着祭拜 is a grammatical alternative."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "决定 should directly take 搬家, with the movers understood from the context."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2062,
+  "completion_tokens": 861,
+  "total_tokens": 2923,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 411,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 619,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

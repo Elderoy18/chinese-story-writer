@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远：去很远的地方旅行，A destination needs to be expressed with a place phrase; “很远” alone cannot directly modify “旅行” in this structure. [rule: none]\n2. [Grammar & Vocabulary, error] 写他的主意：记下自己的主意，“记下” means to record an idea so it is kept; “自己的” clearly shows that the ideas belong to the subject. [vocab list]\n3. [Grammar & Vocabulary, error] 遇到了一个黄色的花：看到了一朵黄色的花，“遇到” is normally used for meeting people or events, while “看到” fits noticing a flower; the matching measure word for a flower is “朵,” not “个.” [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 然后，神农写他的主意：然后，他记下自己的主意，Use a pronoun for a close re-occurrence when no other character competes as the referent. [rule: redundancy_delete]\n5. [Coherence: reference, error] Coherence (Reference): 神农遇到了一个黄色的花：他看到了一朵黄色的花，Use a pronoun for a close re-occurrence because the previous sentence already refers to the same character. [rule: redundancy_delete]\n6. [Coherence: temporality, error] Coherence (Temporality): 找到很多植物：找到了很多植物，“找到” is a completed discovery in this event sequence, so it needs the completion marker “了.” [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“旅行很远” does not naturally express travelling to a distant place, while “去很远的地方旅行” does."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“写他的主意” is not the appropriate way to say recording one’s ideas; “记下自己的主意” is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“一个花” uses the wrong measure word, and “看到了一朵黄色的花” is a correct natural replacement."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the stated close-reoccurrence rule, the recently established subject should be referred to as “他” rather than repeating “神农”."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The previous sentence already has the same clear subject, so the stated reference rule calls for “他” here."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The finding is a completed event in the sequence, so “找到了很多植物” correctly marks completion."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2178,
+  "completion_tokens": 1336,
+  "total_tokens": 3514,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 527,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 936,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

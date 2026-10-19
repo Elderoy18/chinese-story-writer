@@ -1,0 +1,61 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThis scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “而是想孟子有很好的教育” / Formula: Subject + 想让 + Person + 有/得到 + Object; or Subject + 是为了 + Verb phrase / Correct: “而是想让孟子得到良好的教育。” “不是……而是……” is possible here because it contrasts the mother’s reason for moving: she does not dislike the city; she wants better education for Mencius.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “他们搬家到有很多学校的城市” / Formula: Subject + 搬到 + Place / Correct: “他们搬到了一座有很多学校的城市。” Use 搬到 + place, rather than 搬家到. Adding 一座 makes “city” sound more natural.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “他们从早到晚走路” / Formula: Subject + 从早到晚 + 走路/赶路 / Correct: “他们从早到晚都在赶路。” The original is understandable, but 都在赶路 sounds more natural if you mean they spent the whole day travelling on foot.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "“想孟子有……” is ungrammatical because 想 must be followed by a verb phrase such as 想让孟子得到……; the wider 不是……而是…… contrast is also inappropriate here."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“搬家到有很多学校的城市” is acceptable Chinese, so replacing it with 搬到了一座…… is only an optional rewording."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Coherence: connectors"
+    ],
+    "reason": "The teacher requires deleting the unnecessary 他们 and linking the walking to 孟子抱怨 with 因为……所以, but the proposed correction retains 他们 and does not make that link."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2178,
+  "completion_tokens": 1599,
+  "total_tokens": 3777,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 527,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1333,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

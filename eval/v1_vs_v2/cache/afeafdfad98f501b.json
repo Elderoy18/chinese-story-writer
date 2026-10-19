@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 也不知道什么植物对你的身体有好处：对身体有好处，not你的\n- 这个问题神农觉得很糟糕，所以神农去了吃每种植物：很严重better，usually糟糕for情况situations; 去吃了\n- 就写了这个植物对你有没有好处：写下了，delete“对你”\n- 有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物：吃到了，V + resultative\n- 会来跟他的朋友聊到他吃的植物了：会跟……，no了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，The original repeats the time meaning because both parts refer to a period in the past. [vocab list]\n2. [Grammar & Vocabulary, error] 哪个植物好吃：哪些植物能吃，\\(好吃\\) means “tasty,” while \\(能吃\\) means “edible” or safe to eat; \\(哪些\\) fits an unknown group of plants. [rule: none]\n3. [Grammar & Vocabulary, error] 写了：写下了，When recording information about a plant, \\(写下\\) specifically means to write the information down and keep a record of it. [vocab list]\n4. [Grammar & Vocabulary, error] 去了吃：去吃了，With \\(去\\) followed by an action, place \\(了\\) after the main action verb: \\(去V了\\). [teacher rule: le_placement]\n5. [Coherence: reference, error] Coherence (Reference): 所以神农去了吃每种植物：所以他去吃了每种植物，Use a pronoun for a close re-occurrence of the same character when no other character competes as the referent. [rule: redundancy_delete]\n6. [Coherence: temporality, error] Coherence (Temporality): 有的时候，神农吃了很好吃的植物：有的时候，神农吃很好吃的植物，\\(有的时候\\) introduces a routine, so use the zero particle rather than completed-action \\(了\\). [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 有的时候，他吃了很危险的植物：有的时候，他吃很危险的植物，This is also a repeated habit, so it takes the zero particle rather than \\(了\\). [rule: aspect_le_completed]\n8. [Coherence: temporality, error] Coherence (Temporality): 会来跟他的朋友聊到他吃的植物了：会来跟他的朋友聊到他吃的植物，After the modal verb \\(会\\), use the zero particle; the future or possible action is not marked as completed with \\(了\\). [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundantly structured under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "哪个植物好吃 is acceptable Chinese and can mean which plant tastes good; it need not mean edible or safe."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "写下了 correctly replaces 写了 for recording the information."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The completion particle must follow the main action in 去吃了, not precede 吃."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The close repeated subject should be 他, and the correction also correctly repairs 去了吃 to 去吃了."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher requires the resultative 吃到了 here, so merely deleting 了 leaves the needed resultative complement absent."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The required correction is 吃到了; removing 了 does not repair the missing resultative complement."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Removing the final 了 correctly fixes the aspect error, but the remaining 会来跟 does not match the teacher's required 会跟 construction."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2402,
+  "completion_tokens": 1851,
+  "total_tokens": 4253,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 751,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1361,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

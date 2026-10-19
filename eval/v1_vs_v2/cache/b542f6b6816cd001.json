@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThis scene:\n发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n- 这就要看你的口味：这就要看……了\n- 什么都花想吃：什么花都想吃\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “发现有的植物对身体非常好” / Formula: Character/name + 发现 + statement / Correct: “神农发现有些植物对身体很有好处。” The subject is missing. Introduce the character by name first, so that the later pronoun “他” has a clear referent.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “特别是茶，让肚子感觉又暖和又清楚” / Formula: 特别是 + typical example; 让 + object + 感觉 + adjective / Correct: “特别是茶，能让肚子感觉又暖和又舒服。” “清楚” describes thoughts, explanations, or vision, not a physical feeling in the stomach.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “你吃哪种植物，这就要看你的口味。” / Formula: Uncertain question/condition + 这就要看 + A-not-A / wh-question / A还是B + 了 / Correct: “你会不会喜欢一种植物，这就要看你喜欢甜的还是苦的了。” With “这就要看……了,” the part after 看 should be a question form, such as “喜欢甜的还是苦的.”\n4. [Grammar & Vocabulary, error] Incorrect phrase: “你爱吃甜的，可能喜欢糖。” / Formula: Subject + 可能 + 喜欢 + 吃 + food / Correct: “你爱吃甜的，可能喜欢吃糖。” Use “喜欢吃” when you mean someone enjoys eating a particular food.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “除了夹竹桃以外，什么都花想吃。” / Formula: 除了 + N + 以外，什么 + classifier/noun + 都 + 想 + V / Correct: “除了夹竹桃以外，什么花他都想吃。” “什么花” must stay together, and “都” comes before the verb. Adding “他” also makes the subject clear.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The clause needs an explicit subject here, and 神农 is a correct referent."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "清楚 is not appropriate for the stomach’s physical feeling, while the revised sentence is grammatical and natural."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这就要看……了 requires the final 了 in this teacher-required structure, and the revision is grammatical."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "喜欢糖 is already acceptable and can mean liking candy, so 喜欢吃糖 is only a stylistic alternative."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "什么花 must remain together and 都 must precede 想吃; the revised word order is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2357,
+  "completion_tokens": 1032,
+  "total_tokens": 3389,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 706,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 719,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThe teacher's corrections on this scene:\n- 他不知道如果这把花对你的身体好：不知道这种花对身体好不好，the “if” in “not know if + clause” is not 如果\n- 这就要看如果这把花毒不毒了：the “if” in “not know if + clause” is not 如果, delete如果，有没有毒\n- 正好，他找到了别的花：另外一种花，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n- 神农不知道他吃不吃灵芝或者夹竹桃：要不要吃……\n- 别的人给了神农一个灵芝：另外一个人，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's item in each run:\nRun 1: (nothing flagged here)\nRun 2: Coherence (Reference): 他一吃花：他一吃这种花，Repeat the specific noun phrase to show that this is the flower he has just found; bare 花 sounds like flowers in general. [rule: ambiguous_reference]\nRun 3: Coherence (Reference): 一吃花：一吃这种花，The flower has just been found in the previous sentence, so use a specific noun phrase to show that this is that particular flower rather than flowers in general. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 flags nothing, while Runs 2 and 3 both correct the ambiguous reference “花” to “这种花”."
+ },
+ "usage": {
+  "prompt_tokens": 631,
+  "completion_tokens": 84,
+  "total_tokens": 715,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 28,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThis scene:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 因为他们常常搬了家：搬家，no了for routine/habit\n- 妈妈教孟子很多技能：教了，了completed\n- 先她让孟子跟朋友玩儿：她先让……，Subj.先……\n- 然后教他怎么买又便宜又好质量的东西：质量又好\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 常常搬了家：常常搬家，A habitual action takes no completed-action marker. [rule: aspect_le_completed]\n2. [Grammar & Vocabulary, error] 先她让：她先让，The subject comes before the time-order adverbial. [rule: adverbial_word_order]\n3. [Grammar & Vocabulary, error] 好质量的：质量好的，To describe an item's quality, use the noun phrase with the adjective after the noun: “quality is good,” then add the modifier marker. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 妈妈：她，The mother was named in the immediately preceding sentence and no other female character competes as the referent, so use a pronoun for a close re-occurrence. [rule: ambiguous_reference]\n5. [Coherence: temporality, error] Coherence (Temporality): 然后教他：然后教了他，In a completed series introduced by a first-then sequence, only the last verb takes the completed-action marker. [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 中国人说：所以中国人说，The cause introduced with “because” needs “so” before the result clause. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 expresses a habitual action, so 搬家 should not take completed-action 了."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "先 should follow the subject here, as in 她先让孟子跟朋友玩儿."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The natural modifier is 质量好的东西, not 好质量的东西."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the stated reference rule, the immediately re-mentioned mother should be referred to as 她."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "In the 先……然后…… completed sequence, the final action should be 教了他怎么买……."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The required 因为……所以 structure needs 所以 before the result clause."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2159,
+  "completion_tokens": 1782,
+  "total_tokens": 3941,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 508,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1416,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

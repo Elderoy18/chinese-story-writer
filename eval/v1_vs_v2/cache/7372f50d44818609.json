@@ -1,0 +1,60 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThis scene:\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子才十一岁，成为一个哲学家：就成为，才Num.就V.\n- 孟子不是祭拜，而是看政治文章：“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 祭拜is not conventionally related to哲学家\n- 不过，看过很多政治文章对他害得，他有很多问题：delete对他；害得他有很多问题，害得Sb. + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟子才十一岁，成为一个哲学家：孟子才十一岁，就成为了一个哲学家，The pattern with 才 introduces an unexpectedly early age and normally pairs with 就 before the result; 了 marks the completed achievement. [rule: aspect_le_completed]\n2. [Grammar & Vocabulary, error] 对他害得：害得他，害得 follows the action that causes harm and is followed by the person affected plus the harmful result. [teacher rule: haide_structure]\n3. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜：他不是祭拜，Use a pronoun when the same character was named in the immediately preceding sentence and no other character competes as the referent. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "才十一岁 should be followed by 就 before the result, and 成为了 correctly marks the completed achievement."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 needs the affected person followed by the harmful result, so 害得他 alone leaves the structure incomplete."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The immediately repeated 孟子 should be 他, but changing only the reference does not fix the unsuitable 不是……而是…… construction."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2096,
+  "completion_tokens": 1363,
+  "total_tokens": 3459,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 445,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1145,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

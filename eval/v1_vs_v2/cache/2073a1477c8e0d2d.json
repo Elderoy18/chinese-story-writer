@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “古代的时候人觉得祭拜非常重要” / Formula: 在 + historical time, 人们 + 认为/觉得 + statement / Correct: “在古代，人们认为祭拜非常重要。”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “孟子很小的时候” / Formula: First mention: name + identity + background information / Correct: “有一个叫孟子的男孩，他很小的时候……” It is clearer to briefly introduce 孟子 when he first appears.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “虽然他没有朋友，因为每天只祭拜。” / Formula: 因为 + reason，(所以) + result; or 虽然 + contrast， 但是 + result / Correct: “因为他每天只祭拜，所以他没有朋友。” “虽然” needs a contrasting result, but this sentence expresses a cause and result.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “他的同学们老是对他开玩笑了” / Formula: Subject + 老是 + verb phrase (habitual action; no 了) / Correct: “他的同学们老是拿他开玩笑。” Here, 老是 is acceptable because the classmates’ behavior is negative and annoying. Do not use 了 for a repeated habit.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “孟子妈妈看了他的同学们对孟子不好的影响” / Formula: 谁 + 看到/发现 + 谁 + 对 + 谁 + 的 + 负面影响 / Correct: “孟子的妈妈发现他的同学们对孟子有不好的影响。”\n6. [Grammar & Vocabulary, error] Incorrect phrase: “所以孟子和孟子妈妈搬家了” / Formula: Subject + 和 + possessive noun + 搬家了 / Correct: “所以，孟子和他的妈妈搬家了。” Use “他的妈妈” rather than repeating “孟子妈妈.”",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“古代的时候” is redundant and concrete people should be referred to as “人们,” not generic “人.”"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 should be briefly introduced on first mention, but the proposed correction ends unfinished with “他很小的时候……,” so it cannot be copied as a complete correction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“虽然” does not fit this cause-result relation, and the corrected 因为……所以…… structure is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "“对他开玩笑” should be 跟他开玩笑 or 拿他开玩笑, and habitual 老是 actions do not take 了."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“发现……有不好的影响” correctly expresses seeing that the classmates had a bad influence."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Replacing the repeated name in “孟子妈妈” with “他的妈妈” removes the redundant repeated reference and is clear here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2350,
+  "completion_tokens": 1182,
+  "total_tokens": 3532,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 699,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 769,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

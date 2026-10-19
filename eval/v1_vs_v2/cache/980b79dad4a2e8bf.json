@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene:\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's item in each run:\nRun 1: 头发疼死：头疼得要死，头发 cannot feel pain; 头疼 describes a headache, and a degree complement needs 得 before 要死. [rule: none]\nRun 2: 头发疼死：头疼死了，头发 refers to hair, which cannot feel pain; 头疼 means that a person has a headache, and 了 completes the result expression. [rule: word_choice]\nRun 3: 头发疼死：头疼的时候，头发 does not normally describe the part that feels pain; use 头疼, and add 的 before 时候 in this time expression. [teacher rule: de_shihou]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "All runs note that 头发 is wrong for a headache, but they propose different additional grammatical changes, and Run 3 changes the construction to a time phrase."
+ },
+ "usage": {
+  "prompt_tokens": 526,
+  "completion_tokens": 294,
+  "total_tokens": 820,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 232,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

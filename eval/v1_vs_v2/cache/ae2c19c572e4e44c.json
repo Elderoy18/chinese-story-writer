@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很不知道：不太知道，Very is not normally used directly before the negative form of a mental-state verb such as 知道; 不太知道 expresses limited knowledge naturally. [rule: none]\n2. [Grammar & Vocabulary, error] 也什么植物不能吃：什么植物不能吃，Also must be followed by a verb phrase; here it cannot directly introduce the noun phrase 什么植物. [teacher rule: ye_vp]\n3. [Grammar & Vocabulary, error] 很麻烦的情况：这种情况很麻烦，A noun phrase with an adjective modifier cannot stand alone as the final predicate; this version makes 情况 the subject and 很麻烦 its predicate. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 一个 人，神农：一个叫神农的人，On a character’s first mention, use a clear noun phrase that both identifies and names the character. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 你的身体：人们的身体，The narration is about many people, not directly addressing the reader; repeat the appropriate noun phrase to keep the reference clear. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很不能直接修饰不知道；不太知道在这里自然正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "也不能直接放在什么植物前面，删除后句子结构正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "原句末尾的名词短语不能单独作谓语，改为这种情况很麻烦正确。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农首次出现时需要用更清楚的名词短语介绍人物。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "叙述的是泛指的很多人，不应直接称呼读者为你；人们的身体正确。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2090,
+  "completion_tokens": 792,
+  "total_tokens": 2882,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 439,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 491,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

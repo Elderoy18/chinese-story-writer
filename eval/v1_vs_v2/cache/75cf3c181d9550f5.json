@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene:\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 孟子很小的时候：有一个小男孩叫孟子。他很小的时候，This is the character’s first mention, so introduce him with a full noun phrase before using a pronoun. [rule: character_introduction_first_mention]\nRun 2: Coherence (Reference): 孟子很小的时候：有一个叫孟子的小男孩。他很小的时候，A character’s first appearance should introduce both the name and who the character is, rather than giving only a name. [rule: character_introduction_first_mention]\nRun 3: Coherence (Reference): 孟子很小的时候，从早到晚一直祭拜：有一个叫孟子的小男孩；他小时候从早到晚一直祭拜，At first mention, introduce the character with both a name and a full noun phrase rather than using only the name. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the insufficient first introduction of 孟子 and correctly introduce him as a boy before referring to him."
+ },
+ "usage": {
+  "prompt_tokens": 683,
+  "completion_tokens": 46,
+  "total_tokens": 729,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThis scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一百岁时候：一百岁的时候，A multi-syllable time expression before 时候 requires 的. [teacher rule: de_shihou]\n2. [Grammar & Vocabulary, error] 毒的花：有毒的花，Use 有毒的 to describe a poisonous plant or flower; 毒的 does not express this meaning naturally. [vocab list]\n3. [Grammar & Vocabulary, error] 生病时候：生病的时候，A multi-syllable verb phrase before 时候 requires 的. [teacher rule: de_shihou]\n4. [Grammar & Vocabulary, error] 是毒：有毒，是毒 identifies something as the noun 毒, while 有毒 describes the property of being poisonous. [rule: word_class_misuse]\n5. [Coherence: reference, error] Coherence (Reference): 告诉人：告诉人们，Use 人们 for the concrete group of people whom he is informing. [teacher rule: ren_renmen]\n6. [Coherence: temporality, error] Coherence (Temporality): 他发现这个口味：他发现了这个口味，This is a completed discovery in a past narrative, so it needs 了. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 一吃就开始死：一吃就开始死了，The beginning of dying is a change of state in this particular event, so add 了 at the end. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "一百岁的时候需要的。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "描述花有毒应说“有毒的花”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“生病的时候”需要的。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "植物应是“有毒”，不能直接说“是毒”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这里指具体的一群人，按教师规则应使用“人们”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "问题是“他发现这个口味”与上下文没有清楚关系，应删除而不是加了。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“死”是瞬间事件，不能说“开始死”，加了仍未解决该问题。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2273,
+  "completion_tokens": 666,
+  "total_tokens": 2939,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 622,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 293,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

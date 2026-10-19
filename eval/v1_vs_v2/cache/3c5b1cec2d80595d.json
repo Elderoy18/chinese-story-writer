@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。\n\nThe teacher's corrections on this scene:\n- 一回家就告诉别人：家人\n- 他找到药以后他写下怎么做药在书上：delete the second他，redundant; 在书上写下……\n- 所以人们都知道，那红灵芝对身体好处：这样，有好处\n\nThe system's item in each run:\nRun 1: 写下怎么做药在书上：在书上写下怎么做药的方法，The location phrase should come before the verb here, and the object needs a noun phrase meaning “the method of making medicine.” [rule: none]\nRun 2: 写下怎么做药在书上：把做药的方法写在书上了，In a 把 construction, place the thing being written after 把, then use the verb and its location; the completed writing action also needs 了. [rule: aspect_le_completed]\nRun 3: 写下怎么做药在书上：在书上写下怎么做药，The location phrase should come before the verb it modifies; placing it after the object makes the word order unnatural. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs address the unnatural word order in 写下怎么做药在书上 and provide grammatical ways to express writing the method in a book."
+ },
+ "usage": {
+  "prompt_tokens": 517,
+  "completion_tokens": 363,
+  "total_tokens": 880,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 305,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

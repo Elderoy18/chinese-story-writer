@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThis scene:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 因为他们常常搬了家：搬家，no了for routine/habit\n- 妈妈教孟子很多技能：教了，了completed\n- 先她让孟子跟朋友玩儿：她先让……，Subj.先……\n- 然后教他怎么买又便宜又好质量的东西：质量又好\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “因为他们常常搬了家” / Formula: Subject + 常常 + Verb; use 了 for a completed event, not a repeated habit / Correct: “因为他们常常搬家” or, more naturally, “因为孟母带着孟子搬了三次家”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “中国人说，孟母三迁” / Formula: “孟母三迁” is a fixed idiom; introduce it with the subject + 把/称这种事为… / Correct: “中国人把这件事称为‘孟母三迁’。”\n3. [Grammar & Vocabulary, error] Incorrect phrase: “孟子没有爸爸” / Formula: Subject + 没有 + Noun is grammatically possible, but the reference should be specific and accurate / Correct: “孟子的爸爸去世得很早。” (if that is what you mean)\n4. [Grammar & Vocabulary, error] Incorrect phrase: “从这儿到那儿” / Formula: 从 + place A + 到 + place B; use clear, specific place names when possible / Correct: “孟母带着孟子从一个地方搬到另一个地方。”\n5. [Grammar & Vocabulary, error] Incorrect phrase: “先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西” / Formula: 先 + Subject + Verb…, 然后 + Subject + Verb…; 又 + Adj. + 又 + Adj. + 的 + Noun / Correct: “她先让孟子跟朋友玩儿，然后教他怎么买又便宜又质量好的东西。”",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常表示习惯性动作，搬家后不应加表示完成的了。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“中国人说，孟母三迁”可以自然地引出这个固定说法，不需要改成把字句。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“孟子没有爸爸”语法正确，虽然不如说明父亲早逝具体，但不是必须修改的错误。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“从这儿到那儿”是完整且可用的地点范围表达，不一定必须换成具体地点。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "改正了“先她”和“好质量”的语序，但叙述中这一串动作的最后一个“教”仍应加了。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2231,
+  "completion_tokens": 1362,
+  "total_tokens": 3593,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 580,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

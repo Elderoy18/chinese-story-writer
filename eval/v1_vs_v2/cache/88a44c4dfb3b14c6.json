@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThe teacher's corrections on this scene:\n- 这是古代的故事：这是一个古代的故事\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 从他的家到墓地很近：他的家离墓地很近\n- 所以他每天老是从早到晚去墓地跟朋友们玩玩儿：delete老是；玩儿，V.V. is used to make requests or plans\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “孟子小的时候，他的爸爸很早就去世了。” / Formula: Character + 小的时候，+ family member + 就 + 去世了 / Correct: “孟子小的时候，他的爸爸就去世了。” “很早” is possible, but it is slightly redundant with “孟子小的时候.” Use “很早” only if you want to strongly emphasize that his father died unusually early.\nRun 2: Incorrect phrase: “孟子小的时候” / Formula: Character + 小时候 / Correct: “孟子小时候” When talking generally about someone’s childhood, “小时候” is more natural without 的.\nRun 3: Incorrect phrase: “孟子小的时候” / Formula: Character introduction + 小的时候 / Correct: “在古代，有一个叫孟子的小孩子。孟子小的时候……” Since 孟子 is mentioned for the first time, briefly introduce who he is before continuing the story.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "The runs target different issues: redundancy of 很早, wording of 小的时候, and the missing introduction of 孟子."
+ },
+ "usage": {
+  "prompt_tokens": 584,
+  "completion_tokens": 124,
+  "total_tokens": 708,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 70,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

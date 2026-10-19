@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。孟子想，难怪我们常常搬家，原来我妈妈很忙。可是常常搬家害得孟子很难找到朋友。每次搬家孟子也觉得新的地方不是太热就是太冷，不是太大就是太小。在哪的地方，他都不高兴。孟子想帮助妈妈祭拜，可是他六岁，所以不能祭拜。\n\nThis scene:\n四年后，孟子开始帮妈妈祭拜。他画画很厉害，他越来越喜欢祭拜，所以他祭拜不是想帮妈妈工作，而是他很喜欢画画。孟子成为很著名的古代画家。今天很多中国人很喜欢孟子。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他画画很厉害，他越来越喜欢祭拜：delete the second他，redundant; no logic relationship, add也before越来越\n- 孟子成为很著名的古代画家：wrong information, 哲学家\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 祭拜不是想帮妈妈工作，而是他很喜欢画画：祭拜不是为了帮妈妈工作，而是因为很喜欢画画，This sentence corrects the reason for the action, so the two halves should clearly express purpose and cause with matching structures. [teacher rule: bushi_ershi]\n2. [Coherence: reference, error] Coherence (Reference): 他越来越喜欢祭拜：越来越喜欢祭拜，Within the same sentence, the subject has already been introduced, so use zero form instead of repeating the pronoun. [rule: redundancy_delete]\n3. [Coherence: reference, error] Coherence (Reference): 所以他祭拜：所以祭拜，The subject is already clear from the preceding clauses in the same sentence, so the repeated pronoun should be omitted. [rule: redundancy_delete]\n4. [Coherence: reference, error] Coherence (Reference): 孟子成为很著名的古代画家：他成为很著名的古代画家，After a recent mention of the same character and with no competing character, use a pronoun rather than repeating the name. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 很多中国人很喜欢孟子：很多中国人很喜欢他，The character has just been mentioned and no other possible male referent intervenes, so a pronoun is natural here. [rule: character_introduction_first_mention]\n6. [Coherence: temporality, error] Coherence (Temporality): 成为很著名的古代画家：成为了很著名的古代画家，This describes a completed change of status in the narrative, so use 了 after the verb. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "原句的“不是想……，而是……”可以表达否定一个动机并说明真正原因，并非必须改成“为了/因为”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "同一句中孟子已经由前一个“他”指明，第二个“他”重复，应省略。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“所以他祭拜”是新的分句，使用“他”并不构成必须删除的重复。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference",
+     "Vocabulary"
+    ],
+    "reason": "前文刚提到孟子时应用“他”，但改后仍保留“古代画家”这一错误信息。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚在上一句出现且没有其他男性指代对象，此处应使用“他”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "叙述成为著名人物这一完成的变化时可用“成为了”，但改后仍错误地说孟子是画家。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2335,
+  "completion_tokens": 1441,
+  "total_tokens": 3776,
+  "prompt_tokens_details": {
+   "cached_tokens": 2332,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThis scene:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这种一定是做药的花：这一定是一种做药的花\n- 原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result\n- 神农快生病：很快就生病了\n- 快给他一种红的灵芝：很快地给了，快V: to give order, 了completed\n- 他没有病：delete他，redundant; 病好了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 快：很快，Before a declarative verb phrase, “很快” means that the action happened rapidly; “快” alone is normally used to urge someone to act. [rule: word_choice]\n2. [Grammar & Vocabulary, error] 生病：生病了，The illness begins as a completed change of state in this past narrative, so the verb needs 了. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 快：很快，Before the completed action of giving, “很快” correctly means that the person gave it rapidly; “快” alone is usually an imperative-like prompt. [rule: word_choice]\n4. [Grammar & Vocabulary, error] 给：给了，Giving the medicine is a completed action, so 给 needs 了. [rule: aspect_le_completed]\n5. [Coherence: reference, error] Coherence (Reference): 神农吃了以后，他没有病：神农吃了以后，没有病，When the same character has already been named earlier in the same sentence, use zero form rather than repeating a pronoun. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "In this declarative narrative, 快 should be 很快 rather than the imperative-like 快."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The onset of illness is a completed change in the past narrative and needs sentence-final 了."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "快 before 给 is inappropriate here; 很快 is the correct adverb."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Adding 了 correctly marks the giving event as completed."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他 is redundant after 神农 in the same clause, but 没有病 still should be changed to 病好了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2192,
+  "completion_tokens": 1056,
+  "total_tokens": 3248,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 541,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 757,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

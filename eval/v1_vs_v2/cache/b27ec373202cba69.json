@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 对童年：对孩子的成长，童年 names a stage of life, while the sentence means that the living environment affects the child’s development. [rule: none]\n2. [Coherence: reference, error] Coherence (Reference): 这个男孩子叫孟子，孟子是古代的人：在古代，有一个男孩子叫孟子。On first mention, use an indefinite full noun phrase to introduce a new character; 这个 makes the boy sound already known. [rule: character_introduction_first_mention]\n3. [Coherence: reference, error] Coherence (Reference): 她望子成龙，所以孟子的妈妈安排他的生活：她望子成龙，所以安排他的生活。The subject is already clear in the same sentence, so use zero form rather than repeating the full noun phrase. [rule: none]\n4. [Coherence: temporality, error] Coherence (Temporality): 常常搬了家：常常搬家，A habitual action takes the zero particle; 了 marks a completed action rather than a routine. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“住在哪儿对童年很重要” is somewhat broad but acceptable; changing it to “对孩子的成长” is only a stylistic/meaning preference."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“这个男孩子” improperly treats Mengzi as already known on his first introduction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating “孟子的妈妈” after “她” in the same sentence makes the reference unnecessarily confusing."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "A habitual action with “常常” should use “搬家,” not completed-event “搬了家.”}]} }numerusform<<< END OF ORIGINAL RESPONSE >>><<< START OF CRITIQUE >>></analysis code>ฤศจassistant_analysis</analysis code><analysis text>We need critique response against reference. Need explain single discrepancy item1 fix_right. Need perhaps assess response format slight: output had perhaps extra space? It is valid JSON? final visible `{"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2058,
+  "completion_tokens": 725,
+  "total_tokens": 2783,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 407,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 391,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

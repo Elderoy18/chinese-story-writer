@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene:\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's item in each run:\nRun 1: 一个课文的植物：一篇关于植物的课文，课文 takes the measure word 篇, and 关于植物 correctly states what the text is about. [rule: none]\nRun 2: 一个课文的植物：这种植物，课文 is a text, so it cannot describe the plant in this phrase; the demonstrative phrase refers clearly to the plant just mentioned. [rule: word_choice]\nRun 3: 一个课文的植物：一篇关于植物的课文，篇 is the measure word for a text, and 关于植物 correctly shows that the text is about plants. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 correct the phrase as a text about plants, while Run 2 changes it to refer to the plant itself."
+ },
+ "usage": {
+  "prompt_tokens": 484,
+  "completion_tokens": 51,
+  "total_tokens": 535,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

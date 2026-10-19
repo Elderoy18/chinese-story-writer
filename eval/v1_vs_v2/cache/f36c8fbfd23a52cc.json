@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有很多人吃植物以后就吃坏肚子了，因为他们吃了毒：吃了植物以后，了completed; 吃了有毒的植物\n- 他希望别人也可以吃好吃的植物：吃到，with result\n- 如果他们还怕吃毒，不会吃他喜欢的植物：吃到有毒的植物，就不会吃到好吃的植物，delete他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this expression redundantly combines two time expressions; use the shorter time phrase. [vocab list]\n2. [Grammar & Vocabulary, error] 吃了毒：吃了有毒的植物，毒 is the noun “poison,” while 有毒的植物 specifically means plants that are poisonous. [vocab list]\n3. [Grammar & Vocabulary, error] 他什么植物都觉得好吃：他觉得什么植物都好吃，觉得 should introduce the whole evaluative clause; the speaker’s judgment comes after 觉得. [rule: none]\n4. [Coherence: temporality, error] Coherence (Temporality): 吃植物以后：吃了植物以后，the eating is completed before the later result of getting an upset stomach, so use 了 for the completed action. [rule: aspect_le_completed]\n5. [Coherence: connectors, error] Coherence (Conjunction): 如果他们还怕吃毒，不会吃他喜欢的植物：如果他们还怕吃毒，就不会吃他喜欢的植物，an if-condition normally uses 就 to introduce its result. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代的时候 redundantly combines two time expressions under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "毒 cannot stand for the poisonous plants that people ate; 有毒的植物 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "他什么植物都觉得好吃 is acceptable Chinese, so the word-order change is only a stylistic alternative."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Eating is completed before the stomachache, so 吃了植物以后 is required by the teacher's aspect rule."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The conditional needs 就, but the shown correction still wrongly has 怕吃毒 and 他喜欢的植物."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2108,
+  "completion_tokens": 781,
+  "total_tokens": 2889,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 457,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 478,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

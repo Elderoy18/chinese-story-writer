@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 有一个男孩名字叫孟子：有一个叫孟子的男孩，A name used to modify a noun should come before that noun with 的; “叫孟子的” modifies “男孩.”\n2. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈两个人：孟子和他的妈妈两个人，Use a pronoun for a close re-occurrence: “孟子” was just mentioned, and no other possible owner of “妈妈” has appeared.\n3. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈住在这里：孟子和他的妈妈住在这里，Use a pronoun for a close re-occurrence rather than repeating the name inside the same subject phrase.\n4. [Coherence: temporality, error] Coherence (Temporality): 住在这里才一个星期：住了一个星期才，Use 了 after “住” because this one-week period of living there is completed before the characters decide they cannot tolerate it.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“有一个男孩名字叫孟子” is a grammatical, understandable way to introduce the boy; the revision is optional."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The name has just been introduced, so repeating 孟子 as the possessor is against the reference rule; 他的妈妈 is appropriate."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Within this repeated subject reference, 孟子和他的妈妈 avoids unnecessary repetition and follows the pronoun rule."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“住在这里才一个星期就觉得受不了了” can correctly express that after only one week they already could not bear it; the proposed change leaves an incorrect 才就 sequence."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2031,
+  "completion_tokens": 1039,
+  "total_tokens": 3070,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 380,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 749,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

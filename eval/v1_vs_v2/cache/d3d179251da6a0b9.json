@@ -1,0 +1,109 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun phrase cannot directly state what a named place is; use 是 to link the name with its description, and 座 is the matching measure word for a mountain.\n2. [Grammar & Vocabulary, error] 这也找植物：他也在这里找植物，Use 在这里 for the location. The demonstrative 这 alone cannot serve as the location in this sentence, and 他 clearly refers back to 神农.\n3. [Grammar & Vocabulary, error] 你跟黄色的花做茶很有用：用黄色的花做的茶很有用，The character 你 should be 用, which introduces the material used to make something. The phrase 用黄色的花做的 modifies 茶, so it needs 的.\n4. [Grammar & Vocabulary, error] 你的头发疼死：你的头疼得要死，头发 means “hair,” not “head.” A degree/result complement after 疼 uses 得, as in 疼得要死.\n5. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative before a counted noun needs a measure word; 杯 is the appropriate measure word for a drink.\n6. [Coherence: temporality, error] Coherence (Temporality): 找到黄色的花：找到了一朵黄色的花，Use 了 after the resultative verb 找到 to show that this one-time discovery was completed. Adding 一朵 also introduces the flower as a new, indefinite object.\n7. [Coherence: connectors, error] Coherence (Conjunction): 比方说，：[delete]，比方说 introduces an example of a general statement, but the following sentence is not an example of a general category, so this connector should be removed.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original needs 是 to link 凉山 with its description, and 座 is an appropriate measure word for a mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "这 cannot function naturally as the location here, and 他 can correctly refer back to 神农."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "你 is incorrect here, while 用黄色的花做的茶很有用 is a grammatical way to express the intended meaning."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "头发 is hair rather than head, and 头疼得要死 is a grammatical expression of severe headache."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "This demonstrative noun phrase needs a measure word, and 杯 is suitable for a drink."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "找到了 correctly marks the completed discovery, but 一朵黄色的花 still does not identify the medicinal plant as a kind of flower."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "比方说 appropriately introduces the following headache case as an example of the tea being useful."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2254,
+  "completion_tokens": 2346,
+  "total_tokens": 4600,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 603,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1881,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

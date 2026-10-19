@@ -1,0 +1,160 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 所以他们找到了很多植物对药：来做药\n- 神农先看到很多病人，他们吃很多植物对药：better to briefly introduce “神农” when this character first appears；吃了很多植物，了completed\n- 但是我觉得他们的吃的植物，让他们病人：他们吃的植物让他们生病，让Sb. + V./Adj.\n- 神农觉得这个植物可能特别是毒：可能毒性特别强，”特别是+N, + Clause” is used to single out a typical example\n- 所以他想找一个植物对药，他们可以吃对药：找一个可以做药的植物；这样，他们可以……\n- 他想把花放在茶里，对药：做成药\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很多植物对药：很多可以做药的植物，Use the verb phrase “可以做药” to say that plants can be used to make medicine; “对药” is not a valid phrase here. [rule: none]\n2. [Grammar & Vocabulary, error] 吃很多植物对药：吃了很多可以做药的植物，“了” marks the completed eating action, and “可以做药的植物” correctly describes plants that can be made into medicine. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 他们的吃的植物：他们吃的植物，A verb phrase used before a noun takes the pattern subject + verb + 的; the extra possessive “的” after “他们” is not used in this structure. [rule: none]\n4. [Grammar & Vocabulary, error] 让他们病人：让他们生病了，“病人” is a noun meaning a patient, not a verb meaning to become ill. Use “生病” for the action or state, with “了” for the resulting change of state. [rule: word_class_misuse]\n5. [Grammar & Vocabulary, error] 特别是毒：特别有毒，“毒” cannot directly function as an adjective after “特别”; “有毒” means toxic and can be modified by “特别.” [rule: word_class_misuse]\n6. [Grammar & Vocabulary, error] 找一个植物对药：找一个植物做药，“做药” means to use something in making medicine; “对药” does not express this meaning. [rule: none]\n7. [Grammar & Vocabulary, error] 吃对药：吃，Here the intended meaning is that people can eat the plant. “对药” cannot follow “吃” in this context. [rule: none]\n8. [Grammar & Vocabulary, error] 对药：用来做药，“用来做药” clearly expresses the purpose of putting the flowers into the tea. [rule: none]\n9. [Coherence: reference, error] Coherence (Reference): 神农先看到很多病人：一个叫神农的人先看到了很多病人，This is the character’s first mention, so introduce him with a name and a brief noun phrase rather than assuming the reader already knows him. [rule: character_introduction_first_mention]\n10. [Coherence: reference, error] Coherence (Reference): 这个植物：这些植物，The previous sentence mentions many plants, not one identified plant, so “这个植物” has no clear singular referent. [rule: ambiguous_reference]\n11. [Coherence: reference, error] Coherence (Reference): 他们可以吃：病人可以吃，Both doctors and sick people have been mentioned, so “他们” can refer to either group. Repeat “病人” to make the referent clear. [rule: ambiguous_reference]\n12. [Coherence: reference, error] Coherence (Reference): 他找到了一把花，他想：他找到了一把花，想，After the subject has already been named in the same sentence, use zero form rather than repeating the pronoun. [rule: redundancy_delete]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“对药” is not a valid expression here, while “可以做药的植物” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "The phrase needs both the completed-action marker 了 and a valid expression for plants usable as medicine."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Before “吃的植物,” the possessor is “他们,” not “他们的.”"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“病人” is a noun, whereas “让他们生病了” correctly uses a verb phrase after 让."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“毒” cannot be directly modified by 特别; “特别有毒” is grammatical."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“对药” is invalid here, and “找一个植物做药” can mean finding a plant to make medicine."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“对药” cannot follow 吃 here, and deleting it leaves the acceptable verb phrase “吃.”"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“对药” is not a valid verb phrase, while “用来做药” correctly expresses purpose."
+   },
+   {
+    "n": 9,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "On his first appearance, 神农 should be briefly introduced rather than simply named without context."
+   },
+   {
+    "n": 10,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "No single plant has been introduced, so singular “这个植物” lacks a clear referent."
+   },
+   {
+    "n": 11,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他们” can naturally refer to the recently mentioned sick people, and the teacher retained this pronoun in her correction."
+   },
+   {
+    "n": 12,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated pronoun begins a new clause and is acceptable, while the displayed text ends after incomplete “想.”"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2611,
+  "completion_tokens": 2179,
+  "total_tokens": 4790,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 960,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1453,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene:\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's item in each run:\nRun 1: 这也找植物：神农在这座山上找植物，A mountain cannot be the person doing the action; use the character as the subject and mark the mountain as the location with 在. [rule: none]\nRun 2: Coherence (Reference): 这也找植物：他也在这里找植物，After the sentence introduces 凉山, the zero subject could incorrectly seem to be the mountain; repeat the established character with 他 and use 在这里 for the location. [rule: ambiguous_reference]\nRun 3: Coherence (Reference): 这也找植物：他也在这里找植物，The previous scene has introduced 神农, so use the close re-occurrence pronoun 他 to show that he is the one searching; 这里 identifies the location. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify that the mountain is incorrectly or ambiguously treated as the searcher and correctly make the person the subject while marking the mountain as the location."
+ },
+ "usage": {
+  "prompt_tokens": 553,
+  "completion_tokens": 152,
+  "total_tokens": 705,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 92,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

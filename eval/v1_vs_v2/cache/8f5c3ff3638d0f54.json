@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene:\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's item in each run:\nRun 1: 这也找植物：他也在这里找植物，Use 在这里 for the location. The demonstrative 这 alone cannot serve as the location in this sentence, and 他 clearly refers back to 神农.\nRun 2: 这也找植物：在这里找植物，A location before an action needs 在, and 也 cannot refer to a place; 这里 names the location.\nRun 3: 这也找植物：他也在这里找植物，This needs a person as the subject, and 这里 is the location form; 这 alone cannot mean “here” before the verb.",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the missing location expression 在这里 in 这也找植物 and provide acceptable corrections."
+ },
+ "usage": {
+  "prompt_tokens": 511,
+  "completion_tokens": 43,
+  "total_tokens": 554,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

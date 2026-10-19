@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene:\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's item in each run:\nRun 1: 跟黄色的花做茶：用黄色的花做茶，“用” introduces the material used to make tea; “跟” does not express this material relationship.\nRun 2: 你跟黄色的花：用黄色的花，Use 用 to introduce the material used to make something; 你 is a pronoun, and 跟 does not introduce a material in this structure.\nRun 3: 你跟黄色的花做茶：用黄色的花做茶，跟 means “with/together with” and cannot introduce the material used to make something; 用 marks the material or means.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 2 and 3 correct both the unnecessary 你 and 跟, while Run 1 addresses only 跟 and would leave 你 if applied to its cited span."
+ },
+ "usage": {
+  "prompt_tokens": 510,
+  "completion_tokens": 258,
+  "total_tokens": 768,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 193,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

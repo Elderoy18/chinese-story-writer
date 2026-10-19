@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n四年后，孟子开始帮妈妈祭拜。他画画很厉害，他越来越喜欢祭拜，所以他祭拜不是想帮妈妈工作，而是他很喜欢画画。孟子成为很著名的古代画家。今天很多中国人很喜欢孟子。\n\nThe teacher's corrections on this scene:\n- 他画画很厉害，他越来越喜欢祭拜：delete the second他，redundant; no logic relationship, add也before越来越\n- 孟子成为很著名的古代画家：wrong information, 哲学家\n\nThe system's item in each run:\nRun 1: 祭拜不是想帮妈妈工作，而是他很喜欢画画：祭拜不是为了帮妈妈工作，而是因为很喜欢画画，This sentence corrects the reason for the action, so the two halves should clearly express purpose and cause with matching structures. [teacher rule: bushi_ershi]\nRun 2: 不是想帮妈妈工作，而是他很喜欢画画：不是为了帮妈妈工作，而是因为他很喜欢画画，The two halves of this paired structure should give parallel reasons: the rejected reason uses “为了…”, and the affirmed reason uses “因为…”. [teacher rule: bushi_ershi]\nRun 3: 不是想帮妈妈工作，而是他很喜欢画画：不是为了帮妈妈工作，而是因为他很喜欢画画，This contrast explains two different motivations, so each side needs a matching purpose/cause phrase: use 为了 for the intended purpose and 因为 for the reason. [teacher rule: bushi_ershi]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs correct the same 不…而是… motivation contrast by using 为了 and 因为, with only an acceptable omission of the repeated subject in Run 1."
+ },
+ "usage": {
+  "prompt_tokens": 571,
+  "completion_tokens": 107,
+  "total_tokens": 678,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 43,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,114 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This phrase redundantly combines two time expressions; use the shorter time expression for an ancient-time setting. [vocab list]\n2. [Grammar & Vocabulary, error] 人：人们，Use this plural noun when referring to a group of people rather than the generic noun. [teacher rule: ren_renmen]\n3. [Grammar & Vocabulary, error] 看了：看到了，Here the mother has perceived an effect, so the verb must mean “see/notice,” not “look at.” [vocab list]\n4. [Grammar & Vocabulary, error] 同学们对孟子不好的影响：同学们对孟子的不好的影响，The adjective phrase modifying “influence” needs 的 before the noun it modifies. [rule: attributive_modifier_de]\n5. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：一个叫孟子的小男孩从小就，On a character’s first mention, introduce the character with a full noun phrase rather than using only the name. [rule: character_introduction_first_mention]\n6. [Coherence: reference, error] Coherence (Reference): 孟子和孟子妈妈：孟子和他的妈妈，After the name has appeared in the same clause, use a pronoun for the repeated possessor instead of repeating the name. [rule: ambiguous_reference]\n7. [Coherence: temporality, error] Coherence (Temporality): 老是对他开玩笑了：老是对他开玩笑，A habitual action with 老是 takes the zero particle, not 了, because it is not presented as completed. [rule: aspect_le_completed]\n8. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：因为他每天只祭拜，所以没有朋友，The relationship is cause and effect, so use the paired connector because–therefore rather than 虽然. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代的时候 redundantly combines a time noun with 的时候, and 在古代 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "人 cannot refer by itself to this concrete group; 人们 is required here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The intended meaning is that the mother noticed the influence, so 看到 is the appropriate verb."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "的不好的影响 correctly marks 不好 as modifying 影响 in the intended noun phrase."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The first introduction should identify 孟子 with a fuller noun phrase, but the shown replacement ends with 从小就 and is incomplete by itself."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的妈妈 avoids the unnecessarily repeated name and gives a correct reference to Mengzi's mother."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "老是 describes a habitual action, so it should not take completed-action 了."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The sentence expresses cause and result, and 因为……所以…… correctly links the two clauses."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2363,
+  "completion_tokens": 2017,
+  "total_tokens": 4380,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 712,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他需要当上医：医生\n- 一看别的人就想帮助他们：看到，看look vs.看到see; 病人，“别的” is for “a different type”, and “all else except the spoken one”\n- 什么病人吃都会觉得身体更好：吃了以后\n- 神农三个月走去：走了三个月\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，古代 already names a time period, so adding 的时候 is redundant.\n2. [Grammar & Vocabulary, error] 当上医：当上医生，医 is not a complete noun for a person’s profession here; 医生 means “doctor.”\n3. [Grammar & Vocabulary, error] 一看别的人：一看到别人，看到 means “see,” while 看 means “look”; 别人 is the natural term for other people, whereas 别的人 distinguishes other people from a specific previously mentioned person.\n4. [Grammar & Vocabulary, error] 远远的地方：很远的地方，远远 is usually an adverbial expression; a noun phrase needs an adjective such as 很远的 or 遥远的.\n5. [Grammar & Vocabulary, error] 一个很漂亮的植物：一株很漂亮的植物，株 is the matching measure word for one individual plant.\n6. [Coherence: reference, error] Coherence (Reference): 他有一个问题，他不知道什么东西能做药：他有一个问题，不知道什么东西能做药，apply the zero-form rule: after the same subject has already appeared in this sentence, omit the repeated pronoun.\n7. [Coherence: reference, error] Coherence (Reference): 有植物的地方：有这种植物的地方，repeat the specific noun with 这种 because the place contains the particular plant Shennong heard about, not just any plants.\n8. [Coherence: temporality, error] Coherence (Temporality): 神农三个月走去，找到：神农走了三个月，找到了，place the duration after the verb, and use 了 for the completed journey and completed result of finding the place.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代已经表示时间段，古代的时候重复了时间表达。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "医不能在这里单独作职业名词，应说医生。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "看应为看到，且这里应是病人而不是别人，改后仍未表达正确对象。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "远远的地方可以表示遥远的地方，并非错误。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "株更精确，但个可作植物的通用量词，原句不算错误。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "两个分句中重复他自然且指代清楚，不必强制省略。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这里应回指神农听说的那一种植物，用这种植物才能明确所找的地点。"
+   },
+   {
+    "n": 8,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "时长应放在动词后，且走路和找到地点都是已完成的事件。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2223,
+  "completion_tokens": 2527,
+  "total_tokens": 4750,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 572,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

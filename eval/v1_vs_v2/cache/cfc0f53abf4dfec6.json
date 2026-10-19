@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这是古代的故事：这是一个古代的故事\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 从他的家到墓地很近：他的家离墓地很近\n- 所以他每天老是从早到晚去墓地跟朋友们玩玩儿：delete老是；玩儿，V.V. is used to make requests or plans\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “这是古代的故事。” / Formula: 在 + historical time / Correct: “这是一个发生在古代的故事。” or “在古代，有一个叫孟子的小孩子。” “古代的故事” is understandable, but “发生在古代的故事” is more natural. Also, introduce Mencius briefly when he first appears.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “孟子小的时候，他的爸爸很早就去世了。” / Formula: Character + 小的时候，+ family member + 就 + 去世了 / Correct: “孟子小的时候，他的爸爸就去世了。” “很早” is possible, but it is slightly redundant with “孟子小的时候.” Use “很早” only if you want to strongly emphasize that his father died unusually early.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “从他的家到墓地很近” / Formula: 从 + place A + 到 + place B + 很近 / Correct: “从他家到墓地很近。” “他的家” is not wrong, but “他家” is more natural in this sentence.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “每天老是从早到晚去墓地跟朋友们玩玩儿” / Formula: Subject + 每天 + 从早到晚 + 去 + place + 跟 + person + 玩 / Correct: “所以他每天从早到晚都去墓地跟朋友们玩。” “每天” and “老是” overlap; using both sounds repetitive. “玩玩儿” usually suggests playing briefly or casually, which does not fit “从早到晚.”",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher requires 一个 in 这是一个古代的故事, and the proposed revision is fully correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "很早 can appropriately emphasize that his father died at an unusually early point in Mengzi's childhood, so it is not redundant."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher marked the 从……到……很近 structure as needing 他家离墓地很近, and changing 他的家 to 他家 does not fix that structure."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "每天老是 is repetitive here, and 玩玩儿 does not suit an activity continuing from morning to evening; the revision fixes both."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2190,
+  "completion_tokens": 752,
+  "total_tokens": 2942,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 539,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 483,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

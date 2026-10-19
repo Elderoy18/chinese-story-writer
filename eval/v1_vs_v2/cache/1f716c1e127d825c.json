@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene:\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's item in each run:\nRun 1: 不要：不想，`不要` expresses a prohibition or refusal, while `不想` expresses that he does not want to leave. [rule: word_choice]\nRun 2: (nothing flagged here)\nRun 3: 不要离开：不想离开，For a third-person character’s wish, this needs the mental-state verb meaning “does not want to.” The original form is more often used to prohibit or urge someone not to do something. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "Both flagged runs identify 不要离开 as the same word-choice error and correctly change it to 不想离开; the unflagged run does not conflict."
+ },
+ "usage": {
+  "prompt_tokens": 468,
+  "completion_tokens": 56,
+  "total_tokens": 524,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

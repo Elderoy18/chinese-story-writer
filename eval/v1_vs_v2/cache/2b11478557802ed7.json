@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene:\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “后来孟子成为教授，他教学生很厉害。” Formula: 后来/成为……后，Subject + 很擅长 + V / 教学能力很强. Correct: “后来，孟子成为了一名教授后，很擅长教学生。” A smoother version is: “后来，孟子成为了一名教授，教学能力很强。”\nRun 2: Incorrect phrase: “后来孟子成为教授，他教学生很厉害。” Formula: 后来，Subject + 成为 + Profession，(并且/而且) + 很会/擅长 + Verb Correct: “后来，孟子成为了一名教授，而且很会教学生。” Adding “一名” makes “教授” sound more natural as a profession, and “很会教学生” is a more natural way to say he teaches well.\nRun 3: Incorrect phrase: “他教学生很厉害。” Formula: Subject + 教得 + adjective / Subject + 很会 + Verb + Object Correct: “他教得很好。” / “他很会教学生。” Use “教得很好” to describe how well someone teaches.",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs address the unnatural predicate “教学生很厉害” by using a natural way to say that he teaches well."
+ },
+ "usage": {
+  "prompt_tokens": 619,
+  "completion_tokens": 409,
+  "total_tokens": 1028,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 355,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

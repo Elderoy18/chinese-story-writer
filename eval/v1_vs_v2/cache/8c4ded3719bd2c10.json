@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThe teacher's corrections on this scene:\n- 这种一定是做药的花：这一定是一种做药的花\n- 原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result\n- 神农快生病：很快就生病了\n- 快给他一种红的灵芝：很快地给了，快V: to give order, 了completed\n- 他没有病：delete他，redundant; 病好了\n\nThe system's item in each run:\nRun 1: 快生病：很快就生病了，In a past narrative, “很快” describes rapid occurrence, and the completed change into illness needs 了. [rule: aspect_le_completed]\nRun 2: 快：赶快，In this narrative position, “赶快” clearly means doing the next action without delay; “快” alone does not naturally modify this completed giving action. [rule: none]\nRun 3: Coherence (Temporality): “神农快生病”：“神农很快就生病了”，This illness is a completed change of state after the eating, so it needs 了; the revised timing phrase shows that it happened soon afterward. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 correct “神农快生病,” while Run 2 targets “快给他” and its fix does not match the teacher’s required completed-action correction."
+ },
+ "usage": {
+  "prompt_tokens": 579,
+  "completion_tokens": 141,
+  "total_tokens": 720,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 74,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

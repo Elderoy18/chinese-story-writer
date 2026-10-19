@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这是不合适的地方让孩子玩：这是不适合孩子玩的地方，To describe whether a place is suitable for an activity, use the pattern “适合 + person + verb phrase” before the noun; “让孩子玩” cannot directly modify “地方” here. [rule: none]\n2. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，“恐怕” expresses the speaker’s own “I am afraid that” and cannot describe her fear in this pattern; “担心” correctly expresses her worry. [teacher rule: kongpa]\n3. [Grammar & Vocabulary, error] 她会一直搬家才能找到：她要一直搬家，才能找到，“才能” introduces a necessary condition, so the earlier action should be presented as something required with “要”, and the two parts should be separated. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 他们会：，After “决定”, use the verb phrase directly; the subject is already understood as the family, so repeating it is unnecessary. [teacher rule: jueding_vp]\n5. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，“决定” is a mental-state verb and takes the zero particle here, not “了”. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“不合适的地方让孩子玩”结构不自然，应说“适合孩子玩的地方”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里要表达母亲的担忧，应使用“担心”或“怕”，不能用“恐怕”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "原句的“会一直搬家才能”不合适，但改后仍保留“才能”且“找到”的宾语被截掉，未完整解决问题。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "“决定”后应直接接动词短语，不应重复“他们会”，但该项目没有给出可复制的改正。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“决定”是心理状态动词，此处按教师规则不应加完成体“了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2224,
+  "completion_tokens": 854,
+  "total_tokens": 3078,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 573,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

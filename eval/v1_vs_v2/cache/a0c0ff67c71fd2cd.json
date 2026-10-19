@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThe teacher's corrections on this scene:\n- 不过，看过很多政治文章对他害得，他有很多问题：delete对他；害得他有很多问题，害得Sb. + harmful result\n\nThe system's item in each run:\nRun 1: 对他害得，他有很多问题：害得他有很多问题，The structure is 害得 + person + harmful result, so the affected person must follow 害得 directly. [teacher rule: haide_structure]\nRun 2: 看过很多政治文章对他害得，他有很多问题：看过很多政治文章害得他有很多问题，害得 must be followed directly by the person affected and then the harmful result; 对他 cannot appear in this structure. [teacher rule: haide_structure]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "Both runs identify the incorrect placement of 对他 in the 害得 structure and correct it to 害得他有很多问题."
+ },
+ "usage": {
+  "prompt_tokens": 438,
+  "completion_tokens": 50,
+  "total_tokens": 488,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

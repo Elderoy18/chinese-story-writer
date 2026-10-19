@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候人：在古代，人们，古代 already expresses a time period, so adding 的时候 is redundant; 人 is a generic noun here, while 人们 correctly refers to people in general.\n2. [Grammar & Vocabulary, error] 看了他的同学们对孟子不好的影响：看到了他的同学们对孟子的不良影响，看到 means “see/notice” and is needed here because the mother notices an effect, rather than simply looking at it.\n3. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：有一个叫孟子的小男孩，孟子 is appearing for the first time, so use a full introduction with his name and identity rather than introducing only the name in a time phrase.\n4. [Coherence: reference, error] Coherence (Reference): 所以孟子和孟子妈妈搬家了：所以她带着孟子搬家了，after the mother was named in the immediately previous clause, use the pronoun 她 rather than repeating both names; 带着孟子 also clearly shows that the mother took him with her.\n5. [Coherence: temporality, error] Coherence (Temporality): 老是对他开玩笑了：老是对他开玩笑，老是 describes a repeated habit, so it takes the zero aspect form rather than completed-action 了.\n6. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：因为他每天只祭拜，所以没有朋友，this is a cause-and-effect relationship and needs 因为……所以……; 虽然 requires a contrasting main clause.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "古代的时候重复表达时间，且这里应使用指具体群体的人们，但改后片段本身仍未完成。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里是“看到”某种影响，不是“看”影响，改后的说法语法和意义都正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子首次出现时应作较完整的角色介绍，改句能完成这一介绍。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前一句刚提到孟子妈妈，重复“孟子和孟子妈妈”不必要，改用她并说明带着孟子是正确的。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "老是表示习惯性、重复性的行为，不能用完成体了。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "原句没有让虽然引出的让步关系成立，改为因为……所以……正确表达原因和结果。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2296,
+  "completion_tokens": 1331,
+  "total_tokens": 3627,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 645,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 931,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

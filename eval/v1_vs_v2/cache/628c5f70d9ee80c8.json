@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很不知道：不知道，The negative knowledge verb does not take the degree adverb 很; use the zero form here. [rule: none]\n2. [Grammar & Vocabulary, error] 也什么植物不能吃：也不知道什么植物不能吃，Also must modify a verb phrase, so repeat 不知道 before the second embedded question. [teacher rule: ye_vp]\n3. [Grammar & Vocabulary, error] 很麻烦的情况：是一种很麻烦的情况，This noun phrase needs 是 to function as the predicate, and 一种 introduces the type of situation. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 一个人，神农：一个叫神农的人，At a character’s first mention, introduce the name together with a clear noun phrase identifying the person. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "不知道不能用程度副词很来修饰。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "也不能直接修饰“什么植物不能吃”这一嵌入问句，需要补出不知道。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很麻烦的情况只是名词短语，在这里需要用是作谓语。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农首次出现时需要用清楚的名词短语介绍这个人物。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2016,
+  "completion_tokens": 746,
+  "total_tokens": 2762,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 365,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

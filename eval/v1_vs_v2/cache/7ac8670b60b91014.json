@@ -1,0 +1,114 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，The original repeats the idea of “time”: the noun already names a historical period, so the added time phrase is redundant. [vocab list]\n2. [Grammar & Vocabulary, error] 人：人们，This refers to a group of people in general, so the plural collective noun is needed. [teacher rule: ren_renmen]\n3. [Grammar & Vocabulary, error] 看了：看到了，Here the mother perceives the influence; this meaning requires the resultative verb for “see,” rather than the verb for “look.” [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：有一个小男孩叫孟子。他很小的时候，This is the character’s first mention, so introduce him with a full noun phrase before using a pronoun. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 孟子妈妈看到了：她看到了，The mother was mentioned in the immediately preceding information and no other mother competes as a referent, so a pronoun is more natural. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 孟子和孟子妈妈：孟子和妈妈，After naming Mengzi in the same phrase, do not repeat his name inside the phrase naming his mother. [rule: none]\n7. [Coherence: temporality, error] Coherence (Temporality): 老是对他开玩笑了：老是对他开玩笑，This describes a repeated habit, so it takes the zero particle rather than completed-action “了.” [rule: aspect_le_completed]\n8. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：因为他每天只祭拜，所以他没有朋友，The intended relation is cause and effect; “虽然” needs a contrasting result clause, while the paired cause-and-effect connector clearly links these ideas. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "人 cannot refer by itself to this concrete/general group here; 人们 is required."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The mother sees/perceives the influence, so 看到了 is the correct verb form."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is already a proper-name first mention, so adding 有一个小男孩叫 is optional elaboration rather than a required correction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating 孟子妈妈 is acceptable and clear here; a pronoun is not required."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The teacher marked the repeated subject phrase as redundant, and 孟子和妈妈 correctly avoids repeating 孟子 in 妈妈’s reference."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "老是 describes a habitual action, so sentence-final 了 is incorrect."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "虽然 does not fit this causal relation, while 因为……所以 correctly links the cause and result."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2379,
+  "completion_tokens": 1403,
+  "total_tokens": 3782,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 728,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 914,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\nThis scene:\n他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他不知道如果这把花对你的身体好：不知道这种花对身体好不好，the “if” in “not know if + clause” is not 如果\n- 这就要看如果这把花毒不毒了：the “if” in “not know if + clause” is not 如果, delete如果，有没有毒\n- 正好，他找到了别的花：另外一种花，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n- 神农不知道他吃不吃灵芝或者夹竹桃：要不要吃……\n- 别的人给了神农一个灵芝：另外一个人，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不知道如果这把花对你的身体好：不知道这把花对不对身体好，An embedded yes/no question after 不知道 needs an A-not-A form; 对不对身体好 asks whether the flower is beneficial to the body. [rule: a_not_a_question]\n2. [Grammar & Vocabulary, error] 这就要看如果这把花毒不毒了：这就要看这把花有没有毒了，After 这就要看, use a question form such as 有没有毒, not 如果 plus a clause. [rule: zhe_jiu_yao_kan]\n3. [Grammar & Vocabulary, error] 不知道他吃不吃灵芝或者夹竹桃：不知道吃的是灵芝还是夹竹桃，When choosing between two specific possibilities, use 是……还是……; 吃不吃 does not express the choice between these two plants. [rule: a_not_a_question]\n4. [Coherence: reference, error] Coherence (Reference): 花：这种花，This is the specific flower just found in the previous sentence, so a demonstrative noun phrase makes the reference clear rather than using the generic noun 花. [rule: ambiguous_reference]\n5. [Coherence: reference, error] Coherence (Reference): 神农：他，The character was mentioned in the immediately previous sentence and no other character competes as the referent, so use a pronoun for close re-occurrence. [rule: ambiguous_reference]\n6. [Coherence: connectors, error] Coherence (Conjunction): 一吃花，很快就：一吃花，就很快，The pattern 一……就…… needs 就 to connect the immediate action of eating with the result of becoming ill. [teacher rule: yi_jiu]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "如果 cannot introduce the embedded alternative question after 不知道, but 对不对身体好 is not the proper form here; use 对身体好不好."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "看 takes the embedded alternative question 有没有毒 here, not 如果."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The intended meaning is whether he should eat it, requiring 要不要吃, whereas the correction changes it to uncertainty about what he already ate."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "花 can refer to the flower he has just found, so changing it to 这种花 is optional rather than required."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 was the referent in the immediately preceding sentence, so the close re-reference should be 他."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The original already has the required 就 in 一吃花，很快就生病了, while the shown correction is cut off after 很快."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2422,
+  "completion_tokens": 2308,
+  "total_tokens": 4730,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 771,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1906,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

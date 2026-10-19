@@ -1,0 +1,96 @@
+{
+ "input": "Earlier scenes:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nThis scene:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他一次试一试有些植物的叶，吃得又新鲜又甜：有一次；试了试，了completed; 叶子；吃起来\n- 煮这些叶以后，他一喝就知道他发现新的茶叶：煮了，了completed; 叶子\n- 虽然他找到了很多的新的植物：很多新的植物\n- 但是他的旅程有的时候特别是危险：特别危险，”特别是+N, + Clause” is used to single out a typical example\n- 他一吃灵芝就开始生病：wrong information, 灵芝is a medicine\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一次试一试有些植物的叶：试吃了一些植物的叶子，An action that was actually carried out should not use verb reduplication. Use a completed verb such as “试吃了”; “一次” also cannot come before the verb in this structure.\n2. [Grammar & Vocabulary, error] 吃得又新鲜又甜：觉得又新鲜又甜，The pattern “吃得 + adjective” describes the manner of eating, but “新鲜” and “甜” describe the leaves. Use a perception verb to describe their taste.\n3. [Grammar & Vocabulary, error] 特别是危险：特别危险，“特别” is an adverb and directly modifies the adjective “危险”; do not insert “是” between them.\n4. [Coherence: reference, error] Coherence (Reference): 他一喝就知道他发现：他一喝就知道发现，Use zero form for the same subject within one sentence; the second “他” is unnecessarily repeated.\n5. [Coherence: temporality, error] Coherence (Temporality): 煮这些叶以后：煮了这些叶以后，Use “了” before “以后” to show that boiling was completed before the next action.\n6. [Coherence: temporality, error] Coherence (Temporality): 发现新的茶叶：发现了新的茶叶，Use “了” because the discovery is presented as a completed action.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "“一次”应为“有一次”，动作已完成需用“了”，且“叶”应为“叶子”；“试吃了一些植物的叶子”可正确改写这部分。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“吃得”不能用来说明叶子的味道；“觉得又新鲜又甜”在此语境中可以表达对叶子味道的感受。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“特别”可直接修饰“危险”，这里不能说“特别是危险”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "同一主语在同一句中不必重复“他”，但改后完整句仍缺少表示发现完成的“了”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "煮茶叶是已完成动作，须用“煮了”，但改文仍保留教师会改正的“叶”，应为“叶子”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里的“发现”是已经完成的事件，应说“发现了新的茶叶”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2270,
+  "completion_tokens": 2089,
+  "total_tokens": 4359,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 619,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1635,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

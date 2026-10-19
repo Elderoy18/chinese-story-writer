@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): “这个男孩子叫孟子”：“有一个男孩子叫孟子”，on first mention, use an indefinite full noun phrase; “这个” normally points to a person already established in the story.\n2. [Coherence: reference, error] Coherence (Reference): “孟子是古代的人”：“他是古代的人”，after the name has just been mentioned and no other character competes, use a pronoun for close re-occurrence.\n3. [Coherence: reference, error] Coherence (Reference): “她望子成龙，所以孟子的妈妈安排他的生活”：“她望子成龙，所以安排他的生活”，when the same subject continues within one sentence, use zero form rather than repeating the noun phrase.\n4. [Coherence: temporality, error] Coherence (Temporality): “他们常常搬了家”：“他们常常搬家”，“常常” describes a routine, so use the zero particle rather than completed-action “了”.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“这个” improperly presents a first-mentioned character as already established."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the teacher’s close re-reference rule, the just-mentioned name should be replaced by “他”."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated subject in the second clause should be omitted, but the corrected text still begins with unclear “她” and does not fully resolve the reference problem."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“常常” describes a habitual action, so “搬家” should not take perfective “了”."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2038,
+  "completion_tokens": 715,
+  "total_tokens": 2753,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 387,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 454,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

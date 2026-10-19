@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代：在古代，A time expression needs the preposition shown in the standard narrative form. [rule: time_expression]\n2. [Grammar & Vocabulary, error] 注意：注意到，Use this resultative form when the mother notices that a fact is true; the original verb means “pay attention” and does not naturally introduce this conclusion. [rule: none]\n3. [Grammar & Vocabulary, error] 跟朋友们祭拜玩：跟朋友们一起学着别人祭拜，The original pairing is not natural because the ritual verb does not combine with the play verb in this order; the revised phrase clearly expresses that he imitates others’ ritual actions. [rule: none]\n4. [Grammar & Vocabulary, error] 决定他们会搬家：决定搬家，The verb takes a verb phrase directly, so the subject does not need to be repeated after it. [teacher rule: jueding_vp]\n5. [Coherence: reference, error] Coherence (Reference): 孟子跟孟母：有一个小男孩叫孟子，他跟孟母，On a character’s first mention, introduce the character with both a name and a brief identity; after that, a pronoun can refer back to him. [rule: character_introduction_first_mention]\n6. [Coherence: connectors, error] Coherence (Conjunction): 可是孟母注意到：孟母注意到，The connector does not express contrast here: the mother’s observation follows from the setting, rather than going against an expectation. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher requires 在古代 rather than bare 古代 in this narrative opening."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "注意到 correctly expresses that Meng Mu noticed the resulting fact."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original needs the 着玩儿 construction, and the replacement is also grammatical Chinese that conveys a suitable meaning."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "决定 takes a verb phrase directly here, so 决定搬家 is correct."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "A first mention should introduce Mengzi, but the proposed correction ends unfinished at 他跟孟母."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "可是 can acceptably mark the narrative turn to the harmful consequence, and the displayed text is cut off after 注意到."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2202,
+  "completion_tokens": 1223,
+  "total_tokens": 3425,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 551,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 870,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

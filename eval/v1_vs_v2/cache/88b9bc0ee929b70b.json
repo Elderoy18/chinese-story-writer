@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nThis scene:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他一次试一试有些植物的叶，吃得又新鲜又甜：有一次；试了试，了completed; 叶子；吃起来\n- 煮这些叶以后，他一喝就知道他发现新的茶叶：煮了，了completed; 叶子\n- 虽然他找到了很多的新的植物：很多新的植物\n- 但是他的旅程有的时候特别是危险：特别危险，”特别是+N, + Clause” is used to single out a typical example\n- 他一吃灵芝就开始生病：wrong information, 灵芝is a medicine\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一次试一试有些植物的叶：尝了尝有些植物的叶子，Verb reduplication such as “试一试” is for a light or tentative plan; for an action that happens in the narrative, use the completed form “尝了尝.” [rule: verb_reduplication]\n2. [Grammar & Vocabulary, error] 吃得又新鲜又甜：觉得又新鲜又甜，“吃得” introduces a complement describing the manner or degree of eating, but “新鲜、甜” describe the leaves themselves; “觉得” introduces the character’s judgment about their taste. [rule: none]\n3. [Grammar & Vocabulary, error] 特别是危险：特别危险，“特别是” introduces a particular example or item, while “特别” directly modifies the adjective “危险.” [rule: none]\n4. [Coherence: temporality, error] Coherence (Temporality): 煮这些叶以后：煮了这些叶以后，The boiling must be completed before the later action introduced by “以后,” so it needs “了.” [rule: aspect_le_completed]\n5. [Coherence: temporality, error] Coherence (Temporality): 发现新的茶叶：发现了新的茶叶，This discovery is presented as a completed result after he drinks the tea, so use “了.” [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“一次” needs “有一次,” the completed trial needs 了, and concrete leaves should be “叶子”; the replacement is grammatical Chinese."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“吃得” cannot take “新鲜又甜” in this intended meaning, and “觉得又新鲜又甜” is grammatical."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“特别是” must introduce a singled-out noun or clause, while “特别危险” correctly modifies the adjective."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The boiling is completed before the later action, so “煮了” is needed, but the corrected text still has “叶” instead of “叶子.”"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The discovery is a completed event in this sequence, so “发现了新的茶叶” is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2257,
+  "completion_tokens": 1299,
+  "total_tokens": 3556,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 606,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 950,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

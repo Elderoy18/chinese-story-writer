@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，古代 already expresses a time period, so adding 的时候 is redundant.\n2. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：有一个叫孟子的男孩子和他的妈妈住在中国，follow the first-mention rule by introducing the main character with his name and identity together, rather than naming him only in the next sentence.\n3. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，when the possessor is the same person as the subject, use 自己的 to make that relationship clear.\n4. [Coherence: connectors, error] Coherence (Conjunction): 但是城市有才两个学校：但是城市里才有两个学校，place 才 before 有 to show that the number of schools is unexpectedly small; 但是 expresses the contrast between liking the city and its limited schools.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代已经表示时间，古代的时候重复，改成在古代正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "先说一个男孩子、下一句再说明他叫孟子是清楚且可接受的介绍方式。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这里的他的城市指孟子很清楚，自己的城市只是可选的强调说法。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "才有不符合这里应使用只有的标准，而且城市应明确为这个城市。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1976,
+  "completion_tokens": 764,
+  "total_tokens": 2740,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 325,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

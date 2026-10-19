@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThis scene:\n孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 所以孟子的妈妈认为这样的地方对儿子的教育不太好：replace孟子的妈妈with她\n- 不是搬到城市，而是搬到了孟子老师的家：家里\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟子取得良好的教育：孟子接受良好的教育，取得 usually refers to obtaining an achievement or result, while 接受 is the usual verb for receiving education. [rule: none]\n2. [Grammar & Vocabulary, error] 跟孟子搬家：带着孟子搬家，跟孟子搬家 incorrectly suggests that both people move together as equal participants; 带着孟子搬家 clearly shows that the mother takes her child with her. [vocab list]\n3. [Grammar & Vocabulary, error] 不是搬到城市，而是搬到了孟子老师的家：搬到了孟子老师的家，the structure 不是……而是…… is used to correct a conventional or previously stated wrong idea; here the sentence simply states the destination of the move. [rule: bushi_ershi_construction] [teacher rule: bushi_ershi]\n4. [Coherence: reference, error] Coherence (Reference): 所以孟子的妈妈认为：所以认为，within the same sentence, the mother is already the subject, so Chinese naturally uses zero form instead of repeating her name. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈带孟子搬到了孟子老师的家：她带孟子搬到了孟子老师的家，after the mother was named in the immediately preceding sentence and no other possible female referent intervenes, use a pronoun for close re-occurrence. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "取得不与教育搭配，接受良好的教育正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "跟孟子搬家可以自然地表示母子一起搬家，并不错误。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "不是……而是……在这里可以对比搬家的目的地，但原句的家应改为家里，系统没有改正。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "同一句中已提到孟子的妈妈，应使用零形式认为，但所示改后片段仍缺少认为的内容。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "妈妈刚在前句出现，应使用她，不过改后仍保留孟子老师的家这一未改正的问题。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2204,
+  "completion_tokens": 1762,
+  "total_tokens": 3966,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 553,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1433,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

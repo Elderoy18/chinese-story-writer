@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nThis scene:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他一次试一试有些植物的叶，吃得又新鲜又甜：有一次；试了试，了completed; 叶子；吃起来\n- 煮这些叶以后，他一喝就知道他发现新的茶叶：煮了，了completed; 叶子\n- 虽然他找到了很多的新的植物：很多新的植物\n- 但是他的旅程有的时候特别是危险：特别危险，”特别是+N, + Clause” is used to single out a typical example\n- 他一吃灵芝就开始生病：wrong information, 灵芝is a medicine\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一次试一试有些植物的叶：尝了一些植物的叶，The time-measure phrase does not work before this reduplicated verb here; use a completed tasting action with a quantity object. [rule: none]\n2. [Grammar & Vocabulary, error] 吃得又新鲜又甜：这些叶子吃起来又新鲜又甜，A complement with 得 describes how the subject performs an action, but 新鲜 describes the leaves themselves; use 吃起来 to describe their taste and texture. [rule: none]\n3. [Grammar & Vocabulary, error] 特别是危险：特别危险，特别是 must introduce a singled-out example or clause, while this sentence needs 特别 to intensify the adjective. [rule: example_marker_tebie_bifang]\n4. [Coherence: reference, error] Coherence (Reference): 知道他发现：知道发现，The second pronoun unnecessarily repeats the same subject within one sentence; use zero form when the referent remains clear. [rule: ambiguous_reference]\n5. [Coherence: temporality, error] Coherence (Temporality): 发现新的茶叶：发现了新的茶叶，The discovery is a completed result that he realizes after drinking, so the verb needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“一次试一试” and “叶” are erroneous here; the replacement fixes the action phrasing but still leaves “叶” instead of “叶子.”"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“吃得又新鲜又甜” misuses 得 with properties of the leaves, and “吃起来” correctly expresses their taste."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“特别是” cannot directly intensify “危险,” while “特别危险” is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated 他 is unnecessary for the same referent, but the resulting larger sentence still needs 了 after 发现 for the completed discovery."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The discovery is a completed event, so “发现了新的茶叶” is the correct form."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2239,
+  "completion_tokens": 1508,
+  "total_tokens": 3747,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 588,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1161,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

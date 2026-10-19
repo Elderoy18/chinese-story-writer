@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene:\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习” / Formula: Subject + 才 + duration + 就 + result；影响/害得 + person + verb / Correct: “孟子和妈妈住在这里才一个星期就受不了了，这也影响了孟子的学习。” “害得孟子的学习” is incomplete: “学习” needs a verb such as “影响了.”\nRun 2: Incorrect phrase: “孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。” / Formula: subject + 在这里住了 + duration + 就 + 受不了了；这 + 影响/耽误 + someone 的 + noun / Correct: “孟子和他的妈妈在这里住了才一个星期就受不了了，而且这里的环境还影响了孟子的学习。” “害得” needs a clear cause before it, such as “这里的环境” or “哭声.”\nRun 3: Incorrect phrase: “孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。” Formula: subject + 在 + place + 住了 + duration + 就 + 受不了了；影响/耽误 + someone’s + 学习 Correct: “孟子和妈妈在这里住了一个星期就受不了了，而且这还影响了孟子的学习。” Use “住了一个星期” for a completed duration. “害得孟子的学习” is incomplete; “影响了孟子的学习” is natural.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": true,
+  "reason": "All corrections naturally replace the incomplete “害得孟子的学习” with an effect on his studies, but Run 2 focuses on a missing cause and Run 3 additionally treats the duration phrasing as an error."
+ },
+ "usage": {
+  "prompt_tokens": 692,
+  "completion_tokens": 311,
+  "total_tokens": 1003,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 239,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

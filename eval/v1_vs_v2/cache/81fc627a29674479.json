@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候人：在古代，人们，`古代` already expresses a time period, so adding `的时候` is redundant; `人` is too generic for a concrete group, so use `人们`.\n2. [Grammar & Vocabulary, error] 看了：看到了，`看` means “look at,” while `看到` means “see/perceive”; the mother is perceiving the influence.\n3. [Grammar & Vocabulary, error] 他的同学们对孟子不好的影响：孟子的同学们对他的不良影响，use `A 对 B 的 + noun` to mark the relationship clearly; `不良影响` precisely means a harmful influence.\n4. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：有一个小男孩叫孟子；他很小的时候，follow the first-mention rule by introducing the character with a noun phrase before using his name or a pronoun.\n5. [Coherence: temporality, error] Coherence (Temporality): 同学们老是对他开玩笑了：同学们老是对他开玩笑，`老是` describes a repeated habit, so use the zero particle rather than completed-action `了`.\n6. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：因为他每天只祭拜，所以没有朋友，these ideas show cause and effect, so use the paired connector `因为……所以……`; `虽然` requires a contrasting result clause.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "古代的时候冗余，且这里的具体群体应说人们。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里表示妈妈察觉到影响，应使用看到而不是看。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "改后的名词短语能清楚表达同学们对孟子的负面影响。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "第一次直接用专名孟子并不错误，而改后的“他很小的时候”本身也没有完整谓语。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "老是表示习惯性、反复发生的行为，不能用句末了。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "原句的虽然没有对应的转折结果，改为因为……所以……正确表达因果。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2269,
+  "completion_tokens": 1630,
+  "total_tokens": 3899,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 618,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1251,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

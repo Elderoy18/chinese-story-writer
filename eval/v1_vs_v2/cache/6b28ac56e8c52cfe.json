@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远：到很远的地方旅行，Use a place phrase with “到” to express where someone travels; “旅行” cannot directly take “很远” as its distance complement. [rule: none]\n2. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，Flowers use the matching measure word “朵,” not the general measure word “个.” [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 然后，神农写他的主意：然后，他写他的主意，Use a pronoun when the same character was mentioned in the immediately preceding sentence and no other character competes as the referent. [rule: redundancy_delete]\n4. [Coherence: reference, error] Coherence (Reference): 神农遇到了一个黄色的花：他遇到了一朵黄色的花，Use a pronoun for a close re-occurrence of the same character; the preceding sentence already makes the referent clear. [rule: redundancy_delete]\n5. [Coherence: temporality, error] Coherence (Temporality): 找到很多植物：找到了很多植物，The finding is a completed event in this past narrative, so the verb needs “了.” [rule: aspect_le_completed]\n6. [Coherence: temporality, error] Coherence (Temporality): 写他的主意：写了他的主意，Because this is the next completed action after “然后,” add “了” to mark completion. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“旅行很远” is not a natural way to express travelling a long distance, while the proposed place phrase is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Flowers require the measure word “朵,” not “个.”"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The immediately recurring subject should be “他,” but “写他的主意” remains an inappropriate expression."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Vocabulary"
+    ],
+    "reason": "“他” is appropriate for the close re-reference, and “一朵黄色的花” is fully correct."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Finding the plants is the completed final action in this sequence, so “找到了” is appropriate."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "Adding “了” can mark completion, but “写了他的主意” still does not correctly express writing down his discoveries."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2169,
+  "completion_tokens": 1409,
+  "total_tokens": 3578,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 518,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

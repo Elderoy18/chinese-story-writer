@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不要离开：不想离开，Use 不想 to express that a character does not want to do something; 不要 is normally used for a prohibition or instruction.\n2. [Coherence: temporality, error] Coherence (Temporality): 找到孟子一个老师：给孟子找了一个老师，A completed action needs 了; 给 marks that the teacher is found for Mengzi.\n3. [Coherence: connectors, error] Coherence (Conjunction): 他难怪抱怨，他想他的朋友，因为：他抱怨，因为他想念朋友，也，Use 因为 to introduce the reasons for his complaining; the two reasons should be linked with 也 rather than presented as loosely connected clauses.\n4. [Coherence: connectors, error] Coherence (Conjunction): 所以他成为哲学家：后来他成为了哲学家，Later becoming a philosopher is a sequence over time, not an immediate result of one lesson, so 后来 is the appropriate sequence connector.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "不要离开 means a prohibition, while 不想离开 correctly expresses that he does not want to leave."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "给孟子找了一个老师 correctly supplies the indirect-object structure and marks the completed finding event."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "The original has errors including 他难怪抱怨, but the proposed correction ends with a dangling 也 and does not form a complete sentence."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "所以他成为哲学家 is an acceptable causal continuation here; 后来他成为了哲学家 is also grammatical but is not required."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2127,
+  "completion_tokens": 783,
+  "total_tokens": 2910,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 476,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 508,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

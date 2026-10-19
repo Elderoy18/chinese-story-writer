@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 也不知道什么植物对你的身体有好处：对身体有好处，not你的\n- 这个问题神农觉得很糟糕，所以神农去了吃每种植物：很严重better，usually糟糕for情况situations; 去吃了\n- 就写了这个植物对你有没有好处：写下了，delete“对你”\n- 有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物：吃到了，V + resultative\n- 会来跟他的朋友聊到他吃的植物了：会跟……，no了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，The original repeats the time meaning because both parts refer to a time period. [vocab list]\n2. [Grammar & Vocabulary, error] 去了吃每种植物：去吃了每种植物，With a verb following 去, the completion marker comes after that action, not between 去 and the action. [teacher rule: le_placement]\n3. [Grammar & Vocabulary, error] 写了：写下了，Use 写下 when recording information so that it is kept; the completion marker follows the resultative verb. [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 所以神农：所以，Shennong was already named earlier in the same sentence, with no competing character, so use zero form rather than repeating his name. [rule: redundancy_delete]\n5. [Coherence: temporality, error] Coherence (Temporality): 有的时候，神农吃了很好吃的植物：有的时候，神农吃很好吃的植物，A habitual action introduced by a routine-time expression uses the zero particle, not 了. [rule: aspect_le_completed]\n6. [Coherence: temporality, error] Coherence (Temporality): 有的时候，他吃了很危险的植物：有的时候，他吃很危险的植物，A habitual action introduced by a routine-time expression uses the zero particle, not 了. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 会来跟他的朋友聊到他吃的植物了：会来跟他的朋友聊到他吃的植物，After the modal verb 会, the predicted action takes the zero particle; the final 了 is not needed. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“古代的时候” redundantly repeats the time expression, and “在古代” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "With 去 followed by another verb, 了 belongs after the completed action verb."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“写下了” correctly expresses recording the information and places 了 after the resultative."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating 神农 here is acceptable and was not marked by the teacher; deleting it is only an optional stylistic change."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher requires the resultative 吃到 for this intended meaning, although the system's zero-particle version is also grammatical as a habitual statement."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original was corrected to 吃到了 because the intended meaning requires a resultative, while the revised zero-particle wording is grammatical as a habitual statement."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The final 了 is not appropriate after the modal 会 in this predicted-action clause."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2312,
+  "completion_tokens": 2631,
+  "total_tokens": 4943,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 661,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2174,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

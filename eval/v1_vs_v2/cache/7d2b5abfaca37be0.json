@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 这个男孩子：有一个男孩子，A first-mentioned character should be introduced with an indefinite full noun phrase; 这个 suggests that the reader already knows which boy is meant. [rule: character_introduction_first_mention]\n2. [Coherence: reference, error] Coherence (Reference): 孟子是古代的人：他是古代的人，After the name has just appeared, use a pronoun for a close re-occurrence rather than repeating the name. [rule: ambiguous_reference]\n3. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈安排他的生活：安排他的生活，The mother is already the subject of the first clause in the same sentence, so use zero form instead of repeating her full name. [rule: ambiguous_reference]\n4. [Coherence: temporality, error] Coherence (Temporality): 常常搬了家：常常搬家，A habitual action uses the zero particle; 了 marks a completed event, not a repeated routine. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "This is the character's first mention, so 这个男孩子 is inappropriately specific and 有一个男孩子 correctly introduces him."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 has just been named, so the teacher's reference rule requires the close re-reference 他 rather than repeating the name."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The mother is already the subject of the preceding clause in the same sentence, so the repeated 孟子的妈妈 should be omitted."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 marks a habitual action, so 搬家 should not take perfective 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2051,
+  "completion_tokens": 551,
+  "total_tokens": 2602,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 400,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 281,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

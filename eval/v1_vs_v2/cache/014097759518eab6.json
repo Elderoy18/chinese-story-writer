@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears\n- 孟子妈妈的工作是祭拜：wrong information, it’s not his mother’s job\n- 孟子不高兴，因为他说我们老是搬家：delete因为\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一天，很久很久以前：很久很久以前的一天，The time expression should place the broad time before the specific “day.” [rule: time_expression]\n2. [Grammar & Vocabulary, error] 他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。：他妈妈说：“从早到晚，我一直祭拜。我得去很多不同的墓地祭拜，所以我们得去很多不同的地方。”，Direct speech needs a colon and quotation marks. In the corrected sentence, the subject comes before the modal verb, and the modal verb comes before the verb phrase and its destination. [rule: adverbial_word_order]\n3. [Coherence: reference, error] Coherence (Reference): 孟子和他妈妈：有一个小男孩叫孟子，他和妈妈，On first mention, introduce the character with a name and a brief identity, rather than assuming the reader already knows who he is. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 孟子妈妈的工作：他妈妈的工作，Since孟子was named in the immediately preceding sentence and no other possible mother has appeared, use a pronoun for a close re-occurrence. [rule: ambiguous_reference]\n5. [Coherence: connectors, error] Coherence (Conjunction): 因为他说我们老是搬家，为什么？：问：“我们为什么老是搬家？”，The connector因为should introduce an actual cause. Here, the character is asking a question rather than giving the cause of his unhappiness. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher marks 一天 as inappropriate here, and 很久很久以前的一天 is a grammatical replacement."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The teacher marks the claim that his mother’s work is 祭拜 as wrong information, but the proposed revision still says that she worships all day."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "A first mention should introduce 孟子 more clearly, but 有一个小男孩叫孟子，他和妈妈 is an unfinished clause."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 has just been mentioned and no competing mother is present, so 他妈妈 is the required close re-reference."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "因为 cannot introduce a question as its result here, and 问：“我们为什么老是搬家？” correctly expresses the question."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2191,
+  "completion_tokens": 1573,
+  "total_tokens": 3764,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 540,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1227,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

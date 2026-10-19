@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，A demonstrative before a countable noun needs a matching measure word. [teacher rule: zhe_na_mw]\n2. [Grammar & Vocabulary, error] 特别是毒：特别有毒，Use 有毒 to describe that a plant is poisonous; 毒 alone cannot function as the adjective after 特别. [teacher rule: du_youdu]\n3. [Grammar & Vocabulary, error] 灵芝药的夹竹桃他吃完了：他吃完了灵芝这种药，The original string wrongly links two different plants with 的 and leaves the object relationship unclear; this version clearly states that he finished taking the medicine. [rule: none]\n4. [Grammar & Vocabulary, error] 一个课文的植物：这些植物的用处，When recording information about plants, the useful information to write down is their uses; 课文 means a lesson text and does not fit this meaning. [vocab list]\n5. [Coherence: temporality, error] Coherence (Temporality): 也写：也写下了，The writing is presented as a completed action, so it needs 了 after the resultative verb phrase. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这后面修饰可数名词花时需要量词朵。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "毒不能直接受特别修饰来描述植物，特别有毒正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "改句虽通顺，但没有表达灵芝是夹竹桃解药这一原意。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "课文不适合表示所写的植物内容，改成这些植物的用处可与写搭配。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "叙述中写作是完成的后续动作，写下了正确，但完整改后仍保留一个课文的植物的错误。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2154,
+  "completion_tokens": 1043,
+  "total_tokens": 3197,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 503,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 724,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

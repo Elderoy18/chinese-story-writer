@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene:\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 他的朋友：自己的朋友，Use 自己的 when the possessor is the same person as the subject, so it is immediately clear that these are Mencius’s own friends. [teacher rule: ziji_possessor]\nRun 2: 他难怪抱怨，他想：难怪他抱怨，原来他想，Place 难怪 before the clause that becomes understandable, and use 原来 to introduce the explanation. [teacher rule: nanguai_yuanlai]\nRun 3: Coherence (Reference): 他的朋友：自己的朋友，Use 自己的 when the possessor is the same person as the subject, so the friends are clearly Mengzi’s own friends. [teacher rule: ziji_possessor]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 address the possessive pronoun, while Run 2 corrects the placement and use of 难怪/原来."
+ },
+ "usage": {
+  "prompt_tokens": 529,
+  "completion_tokens": 85,
+  "total_tokens": 614,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 25,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

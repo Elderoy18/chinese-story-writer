@@ -1,0 +1,96 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，A demonstrative needs the pattern 这/那 + measure word + noun; 朵 is the suitable measure word for a flower. [teacher rule: zhe_na_mw]\n2. [Grammar & Vocabulary, error] 特别是毒：特别有毒，毒 is a noun here; use 有毒 to describe a plant that contains poison. [vocab list]\n3. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝和夹竹桃，药的 is a possessive modifier and cannot connect these two plant names; use 和 to coordinate them. [rule: none]\n4. [Grammar & Vocabulary, error] 一个课文的植物：一篇关于这些植物的文章，The original phrase means “plants belonging to one lesson.” To express an article whose topic is the plants, use 一篇 for an article and put 关于这些植物 before 文章. [rule: none]\n5. [Coherence: temporality, error] Coherence (Temporality): 写：写了，This narration describes a completed action after eating the plants, so 写 needs 了 to mark completion. [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 正好在这儿：这时，正好在这儿 only gives a location and does not clearly link to the next event; 这时 introduces the next event in the sequence. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这/那修饰可数名词时按教师规则需要量词，花用朵合适。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "特别是毒不合结构且毒不能直接作这里的形容词，特别有毒正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原短语错误，但灵芝和夹竹桃把应作夹竹桃解药的灵芝误改成了与夹竹桃并列的两个食物。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "一个课文的植物不能表达“写一篇有关植物的文章”，改后量词和修饰关系都正确。"
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里叙述的是完成的写作行为，写需要完成标记；但所示的写不是完整可读的单位。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "正好在这儿可以作为叙述中的时空承接语，并非必须改成这时。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2209,
+  "completion_tokens": 1434,
+  "total_tokens": 3643,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 558,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1020,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

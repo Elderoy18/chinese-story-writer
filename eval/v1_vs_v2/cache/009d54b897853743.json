@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThe teacher's corrections on this scene:\n- 不过，看过很多政治文章对他害得，他有很多问题：delete对他；害得他有很多问题，害得Sb. + harmful result\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “不过，看过很多政治文章对他害得，他有很多问题。” Formula: Subject + 看了/阅读了 + object + 以后，+ subject + 产生/有 + 疑问 Correct: “不过，看了很多政治文章以后，他产生了很多疑问。” “害得” must be followed by a result, such as “害得他很担心.” Here, “产生了很多疑问” naturally expresses that reading led him to have many questions.\nRun 2: Incorrect phrase: “看过很多政治文章对他害得” / Formula: V + 了/过 + many + noun + 对 + person + 有害 / Correct: “看了很多政治文章对他有害。” “有害” means “harmful”; “害得” must be followed by a result, for example: “这些文章害得他有很多问题。”",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "Both flag the malformed use of “对他害得,” but Run 2’s main correction changes it to “对他有害” rather than expressing that the reading caused him to have many questions."
+ },
+ "usage": {
+  "prompt_tokens": 517,
+  "completion_tokens": 403,
+  "total_tokens": 920,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 333,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

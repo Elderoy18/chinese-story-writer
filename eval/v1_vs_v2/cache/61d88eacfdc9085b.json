@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThis scene:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 因为他们常常搬了家：搬家，no了for routine/habit\n- 妈妈教孟子很多技能：教了，了completed\n- 先她让孟子跟朋友玩儿：她先让……，Subj.先……\n- 然后教他怎么买又便宜又好质量的东西：质量又好\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 先她：她先，The time-order adverb should follow the subject and come before the verb. [rule: adverbial_word_order]\n2. [Grammar & Vocabulary, error] 又便宜又好质量的东西：又便宜又质量好的东西，质量 is a noun, so it should be followed by 好; the two descriptions can then be coordinated naturally. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，The mother was mentioned in the immediately preceding sentence, with no competing female character, so a pronoun is more natural for close re-occurrence. [rule: ambiguous_reference]\n4. [Coherence: temporality, error] Coherence (Temporality): 他们常常搬了家：他们常常搬家，常常 describes a repeated habit, so the verb takes the zero particle rather than completed-action 了. [rule: aspect_le_completed]\n5. [Coherence: connectors, error] Coherence (Conjunction): ，中国人说：，所以中国人说，Because the frequent moving is presented as the reason for the saying, use the paired connector 因为……所以…… to show cause and effect. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "先 should follow the subject, but the displayed fragment is not a complete clause after correction."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "质量好, not 好质量, is the correct quality-description collocation."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The immediately preceding 妈妈 should be referred to as 她, but the corrected clause still lacks the required completed-action 了."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 describes a habitual action, so 搬家 should not take perfective 了."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "Under the teacher's paired-connector rule, 因为 requires 所以 here, though the displayed correction is only a fragment."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2154,
+  "completion_tokens": 1127,
+  "total_tokens": 3281,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 503,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 810,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

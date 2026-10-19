@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThis scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他发现这个口味，一百岁时候，不小心吃了毒的花：他发现这个口味。一百岁的时候，不小心吃了有毒的花，The time phrase needs 的 after the multi-syllable age expression, and it should be attached to the action it modifies. Use 有毒的植物 or 有毒的花 for a poisonous plant; 毒的花 is not the standard modifier.\n2. [Grammar & Vocabulary, error] 一吃就开始死：一吃就快要死了，Death is a change-of-state event rather than an action that can normally begin; 快要死了 expresses that he was close to dying.\n3. [Grammar & Vocabulary, error] 但是生病时候告诉人：但是生病的时候告诉人们，The structure with 时候 needs 的 here. 人 is a generic singular noun and cannot refer to a particular group of listeners; use 人们 for “people.”\n4. [Coherence: temporality, error] Coherence (Temporality): 告诉人们什么植物是药，什么植物有毒：告诉了人们什么植物是药，什么植物有毒，Use 了 for this completed narrative action; the telling happened while he was ill.\n5. [Coherence: reference, error] Coherence (Reference): 什么植物是毒：什么植物有毒，Use 有毒 to describe the property of a plant clearly; this makes the contrast with 药 easy for the reader to follow.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "It correctly changes 一百岁的时候 and 有毒的花, but it wrongly retains the unrelated clause 他发现这个口味。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "快要死了 is a correct way to express being close to death and avoids the incorrect 开始死 collocation."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The excerpt is cut off before what he tells people, and the correction fixes 的 and 人们 but leaves the required 但是即使……也…… connection unresolved."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "告诉了 marks the telling as a completed narrative action, and the corrected clause is grammatical."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "有毒 correctly describes a poisonous plant, whereas 什么植物是毒 is not the intended expression here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2262,
+  "completion_tokens": 1501,
+  "total_tokens": 3763,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 611,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1163,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

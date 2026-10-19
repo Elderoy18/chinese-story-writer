@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟子学习馆学了十五年：孟子在学校学习了十五年，学习馆 is not a standard noun for a place of study here; use the location noun 学校 after 在, followed by the verb 学习.\n2. [Grammar & Vocabulary, error] 对他很多好处：对他有很多好处，when 好处 is the benefit someone receives, use 有 to express that something “has benefits” for that person.\n3. [Coherence: reference, error] Coherence (Reference): 他是大人的时候，他成为了很有名的哲人：他是大人的时候，成为了很有名的哲人，after the first 他 establishes the subject in this sentence, use the zero form rather than repeating the pronoun.\n4. [Coherence: temporality, error] Coherence (Temporality): 找了到工作：找到了工作，when 了 marks a completed result, it follows the result complement: 找到 + 了, not 找 + 了 + 到.\n5. [Coherence: temporality, error] Coherence (Temporality): 成为很有名的哲人：成为了很有名的哲人，use 了 after 成为 to mark the completed change of state in this past narrative event.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "学习馆不适合这里的学习地点，而且地点前需要用在。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "对某人有很多好处需要有来构成正确结构。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "同一句中重复使用他不符合该参考规则，但改后仍保留了教师会改的哲人。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "结果补语到应在了之前，正确形式是找到了。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "叙述中成为这一完成的变化应使用了，但改后哲人仍是教师会改为哲学家的词。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2255,
+  "completion_tokens": 1067,
+  "total_tokens": 3322,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 604,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 758,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

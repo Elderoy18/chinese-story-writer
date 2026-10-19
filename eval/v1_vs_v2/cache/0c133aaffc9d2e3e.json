@@ -1,0 +1,73 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 特别是毒：特别有毒，Use 有毒 to describe a plant that contains poison; 毒 is not the correct adjectival form in this position. [teacher rule: du_youdu]\n2. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝和夹竹桃，When naming two plants, use 和 to coordinate them; 的 would incorrectly make 灵芝药 a modifier of 夹竹桃. [rule: none]\n3. [Grammar & Vocabulary, error] 一个课文的植物：一篇关于植物的文章，Use the measure word 篇 for an article, and place the topic before the noun as 关于植物的文章. [rule: attributive_modifier_de]\n4. [Coherence: temporality, error] Coherence (Temporality): 也写：也写了，Writing the article is presented as a completed action, so the verb needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "特别是 cannot directly modify 毒 here, and a poisonous plant should be described as 有毒 or 特别有毒."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original incorrectly makes 灵芝药 modify 夹竹桃, but the intended meaning is lingzhi that can be used as an antidote to oleander, not two coordinated plant names."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "课文的植物 has the wrong noun relationship and measure word, while 一篇关于植物的文章 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "This is the final action in a completed sequence, so 写 needs perfective 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2093,
+  "completion_tokens": 1025,
+  "total_tokens": 3118,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 442,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 745,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

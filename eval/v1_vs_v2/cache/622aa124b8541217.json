@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 神农和他的家人住在古代：better to briefly introduce “神农” when this character first appears\n- 因为他的家人常常生病了：常常生病，no了for routine/habit\n- 他们去很多不一样的地方：去了，了completed\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 神农：一个叫神农的人，This is the character’s first mention, so introduce him with a full noun phrase rather than only assuming the reader already knows who he is. [rule: character_introduction_first_mention]\n2. [Coherence: temporality, error] Coherence (Temporality): 常常生病了：常常生病，A habitual condition uses the zero particle; 了 marks a completed action or change of state. [rule: aspect_le_completed]\n3. [Coherence: temporality, error] Coherence (Temporality): 他们去很多不一样的地方：他们去了很多不一样的地方，The journey to these places is presented as a completed past action, so the verb needs 了. [rule: aspect_le_completed]\n4. [Coherence: connectors, error] Coherence (Conjunction): 神农和他的家人住在古代，所以不知道什么植物能吃：在古代，神农和他的家人不知道什么植物能吃，This information gives the story’s time setting rather than a direct cause, so use the time expression and remove 所以. [rule: time_expression]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "This is the first mention of the character, and the teacher requires an introductory noun phrase."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 describes a habitual condition, so 生病 should not take 了."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The trip to the places is a completed narrative event, so 去 needs 了."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "Using 所以 to connect living in ancient times with lacking knowledge of edible plants is an acceptable causal connection in this story."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2072,
+  "completion_tokens": 439,
+  "total_tokens": 2511,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 421,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 190,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟子学习馆学了十五年：孟子在学习馆学习了十五年，A place used as the location of an action needs the preposition 在, and 学习 is the verb describing what Mengzi did there.\n2. [Grammar & Vocabulary, error] 对他很多好处：对他有很多好处，The fixed pattern is 对 + person + 有 + benefit; 有 is required before the noun phrase.\n3. [Coherence: reference, error] Coherence (Reference): 他的学习和他的旅行经验：自己的学习和自己的旅行经验，Use 自己的 when the possessor is the same person as the subject, so the relationship clearly refers back to Mengzi.\n4. [Coherence: temporality, error] Coherence (Temporality): 找了到：找到了，The completion marker 了 comes after the result complement 到: 找到 + 了, not 找 + 了 + 到.\n5. [Coherence: temporality, error] Coherence (Temporality): 他成为很有名的哲人：他成为了很有名的哲人，Use 了 after 成为 to mark the completed change of state in this past narrative event.\n6. [Coherence: connectors, error] Coherence (Conjunction): 可是不是做衣服的工作，而是喜欢的工作：不是做衣服的工作，而是喜欢的工作，Use the paired connector 不是……而是…… to contrast the job Mengzi did not do with the job he did like.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "在 is needed, but 学习馆 is not the intended correct place word here; 在学校学习了十五年 is needed."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "对他有很多好处 is the correct construction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated second 他的 should be omitted, and changing both to 自己的 still leaves the unnecessary repetition."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The perfective 了 must follow the result complement: 找到了."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "成为了 correctly supplies the completed-change marker, but 哲人 still does not make the teacher-required correction to 哲学家."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "可是 can validly precede 不是……而是…… here, so deleting it is only an optional stylistic change."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2304,
+  "completion_tokens": 1371,
+  "total_tokens": 3675,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 653,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 992,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

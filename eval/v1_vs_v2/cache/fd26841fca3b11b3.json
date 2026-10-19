@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 成为高薪：得到高薪，成为 is used for becoming an identity or role, while 高薪 means a high salary; 得到 correctly expresses receiving that salary. [rule: none]\n2. [Coherence: reference, error] Coherence (Reference): 孟子长大，他开始能解决问题：他长大了，开始能解决问题，孟子 was named in the immediately previous sentence with no competing character, so use the pronoun for close re-occurrence; within the same sentence, omit the repeated pronoun before the second action. [rule: character_introduction_first_mention]\n3. [Coherence: reference, error] Coherence (Reference): 后来孟子成为教授，他教学生很厉害：后来他成为了教授，教学生很厉害，after the same character has remained the topic, use a pronoun for close re-occurrence and use zero form for the second action in the same sentence. [rule: character_introduction_first_mention]\n4. [Coherence: temporality, error] Coherence (Temporality): 孟子长大：孟子长大了，this growing-up is a completed change of state before he begins solving problems, so it needs 了. [rule: aspect_le_completed]\n5. [Coherence: temporality, error] Coherence (Temporality): 孟子成为教授：孟子成为了教授，becoming a professor is a completed event in the later part of the narrative, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "成为不能搭配高薪；得到高薪正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "同一分句中的第二个他冗余，改为零形式正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前面插入了较多关于你的一般性内容，重新用孟子并非错误，改成他反而不符合远距重提时用名字的标准。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "长大是发生在开始解决问题之前的完成性变化，需要了。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "后来成为教授是叙事中的已完成事件，需要了。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2277,
+  "completion_tokens": 1767,
+  "total_tokens": 4044,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 626,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1447,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

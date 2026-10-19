@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代时候，人不知道他们能吃什么植物：古代的时候，人们\n- 所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears\n- 告诉人什么植物是安全什么是危险：是安全的，是危险的\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代时候：古代的时候，A multi-syllable time noun needs 的 before 时候; only fixed expressions such as 古时候 omit it. [teacher rule: de_shihou]\n2. [Grammar & Vocabulary, error] 人：人们，This refers to a concrete group of people, so use 人们 rather than the generic noun 人. [teacher rule: ren_renmen]\n3. [Grammar & Vocabulary, error] 人：人们，This refers to the people whom Shennong informs, so use 人们 rather than the generic noun 人. [teacher rule: ren_renmen]\n4. [Grammar & Vocabulary, error] 什么植物是安全什么是危险：什么植物是安全的，什么植物是危险的，Two coordinated indirect questions need clear parallel clauses, and 安全的／危险的 describe the kind of plant after 是. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 他们能吃什么植物：能吃什么植物，Use zero form when the embedded clause has the same referent as the main-clause subject; repeating the pronoun is unnecessary here. [rule: ambiguous_reference]\n6. [Coherence: reference, error] Coherence (Reference): 神农：一个叫神农的人，On first mention, briefly introduce a character with a full noun phrase rather than only assuming the reader knows who the name refers to. [rule: character_introduction_first_mention]\n7. [Coherence: temporality, error] Coherence (Temporality): 告诉人们：告诉了人们，This is the final completed action in the sequence, so it takes 了; earlier actions in a series can remain without it. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 is multisyllabic, so 的 is required before 时候 under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "This refers to a concrete group of people, so 人们 is required."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The people whom Shennong informs are a concrete group, so 人们 is appropriate rather than generic 人."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Both coordinated clauses need 的 after 安全 and 危险 in this construction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他们 can appropriately refer back to the immediately preceding 人们; zero reference is possible but not required here."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 is a first-mentioned character and should be briefly introduced with a fuller noun phrase."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "As the final action in the action sequence, 告诉 takes 了 under the teacher's aspect rule."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2220,
+  "completion_tokens": 1166,
+  "total_tokens": 3386,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 569,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 750,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

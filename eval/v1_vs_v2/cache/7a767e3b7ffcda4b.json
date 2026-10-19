@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的人很不知道：古代的人们不知道，The adverb “很” does not normally modify the negated mental-state verb phrase “不知道” in this meaning; use the verb without “很.” “人们” is appropriate for the group of people in that time.\n2. [Grammar & Vocabulary, error] 也什么植物不能吃：也不知道什么植物不能吃，The second part of a parallel “不知道” structure also needs the verb “不知道.”\n3. [Grammar & Vocabulary, error] 很麻烦的情况：这是一种很麻烦的情况，A noun phrase cannot stand alone after a comma as the predicate here; add a subject and linking verb to form a complete clause.\n4. [Coherence: reference, error] Coherence (Reference): 你的身体：人们的身体，The pronoun “你” unexpectedly addresses the reader, while this sentence is about the ancient people; repeat the group noun for a clear reference.\n5. [Coherence: reference, error] Coherence (Reference): 但是一个人，神农：但是，有一个叫神农的人，On a character’s first mention, introduce the character with an unambiguous full noun phrase rather than placing the name after a vague noun.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "很不能这样修饰不知道，且这里的具体群体用人们更合适。"
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "原句中的也不能直接连接后面的疑问宾语；补出不知道后可构成正确的平行结构。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很麻烦的情况只是名词短语，不能单独作这里的谓语。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这里叙述的是古代人，用你会突然转向读者，改为人们的身体指代清楚。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农首次出现时应使用清楚的完整名词短语来介绍这个人物。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2094,
+  "completion_tokens": 1172,
+  "total_tokens": 3266,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 443,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 848,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

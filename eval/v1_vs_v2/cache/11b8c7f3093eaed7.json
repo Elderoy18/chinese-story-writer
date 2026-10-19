@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 成为高薪：得到高薪，the verb “become” must be followed by a person, role, or identity; “high salary” is payment, so use a verb meaning “receive/earn.”\n2. [Grammar & Vocabulary, error] 教学生很厉害：很擅长教学生，an adjective such as “very skilled” cannot directly follow a verb-object phrase in this structure; this version clearly says that he is skilled at teaching students.\n3. [Coherence: reference, error] Coherence (Reference): 孟子：他，use a pronoun for a close re-occurrence when the previous sentence already identifies the same character and no other character competes as the referent.\n4. [Coherence: reference, error] Coherence (Reference): 孟子：他，use a pronoun because the same character was mentioned in the immediately preceding sentence.\n5. [Coherence: reference, error] Coherence (Reference): 他教学生很厉害：教学生很厉害，within the same sentence, use zero form rather than repeating the subject pronoun after it has already been stated.\n6. [Coherence: temporality, error] Coherence (Temporality): 长大：长大了，use 了 for a completed change of state: he has grown up.\n7. [Coherence: temporality, error] Coherence (Temporality): 成为教授：成为了教授，use 了 because becoming a professor is a completed change of role at this point in the narrative.\n8. [Coherence: connectors, error] Coherence (Conjunction): 如果你懂政治，你会：如果你懂政治，你就会，use the conditional pair “if…then…” to connect the condition and its result.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "成为不能和高薪搭配，得到高薪是正确的说法。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "教学生很厉害可以自然地表示他教学生的本领很强，并非语法错误。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "教师保留了这里的孟子，因此此处使用名字不应被判错。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "经过较多信息后再次说孟子可以帮助明确指称，不是错误。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他在新分句中指回孟子是自然且清楚的，不属于同一分句内多余的主语重复。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "长大是叙事中已经完成的状态变化，需要长大了，或改为长大以后。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "后来成为教授是已完成的事件，成为了教授正确标示了完成。"
+   },
+   {
+    "n": 8,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "条件句按教师规则需要如果……就……，但所示改后文字在会处截断且未完成。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2320,
+  "completion_tokens": 2119,
+  "total_tokens": 4439,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 669,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1603,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

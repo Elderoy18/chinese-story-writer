@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 神农和他的家人住在古代：better to briefly introduce “神农” when this character first appears\n- 因为他的家人常常生病了：常常生病，no了for routine/habit\n- 他们去很多不一样的地方：去了，了completed\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 神农：一个叫神农的男人，On this first mention, introduce the character with both his name and a brief identity rather than assuming the reader already knows him. [rule: character_introduction_first_mention]\n2. [Coherence: temporality, error] Coherence (Temporality): 常常生病了：常常生病，A habitual condition uses the zero particle; 了 is not used with routines such as something happening often. [rule: aspect_le_completed]\n3. [Coherence: temporality, error] Coherence (Temporality): 他们去很多不一样的地方：他们去了很多不一样的地方，This is a completed part of the past journey, so add 了 after the action verb. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农首次出现时，按教师标准需要用姓名加简短身份介绍。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常表示习惯性状态，不能用完成体了。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里叙述已经完成的旅行经历，去后应加了。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1992,
+  "completion_tokens": 243,
+  "total_tokens": 2235,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 341,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 59,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

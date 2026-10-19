@@ -1,0 +1,97 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “孟子在那个商店也找了到工作” / Formula: 找到 + object; 在 + place + 找到 + object / Correct: “孟子也在那个商店找到了工作。” “找了到” is not a possible verb form; use the result complement 到 after 找.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “可是……而是……” / Formula: 不是 + A + 而是 + B / Correct: “可是他不是做衣服的，而是做自己喜欢的工作。” When contrasting two choices, use the full pattern 不是……而是……, not 可是……而是…….\n3. [Grammar & Vocabulary, error] Incorrect phrase: “孟子学习馆学了十五年” / Formula: 在 + place + 学习 + duration; or 在 + place + 学了 + duration / Correct: “孟子在学习馆学习了十五年。” You need 在 before the place, and 学习馆 should be the location rather than directly following 孟子.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “他的学习和他的旅行经验很重要，对他很多好处” / Formula: A + 对 + somebody + 很有好处 / Correct: “他的学习和旅行经验对他很有好处。” Use 对……很有好处 to say that something benefits someone. Also, repeating 他的 is unnecessary here.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “他是大人的时候” / Formula: 长大以后 / 他成为大人以后 / Correct: “他长大以后……” “是大人” is understandable, but 长大以后 is much more natural for “when he became an adult.”\n6. [Grammar & Vocabulary, error] Incorrect phrase: “他成为很有名的哲人” / Formula: 成为 + 一名 + adjective + noun / Correct: “他成为了一名很有名的哲学家。” Add 一名 before a profession. 哲学家 is the standard word for “philosopher”; 哲人 is more literary and means a wise person.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“找了到” has the completion particle in the wrong position; it should be “找到了”."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "The actual student sentence already contains “不是……而是……”, so “可是” can introduce that contrast and is not an error."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "A location needs “在”, but the teacher's correction also requires “学校”, whereas the system leaves the unsuitable “学习馆” in the corrected sentence."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The sentence needs “对他很有好处”, and the repeated second “他的” should be removed."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "“是大人的时候” should be changed to “长大以后”, but in the full sentence the first “他” should also be deleted."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "“哲人” should be “哲学家” here, and “成为了” appropriately marks the completed event."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2431,
+  "completion_tokens": 2091,
+  "total_tokens": 4522,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 780,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1664,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThe teacher's corrections on this scene:\n- 不是人吵架，就是都叫：不是常常有人吵架，就是很多人都大声说话\n- 在那儿，孟母也找不到工作：wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n- 孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred\n- 孟母找到工作，在商店做衣服：找到了，了completed\n\nThe system's item in each run:\nRun 1: 人：人们，This refers to a concrete group making noise in the city, so use the plural noun form. [teacher rule: ren_renmen]\nRun 2: Coherence (Reference): 人：人们，Use 人们 for a specific group of people in the city; 人 is a generic noun and does not refer naturally to this concrete group. [teacher rule: ren_renmen]\nRun 3: 不是人吵架，就是都叫：不是有人吵架，就是有人大叫，The second alternative needs a clear subject, and “有人” naturally refers to unspecified people making the noise. [teacher rule: ren_renmen]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1–2 target 人 versus 人们, while Run 3 targets the missing subject in the second clause and rewrites the whole contrast."
+ },
+ "usage": {
+  "prompt_tokens": 561,
+  "completion_tokens": 275,
+  "total_tokens": 836,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 216,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

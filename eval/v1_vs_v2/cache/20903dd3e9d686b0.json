@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nThis scene:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 不是人吵架，就是都叫：不是常常有人吵架，就是很多人都大声说话\n- 在那儿，孟母也找不到工作：wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n- 孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred\n- 孟母找到工作，在商店做衣服：找到了，了completed\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 人吵架，就是都叫：人们吵架，就是人们大叫，Use 人们 for a concrete group of people; 都 only quantifies an already established plural subject and cannot replace the subject in the second part of this parallel structure.\n2. [Grammar & Vocabulary, error] 要又一个次搬了家：要再搬一次家，Use 再 for a move that is planned but has not happened yet; the measure-word phrase is 一次, not 一个次; after the modal verb 要, use the zero aspect form rather than 了 for a future action.\n3. [Grammar & Vocabulary, error] 找到工作：找到了工作，Add 了 because finding the job is a completed action.\n4. [Coherence: reference, error] Coherence (Reference): 孟母找到工作：她找到了工作，Use a pronoun for a close re-occurrence when the same person was mentioned in the previous sentence and no other female character competes as the referent.\n5. [Coherence: connectors, error] Coherence (Conjunction): 在那儿，孟母也找不到工作。孟子和妈妈要：在那儿，孟母也找不到工作，所以孟子和妈妈要，Add 所以 to show the cause-and-effect link: the noisy city and the lack of work lead to the family’s decision to move.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "人 cannot refer to this concrete plural group, and 都 cannot stand alone as the subject of the second clause."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The move has already happened, so 要再搬一次家 incorrectly changes it into a future plan; it should be 又搬了一次家."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Finding the job is a completed event here, so 找到了工作 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Coherence: temporality"
+    ],
+    "reason": "孟母 has just been established and no competing female referent is present, so 她 is appropriate, and 找到了 marks completion."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "A causal connector is not required here, and the proposed text still ends with the incomplete 要."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2235,
+  "completion_tokens": 1299,
+  "total_tokens": 3534,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 584,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 961,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

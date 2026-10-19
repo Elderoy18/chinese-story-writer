@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。\n\nThe teacher's corrections on this scene:\n- 对我的脑有坏处：大脑\n- 一个灵芝和一个男人正好在我的旁边：“男人” is moving to神农(dynamic) while “灵芝” is next to神农(static), so it’s better not to combine the two，一个男人正好过来，看到我的旁边长着一个灵芝\n- 你得小心吃植物，因为有的植物对你的健康有坏处：吃植物得小心，delete“对你”\n\nThe system's item in each run:\nRun 1: Coherence (Conjunction): 因为夹竹桃有毒。：特别是夹竹桃，因为它有毒。，A “因为” clause gives a cause and needs to connect to the statement it explains; here it can directly explain why oleander needs special caution. [rule: none]\nRun 2: Coherence (Conjunction): 特别是夹竹桃。因为夹竹桃有毒。：特别是夹竹桃，因为它有毒。，The final 因为-clause has no following result clause and repeats the reason already being explained; attach it to the statement about 夹竹桃 to show the cause clearly. [rule: none]\nRun 3: Coherence (Conjunction): 特别是夹竹桃。因为夹竹桃有毒。：特别是夹竹桃有毒。，“因为” introduces a reason and should connect to a main clause rather than stand as a separate fragment; here the poisonous quality explains why the warning especially applies to 夹竹桃. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs address the standalone 因为-clause, and each revision makes the ending grammatical while retaining the warning about oleander's toxicity."
+ },
+ "usage": {
+  "prompt_tokens": 658,
+  "completion_tokens": 377,
+  "total_tokens": 1035,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 320,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

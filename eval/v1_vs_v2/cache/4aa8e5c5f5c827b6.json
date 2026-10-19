@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 看了：看到了，When the verb means “to see or notice,” use the resultative form “看到,” not “看,” which means “to look at.” The completion marker follows the resultative complement: “看到了.”\n2. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：有一个小男孩叫孟子。他很小的时候，This is the first mention of the character, so introduce him with a name and a full noun phrase before using a pronoun.\n3. [Coherence: temporality, error] Coherence (Temporality): 老是对他开玩笑了：老是对他开玩笑，Use the zero particle for a habitual action. “老是” describes something that happens repeatedly, so it does not take “了.”\n4. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：因为他每天只祭拜，所以他没有朋友，Use “因为……所以……” for cause and effect. “虽然” needs a contrasting second clause with “但是” or “可是,” so it does not fit here.\n5. [Coherence: reference, error] Coherence (Reference): 所以孟子和孟子妈妈搬家了：所以她带着孟子搬家了，Repeat the name only when needed for clarity. Since the mother was just mentioned and no other female character competes, use “她”; “带着孟子” also makes the mother’s role in the move clear.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "这里表示“看见、注意到”，应使用结果补语“看到”，而“看”仅表示看着。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“孟子很小的时候”已经在首次提及时使用了专名，不必另加“有一个小男孩叫孟子”，且改后“他很小的时候”未接后句而不完整。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“老是”表示习惯性、重复发生的动作，不能用完成体“了”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "原句的“虽然”没有与“但是/可是”构成让步关系，改为“因为……所以……”正确表达因果。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前句刚提到孟子妈妈，重复“孟子和孟子妈妈”显得冗余，用“她”并说明带着孟子搬家更清楚。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2262,
+  "completion_tokens": 1257,
+  "total_tokens": 3519,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 611,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 877,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

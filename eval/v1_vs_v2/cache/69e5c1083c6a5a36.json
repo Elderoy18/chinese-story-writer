@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene:\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's item in each run:\nRun 1: 跟朋友们祭拜玩：跟朋友们学着别人祭拜，玩 cannot directly follow 祭拜 to mean treating a ritual as a game; 学着别人祭拜 clearly expresses playful imitation. [rule: word_choice]\nRun 2: 祭拜玩：学着别人祭拜，祭拜 means carrying out a real mourning or worship ritual; it cannot be directly followed by 玩 to mean imitating it for fun. [rule: none]\nRun 3: 他常常跟朋友们祭拜玩：他常常跟朋友们学着别人祭拜，祭拜玩 is not a natural verb phrase. 学着别人祭拜 clearly expresses that he and his friends imitate the people who come to worship. [rule: word_choice]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs target the unnatural phrase “祭拜玩,” but their replacement omits the teacher-accepted “祭拜着玩儿” fix and changes the meaning to imitation."
+ },
+ "usage": {
+  "prompt_tokens": 583,
+  "completion_tokens": 58,
+  "total_tokens": 641,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

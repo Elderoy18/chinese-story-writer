@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不是学金融，而是学政治：不要学金融，而要学政治，After a verb of advice, use a negative proposal such as 不要……而要……; the original form sounds as if it is correcting a fact rather than giving advice. [rule: none]\n2. [Grammar & Vocabulary, error] 成为高薪：获得高薪，高薪 refers to pay, not a role or identity that a person can become; 获得 expresses receiving that pay. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 你……你：别人……他们，The listener has not been introduced, so 你 has no clear referent in this third-person narrative. Use 别人 for the people Mengzi advises, then 他们 for that same group. [rule: ambiguous_reference]\n4. [Coherence: temporality, error] Coherence (Temporality): 长大：长大了，Growing up is a completed change of state here, so it needs 了. [rule: aspect_le_completed]\n5. [Coherence: temporality, error] Coherence (Temporality): 后来孟子成为教授：后来孟子成为了教授，Becoming a professor is a completed change in the later sequence, so add 了 after 成为. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "After 建议, 不要……而要…… is a correct way to express the advice."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "高薪 is pay, so a person should 获得/得到高薪 rather than 成为高薪."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The addressee 你 is not established in this third-person narrative, and the full sentence still contains other uncorrected errors."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "长大 is a completed change here and can correctly take 了, but the corrected sentence still retains the redundant 他."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为教授 is a completed later event in the narrative, so 成为了教授 is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2235,
+  "completion_tokens": 1245,
+  "total_tokens": 3480,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 584,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 922,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

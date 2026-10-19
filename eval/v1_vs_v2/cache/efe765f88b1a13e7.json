@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 喜欢玩在墓地里：喜欢在墓地里玩，The place phrase should come before the verb it modifies. [rule: none]\n2. [Grammar & Vocabulary, error] 装祭拜：假装祭拜，装 does not naturally introduce the action of performing a ritual; 假装 means “pretend to do” and can be followed by an action. [rule: none]\n3. [Grammar & Vocabulary, error] 五岁的时候：五岁的时候，The structure ……的时候 requires 的 after a multi-syllable phrase. [teacher rule: de_shihou]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和他的朋友喜欢在墓地里玩：他和朋友喜欢在墓地里玩，Use a pronoun for a recently mentioned character when no competing referent has appeared. [rule: character_introduction_first_mention]\n5. [Coherence: temporality, error] Coherence (Temporality): 跟妈妈搬家：跟妈妈搬了家，This is a completed move at a specific age, so the completed action needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "地点短语应放在动作动词“玩”前面。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“装祭拜”搭配不自然，“假装祭拜”可以正确表达假扮进行祭拜。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“五岁的时候”本来就有“的”，结构正确，系统也没有作出任何改动。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前一句刚提到孟子，按教师的指代规则，此处应用“他”而不必重复名字。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "五岁时搬家是叙事中的已完成事件，应说“搬了家”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2062,
+  "completion_tokens": 722,
+  "total_tokens": 2784,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 411,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 410,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

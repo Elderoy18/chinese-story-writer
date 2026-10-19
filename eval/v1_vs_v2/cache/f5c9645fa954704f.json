@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n所以，孟母和孟子搬到学校的旁边住。才五岁孟子开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。\n\nThe teacher's corrections on this scene:\n- 才五岁孟子开始学哲学：就开始，才Num.就V.\n- 将来，他成为中国的一个非常有名的哲学家：后来，“将来“ refers to the absolute future\n\nThe system's item in each run:\nRun 1: (nothing flagged here)\nRun 2: Coherence (Temporality): 搬到学校的旁边住：搬到了学校的旁边住，The move is a completed event in the narrative, so the verb needs 了. [rule: aspect_le_completed]\nRun 3: Coherence (Reference): 孟母和孟子搬到学校的旁边住：他们搬到学校的旁边住，Both characters were mentioned in the immediately preceding scene, and no other pair competes as the referent, so the pronoun is more natural for a close re-occurrence. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 2 changes aspect and Run 3 changes reference, while Run 1 flags nothing, so they do not address the same error or provide equivalent fixes."
+ },
+ "usage": {
+  "prompt_tokens": 477,
+  "completion_tokens": 110,
+  "total_tokens": 587,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 49,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

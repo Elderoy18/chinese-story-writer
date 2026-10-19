@@ -1,0 +1,86 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “特别是毒” / Formula: Subject + 特别 + 有 + adjective/noun property / Correct: “特别有毒。” “是毒” is not natural here; use “有毒” to describe a poisonous plant.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “正好在这儿” / Formula: Subject + 正好 + 在 + place / Correct: “正好，神农在这儿。” This phrase needs a clear subject. Without one, it is unclear who is “here.”\n3. [Grammar & Vocabulary, error] Incorrect phrase: “灵芝药的夹竹桃” / Formula: A 是 B，C 有/是 D / Correct: “灵芝是药，夹竹桃有毒。” This mixes up two different plants. 灵芝 is a medicinal fungus, while 夹竹桃 is poisonous; “灵芝药的夹竹桃” is not a meaningful noun phrase.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “夹竹桃他吃完了” / Formula: Subject + 吃了 + object / Correct: “神农吃了夹竹桃。” The subject should be stated clearly. “吃完了” means he finished all of it, which is probably not necessary here.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “也写一个课文的植物” / Formula: Subject + 也 + 写下了 + object + 的用处 / Correct: “他也写下了这些植物的用处。” “写一个课文” means “write a text/lesson,” but you seem to mean that Shennong recorded what the plants were used for.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "特别是毒 is not a valid way to describe the plant; 特别有毒 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "正好在这儿 can stand as an elliptical locative phrase, and changing it to say that Shennong is there does not address the intended meaning."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The noun phrase wrongly makes 夹竹桃 modify or relate to 灵芝药, but the proposed two separate statements miss the intended lingzhi-as-antidote meaning."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "The intended object is 灵芝, not 夹竹桃, and 夹竹桃他吃完了 is not ungrammatical merely because its object is topicalized."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "也写一个课文的植物 is ungrammatical and uses 课文 incorrectly; 他也写下了这些植物的用处 is a correct repair."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2244,
+  "completion_tokens": 1489,
+  "total_tokens": 3733,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 593,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1110,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

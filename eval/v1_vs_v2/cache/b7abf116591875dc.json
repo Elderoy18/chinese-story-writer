@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this expression redundantly combines a historical time noun with a “time of” phrase. [vocab list]\n2. [Grammar & Vocabulary, error] 人：人们，use this form when referring to a group of people. [teacher rule: ren_renmen]\n3. [Grammar & Vocabulary, error] 看了：看到了，here the mother sees and realizes the classmates’ influence; 看 means “look,” while 看到 means “see/perceive.” [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：一个叫孟子的小男孩很小的时候，on first mention, introduce the character with a full noun phrase rather than only a name. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 所以孟子和孟子妈妈搬家了：所以她带着他搬家了，after both characters have just been mentioned, use pronouns rather than repeating their names. [rule: redundancy_delete]\n6. [Coherence: temporality, error] Coherence (Temporality): 他的同学们老是对他开玩笑了：他的同学们老是对他开玩笑，老是 describes a repeated routine, so it takes the zero particle rather than completed-action 了. [rule: aspect_le_completed]\n7. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：他没有朋友，因为每天只祭拜，虽然 needs a contrasting second clause with 但是 or 可是; this sentence instead gives a cause with 因为. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so adding 的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "人 is too generic for this concrete group; 人们 is required here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "看到 means to see/perceive the influence, whereas 看 only means to look."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "On his first appearance, the character should be introduced with a fuller identifying noun phrase."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating both names immediately after mentioning them is redundant, and 她带着他 clearly refers to the mother and Mencius."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "老是 marks a habitual action, so sentence-final 了 should not be used."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "Although does not express the intended cause relationship, while 因为 correctly introduces the reason."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2306,
+  "completion_tokens": 1044,
+  "total_tokens": 3350,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 655,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 629,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

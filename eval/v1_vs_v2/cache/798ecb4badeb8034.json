@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene:\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's item in each run:\nRun 1: Coherence (Temporality): 找到：找到了，Finding the flower is a completed event in the story, so the completed-action marker 了 is needed. [rule: aspect_le_completed]\nRun 2: (nothing flagged here)\nRun 3: Coherence (Temporality): 找到：找到了，This is a completed, one-time action in the past, so the completed action needs “了” after the resultative complement. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 flag the missing 了 after 找到, but Run 2 provides no correction for this error."
+ },
+ "usage": {
+  "prompt_tokens": 484,
+  "completion_tokens": 94,
+  "total_tokens": 578,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 39,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,116 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这是不合适的地方让孩子玩：这是不适合孩子玩的地方，use “适合 + person + verb phrase” to say that a place suits someone’s activity; the original word order does not form this pattern naturally.\n2. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，when the mother is the subject who feels worried, use “担心”; “恐怕” means “I am afraid that” and cannot take another subject in this structure.\n3. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，“教育” needs a clear possessor or location phrase; “这儿的” shows that the education in this place is being evaluated.\n4. [Grammar & Vocabulary, error] 她会一直搬家才能找到质量好的教育：她得一直搬家才能找到质量好的教育，use “得……才能……” to express that repeated moving is necessary in order to achieve the result.\n5. [Coherence: reference, error] Coherence (Reference): 有一天孟子去了墓地玩儿：有一天，有一个小男孩叫孟子，他去了墓地玩儿，at first mention, introduce the character with a noun phrase explaining who he is before using a pronoun.\n6. [Coherence: reference, error] Coherence (Reference): 他妈妈：孟子的妈妈，at the mother’s first mention, use a full noun phrase rather than a possessive pronoun, so the new character is introduced clearly.\n7. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，“决定” is a mental-state verb and takes the zero particle rather than completed-action “了”.\n8. [Coherence: temporality, error] Coherence (Temporality): 他们会搬家找更好的地方：搬到一个更好的地方，after “决定”, use a verb phrase directly; the same subject does not need to be repeated.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“不合适的地方让孩子玩” has an unnatural structure; “不适合孩子玩的地方” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“恐怕” is not appropriate with the mother as the subject here, while “担心” is."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“住在这儿教育不太好” is somewhat terse but understandable and acceptable, so it need not be corrected."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The revision still keeps the unsuitable “才能” structure and the awkward collocation “找到质量好的教育.”"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "At his first appearance, the character should be briefly introduced rather than only named."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After the immediately preceding mention of 孟子, “他妈妈” identifies the mother clearly and does not require correction."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“决定” is a mental-state verb here and should not take completed-action “了.”"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "After “决定,” the subject need not be repeated, and “搬到一个更好的地方” is a correct verb phrase."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2358,
+  "completion_tokens": 1731,
+  "total_tokens": 4089,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 707,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1225,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

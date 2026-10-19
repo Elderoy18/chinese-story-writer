@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很不知道：不知道，The degree adverb 很 normally modifies a gradable adjective, not the mental-state verb 不知道. [rule: none]\n2. [Grammar & Vocabulary, error] 也什么植物不能吃：也不知道什么植物不能吃，After 也, use a verb phrase; repeating 知道 makes the two parallel clauses complete. [teacher rule: ye_vp]\n3. [Grammar & Vocabulary, error] 吃不安全的植物对你的身体有坏处，很麻烦的情况：吃不安全的植物对身体有坏处，这是一个很麻烦的情况，The final noun phrase needs a subject and a copula structure; this correction clearly names the whole situation. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 但是一个人，神农，要解决这个问题：但是，有一个叫神农的人要解决这个问题，On first mention, introduce the character with a clear full noun phrase rather than placing the name after a vague noun. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很不能修饰不知道，删去后短语正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "也不能直接带这个名词性内容，补上不知道可构成正确的动词短语。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "原句缺少是并且不必要地使用你的，改后句子完整且指称自然。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农首次出现时应以清楚的完整名词短语介绍，改法正确。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2058,
+  "completion_tokens": 718,
+  "total_tokens": 2776,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 407,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 470,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

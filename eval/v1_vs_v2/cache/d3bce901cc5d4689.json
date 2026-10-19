@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 找到孟子一个老师：给孟子找到一个老师，The person who receives the teacher must be introduced with 给; the original order does not mark 孟子 as the recipient. [rule: none]\n2. [Grammar & Vocabulary, error] 跟老师孟子学最重要的文学：孟子跟老师学最重要的文学，The learner, 孟子, needs to come before the phrase meaning “with the teacher”; the original order can wrongly make 孟子 sound like the teacher’s name. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 他的朋友：自己的朋友，The subject and the possessor are both 孟子, so 自己的 makes the relationship clear. [teacher rule: ziji_possessor]\n4. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，The subject is referring to the city that belongs to or is familiar to himself, so 自己的 avoids an unclear possessive reference. [teacher rule: ziji_possessor]\n5. [Coherence: temporality, error] Coherence (Temporality): 找到：找到了，Finding the teacher is a completed event in this past narrative, so the verb needs 了. [rule: aspect_le_completed]\n6. [Coherence: temporality, error] Coherence (Temporality): 成为：成为了，Becoming a philosopher is presented as a completed change of state, so use 了. [rule: aspect_le_completed]\n7. [Coherence: connectors, error] Coherence (Conjunction): 他难怪抱怨，他想他的朋友：难怪他抱怨，原来他想他的朋友，Use the paired explanation pattern 難怪……，原来…… to show that the later information explains the complaint. [teacher rule: nanguai_yuanlai]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "找到 needs 给 to mark 孟子 as the recipient of the teacher."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "孟子 must precede 跟老师学 so that he is clearly the learner rather than seeming to be the teacher's name."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Since 孟子 is the subject, 自己的朋友 is required by the stated possessor-reference rule."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Since 孟子 is also the subject here, 自己的城市 makes the possessive reference clear under the teacher's rule."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "找到 is one action in a series, so it does not need 了 when the final action is the one that should receive 了."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为 is the final completed event in the action sequence and should take 了."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "难怪 must introduce a clause and the 难怪……，原来…… link is appropriate, but the shown correction still contains 他的朋友 rather than 自己的朋友 and ends unfinished."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2313,
+  "completion_tokens": 1949,
+  "total_tokens": 4262,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 662,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1481,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

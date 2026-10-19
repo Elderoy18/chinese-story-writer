@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThis scene:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 因为他们常常搬了家：搬家，no了for routine/habit\n- 妈妈教孟子很多技能：教了，了completed\n- 先她让孟子跟朋友玩儿：她先让……，Subj.先……\n- 然后教他怎么买又便宜又好质量的东西：质量又好\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 先她让孟子跟朋友玩儿：她先让孟子跟朋友玩儿，The sequence adverb “先” should normally come after the subject and before the verb phrase.\n2. [Grammar & Vocabulary, error] 又便宜又好质量的东西：又便宜又质量好的东西，“质量” is a noun, so the adjective “好” must describe it as “质量好”; the whole phrase then modifies “东西” with “的”.\n3. [Coherence: reference, error] Coherence (Reference): 妈妈教孟子很多技能：她教孟子很多技能，Use a pronoun for a close re-occurrence: the mother was named in the immediately preceding sentence, and no other female character competes as the referent.\n4. [Coherence: temporality, error] Coherence (Temporality): 常常搬了家：常常搬家，Use the zero particle for a habitual action. “常常” describes a routine, so it does not take completed-action “了”.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "先 should follow the subject here: 她先让孟子跟朋友玩儿。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "好 must modify 质量 as 质量好/质量好的, not directly follow 又 as 又好质量。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference",
+     "Coherence: temporality"
+    ],
+    "reason": "她 is appropriate for the recently mentioned mother, but the corrected clause still needs 教了 for the completed action."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 describes a habitual action, so 搬家 should not take 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2099,
+  "completion_tokens": 616,
+  "total_tokens": 2715,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 448,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 362,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

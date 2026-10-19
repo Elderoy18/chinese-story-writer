@@ -1,0 +1,116 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他需要当上医：医生\n- 一看别的人就想帮助他们：看到，看look vs.看到see; 病人，“别的” is for “a different type”, and “all else except the spoken one”\n- 什么病人吃都会觉得身体更好：吃了以后\n- 神农三个月走去：走了三个月\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This phrase redundantly combines a historical time noun with another “time of” expression. [vocab list]\n2. [Grammar & Vocabulary, error] 医：医生，The original word refers to medicine or medical treatment; the noun for a person whose job is treating patients is the corrected word. [rule: word_choice]\n3. [Grammar & Vocabulary, error] 一看：一看到，The sentence means that he sees someone, rather than merely looks; this meaning needs the resultative complement. [rule: resultative_complement]\n4. [Grammar & Vocabulary, error] 别的人：别人，Use the corrected word for people other than oneself or the person being discussed; the original form is not appropriate here. [teacher rule: bieren]\n5. [Grammar & Vocabulary, error] 一个很漂亮的植物：一种很漂亮的植物，Plants use the measure word shown in the correction, not the general measure word used for people or many objects. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 他有一个问题，他不知道：他有一个问题，不知道，After the subject has appeared earlier in the same sentence, use zero form rather than repeating the pronoun. [rule: redundancy_delete]\n7. [Coherence: reference, error] Coherence (Reference): 神农听说：他听说，The name was mentioned in the immediately preceding sentence and there is no competing character, so a pronoun is more natural for this close re-occurrence. [rule: none]\n8. [Coherence: temporality, error] Coherence (Temporality): 神农三个月走去，找到有植物的地方：神农走了三个月，找到了有植物的地方，Put the duration after the action verb; both the journey and the successful finding are completed actions, so they take 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundantly formed under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "医 does not mean a doctor, whereas 医生 correctly refers to the person."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "这里要表达“看见”病人，看到 correctly supplies the resultative meaning."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "别的人 is wrong here under the teacher's rule, but it should be 病人 rather than 别人."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "一个植物 can correctly refer to one individual plant, so changing it to 一种 is not required."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating 他 as the subject of the following clause is acceptable and is not a reference error."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 was mentioned very recently and no other character competes for reference, so the teacher's rule prefers 他."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The duration must follow the verb, and both the completed journey and successful finding are correctly marked with 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2260,
+  "completion_tokens": 1344,
+  "total_tokens": 3604,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 609,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 860,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

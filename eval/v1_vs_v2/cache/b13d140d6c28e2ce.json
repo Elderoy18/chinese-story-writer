@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThis scene:\n城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得孟母只好一直陪孟子：add something like “不能出去工作”, “害得“ + harmful result, 一直陪孟子itself is not harmful\n- 住在商店的旁边不是适合孟子，而是让他觉得很伤心：不是适合孟子的环境\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 害得孟母只好一直陪孟子：让孟母只好一直陪孟子，the result describes an unwanted necessity but does not explicitly state a harmful result; use 害得 only when it is followed by a person and a clearly harmful outcome. [rule: haide_harmful_result]\n2. [Grammar & Vocabulary, error] 孟子也没有朋友：孟子没有朋友，also is not supported here because no other person has been stated to have no friends. [rule: you_ye_distinction]\n3. [Grammar & Vocabulary, error] 不是适合孟子：不适合孟子，适合 is a verb and can directly take 孟子 as its object; it should not follow 是 in this predicate. [rule: word_class_misuse]\n4. [Coherence: connectors, error] Coherence (Conjunction): 而是让他觉得很伤心：而且让他觉得很伤心，the second clause adds another negative effect rather than correcting a mistaken idea, so use an additive connector instead of the paired contrast connector. [teacher rule: bushi_ershi]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得后面需要明确的有害结果，改用让孟母只好一直陪孟子是正确的。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "这里的也可以表示在前述问题之外孟子还没有朋友，并非错误。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "原句的不是适合孟子不合适，但改成不适合孟子后仍保留而是，造成不适合……而是……的结构问题。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "这里应保留不是……而是……结构，改成而且既不符合原意，也会留下前面的不是适合孟子错误。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2126,
+  "completion_tokens": 1202,
+  "total_tokens": 3328,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 475,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 916,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

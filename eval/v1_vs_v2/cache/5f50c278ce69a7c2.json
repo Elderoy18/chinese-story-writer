@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene:\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's item in each run:\nRun 1: 这冰茶是药：这种茶是药，A demonstrative before a noun needs a measure word: 这/那 + measure word + noun. 种 is the suitable measure word for a type of tea.\nRun 2: 这冰茶：这杯茶，A demonstrative before a countable noun needs a measure word; 杯 is the suitable measure word for tea.\nRun 3: 这冰茶：这杯茶，A demonstrative plus a noun needs a measure word: 这 + MW + noun.",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs address the missing measure word after 这, but 这杯茶 changes the intended generic “this kind of iced tea” meaning rather than matching the teacher’s 种类-based fix."
+ },
+ "usage": {
+  "prompt_tokens": 497,
+  "completion_tokens": 305,
+  "total_tokens": 802,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 236,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears\n- 孟子妈妈的工作是祭拜：wrong information, it’s not his mother’s job\n- 孟子不高兴，因为他说我们老是搬家：delete因为\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很多墓地得我祭拜：我得去很多墓地祭拜，The person who has the obligation must be placed before the modal verb; this version also makes the cemeteries the places visited for the worship activity. [rule: none]\n2. [Coherence: reference, error] Coherence (Reference): 一天，很久很久以前，孟子和他妈妈住在中国：很久很久以前，有一个小男孩叫孟子，他和妈妈住在中国，On first mention, introduce the main character with a name and brief identity before using him in the narrative. [rule: character_introduction_first_mention]\n3. [Coherence: reference, error] Coherence (Reference): 孟子妈妈的工作：她的工作，The mother was introduced in the previous sentence, and the female pronoun clearly refers back to her; use a pronoun for a close re-occurrence. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 他妈妈说：她说，The mother is still the clear female referent, so a pronoun is more natural than repeating the relationship noun phrase. [rule: none]\n5. [Coherence: connectors, error] Coherence (Conjunction): 孟子不高兴，因为他说我们老是搬家，为什么？：孟子不高兴，问：“我们为什么老是搬家？”，The connector for cause should introduce the reason for his unhappiness, but this part is his response in the form of a question; use a reporting verb and put the question word before the action it asks about. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "得 must precede the person who is obligated, so 很多墓地得我祭拜 has incorrect word order."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is a first-mentioned main character and should be briefly introduced before the story refers to him."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The mother was just mentioned, so 她 is required by the reference rule, but 她的工作是祭拜 still contains the separate factual error about her job."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The mother is the immediately preceding clear referent, so 她说 is the appropriate close re-reference."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "因为 cannot introduce Mengzi's question here; removing it and using 问 correctly presents his direct question."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2184,
+  "completion_tokens": 834,
+  "total_tokens": 3018,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 533,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 507,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

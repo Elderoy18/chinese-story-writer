@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代时候，人不知道他们能吃什么植物：古代的时候，人们\n- 所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears\n- 告诉人什么植物是安全什么是危险：是安全的，是危险的\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “古代时候，人不知道他们能吃什么植物” / Formula: 在 + time, + people + 不知道 + embedded question / Correct: “在古代，人们不知道什么植物能吃。” “人” is too vague here, and “他们” has an unclear referent. “人们” is more natural.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “常常一吃就死” / Formula: subject + 一 + verb phrase + 就 + result / Correct: “人们常常一吃错植物就会死。” Add a clear subject and object. “吃错植物” explains what causes the danger.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “但是不知道为什么，没有办法” / Formula: subject + 不知道 + question word + verb; therefore + result / Correct: “但是人们不知道为什么，也没有办法解决这个问题。” The subject is missing, and “没有办法” is incomplete without saying what they cannot solve.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “神农出去试一试很多种植物” / Formula: subject + 去/出去 + verb + object / Correct: “神农出去尝试很多种植物。” “试一试” is usually followed by a specific action or thing and sounds less natural here. For plants, “尝试” or “品尝” works better.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “告诉人什么植物是安全什么是危险” / Formula: 告诉 + person + embedded statement/question / Correct: “告诉人们什么植物是安全的，什么植物是危险的。” Use “人们” rather than vague “人,” and add 的 after adjectives used to describe plants.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“古代时候” needs 的 under the teacher’s standard, and concrete people should be called 人们 rather than 人."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The omitted subject and plant object are recoverable from the preceding context, so “常常一吃就死” is acceptable."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The subject remains understood from context, and “没有办法” can stand alone to mean that they had no solution."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 is first introduced here without explanation, and the proposed revision changes the verb but still does not introduce this new character."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "人 should be 人们 for this concrete group, and 安全／危险 used predicatively here require 的."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2218,
+  "completion_tokens": 2132,
+  "total_tokens": 4350,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 567,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1787,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

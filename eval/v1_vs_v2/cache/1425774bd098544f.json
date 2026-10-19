@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene:\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 跟子思老师住：跟他住，Use a pronoun for a close re-occurrence when the referent is clear; the immediately preceding phrase identifies the teacher. [rule: ambiguous_reference]\nRun 2: Coherence (Reference): 跟子思老师住：跟他住，子思老师 was named earlier in the same sentence, so a close re-occurrence should use a pronoun. [rule: character_introduction_first_mention]\nRun 3: (nothing flagged here)",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 2 flag the repeated reference to 子思老师, but Run 3 flags nothing and therefore does not provide the same correction."
+ },
+ "usage": {
+  "prompt_tokens": 497,
+  "completion_tokens": 154,
+  "total_tokens": 651,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 95,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

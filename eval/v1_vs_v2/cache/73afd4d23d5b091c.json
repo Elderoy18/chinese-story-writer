@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThis scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 害得：会带来麻烦，害得 must be followed by the person affected and a harmful result; here the sentence instead needs a verb phrase stating the possible problem. [teacher rule: haide_structure]\n2. [Grammar & Vocabulary, error] 帮妈妈的工作：帮妈妈工作，after 帮 + person, use a verb to state the help given. The 的 incorrectly makes 妈妈 modify 工作 and leaves no action after 帮. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 在墓地玩儿：孟子在墓地玩儿，because the current subject is his mother, the omitted player could be understood as her; repeat孟子’s name to identify who is playing. [rule: ambiguous_reference]\n4. [Coherence: temporality, error] Coherence (Temporality): 他们搬家：他们搬家了，this move is a completed event in the story, so the final verb needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 must introduce the affected person and harmful result, so the shown fragment is incomplete and erroneous."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "帮妈妈工作 correctly expresses helping Mother work, whereas 帮妈妈的工作 is not the intended construction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Since 妈妈 is the current subject, adding 孟子 correctly identifies who was playing in the cemetery."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed story event, so 搬家了 is the appropriate form."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2041,
+  "completion_tokens": 585,
+  "total_tokens": 2626,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 390,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 333,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

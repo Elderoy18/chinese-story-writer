@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这是不合适的地方让孩子玩：这不是一个适合孩子玩的地方，Use the pattern with “适合” to show that the place suits the activity; the action must modify the noun with “的”. [vocab list]\n2. [Grammar & Vocabulary, error] 决定了他们会搬家找更好的地方：决定搬家，找更好的地方，Mental-state verbs such as “决定” normally take the zero particle, not “了”; after “决定”, attach the verb phrase directly instead of repeating a subject and using a future clause. [rule: aspect_le_completed] [teacher rule: jueding_vp]\n3. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，Use “的” to show that the education belongs to or is available in this place; “住在这儿” cannot directly modify “教育” in this meaning. [rule: none]\n4. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，“恐怕” means “I am afraid that” and cannot describe another subject’s worry in this structure; use “担心” for her fear about her son. [teacher rule: kongpa]\n5. [Coherence: reference, error] Coherence (Reference): 孟子：一个叫孟子的小男孩，This is the character’s first mention in the submitted scene, so introduce him with both his name and a brief description before using pronouns. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“不合适的地方让孩子玩” does not form the needed modifier structure, while “适合孩子玩的地方” does."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "“决定” should not take 了 here and should be followed directly by its verb phrase; the proposed wording is grammatical."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“住在这儿，教育不太好” can use “住在这儿” as a topic/setting clause, so it is not necessarily an error."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Here “恐怕” is inappropriate for describing her worry, whereas “担心” correctly expresses it."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the teacher’s first-mention rule, 孟子 should be briefly introduced before later pronouns refer to him."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2264,
+  "completion_tokens": 1585,
+  "total_tokens": 3849,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 613,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1239,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,77 @@
+{
+ "input": "Required scenes:\n1. 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n2. 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n3. 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n4. 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n5. 孟子becomes a famous philosopher\n\nThe learner's story:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。你不是当数学家，而是当哲学家，不能当卖东西的人。所以他们又搬家。在他们第三个家，孟子学了怎么祭拜。妈妈感觉这个地方适合他们，告诉了孟子：我们找到了最后的家。在这儿妈妈让儿子从早到晚学习，他难怪成为有名的哲学家。\n\nThe teacher's content flags:\n- Miss two scenes: 孟母 decided to move away from the neighborhood near the graveyard because 孟子 imitated how to offer sacrifices every day; 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n\nThe system's content notes:\n1. At the beginning, the family should live near the graveyard, and 孟子 should copy people offering sacrifices every day, not only go there to play.\n2. After 孟母 sees him copying the sacrifices, she should move because she worries this behavior will affect him badly.\n3. After leaving the graveyard, they should move near a market, where 孟子 copies people buying and selling every day.\n4. After the market, they should move near a school. There, 孟子 should begin studying every day; he should not start learning how to worship in the final home.",
+ "salt": "",
+ "output": {
+  "scenes": [
+   {
+    "n": 1,
+    "teacher": "none",
+    "system": "wrong"
+   },
+   {
+    "n": 2,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 3,
+    "teacher": "none",
+    "system": "wrong"
+   },
+   {
+    "n": 4,
+    "teacher": "missing",
+    "system": "wrong"
+   },
+   {
+    "n": 5,
+    "teacher": "none",
+    "system": "none"
+   }
+  ],
+  "notes": [
+   {
+    "n": 1,
+    "correct": true,
+    "clear": true,
+    "reason": "The learner says 孟子 only went to the graveyard to play, not that he copied sacrificial rituals every day."
+   },
+   {
+    "n": 2,
+    "correct": true,
+    "clear": true,
+    "reason": "孟母 moves away because the graveyard is unsuitable and education is poor, not specifically because 孟子 copied sacrifices."
+   },
+   {
+    "n": 3,
+    "correct": true,
+    "clear": true,
+    "reason": "The story mentions people selling things but does not say they moved near a market or that 孟子 imitated buying and selling."
+   },
+   {
+    "n": 4,
+    "correct": true,
+    "clear": true,
+    "reason": "The third home is not identified as near a school, and 孟子 is said to learn worship there rather than begin studying there."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 888,
+  "completion_tokens": 600,
+  "total_tokens": 1488,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 353,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "47505bee5c"
+}

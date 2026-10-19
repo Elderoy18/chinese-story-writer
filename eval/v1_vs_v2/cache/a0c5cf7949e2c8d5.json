@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThe teacher's corrections on this scene:\n- 这是古代的故事：这是一个古代的故事\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 从他的家到墓地很近：他的家离墓地很近\n- 所以他每天老是从早到晚去墓地跟朋友们玩玩儿：delete老是；玩儿，V.V. is used to make requests or plans\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “从他的家到墓地很近” / Formula: 从 + place A + 到 + place B + 很近 / Correct: “从他家到墓地很近。” “他的家” is not wrong, but “他家” is more natural in this sentence.\nRun 2: Incorrect phrase: “从他的家到墓地很近” / Formula: Place A + 离 + Place B + 很近 / Correct: “他家离墓地很近” Use 离 to describe the distance between two places. “他的家” is also slightly unclear on first mention; “孟子家” or “他家” after introducing him is clearer.\nRun 3: Incorrect phrase: “从他的家到墓地很近” / Formula: A + 离 + B + 很近 / Correct: “他家离墓地很近。” Use 离 to express the distance between two places.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 only changes “他的家” to “他家” and retains the distance structure, while Runs 2–3 correct it to the teacher-approved “A离B很近” structure."
+ },
+ "usage": {
+  "prompt_tokens": 581,
+  "completion_tokens": 228,
+  "total_tokens": 809,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 158,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

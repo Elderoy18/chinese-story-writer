@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代时候，人不知道他们能吃什么植物：古代的时候，人们\n- 所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears\n- 告诉人什么植物是安全什么是危险：是安全的，是危险的\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代时候：在古代，an era is already a time expression, so adding 时候 is redundant; use the location-style time phrase instead. [teacher rule: gudai_de_shihou_why]\n2. [Grammar & Vocabulary, error] 人：人们，this refers to a concrete group of people in the story, so use 人们 rather than the generic noun 人. [teacher rule: ren_renmen]\n3. [Grammar & Vocabulary, error] 什么植物是安全什么是危险：什么植物是安全的，什么植物是危险的，parallel classification clauses need clear separation, and adjectives used after 是 to describe a category take 的 here. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 神农：有一个叫神农的人，this is the character’s first mention, so introduce him with a full noun phrase before later using his name or a pronoun. [rule: character_introduction_first_mention]\n5. [Coherence: temporality, error] Coherence (Temporality): 出去试一试很多种植物：出去试了很多种植物，this is a completed action on one particular day; in a series of actions, the last verb in the series takes 了. [rule: aspect_le_completed]\n6. [Coherence: temporality, error] Coherence (Temporality): 告诉：告诉了，telling the people is presented as a completed narrative action, not quoted speech, so it needs 了. [rule: aspect_le_completed]\n7. [Coherence: connectors, error] Coherence (Conjunction): 但是不知道为什么，没有办法：因为不知道为什么，所以没有办法，being unable to find a solution results from not knowing the reason, so use the cause-and-effect connector rather than a contrast connector. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代时候缺少的；改成“在古代”也是正确的时间表达。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里指故事中的一群具体的人，应使用“人们”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "两个分类分句需要分开，且“安全、危险”在“是”后应带“的”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农首次出现时需要用完整名词短语介绍这个人物。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "按该叙事动作串的规则，应优先在最后的“告诉”处标记完成，而不能断定“试一试”本身漏了“了”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“告诉”是这一串叙事动作的最后一个，应加“了”表示完成。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“但是”可以表达前面不断有人死亡与仍不知道原因、没有办法之间的转折，并非一定要改成因果结构。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2238,
+  "completion_tokens": 1858,
+  "total_tokens": 4096,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 587,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1403,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

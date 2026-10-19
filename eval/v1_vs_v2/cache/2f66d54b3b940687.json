@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nThis scene:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他一次试一试有些植物的叶，吃得又新鲜又甜：有一次；试了试，了completed; 叶子；吃起来\n- 煮这些叶以后，他一喝就知道他发现新的茶叶：煮了，了completed; 叶子\n- 虽然他找到了很多的新的植物：很多新的植物\n- 但是他的旅程有的时候特别是危险：特别危险，”特别是+N, + Clause” is used to single out a typical example\n- 他一吃灵芝就开始生病：wrong information, 灵芝is a medicine\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一次试一试有些植物的叶：有一次，他尝了一些植物的叶子，Use 有一次 to introduce one particular occasion. An action that was actually carried out should not use verb reduplication; use a completed verb with 了 instead.\n2. [Grammar & Vocabulary, error] 吃得又新鲜又甜：吃起来又新鲜又甜，A 得-complement describes the manner or degree of the action, but these adjectives describe the leaves’ taste. Use 吃起来 to describe how the food tastes.\n3. [Grammar & Vocabulary, error] 特别是危险：特别危险，特别是 introduces a specific item or category after “especially”; it cannot directly intensify an adjective. Use 特别 before an adjective.\n4. [Coherence: reference, error] Coherence (Reference): 知道他发现新的茶叶：知道自己发现新的茶叶，Use 自己 when the discoverer is the same person as the subject of 知道; this avoids repeating a pronoun whose reference could be read as another person.\n5. [Coherence: temporality, error] Coherence (Temporality): 煮这些叶以后：煮了这些叶以后，The boiling happens before the later drinking, so use 了 to mark the completed action in this sequence.\n6. [Coherence: temporality, error] Coherence (Temporality): 发现新的茶叶：发现了新的茶叶，Finding the tea leaves is a completed discovery here, so 发现 takes 了.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“一次”这里应为“有一次”，完成的尝试也应使用“试了试/尝了”，且“叶”应说“叶子”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“新鲜、甜”描述食物吃起来的味道，不能用“吃得”连接。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“特别是”不能直接修饰形容词“危险”，这里应为“特别危险”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前面刚出现“他”，这里的“他”指神农并不含糊，不必改成“自己”，且改后仍缺少完成体“发现了”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "煮叶子发生在喝之前，应使用完成体“煮了”，但改文仍应把“叶”改为“叶子”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里说的是已经完成的发现，因此“发现”应加“了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2288,
+  "completion_tokens": 1393,
+  "total_tokens": 3681,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 637,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 978,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

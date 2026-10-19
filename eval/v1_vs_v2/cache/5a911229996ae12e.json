@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Coherence: reference, error] Coherence (Reference): 这个男孩子：一个男孩子，This is a first mention, so an indefinite noun phrase introduces the boy more naturally; “这个” normally points to someone already known to the reader. [rule: character_introduction_first_mention]\n2. [Coherence: reference, error] Coherence (Reference): 孟子是古代的人：他是古代的人，Use a pronoun for a close re-occurrence after the boy has just been named. [rule: redundancy_delete]\n3. [Coherence: reference, error] Coherence (Reference): 所以孟子的妈妈安排他的生活：所以她安排他的生活，Use a pronoun when the mother was the subject in the immediately preceding clause and no other female character competes as the referent. [rule: redundancy_delete]\n4. [Coherence: temporality, error] Coherence (Temporality): 常常搬了家：常常搬家，A habitual action uses the zero particle rather than completed-action 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“这个男孩子” improperly uses a demonstrative for a character’s first introduction."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After孟子 has just been named, the teacher’s close-reference rule calls for the pronoun 他."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The reference problem requires clarifying the first 她 as 孟子的妈妈 and omitting the repeated subject after 所以; changing only the second name to 她 does not do this."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 marks a habitual action, so 搬家 should not take completed-action 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2046,
+  "completion_tokens": 884,
+  "total_tokens": 2930,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 395,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 610,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

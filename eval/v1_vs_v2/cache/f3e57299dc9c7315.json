@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 喜欢玩在墓地里：喜欢在墓地里玩，A location phrase such as “在墓地里” normally comes before the main verb “玩.”\n2. [Grammar & Vocabulary, error] 装祭拜：假装祭拜，“假装” can be followed by an action to mean pretending to do it; “装祭拜” is not a natural verb-object expression.\n3. [Coherence: reference, error] Coherence (Reference): 孟子小的时候：有一个小男孩叫孟子，他，This is the character’s first mention, so introduce him with a full noun phrase before using a pronoun.\n4. [Coherence: reference, error] Coherence (Reference): 孟子和他的朋友：他和朋友，Use a pronoun for a close re-occurrence of the already mentioned character; “朋友” was also mentioned in the previous sentence.\n5. [Coherence: reference, error] Coherence (Reference): 孟子五岁的时候：他五岁的时候，Use a pronoun when the same character was named in the immediately preceding sentence.\n6. [Coherence: temporality, error] Coherence (Temporality): 跟妈妈搬家：跟妈妈搬了家，Use “了” for the completed moving event in the narrative.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "地点短语“在墓地里”应放在动词“玩”之前。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“装祭拜”搭配不自然，“假装祭拜”可以正确表达这个意思。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "首次出现孟子需要介绍，但该替换删掉了“小的时候”，并形成不完整、不自然的句子结构。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚在前句出现，按教师的指代规则应使用“他”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子在紧邻的前句已经出现，此处应使用近距离指代“他”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "搬家是叙述中已经完成的事件，需要用完成体“搬了家”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2092,
+  "completion_tokens": 1099,
+  "total_tokens": 3191,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 441,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 723,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

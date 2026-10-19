@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n夹竹桃是毒的，我想知道灵芝会帮他。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你帮得真好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“\n\nThe teacher's corrections on this scene:\n- 夹竹桃是毒的：有毒的\n- 我想知道灵芝会帮他：灵芝有没有用/能不能帮他\n- 哥哥给神农灵芝：给了，了completed\n- 你帮得真好：你做得很好\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 他：神农，Both 神农 and 哥哥 are recent male characters, so 他 can be unclear; repeat the name to identify the person whom the lingzhi may help. [rule: ambiguous_reference]\nRun 2: 灵芝会帮他：灵芝会不会帮他，after 想知道, use an A-not-A form to express an unknown yes-or-no question. [rule: none]\nRun 3: Coherence (Reference): 灵芝会帮他：灵芝会帮我，because the thought begins with 我想知道, 他 is unclear: it could refer to 神农 or 哥哥. Use 我 for the speaker’s own situation. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "The runs target different issues, and Run 3's change to 我 misidentifies the intended person rather than matching the teacher's question-form correction."
+ },
+ "usage": {
+  "prompt_tokens": 524,
+  "completion_tokens": 116,
+  "total_tokens": 640,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 57,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有很多人不知道什么植物能吃，什么植物不能吃。有很多人吃植物以后就吃坏肚子了，因为他们吃了毒。那个时候，有一个老人叫神农，他什么植物都觉得好吃，不怕生病，不怕毒。他希望别人也可以吃好吃的植物。可是他知道，如果他们还怕吃毒，不会吃他喜欢的植物。所以，他上山下山找植物，吃了很多样子的植物。他是第一人，找到了茶。他把所有的植物写下来了。他一直都吃了，他连毒都能吃。可是他还没吃了一个叫夹竹桃的植物。他找到了那个像星星的植物，觉得很漂亮，马上就吃下了。\n\nThis scene:\n可是夹竹桃的毒很重，让他肚子很痛。他在地上躺着，觉得他快会死了。可是正好有别人找到他了，给了他一个像伞的植物，叫灵芝。他吃灵芝以后就觉得很好，不再生病了。他测量起来了，像星星的植物是毒，像伞的植物是药。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 可是夹竹桃的毒很重：很强\n- 觉得他快会死了：快要死了\n- 可是正好有别人找到他了：有人，“别(的)” is for “a different type”, and “all else except the spoken one”\n- 他吃灵芝以后就觉得很好：吃了，了completed\n- 他测量起来了：写下来了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 别人：有人，别人 distinguishes other people from a previously mentioned person or group; here the rescuer is being introduced for the first time, so an indefinite person is needed. [teacher rule: bieren]\n2. [Grammar & Vocabulary, error] 像星星的植物是毒：像星星的植物有毒，毒 is a noun here; use 有毒 to describe a plant’s poisonous property. [rule: word_class_misuse]\n3. [Grammar & Vocabulary, error] 快会死了：快要死了，快要 expresses that an event is about to happen; 会 is not needed for this immediate situation. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 觉得他快会死了：觉得自己快要死了，when the person who is thinking and the person who may die are the same, use 自己 rather than repeating 他 in the same sentence. [rule: ambiguous_reference]\n5. [Coherence: temporality, error] Coherence (Temporality): 吃灵芝以后：吃了灵芝以后，taking the medicine is a completed action before the later feeling of recovery, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "别人 cannot introduce an unspecified rescuer here; 有人 is the appropriate first reference."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "A plant should be described as 有毒 rather than equated with the noun 毒."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "快要死了 is the correct imminent-event structure in this context."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Grammar"
+    ],
+    "reason": "自己 clearly refers back to the thinker, and 快要死了 also corrects the incorrect 快会死了 structure."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Eating the lingzhi is completed before the later feeling, so 吃了 is needed."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2290,
+  "completion_tokens": 806,
+  "total_tokens": 3096,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 639,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 506,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

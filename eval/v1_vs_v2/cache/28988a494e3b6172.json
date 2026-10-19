@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，The time noun and the time phrase duplicate the same meaning; this form is redundant. [teacher rule: gudai_de_shihou_why]\n2. [Grammar & Vocabulary, error] 城市有才两个学校：城市只有两所学校，Use 只有 before the quantity to mean “only,” and use 所 as the measure word for schools. [teacher rule: zhiyou_caiyou]\n3. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子和他的妈妈住在中国，Introduce the main character by name in the first mention instead of naming him only after a pronoun has already been used. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 他很喜欢他的城市：他很喜欢自己的城市，When the city belongs to or is associated with the sentence subject, 自己的 makes that relationship clear. [teacher rule: ziji_possessor]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already expresses a time period, so 古代的时候 is redundantly formed under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "Only should be expressed as 只有 before the quantity, and schools take the measure word 所."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The teacher's first-mention rule requires introducing the main character with his name rather than first using 他."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的城市 is already grammatical and unambiguous here; 自己的 is an optional clearer phrasing rather than a required correction."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2002,
+  "completion_tokens": 960,
+  "total_tokens": 2962,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 351,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 698,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

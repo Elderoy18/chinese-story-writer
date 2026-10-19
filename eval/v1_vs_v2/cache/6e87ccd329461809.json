@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的人：人们，Use 人们 for a concrete group of people in general, rather than 人. [teacher rule: ren_renmen]\n2. [Grammar & Vocabulary, error] 很不知道：不知道，A degree adverb such as 很 does not modify the negated mental-state verb 不知道. [rule: none]\n3. [Grammar & Vocabulary, error] 也什么植物不能：什么植物不能，也 must be followed by a verb phrase, not directly by the noun phrase 什么植物. [teacher rule: ye_vp]\n4. [Grammar & Vocabulary, error] 很麻烦的情况：是一件很麻烦的事，The original is only a noun phrase after the comma; adding 是 creates a complete predicate, and 一件 is the appropriate measure-word structure for an event. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 吃不安全的植物对你的身体：这对人们的身体，This repeats the action immediately and then unexpectedly addresses the reader with 你的; use 这 to refer back to the preceding action and keep 人们 as the general group being discussed. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 但是一个人，神农：但是有一个叫神农的人，This is Shen Nong’s first mention, so introduce him clearly with his name and a full noun phrase. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里的古代人们是一个具体的群体，按教师规则应使用“人们”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“很”不能修饰否定的心理动词“不知道”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“也”不能直接接“什么植物”，但改后“什么植物不能，也”仍不成句。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "原文在逗号后只有名词短语，改为“是一件很麻烦的事”后有完整谓语。"
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“你的”无端指向听者，改用“这”回指前事并用“人们”保持泛指是正确的。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农首次出现需要用清楚的名词短语介绍，改法正确。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2142,
+  "completion_tokens": 1710,
+  "total_tokens": 3852,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 491,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1319,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

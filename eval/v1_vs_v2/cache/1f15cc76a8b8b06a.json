@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThis scene:\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子才十一岁，成为一个哲学家：就成为，才Num.就V.\n- 孟子不是祭拜，而是看政治文章：“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 祭拜is not conventionally related to哲学家\n- 不过，看过很多政治文章对他害得，他有很多问题：delete对他；害得他有很多问题，害得Sb. + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 才十一岁，：才十一岁，就，When 才 introduces an unexpectedly early age before an achieved result, it should pair with 就 before the verb. [rule: none]\n2. [Grammar & Vocabulary, error] 看过很多政治文章对他害得，他有很多问题：看过很多政治文章害得他有很多问题，害得 must be followed by the person affected and then a harmful result; 对他 cannot fill that position. [teacher rule: haide_structure]\n3. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜：他不是祭拜，Use a pronoun for a close re-occurrence when the same character was named in the immediately preceding sentence and no other character competes as the referent. [rule: none]\n4. [Coherence: temporality, error] Coherence (Temporality): 成为一个哲学家：成为了一个哲学家，Becoming a philosopher is presented as a completed change of state, so the verb needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“才十一岁”表示很早达成结果时，后面应有“就”，但所示改后片段仍未完成。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“害得”后应直接接受害者“他”及其不良结果，不能用“对他”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前句刚提到孟子，按该标准此处应改用“他”，但改后仍保留“不是……而是……”的原有问题。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里的不带“了”的“成为”本身可以接受，真正的问题是“才……就……”结构缺少“就”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2154,
+  "completion_tokens": 1114,
+  "total_tokens": 3268,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 503,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 820,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

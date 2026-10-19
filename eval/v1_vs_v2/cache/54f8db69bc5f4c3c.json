@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远：去了很远的地方，Use a destination phrase with 去 to express travelling to a distant place; 旅行 cannot directly be modified by 很远 in this structure. [rule: none]\n2. [Grammar & Vocabulary, error] 找到很多植物：找到了很多植物，This is a completed discovery in the narrative, so 找到 takes 了. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 写他的主意：写下了自己的主意，写 describes the act of writing, while 写下 means recording an idea so that it is kept; 了 marks the completed recording. [vocab list]\n4. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，朵 is the matching measure word for a flower; 个 is too generic here. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 然后，神农：然后，他，The previous sentence already names the same character as 他, with no competing person, so use a pronoun for this close re-occurrence. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 神农遇到了：他遇到了，The immediately preceding sentence is also about the same character, so a pronoun avoids unnecessarily repeating the name. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "旅行很远 does not naturally express travelling a long distance here; 去了很远的地方 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "找到 is the final completed action in the action sequence and should take 了."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "写下了 is fine, but 主意 remains inappropriate for the discoveries he recorded; the teacher requires 发现."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Flowers normally take the measure word 朵, not 个."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The character has just been referred to as 他, so the close re-reference should be 他, but 然后，他 alone is an incomplete shown unit."
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After the immediately preceding sentence about him, 他 is the appropriate close re-reference, but the shown corrected text is cut off before its object."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2130,
+  "completion_tokens": 2295,
+  "total_tokens": 4425,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 479,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1903,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

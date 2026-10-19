@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene:\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's item in each run:\nRun 1: 找到孟子一个老师：给孟子找了一个老师，Use 给 to introduce the person who receives the benefit of the action, and add 了 because finding the teacher is a completed action. [rule: aspect_le_completed]\nRun 2: 他的妈妈找到孟子一个老师：他的妈妈给孟子找到了一个老师，Use 给 to mark Mengzi as the beneficiary of the search, and use 了 because the teacher has been found. [rule: aspect_le_completed]\nRun 3: 找到孟子一个老师：给孟子找一个老师，Put the beneficiary after 给 before the verb; 找到 cannot take both a person and a thing as consecutive objects in this pattern. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs correct the missing 给-beneficiary construction for 孟子, and their versions are acceptable ways to express that fix."
+ },
+ "usage": {
+  "prompt_tokens": 519,
+  "completion_tokens": 201,
+  "total_tokens": 720,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 147,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

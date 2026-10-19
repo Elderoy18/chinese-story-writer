@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThis scene:\n孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 所以孟子的妈妈认为这样的地方对儿子的教育不太好：replace孟子的妈妈with她\n- 不是搬到城市，而是搬到了孟子老师的家：家里\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟子取得良好的教育：孟子接受良好的教育，取得 usually collocates with results or achievements, while education is something a person receives. [rule: none]\n2. [Grammar & Vocabulary, error] 跟孟子搬家：带着孟子搬家，跟 describes doing an action together, but a mother relocating her child should use 带着 to show that she takes the child with her. [vocab list]\n3. [Grammar & Vocabulary, error] 不是搬到城市，而是搬到了：搬到了，the “not X but Y” construction is for correcting a stated or conventional mistaken idea; no such mistaken destination has been introduced here. [rule: bushi_ershi_construction]\n4. [Coherence: reference, error] Coherence (Reference): 所以孟子的妈妈认为：所以认为，once the mother has been named at the start of the sentence, use zero form for her next action in the same sentence. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈带孟子：她带孟子，her name appeared in the immediately preceding sentence and no other female character competes as the referent, so a pronoun is more natural. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "取得 does not normally collocate with 教育; one 接受 education."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "跟孟子搬家 correctly means moving house together with Mencius, so it is not an error."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The contrast is acceptable here, and the displayed correction 搬到了 is itself incomplete without a destination."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated name should be replaced by 她 as the teacher marked, not deleted altogether."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The mother was just mentioned and no competing female referent exists, so 她 is required under the reference rule."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2146,
+  "completion_tokens": 1000,
+  "total_tokens": 3146,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 495,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 692,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

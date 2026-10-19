@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene:\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's item in each run:\nRun 1: 很麻烦的情况：这是一种很麻烦的情况，The original is only a noun phrase and cannot stand as a complete clause here; adding 这是一种 creates a complete statement.\nRun 2: 吃不安全的植物对你的身体有坏处，很麻烦的情况：吃不安全的植物对身体有坏处，是一件很麻烦的事，The original ends with a noun phrase and lacks the predicate needed to complete the sentence; use 是一件……的事 to describe this whole situation.\nRun 3: 吃不安全的植物对你的身体有坏处，很麻烦的情况：吃不安全的植物对身体有坏处，是一种很麻烦的情况，The original has two noun/predicate ideas without a linking verb. Add 是一种 to make the second part a complete description; remove 你的 because this is a general statement about people’s bodies.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "All runs fix the missing copula, but only Runs 2 and 3 also address the redundant 你的, so they do not target the same full set of errors."
+ },
+ "usage": {
+  "prompt_tokens": 576,
+  "completion_tokens": 474,
+  "total_tokens": 1050,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 410,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

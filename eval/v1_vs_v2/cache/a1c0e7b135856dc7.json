@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nThis scene:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 不是人吵架，就是都叫：不是常常有人吵架，就是很多人都大声说话\n- 在那儿，孟母也找不到工作：wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n- 孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred\n- 孟母找到工作，在商店做衣服：找到了，了completed\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 又一个次搬：再搬一次，With a future plan after 要, use 再 for a repeat that has not happened yet; 再 comes before the verb, and 一次 follows the verb. [teacher rule: zai_structure]\n2. [Coherence: reference, error] Coherence (Reference): 孟母也找不到工作：她也找不到工作，孟母 was mentioned in the previous sentence and no other female character competes as the referent, so a pronoun makes the connection smoother. [rule: redundancy_delete]\n3. [Coherence: temporality, error] Coherence (Temporality): 搬了家：搬家，The move is still a future plan after 要, not a completed action, so it should not take 了. [rule: aspect_le_completed]\n4. [Coherence: temporality, error] Coherence (Temporality): 找到工作：找到了工作，Finding the job is a completed result, so add 了 after the resultative complement 到. [rule: aspect_le_completed]\n5. [Coherence: connectors, error] Coherence (Conjunction): 不是人吵架，就是都叫：不是有人吵架，就是有人大叫，The two alternatives in the 不是……就是…… pattern need parallel subject-verb phrases; this version clearly presents two possible sources of noise. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "原句的“又一个次搬”语序错误，但这里叙述的是已经发生的搬家，不应按“要……再……”的未来计划来改。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这句话的问题是与故事情节不符，不是重复使用“孟母”；改成“她”仍保留了错误信息。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里搬家已经发生，“搬了家”的完成体本身没有错，错误在“要”及整个表达方式。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "找到工作的事件已经完成，应说“找到了工作”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原句的“人吵架”和“都叫”不自然且不符合具体人群的表达；改后的两个分句平行、语法正确。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2238,
+  "completion_tokens": 2061,
+  "total_tokens": 4299,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 587,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1693,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

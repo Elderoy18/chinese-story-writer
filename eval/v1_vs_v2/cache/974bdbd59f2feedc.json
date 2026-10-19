@@ -1,0 +1,131 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun phrase needs a linking verb and an appropriate measure word when identifying a mountain. [rule: none]\n2. [Grammar & Vocabulary, error] 一天：有一天，Use this phrase to introduce one particular day in a narrative. [rule: none]\n3. [Grammar & Vocabulary, error] 找到：找到了，This is a completed discovery in the past, so the verb needs 了. [rule: aspect_le_completed]\n4. [Grammar & Vocabulary, error] 跟黄色的花做茶：用黄色的花做的茶，Use 用 to show the material used to make the tea; 跟 does not express this relationship. [rule: none]\n5. [Grammar & Vocabulary, error] 头发疼死：头疼得要死，头发 means “hair,” which cannot feel pain; use 头疼 for a headache, with 得要死 as a degree complement. [rule: none]\n6. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative before a countable noun needs a measure word. [teacher rule: zhe_na_mw]\n7. [Coherence: reference, error] Coherence (Reference): 黄色的花：一朵黄色的花，This flower is being introduced for the first time, so use an indefinite full noun phrase with a measure word. [rule: character_introduction_first_mention]\n8. [Coherence: reference, error] Coherence (Reference): 这：他，Use a pronoun for the already introduced character; 这 refers to an object or place, not to Shennong. [rule: ambiguous_reference]\n9. [Coherence: temporality, error] Coherence (Temporality): 也找植物：在找植物，Use 在 for an action that is ongoing in this part of the scene; 也 requires a previous parallel action, which is not present here. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original lacks 是 and an appropriate measure word for identifying 凉山 as a mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "一天 can naturally introduce a particular day in a narrative, although 有一天 is also correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The finding is a completed past event, so 找到了 correctly supplies perfective 了."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "跟 does not express the material used for making tea, while 用黄色的花做的茶 is grammatical."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "头发 cannot hurt, and 头疼得要死 is a correct way to express a very severe headache."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这杯冰茶 correctly supplies a measure word and is a possible alternative to 这种冰茶."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference",
+     "Vocabulary"
+    ],
+    "reason": "The teacher requires 一种黄色的花 because the flower type is needed; 一朵黄色的花 changes this to one blossom and leaves the intended type vague."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Grammar"
+    ],
+    "reason": "这 was intended as a location and should be 这儿/在这儿, not a pronoun referring to 神农."
+   },
+   {
+    "n": 9,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The clause needs the location expression and 能找到植物; replacing 也找植物 with 在找植物 leaves the original subject/location problem unresolved."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2294,
+  "completion_tokens": 3812,
+  "total_tokens": 6106,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 643,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3207,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

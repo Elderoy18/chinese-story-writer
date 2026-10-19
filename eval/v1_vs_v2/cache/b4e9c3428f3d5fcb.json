@@ -1,0 +1,71 @@
+{
+ "input": "Required scenes:\n1. 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n2. 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n3. 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n4. 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n5. 孟子becomes a famous philosopher\n\nThe learner's story:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's content flags:\n- Miss one scene: 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n\nThe system's content notes:\n1. You need to explain that, after seeing 孟子 often offering sacrifices near the graveyard, his mother moves because she worries this behavior will affect him badly.\n2. Missing scene: After leaving the graveyard neighborhood and before moving near the school, they live near a market, where 孟子 copies people buying and selling every day.\n3. You need to show that his mother moves from the market neighborhood to a place near a school, and then 孟子 begins studying every day.",
+ "salt": "",
+ "output": {
+  "scenes": [
+   {
+    "n": 1,
+    "teacher": "none",
+    "system": "none"
+   },
+   {
+    "n": 2,
+    "teacher": "none",
+    "system": "missing"
+   },
+   {
+    "n": 3,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 4,
+    "teacher": "none",
+    "system": "missing"
+   },
+   {
+    "n": 5,
+    "teacher": "none",
+    "system": "none"
+   }
+  ],
+  "notes": [
+   {
+    "n": 1,
+    "correct": true,
+    "clear": true,
+    "reason": "The story does not say that 孟母 moved because she feared the sacrifice imitation would negatively affect 孟子."
+   },
+   {
+    "n": 2,
+    "correct": true,
+    "clear": true,
+    "reason": "The market neighborhood and 孟子 imitating buying and selling are absent from the story."
+   },
+   {
+    "n": 3,
+    "correct": true,
+    "clear": true,
+    "reason": "The story does not show a move from the market to a school neighborhood before 孟子 begins studying."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 751,
+  "completion_tokens": 453,
+  "total_tokens": 1204,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 261,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "47505bee5c"
+}

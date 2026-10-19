@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nThe teacher's corrections on this scene:\n- 一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears\n- 孟子妈妈的工作是祭拜：wrong information, it’s not his mother’s job\n- 孟子不高兴，因为他说我们老是搬家：delete因为\n\nThe system's item in each run:\nRun 1: (nothing flagged here)\nRun 2: Coherence (Conjunction): 因为他说我们老是搬家，为什么？：说：“我们老是搬家，为什么？”，“因为” should introduce a cause, but this question expresses Mengzi’s complaint rather than a cause. Use direct speech to show what he says. [rule: none]\nRun 3: 孟子不高兴，因为他说我们老是搬家，为什么？：孟子不高兴，问：“我们为什么老是搬家？”，Use a quoted question after a speaking verb; the question word belongs inside the question rather than being left after a declarative clause. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 flags nothing, while Runs 2 and 3 both address the unnecessary 因为 and recast the complaint as direct speech."
+ },
+ "usage": {
+  "prompt_tokens": 531,
+  "completion_tokens": 102,
+  "total_tokens": 633,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 44,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

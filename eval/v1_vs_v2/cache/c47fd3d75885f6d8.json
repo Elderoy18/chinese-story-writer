@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。\n\nThe teacher's corrections on this scene:\n- 也不知道什么植物对你的身体有好处：对身体有好处，not你的\n- 这个问题神农觉得很糟糕，所以神农去了吃每种植物：很严重better，usually糟糕for情况situations; 去吃了\n- 就写了这个植物对你有没有好处：写下了，delete“对你”\n- 会来跟他的朋友聊到他吃的植物了：会跟……，no了\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 有的时候，神农：有的时候，他，The name was mentioned recently and no other character is competing, so a pronoun is more natural for this close re-occurrence. [rule: redundancy_delete]\nRun 2: Coherence (Reference): 有的时候，神农：有的时候，他，Shennong was mentioned in the preceding sentence, so a pronoun is the natural close re-occurrence form. [rule: redundancy_delete]\nRun 3: Coherence (Temporality): 有的时候，神农吃了很好吃的植物：有的时候，神农吃很好吃的植物，\\(有的时候\\) introduces a routine, so use the zero particle rather than completed-action \\(了\\). [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1–2 replace a repeated name with a pronoun, while Run 3 changes the aspect marker 了, so they target different issues."
+ },
+ "usage": {
+  "prompt_tokens": 614,
+  "completion_tokens": 136,
+  "total_tokens": 750,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 76,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

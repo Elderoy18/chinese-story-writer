@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene:\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's item in each run:\nRun 1: 他的妈妈找到孟子一个老师：他的妈妈给孟子找到了一个老师，The person who receives the help needs to be introduced with 给 rather than placed as a second bare object; 找到了 also marks that the finding was completed. [rule: aspect_le_completed]\nRun 2: 找到孟子一个老师：给孟子找到了一个老师，Put the recipient before the verb with 给; because 找到 is a verb-resultative compound, 了 follows the resultative complement to show that the search was completed. [teacher rule: le_placement]\nRun 3: 跟老师孟子学：孟子跟老师学，The subject should come before the phrase beginning with 跟老师; this makes clear that Mengzi is the one learning. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 2 correct the 给孟子 recipient construction, while Run 3 corrects the subject order in the following sentence."
+ },
+ "usage": {
+  "prompt_tokens": 531,
+  "completion_tokens": 75,
+  "total_tokens": 606,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 18,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

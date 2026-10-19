@@ -1,0 +1,60 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟母注意：孟母注意到，`注意到` is used when someone notices or becomes aware of a fact; `注意` alone does not naturally introduce this statement.\n2. [Grammar & Vocabulary, error] 他常常跟朋友们祭拜玩：他常常跟朋友们玩祭拜的游戏，when `玩` means to play an activity, it should come before the activity it takes as its object.\n3. [Coherence: reference, error] Coherence (Reference): 古代，孟子跟孟母住在墓地的旁边。：在古代，有一个小男孩叫孟子，他和母亲住在墓地的旁边。，On first mention, introduce a character clearly with a name and a short description; after that, use a pronoun for the same character.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "注意 needs the result complement 到 here to mean that Meng's mother noticed the fact in the following clause."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The intended meaning is doing ritual worship for fun, which should be expressed as 祭拜着玩儿, not the unnatural 玩祭拜的游戏."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "在 is needed with 古代 under the teacher's standard, and the revised sentence clearly introduces Mengzi before using 他."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2046,
+  "completion_tokens": 1166,
+  "total_tokens": 3212,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 395,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 954,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

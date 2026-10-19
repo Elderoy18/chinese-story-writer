@@ -1,0 +1,116 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun used as the subject needs the copula and an appropriate classifier before a noun predicate. [rule: none]\n2. [Grammar & Vocabulary, error] 这也找植物：他也在那里找植物，A location needs a locative form, and the action needs an animate agent rather than the mountain as its subject. [rule: none]\n3. [Grammar & Vocabulary, error] 跟黄色的花做茶：用黄色的花做茶，The preposition “用” introduces the material used to make something; “跟” expresses accompaniment and does not mean “using as material” here. [rule: none]\n4. [Grammar & Vocabulary, error] 头发疼死：头疼得厉害，“头发” means hair, while “头疼” means having a headache; “疼得厉害” expresses severe pain naturally. [rule: none]\n5. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative before a countable noun needs a matching measure word. [teacher rule: zhe_na_mw]\n6. [Coherence: reference, error] Coherence (Reference): 你：delete it，This pronoun has no established addressee, so the sentence should state the general action directly rather than suddenly addressing an unclear person. [rule: ambiguous_reference]\n7. [Coherence: reference, error] Coherence (Reference): 你的：有人，This pronoun has no clear referent in the story; “有人” introduces a general person clearly for the example. [rule: ambiguous_reference]\n8. [Coherence: temporality, error] Coherence (Temporality): 找到：找到了，This is a completed, one-time action in the past, so the completed action needs “了” after the resultative complement. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original lacks 是 and an appropriate measure word before the noun predicate, while the correction is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "这 cannot naturally be the agent of 找植物 here; 他在那里找植物 correctly supplies the person and location."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "用, rather than 跟, is the correct word for the material used to make tea."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发 is hair, whereas 头疼得厉害 correctly expresses a severe headache."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这 needs a measure word before this countable noun, and 这杯冰茶 is grammatical."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你 has no established addressee, and deleting it correctly removes the unclear reference."
+   },
+   {
+    "n": 7,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你的 has no established referent, but replacing it with 有人 yields an ungrammatical fragment such as 有人头发疼死."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "This is a completed discovery in the past, so 找到了 correctly adds 了 after the resultative complement."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2275,
+  "completion_tokens": 2034,
+  "total_tokens": 4309,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 624,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1538,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

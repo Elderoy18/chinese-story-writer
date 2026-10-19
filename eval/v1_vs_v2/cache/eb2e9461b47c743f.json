@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。孟子想，难怪我们常常搬家，原来我妈妈很忙。可是常常搬家害得孟子很难找到朋友。每次搬家孟子也觉得新的地方不是太热就是太冷，不是太大就是太小。在哪的地方，他都不高兴。孟子想帮助妈妈祭拜，可是他六岁，所以不能祭拜。\n\nThis scene:\n四年后，孟子开始帮妈妈祭拜。他画画很厉害，他越来越喜欢祭拜，所以他祭拜不是想帮妈妈工作，而是他很喜欢画画。孟子成为很著名的古代画家。今天很多中国人很喜欢孟子。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他画画很厉害，他越来越喜欢祭拜：delete the second他，redundant; no logic relationship, add也before越来越\n- 孟子成为很著名的古代画家：wrong information, 哲学家\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 祭拜不是想帮妈妈工作，而是他很喜欢画画：祭拜不是为了帮妈妈的忙，而是因为喜欢画画，Use “为了” to introduce the purpose of an action, and use “因为” to introduce the reason in the second half of the contrast.\n2. [Coherence: reference, error] Coherence (Reference): 他画画很厉害，他越来越喜欢祭拜：他画画很厉害，越来越喜欢祭拜，Use zero form for a re-occurring subject within the same sentence when no other character competes as the referent.\n3. [Coherence: reference, error] Coherence (Reference): 所以他祭拜：所以祭拜，Use zero form again because the subject has already been established as 孟子 in the same sentence.\n4. [Coherence: temporality, error] Coherence (Temporality): 孟子成为很著名的古代画家：孟子成为了很著名的古代画家，Use 了 for the completed change of state of becoming a painter.\n5. [Coherence: connectors, error] Coherence (Conjunction): 所以：。，The ideas before and after this connector do not show a clear cause-and-effect relation, so a sequence break is clearer than using 所以.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original lacks the purpose/reason structure needed for this contrast, and the proposed wording is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The second 他 is redundant, but the corrected text still lacks the required 也 before 越来越."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他 can appropriately refer back to 孟子 at the start of the new 所以-clause and is not an error."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为 here describes a completed change and needs 了, but 古代画家 remains factually incorrect."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "所以 does not express a clear causal link here, but a full corrected sentence is not shown."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2231,
+  "completion_tokens": 1785,
+  "total_tokens": 4016,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 580,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1459,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

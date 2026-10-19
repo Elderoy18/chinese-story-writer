@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThe teacher's corrections on this scene:\n- 不是人吵架，就是都叫：不是常常有人吵架，就是很多人都大声说话\n- 在那儿，孟母也找不到工作：wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n- 孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred\n- 孟母找到工作，在商店做衣服：找到了，了completed\n\nThe system's item in each run:\nRun 1: 又一个次搬了家：再搬一次家，After the modal verb 要, a future repeated action uses 再 and follows the pattern V. + number + measure word + object; because the move has not happened yet, completed-action 了 is not used. [teacher rule: zai_structure]\nRun 2: 要又一个次搬了家：要再搬一次家，For a move that is planned but has not happened yet, use modal verb + 再 + verb + number + measure word + object. 又 and final 了 describe a repeat that has already happened, and the numeral phrase is 一次 rather than 一个次. [teacher rule: zai_structure]\nRun 3: 又一个次搬：再搬一次，With a modal verb such as 要, use the pattern modal verb + 再 + verb + number + measure word. 再 refers to a move that has not happened yet. [teacher rule: zai_structure]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs address the repeated-move phrase, but they incorrectly treat it as a future plan and retain the inappropriate 要 rather than using 又搬了一次家."
+ },
+ "usage": {
+  "prompt_tokens": 619,
+  "completion_tokens": 175,
+  "total_tokens": 794,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 114,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

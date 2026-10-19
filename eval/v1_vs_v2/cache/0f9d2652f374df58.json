@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun phrase used as the predicate needs the copula and a suitable measure word here. [rule: none]\n2. [Grammar & Vocabulary, error] 跟黄色的花做茶很有用：用黄色的花泡的茶很有用，Use 用 to show the material used for making the tea; the modifier phrase needs 的 before 茶. [rule: attributive_modifier_de]\n3. [Grammar & Vocabulary, error] 头发：头，Hair cannot feel pain; 头 refers to the body part that can ache. [rule: word_choice]\n4. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative before a countable noun needs a measure word. [teacher rule: zhe_na_mw]\n5. [Coherence: reference, error] Coherence (Reference): 这也找植物：他也找植物，After the mountain is introduced, 这 would refer to the mountain, not to the continuing character; use the pronoun for the previously established person. [rule: ambiguous_reference]\n6. [Coherence: reference, error] Coherence (Reference): 黄色的花：一朵黄色的花，This is the flower’s first mention, so introduce it with an indefinite noun phrase and measure word. [rule: character_introduction_first_mention]\n7. [Coherence: temporality, error] Coherence (Temporality): 找到：找到了，Finding the flower is a completed event in the narrative, so add 了. [rule: aspect_le_completed]\n8. [Coherence: temporality, error] Coherence (Temporality): 就很不舒服：就很不舒服了，Add 了 to mark the change into an uncomfortable state after drinking the tea. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "凉山作判断句的主语时，需要用是并加合适的量词。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这里应用用表示材料，且用黄色的花泡的茶是正确的表达。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "疼的是头，不是头发。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这后面接可数名词时需要量词，這杯冰茶正确。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这不能作找植物这一动作的施事，改为他能明确指回神农。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "一朵黄色的花可作为首次提到一朵具体花时的正确不定名词短语。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "一天中找到花是已完成的叙事事件，应用找到了。"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "喝茶后进入不舒服的状态，句末了能标明这一变化。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2265,
+  "completion_tokens": 1690,
+  "total_tokens": 3955,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 614,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1214,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

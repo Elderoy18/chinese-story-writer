@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene:\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's item in each run:\nRun 1: 不是学金融，而是学政治：不要学金融，而要学政治，This is advice, so use the recommendation pattern with a negative command and an alternative; the original contrast pattern is for correcting or refuting a statement. [teacher rule: bushi_ershi]\nRun 2: 不是学金融，而是学政治：不要学金融，而要学政治，After 建议, use a negative instruction and a preferred action; 不是 here states a fact rather than giving the advice not to do something. [rule: none]\nRun 3: 不是学金融，而是学政治：不要学金融，而要学政治，With a recommendation, use a negative instruction followed by the preferred action; this does not use the corrective contrast meaning of the original construction. [teacher rule: bushi_ershi]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the inappropriate use of 不是……而是…… for advice and make the same acceptable correction to 不要……而要……."
+ },
+ "usage": {
+  "prompt_tokens": 550,
+  "completion_tokens": 52,
+  "total_tokens": 602,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

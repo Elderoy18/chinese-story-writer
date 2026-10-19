@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山，这也找植物：凉山是一座很大的山，他在这儿找植物，Use 是 and the measure word 座 to describe what 凉山 is; 这 cannot be the subject that performs 找, so use the established character and 这儿 for the location. [rule: none]\n2. [Grammar & Vocabulary, error] 找到黄色的花：找到了黄色的花，The finding is a completed event, so 找到 needs 了. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 你跟黄色的花做茶：用黄色的花做的茶，Use 用 to introduce the material used to make tea. 跟 means “with” another person or thing and does not mark the material of a product; 做的 also turns the action into a modifier of 茶. [rule: none]\n4. [Grammar & Vocabulary, error] 你的头发疼死：头疼得要死的时候，头发 means “hair,” while 头疼 means “to have a headache.” A degree complement uses 得 before 要死, and 的时候 makes the headache the condition for the following statement. [teacher rule: de_shihou]\n5. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative such as 这 needs a measure word before a countable noun; 杯 is the appropriate measure word for a serving of tea. [teacher rule: zhe_na_mw]\n6. [Coherence: connectors, error] Coherence (Conjunction): 他听说用黄色的花做的茶很有用。他一喝茶就很不舒服：他听说用黄色的花做的茶很有用，可是他一喝茶就很不舒服，Add 可是 because feeling unwell after drinking the tea contrasts with the expected helpful result. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The original lacks 是 and a measure word, and 这 cannot appropriately refer to the person doing 找."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The completed finding event needs 了, but 黄色的花 remains too vague in the corrected text."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "跟 is not the appropriate marker for the material used to make tea, and 你 is an inappropriate reference here."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "头发 cannot hurt in the intended sense; 头疼得要死的时候 is a grammatical way to express a very bad headache as a condition."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 requires a measure word before the countable noun, and 杯 is a grammatically possible measure word for tea."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The two sentences already express the unexpected contrast clearly, and the teacher did not require a connector here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2272,
+  "completion_tokens": 1615,
+  "total_tokens": 3887,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 621,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1216,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

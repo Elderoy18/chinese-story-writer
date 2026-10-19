@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThe teacher's corrections on this scene:\n- 不是人吵架，就是都叫：不是常常有人吵架，就是很多人都大声说话\n- 在那儿，孟母也找不到工作：wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n- 孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred\n- 孟母找到工作，在商店做衣服：找到了，了completed\n\nThe system's item in each run:\nRun 1: Coherence (Temporality): 孟母找到工作：孟母找到了工作，Finding a job is a completed change of state in this past sequence, so add 了 after the resultative complement 到. [rule: aspect_le_completed]\nRun 2: Coherence (Temporality): 孟母找到工作：孟母找到了工作，Finding the job is a completed event in the story, so the verb needs 了 after the resultative complement 到. [rule: aspect_le_completed]\nRun 3: Coherence (Temporality): 孟母找到工作：孟母找到了工作，Finding the job is a completed event in the narrative, so use 了 after the resultative complement 到. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the missing completion marker 了 in 找到工作 and correctly revise it to 找到了工作."
+ },
+ "usage": {
+  "prompt_tokens": 580,
+  "completion_tokens": 45,
+  "total_tokens": 625,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

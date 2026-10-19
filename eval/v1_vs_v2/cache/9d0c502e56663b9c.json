@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。一个人问神农，哪个植物好吃。神农说，这就要看你的口味了。要是你喜欢吃甜的，有很多甜的水果，比方说苹果、西瓜和梨。一个别的人问神农，哪个植物对你的身体有好处。神农说，有很多种植物对你的身体有好处，比方说小白菜、黄瓜、茶和菠菜。一个别的人问神农，哪个植物对你的身体有坏处。\n\nThis scene:\n神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物：吃到了，V + resultative\n- 对我的脑有坏处：大脑\n- 一个灵芝和一个男人正好在我的旁边：“男人” is moving to神农(dynamic) while “灵芝” is next to神农(static), so it’s better not to combine the two，一个男人正好过来，看到我的旁边长着一个灵芝\n- 你得小心吃植物，因为有的植物对你的健康有坏处：吃植物得小心，delete“对你”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，花 takes the matching measure word 朵 rather than the general measure word 个.\n2. [Grammar & Vocabulary, error] 我的脑：我的脑子，when referring to a person’s brain in ordinary narration, use 脑子; 脑 is mainly used in compounds such as 大脑.\n3. [Grammar & Vocabulary, error] 一个灵芝：一株灵芝，灵芝 is a plant-like fungus, so 株 is a more appropriate measure word than the general measure word 个.\n4. [Coherence: reference, error] Coherence (Reference): 那个植物：灵芝，use the name again because 那个植物 could refer either to the earlier yellow flower or to the newly mentioned 灵芝; repeating the noun makes the referent clear.\n5. [Coherence: connectors, error] Coherence (Conjunction): 特别是夹竹桃。因为夹竹桃有毒。：特别是夹竹桃，因为它有毒。，the second 因为-clause cannot stand alone here; connect it to the statement about 夹竹桃 to express the cause.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "花通常用量词“朵”，应说“一朵黄色的花”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“脑”单独用于这里不自然，改成“脑子”可以正确指人的脑部。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“一个灵芝”在这里可以接受，且教师自己的改写也使用了这一说法。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "刚提到灵芝后用“那个植物”指它并不必然含混，改为“灵芝”只是更明确而非必改。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "独立的“因为夹竹桃有毒”在这里缺少所引出的主句，连到前句后表达完整。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2374,
+  "completion_tokens": 1246,
+  "total_tokens": 3620,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 723,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 913,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

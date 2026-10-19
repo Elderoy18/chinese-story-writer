@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。\n\nThe teacher's corrections on this scene:\n- 对我的脑有坏处：大脑\n- 一个灵芝和一个男人正好在我的旁边：“男人” is moving to神农(dynamic) while “灵芝” is next to神农(static), so it’s better not to combine the two，一个男人正好过来，看到我的旁边长着一个灵芝\n- 你得小心吃植物，因为有的植物对你的健康有坏处：吃植物得小心，delete“对你”\n\nThe system's item in each run:\nRun 1: Coherence (Conjunction): 特别是夹竹桃。因为夹竹桃有毒。：特别是夹竹桃，因为它有毒。，because introduces a cause and needs to connect to the effect in the same sentence; here it explains why readers should be careful.\nRun 2: Coherence (Conjunction): 因为夹竹桃有毒。：特别是夹竹桃，因为它有毒。，A 因为 clause gives a cause and needs to connect to a main clause; here it explains why the warning about 夹竹桃 is especially important.\nRun 3: Coherence (Conjunction): 特别是夹竹桃。因为夹竹桃有毒。：特别是夹竹桃，因为它有毒。，the second 因为-clause cannot stand alone here; connect it to the statement about 夹竹桃 to express the cause.",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the standalone 因为-clause and correctly connect it to “特别是夹竹桃” as its reason."
+ },
+ "usage": {
+  "prompt_tokens": 626,
+  "completion_tokens": 49,
+  "total_tokens": 675,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

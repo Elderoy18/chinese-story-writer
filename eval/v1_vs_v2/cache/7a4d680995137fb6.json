@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟母注意：孟母注意到，注意到 means “notice/realize” an observation; 注意 by itself more often means “pay attention” and does not fit before this clause. [rule: none]\n2. [Grammar & Vocabulary, error] 祭拜玩：玩祭拜的游戏，use 玩 with a noun phrase for an activity; 祭拜 can describe the kind of game. [rule: word_choice]\n3. [Grammar & Vocabulary, error] 决定他们会搬家：决定搬家，决定 should be followed directly by the verb phrase describing the decision. [teacher rule: jueding_vp]\n4. [Coherence: reference, error] Coherence (Reference): 古代，孟子跟孟母住在墓地的旁边。：在古代，有一个小男孩叫孟子，他和母亲住在墓地旁边。，At their first appearance, introduce the main character with a name and identity; then use a pronoun for the close re-occurrence. [rule: character_introduction_first_mention]\n5. [Coherence: connectors, error] Coherence (Conjunction): 可是孟母注意到：孟母注意到，可是 introduces contrast, but the previous sentence and this observation do not form a contrast. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "注意到 is needed here to express that Meng Mu came to notice the result."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "祭拜玩 should be 祭拜着玩儿; 玩祭拜的游戏 is not an appropriate correction for this meaning."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "决定 should directly take the verb phrase 搬家 here."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The first mention needs 在古代 and a brief introduction of 孟子 before later pronoun reference."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "可是 can acceptably contrast living by the cemetery with Meng Mu noticing its harmful effect."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2149,
+  "completion_tokens": 1104,
+  "total_tokens": 3253,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 498,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 801,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

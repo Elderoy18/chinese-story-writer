@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这是古代的故事：这是一个古代的故事\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 从他的家到墓地很近：他的家离墓地很近\n- 所以他每天老是从早到晚去墓地跟朋友们玩玩儿：delete老是；玩儿，V.V. is used to make requests or plans\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 从他的家到墓地很近：孟子的家离墓地很近，use 离 to describe that two places are close; 从……到…… normally marks a route or range rather than proximity. [vocab list]\n2. [Grammar & Vocabulary, error] 从早到晚去墓地跟朋友们玩玩儿：从早到晚都在墓地跟朋友们玩儿，from-morning-to-evening duration should describe the sustained activity at the location; 玩玩儿 suggests a brief, casual activity and does not fit an all-day duration. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 孟子小的时候：有一个小男孩叫孟子。孟子小的时候，this is the character’s first mention, so introduce his name and identity clearly before using him in the story. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 所以他每天：所以孟子每天，repeat the name because the previous sentence also mentions his father, so the pronoun can have two possible male referents. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "从……到……不用于表达两地相近，应用“离”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "“玩玩儿”的重叠形式不适合表示从早到晚持续进行的活动。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子第一次出现时应先明确介绍这个人物。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚在前文出现且父亲已去世，“他”在这里可以清楚地指孟子；所示改后文字也仍是不完整片段。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2081,
+  "completion_tokens": 1551,
+  "total_tokens": 3632,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 430,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1279,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

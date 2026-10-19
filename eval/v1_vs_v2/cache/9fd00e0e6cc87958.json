@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 特别是毒：特别有毒，特别是 must introduce a typical example noun or clause; it cannot modify 毒 as an adjective. [rule: example_marker_tebie_bifang]\n2. [Grammar & Vocabulary, error] 正好在这儿，灵芝药的夹竹桃他吃完了：这儿正好有灵芝；灵芝是药。夹竹桃他吃完了，The original places unrelated noun phrases together and does not form a clear predicate. The revision states that lingzhi is present, identifies it as medicine, and then keeps the completed action separate. [rule: none]\n3. [Grammar & Vocabulary, error] 一个课文的植物：一篇关于植物的文章，课文 means a textbook passage, not a piece of writing created by the character; 一篇……文章 correctly names an article about plants. [rule: word_choice]\n4. [Coherence: temporality, error] Coherence (Temporality): 也写：也写了，The writing is presented as a completed action after eating, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "特别是 cannot directly modify 毒 here; 特别有毒 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original noun phrase is malformed, but the revision wrongly says that he finished eating oleander rather than that he ate lingzhi which can be an antidote."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "课文的植物 does not mean an article about plants, while 一篇关于植物的文章 does."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Writing is the completed final action in the sequence, so 写 needs 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2130,
+  "completion_tokens": 1099,
+  "total_tokens": 3229,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 479,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 840,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

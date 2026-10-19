@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This expression is redundant because 古代 already names a time period, while 的时候 also means “the time of.” [vocab list]\n2. [Grammar & Vocabulary, error] 而且害得孟子的学习：而且影响了孟子的学习，害得 must be followed by a person and a harmful result clause; it cannot directly take the noun phrase 孟子的学习. [teacher rule: haide_structure]\n3. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈两个人：孟子和他的妈妈两个人，After 孟子 has just been named and no other male character competes with him, use the pronoun 他 rather than repeating 孟子 in the same noun phrase. [rule: none]\n4. [Coherence: temporality, error] Coherence (Temporality): 住在这里才一个星期就觉得受不了了：才在这里住了一个星期，就觉得受不了了，A completed period of living needs 了 after 住, and the duration goes after the verb. The pattern is 才 + duration + 就 + result. [rule: cai_jiu_construction]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代已经表示时间，古代的时候重复，改为“在古代”正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“害得”后面不能直接接“孟子的学习”这个名词短语，改为“影响了孟子的学习”正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚被提到，没有其他男性人物，用“他的妈妈”比重复“孟子的妈妈”符合指称规则。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“住在这里才一个星期就觉得受不了了”本身语法正确，住的状态未必已经结束，不必加“了”或调换语序。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2064,
+  "completion_tokens": 997,
+  "total_tokens": 3061,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 413,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 709,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThe teacher's corrections on this scene:\n- 古代时候，人不知道他们能吃什么植物：古代的时候，人们\n- 所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears\n- 告诉人什么植物是安全什么是危险：是安全的，是危险的\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “古代时候” / Formula: 在 + time period / Correct: “在古代”\nRun 2: Incorrect phrase: “古代时候，人不知道他们能吃什么植物” / Formula: 在 + time, + people + 不知道 + embedded question / Correct: “在古代，人们不知道什么植物能吃。” “人” is too vague here, and “他们” has an unclear referent. “人们” is more natural.\nRun 3: Incorrect phrase: “古代时候” / Formula: 在 + time period / Correct: “在古代的时候” or simply “在古代”",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 address only the time expression, while Run 2 additionally corrects 人／他们 to 人们 and rewrites the embedded question."
+ },
+ "usage": {
+  "prompt_tokens": 536,
+  "completion_tokens": 386,
+  "total_tokens": 922,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 325,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

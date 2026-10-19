@@ -1,0 +1,107 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 所以他们找到了很多植物对药：来做药\n- 神农先看到很多病人，他们吃很多植物对药：better to briefly introduce “神农” when this character first appears；吃了很多植物，了completed\n- 但是我觉得他们的吃的植物，让他们病人：他们吃的植物让他们生病，让Sb. + V./Adj.\n- 神农觉得这个植物可能特别是毒：可能毒性特别强，”特别是+N, + Clause” is used to single out a typical example\n- 所以他想找一个植物对药，他们可以吃对药：找一个可以做药的植物；这样，他们可以……\n- 他想把花放在茶里，对药：做成药\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很多植物对药：很多能做药的植物，The phrase “对药” does not mean “able to be used as medicine.” Use “能做药的” before the noun to describe the plants’ purpose. [rule: attributive_modifier_de]\n2. [Grammar & Vocabulary, error] 很多植物对药：很多能做药的植物，The phrase “对药” does not mean “able to be used as medicine.” Use “能做药的” before the noun to describe the plants’ purpose. [rule: attributive_modifier_de]\n3. [Grammar & Vocabulary, error] 让他们病人：让他们生病，“病人” is a noun meaning a sick person, so it cannot follow “让” to describe the result. Use the verb “生病” after “让” to show that the plants caused them to become ill. [rule: word_class_misuse]\n4. [Grammar & Vocabulary, error] 一个植物对药，他们可以吃对药：一种能做药的植物，让病人吃，“对药” cannot mean “serve as medicine.” “能做药的植物” means plants that can be made into medicine, and “让病人吃” clearly states who can take it. [rule: word_choice]\n5. [Grammar & Vocabulary, error] 把花放在茶里，对药：把花放在茶里做药，“对药” does not express making medicine. Use “做药” for the purpose of using the flower as medicine. [rule: word_choice]\n6. [Coherence: reference, error] Coherence (Reference): 这个植物：有的植物，“这个植物” does not have one clearly introduced plant to refer to. Use “有的植物” to refer clearly to some of the plants just mentioned. [rule: ambiguous_reference]\n7. [Coherence: temporality, error] Coherence (Temporality): 他们吃很多能做药的植物：他们吃了很多能做药的植物，This describes a completed past action, so “吃” needs “了.” [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“对药”不能表示“用来做药”，改为“能做药的植物”正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“对药”不能表示“用来做药”，改为“能做药的植物”正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“病人”是名词，不能作“让”的结果补足语；“让他们生病”正确。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原文的“对药”确实错误，但改后缺少主要谓语且不能构成完整、自然的句子。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“对药”用词错误，改为“做药”后句子语法正确。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前文没有明确引入一个可由“这个植物”指代的单数植物，“有的植物”指代更清楚。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里叙述已经完成的过去事件，动词“吃”应加“了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2390,
+  "completion_tokens": 1168,
+  "total_tokens": 3558,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 739,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 710,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

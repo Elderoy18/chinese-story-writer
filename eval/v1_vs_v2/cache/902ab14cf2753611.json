@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThis scene:\n他很聪明的人，难怪他成为有名的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他很聪明的人，难怪他成为有名的人：很聪明\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他很聪明的人：他是一个很聪明的人，An adjective needs to modify the noun inside a noun phrase here; use the copula before the noun phrase to say that he is an intelligent person. [rule: adjective_predicate]\n2. [Coherence: reference, error] Coherence (Reference): 难怪他成为有名的人：难怪成为有名的人，Since the same person was already named in the preceding clause of this sentence, use zero form rather than repeating the pronoun. [rule: none]\n3. [Coherence: temporality, error] Coherence (Temporality): 成为：成为了，This is a completed later achievement in the narrative, so the verb needs the completion marker. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“他很聪明的人” lacks the copula needed before a noun phrase, and “他是一个很聪明的人” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the teacher's reference rule, the immediately repeated subject should be omitted in the following clause."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Becoming famous is a completed story event, so “成为了” correctly marks completion."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1973,
+  "completion_tokens": 674,
+  "total_tokens": 2647,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 322,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 475,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

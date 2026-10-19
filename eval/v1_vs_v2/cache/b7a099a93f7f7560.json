@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this is the standard time expression for a historical setting; the listed form is not natural here.\n2. [Grammar & Vocabulary, error] 老是祭拜：经常祭拜，老是 carries a complaining or negative connotation, while this sentence does not yet describe the action as negative.\n3. [Grammar & Vocabulary, error] 城市有才两个学校：城市里才有两所学校，才 should come before the verb to emphasize the small number, and a numeral with 学校 needs the measure word 所.\n4. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子。：有一个叫孟子的男孩子和他的妈妈住在中国。，by the first-mention rule, introduce the character with his name and a full noun phrase when he first appears, rather than naming him only in the following sentence.\n5. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜，就是跟朋友聊天。：他不是祭拜，就是跟朋友聊天。，by the pronoun rule, use a pronoun when the same character was named in the immediately preceding sentence and no competing character is present.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代的时候 is redundant under the stated time-expression rule, and 在古代 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是 can describe a repeatedly performed action here and is not necessarily inappropriate."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The original has an incorrect quantity construction and lacks the needed specific reference, while 城市里才有两所学校 still violates the required 只有 rather than 才有 standard."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Introducing the boy first and naming him in the following sentence is a clear and acceptable first introduction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the stated close-reference rule, 他 should replace the repeated name after the immediately preceding mention."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2031,
+  "completion_tokens": 1673,
+  "total_tokens": 3704,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 380,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1347,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

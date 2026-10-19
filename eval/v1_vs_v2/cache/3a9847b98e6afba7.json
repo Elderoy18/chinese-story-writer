@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThis scene:\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子才十一岁，成为一个哲学家：就成为，才Num.就V.\n- 孟子不是祭拜，而是看政治文章：“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 祭拜is not conventionally related to哲学家\n- 不过，看过很多政治文章对他害得，他有很多问题：delete对他；害得他有很多问题，害得Sb. + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟子才十一岁，成为一个哲学家：孟子才十一岁，就成为了一个哲学家，use the paired pattern 才……就…… to show that the result happened at an unexpectedly young age; 成为 is a completed change of state here, so it takes 了.\n2. [Grammar & Vocabulary, error] 看过很多政治文章对他害得：他看过很多政治文章，the phrase 对他害得 is not grammatical here. 害得 must introduce a harmful result after it, in the pattern 害得 + person + result; it cannot be used simply to connect the reading to having questions.\n3. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜：他不是祭拜，use a pronoun for a close re-occurrence: the previous sentence has already named 孟子, and no competing male character appears.\n4. [Coherence: connectors, error] Coherence (Conjunction): 孟子不是祭拜，而是看政治文章，难怪他成为了哲学家：难怪他成为了哲学家，原来他不祭拜，而是看政治文章，with 难怪, state the conclusion first and use 原来 to introduce the reason.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "才十一岁 should pair with 就 before the unexpectedly early result."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 requires a person and harmful result, and the proposed revision deletes rather than repairs that relation."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "A close re-reference should use 他, but the corrected fragment still occurs inside the inappropriate 不是……而是…… construction."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The revision adds 难怪……原来…… but retains an inappropriate 不祭拜，而是看政治文章 contrast."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2194,
+  "completion_tokens": 1244,
+  "total_tokens": 3438,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 543,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 989,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,116 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A place name needs 是 to identify it as a mountain, and 座 is the suitable measure word for a mountain. [rule: none]\n2. [Grammar & Vocabulary, error] 这也找植物：他也在这里找植物，A location before an action needs 在, and 这里 is the location form needed here. [rule: location_zai_place]\n3. [Grammar & Vocabulary, error] 跟黄色的花做茶：用黄色的花做茶，跟 usually introduces a person or something accompanying an action; 用 introduces the material used to make something. [rule: word_choice]\n4. [Grammar & Vocabulary, error] 头发疼死：头疼得要死，头发 means “hair,” so it cannot be the part that feels pain here. Use 头疼 for a headache, with 得要死 as the degree complement. [rule: none]\n5. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative needs a measure word before a countable noun; 杯 is the measure word for a serving of iced tea. [teacher rule: zhe_na_mw]\n6. [Coherence: reference, error] Coherence (Reference): 你：删除，There is no listener or previously introduced person for the second-person pronoun to refer to. Removing it makes the statement an impersonal claim. [rule: ambiguous_reference]\n7. [Coherence: reference, error] Coherence (Reference): 你的：他，The narrative is about 神农, so use the pronoun for the current protagonist rather than an unintroduced addressee. [rule: ambiguous_reference]\n8. [Coherence: temporality, error] Coherence (Temporality): 找到：找到了，Finding the flower is a completed action in the past narrative, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original lacks 是 and a suitable measure word in identifying 凉山 as a mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "这 cannot naturally serve as the location/subject here; 他也在这里找植物 is a correct clause."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "用, rather than 跟, introduces the material for making tea, but 黄色的花 remains too vague for its first mention."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "头发 is hair rather than the body part that aches, and 头疼得要死 is a correct alternative."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The demonstrative needs a measure word, and 这杯冰茶 is grammatical Chinese."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你 has no appropriate addressee in this third-person story and should be deleted."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你的 incorrectly addresses a listener, while 他 correctly refers to the protagonist."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The finding is a completed past event in the narrative, so 找到了 is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2282,
+  "completion_tokens": 1932,
+  "total_tokens": 4214,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 631,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1443,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

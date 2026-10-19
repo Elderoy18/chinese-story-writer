@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene:\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's item in each run:\nRun 1: 不是学金融，而是学政治：不要学金融，而要学政治，Use “不要……而要……” when giving advice about what someone should not do and should do; “不是……而是……” is used to correct or contrast statements, not to form this recommendation.\nRun 2: 建议你不是学金融，而是学政治：建议人们不要学金融，而要学政治，Advice about a preferred action uses the pattern “不要……，而要……”; “不是……而是……” is for correcting or rejecting a stated idea.\nRun 3: 他常常建议你不是学金融，而是学政治：他常常建议你不要学金融，而是学政治，After 建议, negative advice needs 不要 before the verb. The pattern 不是……而是…… alone does not form a natural instruction here.",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs identify the advice-pattern error, but Run 3 retains “而是” rather than making the teacher-supported “不要……而要……” correction."
+ },
+ "usage": {
+  "prompt_tokens": 554,
+  "completion_tokens": 54,
+  "total_tokens": 608,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

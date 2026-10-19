@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene:\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's item in each run:\nRun 1: 古代的人：古代的人们，This refers to a concrete group of people in ancient times, so 人们 is needed rather than the generic noun 人. [teacher rule: ren_renmen]\nRun 2: (nothing flagged here)\nRun 3: 古代的人：人们，Use 人们 for a concrete group of people in general, rather than 人. [teacher rule: ren_renmen]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 flag 人 versus 人们, while Run 2 flags nothing, and 古代的人 is already acceptable."
+ },
+ "usage": {
+  "prompt_tokens": 472,
+  "completion_tokens": 129,
+  "total_tokens": 601,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 73,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

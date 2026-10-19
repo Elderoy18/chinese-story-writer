@@ -1,0 +1,86 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候，孟子和孟母住了在靠墓地的家：在古代，better to briefly introduce “孟子” when this character first appears；住在靠近墓地的地方/墓地附近，delete了，在+Place\n- 孩子才五岁就每天在墓地祭拜了：孟子，孩子is vague and unclear\n- 难怪她跟孩子搬家，原来买不了房：wrong information, 搬家因为孟母觉得it is not good to imitate how to offer sacrifices\n- 他们搬了到别一个城市找工作：搬到了，另外一个城市，“别（的）” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “古代的时候，孟子和孟母住了在靠墓地的家。” Formula: 在 + time；Subject + 住在 + place；靠近 + place + 的 + noun Correct: “在古代，孟子和孟母住在靠近墓地的房子里。”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “孩子才五岁就每天在墓地祭拜了。” Formula: Subject + 才 + age + 就 + frequency + 在 + place + verb；“每天” usually does not take 了 for a habitual action. Correct: “孟子才五岁就每天在墓地祭拜。”\n3. [Grammar & Vocabulary, error] Incorrect phrase: “可是找不到，害得孟母没有钱。” Formula: Subject + 找不到 + object；because of a result, use “所以/就 + result.” Correct: “可是找不到工作，所以孟母就没有钱了。”\n4. [Grammar & Vocabulary, error] Incorrect phrase: “难怪她跟孩子搬家，原来买不了房。” Formula: 难怪 + result，原来 + reason；带着 + person + 搬家 Correct: “难怪孟母要带着孩子搬家，原来她买不起房子。”\n5. [Grammar & Vocabulary, error] Incorrect phrase: “他们搬了到别一个城市找工作。” Formula: Subject + 搬到 + place + 去 + verb；“另一个” means “another.” Correct: “他们搬到另一个城市去找工作。”",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“古代的时候” is redundant here, and “住了在” has incorrect particle and word order."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Coherence: temporality"
+    ],
+    "reason": "“孩子” is an unclear reference on first mention, and habitual “每天” should not take sentence-final 了 here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "The omitted object in “找不到” is recoverable from “找工作,” and “害得孟母没有钱” is a valid harmful-result structure."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The stated reason for moving is wrong for the story, and the correction still incorrectly makes inability to buy a house the reason."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "“搬了到” and “别一个城市” are wrong, but the correction omits the required completed-action 了: “搬到了另外一个城市” is needed."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2282,
+  "completion_tokens": 1257,
+  "total_tokens": 3539,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 631,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 888,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

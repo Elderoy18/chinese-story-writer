@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\n\nThe teacher's corrections on this scene:\n- 一看很多人正在吃一些植物：看到，一……就\n- 神农想帮别人：帮他们，“别(的)” is for “a different type”, and “all else except the spoken one”\n\nThe system's item in each run:\nRun 1: Coherence (Conjunction): 一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了：一天，神农正在路上走，一看到很多人正在吃一些植物，就发现一些人一吃植物就生病了，Here the narrator means that Shennong saw the people, so the verb needs the resultative complement 到. The pattern 一……就…… also needs 就 to introduce the immediate following event. [rule: resultative_complement] [teacher rule: yi_jiu]\nRun 2: 一看很多人正在吃一些植物：看到很多人正在吃一些植物，Here the meaning is that 神农 perceived the scene, so use 看到 rather than 看, which means “to look.” [rule: resultative_complement]\nRun 3: 看：看到，The sentence means that Shennong saw people eating plants, so the perception result needs 看到 rather than 看. [rule: resultative_complement]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 addresses both the missing 到 and the 一……就 construction, while Runs 2 and 3 address only 看→看到 and leave the construction issue unfixed."
+ },
+ "usage": {
+  "prompt_tokens": 557,
+  "completion_tokens": 176,
+  "total_tokens": 733,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 112,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

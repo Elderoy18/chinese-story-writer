@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n所以，孟母和孟子搬到学校的旁边住。才五岁孟子开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。\n\nThe teacher's corrections on this scene:\n- 才五岁孟子开始学哲学：就开始，才Num.就V.\n- 将来，他成为中国的一个非常有名的哲学家：后来，“将来“ refers to the absolute future\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “才五岁孟子开始学哲学” Formula: 谁 + 才 + 年龄/数量 + 就 + 动词 Correct: “孟子才五岁就开始学哲学了。”\nRun 2: Incorrect phrase: “才五岁孟子开始学哲学” / Formula: Subject + 才 + number/age + 就 + verb / Correct: “孟子才五岁就开始学习哲学。”\nRun 3: Incorrect phrase: “才五岁孟子开始学哲学” / Formula: Subject + 才 + Num. + 就 + V. / Correct: “孟子才五岁就开始学哲学了。” Use 就 after 才五岁 to emphasize that he started unusually early.",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the missing 就 in the 才五岁 structure and correctly revise it as 孟子才五岁就开始学（习）哲学了。"
+ },
+ "usage": {
+  "prompt_tokens": 505,
+  "completion_tokens": 57,
+  "total_tokens": 562,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 找了到：找到了，The completion marker must follow the resultative complement: the order is verb + resultative complement + 了. [teacher rule: le_placement]\n2. [Grammar & Vocabulary, error] 孟子学习馆学了十五年：孟子在学校学习了十五年，A place before an action needs 在, and 学习馆 is not the usual word for the school where someone studies. [rule: none]\n3. [Grammar & Vocabulary, error] 对他很多好处：对他有很多好处，The fixed predicate is 对……有好处; 有 is required before 好处. [vocab list]\n4. [Grammar & Vocabulary, error] 成为很有名的哲人：成为了很有名的哲人，This is a completed change of status, so 成为 takes 了. [rule: aspect_le_completed]\n5. [Coherence: reference, error] Coherence (Reference): 他的学习和他的旅行经验：他的学习和旅行经验，After the first possessive pronoun establishes the owner for both coordinated nouns, use zero form rather than repeating the pronoun in the same phrase. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "了 must follow the resultative complement 到, giving 找到了."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The place requires 在, and 学习馆 is not the appropriate word here for a school."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The required expression is 对某人有很多好处."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为了 correctly marks the completed change, but 哲人 remains a vocabulary error because the intended occupation is 哲学家."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Within this coordinated noun phrase, the second 他的 should be omitted because the possessor is already established."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2234,
+  "completion_tokens": 996,
+  "total_tokens": 3230,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 583,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 687,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

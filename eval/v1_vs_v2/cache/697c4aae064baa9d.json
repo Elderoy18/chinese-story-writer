@@ -1,0 +1,71 @@
+{
+ "input": "Required scenes:\n1. 孟子and孟母lived near a graveyard, and 孟子 imitated how to offer sacrifices every day\n2. 孟母 decided to move away from the neighborhood near the graveyard because she thought imitating how to offer sacrifices would have a bad impact on 孟子\n3. 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day\n4. 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n5. 孟子becomes a famous philosopher\n\nThe learner's story:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's content flags:\n- Miss three scenes (incomplete scenes): 孟母 decided to move away from the neighborhood near the graveyard because 孟子 imitated how to offer sacrifices every day; 孟母moved to the neighborhood near the market, 孟子imitated how to buy and sell every day; 孟母 moved from the market to the neighborhood near a school, 孟子started to study every day\n\nThe system's content notes:\n1. You need to fix why 孟母 moves away after 孟子 offers sacrifices near the graveyard: she moves because she worries this behavior will negatively affect him, not because she cannot find work or afford a house.\n2. You need to add that, after leaving the graveyard, they live near a market and 孟子 copies people buying and selling every day.\n3. You need to add that, after leaving the market, 孟母 moves near a school, and this is where 孟子 begins to study every day.",
+ "salt": "",
+ "output": {
+  "scenes": [
+   {
+    "n": 1,
+    "teacher": "none",
+    "system": "none"
+   },
+   {
+    "n": 2,
+    "teacher": "missing",
+    "system": "wrong"
+   },
+   {
+    "n": 3,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 4,
+    "teacher": "missing",
+    "system": "missing"
+   },
+   {
+    "n": 5,
+    "teacher": "none",
+    "system": "none"
+   }
+  ],
+  "notes": [
+   {
+    "n": 1,
+    "correct": true,
+    "clear": true,
+    "reason": "The story gives work and housing problems as the reason for moving rather than concern about Mengzi's sacrificial imitation."
+   },
+   {
+    "n": 2,
+    "correct": true,
+    "clear": true,
+    "reason": "The story does not say that they live near a market or that Mengzi imitates buying and selling."
+   },
+   {
+    "n": 3,
+    "correct": true,
+    "clear": true,
+    "reason": "The story does not say that they move from the market to live near a school where Mengzi begins studying daily."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 876,
+  "completion_tokens": 284,
+  "total_tokens": 1160,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 87,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "47505bee5c"
+}

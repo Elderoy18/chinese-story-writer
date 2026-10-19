@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene:\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “孟子长大，他开始能解决问题。” Formula: Subject + 长大后 + 就/开始 + 能 + V. Correct: “孟子长大后，开始能解决这些问题了。”\nRun 2: Incorrect phrase: “孟子长大，他开始能解决问题。” Formula: Subject + 长大以后/后来 + 就/开始 + 能 + Verb + Object Correct: “孟子长大以后，就开始能解决这些问题了。” “长大” needs a time connector such as “以后,” and “这些问题” clearly refers back to the earlier problems.\nRun 3: Incorrect phrase: “孟子长大，他开始能解决问题。” Formula: Subject + 长大以后/后来 + 就/开始 + 能 + Verb + Object Correct: “孟子长大以后，就开始能解决这些问题了。” “长大” needs a time connection such as “以后,” and “这些问题” refers more clearly to the questions mentioned before.",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the missing time connector after 长大 and correctly revise it to 长大后/以后 while making the same acceptable sentence correction."
+ },
+ "usage": {
+  "prompt_tokens": 585,
+  "completion_tokens": 51,
+  "total_tokens": 636,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

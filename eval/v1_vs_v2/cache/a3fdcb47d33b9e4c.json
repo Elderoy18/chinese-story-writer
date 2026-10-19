@@ -1,0 +1,98 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A named mountain needs a predicate, and 座 is the appropriate measure word for a mountain. [rule: none]\n2. [Grammar & Vocabulary, error] 这也：在这里，Also, 也 cannot function as a location word; 在这里 gives the place where the action happens. [rule: none]\n3. [Grammar & Vocabulary, error] 你跟黄色的花做茶：用黄色的花做的茶，Use 用 to introduce the material used to make something, and use 做的 to modify 茶. [rule: none]\n4. [Grammar & Vocabulary, error] 你的头发疼死：你的头疼得要命，头发 refers to hair, while 头疼 means having a headache; 得要命 expresses a very strong degree of pain. [rule: none]\n5. [Grammar & Vocabulary, error] 这冰茶：这杯茶，A demonstrative such as 这 needs a measure word before a countable noun; 杯 is suitable for tea. [teacher rule: zhe_na_mw]\n6. [Coherence: temporality, error] Coherence (Temporality): 找到：找到了，The finding is a completed event in this past narrative, so add 了 after the resultative complement 到. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "凉山作为一座山需要谓语“是”和量词“座”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“这也”在这里不能表示地点，且所示文字被截断，不能独立构成完整单位。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "这里不该用泛指的“你跟”，应改为“用……做的茶”，但“黄色的花”仍然过于笼统。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "“头发疼死”用词和结构都不对，虽然改正了头疼的说法，但仍保留了不合语境的“你的”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“这”后面需要量词，“这杯茶”是语法正确的改法。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "叙述中找到花是完成的过去事件，应说“找到了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2162,
+  "completion_tokens": 1952,
+  "total_tokens": 4114,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 511,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1535,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

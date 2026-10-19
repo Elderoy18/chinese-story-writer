@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this expression is redundant because 古代 already names a time period. [teacher rule: gudai_de_shihou_why]\n2. [Grammar & Vocabulary, error] 有才两个学校：才有两所学校，when 才 expresses a small number, it comes before 有; 所 is the appropriate measure word for schools. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，when the possessor is the same person as the subject, 自己的 makes that relationship clear. [teacher rule: ziji_possessor]\n4. [Coherence: reference, error] Coherence (Reference): 但是城市：但是，the city was mentioned immediately before in the same sentence, so a zero form is more natural than repeating the noun. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代已经表示时间，再加的时候重复；在古代正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "应说“只有两所学校”；“才有”不符合教师的“只有，不才有”规则。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他的城市”在这里指代清楚，改成“自己的城市”只是可选的润色。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "教师要求用“这个城市”明确指回前面的城市，删去“城市”不符合该处的指代修改，且后面的“有才两个学校”仍错误。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1958,
+  "completion_tokens": 1068,
+  "total_tokens": 3026,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 307,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 791,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

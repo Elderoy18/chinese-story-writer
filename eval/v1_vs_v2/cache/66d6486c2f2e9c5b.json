@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “古代的时候人觉得祭拜非常重要” / Formula: 在 + historical time, + 人们 + 认为/觉得 + statement / Correct: “在古代，人们认为祭拜非常重要。”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “孟子很小的时候” (first mention of 孟子) / Formula: First mention = 有一个 + identity + 叫 + name; later use the name / Correct: “有一个男孩叫孟子。孟子小时候，……” This introduces the character clearly before using his name.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “虽然他没有朋友，因为每天只祭拜” / Formula: 因为 + reason， 所以 + result / Correct: “因为他每天只祭拜，所以他没有朋友。” “虽然” needs a contrasting result, usually with “但是/可是,” so it does not fit this sentence.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “他的同学们老是对他开玩笑了” / Formula: Subject + 老是 + verb phrase (for repeated negative actions); no 了 for a habitual action / Correct: “他的同学们老是跟他开玩笑。” Here, “老是” is appropriate because the classmates’ behavior is negative and repeated.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “孟子妈妈看了他的同学们对孟子不好的影响” / Formula: Subject + 看到 + someone/something + 带来的 + 影响 / Correct: “孟子的妈妈看到了同学们给孟子带来的不良影响。” “看了影响” is not natural; she “saw/noticed the negative influence” that the classmates had on him.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“古代的时候” is redundant and concrete people should be “人们,” so the correction is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first introduced here, so introducing him as a boy before using his name follows the reference rule."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“虽然” does not fit this causal relation, and the corrected 因为……所以…… structure is grammatical."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The habitual action needs no 了, and 跟他开玩笑 is the required collocation."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“看了影响” is incorrect here; 看到了 and the revised influence expression correctly state that his mother noticed the negative effect."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2310,
+  "completion_tokens": 727,
+  "total_tokens": 3037,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 659,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 402,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

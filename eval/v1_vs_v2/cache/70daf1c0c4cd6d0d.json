@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThe teacher's corrections on this scene:\n- 神农不知道他吃不吃灵芝或者夹竹桃：要不要吃……\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 他吃不吃灵芝或者夹竹桃：吃的是灵芝还是夹竹桃，The subject is already 神农 in the same sentence, so use zero form rather than repeating a pronoun; the two possible plants should be linked as alternatives. [rule: character_introduction_first_mention]\nRun 2: 吃不吃灵芝或者夹竹桃：吃的是灵芝还是夹竹桃，When the uncertainty is between two alternatives, use the pattern with 是……还是…… rather than an A-not-A question followed by 或者. [rule: a_not_a_question]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 also flags unnecessary pronoun repetition, and both runs change the meaning to which plant he ate rather than the teacher’s intended 要不要吃 distinction."
+ },
+ "usage": {
+  "prompt_tokens": 470,
+  "completion_tokens": 220,
+  "total_tokens": 690,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 159,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

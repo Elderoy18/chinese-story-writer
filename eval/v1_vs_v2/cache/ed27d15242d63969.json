@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThis scene:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这种一定是做药的花：这一定是一种做药的花\n- 原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result\n- 神农快生病：很快就生病了\n- 快给他一种红的灵芝：很快地给了，快V: to give order, 了completed\n- 他没有病：delete他，redundant; 病好了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 快：很快，When describing that an action happens quickly, use the adverbial phrase “很快”; bare “快” here normally suggests that something is about to happen and needs a form such as “快要……了”.\n2. [Grammar & Vocabulary, error] 快给他：赶快给他，“赶快” naturally modifies an action that the helper performs immediately in this past event.\n3. [Coherence: reference, error] Coherence (Reference): 神农吃了以后，他没有病：神农吃了以后，没有病，Use zero form when the same character has already been named in the same sentence and no other possible referent intervenes.\n4. [Coherence: temporality, error] Coherence (Temporality): 这时一个穿着蓝色衣服的人帮神农，赶快给他一种红的灵芝：这时一个穿着蓝色衣服的人帮神农，赶快给了他一种红的灵芝，Use “了” after “给” because giving the medicine is a completed action in the action sequence.\n5. [Coherence: temporality, error] Coherence (Temporality): 想起来以前一个人告诉他：想起了以前有一个人告诉过他，Use “了” after the resultative complement “起来” to show the completed change of state of remembering; use “过” for the earlier experience of someone having told him this information.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这里的“快”不能直接作表示动作迅速发生的状语，“很快”可以改正这一点。"
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "“赶快”能替换此处不合适的“快”，但改后的片段仍缺少叙述已完成动作所需的“给了”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "同一句中已经说了“神农”，后面的“他”应省略，但“没有病”仍没有表达病好了。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "在这个过去的动作序列中，“给”应加“了”表示给灵芝这一动作完成。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“想起来”作完成的结果性动作时应说“想起了”，而“告诉过他”也能正确表示此前发生过的事。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2262,
+  "completion_tokens": 2430,
+  "total_tokens": 4692,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 611,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThis scene:\n他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他们住才一月就又搬家：才住了一个月，了completed\n- 古代的时候：那时候\n- 但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是\n- 因为她恐怕儿子会成为跟他们很像：怕/担心，恐怕usually does not take Subj. except 我；跟他们一样/很像的人，成为+ noun\n- 她告诉了孟子：告诉，no了for speaking word\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住才一月：才住一个月，In the pattern with a short duration followed by an early next action, place 才 before the verb: 才 + verb + duration. [rule: cai_jiu_construction]\n2. [Grammar & Vocabulary, error] 古代的时候：在古代，The original redundantly combines a time noun with a “time of” phrase. [vocab list]\n3. [Grammar & Vocabulary, error] 老是跟这些卖东西的人常常玩儿：老是跟这些卖东西的人玩儿，Both frequency adverbs express repeated action, so using them together is redundant; keep one. [rule: none]\n4. [Grammar & Vocabulary, error] 她恐怕儿子会：她担心儿子会，恐怕 means “I am afraid that” and cannot take another subject before it in this structure; use 担心 for a character’s worry. [teacher rule: kongpa]\n5. [Grammar & Vocabulary, error] 成为跟他们很像：变得跟他们很像，成为 normally introduces a new identity or role, while 变得 expresses a change into a similar state or quality. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 妈妈：孟子的妈妈，After other people and information have intervened since the mother was last named, repeat a clear noun phrase rather than using the vague family-role noun alone. [rule: ambiguous_reference]\n7. [Coherence: temporality, error] Coherence (Temporality): 住一个月就又搬家：住了一个月，就又搬家了，Both the completed period of living there and the completed move need 了 to show finished actions. [rule: aspect_le_completed]\n8. [Coherence: temporality, error] Coherence (Temporality): 告诉了孟子：告诉孟子，A speaking verb that introduces quoted speech uses the zero particle rather than 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "才 should precede 住, but the displayed correction still needs 了 after 住 for the completed stay."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundant; 在古代 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是 and 常常 are redundant together here, and deleting 常常 gives a natural phrase."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "恐怕 is not appropriate with 儿子 as its separate subject here, but the displayed replacement ends unfinished after 会."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "成为 requires an identity or noun phrase here, whereas 变得 correctly takes the similar-state complement."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "妈妈 is clear in this immediate context and does not need to be replaced with 孟子的妈妈."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The stay and subsequent move are completed narrative events, so 住了一个月，就又搬家了 is grammatically correct."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "告诉 introducing direct speech should take no 了, so 告诉孟子 is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2391,
+  "completion_tokens": 2095,
+  "total_tokens": 4486,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 740,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1588,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

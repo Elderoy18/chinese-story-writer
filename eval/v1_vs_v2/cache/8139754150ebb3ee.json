@@ -1,0 +1,125 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他需要当上医：医生\n- 一看别的人就想帮助他们：看到，看look vs.看到see; 病人，“别的” is for “a different type”, and “all else except the spoken one”\n- 什么病人吃都会觉得身体更好：吃了以后\n- 神农三个月走去：走了三个月\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This expression redundantly combines a time period with a phrase meaning “the time of”; use the shorter time expression. [vocab list]\n2. [Grammar & Vocabulary, error] 当上医：当医生，医 is not normally used alone as the occupation noun in modern Chinese; 医生 means “doctor.” [rule: word_choice]\n3. [Grammar & Vocabulary, error] 一看：一看到，The meaning is “see someone and then want to help,” so the perception has a result and needs the resultative complement 到. [rule: resultative_complement]\n4. [Grammar & Vocabulary, error] 别的人：别人，Use 别人 for other people in general; 别的 is used to distinguish a different one or different kind from a previously mentioned one. [teacher rule: bieren]\n5. [Grammar & Vocabulary, error] 一个很漂亮的植物：一株很漂亮的植物，株 is the appropriate measure word for an individual plant; 个 is too generic here. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 神农听说：他听说，The name was used recently and no other singular character competes with it, so use a pronoun for a close re-occurrence. [rule: redundancy_delete]\n7. [Coherence: reference, error] Coherence (Reference): 神农三个月走去：他三个月走去，The same character remains the subject from the previous sentence, so a pronoun is more natural than repeating the name. [rule: redundancy_delete]\n8. [Coherence: temporality, error] Coherence (Temporality): 三个月走去：走了三个月，A duration phrase follows the action verb, and 了 marks the three-month journey as completed. [rule: aspect_le_completed]\n9. [Coherence: temporality, error] Coherence (Temporality): 找到有植物的地方：找到了有植物的地方，This is the completed final action in the narrative sequence, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "古代的时候 is redundantly formed under the teacher's time-expression rule, and 在古代 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "医 cannot serve as the ordinary occupation noun here; 当医生 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The intended perception verb is 看到, but 一看到 alone is still an incomplete 一……就…… construction in the shown text."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "别的人 is wrong here, but the intended referent is 病人, so replacing it with 别人 does not fully correct the learner's meaning."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "一个植物 is acceptable Chinese, although 一株植物 is more specific and stylistically preferable."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 was just mentioned and no competing singular person is present, so the teacher's reference rule calls for 他."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated name should be 他 under the close re-reference rule, but 他三个月走去 still retains the duration/aspect error."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The completed journey should be expressed as 走了三个月."
+   },
+   {
+    "n": 9,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "找到 already has a resultative complement and does not obligatorily require 了 here; moreover, it is not the final action of the scene."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2303,
+  "completion_tokens": 1925,
+  "total_tokens": 4228,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 652,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1359,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

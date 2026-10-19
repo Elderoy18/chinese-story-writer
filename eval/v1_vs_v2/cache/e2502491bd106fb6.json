@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，古代 already refers to a time period, so adding 的时候 is redundant. [vocab list]\n2. [Grammar & Vocabulary, error] 有一个男孩名字叫孟子：有一个叫孟子的男孩，use the attributive pattern with 叫 to introduce the character’s name and identity clearly. [rule: character_introduction_first_mention]\n3. [Grammar & Vocabulary, error] 墓地老是有很多人祭拜：很多人老是在墓地里祭拜，put the people before the frequency adverbial and use a location phrase before the action. [rule: location_zai_place]\n4. [Grammar & Vocabulary, error] 害得孟子的学习：害得孟子不能好好学习，害得 must be followed by the affected person and a harmful result clause, not only a noun phrase. [teacher rule: haide_structure]\n5. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈两个人：孟子和他的妈妈两个人，after naming 孟子 once in the same phrase, use the possessive pronoun to avoid unnecessarily repeating his name. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈住在这里：孟子和他的妈妈住在这里，repeat 孟子 after the intervening description, but use the pronoun in 妈妈’s possessive phrase rather than repeating the name. [rule: none]\n7. [Coherence: temporality, error] Coherence (Temporality): 住在这里才一个星期就觉得受不了了：才在这里住了一个星期，就觉得受不了了，use 了 after 住 to show that the one-week period had passed by the time they reached this feeling. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundantly formed under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "有一个男孩名字叫孟子 is understandable and acceptable as a character introduction, even though the proposed wording is more natural."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "墓地老是有很多人祭拜 is grammatical and clearly means that many people regularly worship at the cemetery."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 cannot end with the noun phrase 孟子的学习 and needs a harmful result after the affected person."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Within the same phrase, repeating 孟子 in 孟子的妈妈 violates the teacher's reference rule; 他的妈妈 should be used."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After the intervening information, repeating 孟子 is appropriate, but his mother should be referred to as 他的妈妈 rather than 孟子的妈妈."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The one-week stay is completed before they feel unable to bear it, so 住 needs the perfective 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2207,
+  "completion_tokens": 1691,
+  "total_tokens": 3898,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 556,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1229,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

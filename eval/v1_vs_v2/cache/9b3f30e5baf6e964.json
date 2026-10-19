@@ -1,0 +1,61 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这是古代的故事：这是一个古代的故事\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 从他的家到墓地很近：他的家离墓地很近\n- 所以他每天老是从早到晚去墓地跟朋友们玩玩儿：delete老是；玩儿，V.V. is used to make requests or plans\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 从他的家到墓地很近：他家离墓地很近，Use 离 to state that two places are close; 从……到…… normally introduces a route or distance measurement. [vocab list]\n2. [Grammar & Vocabulary, error] 玩玩儿：玩，The reduplicated verb suggests a brief, casual action, which conflicts with the long duration expressed by 从早到晚. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 孟子小的时候，他的爸爸很早就去世了：有一个小男孩叫孟子。他小的时候，他的爸爸很早就去世了，On a character’s first mention, introduce the character with a name and a full noun phrase before using a pronoun. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "从……到……很近 is not the appropriate way to express the distance here; 离 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "玩玩儿 is inappropriate for an all-day repeated activity, while 玩 is correct here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first introduced here, so he should first be introduced with a full noun phrase before using 他."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2010,
+  "completion_tokens": 504,
+  "total_tokens": 2514,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 359,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 306,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

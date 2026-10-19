@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene:\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's item in each run:\nRun 1: (nothing flagged here)\nRun 2: 也什么植物不能吃：也不知道什么植物不能吃，Also must modify a verb phrase, so repeat 不知道 before the second embedded question. [teacher rule: ye_vp]\nRun 3: Coherence (Conjunction): 也什么植物不能吃：什么植物不能吃，Also cannot directly be followed by a noun phrase or clause; here the two embedded questions can simply be placed side by side. [teacher rule: ye_vp]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 flags nothing, while Runs 2 and 3 address the redundant/misused 也 in the second embedded question."
+ },
+ "usage": {
+  "prompt_tokens": 488,
+  "completion_tokens": 81,
+  "total_tokens": 569,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 25,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

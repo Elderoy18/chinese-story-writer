@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 找到孟子一个老师：给孟子找到了一个老师，The person receiving help must be introduced with 给; 找到了 also shows that the mother successfully found a teacher. [rule: aspect_le_completed]\n2. [Grammar & Vocabulary, error] 跟老师孟子学最重要的文学：孟子跟老师学最重要的文学，The subject should come before the phrase 跟老师 so that it is clear who is studying. [rule: none]\n3. [Coherence: temporality, error] Coherence (Temporality): 成为哲学家：成为了哲学家，This is a completed change of identity in the narrative, so 成为 takes 了. [rule: aspect_le_completed]\n4. [Coherence: connectors, error] Coherence (Conjunction): 他难怪抱怨：难怪他抱怨，原来，The result follows 难怪, and 原来 introduces the reason that explains it. [teacher rule: nanguai_yuanlai]\n5. [Coherence: connectors, error] Coherence (Conjunction): 因为：也，The two ideas are both reasons for the complaint, so 也 links them as parallel reasons rather than making one the cause of the other. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "找到 cannot directly take both 孟子 and 一个老师 in this meaning; 给孟子找到了一个老师 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "孟子 must precede 跟老师 so that the sentence has a clear subject."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Becoming a philosopher is a completed narrative change, so 成为了 is appropriate."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "难怪他抱怨 fixes the word order, but the added 原来 is left dangling without the explanatory clause."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The ideas should be parallel reasons, but replacing 因为 with 也 leaves 也 directly before 他 and produces an ungrammatical sentence."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2184,
+  "completion_tokens": 1922,
+  "total_tokens": 4106,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 533,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1586,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

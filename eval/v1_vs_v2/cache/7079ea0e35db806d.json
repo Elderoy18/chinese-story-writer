@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears\n- 孟子妈妈的工作是祭拜：wrong information, it’s not his mother’s job\n- 孟子不高兴，因为他说我们老是搬家：delete因为\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一天，很久很久以前：很久很久以前的一天，A time expression that modifies “day” should come before it and link with “的.” [rule: time_expression]\n2. [Grammar & Vocabulary, error] 他说我们老是搬家，为什么？：他说：“我们老是搬家，为什么？”，Direct speech needs a colon after the speaking verb and quotation marks around the exact words spoken. [rule: none]\n3. [Grammar & Vocabulary, error] 他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。：他妈妈说：“从早到晚，我一直祭拜。我得去很多墓地祭拜，所以我们得去很多不同的地方。”，Direct speech needs quotation punctuation; also, the modal verb “得” must follow its subject and come before the action verb, so “我得去……” expresses “I have to go to…”. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“一天，很久很久以前” combines the time expressions awkwardly, while “很久很久以前的一天” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original can be read as unquoted reported speech, so adding quotation marks is not a necessary correction."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“很多墓地得我祭拜” has incorrect modal-verb word order, and “我得去很多墓地祭拜” correctly expresses the intended meaning."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2045,
+  "completion_tokens": 1238,
+  "total_tokens": 3283,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 394,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

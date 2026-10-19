@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “凉山很大的山” / Formula: Place + 是 + quantity/classifier + adjective + noun / Correct: “凉山是一座很大的山。”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “这也找植物” / Formula: Subject + 在 + place + verb + object / Correct: “神农也在这里找植物。” “这” should be “这里” when referring to a location, and the subject should be clear.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “他听说你跟黄色的花做茶很有用” / Formula: Subject + 听说 + 用 + material + 做/泡 + object + 很有用 / Correct: “他听说用黄色的花泡茶很有用。” “你跟……” does not work here; use “用……”. Also, “泡茶” is more natural than “做茶.”\n4. [Grammar & Vocabulary, error] Incorrect phrase: “比方说，你的头发疼死” / Formula: General statement + 比方说 + example; Subject + 头疼得 + degree complement / Correct: “比方说，头疼得要死的时候，这杯茶可以当药。” “比方说” needs to introduce a complete example. “头发疼” means “hair hurts”; you mean “头疼” (have a headache).\n5. [Grammar & Vocabulary, error] Incorrect phrase: “这冰茶是药” / Formula: Demonstrative + classifier + noun + 可以当 + noun / Correct: “这杯茶可以当药。” “冰茶” means iced tea, while “杯茶” means “a cup of tea.”\n6. [Grammar & Vocabulary, error] Incorrect phrase: “他一喝茶就很不舒服” / Formula: Subject + 一 + verb phrase + 就 + result / Correct: “他一喝那杯茶，就觉得很不舒服。” Use “那杯茶” to make the reference specific, and “觉得不舒服” is more natural for describing someone’s feeling.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“凉山很大的山” lacks the predicate structure needed to say that Liangshan is a very large mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "“这” cannot directly serve as the location in this clause, and the revised sentence supplies both a clear subject and location."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The unexplained “你跟” is wrong here; “用黄色的花泡茶” correctly expresses using the flowers to make tea."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "“头发疼死” wrongly says that the hair hurts and uses an unsuitable degree expression, whereas the correction gives a complete natural example."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“这冰茶” does not follow the required demonstrative-plus-measure-word structure, and “这杯茶可以当药” is grammatical."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他一喝茶就很不舒服” is already a grammatical and adequately connected description of his reaction to the tea."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2304,
+  "completion_tokens": 2470,
+  "total_tokens": 4774,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 653,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

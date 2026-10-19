@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他需要当上医：医生\n- 一看别的人就想帮助他们：看到，看look vs.看到see; 病人，“别的” is for “a different type”, and “all else except the spoken one”\n- 什么病人吃都会觉得身体更好：吃了以后\n- 神农三个月走去：走了三个月\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This expression is redundant because 古代 already refers to a time period. [vocab list]\n2. [Grammar & Vocabulary, error] 医：医生，医 is not normally used alone for the occupation in this context; 医生 means “doctor.” [rule: word_choice]\n3. [Grammar & Vocabulary, error] 看：看到，看到 is needed when the meaning is successfully seeing someone, rather than simply directing one’s eyes toward them. [rule: resultative_complement]\n4. [Grammar & Vocabulary, error] 别的人：别人，别人 refers to other people in general; 别的 is used to distinguish something from a specific one already under discussion. [teacher rule: bieren]\n5. [Grammar & Vocabulary, error] 一个很漂亮的植物：一株很漂亮的植物，株 is an appropriate measure word for an individual plant; 个 is too generic here. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 神农三个月走去：他三个月走去，Use a pronoun because 神农 was named in the immediately preceding sentence and no other character competes as the referent. [rule: redundancy_delete]\n7. [Coherence: temporality, error] Coherence (Temporality): 三个月走去，找到有植物的地方：走了三个月，找到了有植物的地方，Both actions are completed: 了 follows 走 before its duration phrase, and 找到了 marks the completed result of finding the place. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代已经表示时间，古代的时候按老师的规则重复，改为在古代正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "医不能在这里单独表示职业，医生是正确的职业名称。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这里表示看见病人，需要结果补语，看到正确。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "别的人不符合老师对别人/别的的规定，别人是可用的改法。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "个可以作植物的通用量词，株更具体但不是必须改正的错误。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "按老师的指代规则，刚提到神农时应使用他，但改后仍有三个月走去的语法问题。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "走了三个月和找到了都正确标记了已完成的动作。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2188,
+  "completion_tokens": 1956,
+  "total_tokens": 4144,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 537,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1531,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

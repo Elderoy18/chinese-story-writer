@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “凉山很大的山” / Formula: Place/name + 是 + 一座/一座很…的 + 山 / Correct: “凉山是一座很大的山。”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “这也找植物” / Formula: Person + 在 + place + verb + object / Correct: “他也在这里找植物。” “这” refers to a place, so use “这里” (here), and the subject “他” needs to be stated.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “你跟黄色的花做茶很有用” / Formula: 用 + ingredient/material + 做/泡 + object / Correct: “他听说用黄色的花泡茶很有用。” “跟” means “with” in the sense of “and/with someone”; use “用” for the material used to make tea. “你” is also unclear here.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “比方说，你的头发疼死，这冰茶是药” / Formula: 比方说 + specific example; body part + 疼得 + degree / Correct: “比方说，头疼得厉害时，这种茶可以当药。” “头发” is hair; “头疼” means “to have a headache.” “比方说” should introduce a clear example of the tea being useful.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “他一喝茶就很不舒服” / Formula: Subject + 一 + verb phrase + 就 + result / Correct: “可是，他一喝这种茶就觉得很不舒服。” The original pattern is good, but “这种茶” makes the reference clearer, and “觉得” sounds more natural with “不舒服.”",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“凉山很大的山” lacks the copula and an appropriate mountain measure word; the proposed sentence is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“这” cannot directly serve as the subject performing 找植物 here; the proposed sentence is grammatical and fits the story context."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "Using 跟 and an unexplained 你 is wrong here, but the correction still uses the overly vague first mention “黄色的花” rather than “一种黄色的花.”"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "头发 cannot hurt in this meaning, and 这冰茶 needs a suitable demonstrative-noun form; the proposed example is correct."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Vocabulary"
+    ],
+    "reason": "“他一喝茶就很不舒服” is already a correct and natural result construction, so the added specificity and 觉得 are optional improvements rather than corrections."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2250,
+  "completion_tokens": 1538,
+  "total_tokens": 3788,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 599,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1173,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

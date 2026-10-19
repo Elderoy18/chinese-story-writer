@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这是不合适的地方让孩子玩：这不是一个适合孩子玩的地方，Use the structure “适合 + person + verb” to describe what a place is suitable for; “让孩子玩” cannot be attached after “地方” in this way. [rule: none]\n2. [Grammar & Vocabulary, error] 他们会搬家：搬家，After “决定,” use a verb phrase directly; do not repeat the subject with “他们会.” [teacher rule: jueding_vp]\n3. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，Use “担心” when the subject is afraid that something may happen; “恐怕” cannot take another subject after it in this structure. [teacher rule: kongpa]\n4. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，Use a location-based noun phrase to say that the education in a place is not good; “住在这儿” cannot directly modify “教育” here. [rule: none]\n5. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，Mental-state verbs such as “决定” normally use the zero particle, not “了,” because the sentence describes a decision rather than a completed physical action. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“不合适的地方让孩子玩” lacks the needed structure linking the place to children playing there."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "After 决定, the intended complement is directly 搬家, without repeating 他们 or adding 会."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "恐怕 is not appropriate here with 她 followed by a separate subject clause; 担心 correctly expresses her worry."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Although 这儿的教育不太好 is clearer, 住在这儿教育不太好 can be understood as a location-framed statement and is not necessarily an error."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "决定 is a mental-state verb, so the teacher’s stated standard requires no 了 here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2227,
+  "completion_tokens": 1169,
+  "total_tokens": 3396,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 576,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 835,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

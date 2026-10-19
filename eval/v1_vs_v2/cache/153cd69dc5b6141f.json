@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene:\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “孟子是古代的人” / Formula: 在 + historical time period，+ person + 是/生活在 + …的人 / Correct: “孟子是古代人” or, more naturally, “孟子生活在古代。”\nRun 2: Incorrect phrase: “孟子是古代的人” / Formula: 在 + historical time period，+ person + lived/was active / Correct: “孟子是古代人” or, more naturally in this story, “在古代，有一个叫孟子的男孩子。”\nRun 3: Incorrect phrase: “孟子是古代的人” / Formula: 在 + historical time period, + person + lived/existed / Correct: “孟子是古代人” or, more naturally, “孟子生活在古代。”",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs target the same phrase, but “孟子是古代的人” is already acceptable and was not a teacher-identified error."
+ },
+ "usage": {
+  "prompt_tokens": 546,
+  "completion_tokens": 201,
+  "total_tokens": 747,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 144,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

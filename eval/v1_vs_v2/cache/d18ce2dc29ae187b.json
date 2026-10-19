@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThis scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “一百岁时候” / Formula: 在 + 年龄 + 的时候 / Correct: “在一百岁的时候”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “毒的花” / Formula: 有毒的 + 名词 / Correct: “有毒的花” More naturally in this story: “有毒的植物”\n3. [Grammar & Vocabulary, error] Incorrect phrase: “一吃就开始死” / Formula: 主语 + 一 + 动词 + 就 + 结果 / Correct: “他一吃就中毒了” or “他一吃，身体就开始不舒服了” “开始死” is not natural Chinese; use “中毒” or describe the symptoms instead.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “但是生病时候告诉人” / Formula: 在 + 情况/时间 + 的时候，主语 + 告诉 + 人们 + 信息 / Correct: “但是，他生病的时候，仍然告诉人们什么植物是药，什么植物是毒。” Adding “仍然” makes the contrast with “但是” clear.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "年龄后面接“时候”时需要“的”，“在一百岁的时候”正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“毒”不能直接作“的”字定语，应该说“有毒的花”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“死”是瞬间结果，不能说“开始死”，两个给出的改法都正确。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary",
+     "Coherence: connectors"
+    ],
+    "reason": "改文正确处理了“的时候”、转折和“人们”，但仍保留了错误的“什么植物是毒”，应为“什么植物是有毒的”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2190,
+  "completion_tokens": 1298,
+  "total_tokens": 3488,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 539,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

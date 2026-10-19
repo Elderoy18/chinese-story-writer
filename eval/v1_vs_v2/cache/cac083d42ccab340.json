@@ -1,0 +1,106 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A sentence identifying what a noun is needs the copula 是, and mountains use the measure word 座. [rule: none]\n2. [Grammar & Vocabulary, error] 这也找植物：他也在这里找植物，A location before an action needs 在 + place; 这里 clearly refers to the mountain, and 他 identifies the person doing the searching. [rule: location_zai_place]\n3. [Grammar & Vocabulary, error] 你跟黄色的花做茶：用黄色的花做茶，用 introduces the material used to make something; 你跟 means “you and/with” and cannot introduce the material for making tea. [rule: word_choice]\n4. [Grammar & Vocabulary, error] 头发疼死：头疼得要死，头发 cannot feel pain; 头疼 describes a headache, and a degree complement needs 得 before 要死. [rule: none]\n5. [Grammar & Vocabulary, error] 这冰茶：这杯茶，When a demonstrative points to one serving of a countable drink, use 这 + measure word + noun. [teacher rule: zhe_na_mw]\n6. [Coherence: reference, error] Coherence (Reference): 你：他，The narration is about 神农, but 你 suddenly addresses an unintroduced reader. Use 他 to refer back to the already established character. [rule: ambiguous_reference]\n7. [Coherence: temporality, error] Coherence (Temporality): 找到：找到了，Finding the flower is a completed discovery in the past, so the verb needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original lacks 是 and a suitable measure word, while 凉山是一座很大的山 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 cannot directly serve as the location of 找植物 here; 他也在这里找植物 is grammatical."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "跟 cannot introduce the material used to make tea, whereas 用黄色的花做茶 can."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "头发 is the wrong body part for a headache, and 头疼得要死 is a correct degree-complement expression."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original needs a demonstrative construction such as 这种冰茶, but 这杯茶 changes the intended kind of tea and removes 冰茶."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你 wrongly addresses an unintroduced listener; 他 can refer back to 神农, though deletion would be more natural in the full sentence."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The discovery is a completed past event, so 找到了 correctly supplies perfective 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2231,
+  "completion_tokens": 2260,
+  "total_tokens": 4491,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 580,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1800,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

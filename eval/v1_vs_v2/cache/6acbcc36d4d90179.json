@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远：到很远的地方旅行，Use a destination phrase to show where the travel goes; the verb cannot use this distance phrase directly in this position. [rule: none]\n2. [Grammar & Vocabulary, error] 写他的主意：写下了自己的主意，Writing an idea down needs the resultative complement in order to show that it was recorded; use the reflexive possessor because the ideas belong to the subject. [rule: resultative_complement]\n3. [Grammar & Vocabulary, error] 遇到了一个黄色的花：看到了一朵黄色的花，Use the classifier for flowers, and use the resultative form to show that he saw the flower. [rule: resultative_complement]\n4. [Coherence: reference, error] Coherence (Reference): 然后，神农写他的主意：然后，他写下了自己的主意，Use a pronoun for a close re-occurrence when the same character was mentioned in the previous sentence and no other character competes as the referent. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 神农遇到了一个黄色的花：他看到了一朵黄色的花，Use a pronoun for a close re-occurrence of the same character. [rule: character_introduction_first_mention]\n6. [Coherence: temporality, error] Coherence (Temporality): 找到很多植物：找到了很多植物，The final action in this series is completed, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“旅行很远” is an acceptable way to say that someone travelled a great distance."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The needed correction is “写下自己的发现”; the system leaves the inappropriate object “主意” in place."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“一个……花” uses the wrong measure word, and “看到了一朵黄色的花” is correct Chinese."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "A close re-reference to 神农 should use 他, but the displayed correction still retains the teacher-marked problem with “主意”."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 is a close re-occurrence with no competing referent, so 他 is required under the teacher’s reference rule."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "找到 is the final completed action in this action sequence and should take 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2179,
+  "completion_tokens": 1169,
+  "total_tokens": 3348,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 528,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 784,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

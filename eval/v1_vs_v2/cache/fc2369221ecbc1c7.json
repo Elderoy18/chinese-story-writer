@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene:\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's item in each run:\nRun 1: (nothing flagged here)\nRun 2: 有一个男孩名字叫孟子：有一个男孩叫孟子，when 名字叫 introduces a person’s name, it needs a pause after the noun or a possessive structure; here the simpler pattern is noun + 叫 + name.\nRun 3: 有一个男孩名字叫孟子：有一个叫孟子的男孩，an attributive phrase describing the boy must come before the noun and use 的.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 2 corrects the redundant wording around 名字叫, while Run 3 rewrites the noun phrase as an attributive construction, and Run 1 flags nothing."
+ },
+ "usage": {
+  "prompt_tokens": 460,
+  "completion_tokens": 58,
+  "total_tokens": 518,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

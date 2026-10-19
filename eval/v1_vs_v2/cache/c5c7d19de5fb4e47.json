@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene:\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 孟子和孟子的妈妈住在这里：孟子和他妈妈住在这里，After naming Mengzi, use a pronoun for the close re-occurrence of the possessor instead of repeating his name. [rule: none]\nRun 2: Coherence (Reference): 孟子和孟子的妈妈住在这里：孟子和他的妈妈住在这里，use a pronoun for the close re-occurrence of the same character. [rule: ambiguous_reference]\nRun 3: Coherence (Temporality): 住在这里才一个星期：在这里才住了一个星期，住 describes the completed duration before they could no longer tolerate the place, so it needs 了; 觉得 is a mental-state verb and correctly takes no aspect particle. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 2 address repeated possession with a pronoun, while Run 3 changes the aspect and word order for the duration expression."
+ },
+ "usage": {
+  "prompt_tokens": 535,
+  "completion_tokens": 85,
+  "total_tokens": 620,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 27,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

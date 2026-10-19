@@ -1,0 +1,95 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不合适的地方让孩子玩：不适合孩子玩的地方，Use the pattern “适合 + person + activity” to describe a place that suits a child’s activity; the original phrase does not connect the place naturally to the activity. [rule: none]\n2. [Grammar & Vocabulary, error] 他们会搬家找更好的地方：搬家，找更好的地方，After “决定,” use the action phrase directly; do not repeat the people who will carry out the decision as a future clause. [teacher rule: jueding_vp]\n3. [Grammar & Vocabulary, error] 恐怕：担心，“恐怕” means “I am afraid that” and cannot follow “她” to describe her personal worry; “担心” expresses that she is worried. [teacher rule: kongpa]\n4. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，Use a location possessive phrase to show that the education in this place is not good; the original wording does not clearly connect the education to the place. [rule: none]\n5. [Grammar & Vocabulary, error] 会一直搬家才能：得一直搬家，才能，“才能” introduces a necessary condition, so “得” is needed to express that moving is necessary; add a comma before the result. [rule: none]\n6. [Coherence: temporality, error] Coherence (Temporality): 决定了：决定，“决定” is a mental-state verb, so it takes the zero particle rather than “了”; the focus is the decision itself, not its completion. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“不合适的地方让孩子玩” is not the natural structure for saying a place is suitable for children to play."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "After 决定, the actor and future modal should not be repeated before the action phrase."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "恐怕 cannot be used here after 她 to express her personal worry; 担心 can."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original is somewhat less explicit but can mean that education is not good when living here, so it is not clearly an error."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The displayed text is cut off after 才能, and 得一直搬家，才能 is incomplete as shown and does not match the intended one-time move."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "决定 is a mental-state verb and should not take 了 here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2278,
+  "completion_tokens": 1621,
+  "total_tokens": 3899,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 627,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1225,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

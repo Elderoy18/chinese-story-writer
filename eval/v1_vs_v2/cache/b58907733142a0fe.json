@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene:\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's item in each run:\nRun 1: 跟老师孟子学：孟子跟老师学习，The learner’s name should come before `跟老师` so that it is clear that he, rather than a teacher named Mengzi, is doing the learning. [rule: none]\nRun 2: 跟老师孟子学最重要的文学：孟子跟老师学最重要的文学，The subject should come before the phrase 跟老师 so that it is clear who is studying. [rule: none]\nRun 3: Coherence (Reference): 跟老师孟子学：他跟老师学，After the immediately preceding mention of the character, use a pronoun; putting it before the phrase with 跟老师 also gives the sentence a clear subject. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs address the unclear subject caused by placing 孟子 after 跟老师, and each makes Mengzi/the prior referent the subject before 跟老师."
+ },
+ "usage": {
+  "prompt_tokens": 524,
+  "completion_tokens": 493,
+  "total_tokens": 1017,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 431,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

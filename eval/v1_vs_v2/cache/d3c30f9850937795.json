@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。\n\nThe teacher's corrections on this scene:\n- 麻烦我们可以吃什么植物：麻烦告诉我们……\n- 以后，神农告诉别人一些植物能吃，一些植物不能吃：后来，Time+以后；告诉人们，“别(的)” is for “a different type”, and “all else except the spoken one”；哪些，哪些\n\nThe system's item in each run:\nRun 1: Coherence (Temporality): 告诉：告诉了，This is a completed narrative action that happens later, so it needs 了 to mark completion. [rule: aspect_le_completed]\nRun 2: (nothing flagged here)\nRun 3: Coherence (Temporality): 告诉：告诉了，this is a completed event in the past narrative, so the verb needs 了 to mark completion. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 flag a missing 了, while Run 2 flags nothing, and the teacher instead corrects the time word and object wording without requiring 了."
+ },
+ "usage": {
+  "prompt_tokens": 453,
+  "completion_tokens": 154,
+  "total_tokens": 607,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 89,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

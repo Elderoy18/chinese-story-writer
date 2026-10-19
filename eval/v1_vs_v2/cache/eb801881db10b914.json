@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这是古代的故事：这是一个古代的故事\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 从他的家到墓地很近：他的家离墓地很近\n- 所以他每天老是从早到晚去墓地跟朋友们玩玩儿：delete老是；玩儿，V.V. is used to make requests or plans\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 玩玩儿：玩，The reduplicated verb suggests a brief or casual action, which conflicts with an activity lasting from morning to evening. [rule: none]\n2. [Coherence: reference, error] Coherence (Reference): 孟子小的时候：有一个小男孩叫孟子。他小的时候，This is Mengzi’s first appearance, so introduce him with a full noun phrase before using a pronoun. [rule: character_introduction_first_mention]\n3. [Coherence: reference, error] Coherence (Reference): 他每天老是从早到晚去墓地：孟子每天老是从早到晚去墓地，The pronoun could refer to either Mengzi or his father in the previous sentence; repeat the name when another character competes as a possible referent. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“从早到晚”表示长时间活动，动词重叠“玩玩儿”不合适。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子首次出现时需要先作较完整的介绍，但改写后的“他小的时候，”仍是未完成的分句。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "父亲已经去世，“他”在这里可清楚地指孟子；改后还保留了教师要求删除的“老是”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2011,
+  "completion_tokens": 456,
+  "total_tokens": 2467,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 360,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 239,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

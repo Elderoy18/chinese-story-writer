@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，A demonstrative such as “这” needs a measure word before a noun; “朵” is the suitable measure word for a flower. [teacher rule: zhe_na_mw]\n2. [Grammar & Vocabulary, error] 特别是毒：有毒，“特别是” introduces a typical example and cannot mean “very” before a description of toxicity. Use “有毒” to state that the plant is poisonous. [rule: example_marker_tebie_bifang]\n3. [Grammar & Vocabulary, error] 正好在这儿，灵芝药的夹竹桃他吃完了：正好在这儿有灵芝这种药。夹竹桃他吃完了，“灵芝药的夹竹桃” does not form a meaningful noun phrase: “的” cannot connect these two different plants in this way. Separate the information about the medicine from the information about the oleander. [rule: none]\n4. [Grammar & Vocabulary, error] 一个：一篇，“课文” is counted with “篇,” not “个.” [rule: none]\n5. [Grammar & Vocabulary, error] 课文的植物：关于植物的课文，The intended relationship is that the text is about plants, so use “关于” rather than making the plants appear to belong to the text. [rule: none]\n6. [Coherence: temporality, error] Coherence (Temporality): 写：写了，Writing the text is presented as a completed action in this past event sequence, so the verb needs “了.” [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "Under the teacher's 这/那 rule, 这 needs a measure word before 花, and 朵 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "特别是毒 is not a valid way to say “especially/very poisonous”; 有毒 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original noun phrase is wrong, but the proposed rewrite wrongly says that he finished eating the oleander rather than that he ate lingzhi which can be an antidote."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "一个 is clipped from its noun phrase, but in context 课文 requires the measure word 篇."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "课文的植物 incorrectly makes the plants possess or belong to the text; 关于植物的课文 is correct."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The writing is a completed final action in this past event sequence, so 写了 is an appropriate aspect correction."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2238,
+  "completion_tokens": 1454,
+  "total_tokens": 3692,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 587,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1057,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

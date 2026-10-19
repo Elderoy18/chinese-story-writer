@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene:\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 孟子长大：他长大，The name was used in the immediately preceding context and no other male character competes as the referent, so a pronoun is more natural for close re-occurrence. [rule: character_introduction_first_mention]\nRun 2: 孟子长大：孟子长大以后，Use a time expression with 以后 to show that the next action happens after he grows up. [rule: time_expression]\nRun 3: Coherence (Conjunction): 孟子长大，他开始能解决问题：孟子长大以后，他开始能解决问题，Use 以后 to mark the sequence: being grown up happens before his new ability to solve problems. [rule: time_expression]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 changes the repeated name to a pronoun, while Runs 2 and 3 add 以后 to express temporal sequence."
+ },
+ "usage": {
+  "prompt_tokens": 538,
+  "completion_tokens": 118,
+  "total_tokens": 656,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 62,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

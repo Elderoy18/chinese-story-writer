@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n夹竹桃是毒的，我想知道灵芝会帮他。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你帮得真好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“\n\nThe teacher's corrections on this scene:\n- 夹竹桃是毒的：有毒的\n- 我想知道灵芝会帮他：灵芝有没有用/能不能帮他\n- 哥哥给神农灵芝：给了，了completed\n- 你帮得真好：你做得很好\n\nThe system's item in each run:\nRun 1: (nothing flagged here)\nRun 2: Coherence (Reference): 我想知道灵芝会帮他：我想知道灵芝会帮神农，Both the brother and 神农 are present in the nearby context, so 他 does not clearly identify the person whom 灵芝 may help; repeat the name for clarity. [rule: ambiguous_reference]\nRun 3: Coherence (Reference): 我想知道灵芝会帮他。”：哥哥想知道灵芝会不会帮神农。The narration has been in the third person, and 他 could refer to either 哥哥 or 神农; repeat the name of the person needing help and name the thinker clearly. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 1 flags no error, while Runs 2 and 3 both address the ambiguous reference to 他 but propose different scope of revision."
+ },
+ "usage": {
+  "prompt_tokens": 518,
+  "completion_tokens": 106,
+  "total_tokens": 624,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 49,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

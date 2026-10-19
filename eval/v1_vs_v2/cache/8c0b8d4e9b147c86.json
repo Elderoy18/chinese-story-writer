@@ -1,0 +1,72 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，This expression redundantly combines two time expressions; use the shorter time phrase here. [vocab list]\n2. [Grammar & Vocabulary, error] 城市有才两个学校：城市里才有两所学校，Place the adverb 才 before 有, and use 所 as the measure word for schools. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，On first mention, introduce the character with both his name and role instead of giving the name only in the following sentence. [rule: character_introduction_first_mention]\n4. [Coherence: reference, error] Coherence (Reference): 他很喜欢他的城市：他很喜欢自己的城市，When the subject and the possessor are the same person, use 自己的 to make that relationship clear. [teacher rule: ziji_possessor]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "古代和的时候叠用冗余，按教师标准应改为“在古代”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原句的“有才”和学校量词都有问题，但“才有”不符合教师规定的“只有”，应使用“只有两所学校”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "按教师的首次提及规则，应在第一次介绍男孩子时说出孟子的名字。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他的城市”在这里指代清楚且可以接受，改成“自己的城市”只是更强调同一主语，并非必须改正。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1988,
+  "completion_tokens": 737,
+  "total_tokens": 2725,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 337,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 459,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

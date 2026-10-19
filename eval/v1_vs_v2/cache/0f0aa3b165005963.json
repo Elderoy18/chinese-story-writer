@@ -1,0 +1,60 @@
+{
+ "input": "Earlier scenes:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThis scene:\n城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得孟母只好一直陪孟子：add something like “不能出去工作”, “害得“ + harmful result, 一直陪孟子itself is not harmful\n- 住在商店的旁边不是适合孟子，而是让他觉得很伤心：不是适合孟子的环境\n\nThe system's feedback items:\n1. [Coherence: connectors, error] Coherence (Conjunction): “城市也有点儿危险。害得孟母只好一直陪孟子。”：城市也有点儿危险，害得孟母只好一直陪孟子。，“害得” connects a cause to its harmful result, so it should continue directly from the cause rather than begin a separate sentence.\n2. [Coherence: connectors, error] Coherence (Conjunction): “孟子也没有朋友”：孟子没有朋友，“也” is an additive connector and needs a stated parallel fact; no earlier sentence says that another person has no friends.\n3. [Coherence: connectors, error] Coherence (Conjunction): “住在商店的旁边不是适合孟子，而是让他觉得很伤心。”：住在商店的旁边不适合孟子，因为这让他觉得很伤心。，“不是……而是……” requires two parallel alternatives, but being suitable and making someone sad are not alternatives; “因为” clearly marks the cause relation.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“害得” needs a harmful result, and “一直陪孟子” alone is not a harmful result even after the punctuation change."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“也” has no stated parallel fact here, so removing it correctly fixes the sentence."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: connectors"
+    ],
+    "reason": "The original “不是适合孟子” is not a well-formed predicate here, and the revised causal sentence is grammatical and clear."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2102,
+  "completion_tokens": 980,
+  "total_tokens": 3082,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 451,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 767,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

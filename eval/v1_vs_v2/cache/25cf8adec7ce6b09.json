@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene:\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 你：人们，This addressee has not been introduced, so the pronoun has no clear referent; use a full noun for the people receiving the advice. [rule: ambiguous_reference]\nRun 2: Coherence (Reference): 建议你：建议大家，No listener has been introduced, so the second-person pronoun unexpectedly addresses the reader; name the intended general audience instead. [rule: ambiguous_reference]\nRun 3: Coherence (Reference): 你：人们，“你” has not been introduced as a character or audience member, so its referent is unclear; use a full noun phrase for this new, general group. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the unintroduced addressee “你” and replace it with a general audience noun such as 人们 or 大家."
+ },
+ "usage": {
+  "prompt_tokens": 526,
+  "completion_tokens": 51,
+  "total_tokens": 577,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

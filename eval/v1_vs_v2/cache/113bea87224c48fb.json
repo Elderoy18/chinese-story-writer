@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThis scene:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这种一定是做药的花：这一定是一种做药的花\n- 原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result\n- 神农快生病：很快就生病了\n- 快给他一种红的灵芝：很快地给了，快V: to give order, 了completed\n- 他没有病：delete他，redundant; 病好了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 快给他一种红的灵芝：赶快给了他一种红的灵芝，In a completed narrative event, use 赶快 to show that the action was done quickly and add 了 to mark the completed giving action.\n2. [Grammar & Vocabulary, error] 以前一个人告诉他：以前有一个人告诉他，Use 有 to introduce an indefinite person in a past event; without 有, this phrase does not clearly form a complete clause.\n3. [Coherence: reference, error] Coherence (Reference): 神农吃了以后，他没有病：神农吃了以后，没有病，Use zero form for the same character in the same sentence; after naming 神农 in the first clause, repeating 他 is unnecessary.\n4. [Coherence: temporality, error] Coherence (Temporality): 神农快生病：神农就生病了，快 indicates that something will happen soon, but this event has already happened; use 了 to mark the completed change of state.\n5. [Coherence: connectors, error] Coherence (Conjunction): 吃了以后，神农快生病：神农一吃，就生病了，Use 一……就…… to connect an immediate cause and effect: eating the flower immediately led to illness.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "快给 cannot describe a completed quick action here; 赶快给了他一种红的灵芝 is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "An indefinite person newly introduced in this past-event clause needs 有."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Deleting 他 correctly removes the unnecessary repeated reference, but 没有病 does not correct the needed result-state wording 病好了."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "快生病 is not appropriate for this completed event, while 就生病了 is grammatical and marks the change as completed."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "一吃，就生病了 is a grammatical way to express that he became ill immediately after eating."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2227,
+  "completion_tokens": 1205,
+  "total_tokens": 3432,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 576,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 883,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代：在古代，Use the standard time expression for a historical setting. [rule: time_expression]\n2. [Grammar & Vocabulary, error] 注意：注意到，Bare 注意 means “pay attention to,” while 注意到 means “notice or realize” a fact. [rule: word_choice]\n3. [Grammar & Vocabulary, error] 跟朋友们祭拜玩：跟朋友们学着别人祭拜，玩 cannot directly follow 祭拜 to mean treating a ritual as a game; 学着别人祭拜 clearly expresses playful imitation. [rule: word_choice]\n4. [Grammar & Vocabulary, error] 决定他们会搬家：决定搬家，决定 is followed directly by the action the subject decides to do; do not repeat a future clause after it. [teacher rule: jueding_vp]\n5. [Coherence: connectors, error] Coherence (Conjunction): 可是孟母注意到：孟母注意到，可是 introduces contrast, but living beside a cemetery and noticing its effect are not contrasting ideas; simply state the realization. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The teacher requires 在古代 rather than bare 古代 in this sentence."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "注意到 correctly expresses that Meng Mu noticed the result or fact."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "祭拜玩 is not the required V着玩儿 structure, and 学着别人祭拜 is also a grammatical correction of the intended playful imitation."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "决定 should directly take the action 搬家 here, without repeating the subjects in a future clause."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "可是 can acceptably introduce Meng Mu's unfavorable realization here, and the shown corrected fragment ends after 注意到 without its required content."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2104,
+  "completion_tokens": 1112,
+  "total_tokens": 3216,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 453,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 799,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

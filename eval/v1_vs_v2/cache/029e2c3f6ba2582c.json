@@ -1,0 +1,105 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远：到很远的地方旅行，A destination should be expressed with 到 + place; 很远 describes the place rather than directly modifying 旅行 in this sentence. [rule: none]\n2. [Grammar & Vocabulary, error] 他的主意：自己的想法，Because the ideas belong to the subject 神农, use 自己的 to make the possessor clear; 想法 is the natural noun for ideas that someone puts into writing. [teacher rule: ziji_possessor]\n3. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，朵 is the matching measure word for flowers, not 个. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 然后，神农：然后，他，Use a pronoun when the same character was named in the immediately preceding sentence and no other person competes as the referent. [rule: redundancy_delete]\n5. [Coherence: temporality, error] Coherence (Temporality): 找到：找到了，This is a completed discovery in the past narrative, so the final action in the series takes 了. [rule: aspect_le_completed]\n6. [Coherence: temporality, error] Coherence (Temporality): 写：写下了，This writing happens as a completed next event after 然后, so use 写下了; 写下 also specifically means recording something in writing. [rule: aspect_le_completed]\n7. [Coherence: reference, error] Coherence (Reference): 神农：他，Use a pronoun for the same character because the previous sentence already clearly refers to him. [rule: redundancy_delete]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "旅行很远不能自然地这样作谓语修饰旅行，地点应表达为到很远的地方。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "这里的想法属于主语神农，用自己的想法可清楚表达同一指称关系。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "花的量词应为朵，不能用个。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农刚在前文被明确指代，紧接着再次作主语应使用他。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "找到是这一串过去动作中的最后一个完成动作，应使用找到了。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "这里应使用写下表示记录，并以了标记这个接续发生的完成动作。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前一句的他明确指神农，下一句继续指同一人物时应使用他。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2199,
+  "completion_tokens": 1814,
+  "total_tokens": 4013,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 548,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1377,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

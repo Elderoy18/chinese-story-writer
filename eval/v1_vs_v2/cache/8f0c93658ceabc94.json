@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的人很不知道什么植物能吃，也什么植物不能吃：delete很，delete也\n- 吃不安全的植物对你的身体有坏处，很麻烦的情况：delete你的，redundant; 是很麻烦的情况\n- 但是一个人，神农，要解决这个问题：better to briefly introduce “神农” when this character first appears\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 很不知道：不知道，The degree adverb 很 cannot modify the negated mental-state verb phrase 不知道.\n2. [Grammar & Vocabulary, error] 也什么植物不能吃：什么植物不能吃，Also must modify a verb phrase; it cannot be placed directly before the nominal question phrase 什么植物不能吃.\n3. [Grammar & Vocabulary, error] 很麻烦的情况：这是一种很麻烦的情况，The original is only a noun phrase and cannot stand as a complete clause here; adding 这是一种 creates a complete statement.\n4. [Coherence: reference, error] Coherence (Reference): 你的身体：他们的身体，Use a pronoun that refers back to the already mentioned 很多人; shifting to 你 changes the narrative viewpoint without introducing the reader as a character.\n5. [Coherence: reference, error] Coherence (Reference): 一个⼈，神农：一个叫神农的人，On first mention, introduce a character with a full noun phrase containing the name, rather than placing the name after an unclear apposition.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很 cannot modify 不知道 here, and 不知道 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "也 is wrongly placed before the embedded question phrase, and deleting it gives the intended parallel question."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "很麻烦的情况 needs a copular clause here; the added 这是一种 fixes that, but 你的身体 remains incorrect in the displayed sentence."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他们 correctly refers back to 很多人 and avoids the unexplained shift to 你."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "一个叫神农的人 properly introduces the character by name on first mention."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2058,
+  "completion_tokens": 1003,
+  "total_tokens": 3061,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 407,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 700,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

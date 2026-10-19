@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThis scene:\n啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一回家就告诉别人：家人\n- 他找到药以后他写下怎么做药在书上：delete the second他，redundant; 在书上写下……\n- 所以人们都知道，那红灵芝对身体好处：这样，有好处\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 别人：人们，别人 distinguishes other people from a person or group already being discussed; here the sentence means people in general.\n2. [Grammar & Vocabulary, error] 写下怎么做药在书上：在书上写下做药的方法，place phrases normally come before the verb, and adding 的方法 turns “how to make medicine” into a noun phrase that can be written down.\n3. [Grammar & Vocabulary, error] 对身体好处：对身体有好处，this expression requires 有 between 对身体 and 好处.\n4. [Grammar & Vocabulary, error] 那红灵芝：那株红灵芝，this/that + noun needs a measure word when referring to one specific plant.\n5. [Coherence: reference, error] Coherence (Reference): 他找到药以后他写下：他找到药以后，写下，when the same subject continues within one sentence, use zero form rather than repeating the pronoun.\n6. [Coherence: temporality, error] Coherence (Temporality): 他把灵芝放在包里：他把灵芝放进了包里，use 了 for this completed action in the past narrative.\n7. [Coherence: temporality, error] Coherence (Temporality): 告诉人们：告诉了人们，use 了 because telling the people is a completed narrative action.\n8. [Coherence: temporality, error] Coherence (Temporality): 写下：写下了，use 了 because recording the method is completed before the result that people know about it.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "别人 is wrong here because he tells his family, but 人们 changes the intended meaning rather than correcting it."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The location phrase should precede 写下, and 做药的方法 is a valid noun phrase to write down."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "好处 requires 有 in the expression 对身体有好处."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Under the teacher's 这/那 + measure word + noun rule, 那红灵芝 needs a measure word such as 株."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The second 他 is redundant with the same continuing subject, but the shown correction is still cut off and leaves the original word-order problem unresolved."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "This completed past action needs perfective marking, and 放进了包里 is correct."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The original has 告诉别人, not 告诉人们, and 一回家就告诉家人 does not require 了."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Writing the method down is a completed narrative action, so 写下了 correctly supplies the needed perfective marker."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2297,
+  "completion_tokens": 1656,
+  "total_tokens": 3953,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 646,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1144,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

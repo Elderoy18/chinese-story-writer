@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他们在很漂亮的河找夹竹桃。神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要看你想要安全还是接近知道了。“神农一吃夹竹桃就生病了。哥哥说：“太麻烦了。\n\nThe teacher's corrections on this scene:\n- 他们在很漂亮的河找夹竹桃：河边，看到\n- 这就要看你想要安全还是接近知道了：还是想要知道夹竹桃有没有毒\n\nThe system's item in each run:\nRun 1: 这就要看你想要安全还是接近知道了。：这就要看这种植物有没有毒了。The structure 这就要看……了 must be followed by the uncertain condition that determines the answer, in a question form. 接近知道 is not a natural expression here, while 有没有毒 directly answers whether the plant should be eaten. [rule: zhe_jiu_yao_kan]\nRun 2: 接近知道：想知道，接近 expresses physical or abstract closeness and cannot replace the verb phrase meaning “want to know.” The two alternatives need parallel verb phrases: 想要安全还是想知道. [rule: word_choice]\nRun 3: “这就要看你想要安全还是接近知道了。“：“这就要看这种植物有没有毒了。”，接近 cannot modify the mental verb 知道 in this way. Also, the part after 这就要看……了 must be a question form; 有没有毒 gives the needed A-not-A question and directly answers whether the plant should be eaten. [rule: zhe_jiu_yao_kan]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 correct the required “有没有毒” condition after 看, while Run 2 only changes 接近知道 to 想知道 and leaves the key missing information unresolved."
+ },
+ "usage": {
+  "prompt_tokens": 588,
+  "completion_tokens": 380,
+  "total_tokens": 968,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 313,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

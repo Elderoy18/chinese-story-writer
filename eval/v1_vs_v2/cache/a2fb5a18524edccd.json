@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 找了到：找到了，The perfective marker must follow the resultative complement; use this form when the search has successfully ended in finding work. [teacher rule: le_placement]\n2. [Grammar & Vocabulary, error] 学习馆学：在学校学习，`学习馆` is not an appropriate place noun here, and `学习` cannot take it as its object in this construction. Use `在` + place + `学习`. [rule: verb_object_collocation]\n3. [Grammar & Vocabulary, error] 对他很多好处：对他有很多好处，`好处` is a noun, so this predicate needs `有` to state that something brings benefits to him. [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子：他，The previous scene mentioned this character in its final sentence, and no male character competes for the reference, so use a pronoun for this close re-occurrence. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 孟子：他，After the first sentence has named the character again, use a pronoun in the next sentence rather than repeating the name. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 他的旅行经验：旅行经验，Within the same noun phrase, the possessor has already been stated in `他的学习`, so use zero form for the second possession. [rule: none]\n7. [Coherence: temporality, error] Coherence (Temporality): 成为：成为了，This is a completed life event in the past narrative, so use `了` to mark the completed change of state. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "找的结果补语到前面不能放了，应该说找到了。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "学习馆不适合作为这里的地点说法，学习地点前也需要在。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "好处是名词，这里需要用有构成“对他有很多好处”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前文最后一句说的是孟母，转换回孟子时用孟子来重新指明人物是合适的。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "上一句已经重新提到孟子，下一句应使用他来指代这个近距离重复人物。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "在“他的学习和他的旅行经验”中，第二个并列名词短语应省略重复的所有者。"
+   },
+   {
+    "n": 7,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为是叙事中已经完成的身份变化，应说成为了，但原句中的哲人等其他问题仍未改正。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2355,
+  "completion_tokens": 1696,
+  "total_tokens": 4051,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 704,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1242,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

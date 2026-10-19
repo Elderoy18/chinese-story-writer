@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，the original is redundant because both parts express a time period. [vocab list]\n2. [Grammar & Vocabulary, error] 害得孟子的学习：还害得孟子不能好好学习，害得 must be followed by the affected person and a harmful result clause, not only a noun phrase. [teacher rule: haide_structure]\n3. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈两个人：孟子和他的妈妈两个人，use a pronoun for the close re-occurrence of the same character rather than repeating the name as a possessor. [rule: ambiguous_reference]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈住在这里：孟子和他的妈妈住在这里，use a pronoun for the close re-occurrence of the same character. [rule: ambiguous_reference]\n5. [Coherence: temporality, error] Coherence (Temporality): 住在这里才一个星期：在这里才住了一个星期，use 了 after 住 to mark the completed duration before the following reaction. [rule: aspect_le_completed]\n6. [Coherence: connectors, error] Coherence (Conjunction): 因为人们在祭拜，他们一直在哭：因为人们在祭拜，所以他们一直在哭，because this sentence presents a cause and its result, add 所以 to complete the cause-and-effect connector. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "古代和的时候都表示时间，按教师标准这里重复，应改为在古代。"
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得后面需要有受影响的人和不好的结果，不能只接孟子的学习。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚在前句出现，孟子的妈妈应按教师的指称规则改为他的妈妈。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "前面已经隔了几句信息，重新说孟子是可接受的，并非必须改成代词。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "住了一个星期表示在觉得受不了之前已累计完成的一段居住时间，需要了。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "按教师标准，因果关系应使用因为……所以……的完整连接结构。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2134,
+  "completion_tokens": 1639,
+  "total_tokens": 3773,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 483,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1254,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

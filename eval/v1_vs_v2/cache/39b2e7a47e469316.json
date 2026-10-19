@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene:\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “他想他的朋友” / Formula: 想念 + person / Correct: “他想念他的朋友。” 想 can mean “to think” or “to miss,” but 想念 is more specific for missing people.\nRun 2: Incorrect phrase: “他想他的朋友” / Formula: 想念 + person / Correct: “他想念他的朋友。” “想” can mean “to think” or “to want”; use “想念” specifically for missing someone.\nRun 3: Incorrect phrase: “他想他的朋友” / Formula: 想念 + person / Correct: “他想念他的朋友。” For missing people, use **想念**. “想” alone more often means “to think” or “to want to.”",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the same wording issue and correctly replace 想 with 想念 for missing his friends."
+ },
+ "usage": {
+  "prompt_tokens": 531,
+  "completion_tokens": 44,
+  "total_tokens": 575,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

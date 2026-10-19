@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nThe teacher's corrections on this scene:\n- 害得孟母只好一直陪孟子：add something like “不能出去工作”, “害得“ + harmful result, 一直陪孟子itself is not harmful\n- 住在商店的旁边不是适合孟子，而是让他觉得很伤心：不是适合孟子的环境\n\nThe system's item in each run:\nRun 1: Coherence (Conjunction): 不是适合孟子，而是让他觉得很伤心：不适合孟子，因为这让他觉得很伤心，the two clauses express a reason for the place being unsuitable, not a correction of one idea with another; use 因为 for the cause relation. [teacher rule: bushi_ershi]\nRun 2: 不是适合孟子：不适合孟子，An adjectival predicate is negated directly with 不; 不是 cannot be placed before 适合 in this structure. [rule: none]\nRun 3: Coherence (Reference): 适合孟子：适合他，Use a pronoun because the previous sentence has already established that the discussion is about Mengzi. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "The runs target different issues—conjunction choice, negation of 适合, and reference—and their fixes do not consistently address the teacher-corrected phrasing."
+ },
+ "usage": {
+  "prompt_tokens": 538,
+  "completion_tokens": 164,
+  "total_tokens": 702,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 101,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

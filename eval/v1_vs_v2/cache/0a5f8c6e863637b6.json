@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n一个人对神农说，麻烦我们可以吃什么植物？神农说，这就要看你想不想生病了。以后，神农告诉别人一些植物能吃，一些植物不能吃。\n\nThe teacher's corrections on this scene:\n- 麻烦我们可以吃什么植物：麻烦告诉我们……\n- 以后，神农告诉别人一些植物能吃，一些植物不能吃：后来，Time+以后；告诉人们，“别(的)” is for “a different type”, and “all else except the spoken one”；哪些，哪些\n\nThe system's item in each run:\nRun 1: 麻烦我们可以吃什么植物？：请问，我们可以吃什么植物？，“请问” introduces a polite question; “麻烦” normally means troubling someone and needs a structure such as “麻烦你……”. [rule: word_choice]\nRun 2: 麻烦我们可以吃什么植物：请问，我们可以吃什么植物，麻烦 must introduce a request that someone performs, such as asking someone to explain something; it cannot directly introduce this question. [rule: word_choice]\nRun 3: 麻烦：请问，麻烦 cannot introduce a polite question in this position; 请问 is used to politely begin a question. [rule: word_choice]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the misuse of “麻烦” as a question opener and correctly replace it with “请问”."
+ },
+ "usage": {
+  "prompt_tokens": 499,
+  "completion_tokens": 47,
+  "total_tokens": 546,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nThis scene:\n这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 不是人吵架，就是都叫：不是常常有人吵架，就是很多人都大声说话\n- 在那儿，孟母也找不到工作：wrong information, 搬家因为孟母觉得it is not good to imitate how to buy and sell\n- 孟子和妈妈要又一个次搬了家：又搬了一次家，“要” is for future plan/desire, this already occurred\n- 孟母找到工作，在商店做衣服：找到了，了completed\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不是人吵架，就是都叫：不是有人吵架，就是有人大叫，The two alternatives need parallel subject–verb clauses. “有人” introduces an unspecified person in each noisy event, while “都” cannot stand alone here as the subject of the second clause. [rule: none]\n2. [Grammar & Vocabulary, error] 要又一个次搬：要再搬一次，For a move that has not happened yet, use “再,” not “又,” and the pattern is modal verb + 再 + verb + numeral + measure word. [teacher rule: zai_structure]\n3. [Coherence: temporality, error] Coherence (Temporality): 搬了家：搬家，After the modal verb “要,” the future action takes the zero particle, not “了.” [rule: modal_verb_no_le]\n4. [Coherence: temporality, error] Coherence (Temporality): 孟母找到工作：孟母找到了工作，Finding the job is a completed event, so the verb needs “了.” [rule: aspect_le_completed]\n5. [Coherence: connectors, error] Coherence (Conjunction): 在那儿，孟母也找不到工作。孟子和妈妈要再搬一次家：在那儿，孟母也找不到工作，所以孟子和妈妈要再搬一次家，“所以” clearly links the mother’s inability to find work with the decision to move again as cause and effect. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“都叫” lacks a suitable subject here, and the correction gives two parallel, grammatical clauses."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The move has already happened, so it should be “又搬了一次家,” not the future-plan form “要再搬一次.”"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "With the modal verb “要,” the following action should not take perfective “了.”"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Finding the job is a completed narrative event, so “找到了工作” is correct."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "A connector is not required here, and the proposed sentence retains the teacher-marked incorrect information that 孟母 could not find work."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2263,
+  "completion_tokens": 1260,
+  "total_tokens": 3523,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 612,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 929,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

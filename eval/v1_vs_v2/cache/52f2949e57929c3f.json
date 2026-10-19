@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 想他的朋友：想自己的朋友，When the person missing the friends is also the subject, use 自己的 to make the possessive relationship clear.\n2. [Grammar & Vocabulary, error] 不要离开：不想离开，Use 不想 to express that someone does not want to do something; 不要 is normally used for a prohibition, instruction, or refusal.\n3. [Grammar & Vocabulary, error] 他的妈妈找到孟子一个老师：他的妈妈给孟子找到了一个老师，Place the beneficiary after 给 before the verb, and use 了 after the resultative verb 找到 to show that the search was completed.\n4. [Grammar & Vocabulary, error] 跟老师孟子学最重要的文学：孟子跟老师学最重要的文学，The subject 孟子 should come before the phrase 跟老师.\n5. [Coherence: connectors, error] Coherence (Conjunction): 他难怪抱怨，：难怪他抱怨，原来，Use 难怪 before the result and 原来 to introduce the newly understood reason.\n6. [Coherence: temporality, error] Coherence (Temporality): 成为哲学家：成为了哲学家，Use 了 after 成为 to mark the completed change of becoming a philosopher.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他想他的朋友” is acceptable here, and the teacher herself retained “他的朋友” rather than requiring “自己的朋友”."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "不想离开 expresses his unwillingness, whereas 不要离开 is inappropriate here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "给孟子 should precede the verb to mark Mengzi as the beneficiary, and 找到了一个老师 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "Moving 孟子 before 跟老师 correctly supplies the subject, but “最重要的文学” remains an unsuitable expression in the corrected text."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "难怪 must precede the result clause, but the shown correction leaves 原来 dangling without the reason clause that should follow it."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The final completed event in this action sequence should use 了, so 成为了哲学家 is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2189,
+  "completion_tokens": 1405,
+  "total_tokens": 3594,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 538,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1011,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

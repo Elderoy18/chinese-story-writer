@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThe teacher's corrections on this scene:\n- 他不知道如果这把花对你的身体好：不知道这种花对身体好不好，the “if” in “not know if + clause” is not 如果\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “他不知道如果这把花对你的身体好” / Formula: Subject + 不知道 + embedded yes/no question (A-not-A), and keep the person reference consistent / Correct: “神农不知道这束花对自己的身体好不好。”\nRun 2: Incorrect phrase: “他不知道如果这把花对你的身体好，这就要看这把花有没有毒。” Formula: 谁 + 不知道 + [某物 + 对 + 谁 + 有没有 + 好处]；这就要看 + A-not-A question + 了 Correct: “神农不知道这种花对身体有没有好处，这就要看它有没有毒了。” “如果” cannot be used after “不知道” to introduce an embedded yes/no question; use “有没有.” Also, “你的身体” does not match the story’s third-person perspective.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Both address the embedded-question use of “如果,” but Run 2 additionally corrects the separate “这就要看如果……” clause."
+ },
+ "usage": {
+  "prompt_tokens": 535,
+  "completion_tokens": 468,
+  "total_tokens": 1003,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 411,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene:\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's item in each run:\nRun 1: 城市有才两个学校：城市才有两个学校，才 must come before the verb 有 to limit the number of schools. [rule: none]\nRun 2: 有才两个学校：只有两个学校，use “只有” to express that the city has only two schools; “有才” does not form this limited-quantity pattern. [teacher rule: zhiyou_caiyou]\nRun 3: 城市有才两个学校：城市里才有两个学校，In an existential sentence, the limiting adverb must come before the verb, so use the order “才有”; “城里” gives the location naturally. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs address the misplaced limiting adverb in “有才两个学校” and give acceptable ways to express that the city has only two schools."
+ },
+ "usage": {
+  "prompt_tokens": 465,
+  "completion_tokens": 143,
+  "total_tokens": 608,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 85,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

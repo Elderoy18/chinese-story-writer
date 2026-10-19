@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nThis scene:\n孟子想，难怪我们常常搬家，原来我妈妈很忙。可是常常搬家害得孟子很难找到朋友。每次搬家孟子也觉得新的地方不是太热就是太冷，不是太大就是太小。在哪的地方，他都不高兴。孟子想帮助妈妈祭拜，可是他六岁，所以不能祭拜。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 在哪的地方，他都不高兴：在哪儿\n- 可是他六岁，所以不能祭拜：才六岁\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 在哪的地方：无论在哪个地方，interrogative 哪 must be followed by the classifier 个 before 地方; 无论……都 expresses that the result is the same in every place. [rule: none]\n2. [Coherence: reference, error] Coherence (Reference): 每次搬家孟子也觉得：每次搬家他也觉得，use a pronoun for a close re-occurrence when the previous sentence has already identified the same character and no competing character intervenes. [rule: character_introduction_first_mention]\n3. [Coherence: reference, error] Coherence (Reference): 孟子想帮助妈妈祭拜：他想帮助妈妈祭拜，use a pronoun for a close re-occurrence of the same character. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“在哪的地方” is ungrammatical here; “无论在哪个地方，他都不高兴” is a correct complete replacement."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 was just mentioned and no competing character intervenes, so the teacher's reference rule requires 他."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The immediately preceding clause identifies 孟子 as 他, so repeating 孟子 should be replaced with 他 under the reference rule."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2044,
+  "completion_tokens": 368,
+  "total_tokens": 2412,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 393,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 160,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

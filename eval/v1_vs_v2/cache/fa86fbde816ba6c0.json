@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene:\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's item in each run:\nRun 1: 在墓地玩儿，害得：孟子在墓地玩儿会带来麻烦，The original use of 害得 is incomplete: this structure must be followed by the person affected and a harmful result. [teacher rule: haide_structure]\nRun 2: 觉得在墓地玩儿：觉得孟子在墓地玩儿，The embedded action needs its own subject; without it, the sentence incorrectly suggests that the mother is playing at the cemetery. [rule: none]\nRun 3: 在墓地玩儿，害得：孟子在墓地玩儿会带来不好的影响，The structure 害得 must be followed by the affected person and a harmful result; the original leaves both parts unfinished, so this version states the mother’s concern clearly. [teacher rule: haide_structure]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 address the incomplete 害得 structure, while Run 2 addresses the missing subject of the embedded action."
+ },
+ "usage": {
+  "prompt_tokens": 505,
+  "completion_tokens": 103,
+  "total_tokens": 608,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 47,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

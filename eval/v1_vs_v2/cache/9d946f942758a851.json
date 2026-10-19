@@ -1,0 +1,106 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟子长大：孟子长大了，Growing up is a completed change of state in this past narrative, so it takes 了. [rule: aspect_le_completed]\n2. [Grammar & Vocabulary, error] 不是学金融，而是学政治：不要学金融，而要学政治，After 建议, use a negative recommendation with 不要 rather than 不是……而是……, which refutes one statement and replaces it with another. [teacher rule: bushi_ershi]\n3. [Grammar & Vocabulary, error] 成为高薪：拿到高薪，High pay is something a person receives rather than something they become. [rule: none]\n4. [Grammar & Vocabulary, error] 成为教授：成为了教授，Becoming a professor is a completed change in the narrative, so the verb takes 了. [rule: aspect_le_completed]\n5. [Coherence: reference, error] Coherence (Reference): 他：∅，After naming 孟子 in the same sentence, omit the repeated subject in the following clause: 孟子长大了，开始能解决问题. [rule: character_introduction_first_mention]\n6. [Coherence: reference, error] Coherence (Reference): 你：学生，The second-person pronoun has no identifiable addressee in this third-person story; introduce the people receiving his advice with a full noun. [rule: ambiguous_reference]\n7. [Coherence: reference, error] Coherence (Reference): 他：∅，After 孟子 has been named at the start of the sentence, omit the repeated subject in the next clause: 后来孟子成为了教授，教学生很厉害. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "Here 长大 is a completed change before the next action, and 长大了 is a correct repair."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "After 建议, 不要……而要…… is an appropriate recommendation structure, unlike the original 不是……而是……."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "高薪 is received or obtained, not something a person becomes."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "In this past narrative, becoming a professor is a completed change, so 成为了教授 is correct."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After 孟子 is named as the subject, the following 他 is redundant and can be omitted."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The original 你 has no established addressee, while 学生 can identify the people receiving the advice."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "After 孟子 is named in the same sentence, omitting the repeated 他 correctly keeps the same subject."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2320,
+  "completion_tokens": 1980,
+  "total_tokens": 4300,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 669,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1536,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

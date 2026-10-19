@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他需要当上医：医生\n- 一看别的人就想帮助他们：看到，看look vs.看到see; 病人，“别的” is for “a different type”, and “all else except the spoken one”\n- 什么病人吃都会觉得身体更好：吃了以后\n- 神农三个月走去：走了三个月\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，The time noun already identifies an era, so adding a second “time of” expression is redundant. [vocab list]\n2. [Grammar & Vocabulary, error] 一看：一看到，Use the resultative complement to show that he actually sees the people before wanting to help them. [rule: resultative_complement]\n3. [Grammar & Vocabulary, error] 别的人：别人，Use this word for people in general when there is no previously named person or group being contrasted. [teacher rule: bieren]\n4. [Grammar & Vocabulary, error] 一个很漂亮的植物：一株很漂亮的植物，Use the classifier 株 for one individual plant. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 有植物的地方：有这种植物的地方，Use 这种植物 to refer clearly back to the particular plant introduced in the previous sentence. [rule: ambiguous_reference]\n6. [Coherence: reference, error] Coherence (Reference): 他看到：看到，After 神农 has already been named in the same sentence and no other character competes as the subject, use zero form rather than repeating the pronoun. [rule: redundancy_delete]\n7. [Coherence: temporality, error] Coherence (Temporality): 神农三个月走去：神农走了三个月，Put the duration after the action, and use 了 to mark the completed three-month journey; 去 is not needed here without a destination. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "一看 means looking, whereas 一看到 correctly expresses seeing the people before wanting to help them."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "别的人 is wrong here, but replacing it with 别人 does not supply the intended 病人 and retains the unsuitable meaning."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "一株植物 is a good choice, but 一个植物 is understandable and not an error the teacher marked."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "有植物的地方 is grammatical and sufficiently understandable in context, while 有这种植物的地方 is only more explicit."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他 after the preceding action clauses still clearly refers to 神农, so its deletion is optional rather than required."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The duration must follow 走, and 了 correctly marks the completed three-month journey."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2184,
+  "completion_tokens": 1640,
+  "total_tokens": 3824,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 533,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1201,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

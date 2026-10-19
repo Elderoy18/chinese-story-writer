@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene:\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's item in each run:\nRun 1: 住离墓地太近：住在离墓地太近的地方，The verb for living in a place needs a place phrase introduced by 在. [rule: location_zai_place]\nRun 2: 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，害得孟子没心思学习，A location phrase before the verb needs 在, and 害得 must be followed by the person affected and a harmful result clause; 心气 alone does not state that result. [rule: location_zai_place] [teacher rule: haide_structure]\nRun 3: 住离墓地太近：住得离墓地太近，Use 得 after 住 to introduce the degree complement describing how near the home is to the cemetery. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Run 2 also addresses the 害得 structure, while Runs 1 and 3 only revise the 住离墓地太近 wording and leave that error unresolved."
+ },
+ "usage": {
+  "prompt_tokens": 563,
+  "completion_tokens": 168,
+  "total_tokens": 731,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 104,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

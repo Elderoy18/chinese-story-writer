@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A noun phrase needs the copula and an appropriate measure word before the descriptive noun phrase. [rule: none]\n2. [Grammar & Vocabulary, error] 找植物：在这里找植物，A location phrase needs 在 before the place where the action happens. [rule: location_zai_place]\n3. [Grammar & Vocabulary, error] 一天：有一天，Use 有一天 to introduce one particular day in a narrative. [rule: none]\n4. [Grammar & Vocabulary, error] 你跟黄色的花做茶很有用：用黄色的花做的茶很有用，跟 links people or accompanying things, while 用 introduces the material used to make something; 做的 modifies 茶. [rule: none]\n5. [Grammar & Vocabulary, error] 头发疼死：头疼的时候，头发 does not normally describe the part that feels pain; use 头疼, and add 的 before 时候 in this time expression. [teacher rule: de_shihou]\n6. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，This/that plus a countable noun needs a measure word. [teacher rule: zhe_na_mw]\n7. [Coherence: reference, error] Coherence (Reference): 这：神农，At the start of this new setting, repeat the character’s name rather than using 这, which would otherwise refer to the mountain instead of the person doing the action. [rule: ambiguous_reference]\n8. [Coherence: temporality, error] Coherence (Temporality): 找到：找到了，This is a completed discovery in the narrative, so add 了 after the resultative verb. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "凉山很大的山 lacks 是 and an appropriate measure word."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "找植物 itself is acceptable; the problem in the original is the malformed use of 这 as a location/subject, not this verb phrase."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "一天 can also introduce a day in a narrative, so 有一天 is an optional improvement rather than a required correction."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original incorrectly uses 你跟…做茶, but the proposed text still leaves 黄色的花 too vague, where 一种黄色的花 is needed."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发 is not the body part that hurts here, and 头疼的时候 is a grammatical way to express the intended condition."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这冰茶 needs a measure word, and 这杯冰茶 is grammatical."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 is wrongly used for the location, but it should become 在这儿 rather than 神农."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The finding is a completed narrative event, so 找到了 correctly marks completion."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2248,
+  "completion_tokens": 1677,
+  "total_tokens": 3925,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 597,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1180,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

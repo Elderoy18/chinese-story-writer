@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nThis scene:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他一次试一试有些植物的叶，吃得又新鲜又甜：有一次；试了试，了completed; 叶子；吃起来\n- 煮这些叶以后，他一喝就知道他发现新的茶叶：煮了，了completed; 叶子\n- 虽然他找到了很多的新的植物：很多新的植物\n- 但是他的旅程有的时候特别是危险：特别危险，”特别是+N, + Clause” is used to single out a typical example\n- 他一吃灵芝就开始生病：wrong information, 灵芝is a medicine\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 吃得又新鲜又甜：觉得又新鲜又甜，A complement with 得 describes the manner or degree of the action before it; here the adjectives describe the leaves, so 觉得 is needed to introduce the character’s evaluation.\n2. [Grammar & Vocabulary, error] 特别是危险：特别危险，特别是 introduces a specifically singled-out item, while 特别 directly modifies an adjective such as 危险.\n3. [Coherence: temporality, error] Coherence (Temporality): 一次试一试有些植物的叶：有一次尝了一些植物的叶，Use 有一次 to introduce one particular past occasion; an action that was actually carried out should not use verb reduplication, and 尝了 marks the completed tasting.\n4. [Coherence: temporality, error] Coherence (Temporality): 煮这些叶以后：煮了这些叶以后，The boiling is completed before the next event, so the first verb in this sequence needs 了.\n5. [Coherence: temporality, error] Coherence (Temporality): 发现新的茶叶：发现了新的茶叶，The discovery happens as a completed event after he drinks, so 发现 takes the completion marker 了.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "吃得 cannot introduce the leaves' taste here; 觉得又新鲜又甜 is grammatical in context."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "特别是 cannot directly modify 危险, while 特别危险 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "有一次尝了一些植物的叶 correctly repairs the occasion and completed action, but 叶 should still be 叶子."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality",
+     "Vocabulary"
+    ],
+    "reason": "煮了 correctly marks the prior completed action, but the shown correction still has 叶 instead of 叶子."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "发现 is a completed discovery in this past sequence, so 发现了 is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2229,
+  "completion_tokens": 1285,
+  "total_tokens": 3514,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 578,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 962,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

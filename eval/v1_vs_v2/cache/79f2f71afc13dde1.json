@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n四年后，孟子开始帮妈妈祭拜。他画画很厉害，他越来越喜欢祭拜，所以他祭拜不是想帮妈妈工作，而是他很喜欢画画。孟子成为很著名的古代画家。今天很多中国人很喜欢孟子。\n\nThe teacher's corrections on this scene:\n- 他画画很厉害，他越来越喜欢祭拜：delete the second他，redundant; no logic relationship, add也before越来越\n- 孟子成为很著名的古代画家：wrong information, 哲学家\n\nThe system's item in each run:\nRun 1: Coherence (Temporality): 孟子成为很著名的古代画家：孟子成为了很著名的古代画家，Use “了” after “成为” because becoming something is a completed change of state in this narrative.\nRun 2: Coherence (Reference): 孟子成为很著名的古代画家：他成为很著名的古代画家，Use a pronoun for a close re-occurrence: the previous sentences are already about Mengzi, and no other male character competes as the referent.\nRun 3: 成为：成为了，Use 了 after 成为 to mark the completed change of state: Mengzi became a well-known painter.",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 3 add 了 while Run 2 changes the subject reference, and none corrects the factual error that Mengzi was a philosopher rather than a painter."
+ },
+ "usage": {
+  "prompt_tokens": 511,
+  "completion_tokens": 132,
+  "total_tokens": 643,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 67,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

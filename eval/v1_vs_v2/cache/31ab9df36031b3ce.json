@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene:\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's item in each run:\nRun 1: 一吃就开始死：一吃就快要死了，开始 normally introduces an action that can continue, while 死 is an endpoint or change of state; 快要……了 expresses that death is imminent. [rule: none]\nRun 2: 开始死：快要死了，死亡 is an endpoint rather than an ongoing action that normally follows 开始; 快要……了 expresses that the character was close to dying. [rule: none]\nRun 3: Coherence (Temporality): 一吃就开始死：一吃就开始死了，This is a completed narrative event and a change into the dying state; in a series of actions, the final verb takes 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1–2 address the incompatibility of 开始 with 死, while Run 3 only adds 了 and leaves that problem unresolved."
+ },
+ "usage": {
+  "prompt_tokens": 541,
+  "completion_tokens": 172,
+  "total_tokens": 713,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 113,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

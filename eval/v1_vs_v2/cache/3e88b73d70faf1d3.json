@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代，孟子跟孟母住在墓地的旁边：在古代，better to briefly introduce “孟子” when this character first appears\n- 可是孟母注意：注意到，注意action vs.注意到result\n- 他常常跟朋友们祭拜玩：祭拜着玩儿，V.着玩儿 do something just for fun\n- 所以孟母决定他们会搬家：决定搬家\n- 从早到晚很吵：都很吵\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟母注意：孟母注意到，`注意到` means that she has discovered or noticed a fact; bare `注意` usually means “pay attention to” and does not naturally introduce the following clause.\n2. [Grammar & Vocabulary, error] 他常常跟朋友们祭拜玩：他常常跟朋友们一起把祭拜当游戏玩，`祭拜` cannot be followed directly by `玩` as a complement; this structure clearly says that the children treat worshipping as a game.\n3. [Grammar & Vocabulary, error] 决定他们会搬家：决定带着孟子搬家，`决定` introduces an action that someone chooses to do, while `会` expresses a future prediction rather than the action of making a decision.\n4. [Coherence: reference, error] Coherence (Reference): 古代，孟子跟孟母住在墓地的旁边：在古代，有一个小男孩叫孟子，他和妈妈住在墓地旁边，at first mention, introduce the main character with a brief noun phrase rather than assuming the reader already knows who he is.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“注意” here needs the resultative complement 到, but “孟母注意到” alone still needs the fact she noticed."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“祭拜玩” is not the appropriate verb-plus-着玩儿 structure, and the replacement is grammatical and conveys the intended meaning."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "决定 should be followed by the action decided on, not by a 会-clause expressing a future prediction."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The first mention should introduce 孟子, and 在古代 is required rather than bare 古代 in this sentence."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2111,
+  "completion_tokens": 1536,
+  "total_tokens": 3647,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 460,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1260,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

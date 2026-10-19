@@ -1,0 +1,114 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近：住得离墓地太近，The complement marker 得 is needed after 住 to describe how near the home is to the cemetery. [rule: none]\n2. [Grammar & Vocabulary, error] 害得孟子的心气：害得孟子没了心气，害得 must be followed by the person affected and a harmful result; a bare noun does not complete this structure. [teacher rule: haide_structure]\n3. [Grammar & Vocabulary, error] 老是：一直，老是 carries a complaining or negative tone, while 一直 neutrally describes the continuing habit of reading. [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟母：他们，Both characters were mentioned in the immediately preceding sentence, so a pronoun naturally refers back to them. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 子思：他，子思老师 was named very recently and no other male character is competing in this sentence, so a pronoun is more natural. [rule: character_introduction_first_mention]\n6. [Coherence: reference, error] Coherence (Reference): 子思：他，The previous sentence already identifies him as the person whom 孟母 helps, so use a pronoun for this close re-occurrence. [rule: character_introduction_first_mention]\n7. [Coherence: temporality, error] Coherence (Temporality): 搬到：搬到了，The move is a completed action in the past narrative, so 了 marks its completion; the following 住 describes a state and does not need 了. [rule: aspect_le_completed]\n8. [Coherence: connectors, error] Coherence (Conjunction): 因为孟子现在没有朋友，他一直读书：因为孟子现在没有朋友，所以他一直读书，Because the lack of friends causes the reading habit, use the paired cause-and-effect connector. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住后面不能直接接“离墓地太近”；“住得离墓地太近”可以改正这一处，但后面的害得结构仍有错误。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得后面需要受影响的人和不好的结果，“害得孟子没了心气”补全了这个结构，但前面的住离仍未改正。"
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是读书”可以表示经常读书，并不一定是不恰当的抱怨语气。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子和妈妈刚在上一句出现，紧接着用“他们”指代两人更符合近距离复现的指代规则。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思老师刚刚出现，在同一句后的近距离复现中应使用“他”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思在前一句刚被提到，下一句用“他”作近距离指代更合适。"
+   },
+   {
+    "n": 7,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "搬家是叙事中已经完成的动作，应说“搬到了”。"
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "原句的因果关系方向不对：孟子没有朋友是因为他老是读书，而不是没有朋友导致他读书；加“所以”没有改正这一点。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2334,
+  "completion_tokens": 2616,
+  "total_tokens": 4950,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 683,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

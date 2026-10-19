@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nThe teacher's corrections on this scene:\n- 古代的时候，孟子和孟母住了在靠墓地的家：在古代，better to briefly introduce “孟子” when this character first appears；住在靠近墓地的地方/墓地附近，delete了，在+Place\n- 孩子才五岁就每天在墓地祭拜了：孟子，孩子is vague and unclear\n- 难怪她跟孩子搬家，原来买不了房：wrong information, 搬家因为孟母觉得it is not good to imitate how to offer sacrifices\n- 他们搬了到别一个城市找工作：搬到了，另外一个城市，“别（的）” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 那个城市：城里，this is the first mention of a city, so 那个 has no earlier city to refer back to. [rule: ambiguous_reference]\nRun 2: Coherence (Reference): 在那个城市：在他们住的城市里，那个 suggests that the city has already been identified, but no city has appeared yet; introduce it with a full noun phrase that connects it to the family. [rule: ambiguous_reference]\nRun 3: Coherence (Reference): 在那个城市：删除，那个城市 refers to a specific city that has not been introduced, so its referent is unclear. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the unintroduced, unclear referent in “那个城市” and replace or remove it acceptably."
+ },
+ "usage": {
+  "prompt_tokens": 639,
+  "completion_tokens": 46,
+  "total_tokens": 685,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

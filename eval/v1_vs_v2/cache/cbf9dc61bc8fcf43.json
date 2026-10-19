@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这是古代的故事：这是一个古代的故事\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 从他的家到墓地很近：他的家离墓地很近\n- 所以他每天老是从早到晚去墓地跟朋友们玩玩儿：delete老是；玩儿，V.V. is used to make requests or plans\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 玩玩儿：玩，the reduplicated form suggests playing only briefly or casually, which conflicts with the long duration expressed by “从早到晚”.\n2. [Coherence: reference, error] Coherence (Reference): 他的家：孟子的家，repeat the name after another male character, “爸爸”, has appeared; this makes the possessor of the home unambiguous.\n3. [Coherence: reference, error] Coherence (Reference): 他每天：孟子每天，repeat the name when the immediately preceding sentence also mentions his father, so the pronoun cannot be read as referring to the father.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "玩玩儿的动词重叠不适合表示“从早到晚”这样长时间的活动。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这里的“他的家”可清楚指孟子，且教师改写时也保留了“他的家”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他”仍可自然指孟子，教师也保留了这个代词；改后句子还保留了不当的“老是”和“玩玩儿”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1964,
+  "completion_tokens": 538,
+  "total_tokens": 2502,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 313,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 317,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

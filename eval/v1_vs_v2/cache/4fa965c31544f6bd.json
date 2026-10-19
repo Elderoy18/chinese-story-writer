@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\nThis scene:\n他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他不知道如果这把花对你的身体好：不知道这种花对身体好不好，the “if” in “not know if + clause” is not 如果\n- 这就要看如果这把花毒不毒了：the “if” in “not know if + clause” is not 如果, delete如果，有没有毒\n- 正好，他找到了别的花：另外一种花，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n- 神农不知道他吃不吃灵芝或者夹竹桃：要不要吃……\n- 别的人给了神农一个灵芝：另外一个人，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不知道如果这把花对你的身体好：不知道这把花对自己的身体好不好，An embedded yes/no question after a verb such as 知道 uses the A-not-A form, and 自己的 shows that the body belongs to the same person who is thinking. [rule: a_not_a_question] [teacher rule: ziji_possessor]\n2. [Grammar & Vocabulary, error] 看如果这把花毒不毒：看这把花有没有毒，The part after 这就要看 must be a question form; 有没有毒 asks whether the flower is poisonous, while 如果 does not introduce this kind of embedded question. [rule: zhe_jiu_yao_kan] [teacher rule: du_youdu]\n3. [Grammar & Vocabulary, error] 吃不吃灵芝或者夹竹桃：吃的是灵芝还是夹竹桃，When choosing between two possibilities in an embedded question, use 是……还是…… rather than A-not-A plus 或者. [rule: a_not_a_question]\n4. [Coherence: reference, error] Coherence (Reference): 花：这种花，There are two different mentions of flowers nearby, so the general noun 花 does not clearly identify which flower made him ill; use 这种花 to refer back to the flower he has just found. [rule: ambiguous_reference]\n5. [Coherence: reference, error] Coherence (Reference): 他：zero form, In the same sentence, 神农 is already the subject, so omit the repeated pronoun: 神农不知道吃的是灵芝还是夹竹桃. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "不知道后的正反问不能用如果，而且“你的身体”应明确为神农自己的身体。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这里的如果应删除，改为“有没有毒”才能构成“这就要看……”后的疑问内容。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "原意是神农不知道要不要吃，应该改为“要不要吃灵芝或者夹竹桃”，不是问他吃的是哪一种。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "紧接着“另外一种花”说“吃花”可以自然指刚找到的花，并不构成必须改正的指代错误。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农已是同一句的主语，后面的“他”应省略，但系统把原本的“要不要吃”误改成了问吃的是哪一种。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2392,
+  "completion_tokens": 1386,
+  "total_tokens": 3778,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 741,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

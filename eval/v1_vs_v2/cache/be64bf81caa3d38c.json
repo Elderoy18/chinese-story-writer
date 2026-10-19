@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThis scene:\n孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 所以孟子的妈妈认为这样的地方对儿子的教育不太好：replace孟子的妈妈with她\n- 不是搬到城市，而是搬到了孟子老师的家：家里\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 取得良好的教育：接受良好的教育，取得 normally collocates with achievements or results, while 接受 is the appropriate verb for receiving an education.\n2. [Grammar & Vocabulary, error] 跟孟子搬家：带着孟子搬家，跟孟子搬家 presents the mother and child as simply moving together; 带着孟子搬家 clearly shows that the mother is taking her child with her.\n3. [Grammar & Vocabulary, error] 不是搬到城市，而是搬到了孟子老师的家：搬到了孟子老师的家，the construction 不是……而是…… is used to correct a conventional or previously stated belief; here no such contrast has been established, so the destination can be stated directly.\n4. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈认为：她认为，after the mother has just been named and no other possible referent appears, use a pronoun for a close re-occurrence.\n5. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈带孟子：她带孟子，at the start of the next sentence, the mother is still the clear, recently mentioned subject, so a pronoun avoids unnecessary repetition of the name.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "取得不与“教育”自然搭配，接受良好的教育正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "跟孟子搬家本身语法正确，也可以表达母子一起搬家。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "原句中的“孟子老师的家”应按教师修改为“孟子老师的家里”，系统修改后仍保留该错误。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "刚提到孟子的妈妈且指代明确时，应使用“她”而非重复姓名。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "下一句中母亲仍是明确且刚提到的主语，应使用“她”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2141,
+  "completion_tokens": 1026,
+  "total_tokens": 3167,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 490,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 711,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

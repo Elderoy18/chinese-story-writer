@@ -1,0 +1,60 @@
+{
+ "input": "Earlier scenes:\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。他们在很漂亮的河找夹竹桃。神农问他的哥哥：“我应该吃这种植物吗？”哥哥说：“这就要看你想要安全还是接近知道了。“神农一吃夹竹桃就生病了。哥哥说：“太麻烦了。\n\nThis scene:\n夹竹桃是毒的，我想知道灵芝会帮他。”哥哥给神农灵芝。神农吃完了以后开始痊愈了。神农说：“谢谢哥哥，你帮得真好。灵芝我们可以吃，特别是如果我们已经吃了夹竹桃。“\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 夹竹桃是毒的：有毒的\n- 我想知道灵芝会帮他：灵芝有没有用/能不能帮他\n- 哥哥给神农灵芝：给了，了completed\n- 你帮得真好：你做得很好\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 夹竹桃是毒的：夹竹桃是有毒的，毒 is a noun here; use 有毒的 to describe a plant as poisonous. [rule: word_class_misuse] [vocab list]\n2. [Grammar & Vocabulary, error] 哥哥给神农灵芝：哥哥给了神农灵芝，the giving is a completed action in this sequence, so the verb needs 了. [rule: aspect_le_completed]\n3. [Coherence: reference, error] Coherence (Reference): 灵芝会帮他：灵芝会帮我，because the thought begins with 我想知道, 他 is unclear: it could refer to 神农 or 哥哥. Use 我 for the speaker’s own situation. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "毒 cannot directly serve as the adjective here; 有毒的 correctly describes oleander as poisonous."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The giving is a completed event in the sequence, so 给了 is required."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The problem is the unnatural 想知道 + assertion construction, which should ask whether the lingzhi is useful/can help him; changing 他 to 我 changes the intended referent."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2105,
+  "completion_tokens": 714,
+  "total_tokens": 2819,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 454,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

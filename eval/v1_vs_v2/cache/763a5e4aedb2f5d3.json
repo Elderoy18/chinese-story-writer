@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n孟子想，难怪我们常常搬家，原来我妈妈很忙。可是常常搬家害得孟子很难找到朋友。每次搬家孟子也觉得新的地方不是太热就是太冷，不是太大就是太小。在哪的地方，他都不高兴。孟子想帮助妈妈祭拜，可是他六岁，所以不能祭拜。\n\nThe teacher's corrections on this scene:\n- 在哪的地方，他都不高兴：在哪儿\n- 可是他六岁，所以不能祭拜：才六岁\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 每次搬家孟子也觉得：每次搬家，他也觉得，use a pronoun for a close re-occurrence of the same character. [rule: ambiguous_reference]\nRun 2: Coherence (Reference): 每次搬家孟子也觉得：每次搬家，他也觉得，孟子 was the clear referent in the preceding sentence, so a pronoun is more natural for a close re-occurrence. [rule: ambiguous_reference]\nRun 3: Coherence (Reference): 每次搬家孟子也觉得：每次搬家他也觉得，孟子 was the subject of the immediately previous sentence, so the close re-occurrence rule calls for a pronoun. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs flag the repeated use of 孟子 in 每次搬家孟子也觉得 and consistently replace it with 他."
+ },
+ "usage": {
+  "prompt_tokens": 516,
+  "completion_tokens": 117,
+  "total_tokens": 633,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 62,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

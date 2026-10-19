@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThis scene:\n他一直问问题，但是不能解决那些问题。孟子长大，他开始能解决问题。他常常建议你不是学金融，而是学政治，因为如果你懂政治，你会成为高薪。后来孟子成为教授，他教学生很厉害。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子长大，他开始能解决问题：长大以后，delete他，redundant\n- 他常常建议你不是学金融，而是学政治：建议人们，不要学金融\n- 因为如果你懂政治，你会成为高薪：delete the second你，redundant; 得到高薪，成为 + profession/celebrity\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 建议你不是学金融，而是学政治：建议你不要学金融，而是学政治，After 建议 + person, a negative recommendation uses 不要 + VP; 不是……而是…… cannot directly replace the negative action in this structure. [rule: none]\n2. [Grammar & Vocabulary, error] 成为高薪：成为高薪人士，High salary is a type of pay, not a role or identity that someone can become; 高薪人士 refers to a person who earns a high salary. [vocab list]\n3. [Coherence: reference, error] Coherence (Reference): 孟子长大：他长大，Use a pronoun when the same character was named in the immediately preceding sentence and no other possible referent has appeared. [rule: none]\n4. [Coherence: temporality, error] Coherence (Temporality): 长大：长大了，Growing up is a completed change of state here, so it needs 了. [rule: aspect_le_completed]\n5. [Coherence: temporality, error] Coherence (Temporality): 成为教授：成为了教授，Becoming a professor is a completed change of state in this past sequence, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“建议你不是学金融”不能表达否定性的建议，改为“建议你不要学金融”正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“高薪”是薪酬而非可“成为”的身份，“高薪人士”可以作“成为”的宾语。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "此处重新说“孟子”是可接受的，教师也没有要求把它改成“他”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里“长大”表示已经完成的状态变化，加入“了”能正确标示完成。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“后来”引出的“成为教授”是已完成的过去事件，应说“成为了教授”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2221,
+  "completion_tokens": 1036,
+  "total_tokens": 3257,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 570,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 700,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

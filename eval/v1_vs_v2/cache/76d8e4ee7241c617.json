@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近：住在离墓地太近的地方，A location phrase after this verb needs the preposition and a complete place expression. [rule: location_zai_place]\n2. [Grammar & Vocabulary, error] 害得孟子的心气：害得孟子心情不好，This pattern needs the affected person directly after the causative verb, followed by a harmful result. [teacher rule: haide_structure]\n3. [Grammar & Vocabulary, error] 搬到：搬到了，The move is a completed past action, so the verb needs the completion marker. [rule: aspect_le_completed]\n4. [Grammar & Vocabulary, error] 老是读书：一直读书，This is a neutral result of having no friends, while this word carries a complaining or negative connotation. [rule: laoshi_negative_connotation]\n5. [Coherence: connectors, error] Coherence (Conjunction): 因为孟子现在没有朋友，他一直读书：因为孟子现在没有朋友，所以他一直读书，Use the paired connector to show that having no friends is the cause and studying is the result. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住 needs 在 before the location, and the corrected place phrase is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "害得 must be followed by the affected person and a harmful result, and 心情不好 is a suitable result."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The completed move needs 了, but 搬到了 alone is still an incomplete directional verb phrase without its destination."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是读书 is acceptable here, and the teacher herself retained 老是读书 in her correction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The causal relation is reversed: he has no friends because he always studies, not the reverse."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2147,
+  "completion_tokens": 1133,
+  "total_tokens": 3280,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 496,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 821,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

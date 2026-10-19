@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “孟子是古代的人” / Formula: 在 + historical time period，+ person + 是/生活在 + …的人 / Correct: “孟子是古代人” or, more naturally, “孟子生活在古代。”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “觉得住在哪儿对童年很重要” / Formula: 觉得 + clause; for a general statement, use 居住环境/住的地方 + 对 + child’s growth + 很重要 / Correct: “觉得住的地方对孩子的成长很重要。”\n3. [Grammar & Vocabulary, error] Incorrect phrase: “他们常常搬了家” / Formula: 常常/经常 + verb (no 了 for habitual actions) / Correct: “他们常常搬家。”\n4. [Grammar & Vocabulary, error] Incorrect phrase: “她望子成龙，所以孟子的妈妈安排他的生活” / Formula: Subject + 希望/望子成龙，所以 + same subject + 安排 + possessive pronoun + life / Correct: “孟子的妈妈望子成龙，所以她安排孟子的生活。” “她” is clearer here because the mother has already been introduced, and “他的生活” could otherwise refer to a different male person.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“孟子是古代的人” is grammatical and acceptable; the alternatives are also correct but are not necessary corrections."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“觉得住在哪儿对童年很重要” is a grammatical and understandable way to express this idea."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "With the habitual adverb “常常,” “搬家” should not take completed-event 了."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The original switches confusingly between “她” and “孟子的妈妈,” while the correction makes the mother and Mengzi’s life clear."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2094,
+  "completion_tokens": 667,
+  "total_tokens": 2761,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 443,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 405,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

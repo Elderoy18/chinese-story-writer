@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThe teacher's corrections on this scene:\n- 他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育：delete不是不喜欢他们的城市，“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong; 想让孟子接受……，想 + V., cannot be followed by N.\n- 他们从早到晚走路，孟子一直抱怨：delete他们，因为从早到晚走路，所以孟子一直抱怨\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n\nThe system's item in each run:\nRun 1: 想孟子有很好的教育：想让孟子受到很好的教育，When expressing a wish for another person’s situation, use the causative pattern 想让 + person + verb phrase; this clearly means that the mother wants him to receive an education. [rule: none]\nRun 2: 想孟子有很好的教育：想让孟子受到很好的教育，The verb 想 needs a following verb phrase or a clause; use 让 to show that the mother wants this result for Mengzi, and 受到教育 is the natural verb-object combination. [rule: none]\nRun 3: 想孟子有很好的教育：想让孟子接受很好的教育，When expressing a wish for another person to receive or do something, use 想让 + person + verb phrase; 想 cannot directly take this noun phrase in this meaning. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify that 想 cannot directly take 孟子有很好的教育 and correctly revise it to 想让孟子接受/受到很好的教育."
+ },
+ "usage": {
+  "prompt_tokens": 625,
+  "completion_tokens": 56,
+  "total_tokens": 681,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

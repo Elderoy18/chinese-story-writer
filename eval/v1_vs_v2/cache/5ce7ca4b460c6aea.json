@@ -1,0 +1,117 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他需要当上医：医生\n- 一看别的人就想帮助他们：看到，看look vs.看到see; 病人，“别的” is for “a different type”, and “all else except the spoken one”\n- 什么病人吃都会觉得身体更好：吃了以后\n- 神农三个月走去：走了三个月\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，Ancient times are already a time expression, so adding 的时候 is redundant. [rule: time_expression]\n2. [Grammar & Vocabulary, error] 当上医：当上医生，医 cannot normally stand alone as the job noun after 当上; 医生 means “doctor.” [rule: word_choice]\n3. [Grammar & Vocabulary, error] 一看：一看到，The verb 看 means “look”; when Shen Nong sees someone, the resultative complement 到 is needed. [rule: resultative_complement]\n4. [Grammar & Vocabulary, error] 别的人：别人，别人 refers collectively to other people; 别的 needs a following noun to distinguish another kind of thing. [teacher rule: bieren]\n5. [Grammar & Vocabulary, error] 什么病人吃都会觉得身体更好：任何病人吃了都会觉得身体更好，什么 is an interrogative word asking which patient, while 任何 expresses that all patients are included; 了 marks eating as completed before the resulting feeling. [rule: none]\n6. [Grammar & Vocabulary, error] 一个很漂亮的植物：一株很漂亮的植物，株 is the appropriate measure word for an individual plant. [rule: none]\n7. [Coherence: reference, error] Coherence (Reference): 但是，他有一个问题，他不知道什么东西能做药：但是，他有一个问题，不知道什么东西能做药，After the subject has appeared in the same sentence and no other person competes with it, use zero form rather than repeating the pronoun. [rule: redundancy_delete]\n8. [Coherence: temporality, error] Coherence (Temporality): 神农三个月走去，找到有植物的地方：神农走了三个月，找到了有植物的地方，Both the three-month walk and the discovery are completed past events, so they need 了; 走了三个月 expresses a completed duration naturally. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "医 cannot serve as the occupation noun here; 医生 is required."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The intended meaning is 'upon seeing,' which requires 看到, but 一看到 alone is an unfinished 一…就… structure in the shown correction."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "别人 is a correct way to refer collectively to people other than Shen Nong, unlike the intended use of 别的人 here."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "任何病人 correctly expresses the universal group, and 吃了 marks the eating as preceding the resulting feeling."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "个 is an acceptable general measure word for 植物, although 株 is more specific."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating 他 at the start of a new clause is natural and does not violate the teacher's same-clause zero-reference rule."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "走了三个月 gives the duration in the correct order, and 找到了 appropriately marks the final completed event."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2278,
+  "completion_tokens": 2562,
+  "total_tokens": 4840,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 627,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2048,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

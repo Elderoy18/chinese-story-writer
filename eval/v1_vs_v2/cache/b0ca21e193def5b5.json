@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThe teacher's corrections on this scene:\n- 这个男孩子叫孟子，孟子是古代的人：“这个“ is specific, not for a character who first appears\n- 所以他们常常搬了家：搬家，no了for routine/habit\n- 她望子成龙，所以孟子的妈妈安排他的生活：孟子的妈妈望子成龙，所以安排他的生活，otherwise the references are confusing\n\nThe system's item in each run:\nRun 1: Coherence (Reference): 所以孟子的妈妈安排他的生活：所以安排他的生活，After the mother has just been referred to as 她 in the same sentence, use zero form rather than repeating her full noun phrase. [rule: none]\nRun 2: Coherence (Reference): 孟子的妈妈安排他的生活：安排他的生活，The mother is already the subject in the first clause of this sentence, so use the zero form rather than repeating her full noun phrase. [rule: none]\nRun 3: Coherence (Reference): 孟子的妈妈安排他的生活：安排他的生活，The mother is already the subject of the first clause in the same sentence, so use zero form instead of repeating her full name. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs flag the redundant repeated subject, but their zero-subject fix leaves the preceding 她 ambiguous, unlike the teacher’s coherent rewrite."
+ },
+ "usage": {
+  "prompt_tokens": 533,
+  "completion_tokens": 232,
+  "total_tokens": 765,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 175,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

@@ -1,0 +1,106 @@
+{
+ "input": "Earlier scenes:\n很久以前，古代的人很不知道什么植物能吃，也什么植物不能吃。所以很多人常常吃不安全的植物，吃不安全的植物对你的身体有坏处，很麻烦的情况。但是一个人，神农，要解决这个问题。\n\nThis scene:\n他又聪明又努力，旅行很远找到很多植物。比方说，灵芝和夹竹桃。他一吃各种各样的植物就知道能不能吃这些植物。然后，神农写他的主意。他喜欢植物的味道，特别是花。神农遇到了一个黄色的花，一吃就觉得不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 然后，神农写他的主意：写下，他的发现\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 旅行很远：走了很远，Use a movement verb to describe covering a long distance; the original verb does not naturally take a distance complement in this meaning. [rule: word_choice]\n2. [Grammar & Vocabulary, error] 找到很多植物：找到了很多植物，The finding is a completed event in the narrative, so the verb needs 了. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 写他的主意：把自己的主意写下来了，Use 写下 to show that ideas were recorded; in a completed narrative action, add 了. Because the writer and possessor are the same person, 自己的 makes the relationship clear. [rule: resultative_complement] [teacher rule: ziji_possessor] [rule: aspect_le_completed]\n4. [Grammar & Vocabulary, error] 遇到了：看到了，A flower is normally something the character sees or discovers, while 遇到 is more suitable for meeting a person or encountering an event. [rule: word_choice]\n5. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，Flowers use the measure word 朵, not 个. [rule: none]\n6. [Coherence: reference, error] Coherence (Reference): 神农写他的主意：他把自己的主意写下来了，The name was used in the immediately preceding sentence and no other character competes as the referent, so use a pronoun for close re-occurrence. [rule: character_introduction_first_mention]\n7. [Coherence: reference, error] Coherence (Reference): 神农遇到了一个黄色的花：他看到了一朵黄色的花，The same character remains the clear subject after the previous sentence, so a pronoun is more natural than repeating the name. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "旅行很远 does not naturally express covering a long distance here, whereas 走了很远 does."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "找到 is the final completed action in this sequence and should take 了."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "写下来了 correctly supplies the resultative construction, but 主意 remains where the teacher requires 发现."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "遇到 can naturally mean to come across a flower, and the corrected full clause would still retain the wrong measure word 一个."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "Flowers take the measure word 朵 rather than 个."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The correction properly changes 写 to 写下来了, but it leaves 主意 instead of the required 发现; repeating 神农 is not itself a reference error here."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "The original contains the measure-word error 一个黄色的花, which the correction fixes with 一朵黄色的花; the name repetition is not the error."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2237,
+  "completion_tokens": 3066,
+  "total_tokens": 5303,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 586,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2602,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

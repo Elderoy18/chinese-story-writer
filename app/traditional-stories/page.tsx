@@ -29,30 +29,55 @@ const stories: Story[] = [
         retellId: "shennong_chang_baicao",
         questions: [
             {
-                question: "Which plant is poisonous?",
-                options: ["夹竹桃 (jiāzhútáo) Oleander", "灵芝 (língzhī) Linzhi mushroom", "茶 tea leaf"],
+                question: "How made writing modes are there on this website?",
+                options: ["Only 1 - Retelling Stories", "2 Modes - Retelling Stories or Free Write", "No modes"],
                 correctIndex: 0,
             },
             {
-                question: "Why did 神农 feel better later?",
-                options: ["He ate the 夹竹桃(jiāzhútáo) Oleander", "He lied down for a while ", "He ate the 灵芝 (língzhī) Linzhi mushroom"],
+                question: "How do I enter story telling mode (for my assignment)?",
+                options: ["Click on 'Traditional Stories' in the dashboard, select the story I want to retell", "Select 'Write Your Own' in dashboard and the system guesses what story", "Ask Siri to open telekinesis mode and mentally enter"],
                 correctIndex: 2,
             },
             {
-                question: "What time period did 神农 live in?",
-                options: ["近代 Modern Times", "改革开放的时候 During China's Opening and Reform", "古代 Ancient Times"],
+                question: "What is the purpose of the 'free write' mode?",
+                options: ["To provide opportunity to do the assignment wrong", "To write in english", "To practice Chinese storytelling outside of class"],
                 correctIndex: 2,
             },
             {
-                question: "Where did 神农 live?",
-                options: ["In a city with many skyscrapers", "In the mountains", "In the desert"],
+                question: "How can AI help me grow as a writer?",
+                options: ["By doing the writing for me", "By helping me find errors, suggest new vocabulary/expression styles, and provide encouragement", "By criticizing me until I'm in tears and want to quit learning language"],
                 correctIndex: 1,
             },
             {
-                question: "Why did 神农 eat plants?",
-                options: ["To help people understand what can and cannot be eaten", "Because he wanted salad", "Because he was starving"],
+                question: "Do I need to fix every point the AI tutor brings up?",
+                options: ["Yes, learn this language overnight", "Yes, I should rewrite until the story is no longer my own", "No, I should use my own discretion on how much new information I can handle and how much of the story I want to change"],
                 correctIndex: 0,
             },
+            // {
+            //     question: "Which plant is poisonous?",
+            //     options: ["夹竹桃 (jiāzhútáo) Oleander", "灵芝 (língzhī) Linzhi mushroom", "茶 tea leaf"],
+            //     correctIndex: 0,
+            // },
+            // {
+            //     question: "Why did 神农 feel better later?",
+            //     options: ["He ate the 夹竹桃(jiāzhútáo) Oleander", "He lied down for a while ", "He ate the 灵芝 (língzhī) Linzhi mushroom"],
+            //     correctIndex: 2,
+            // },
+            // {
+            //     question: "What time period did 神农 live in?",
+            //     options: ["近代 Modern Times", "改革开放的时候 During China's Opening and Reform", "古代 Ancient Times"],
+            //     correctIndex: 2,
+            // },
+            // {
+            //     question: "Where did 神农 live?",
+            //     options: ["In a city with many skyscrapers", "In the mountains", "In the desert"],
+            //     correctIndex: 1,
+            // },
+            // {
+            //     question: "Why did 神农 eat plants?",
+            //     options: ["To help people understand what can and cannot be eaten", "Because he wanted salad", "Because he was starving"],
+            //     correctIndex: 0,
+            // },
         ],
     },
     {

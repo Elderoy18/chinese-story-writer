@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThis scene:\n发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n- 这就要看你的口味：这就要看……了\n- 什么都花想吃：什么花都想吃\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 让肚子感觉又暖和又清楚：让人觉得肚子暖和，头脑清醒，清楚 describes information or thoughts, not a physical feeling in the stomach; 暖和 can describe the stomach, while 清醒 can describe a person’s mind. [rule: verb_object_collocation]\n2. [Grammar & Vocabulary, error] 告诉了朋友：告诉朋友，A speaking verb that introduces quoted speech normally takes the zero particle rather than 了. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 这就要看你的口味：这就要看你的口味了，The final 了 is part of the fixed 这就要看……了 structure here; it does not mark a completed action. [teacher rule: zhe_jiu_yao_kan_le]\n4. [Grammar & Vocabulary, error] 什么都花想吃：什么花都想吃，什么 modifies the noun 花, so 花 must come before 都 and the verb phrase. [rule: none]\n5. [Coherence: connectors, error] Coherence (Conjunction): 你爱吃甜的，可能喜欢糖：如果你爱吃甜的，你可能喜欢糖，The first idea is a condition for the second, so 如果 makes the conditional relationship clear. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“清楚” cannot describe the stomach’s physical sensation, and the proposed wording is grammatical and natural."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The scene says “告诉朋友,” not “告诉了朋友,” so the feedback incorrectly adds an error that is not in the student text."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "This construction requires the sentence-final 了: “这就要看你的口味了.”"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“什么” must modify “花,” so the correct order is “什么花都想吃.”"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The example already makes the relationship understandable, and “如果” is an optional elaboration rather than a required correction."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2215,
+  "completion_tokens": 1110,
+  "total_tokens": 3325,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 564,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 795,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

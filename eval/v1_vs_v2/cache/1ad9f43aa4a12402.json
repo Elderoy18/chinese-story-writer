@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 而且害得孟子的学习：害得孟子的学习不好，害得 + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，古代 already expresses a time period, so adding 的时候 is redundant. [vocab list]\n2. [Grammar & Vocabulary, error] 老是：常常，老是 has a complaining or negative connotation; this sentence neutrally describes a frequent event at the cemetery. [rule: laoshi_negative_connotation]\n3. [Grammar & Vocabulary, error] 而且害得孟子的学习：这里的环境还影响了孟子的学习，害得 must be followed by a person and a harmful result clause; it cannot directly take 孟子的学习 as its object. [teacher rule: haide_structure]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈两个人：孟子和他的妈妈两个人，after 孟子 has been named, use the pronoun 他 before 妈妈 to avoid unnecessarily repeating the name in the same noun phrase. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 孟子和孟子的妈妈：孟子和他的妈妈，use a pronoun for the close re-occurrence of the same character rather than repeating the name. [rule: none]\n6. [Coherence: temporality, error] Coherence (Temporality): 住在这里才一个星期：在这里才住了一个星期，住 describes the completed duration before they could no longer tolerate the place, so it needs 了; 觉得 is a mental-state verb and correctly takes no aspect particle. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代已经表示时间，古代的时候重复，改为“在古代”正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“老是”可以表示经常发生的事，在这里并不一定是不恰当的负面用法。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“害得”后面需要接受害者和不好的结果，“害得孟子的学习”结构不完整。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子已在同一句中出现，再说他的妈妈时应使用“他的妈妈”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子在前文刚出现，随后应说“他的妈妈”而不是重复“孟子的妈妈”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality",
+     "Grammar"
+    ],
+    "reason": "这里表示住了一个星期后才受不了，需要用完成体“住了一个星期”，改后的语序也正确。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2143,
+  "completion_tokens": 895,
+  "total_tokens": 3038,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 492,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

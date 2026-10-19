@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候：在古代\n- 但是城市有才两个学校：这个城市，只有\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this time expression is redundant because 古代 already names a time period.\n2. [Grammar & Vocabulary, error] 有才两个学校：才有两所学校，才 should come before 有, and 所 is the matching measure word for schools.\n3. [Coherence: reference, error] Coherence (Reference): 一个男孩子跟他的妈妈住在中国。他叫孟子：一个叫孟子的男孩子跟他的妈妈住在中国，first mention should introduce the character by name rather than using a pronoun to name him only in the next sentence.\n4. [Coherence: reference, error] Coherence (Reference): 他的城市：自己住的城市，when the possessor is the same person as the subject, 自己 makes the relationship clear and avoids suggesting that the city belongs to him.\n5. [Coherence: reference, error] Coherence (Reference): 但是城市：但是它，use a pronoun for a close re-occurrence when the city was just mentioned and no other place competes as the referent.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代已经表示时间，古代的时候重复；在古代正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "这里按教师标准应说“只有两所学校”，不能用“才有”；“两所学校”本身正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "人物首次出现应直接用名字明确介绍，改为“一个叫孟子的男孩子”正确。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "“他的城市”在这里可以指他所住的城市，不必一定改成“自己住的城市”。"
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "此处需要明确指回前面的城市；“它”可作近距离指代，但“但是它”本身是截断的句子片段。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2000,
+  "completion_tokens": 1513,
+  "total_tokens": 3513,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 349,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1173,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

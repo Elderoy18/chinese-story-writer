@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThis scene:\n孟子才十一岁，成为一个哲学家。孟子不是祭拜，而是看政治文章，难怪他成为了哲学家。不过，看过很多政治文章对他害得，他有很多问题。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子才十一岁，成为一个哲学家：就成为，才Num.就V.\n- 孟子不是祭拜，而是看政治文章：“不是……而是……” is used to refute something conventional and affirm something unexpected, and to correct something wrong, 祭拜is not conventionally related to哲学家\n- 不过，看过很多政治文章对他害得，他有很多问题：delete对他；害得他有很多问题，害得Sb. + harmful result\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 孟子才十一岁，成为一个哲学家：孟子才十一岁，就成为了一个哲学家，The pattern with 才 plus an age needs 就 before the main action, and becoming a philosopher is presented as a completed past event, so it takes 了. [rule: cai_jiu_construction] [rule: aspect_le_completed]\n2. [Grammar & Vocabulary, error] 看过很多政治文章对他害得，他有很多问题：看过很多政治文章害得他有很多问题，害得 must be followed directly by the affected person and then a harmful result; 对他 cannot be placed before 害得. [teacher rule: haide_structure]\n3. [Coherence: reference, error] Coherence (Reference): 孟子不是祭拜：他不是祭拜，孟子 was named in the immediately preceding sentence and no other person competes as the referent, so use a pronoun for this close re-occurrence. [rule: character_introduction_first_mention]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "With 才 + age, the main action needs 就, and 就成为了一个哲学家 is correct here."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 must be followed directly by the affected person, so removing 对他 gives the correct 害得他有很多问题 structure."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 was just mentioned, so 他 is required by the reference rule, but 他不是祭拜 still leaves the inappropriate 不是祭拜 wording uncorrected."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2142,
+  "completion_tokens": 724,
+  "total_tokens": 2866,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 491,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

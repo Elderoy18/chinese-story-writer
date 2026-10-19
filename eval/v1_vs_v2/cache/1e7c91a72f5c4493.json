@@ -1,0 +1,92 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，the phrase is redundant because 古代 already expresses a time period, while 的时候 also means “the time when.”\n2. [Grammar & Vocabulary, error] 人觉得：人们觉得，use 人们 for people in general; 人 alone is a generic noun and does not naturally refer to a concrete group of people.\n3. [Grammar & Vocabulary, error] 看了他的同学们对孟子不好的影响：看到了他的同学们对孟子不好的影响，看 means “look,” while 看到 means “see/notice”; use 看到了 for a completed act of noticing.\n4. [Grammar & Vocabulary, error] 他同学们老是对他开玩笑了：他同学们老是对他开玩笑，老是 describes a habitual action, so it takes the zero aspect form rather than 了.\n5. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：有一个叫孟子的小男孩，他很小的时候，孟子 is appearing for the first time, so introduce him with his name and who he is rather than using only the name.\n6. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：他没有朋友，因为每天只祭拜，because introduces a cause, while 虽然 needs a contrasting second clause with 但是 or 可是; this sentence only needs the cause connector.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundant under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "人 cannot refer to this concrete general group here; 人们 is required."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "看到了 correctly changes 看 to 看到, but the corrected phrase still lacks 有 in 对孟子有不好的影响."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Removing 了 correctly expresses the habitual action, but the shown correction has ungrammatical 他同学们 instead of 他的同学们."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first introduced here and should be briefly identified, but the shown replacement ends with the unfinished temporal phrase 他很小的时候."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "虽然 requires a contrasting follow-up, whereas this sentence only gives the cause introduced by 因为."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2248,
+  "completion_tokens": 1555,
+  "total_tokens": 3803,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 597,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1166,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

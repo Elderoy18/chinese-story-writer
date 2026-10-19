@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候人觉得祭拜非常重要，孟子很小的时候，从早到晚一直祭拜，因为他妈妈告诉他祭拜很重要。虽然他没有朋友，因为每天只祭拜。他的同学们老是对他开玩笑了。孟子妈妈看了他的同学们对孟子不好的影响，所以孟子和孟子妈妈搬家了。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候人觉得祭拜非常重要，孟子很小的时候：在古代，人们，“人“ is too general and too vague, and does not stand alone；better to briefly introduce “孟子” when this character first appears\n- 虽然他没有朋友，因为每天只祭拜：delete虽然，there is no “even though” meaning here\n- 他的同学们老是对他开玩笑了：跟他开玩笑，no了for routine/habit\n- 孟子妈妈看了他的同学们对孟子不好的影响：看到，看look vs.看到see; 有不好的影响\n- 所以孟子和孟子妈妈搬家了：delete孟子和孟子妈妈, redundant\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this expression redundantly combines two time expressions; use the shorter time phrase. [vocab list]\n2. [Grammar & Vocabulary, error] 人：人们，this refers to a group of people in that historical period, so the plural collective noun is needed. [teacher rule: ren_renmen]\n3. [Grammar & Vocabulary, error] 孟子妈妈看了他的同学们对孟子不好的影响：孟子的妈妈看到他的同学们对孟子有不好的影响，the intended meaning is that she perceived the result, so use the resultative form；the noun phrase also needs 有 to state that the classmates had a negative effect. [rule: resultative_complement]\n4. [Grammar & Vocabulary, error] 孟子和孟子妈妈：孟子和他的妈妈，once the mother has been mentioned, use a pronoun rather than repeating the name inside the same noun phrase. [rule: redundancy_delete]\n5. [Coherence: reference, error] Coherence (Reference): 孟子很小的时候：有一个小男孩叫孟子，他很小的时候，孟子 appears for the first time here, so introduce him with a full noun phrase before using a pronoun. [rule: character_introduction_first_mention]\n6. [Coherence: temporality, error] Coherence (Temporality): 开玩笑了：开玩笑，this describes a repeated habit, so use the zero particle rather than 了, which marks a completed action. [rule: aspect_le_completed]\n7. [Coherence: connectors, error] Coherence (Conjunction): 虽然他没有朋友，因为每天只祭拜：因为他每天只祭拜，所以他没有朋友，these two ideas express cause and effect, so use the paired cause connector rather than 虽然. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already expresses a time period, so 古代的时候 is redundantly formed under the teacher's rule."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "人 is too generic for the concrete group of people in this context, and 人们 is required by the teacher's rule."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "看到 correctly expresses perceiving the result, and 有不好的影响 supplies the needed predicate for the classmates' effect."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated subject is redundant in this context, and replacing only 孟子妈妈 with 他的妈妈 still leaves the unnecessarily repeated full subject."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 is first introduced here and should be introduced before switching to 他, but the displayed correction ends with an unfinished temporal phrase."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "老是 marks a habitual action, so the perfective 了 should not be used."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The relationship is cause and effect, so 因为……所以…… correctly replaces the inappropriate 虽然……因为…… pairing."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2330,
+  "completion_tokens": 1430,
+  "total_tokens": 3760,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 679,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 976,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

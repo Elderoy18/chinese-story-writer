@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThis scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 在墓地玩儿，害得：孟子在墓地玩儿会带来麻烦，The original use of “害得” is incomplete: this structure must be followed by the person affected and a harmful result. [teacher rule: haide_structure]\n2. [Grammar & Vocabulary, error] 帮妈妈的工作：帮妈妈干活，“帮妈妈的工作” incorrectly turns the activity into a possessive noun phrase. Use “帮 + person + verb phrase” to say that someone helps a person do work. [rule: none]\n3. [Coherence: temporality, error] Coherence (Temporality): 搬家：搬家了，This move is a completed event in the narrative, so the verb needs “了” to mark completion. [rule: aspect_le_completed]\n4. [Coherence: connectors, error] Coherence (Conjunction): 他才五岁，可是每天不是写字就是：他才五岁，就每天不是写字就是，“才 + age/number + 就 + verb” shows that an action began unusually early; “可是” does not express this early-action relationship. [rule: cai_jiu_construction]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“害得”必须带上受影响的人和有害结果，原文在“害得”处不完整。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“帮妈妈的工作”不能表示帮妈妈做事，应该说“帮妈妈干活/工作”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里的搬家是故事中已经完成的事件，应说“搬家了”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "“可是”可以表达五岁却每天做这些事的转折，原句并非必须改成“就”，且所示改后文本也被截断。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2071,
+  "completion_tokens": 916,
+  "total_tokens": 2987,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 420,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 637,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

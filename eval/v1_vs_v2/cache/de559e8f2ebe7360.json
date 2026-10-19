@@ -1,0 +1,85 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThis scene:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这种一定是做药的花：这一定是一种做药的花\n- 原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result\n- 神农快生病：很快就生病了\n- 快给他一种红的灵芝：很快地给了，快V: to give order, 了completed\n- 他没有病：delete他，redundant; 病好了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这种一定是做药的花：这一定是一种可以做药的花，Use a numeral-measure-word phrase to introduce one kind of flower; “这种” normally needs a following noun when it modifies that noun. [rule: measure_word]\n2. [Grammar & Vocabulary, error] 快给他一种红的灵芝：赶快给了他一种红的灵芝，This is a completed action in the narrative, so the verb needs 了; “赶快” naturally describes acting promptly in a past event. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 想起来以前一个人告诉他：想起以前有一个人告诉过他，The earlier telling happened before the current scene, so 告诉过 marks it as a past experience; 有 introduces the previously unmentioned person naturally. [rule: none]\n4. [Coherence: reference, error] Coherence (Reference): 神农吃了以后，他没有病：神农吃了以后，没有病了，The subject has already been named in the same sentence, so use zero form rather than repeating it with a pronoun. [rule: none]\n5. [Coherence: temporality, error] Coherence (Temporality): 没有病：没有病了，Use 了 to show a change of state: he was ill earlier and is no longer ill after eating the medicine. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“这种” cannot stand alone here before 一定是, and the corrected numeral-measure-word phrase is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The giving is a completed past action, and “赶快给了他一种红的灵芝” is grammatical."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Coherence: temporality"
+    ],
+    "reason": "“以前一个人告诉他” is an acceptable way to refer to a previously unnamed person and earlier event, so it did not require correction."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Coherence: temporality"
+    ],
+    "reason": "The repeated pronoun is redundant after 神农 in the same sentence, and “没有病了” correctly marks the changed state."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "After eating the medicine, the absence of illness is a change of state and needs sentence-final 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2259,
+  "completion_tokens": 1086,
+  "total_tokens": 3345,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 608,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 732,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

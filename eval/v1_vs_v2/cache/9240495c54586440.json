@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears\n- 孟子妈妈的工作是祭拜：wrong information, it’s not his mother’s job\n- 孟子不高兴，因为他说我们老是搬家：delete因为\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “一天，很久很久以前” / Formula: Time background + 有一天 / Correct: “很久很久以前，有一天，孟子和他的妈妈住在中国。”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “孟子和他妈妈” / Formula: Person + 和 + possessive pronoun + family member / Correct: “孟子和他的妈妈。”\n3. [Grammar & Vocabulary, error] Incorrect phrase: “孟子妈妈的工作是祭拜” / Formula: Person + 的工作是 + Verb + Object / Correct: “孟子的妈妈的工作是祭拜祖先。” “祭拜” normally needs an object, such as “祖先.”\n4. [Grammar & Vocabulary, error] Incorrect phrase: “孟子不高兴，因为他说我们老是搬家，为什么？” / Formula: Subject + emotional state + because + direct speech / Correct: “孟子不高兴，因为他说：‘我们为什么老是搬家？’” Use a colon and quotation marks when writing direct speech.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “很多墓地得我祭拜” / Formula: Place/thing + 需要 + person + 去 + Verb / Correct: “很多墓地需要我去祭拜。” Here, “得” is not natural for saying that many cemeteries need her to perform rituals.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“一天”和“很久很久以前”作为同一时间背景重复，删去“一天”是合适的。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“孟子和他妈妈”是可接受的说法，不必一定改成“他的妈妈”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老师标出的主要问题是故事信息错误，而修改后仍然说母亲的工作是祭拜祖先，未改正该问题。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "原句中“因为”不应保留，但修改后的句子仍保留了它。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“很多墓地得我祭拜”可理解为这些墓地得由我祭拜，并非一定是错误。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2129,
+  "completion_tokens": 1184,
+  "total_tokens": 3313,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 478,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 853,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

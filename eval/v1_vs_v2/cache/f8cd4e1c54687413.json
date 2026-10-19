@@ -1,0 +1,105 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他不要离开：他不想离开，In a statement about a character’s wish, use 不想 to mean “does not want to”; 不要 usually expresses a prohibition or instruction.\n2. [Grammar & Vocabulary, error] 找到孟子一个老师：给孟子找了一个老师，The person who benefits from finding something is introduced with 给; this completed action also needs 了 after 找.\n3. [Grammar & Vocabulary, error] 跟老师孟子学最重要的文学：孟子跟老师学最重要的文学，Place the subject 孟子 before the prepositional phrase 跟老师.\n4. [Coherence: reference, error] Coherence (Reference): 他的朋友：自己的朋友，Use 自己的 when the possessor is the same person as the subject; it makes clear that the friends belong to 孟子.\n5. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，Use 自己的 when the city is the one connected to the subject of the sentence.\n6. [Coherence: temporality, error] Coherence (Temporality): 成为哲学家：成为了哲学家，Use 了 after 成为 to mark the completed change of state.\n7. [Coherence: connectors, error] Coherence (Conjunction): 他难怪抱怨，他想：难怪他抱怨，原来他想，Use the paired connector 难怪……，原来…… to present the result first and then reveal its explanation; 难怪 should introduce the result clause.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "不要 is not the appropriate verb for Mengzi's personal wish not to leave."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The beneficiary needs 给, and 找了 correctly marks the completed finding action."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The subject must precede 跟老师, but 最重要的文学 remains an unsuitable expression in the corrected text."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的朋友 already clearly refers to Mengzi's friends and is retained in the teacher's correction."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的城市 is already clear and is also retained in the teacher's correction."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The final completed change of becoming a philosopher needs 了."
+   },
+   {
+    "n": 7,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "难怪 must introduce the result clause and pairs appropriately with 原来, but the displayed text cuts off the thought after 想."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2248,
+  "completion_tokens": 2177,
+  "total_tokens": 4425,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 597,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1748,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

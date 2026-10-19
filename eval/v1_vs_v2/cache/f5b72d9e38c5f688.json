@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThis scene:\n发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n- 这就要看你的口味：这就要看……了\n- 什么都花想吃：什么花都想吃\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 发现：发现了，This discovery is a completed event in the narrative, so the verb needs 了 to mark completion. [rule: aspect_le_completed]\n2. [Grammar & Vocabulary, error] 让肚子感觉又暖和又清楚：让人感觉又暖和又清醒，清楚 describes whether information or an idea is understandable; 清醒 describes a person’s alert physical or mental state and can naturally pair with 暖和 here. [rule: none]\n3. [Grammar & Vocabulary, error] 你吃哪种植物，这就要看你的口味：你想吃哪种植物？这就要看你的口味了，这就要看……了 should respond to an uncertain question rather than follow a statement; the final 了 belongs to this fixed structure. [rule: zhe_jiu_yao_kan]\n4. [Grammar & Vocabulary, error] 什么都花想吃：什么花都想吃，With an indefinite “every kind” phrase, use 什么 + noun + 都 + verb; 花 must follow 什么. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The sentence needs 他 at the beginning as the teacher marked; adding 了 does not fix the missing reference."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "清楚 is unsuitable for this bodily effect, while 让人感觉又暖和又清醒 is grammatical and natural."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这就要看……了 requires the final 了, and the corrected question-and-answer wording is grammatical."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "什么花都想吃 has the required order of 什么 + noun + 都 + verb."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2162,
+  "completion_tokens": 1176,
+  "total_tokens": 3338,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 511,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 919,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

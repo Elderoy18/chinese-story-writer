@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n古代，孟子跟孟母住在墓地的旁边。可是孟母注意，住在墓地的旁边影响孟子。他常常跟朋友们祭拜玩，所以孟母决定他们会搬家。这次，他们住在城市里的商店的旁边，从早到晚很吵。城市也有点儿危险。害得孟母只好一直陪孟子。孟子也没有朋友，难怪他老是看起来不高兴。住在商店的旁边不是适合孟子，而是让他觉得很伤心。\n\nThis scene:\n所以，孟母和孟子搬到学校的旁边住。才五岁孟子开始学哲学。在学校，孟子不是看书，就是练习写字。将来，他成为中国的一个非常有名的哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 才五岁孟子开始学哲学：就开始，才Num.就V.\n- 将来，他成为中国的一个非常有名的哲学家：后来，“将来“ refers to the absolute future\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 才五岁孟子开始学哲学：孟子才五岁就开始学哲学，Use the paired pattern 才 + age/number + 就 + verb to show that an action began at an early age.\n2. [Coherence: reference, error] Coherence (Reference): 在学校，孟子不是看书，就是练习写字：在学校，他不是看书，就是练习写字，Use a pronoun for a close re-occurrence when the same character was named in the immediately previous sentence and no other character competes as the referent.\n3. [Coherence: temporality, error] Coherence (Temporality): 孟母和孟子搬到学校的旁边住：孟母和孟子搬到了学校的旁边住，Add 了 to mark the completed moving action in this past narrative.\n4. [Coherence: temporality, error] Coherence (Temporality): 他成为中国的一个非常有名的哲学家：他成为了中国的一个非常有名的哲学家，Add 了 because becoming a philosopher is a completed change of state in the narrative.\n5. [Coherence: connectors, error] Coherence (Conjunction): 将来：后来，Use 后来 to sequence a later event in a past story; 将来 refers to the future from the present.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "才五岁需要和就开始搭配，改后的句子正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子刚在前一句出现，按近距离重复指代规则应使用他。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "搬家是故事中已完成的动作，搬到了的了位置和用法都正确。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为是叙事中完成的状态变化，成为了正确标示了完成。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "将来指相对于现在的未来，而这里应以后来衔接过去故事中的后续事件。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2203,
+  "completion_tokens": 819,
+  "total_tokens": 3022,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 552,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 511,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

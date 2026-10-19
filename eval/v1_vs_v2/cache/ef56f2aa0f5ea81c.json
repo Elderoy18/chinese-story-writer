@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nThe teacher's corrections on this scene:\n- 他一次试一试有些植物的叶，吃得又新鲜又甜：有一次；试了试，了completed; 叶子；吃起来\n- 煮这些叶以后，他一喝就知道他发现新的茶叶：煮了，了completed; 叶子\n- 虽然他找到了很多的新的植物：很多新的植物\n- 但是他的旅程有的时候特别是危险：特别危险，”特别是+N, + Clause” is used to single out a typical example\n- 他一吃灵芝就开始生病：wrong information, 灵芝is a medicine\n\nThe system's item in each run:\nRun 1: Coherence (Temporality): 发现新的茶叶：发现了新的茶叶，The discovery is presented as completed when he realizes it after drinking. [rule: aspect_le_completed]\nRun 2: Coherence (Reference): 知道他发现：知道发现，The second pronoun refers to the same character as the subject, with no competing person in the sentence, so use zero form rather than repeating the pronoun. [rule: ambiguous_reference]\nRun 3: (nothing flagged here)",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "The runs address different issues at this location—completed aspect versus redundant pronoun—and one run flags nothing."
+ },
+ "usage": {
+  "prompt_tokens": 554,
+  "completion_tokens": 86,
+  "total_tokens": 640,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 36,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

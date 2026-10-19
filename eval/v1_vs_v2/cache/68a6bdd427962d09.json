@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n一天，很久很久以前，孟子和他妈妈住在中国。孟子妈妈的工作是祭拜，孟子不高兴，因为他说我们老是搬家，为什么？他妈妈说，从早到晚，我一直祭拜，很多墓地得我祭拜。所以我们得去很多不同的地方。\n\nThe teacher's corrections on this scene:\n- 一天，很久很久以前，孟子和他妈妈住在中国：delete一天；better to briefly introduce “孟子” when this character first appears\n- 孟子妈妈的工作是祭拜：wrong information, it’s not his mother’s job\n- 孟子不高兴，因为他说我们老是搬家：delete因为\n\nThe system's item in each run:\nRun 1: 孟子不高兴，因为他说我们老是搬家，为什么？：孟子不高兴，因为他说：“我们为什么老是搬家？”，Direct speech after a speaking verb needs a colon and quotation marks; the question word also naturally comes before the subject in this question. [rule: none]\nRun 2: Coherence (Conjunction): 孟子不高兴，因为他说我们老是搬家，为什么？：孟子不高兴，问：“我们为什么老是搬家？”，The connector for cause should introduce the reason for his unhappiness, but this part is his response in the form of a question; use a reporting verb and put the question word before the action it asks about. [rule: none]\nRun 3: 孟子不高兴，因为他说我们老是搬家，为什么？：孟子不高兴，问：“我们为什么老是搬家？”，Use a question verb and quotation marks for direct speech; in this question, the question word comes before the action phrase. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 2 and 3 correct the inappropriate 因为 by changing it to 问, while Run 1 leaves 因为 and focuses only on direct-speech formatting and question order."
+ },
+ "usage": {
+  "prompt_tokens": 610,
+  "completion_tokens": 149,
+  "total_tokens": 759,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 81,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

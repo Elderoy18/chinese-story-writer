@@ -1,0 +1,105 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不合适的地方让孩子玩：不适合孩子玩的地方，To describe a place as suitable or unsuitable for an activity, use the pattern “适合 + person + verb + 的 + noun”; “让” would mean that the place causes or permits the child to play. [rule: none]\n2. [Grammar & Vocabulary, error] 决定了：决定，“决定” is a mental-state verb, so it normally takes the zero particle rather than “了”. [rule: aspect_le_completed]\n3. [Grammar & Vocabulary, error] 他们会搬家找更好的地方：搬家，找更好的地方，“决定” should be followed directly by the action that is decided; do not repeat the subject or add “会” here. [teacher rule: jueding_vp]\n4. [Grammar & Vocabulary, error] 她恐怕儿子的童年不会幸福：她担心儿子的童年不会幸福，“恐怕” means “I am afraid that” and cannot describe another person’s fear after “她”; “担心” expresses her worry correctly. [teacher rule: kongpa]\n5. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，“教育” needs a clear location-based modifier here, because the sentence means that the education in this place is not good. [rule: none]\n6. [Grammar & Vocabulary, error] 质量好的教育：高质量的教育，“高质量的” is the usual modifier for education of good quality; “质量好” is more natural as a predicate, such as “教育质量很好”. [rule: none]\n7. [Coherence: connectors, error] Coherence (Conjunction): 因为她望子成龙，所以她会一直搬家才能找到质量好的教育。，“因为” introduces a cause, so add “所以” before the result clause to show the cause-and-effect relationship clearly. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“不合适的地方让孩子玩” should use the suitability pattern “不适合孩子玩的地方.”"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“决定” is a mental-state verb here and should not take perfective “了.”"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "Deleting “他们会” is right, but the correction leaves “找更好的地方” instead of correcting the phrase to “搬家到更好的地方.”"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "After “她,” “担心” correctly expresses her worry, whereas “恐怕” does not fit this use."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Although “这儿的教育不太好” is clearer, the original is understandable and was not marked by the teacher."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“质量好的教育” is an acceptable noun phrase, not an error requiring replacement with “高质量的教育.”"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The displayed sentence already contains the required “因为……所以……” connector pair."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2339,
+  "completion_tokens": 1428,
+  "total_tokens": 3767,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 688,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 979,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

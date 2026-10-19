@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene:\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “子思帮孟母教她的儿子” / Formula: A + 帮（忙）+ B + 教 + 人；use a specific name when a pronoun could be unclear / Correct: “子思帮孟母教孟子。” Using “孟子” instead of “她的儿子” makes the sentence clearer.\nRun 2: Incorrect phrase: “子思帮孟母教她的儿子。” / Formula: A + 帮 + B + 教 + 人 / Correct: “子思帮孟母教孟子。” “她的儿子” can be understood, but it is clearer to name “孟子” directly. “子思” helps Meng’s mother teach Mencius.\nRun 3: Incorrect phrase: “子思帮孟母教她的儿子。” Formula: person + 帮助 + person + 教 + object; or person + 教 + student Correct: “子思老师帮助孟母教孟子。” / “子思老师教孟子。” “她的儿子” can be unclear, while using “孟子” clearly identifies the child.",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs address the potential ambiguity of “她的儿子” and correctly replace it with “孟子,” with Run 3 also offering an acceptable fuller phrasing."
+ },
+ "usage": {
+  "prompt_tokens": 624,
+  "completion_tokens": 57,
+  "total_tokens": 681,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

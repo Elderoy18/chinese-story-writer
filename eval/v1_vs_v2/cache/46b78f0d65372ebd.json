@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男孩子跟他的妈妈住在中国。他叫孟子。他们住在墓地的旁边，所以孟子老是祭拜。孟子不是祭拜，就是跟朋友聊天。他很喜欢他的城市，但是城市有才两个学校，都很小。他的妈妈不是不喜欢他们的城市，而是想孟子有很好的教育。他们搬家到有很多学校的城市。他们从早到晚走路，孟子一直抱怨。\n\nThis scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 找到孟子一个老师：给孟子找到了一个老师，Use 给 to mark 孟子 as the person who receives the benefit of the action, and use 了 because the mother has completed finding a teacher. [rule: aspect_le_completed]\n2. [Grammar & Vocabulary, error] 跟老师孟子学：孟子跟老师学，The learner, 孟子, needs to come before the phrase 跟老师; the original order can incorrectly sound as if the teacher is named 孟子. [rule: none]\n3. [Grammar & Vocabulary, error] 成为哲学家：成为了哲学家，Use 了 for the completed change of state: he later became a philosopher. [rule: aspect_le_completed]\n4. [Coherence: reference, error] Coherence (Reference): 他的朋友：自己的朋友，When the subject and the possessor are the same person, 自己的 makes the relationship clear. [teacher rule: ziji_possessor]\n5. [Coherence: reference, error] Coherence (Reference): 他的城市：自己的城市，When 孟子 is both the subject and the owner of the city he does not want to leave, 自己的 gives a clearer reference. [teacher rule: ziji_possessor]\n6. [Coherence: connectors, error] Coherence (Conjunction): 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，原来他想他的朋友，也不想离开他的城市，Use the paired pattern 难怪……，原来…… to present the complaint first and then reveal its explanation. [teacher rule: nanguai_yuanlai]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "找到孟子一个老师缺少给来标明受益者，给孟子找到了一个老师是正确的。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "孟子应作学习动作的主语，不能放在跟老师之后。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里说的是后来完成的身份变化，成为了哲学家正确。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的朋友在这里指孟子的朋友很清楚，教师的修改也保留了他的朋友。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "他的城市的指代已经清楚，教师的修改也保留了他的城市。"
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors",
+     "Vocabulary"
+    ],
+    "reason": "难怪应接完整句子并可用原来说明原因，且此处不想比不要更符合“不愿离开”的意思。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2272,
+  "completion_tokens": 1386,
+  "total_tokens": 3658,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 621,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1004,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

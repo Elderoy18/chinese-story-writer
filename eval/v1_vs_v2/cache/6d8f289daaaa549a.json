@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 喜欢玩在墓地里：喜欢在墓地里玩，The place phrase should come before the main verb in this sentence. [rule: none]\n2. [Grammar & Vocabulary, error] 装祭拜：装作祭拜，装作 means “pretend to do something”; 装 cannot directly take this verb phrase here. [rule: none]\n3. [Grammar & Vocabulary, error] 跟妈妈搬家：妈妈带着他搬家，The mother is the person who takes the child to move; 带着孟子搬家 expresses this relationship more accurately. [vocab list]\n4. [Coherence: reference, error] Coherence (Reference): 孟子小的时候：有一个小男孩叫孟子，他小时候，At a character’s first mention, introduce the character with a full noun phrase; later reference to the same character can use a pronoun. [rule: character_introduction_first_mention]\n5. [Coherence: temporality, error] Coherence (Temporality): 搬家：搬家了，This move is presented as a completed event, so the final verb needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "地点短语应放在动词“玩”前面。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“装”不能直接带“祭拜”这个动词短语，“装作祭拜”可以表示假装在祭拜。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“跟妈妈搬家”自然且正确，并不需要改成妈妈带着他搬家。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "首次出现孟子需要作人物介绍，但给出的改文“他小时候，”是不完整的。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "这里叙述的是已经完成的搬家事件，应用“搬家了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2067,
+  "completion_tokens": 1076,
+  "total_tokens": 3143,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 416,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 762,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

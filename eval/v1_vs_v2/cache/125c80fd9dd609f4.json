@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene:\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's item in each run:\nRun 1: 他们搬家：他们搬了家，This is a completed move, so the separable verb needs 了 after 搬. [rule: aspect_le_completed]\nRun 2: Coherence (Temporality): 所以他们搬家：所以他们搬家了，The move is presented as a completed result of the earlier problem, so use 了 for completion. [rule: aspect_le_completed]\nRun 3: Coherence (Temporality): 他们搬家：他们搬家了，This is one completed move caused by the mother’s concern, so add 了 to mark the completed action. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "All runs identify the missing completed-action marker for the move, and both 搬了家 and 搬家了 are acceptable corrections."
+ },
+ "usage": {
+  "prompt_tokens": 467,
+  "completion_tokens": 113,
+  "total_tokens": 580,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 57,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

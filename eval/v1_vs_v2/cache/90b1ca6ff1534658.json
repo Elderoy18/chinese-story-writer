@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。\n\nThis scene:\n他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 这种一定是做药的花：这一定是一种做药的花\n- 原来他想错了：结果，“原来” is to explain the reason while “结果” is to describe an unexpected result\n- 神农快生病：很快就生病了\n- 快给他一种红的灵芝：很快地给了，快V: to give order, 了completed\n- 他没有病：delete他，redundant; 病好了\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 以前一个人：以前有一个人，An indefinite person being introduced in this remembered event needs the existential verb 有.\n2. [Grammar & Vocabulary, error] 没有病：病好了，After being ill, this phrase should express recovery; this means that the illness has recovered, rather than simply stating that he does not have an illness.\n3. [Coherence: reference, error] Coherence (Reference): 神农吃了以后，他没有病：神农吃了以后，病好了，Use zero form for the same character within one sentence when no other character competes as the referent; repeating 他 is unnecessary.\n4. [Coherence: temporality, error] Coherence (Temporality): 吃了以后，神农快生病：吃了以后，神农很快生病了，Here the illness happens as a completed event, so it needs 了. 很快 describes that the event happened soon, while 快 + verb more often expresses an imminent action.\n5. [Coherence: temporality, error] Coherence (Temporality): 快给他一种红的灵芝：赶快给了他一种红的灵芝，This is a completed action in the narrative, so 给 needs 了. In a series of actions, the last action can take 了.\n6. [Coherence: temporality, error] Coherence (Temporality): 想起来以前有一个人告诉他：想起来了以前有一个人告诉过他，The remembering is completed at this point in the story, so the resultative verb 想起来 takes 了 after its complement. 告诉过 marks that the earlier telling happened before this memory.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "以前一个人 cannot introduce a new indefinite person here without 有, and 以前有一个人 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "After becoming ill, 没有病 does not express recovery, while 病好了 does."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference",
+     "Vocabulary"
+    ],
+    "reason": "他 is redundant after 神农 in the same clause, and 病好了 correctly expresses that Shennong recovered."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The illness is a completed narrative event, so 很快生病了 is needed rather than 快生病."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The giving is completed in the narrative, and 赶快给了他一种红的灵芝 is grammatical."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The remembering is completed, so 想起来 needs sentence-final 了 after its resultative complement, and 告诉过 correctly marks the earlier event."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2311,
+  "completion_tokens": 1637,
+  "total_tokens": 3948,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 660,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1237,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

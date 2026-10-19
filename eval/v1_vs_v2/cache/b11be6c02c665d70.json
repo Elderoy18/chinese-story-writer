@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，害得孟子没心思学习，A location phrase before the verb needs 在, and 害得 must be followed by the person affected and a harmful result clause; 心气 alone does not state that result. [rule: location_zai_place] [teacher rule: haide_structure]\n2. [Grammar & Vocabulary, error] 老是读书：一直读书，老是 usually conveys a negative or complaining tone; 一直 neutrally describes an ongoing habit of studying. [vocab list]\n3. [Coherence: reference, error] Coherence (Reference): 跟子思老师住：跟他住，Since 子思老师 has just been named in the same sentence, use a pronoun for this close re-occurrence rather than repeating the full name. [rule: character_introduction_first_mention]\n4. [Coherence: temporality, error] Coherence (Temporality): 搬到子思老师的家：搬到了子思老师的家，The move is a completed event in the narrative, so 搬到 takes 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original lacks 在 and misuses 害得 with an incomplete harmful result, while the correction is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是读书 is acceptable here and is retained in the teacher's corrected sentence; 一直读书 is only an optional stylistic alternative."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思老师 was just mentioned, so repeating the full name should be replaced by the close-reference pronoun 他."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed narrative event, so 搬到 needs the perfective form 搬到了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2154,
+  "completion_tokens": 549,
+  "total_tokens": 2703,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 503,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 285,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThe teacher's corrections on this scene:\n- 古代时候，人不知道他们能吃什么植物：古代的时候，人们\n- 所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears\n- 告诉人什么植物是安全什么是危险：是安全的，是危险的\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n\nThe system's item in each run:\nRun 1: Coherence (Temporality): 告诉：告诉了，this is the last action in a completed series of actions, so it takes “了”; earlier verbs in the series do not need it. [rule: aspect_le_completed]\nRun 2: Coherence (Temporality): 告诉：告诉了，The testing and telling are completed narrative actions; in a series of actions, the last verb takes 了. [rule: aspect_le_completed]\nRun 3: 告诉人：告诉人们，this refers to the group of people in the story, so 人们 is needed. [teacher rule: ren_renmen]",
+ "salt": "",
+ "output": {
+  "same_error": false,
+  "equivalent_fix": false,
+  "reason": "Runs 1 and 2 change 告诉 to 告诉了 for completed aspect, while Run 3 changes 人 to 人们, so they target different issues."
+ },
+ "usage": {
+  "prompt_tokens": 538,
+  "completion_tokens": 134,
+  "total_tokens": 672,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 70,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

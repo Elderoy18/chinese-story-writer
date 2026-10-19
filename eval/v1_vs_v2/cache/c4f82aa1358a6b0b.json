@@ -1,0 +1,84 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这黄色的花：这朵黄色的花，A demonstrative such as 这 needs a measure word before a countable noun; 朵 is the suitable measure word for a flower. [teacher rule: zhe_na_mw]\n2. [Grammar & Vocabulary, error] 特别是毒：特别有毒，The phrase 是毒 is not the normal way to describe a poisonous plant; 有毒 means “poisonous” and can be modified by 特别. [vocab list]\n3. [Grammar & Vocabulary, error] 灵芝药的夹竹桃他吃完了：灵芝是药；他吃完了夹竹桃，The original does not form a valid noun phrase: 灵芝 and 药 need the predicate 是 to state their relationship, rather than modifying 夹竹桃 with 的. [rule: none]\n4. [Grammar & Vocabulary, error] 一个课文的植物：一篇关于植物的课文，A written text takes the measure word 篇, and 关于植物的 should modify 课文 to show that the text is about plants. [rule: attributive_modifier_de]\n5. [Coherence: temporality, error] Coherence (Temporality): 也写：也写了，This is a completed writing action in a past event sequence, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这修饰可数名词花时，按教师规则需要量词朵。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "特别是毒不合适，特别有毒正确表达了夹竹桃有毒。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "原句的确有错误，但该修改错误地改成了他吃完夹竹桃，没有表达他吃了作为解药的灵芝。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "一个课文的植物的量词和修饰关系都有问题，一篇关于植物的课文是正确的短语。"
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "也写在这里是已完成的叙事动作，需要用完成体了，但所示文字截断在动词短语中。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2183,
+  "completion_tokens": 1353,
+  "total_tokens": 3536,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 532,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1015,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

@@ -1,0 +1,93 @@
+{
+ "input": "Earlier scenes:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚。他告诉朋友：“你吃哪种植物，这就要看你的口味。比方说，你爱吃甜的，可能喜欢糖。”他最喜欢吃花，除了夹竹桃以外，什么都花想吃。\n\nThis scene:\n他发现这个口味，一百岁时候，不小心吃了毒的花。一吃就开始死。但是生病时候告诉人什么植物是药，什么植物是毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他发现这个口味，一百岁时候，不小心吃了毒的花：delete “他发现这个口味”, since it has no clear relationship with previous or following clauses; 一百岁的时候，有毒的花\n- 一吃就开始死：开始不舒服，“死“ is instant, so cannot be with “开始”\n- 但是生病时候告诉人什么植物是药，什么植物是毒：但是即使他生病了，也告诉……，有毒\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 毒的花：有毒的花，Use 有毒的 before a noun to describe a poisonous plant; 毒 alone does not work as this attributive adjective.\n2. [Grammar & Vocabulary, error] 告诉人：告诉了人们，This is a completed informing action in the narrative, so it needs 了; 人 is generic, while 人们 refers to the group of people he informed.\n3. [Grammar & Vocabulary, error] 什么植物是毒：什么植物有毒，Use 有毒 to state that a plant is poisonous; 是毒 is not the natural predicate here.\n4. [Coherence: reference, error] Coherence (Reference): 这个口味：这个味道，The reference rule requires 这 to point to a clear earlier noun; 口味 usually means a person’s food preference, while 味道 refers to the taste of something.\n5. [Coherence: temporality, error] Coherence (Temporality): 一百岁时候：一百岁的时候，The time-expression pattern needs 的 before 时候 when the preceding phrase is not a monosyllabic time word.\n6. [Coherence: temporality, error] Coherence (Temporality): 生病时候：生病的时候，The time-expression pattern needs 的 in a verb phrase followed by 时候.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "有毒的花 is the correct way to describe a poisonous flower."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "人们 is needed for this concrete group, and 告诉了 correctly marks the completed narrative action."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "A plant is described as 有毒, not 是毒."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这个口味 has no clear referent here, and changing it to 这个味道 does not repair that coherence problem."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "一百岁的时候 requires 的 before 时候."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "A verb phrase followed by 时候 requires 的: 生病的时候."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2229,
+  "completion_tokens": 973,
+  "total_tokens": 3202,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 578,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 624,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

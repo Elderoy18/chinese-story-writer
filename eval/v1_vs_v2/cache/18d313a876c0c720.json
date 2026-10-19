@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近，害得孟子的心气：住得离墓地太近，会害得孟子没有心思学习，use 得 after 住 to introduce the degree phrase; also, 害得 must be followed by the person affected and a harmful result clause, not only a noun such as 心气.\n2. [Grammar & Vocabulary, error] 老是读书：一直读书，老是 usually carries a complaining or negative connotation; 一直 neutrally describes continuing to read and study.\n3. [Coherence: reference, error] Coherence (Reference): 孟子和孟母：他们，use a pronoun for close re-occurrence when the two people were named in the immediately preceding context and no competing referents are present.\n4. [Coherence: temporality, error] Coherence (Temporality): 搬到：搬到了，use 了 after 搬到 because the move to the teacher’s home is presented as a completed event.\n5. [Coherence: connectors, error] Coherence (Conjunction): 因为孟子现在没有朋友，他一直读书：因为孟子现在没有朋友，所以他一直读书，add 所以 to complete the cause-and-effect connector pair.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "住得离墓地太近 is grammatical, and 害得孟子没有心思学习 gives 害得 a person plus a harmful-result clause."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是读书 is acceptable here and does not have to be replaced by 一直读书."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Repeating 孟子和孟母 here is acceptable and is not a reference error, although 他们 would also work."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The displayed target is cut off from its destination phrase, but in the sentence 搬到了 correctly marks the completed move."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The problem is the reversed causal relation: he has no friends because he is always reading, not necessarily the other way around."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2161,
+  "completion_tokens": 1834,
+  "total_tokens": 3995,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 510,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1489,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

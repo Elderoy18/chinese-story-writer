@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，有一个人叫神农。一天，神农正在路上走，一看很多人正在吃一些植物。一些人一吃植物就生病了，神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一看很多人正在吃一些植物：看到，一……就\n- 神农想帮别人：帮他们，“别(的)” is for “a different type”, and “all else except the spoken one”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，Both parts mean “in ancient times,” so using them together is redundant. [vocab list]\n2. [Coherence: reference, error] Coherence (Reference): 一天，神农：一天，他，Use a pronoun for a close re-occurrence when the named character has just been introduced and no other male character competes as the referent. [rule: none]\n3. [Coherence: connectors, error] Coherence (Conjunction): 一看很多人正在吃一些植物。一些人一吃植物就生病了：一看到很多人正在吃一些植物，就发现一些人一吃植物就生病了，The sequence pattern needs “一……就……”; use “看到” because the intended meaning is that he successfully sees the scene. [teacher rule: yi_jiu]\n4. [Coherence: connectors, error] Coherence (Conjunction): 神农想帮别人。所以想知道哪些植物能吃，哪些植物不能吃：因为神农想帮别人，所以想知道哪些植物能吃，哪些植物不能吃，Use “因为……所以……” to make the cause-and-effect relationship explicit: his wish to help others causes his desire to learn about the plants. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 already denotes a time period, so 古代的时候 is redundantly structured; 在古代 is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 was just introduced and no competing male referent intervenes, so 她/他 should be used, but 一天，他 is still an unfinished clause."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "一看 should be 一看到 here, and the linked events require the 一……就…… pattern."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: connectors"
+    ],
+    "reason": "Adding 因为……所以 correctly makes the causal link explicit, but 帮别人 remains wrong here and should be 帮他们 (and the repeated 神农 is also unnecessarily close reference)."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2060,
+  "completion_tokens": 1601,
+  "total_tokens": 3661,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 409,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1304,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

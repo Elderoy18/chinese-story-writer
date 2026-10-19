@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 学习馆学：在学习馆学习，A place used as the location of an action needs the preposition “在”; “学习” is the verb here. [rule: none]\n2. [Grammar & Vocabulary, error] 对他很多好处：对他有很多好处，The fixed collocation is “对……有好处”; “好处” is a noun and needs “有” as its verb. [rule: verb_object_collocation]\n3. [Coherence: reference, error] Coherence (Reference): 孟子学习馆学了十五年：他在学习馆学习了十五年，Use a pronoun when the same character was named in the immediately preceding sentence and no other male character competes as the referent. [rule: ambiguous_reference]\n4. [Coherence: reference, error] Coherence (Reference): 他的学习和他的旅行经验：他的学习和旅行经验，Within one coordinated phrase, the second possessive pronoun is unnecessary because both kinds of experience clearly belong to the same person; use zero form. [rule: ambiguous_reference]\n5. [Coherence: temporality, error] Coherence (Temporality): 成为：成为了，“成为哲人” describes a completed change of state in this past narrative, so it takes the completion marker 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original lacks 在 before the place and uses 学习馆 where 学校 is needed; the fix repairs the structure but leaves the vocabulary issue."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "好处 needs a verb here, and 对他有很多好处 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟子 was just mentioned, so 他 is the appropriate close reference, but 学习馆 remains incorrect in the corrected text."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The second 他的 is unnecessary because both 学习 and 旅行经验 clearly belong to the same person."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "成为 describes the completed past change of becoming a philosopher, so 成为了 correctly marks completion."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2267,
+  "completion_tokens": 2122,
+  "total_tokens": 4389,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 616,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1786,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

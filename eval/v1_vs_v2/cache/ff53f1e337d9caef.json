@@ -1,0 +1,59 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThis scene:\n他很聪明的人，难怪他成为有名的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他很聪明的人，难怪他成为有名的人：很聪明\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他很聪明的人：他是一个很聪明的人，A noun phrase used to describe the subject needs the copula “是”; “一个” introduces the noun “人.” [rule: none]\n2. [Grammar & Vocabulary, error] 成为有名的人：成为了有名的人，“成为” describes a completed change of state here, so it takes “了.” [rule: aspect_le_completed]\n3. [Coherence: reference, error] Coherence (Reference): 难怪他成为有名的人：难怪成为有名的人，The subject has already appeared in the first clause of the same sentence, so use zero form instead of repeating the pronoun. [rule: redundancy_delete]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“他很聪明的人” lacks the needed predicate structure, and “他是一个很聪明的人” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“成为有名的人” is acceptable here, and the teacher did not require 了."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The pronoun 他 is appropriate because 孟子 was recently established as the referent, and the teacher retained it."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 1961,
+  "completion_tokens": 609,
+  "total_tokens": 2570,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 310,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 408,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

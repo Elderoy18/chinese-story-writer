@@ -1,0 +1,115 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一个老男人叫神农：老人，“老男人“ has negative meaning\n- 神农在古代每一天看到了别的小镇人生病还是不舒服：delete “在古代”, it implies that 神农can travel between 古代 and 现代modern times; 都看到，no了for routine/habit; 别的小镇上的人；生病或者不舒服\n- 他下一天开始爬当地的山脉：第二天，当地的大山，山脉is for geography\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 别的小镇人：小镇里的人，别的 is used to distinguish other people or things from a stated one; no such comparison is established here, and 小镇里的人 is the natural noun phrase for people in the town. [teacher rule: bieren]\n2. [Grammar & Vocabulary, error] 下一天：第二天，第二天 is the standard narrative time expression for “the following day”; 下一天 is not natural in this context. [rule: time_expression]\n3. [Grammar & Vocabulary, error] 找了各种各样的植物：找到了各种各样的植物，找 means “look for,” while 找到 means “find.” The following action shows that the plants were found. [vocab list]\n4. [Grammar & Vocabulary, error] 每个植物：每一种植物，when referring to each type of plant, use the classifier 种 rather than the general classifier 个. [rule: none]\n5. [Coherence: reference, error] Coherence (Reference): 所以他决定开始找新的药：所以决定开始找新的药，because 神农 has already been named earlier in the same sentence and no other character competes as the subject, use zero form rather than repeating 他. [rule: redundancy_delete]\n6. [Coherence: reference, error] Coherence (Reference): 知道有什么好处：知道它们各有什么好处，adding 它们 makes the referent—the plants—clear, while 各 shows that each plant may have different benefits. [rule: ambiguous_reference]\n7. [Coherence: temporality, error] Coherence (Temporality): 每一天看到了：每一天看到，每一天 describes a routine, so use the zero particle rather than 了, which marks a completed action. [rule: aspect_le_completed]\n8. [Coherence: temporality, error] Coherence (Temporality): 试一试：试了试，this is a completed action in a past narrative, so the action takes 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "别的 lacks the required comparison here, and 小镇人 also needs a structural link such as 里的人 or 上的人."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "下一天 is not the appropriate narrative expression here; 第二天 is correct."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "找了各种各样的植物 can mean that he searched for various plants and is acceptable; 找到 is only a possible change in meaning."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "个 can classify individual plants, so 每个植物 is acceptable and does not necessarily mean each type."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "Under the teacher's zero-reference rule, 他 is redundant because 神农 is already the subject in the same sentence."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The plants are clear from the preceding clause, so 知道有什么好处 does not require an explicit 它们."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "每一天 describes a habitual action, so 看到了 should be 看."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "试一试 is an acceptable reduplicated verb form here, and the teacher did not require 了 on this verb."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2303,
+  "completion_tokens": 1168,
+  "total_tokens": 3471,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 652,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 671,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

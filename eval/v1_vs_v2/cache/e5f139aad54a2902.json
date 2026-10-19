@@ -1,0 +1,83 @@
+{
+ "input": "Earlier scenes:\n古代的时候有一个人叫神农。他需要当上医，一看别的人就想帮助他们。但是，他有一个问题，他不知道什么东西能做药。神农听说一个远远的地方有一种植物，什么病人吃都会觉得身体更好。神农三个月走去，找到有植物的地方，他看到一个很漂亮的植物，又香又好看。他觉得，这种一定是做药的花。原来他想错了。吃了以后，神农快生病。 这时一个穿着蓝色衣服的人帮神农，快给他一种红的灵芝。神农吃了以后，他没有病，想起来以前一个人告诉他，灵芝对身体有好处。\n\nThis scene:\n啊，他怎么忘记了？他把灵芝放在包里。一回家就告诉别人。他找到药以后他写下怎么做药在书上。所以人们都知道，那红灵芝对身体好处。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 一回家就告诉别人：家人\n- 他找到药以后他写下怎么做药在书上：delete the second他，redundant; 在书上写下……\n- 所以人们都知道，那红灵芝对身体好处：这样，有好处\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 对身体好处：对身体有好处，This needs the fixed pattern for expressing benefit: the thing is beneficial to the body. [vocab list]\n2. [Coherence: reference, error] Coherence (Reference): 那红灵芝：那株红灵芝，A demonstrative such as 那 must be followed by a measure word and noun; 株 is suitable for a plant such as lingzhi. [teacher rule: zhe_na_mw]\n3. [Coherence: temporality, error] Coherence (Temporality): 他把灵芝放在包里：他把灵芝放进了包里，This is a completed action in the narrative, so it needs 了; 进 also shows that the lingzhi was placed inside the bag. [rule: aspect_le_completed]\n4. [Coherence: temporality, error] Coherence (Temporality): 一回家就告诉别人：一回家就告诉了别人，The telling happens as one completed event after returning home, so it needs 了. [rule: aspect_le_completed]\n5. [Coherence: temporality, error] Coherence (Temporality): 他找到药以后他写下怎么做药在书上：他找到药以后，把做药的方法写在了书上，The completed writing action needs 了. This version also uses a noun phrase for what was written and places the location naturally in a 把 construction. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“对身体好处”缺少动词“有”，应说“对身体有好处”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "按教师规则，“那”后面需要量词，植物可用“株”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "原句在这个动作序列中可以不用“了”，系统只是作了可接受但非必要的改写。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: reference"
+    ],
+    "reason": "这里应是“告诉家人”，系统只加了“了”而保留“别人”，没有改正教师指出的错误。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "改写删除了重复的“他”，并把“在书上”的位置和完成体表达处理正确。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2272,
+  "completion_tokens": 1131,
+  "total_tokens": 3403,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 621,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 793,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

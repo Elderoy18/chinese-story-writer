@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\nThis scene:\n他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他不知道如果这把花对你的身体好：不知道这种花对身体好不好，the “if” in “not know if + clause” is not 如果\n- 这就要看如果这把花毒不毒了：the “if” in “not know if + clause” is not 如果, delete如果，有没有毒\n- 正好，他找到了别的花：另外一种花，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n- 神农不知道他吃不吃灵芝或者夹竹桃：要不要吃……\n- 别的人给了神农一个灵芝：另外一个人，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不知道如果这把花对他的身体好不好：不知道这把花对他的身体好不好，An embedded yes/no question after “不知道” uses an A-not-A form, not “如果,” which introduces a condition. [rule: a_not_a_question]\n2. [Grammar & Vocabulary, error] 这就要看如果这把花毒不毒了：这就要看这把花毒不毒了，“这就要看……” must be followed by a question form; “毒不毒” is already an A-not-A question, so “如果” should be removed. [rule: zhe_jiu_yao_kan]\n3. [Grammar & Vocabulary, error] 他吃不吃灵芝或者夹竹桃：自己吃的是灵芝还是夹竹桃，The uncertainty is about which plant he ate, not whether he eats. Two alternative possibilities use “是……还是……”. [rule: a_not_a_question]\n4. [Coherence: reference, error] Coherence (Reference): 你的身体：他的身体，The narrator is describing what happened to Shennong, rather than directly addressing the reader, so the possessive pronoun should refer back to him. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "不知道后面不能用如果引出嵌入的是非问句，删掉如果后句子正确。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "如果应删除，但“毒不毒了”仍不合这里询问是否有毒的意思，应该说“有没有毒”。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这里应是“不知道要不要吃”，系统却改成了不知道已经吃的是哪一种植物，改变了原意。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "叙述神农时不应突然用第二人称“你”，改为“他”能正确指回神农。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2310,
+  "completion_tokens": 1891,
+  "total_tokens": 4201,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 659,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1595,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

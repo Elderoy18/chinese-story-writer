@@ -1,0 +1,103 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代时候，人不知道他们能吃什么植物，常常一吃就死。但是不知道为什么，没有办法。所以有一天，神农出去试一试很多种植物，告诉人什么植物是安全什么是危险。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代时候，人不知道他们能吃什么植物：古代的时候，人们\n- 所以有一天，神农出去试一试很多种植物：better to briefly introduce “神农” when this character first appears\n- 告诉人什么植物是安全什么是危险：是安全的，是危险的\n- 发现有的植物对身体非常好，特别是茶，让肚子感觉又暖和又清楚：add他in the beginning; delete 感觉，又暖和又舒服\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代时候：古代的时候，A multi-syllable time expression before “时候” needs the particle “的”.\n2. [Grammar & Vocabulary, error] 人不知道他们能吃什么植物：人们不知道什么植物能吃，Use “人们” for a concrete group of people; after this subject is stated, “他们” is unnecessary here.\n3. [Grammar & Vocabulary, error] 试一试很多种植物：尝试很多种植物，“试一试” suggests trying something briefly, which does not fit testing many different kinds; “尝试” fits systematic testing.\n4. [Grammar & Vocabulary, error] 什么植物是安全什么是危险：哪些植物是安全的，哪些植物是危险的，When an adjective follows “是” to describe a category, use “的”; “哪些……，哪些……” also makes the two groups parallel.\n5. [Coherence: reference, error] Coherence (Reference): 神农：一个叫神农的人，This is the character’s first mention, so introduce the name with a full noun phrase rather than assuming the reader already knows who he is.\n6. [Coherence: temporality, error] Coherence (Temporality): 告诉人们：告诉了人们，This is the final completed action in a series of past events, so it takes “了”; the earlier action in the series does not need another “了”.\n7. [Coherence: connectors, error] Coherence (Conjunction): 但是不知道为什么，没有办法：因为不知道为什么，所以没有办法，Use “因为……所以……” for the cause-and-effect relation: not knowing the reason causes the lack of a solution.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代 is multisyllabic, so 古代的时候 requires 的."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "人 cannot refer to this concrete group; 人们 is required, and 他们 is unnecessary."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "试一试很多种植物 is acceptable for Shennong trying or testing many plants, so this is only a stylistic rewrite."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The adjectives after 是 need 的: 是安全的 and 是危险的."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "神农 is first mentioned here and should be introduced with a fuller noun phrase."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "告诉 is the final completed action in the sequence, so it should take 了."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "但是不知道为什么，没有办法 is understandable and acceptable here; the causal rewrite is not required."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2201,
+  "completion_tokens": 1867,
+  "total_tokens": 4068,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 550,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1451,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

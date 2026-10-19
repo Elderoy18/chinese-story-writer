@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThe teacher's corrections on this scene:\n- 这就要看如果这把花毒不毒了：the “if” in “not know if + clause” is not 如果, delete如果，有没有毒\n\nThe system's item in each run:\nRun 1: 要看如果这把花毒不毒：要看这把花毒不毒，The part after 这就要看……了 must be a question form; 毒不毒 already provides the required A-not-A question, so 如果 should be removed. [rule: zhe_jiu_yao_kan]\nRun 2: 看如果：看，After “看,” the clause already uses the A-not-A form “毒不毒,” so “如果” is not used. [rule: a_not_a_question]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": true,
+  "reason": "Both runs identify the unnecessary 如果 before the A-not-A question 毒不毒 and remove it."
+ },
+ "usage": {
+  "prompt_tokens": 472,
+  "completion_tokens": 43,
+  "total_tokens": 515,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

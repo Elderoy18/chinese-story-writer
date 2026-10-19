@@ -1,0 +1,82 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有一天孟子去了墓地玩儿：better to briefly introduce “孟子” when this character first appears\n- 但是他妈妈觉得这是不合适的地方让孩子玩：这不是适合孩子玩的地方\n- 所以她决定了他们会搬家找更好的地方：决定is a mental state verb, no了；delete他们会；搬家到更好的地方\n- 她恐怕儿子的童年不会幸福：怕/担心，恐怕usually does not take Subj. except 我\n- 所以她会一直搬家才能找到质量好的教育：delete会，会will; delete才能，想要让孟子受到良好的教育\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 这是不合适的地方让孩子玩：这是一个不适合孩子玩儿的地方，Use a modifier ending in 的 before the noun; 不适合孩子玩儿 describes the place.\n2. [Grammar & Vocabulary, error] 住在这儿教育不太好：这儿的教育不太好，When describing the education in a location, use the location as a modifier with 的 before the noun.\n3. [Grammar & Vocabulary, error] 她会一直搬家才能找到质量好的教育：她得一直搬家，才能找到质量好的教育，The pattern 得……才能…… expresses that an action is necessary in order to achieve a result; 会 only predicts a future action.\n4. [Coherence: reference, error] Coherence (Reference): 有一天孟子去了墓地玩儿：古代，有一个小男孩叫孟子。一天，他去了墓地玩儿，On first mention, introduce the character with a name and a brief identifying noun phrase; after that, use a pronoun for the close re-occurrence.\n5. [Coherence: temporality, error] Coherence (Temporality): 她决定了：她决定，Decide is a mental-state verb, so it normally uses the zero particle rather than 了.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“不合适的地方让孩子玩” needs a modifier structure such as “适合孩子玩的地方.”"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“住在这儿教育不太好” is understandable and acceptable here, although “这儿的教育” is smoother."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality",
+     "Coherence: connectors"
+    ],
+    "reason": "The original future “会” and bare “才能” do not express the intended necessity relation, while “得……才能……” does."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "On first mention, the character should be briefly introduced rather than appearing only as the name “孟子.”"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“决定” is a mental-state verb and should not take perfective “了” in this context."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2194,
+  "completion_tokens": 1240,
+  "total_tokens": 3434,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 543,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 905,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

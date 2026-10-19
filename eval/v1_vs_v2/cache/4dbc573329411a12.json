@@ -1,0 +1,81 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “住离墓地太近” Formula: 住在 + 离 + place + adjective + 的地方 Correct: “住在离墓地太近的地方” / More naturally: “住在离墓地很近的地方”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “害得孟子的心气” Formula: A + 害得/影响 + person + result; or A + 不利于 + person + 的 + development Correct: “住在墓地附近会影响孟子的心情。” / “住在墓地附近不利于孟子的成长。” “害得” needs a clear negative result after it, such as “害得孟子没有心思读书.”\n3. [Grammar & Vocabulary, error] Incorrect phrase: “孟子和孟母搬到子思老师的家，跟子思老师住。” Formula: 因为/所以 + subject + 搬到 + place + 和 + person + 一起住 Correct: “所以，孟子和孟母搬到子思老师家里，和子思老师一起住。” Adding “所以” makes the reason for moving clear, and “一起住” is more natural.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “子思帮孟母教她的儿子。” Formula: person + 帮助 + person + 教 + object; or person + 教 + student Correct: “子思老师帮助孟母教孟子。” / “子思老师教孟子。” “她的儿子” can be unclear, while using “孟子” clearly identifies the child.\n5. [Grammar & Vocabulary, error] Incorrect phrase: “他老是读书。” Formula: 因为 + reason，person + 只好/一直 + verb Correct: “因为孟子现在没有朋友，他只好一直读书。” “老是” often expresses annoyance or complaint. “一直” is neutral, while “只好” clearly shows that he has no better option.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住 needs 在, and the location phrase needs 的地方 in this construction."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 must be followed by a person and a harmful result, so 害得孟子的心气 is incomplete."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "跟子思老师住 is grammatical and clear, and neither 所以 nor 一起 is required."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "她 clearly refers to the recently mentioned 孟母, so 她的儿子 is not unclear here."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The problem is the causal direction: he has no friends because he always reads, not that he reads because he has no friends."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2322,
+  "completion_tokens": 1495,
+  "total_tokens": 3817,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 671,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1172,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

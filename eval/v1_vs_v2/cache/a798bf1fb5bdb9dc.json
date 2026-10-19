@@ -1,0 +1,73 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThis scene:\n糟糕，这黄色的花是夹竹桃，特别是毒。正好在这儿，灵芝药的夹竹桃他吃完了，也写一个课文的植物。谢谢神农。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 特别是毒：有毒，特别是+N，+ Clause\n- 灵芝药的夹竹桃他吃完了：可以做夹竹桃解药的灵芝他吃了\n- 也写一个课文的植物：写下一篇有关植物的文章\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 灵芝药的夹竹桃：灵芝是药，夹竹桃有毒，two different plants cannot be joined with 的 in this way; use separate clauses to state that 灵芝 is medicine and 夹竹桃 is poisonous.\n2. [Grammar & Vocabulary, error] 写植物：记下植物，写 does not mean to record information about plants in this context; 记下 means to make a record of what was learned.\n3. [Grammar & Vocabulary, error] 一个课文：一本书，课文 is a passage used for study, while a book takes the measure word 本.\n4. [Coherence: temporality, error] Coherence (Temporality): 也写一个课文的植物：也在一本书里记下了这些植物，this is another completed action after 吃完了, so the final action needs 了; use the completed form 记下了.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“灵芝药的夹竹桃” incorrectly uses 的 to link the antidote and the poisonous plant."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“写植物” can mean writing about plants, so changing 写 to 记下 is not required."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary",
+     "Grammar"
+    ],
+    "reason": "“一个课文” is wrong here, but 一本书 changes the intended article and does not repair the surrounding “的植物” structure."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality",
+     "Grammar"
+    ],
+    "reason": "The final action is completed and needs a completed form; “也在一本书里记下了这些植物” is grammatical and expresses this."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2085,
+  "completion_tokens": 1743,
+  "total_tokens": 3828,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 434,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1456,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

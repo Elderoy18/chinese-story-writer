@@ -1,0 +1,126 @@
+{
+ "input": "Earlier scenes:\n古代的时候，一个男人觉得植物很有意思。他叫神农。有的植物吃了以后他的肚子疼死了，可是有的吃了以后很舒服。他找很多植物。\n\nThis scene:\n凉山很大的山，这也找植物。一天，他找到黄色的花。他听说你跟黄色的花做茶很有用。比方说，你的头发疼死，这冰茶是药。他一喝茶就很不舒服。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 凉山很大的山，这也找植物：很大，在这儿也能找到植物\n- 他找到黄色的花：一种黄色的花，“黄色的花“too general and too vague\n- 他听说你跟黄色的花做茶很有用：delete你，用……\n- 你的头发疼死，这冰茶是药：头很疼，这种冰茶\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 凉山很大的山：凉山是一座很大的山，A sentence that identifies what something is needs the copula `是`; `一座` is the matching measure word for a mountain.\n2. [Grammar & Vocabulary, error] 这也找植物：他也在这儿找植物，Use `在 + place + verb` to show where an action happens; `这儿` means “here.”\n3. [Grammar & Vocabulary, error] 找到黄色的花：找到了一朵黄色的花，Use `了` after the completed finding action, and use the measure word `朵` for one flower.\n4. [Grammar & Vocabulary, error] 跟黄色的花做茶：用黄色的花做茶，`用` introduces the material used to make something; `跟` means “with” and cannot show that the flowers are the ingredient.\n5. [Grammar & Vocabulary, error] 头发疼死：头疼得很厉害，`头发` means hair, which cannot feel pain; a headache is `头疼`. Use `得 + degree complement` to describe how painful it is.\n6. [Grammar & Vocabulary, error] 这冰茶：这杯冰茶，A demonstrative such as `这` needs a measure word before a countable noun; `杯` is the appropriate measure word for a drink.\n7. [Coherence: reference, error] Coherence (Reference): 你：他，The narration is about `他`, so the second-person pronoun `你` has no clear referent. Repeat the established character with `他`.\n8. [Coherence: temporality, error] Coherence (Temporality): 很不舒服：很不舒服了，Use `了` after the adjective to mark the change of state: he became uncomfortable after drinking the tea.\n9. [Coherence: connectors, error] Coherence (Conjunction): 他一喝茶就很不舒服：可是，他一喝茶就很不舒服，`可是` marks contrast: he had heard that the tea was useful, but it made him feel ill.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original identification sentence lacks 是, and 一座 is an appropriate measure word for a mountain."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "这 cannot serve as the location of 找 without a locative expression such as 在这儿."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "一朵 makes it a single flower but does not fix the teacher's problem that 黄色的花 is too vague; 一种黄色的花 is needed."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "用, rather than 跟, correctly introduces the material used to make tea."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "头发 is hair and cannot hurt, whereas 头疼得很厉害 correctly describes a severe headache."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "这 needs a measure word before the countable noun, and 这杯冰茶 is grammatical."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "你 has no referent, but it should be deleted rather than changed to 他, and the resulting phrase still contains 跟黄色的花做茶."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "Sentence-final 了 correctly marks the change to an uncomfortable state after he drank the tea."
+   },
+   {
+    "n": 9,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "可是 would make the contrast more explicit, but its absence is not an error; the shown revision also still lacks the needed sentence-final 了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2317,
+  "completion_tokens": 2493,
+  "total_tokens": 4810,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 666,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1919,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

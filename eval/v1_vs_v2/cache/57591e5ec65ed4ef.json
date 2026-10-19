@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n四年后，孟子开始帮妈妈祭拜。他画画很厉害，他越来越喜欢祭拜，所以他祭拜不是想帮妈妈工作，而是他很喜欢画画。孟子成为很著名的古代画家。今天很多中国人很喜欢孟子。\n\nThe teacher's corrections on this scene:\n- 他画画很厉害，他越来越喜欢祭拜：delete the second他，redundant; no logic relationship, add也before越来越\n- 孟子成为很著名的古代画家：wrong information, 哲学家\n\nThe system's item in each run:\nRun 1: Incorrect phrase: “孟子成为很著名的古代画家。” / Formula: 谁 + 后来 + 成为 + 一位 + 形容词 + 职业 / Correct: “孟子后来成为一位著名的哲学家。” Use **一位** before a person’s profession. Also, historically, Mencius was a famous philosopher, not a painter; “古代” is unnecessary because the narrative already takes place in ancient times.\nRun 2: Incorrect phrase: “孟子成为很著名的古代画家” / Formula: Subject + 成为 + 一个/一名 + modifier + noun / Correct: “孟子成为了一名很著名的古代画家。” Also, historically, 孟子 was a philosopher, not a painter. A more accurate sentence is: “孟子后来成为了一名著名的哲学家。”\nRun 3: Incorrect phrase: “孟子成为很著名的古代画家。” Formula: Subject + 成为 + 一个 + Modifier + Noun; “古代” should describe the historical setting, not usually the person’s job title. Correct: “后来，孟子成为了一位很著名的画家。” Note: In the traditional story, Mencius became a famous philosopher, not a painter: “后来，孟子成为了一位很著名的哲学家。”",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs flag the occupation statement, but Run 2 and Run 3 present painter revisions as corrections, which do not fix the factual error requiring 哲学家."
+ },
+ "usage": {
+  "prompt_tokens": 651,
+  "completion_tokens": 57,
+  "total_tokens": 708,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

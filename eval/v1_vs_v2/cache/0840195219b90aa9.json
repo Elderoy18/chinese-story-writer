@@ -1,0 +1,27 @@
+{
+ "input": "Scene:\n他难怪抱怨，他想他的朋友，因为他不要离开他的城市。他的妈妈找到孟子一个老师。跟老师孟子学最重要的文学，所以他成为哲学家。\n\nThe teacher's corrections on this scene:\n- 他难怪抱怨，他想他的朋友，因为他不要离开他的城市：难怪他抱怨，难怪 + sentence; 原来他想他的朋友，不想离开他的城市\n- 他的妈妈找到孟子一个老师：给孟子找到……\n- 跟老师孟子学最重要的文学：孟子跟老师学习文学\n\nThe system's item in each run:\nRun 1: 找到孟子一个老师：给孟子找了一个老师，put the beneficiary before the verb with `给`, and use `了` because the mother’s finding a teacher is a completed action. [rule: aspect_le_completed]\nRun 2: 找到孟子一个老师：给孟子找到了一个老师，Put the recipient after 给 and before the verb. The completed result uses 了 after the resultative complement 到. [rule: none]\nRun 3: 找到孟子一个老师：给孟子找一个老师，Put the beneficiary after 给 and before the verb phrase: this means finding a teacher for Mencius. [rule: none]",
+ "salt": "",
+ "output": {
+  "same_error": true,
+  "equivalent_fix": false,
+  "reason": "All runs address the missing beneficiary marker 给, but Run 3 omits the completed-action aspect required by the context and teacher correction."
+ },
+ "usage": {
+  "prompt_tokens": 507,
+  "completion_tokens": 50,
+  "total_tokens": 557,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "fe932ab482"
+}

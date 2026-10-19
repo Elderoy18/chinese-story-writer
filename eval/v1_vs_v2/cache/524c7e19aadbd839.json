@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子小的时候：better to briefly introduce “孟子” when this character first appears\n- 孟子和他的朋友喜欢玩在墓地里，装祭拜：在墓地玩，在Place V.; 装着祭拜的样子\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 小的时候：小时候，A monosyllabic word followed by 时候 forms a fixed time expression without 的. [teacher rule: de_shihou]\n2. [Grammar & Vocabulary, error] 喜欢玩在墓地里，装祭拜：喜欢在墓地里玩，假装祭拜，The location phrase with 在 should come before the action verb, and 假装 can introduce the action that is being imitated. [rule: none]\n3. [Grammar & Vocabulary, error] 跟妈妈：妈妈带着他，This wording makes Mengzi sound like the person leading the move. For a child moving with his mother, the mother should be the subject and should take the child with her. [vocab list]\n4. [Coherence: temporality, error] Coherence (Temporality): 搬家：搬家了，This is one completed move at a specific time in the past, so the final action should take 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Under the teacher's rule, monosyllabic 小 forms the fixed expression 小时候 without 的."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "在墓地里 should precede 玩, and 假装祭拜 correctly expresses pretending to perform a sacrifice."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "孟子五岁的时候跟妈妈搬家 naturally means that he moved house with his mother and does not imply that he led the move."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "This is a completed move at a specific past time, so 搬家了 is required under the teacher's aspect rule."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2027,
+  "completion_tokens": 725,
+  "total_tokens": 2752,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 376,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 463,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

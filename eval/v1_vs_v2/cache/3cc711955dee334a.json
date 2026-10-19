@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有一个男人，他的名字是神农。他看到了有很多人不知道哪个植物好吃，也不知道什么植物对你的身体有好处。这个问题神农觉得很糟糕，所以神农去了吃每种植物。他吃了一种植物以后，就写了这个植物对你有没有好处。有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物。他吃完了每种植物以后，会来跟他的朋友聊到他吃的植物了。一个人问神农，哪个植物好吃。神农说，这就要看你的口味了。要是你喜欢吃甜的，有很多甜的水果，比方说苹果、西瓜和梨。一个别的人问神农，哪个植物对你的身体有好处。神农说，有很多种植物对你的身体有好处，比方说小白菜、黄瓜、茶和菠菜。一个别的人问神农，哪个植物对你的身体有坏处。\n\nThis scene:\n神农说，有一天，我吃了一个黄色的花，名字是夹竹桃。我一吃夹竹桃，就觉得这种植物对我的脑有坏处。可是，一个灵芝和一个男人正好在我的旁边，我说，麻烦你把那个植物给我吃一下。我一吃这个灵芝就好了。所以，你得小心吃植物，因为有的植物对你的健康有坏处，特别是夹竹桃。因为夹竹桃有毒。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 有的时候，神农吃了很好吃的植物。有的时候，他吃了很危险的植物：吃到了，V + resultative\n- 对我的脑有坏处：大脑\n- 一个灵芝和一个男人正好在我的旁边：“男人” is moving to神农(dynamic) while “灵芝” is next to神农(static), so it’s better not to combine the two，一个男人正好过来，看到我的旁边长着一个灵芝\n- 你得小心吃植物，因为有的植物对你的健康有坏处：吃植物得小心，delete“对你”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 一个黄色的花：一朵黄色的花，朵 is the appropriate measure word for an individual flower; 个 is too generic here. [rule: none]\n2. [Grammar & Vocabulary, error] 一个灵芝：一株灵芝，株 is an appropriate measure word for an individual medicinal plant such as 灵芝; 个 is too generic in this context. [rule: none]\n3. [Coherence: reference, error] Coherence (Reference): 夹竹桃有毒：它有毒，use a pronoun for a close re-occurrence when the referent has just been named and no other object competes with it. [rule: ambiguous_reference]\n4. [Coherence: connectors, error] Coherence (Conjunction): 特别是夹竹桃。因为：特别是夹竹桃，因为，because the toxicity explains why 夹竹桃 is especially dangerous, the cause clause should be connected to the preceding statement with the cause connector. [rule: none]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“花” should take a flower measure word such as “朵,” not the generic “个.”"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“灵芝” is more appropriately counted with “株” rather than the generic “个.”"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The immediately preceding mention of 夹竹桃 makes “它” the required close re-reference under the teacher's reference rule."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The original postposed causal clause is acceptable, while the displayed correction itself ends with the incomplete connector “因为.”"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2341,
+  "completion_tokens": 1438,
+  "total_tokens": 3779,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 690,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1173,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

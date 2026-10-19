@@ -1,0 +1,116 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 古代的时候，孟子和孟母住了在靠墓地的家：在古代，better to briefly introduce “孟子” when this character first appears；住在靠近墓地的地方/墓地附近，delete了，在+Place\n- 孩子才五岁就每天在墓地祭拜了：孟子，孩子is vague and unclear\n- 难怪她跟孩子搬家，原来买不了房：wrong information, 搬家因为孟母觉得it is not good to imitate how to offer sacrifices\n- 他们搬了到别一个城市找工作：搬到了，另外一个城市，“别（的）” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 古代的时候：在古代，this time expression is redundant because both parts mean “in ancient times.” [teacher rule: gudai_de_shihou_why]\n2. [Grammar & Vocabulary, error] 跟孩子搬家：带着孩子搬家，this means the mother takes the child with her when moving; 跟 suggests that they move together as equal participants. [vocab list]\n3. [Grammar & Vocabulary, error] 别一个城市：另一个城市，别的 distinguishes other items from a stated one, while 另一个 means “another one.” [teacher rule: bieren]\n4. [Coherence: reference, error] Coherence (Reference): 孟子和孟母：有一个小男孩叫孟子，他和孟母，at a character’s first mention, introduce the named character with a short identifying noun phrase. [rule: character_introduction_first_mention]\n5. [Coherence: reference, error] Coherence (Reference): 在那个城市：在一个城市里，this is the first mention of a city, so “that city” has no established referent; introduce it as a new place. [rule: ambiguous_reference]\n6. [Coherence: temporality, error] Coherence (Temporality): 住了在：住在，living in a place is a continuing state here, not a completed action, so it takes the zero particle rather than 了. [rule: aspect_le_completed]\n7. [Coherence: temporality, error] Coherence (Temporality): 祭拜了：祭拜，每天 marks a routine action, so use the zero particle rather than 了. [rule: aspect_le_completed]\n8. [Coherence: temporality, error] Coherence (Temporality): 搬了到：搬到了，put 了 after the directional/resultative complement 到 in a completed move. [teacher rule: le_placement]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "按教师规则，“古代的时候”时间表达重复，应改为“在古代”。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“跟孩子搬家”可以自然表示母亲和孩子一起搬家，并不必然表示地位平等。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "按教师对“别的”和“另外”的区分，“别一个城市”应改为“另一个城市”。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "首次出现孟子需要作简短介绍，但改后“有一个小男孩叫孟子，他和孟母”本身没有说完。"
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "城市尚未被引入，首次提及不能直接说“那个城市”。"
+   },
+   {
+    "n": 6,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "“住了在”既误用完成体也把“了”放在地点结构前，而所示改后“住在”仍缺少地点宾语。"
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“每天”表示习惯性动作，按教师规则“祭拜”不用完成体“了”。"
+   },
+   {
+    "n": 8,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "完成的搬迁动作应把“了”放在趋向补语“到”后，即“搬到了”。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2356,
+  "completion_tokens": 1958,
+  "total_tokens": 4314,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 705,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1422,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

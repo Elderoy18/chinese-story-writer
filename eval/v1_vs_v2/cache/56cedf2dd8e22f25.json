@@ -1,0 +1,125 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近：住在离墓地太近的地方，A location phrase after a verb of living needs 在, and the place needs a noun such as 地方. [rule: location_zai_place]\n2. [Grammar & Vocabulary, error] 孟子的心气：孟子很生气，害得 must be followed by the affected person and a harmful result clause; 心气 is a noun and cannot be the result by itself. [teacher rule: haide_structure]\n3. [Grammar & Vocabulary, error] 搬到：搬到了，The move is completed before the following living situation, so the completed action needs 了. [rule: aspect_le_completed]\n4. [Grammar & Vocabulary, error] 老是：一直，老是 has a complaining or negative tone; 一直 neutrally describes continuing study. [vocab list]\n5. [Coherence: reference, error] Coherence (Reference): 妈妈认为：她认为，The mother was named in the immediately preceding scene and no other female character competes as the referent, so use a pronoun for a close re-occurrence. [rule: character_introduction_first_mention]\n6. [Coherence: reference, error] Coherence (Reference): 孟子和孟母搬到了子思老师的家：他们搬到了子思老师的家，Both characters were just mentioned, so the pronoun naturally refers to them as a pair. [rule: character_introduction_first_mention]\n7. [Coherence: reference, error] Coherence (Reference): 跟子思老师住：跟他住，子思老师 was named earlier in the same sentence, so a close re-occurrence should use a pronoun. [rule: character_introduction_first_mention]\n8. [Coherence: reference, error] Coherence (Reference): 子思帮孟母教她的儿子：他帮孟母教她的儿子，子思老师 is the only recently mentioned male character, so a pronoun is clearer and avoids repeating the name. [rule: character_introduction_first_mention]\n9. [Coherence: connectors, error] Coherence (Conjunction): 因为孟子现在没有朋友，他：因为孟子现在没有朋友，所以他，Add 所以 to complete the cause-and-effect connector pair. [rule: coherence_connectives]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住 needs 在 before a location, and 离墓地太近 needs a noun such as 地方 here."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 requires an affected person followed by a harmful result clause, not just the noun phrase 孟子的心气."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed past event, so 搬到了 is an appropriate correction."
+   },
+   {
+    "n": 4,
+    "shown_complete": false,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是 can appropriately mean “always/often” in this context and is not an error."
+   },
+   {
+    "n": 5,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "妈妈 was mentioned immediately before, so the teacher's close-reference rule calls for 她."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "孟母 is a newly used referring expression here, so repeating the pair as 孟子和孟母 is acceptable rather than an error."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思老师 has just been introduced in the same sentence, so 跟他住 follows the close-reference rule."
+   },
+   {
+    "n": 8,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思 was the immediately preceding subject, so repeating the name should be replaced with 他 under the close-reference rule."
+   },
+   {
+    "n": 9,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The problem is the reversed causal relation—his constant studying explains his lack of friends—so merely adding 所以 does not fix it, and the displayed correction is cut off after 他."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2395,
+  "completion_tokens": 2543,
+  "total_tokens": 4938,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 744,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1959,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

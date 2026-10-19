@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n很久以前，有一个老男人叫神农。神农在古代每一天看到了别的小镇人生病还是不舒服，所以他决定开始找新的药。他下一天开始爬当地的山脉，找了各种各样的植物。神农试一试每个植物，知道有什么好处。\n\nThis scene:\n比方说，他一次试一试有些植物的叶，吃得又新鲜又甜。煮这些叶以后，他一喝就知道他发现新的茶叶。虽然他找到了很多的新的植物，但是他的旅程有的时候特别是危险。比方说，他一吃灵芝就开始生病。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他一次试一试有些植物的叶，吃得又新鲜又甜：有一次；试了试，了completed; 叶子；吃起来\n- 煮这些叶以后，他一喝就知道他发现新的茶叶：煮了，了completed; 叶子\n- 虽然他找到了很多的新的植物：很多新的植物\n- 但是他的旅程有的时候特别是危险：特别危险，”特别是+N, + Clause” is used to single out a typical example\n- 他一吃灵芝就开始生病：wrong information, 灵芝is a medicine\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 他一次试一试有些植物的叶：有一次，他尝了尝有些植物的叶子，Use 有一次 to introduce one specific occasion; 尝了尝 is the appropriate verb for tasting food, and 叶子 is the usual word for a plant’s leaves. [rule: word_choice]\n2. [Grammar & Vocabulary, error] 吃得又新鲜又甜：觉得这些叶子又新鲜又甜，A 得-complement describes the manner or degree of eating, but 新鲜 and 甜 describe the leaves themselves; use 觉得 to state his evaluation. [rule: none]\n3. [Grammar & Vocabulary, error] 特别是危险：特别危险，特别是 must introduce a typical example from a broader statement, while 特别 directly intensifies an adjective. [rule: example_marker_tebie_bifang]\n4. [Coherence: temporality, error] Coherence (Temporality): 煮这些叶以后：煮了这些叶以后，The boiling happens before the later drinking, so this completed action needs 了. [rule: aspect_le_completed]\n5. [Coherence: temporality, error] Coherence (Temporality): 发现新的茶叶：发现了新的茶叶，The discovery is completed by the time he knows about it, so use 了 for the completed action. [rule: aspect_le_completed]\n6. [Coherence: temporality, error] Coherence (Temporality): 开始生病：开始生病了，Becoming ill is a change of state in this specific event, so it needs 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "“一次” needs 有, “尝了尝” is a valid replacement for tasting, and 叶子 is the appropriate noun."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "新鲜 and 甜 describe the leaves rather than the manner of eating, so the 得-complement is wrong here."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "特别 directly modifies 危险, whereas 特别是 must introduce an example."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "煮 is a completed prior action and needs 了, but 叶 should still be corrected to 叶子."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The discovery is a completed event in this past narrative, so 发现了 is appropriate."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "Adding 了 correctly marks the change of state, but it leaves the teacher-marked false claim that eating 灵芝 made him ill."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2310,
+  "completion_tokens": 1412,
+  "total_tokens": 3722,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 659,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1023,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

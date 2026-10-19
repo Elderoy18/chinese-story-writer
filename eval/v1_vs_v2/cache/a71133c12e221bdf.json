@@ -1,0 +1,86 @@
+{
+ "input": "Earlier scenes:\n古代的时候，孟子和孟母住了在靠墓地的家。孩子才五岁就每天在墓地祭拜了。在那个城市，孟母从早到晚都找工作，可是找不到，害得孟母没有钱。难怪她跟孩子搬家，原来买不了房。他们搬了到别一个城市找工作。这个城市老是很吵，不是人吵架，就是都叫，害得孟子一直不能睡觉。在那儿，孟母也找不到工作。孟子和妈妈要又一个次搬了家。在第三个城市，孟母找到工作，在商店做衣服。\n\nThis scene:\n孟子在那个商店也找了到工作，可是不是做衣服的工作，而是喜欢的工作。孟子学习馆学了十五年，他的学习和他的旅行经验很重要，对他很多好处。他是大人的时候，他成为很有名的哲人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 孟子在那个商店也找了到工作：找到了\n- 孟子学习馆学了十五年：在学校，在+Place\n- 他的学习和他的旅行经验很重要，对他很多好处：delete the second他的，对他有很多好处\n- 他是大人的时候，他成为很有名的哲人：长大以后，哲学家，delete the first他\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “孟子在那个商店也找了到工作” Formula: Subject + 在 + Place + 找到 + Object Correct: “孟子在那家商店找到了工作。” “找到” is the correct result complement; use “也” only when there is a clear earlier action to compare with.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “可是不是做衣服的工作，而是喜欢的工作” Formula: Subject + 找到的不是 + A +，而是 + 自己喜欢的 + B Correct: “不过，他找到的不是做衣服的工作，而是自己喜欢的工作。” Use **不是……而是……** for “not X, but Y,” and add “自己” to make clear who likes the job.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “孟子学习馆学了十五年” Formula: Subject + 在 + Place + V. + Duration Correct: “孟子在学馆学习了十五年。” You need “在” before the place, and “学习” should be used as the verb. “学馆” is a more suitable word for an old-style school.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “他的学习和他的旅行经验很重要，对他很多好处” Formula: A + 对 + Person + 很有好处 / 给 + Person + 带来 + 很多好处 Correct: “他的学习和旅行经验对他很有好处。” Alternatively: “他的学习和旅行经验给他带来了很多好处。”\n5. [Grammar & Vocabulary, error] Incorrect phrase: “他是大人的时候，他成为很有名的哲人” Formula: Subject + 长大以后/成年后 + 成为（了）+ Noun Correct: “他长大以后成为了一位很有名的哲学家。” “他是大人的时候” is not natural Chinese; use “长大以后” or “成年后.” “哲学家” is also more common than “哲人” here.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "“找了到” has incorrect 了 placement; “找到了工作” is correct, while deleting 也 is unnecessary but does not make the correction wrong."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "The original contrast is acceptable in context, and adding 自己 merely makes the already clear reference more explicit."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "The original lacks 在 before the place and does not correctly express studying at a school; “在学馆学习了十五年” is grammatical."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: reference"
+    ],
+    "reason": "“对他很多好处” is missing 有, and repeating 他的 before 旅行经验 is unnecessary."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary",
+     "Coherence: temporality"
+    ],
+    "reason": "“他是大人的时候” is not the appropriate expression here, and “哲学家” correctly replaces the unsuitable “哲人” for this meaning."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2415,
+  "completion_tokens": 1263,
+  "total_tokens": 3678,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 764,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 905,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

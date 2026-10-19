@@ -1,0 +1,104 @@
+{
+ "input": "Earlier scenes:\n孟子小的时候，从早到晚都跟朋友玩。孟子和他的朋友喜欢玩在墓地里，装祭拜。孟子五岁的时候，跟妈妈搬家。他们搬家不是因为孟子玩得太多，而是因为妈妈认为他们的家离墓地太近。\n\nThis scene:\n妈妈认为，住离墓地太近，害得孟子的心气。孟子和孟母搬到子思老师的家，跟子思老师住。孟母帮子思打扫房间和做饭。子思帮孟母教她的儿子。因为孟子现在没有朋友，他老是读书。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 住离墓地太近，害得孟子的心气：住在离墓地太近的地方，会害得孟子受到不好的影响，害得Sb. + V.\n- 因为孟子现在没有朋友，他老是读书：孟子现在没有朋友，因为他老是读书\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住离墓地太近：住在离墓地太近的地方，A location phrase needs 在 after 住, and the phrase needs 地方 to complete the location. [rule: location_zai_place]\n2. [Grammar & Vocabulary, error] 害得孟子的心气：害得孟子很生气，害得 must be followed by the affected person and a harmful result; 心气 alone is a noun and does not state a result. [teacher rule: haide_structure]\n3. [Grammar & Vocabulary, error] 老是读书：一直读书，老是 carries a complaining or negative tone, while this sentence neutrally describes a regular activity. [rule: laoshi_negative_connotation]\n4. [Coherence: reference, error] Coherence (Reference): 跟子思老师住：跟他住，Use a pronoun for a close re-occurrence when the referent is clear; the immediately preceding phrase identifies the teacher. [rule: ambiguous_reference]\n5. [Coherence: reference, error] Coherence (Reference): 孟母帮子思打扫房间和做饭：孟母帮他打扫房间和做饭，Use a pronoun for the recently mentioned teacher rather than repeating his name. [rule: ambiguous_reference]\n6. [Coherence: reference, error] Coherence (Reference): 子思帮孟母教她的儿子：他帮孟母教她的儿子，Use a pronoun for the teacher because he is the recently mentioned and only male character in this local context. [rule: ambiguous_reference]\n7. [Coherence: temporality, error] Coherence (Temporality): 孟子和孟母搬到子思老师的家：孟子和孟母搬到了子思老师的家，The move is a completed story event, so 搬到 takes 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "住 needs 在 before a location, and 离墓地太近的地方 is a complete location phrase."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "害得 needs an affected person followed by a harmful result, and 孟子的心气 does not supply such a result."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "老是读书 is acceptable here, and the teacher retained 老是 in her correction."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思老师 was just mentioned, so 跟他住 follows the required close-reference pattern."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The teacher has just been mentioned, so 他 should be used rather than immediately repeating 子思."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "子思 is the immediately preceding referent, so 他 is the appropriate close reference."
+   },
+   {
+    "n": 7,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The move is a completed narrative event, so 搬到 should take 了 as 搬到了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2302,
+  "completion_tokens": 1210,
+  "total_tokens": 3512,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 651,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 783,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

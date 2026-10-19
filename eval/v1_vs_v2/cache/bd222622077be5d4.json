@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n古代的时候，有一个男孩名字叫孟子。孟子和孟子的妈妈两个人住在很穷的农村。他们住的地方旁边是个墓地，墓地老是有很多人祭拜。因为人们在祭拜，他们一直在哭。孟子和孟子的妈妈住在这里才一个星期就觉得受不了了，而且害得孟子的学习。\n\nThis scene:\n孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为这样的地方对儿子的教育不太好，就打算跟孟子搬家。孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 所以孟子的妈妈认为这样的地方对儿子的教育不太好：replace孟子的妈妈with她\n- 不是搬到城市，而是搬到了孟子老师的家：家里\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 取得良好的教育：接受良好的教育，The verb “取得” is used for achievements or results that someone obtains; “接受” correctly describes receiving education. [vocab list]\n2. [Grammar & Vocabulary, error] 跟孟子搬家：带着孟子搬家，“跟孟子搬家” suggests that the mother and Mencius move together as equal participants; “带着孟子搬家” shows that the mother takes her child with her. [vocab list]\n3. [Coherence: reference, error] Coherence (Reference): 孟子的妈妈觉得孟子取得良好的教育是很重要的，所以孟子的妈妈认为：孟子的妈妈觉得孟子接受良好的教育很重要，所以认为，After the mother has been named and no other possible subject intervenes, use zero form rather than repeating her full noun phrase in the same sentence. [rule: character_introduction_first_mention]\n4. [Coherence: connectors, error] Coherence (Conjunction): 孟子的妈妈带孟子不是搬到城市，而是搬到了孟子老师的家：孟子的妈妈没有带孟子搬到城市，而是带他搬到了孟子老师的家，The paired contrast needs two parallel actions: she did not take him to the city, but took him to the teacher’s home. [teacher rule: bushi_ershi]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“取得教育” is not an appropriate collocation here; “接受良好的教育” is correct."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“跟孟子搬家” correctly means that the mother moved together with Mencius and does not imply equal agency."
+   },
+   {
+    "n": 3,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "The repeated noun phrase should be replaced by “她” as the teacher marked, while the proposed text omits the needed reference and is cut off after “认为”."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: connectors"
+    ],
+    "reason": "The original “不是搬到城市，而是搬到了孟子老师的家” is an acceptable parallel contrast and does not require repeating “带孟子” on both sides."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2166,
+  "completion_tokens": 1583,
+  "total_tokens": 3749,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 515,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1288,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

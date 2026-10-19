@@ -1,0 +1,94 @@
+{
+ "input": "Earlier scenes:\n有一天孟子去了墓地玩儿，但是他妈妈觉得这是不合适的地方让孩子玩，所以她决定了他们会搬家找更好的地方。她恐怕儿子的童年不会幸福，而且住在这儿教育不太好。因为她望子成龙，所以她会一直搬家才能找到质量好的教育。然后他们搬到了离城市更近的地方。\n\nThis scene:\n他们住才一月就又搬家。古代的时候，一般人不喜欢卖东西的人。但是孟子老是跟这些卖东西的人常常玩儿，害得妈妈着急得很，因为她恐怕儿子会成为跟他们很像。她告诉了孟子：他们不是朋友，而是不好的人。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他们住才一月就又搬家：才住了一个月，了completed\n- 古代的时候：那时候\n- 但是孟子老是跟这些卖东西的人常常玩儿：delete常常，redundant with老是\n- 因为她恐怕儿子会成为跟他们很像：怕/担心，恐怕usually does not take Subj. except 我；跟他们一样/很像的人，成为+ noun\n- 她告诉了孟子：告诉，no了for speaking word\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “他们住才一月就又搬家。” / Formula: Subject + 才 + 在 + place + 住了 + duration + 就 + 又 + verb / Correct: “他们才在那儿住了一个月，就又搬家了。”\n2. [Grammar & Vocabulary, error] Incorrect phrase: “古代的时候” / Formula: 在 + historical time / Correct: “在古代，一般人不喜欢卖东西的人。”\n3. [Grammar & Vocabulary, error] Incorrect phrase: “孟子老是跟这些卖东西的人常常玩儿” / Formula: Subject + 常常/老是 + 跟 + modifier + 的 + noun + 玩儿. Do not use 老是 and 常常 together, because both indicate frequency. / Correct: “但是孟子常常跟这些卖东西的人玩儿。” “这些卖东西的人” is understandable, but “这些做买卖的人” is more natural here.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “害得妈妈着急得很” / Formula: Subject + 让/使 + specific person + adjective; use a specific reference rather than “妈妈” when needed. / Correct: “这让孟母非常着急。”\n5. [Grammar & Vocabulary, error] Incorrect phrase: “因为她恐怕儿子会成为跟他们很像。” / Formula: 因为 + subject + 担心/害怕 + noun + 会 + become + 很像 + object / Correct: “因为她担心儿子会变得跟他们很像。” “成为跟他们很像” is incomplete; use “变得跟他们很像” or “成为和他们很像的人.”\n6. [Grammar & Vocabulary, error] Incorrect phrase: “她告诉了孟子：他们不是朋友，而是不好的人。” / Formula: Subject + 告诉 + person + (that) + specific noun phrase; modifiers come before the noun with 的. / Correct: “她告诉孟子：他们不是你的朋友，而是一些不好的人。” For a general statement, “告诉” does not need 了 here.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Coherence: temporality"
+    ],
+    "reason": "The original has incorrect placement of 才 and lacks the completed-action 了; the correction is grammatical."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "古代的时候 redundantly combines two time expressions, and 在古代 correctly removes that problem."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "老是 and 常常 are redundant together, and keeping only 常常 gives a correct sentence."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "害得妈妈着急得很 is already grammatical and 妈妈 clearly refers to Mengzi's mother here."
+   },
+   {
+    "n": 5,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "恐怕 is unsuitable with this explicit subject and 成为 cannot directly take 跟他们很像; the correction fixes both."
+   },
+   {
+    "n": 6,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "In this quoted-speech use, 告诉 should not take completed-action 了, and the corrected sentence is grammatical."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2410,
+  "completion_tokens": 1407,
+  "total_tokens": 3817,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 759,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

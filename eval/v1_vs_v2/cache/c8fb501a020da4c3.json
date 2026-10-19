@@ -1,0 +1,71 @@
+{
+ "input": "Earlier scenes:\n这个男孩子叫孟子，孟子是古代的人。孟子的妈妈觉得住在哪儿对童年很重要，所以他们常常搬了家。她望子成龙，所以孟子的妈妈安排他的生活。\n\nThis scene:\n因为他们常常搬了家，中国人说，孟母三迁。孟子没有爸爸，所以，他的妈妈更重要。从这儿到那儿，妈妈教孟子很多技能。先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 因为他们常常搬了家：搬家，no了for routine/habit\n- 妈妈教孟子很多技能：教了，了completed\n- 先她让孟子跟朋友玩儿：她先让……，Subj.先……\n- 然后教他怎么买又便宜又好质量的东西：质量又好\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] Incorrect phrase: “因为他们常常搬了家，中国人说，孟母三迁。” / Formula: 因为 + specific subject + 搬了 + number + 次 + 家，所以 + subject + 常说 + “phrase” / Correct: “因为孟母带着孟子搬了三次家，所以中国人常说‘孟母三迁’。” “他们” is unclear here, and 常常 usually does not go with 了 in this context. “孟母三迁” specifically refers to three moves.\n2. [Grammar & Vocabulary, error] Incorrect phrase: “孟子没有爸爸，所以，他的妈妈更重要。” / Formula: 对 + person + 来说，+ person + 很/尤其 + important / Correct: “孟子的爸爸不在身边，所以孟母对孟子来说尤其重要。” Do not put a comma directly after 所以. Also, “更重要” normally implies a comparison, but the comparison is not clear.\n3. [Grammar & Vocabulary, error] Incorrect phrase: “从这儿到那儿，妈妈教孟子很多技能。” / Formula: 搬到/住在 + different places + 后，+ subject + 教 + person + skills / Correct: “搬到不同的地方以后，孟母教孟子很多生活技能。” “从这儿到那儿” describes physical movement, but it does not clearly connect to the idea of teaching.\n4. [Grammar & Vocabulary, error] Incorrect phrase: “先她让孟子跟朋友玩儿，然后教他怎么买又便宜又好质量的东西。” / Formula: 先 + verb phrase， 然后 + verb phrase；又 + adjective + 又 + adjective + 的 + noun / Correct: “她先让孟子跟朋友一起玩儿，然后教他怎么买又便宜又质量好的东西。” “先” should come before the action. Say “质量好的东西,” not “好质量的东西.”",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "常常 describes a habitual action, so 搬家 should not take 了 here."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "孟子没有爸爸 and 妈妈更重要 are understandable and acceptable here, with the father providing the implicit comparison."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "教 describes a completed story action and should be 教了, which the proposed correction still lacks."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar",
+     "Vocabulary"
+    ],
+    "reason": "她先让 places 先 correctly and 质量好的东西 is correct, but the final completed teaching action should be 教了."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2286,
+  "completion_tokens": 1173,
+  "total_tokens": 3459,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 635,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 910,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

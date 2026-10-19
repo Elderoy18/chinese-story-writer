@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n(none)\n\nThis scene:\n神农和他的家人住在古代，所以不知道什么植物能吃。因为他的家人常常生病了，所以神农和他的哥哥一起去旅行找可以吃的植物。他们去很多不一样的地方，比方说高山、山谷和沙漠。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 神农和他的家人住在古代：better to briefly introduce “神农” when this character first appears\n- 因为他的家人常常生病了：常常生病，no了for routine/habit\n- 他们去很多不一样的地方：去了，了completed\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 住在古代：生活在古代，古代 is a historical time period rather than a physical place of residence; use 生活在古代 to place the characters in that era. [rule: time_expression]\n2. [Coherence: reference, error] Coherence (Reference): 神农：一个叫神农的人，On a character’s first mention, introduce the person with both a name and a noun such as 人, rather than assuming the reader already knows the name. [rule: character_introduction_first_mention]\n3. [Coherence: temporality, error] Coherence (Temporality): 常常生病了：常常生病，A habitual action takes the zero particle; 了 does not mark a routine action. [rule: aspect_le_completed]\n4. [Coherence: temporality, error] Coherence (Temporality): 去很多不一样的地方：去了很多不一样的地方，The visits to many places are completed narrative actions, so use 了. [rule: aspect_le_completed]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": false,
+    "fix_right": "no",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Vocabulary"
+    ],
+    "reason": "“住在古代” can correctly mean living in ancient times, so replacing it with “生活在古代” is only an unnecessary stylistic change."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "This is the character’s first mention, so introducing 神农 as a person is required by the teacher’s reference rule."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "“常常” describes a habitual situation, so “生病” should not take perfective 了."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "The trip to many places is a completed narrative event, so “去了很多不一样的地方” is correct."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2041,
+  "completion_tokens": 617,
+  "total_tokens": 2658,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 390,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 345,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

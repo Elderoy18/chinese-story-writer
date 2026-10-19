@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n这是古代的故事。孟子小的时候，他的爸爸很早就去世了。从他的家到墓地很近，所以他每天老是从早到晚去墓地跟朋友们玩玩儿。\n\nThis scene:\n他的妈妈觉得在墓地玩儿，害得，所以他们搬家。搬家对孟子有好的影响，他才五岁，可是每天不是写字就是帮妈妈的工作。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 害得，所以他们搬家：害得孟子学习不好，害得 + harmful result\n- 可是每天不是写字就是帮妈妈的工作：帮妈妈工作，帮sb. do sth.\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 害得：会带来不好的影响，害得 must be followed by the person affected and a harmful result; it cannot end the clause by itself.\n2. [Grammar & Vocabulary, error] 帮妈妈的工作：帮妈妈做事，after 帮妈妈, a verb phrase is needed; 工作 with 的 is a noun phrase, so it cannot parallel 写字 here.\n3. [Coherence: temporality, error] Coherence (Temporality): 所以他们搬家：所以他们搬家了，use 了 for the completed action of moving in this past narrative.\n4. [Coherence: connectors, error] Coherence (Conjunction): 他才五岁，可是每天不是写字就是帮妈妈的工作：他才五岁，就每天不是写字就是帮妈妈做事，use the 才……就…… construction to show that he began these daily activities at a very young age; 可是 is a contrast connector and does not express this relationship.",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": false,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "害得 requires an affected person and a harmful result, so it cannot end the clause alone."
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "no_correction",
+    "after_fully_correct": "no_correction",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "Here 帮妈妈的工作 is not a suitable verb phrase parallel to 写字; it should be 帮妈妈工作 or 帮妈妈做事."
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: temporality"
+    ],
+    "reason": "搬家 is a completed past event in the story, so 搬家了 is correct."
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "The original contains the error 帮妈妈的工作, and the revision correctly makes it 帮妈妈做事; 可是 was also acceptable, but 就 is grammatical here."
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2030,
+  "completion_tokens": 1165,
+  "total_tokens": 3195,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 379,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 883,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}

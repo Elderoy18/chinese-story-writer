@@ -1,0 +1,70 @@
+{
+ "input": "Earlier scenes:\n在古代，很多医生不知道怎么用药。所以他们找到了很多植物对药。神农先看到很多病人，他们吃很多植物对药。但是我觉得他们的吃的植物，让他们病人。神农觉得这个植物可能特别是毒。所以他想找一个植物对药，他们可以吃对药。正好，他找到了一把花，他想把花放在茶里，对药。\n\nThis scene:\n他不知道如果这把花对你的身体好，这就要看如果这把花毒不毒了。神农想找别的植物，但是这很麻烦。正好，他找到了别的花。他一吃花，很快就生病了。他的肚子疼死了。神农不知道他吃不吃灵芝或者夹竹桃。\n\nThe teacher's corrections on this scene (student words：her correction, her note):\n- 他不知道如果这把花对你的身体好：不知道这种花对身体好不好，the “if” in “not know if + clause” is not 如果\n- 这就要看如果这把花毒不毒了：the “if” in “not know if + clause” is not 如果, delete如果，有没有毒\n- 正好，他找到了别的花：另外一种花，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n- 神农不知道他吃不吃灵芝或者夹竹桃：要不要吃……\n- 别的人给了神农一个灵芝：另外一个人，“别的” is for “a different type”, and “all else except the spoken one”, whereas “另外“ is for “addition in quantity”, and “another, the other”\n\nThe system's feedback items:\n1. [Grammar & Vocabulary, error] 不知道如果这把花对你的身体好：不知道这把花对你的身体好不好，An embedded yes/no question after 不知道 should use an A-not-A form rather than 如果; 好不好 asks whether the flower is beneficial. [rule: a_not_a_question]\n2. [Grammar & Vocabulary, error] 看如果这把花毒不毒：看这把花毒不毒，After 看, an embedded yes/no question cannot begin with 如果; 毒不毒 is the correct A-not-A question form. [rule: a_not_a_question]\n3. [Coherence: reference, error] Coherence (Reference): 你的：他的，There is no listener introduced as “you”; this refers to Shen Nong’s own body, so use the close re-occurrence pronoun for Shen Nong. [rule: ambiguous_reference]\n4. [Coherence: reference, error] Coherence (Reference): 一吃花：一吃这种花，The flower has just been found in the previous sentence, so use a specific noun phrase to show that this is that particular flower rather than flowers in general. [rule: ambiguous_reference]",
+ "salt": "",
+ "output": {
+  "items": [
+   {
+    "n": 1,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "no",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "不知道后的嵌入式是非问句不能用如果，但改后仍保留不合语境的你的。"
+   },
+   {
+    "n": 2,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Grammar"
+    ],
+    "reason": "看后的嵌入式是非问句不应以如果开头，删去如果后“毒不毒”正确。"
+   },
+   {
+    "n": 3,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "故事中没有被称为你的听者，这里应指神农，所以用他的正确。"
+   },
+   {
+    "n": 4,
+    "shown_complete": true,
+    "is_error": true,
+    "fix_right": "yes",
+    "after_fully_correct": "yes",
+    "right_categories": [
+     "Coherence: reference"
+    ],
+    "reason": "这里指刚找到的那一种花，不宜用泛指的花；这种花能清楚回指。"
+   }
+  ]
+ },
+ "usage": {
+  "prompt_tokens": 2287,
+  "completion_tokens": 1334,
+  "total_tokens": 3621,
+  "prompt_tokens_details": {
+   "cached_tokens": 1648,
+   "cache_write_tokens": 636,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1056,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "model": "gpt-5.6-terra",
+ "prompt_version": "03f3eb7978"
+}
